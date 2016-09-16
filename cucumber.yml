@@ -1,0 +1,8 @@
+##YAML Template
+---
+default: -p html_report -p hml
+html_report: --format progress --format html --out=features_report.html
+firefox: BROWSER=firefox
+chrome: BROWSER=chrome
+internet_explorer: BROWSER=internet_explorer
+hml: TEST_ENV=hml
