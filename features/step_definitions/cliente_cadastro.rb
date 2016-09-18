@@ -73,7 +73,6 @@ Entao(/^o campo "([^"]*)" deve\/nao deve estar habilitado$/) do |campo|
   end
 end
 
-
 Entao(/^o botao "([^"]*)" do frame "([^"]*)" estara habilitado\/desabilitado$/) do |botao, frame|
   next if @pass_test == true
   info_cli = Info_do_cliente.new

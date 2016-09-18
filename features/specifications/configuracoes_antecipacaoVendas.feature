@@ -46,7 +46,6 @@ E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
 Quando clicar no botao "Editar"
 Entao o sistema exibira/nao exibira a tela "Precificação"
 
-
 @CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOESGERAIS_TAXAEFETIVAMAXIMA_EDITAR
 Cenario: Validar direito CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOESGERAIS_TAXAEFETIVAMAXIMA_EDITAR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOESGERAIS_TAXAEFETIVAMAXIMA_EDITAR"

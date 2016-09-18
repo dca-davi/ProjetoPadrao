@@ -14,7 +14,6 @@ E que tenha/nao tenha acesso na tela "Informações do cliente"
 E clicar na aba "Bloqueios"
 Entao poderei/nao poderei editar o item com motivo "Análise de cobrança"
 
-
 @CLIENTES_GERAL_BLOQUEIOS_MOTIVO_PREVENCAOESEGURANCA_EDITAR
 Cenario: Validar direito CLIENTES_GERAL_BLOQUEIOS_MOTIVO_PREVENCAOESEGURANCA_EDITAR
 Dado que tenha/nao tenha o direito "CLIENTES_GERAL_BLOQUEIOS_MOTIVO_PREVENCAOESEGURANCA_EDITAR"

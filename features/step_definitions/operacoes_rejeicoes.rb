@@ -5,7 +5,6 @@ Quando(/^informar os filtros na tela "([^"]*)" e clicar no botao "([^"]*)"$/) do
   utils.clicar_botao_tela (botao)
 end
 
-
 Entao(/^o botao "([^"]*)" estara habilitado\/desabilitado$/) do |botao|
   @trava_rejeicao = Trava_Prazo_Vencido.new
   @trava_rejeicao.validar_botao_exportar_grid (botao)

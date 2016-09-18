@@ -15,7 +15,6 @@ class Configuration
   def self.[]= key, value
     @@config[key] = value
   end
-
 end
 
 raise "Please set the TEST_ENV environment variable" unless ENV['TEST_ENV']
