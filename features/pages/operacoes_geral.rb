@@ -4,7 +4,7 @@ class Trava_Prazo_Vencido
   def validar_pagina (tela)
     result = true
      if $browser.h1(:text => tela ).exists?
-        sleep 1
+        sleep 3
         $encoded_img = $browser.driver.screenshot_as(:base64)
      else
        result = false
@@ -13,7 +13,7 @@ class Trava_Prazo_Vencido
 
   def validar_botao (botao)
     Watir::Wait.until {$browser.button(:text => botao).exists?}
-    if $browser.button(:text => botao).attribute_value("area-disabled") == "true"
+    if $browser.button(:text => botao).attribute_value("aria-disabled") == "true"
       result = true
     else
      result = false
