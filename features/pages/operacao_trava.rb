@@ -3,6 +3,8 @@ class Trava_Prazo_Vencido
 
   def validar_pagina (tela)
     sleep 1
+    @@utils.aguardar_loading
+    sleep 2
      if $browser.h1(:text => tela).exist?
         $encoded_img = $browser.driver.screenshot_as(:base64)
         return true
