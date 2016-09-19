@@ -74,7 +74,6 @@ class Utils
      end
     end
 
-
     for count in 1...sheet1.row_count
      direito = sheet1.cell(count,0)
      direito_index = count
