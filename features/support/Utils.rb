@@ -207,18 +207,18 @@ class Utils
   def clicar_botao_acao (acao)
     sleep 2
     case
-    when "Visualizar"
-      acao = /icon[_]?view/
+    when 'Visualizar'
+      acao = "icon[_]?view"
 
     when 'Editar'
-      acao = /ico[_]?edit/
+      acao = "ico[_]?edit"
     end
 
-    Watir::Watir.until {$browser.a(:id => acao).exist?}
+    Watir::Wait.until {$browser.a(:id => /#{acao}/).exist?}
 
-      if $browser.a(:id => acao).exist?
+      if $browser.a(:id => /#{acao}/).exist?
         sleep 2
-        $browser.a(:id => acao).click
+        $browser.a(:id => /#{acao}/).click
         result = true
       else
         result = false
