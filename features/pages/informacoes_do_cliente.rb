@@ -105,7 +105,7 @@ class Info_do_cliente
         return false
       else
         $browser.span(:class => /icoEdit/).click
-        $browser.span(:text => "Editar Dados do Proprietário").wait_until_present
+        $browser.span(:text => /^Editar/).wait_until_present
         $encoded_img = $browser.driver.screenshot_as(:base64)
         return true
       end
