@@ -59,3 +59,8 @@ E que tenha/nao tenha acesso na tela "Motivo de ajuste"
 Quando clicar no botao "Pesquisar"
 E clicar na acao "Visualizar"
 Entao clicar no botao "Excluir"
+
+@OPERACOES_REGULARIZACOES_TRATAMENTODEBITOSEMRETORNO_VER
+Cenario: Validar direito OPERACOES_REGULARIZACOES_TRATAMENTODEBITOSEMRETORNO_VER
+Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_TRATAMENTODEBITOSEMRETORNO_VER"
+Entao que tenha/nao tenha acesso na tela "Débitos ao cliente sem retorno"
