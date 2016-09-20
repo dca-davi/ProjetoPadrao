@@ -106,3 +106,27 @@ Quando clicar na aba "Preço Especial"
 E clicar no ícone de acao visualizar "Lupa"
 Entao a aplicacao exibira/nao exibira o pop-up "Detalhe do preço especial"
 ### <== DEMIS
+
+@SETUP_ARVCONFIGURACOES_GERAIS_ATRIBUICAOCATEGORIAPRECO_EDITAR
+Cenario: Validar direito SETUP_ARVCONFIGURACOES_GERAIS_ATRIBUICAOCATEGORIAPRECO_EDITAR
+Dado que tenha/nao tenha o direito "SETUP_ARVCONFIGURACOES_GERAIS_ATRIBUICAOCATEGORIAPRECO_EDITAR"
+E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
+Entao clicar no botao "Editar dados" do frame "Atribuição de categoria/preço"
+
+@SETUP_ARV_CUSTOS_CUSTO_OPERACIONAL_VER
+Cenario: Validar direito SETUP_ARV_CUSTOS_CUSTO_OPERACIONAL_VER
+Dado que tenha/nao tenha o direito "SETUP_ARV_CUSTOS_CUSTO_OPERACIONAL_VER"
+E que tenha/nao tenha acesso na tela "Custos"
+Entao que tenha/nao tenha acesso na tela "CUSTO OPERACIONAL"
+
+@SETUP_ARV_CUSTOS_CDI_VER
+Cenario: Validar direito SETUP_ARV_CUSTOS_CDI_VER
+Dado que tenha/nao tenha o direito "SETUP_ARV_CUSTOS_CDI_VER"
+E que tenha/nao tenha acesso na tela "Custos"
+Entao que tenha/nao tenha acesso na tela "CDI"
+
+@SETUP_ARV_CUSTOS_CUSTO_CAPTACAO_VER
+Cenario: Validar direito SETUP_ARV_CUSTOS_CUSTO_CAPTACAO_VER
+Dado que tenha/nao tenha o direito "SETUP_ARV_CUSTOS_CUSTO_CAPTACAO_VER"
+E que tenha/nao tenha acesso na tela "Custos"
+Entao que tenha/nao tenha acesso na tela "CUSTO DE CAPTAÇÃO"
