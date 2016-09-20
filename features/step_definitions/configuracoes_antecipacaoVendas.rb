@@ -1,3 +1,4 @@
-Entao(/^a aplicacao exibira\/nao exibira a tela "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+#CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_VER
+Entao(/^a aplicacao exibira\/nao exibira o painel "([^"]*)"$/) do |painel|
+  expect(@browser.find_element(:css, ".alert").text).to eq(msg)
 end
