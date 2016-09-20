@@ -7,13 +7,13 @@ class Info_do_cliente
     Watir::Wait.until {$browser.button(:text => botao).exists?}
     sleep 1
     case frame.downcase
-    when "dados de cadastro", "dados do tipo de pagamento", "detalhe da alçada", "taxa efetiva máxima", "parâmetro para cálculo do share", "Últimas transações", "resultados"
+    when "dados de cadastro", "dados do tipo de pagamento", "detalhe da alçada", "taxa efetiva máxima", "parâmetro para cálculo do share", "últimas transações", "resultados"
         if $browser.button(:text => botao, :index => 0).attribute_value("aria-disabled") == "false"
           $browser.button(:text => botao, :index => 0).click
         else
           result = false
         end
-      when "endereço do contrato", "Atribuição de categoria/preço", "Atribuição de categoria/preço"
+      when "endereço do contrato", "atribuição de categoria/preço", "atribuição de categoria/preço"
         if $browser.button(:text => botao, :index => 1).attribute_value("aria-disabled") == "false"
           $browser.button(:text => botao, :index => 1).click
         else
