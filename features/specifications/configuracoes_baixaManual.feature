@@ -24,3 +24,4 @@ Cenario: Validar direito CONFIGURACOES_BAIXAMANUAL_MOTIVOS_EDITAR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_BAIXAMANUAL_MOTIVOS_EDITAR"
 E que tenha/nao tenha acesso na tela "Baixa manual"
 Quando clicar na aba "Motivos"
+Entao o botao de acao "Editar" do frame "Motivos de baixa manual" devera estar habilitado/desabilitado 
