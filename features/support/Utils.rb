@@ -210,7 +210,6 @@ class Utils
     case
     when 'Visualizar'
       acao = 'icon[_]?view'
-
     when 'Editar'
       acao = 'ico[_]?edit'
     end
