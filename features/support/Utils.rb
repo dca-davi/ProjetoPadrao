@@ -213,9 +213,7 @@ class Utils
     when 'Editar'
       acao = 'ico[_]?edit'
     end
-
-    Watir::Wait.until {$browser.a(:id => /#{acao}/).exist?}
-
+      sleep 2
       if $browser.a(:id => /#{acao}/).exist?
         sleep 2
         $browser.a(:id => /#{acao}/).click
@@ -228,6 +226,21 @@ class Utils
 
       return result
 
+    end
+
+    # LUCAS
+    def validar_frame (texto)
+      sleep 2
+      if $browser.a(:text => texto).exist?
+        sleep 2
+        result = true
+      else
+        result = false
+      end
+      sleep 3
+      $encoded_img = $browser.driver.screenshot_as(:base64)
+
+      return result
     end
 
   end

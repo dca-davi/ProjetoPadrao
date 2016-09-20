@@ -9,3 +9,14 @@ Entao(/^clicar na acao "([^"]*)"$/) do |acao|
     fail("usuario sem o direito consegue clicar no botão")
   end
 end
+
+Entao(/^localizar o frame "([^"]*)"$/) do |texto|
+  next if @pass_test == true
+  @regularizacao_financeira_utils = Utils.new
+  nomeFrame = @regularizacao_financeira_utils.validar_frame(texto)
+  if !nomeFrame && @tem_direito
+    fail("Frame não localizado")
+  elsif nomeFrame && !@tem_direito
+    fail("usuario sem o direito consegue visualizar o frame")
+  end
+end

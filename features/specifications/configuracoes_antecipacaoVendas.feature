@@ -107,6 +107,7 @@ E clicar no ícone de acao visualizar "Lupa"
 Entao a aplicacao exibira/nao exibira o pop-up "Detalhe do preço especial"
 ### DEMIS
 
+### LUCAS
 @SETUP_ARVCONFIGURACOES_GERAIS_ATRIBUICAOCATEGORIAPRECO_EDITAR
 Cenario: Validar direito SETUP_ARVCONFIGURACOES_GERAIS_ATRIBUICAOCATEGORIAPRECO_EDITAR
 Dado que tenha/nao tenha o direito "SETUP_ARVCONFIGURACOES_GERAIS_ATRIBUICAOCATEGORIAPRECO_EDITAR"
@@ -130,3 +131,22 @@ Cenario: Validar direito SETUP_ARV_CUSTOS_CUSTO_CAPTACAO_VER
 Dado que tenha/nao tenha o direito "SETUP_ARV_CUSTOS_CUSTO_CAPTACAO_VER"
 E que tenha/nao tenha acesso na tela "Custos"
 Entao que tenha/nao tenha acesso na tela "CUSTO DE CAPTAÇÃO"
+
+@SETUP_ARVCONFIGURACOES_GERAIS_ATRIBUICAOCATEGORIAPRECO_VER
+Cenario: Validar direito SETUP_ARVCONFIGURACOES_GERAIS_ATRIBUICAOCATEGORIAPRECO_VER
+Dado que tenha/nao tenha o direito "SETUP_ARVCONFIGURACOES_GERAIS_ATRIBUICAOCATEGORIAPRECO_VER"
+E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
+Entao clicar no botao "Editar dados" do frame "Atribuição de categoria/preço"
+
+@SETUP_ARVCONFIGURACOES_GERAIS_RAMOSDEATIVIDADERESTRITOS_EDITAR
+Cenario: Validar direito SETUP_ARVCONFIGURACOES_GERAIS_RAMOSDEATIVIDADERESTRITOS_EDITAR
+Dado que tenha/nao tenha o direito "SETUP_ARVCONFIGURACOES_GERAIS_RAMOSDEATIVIDADERESTRITOS_EDITAR"
+E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
+Entao clicar no botao "Editar dados" do frame "Ramos de atividade restritos"
+
+@SETUP_ARVCONFIGURACOES_GERAIS_RAMOSDEATIVIDADERESTRITOS_VER
+Cenario: Validar direito SETUP_ARVCONFIGURACOES_GERAIS_RAMOSDEATIVIDADERESTRITOS_VER
+Dado que tenha/nao tenha o direito "SETUP_ARVCONFIGURACOES_GERAIS_RAMOSDEATIVIDADERESTRITOS_VER"
+E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
+Entao localizar o frame "Atribuição de categoria/preçewo"
+### LUCAS
