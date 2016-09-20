@@ -51,6 +51,7 @@ class Utils
     else
       sleep 1
       $browser.execute_script("arguments[0].click()", $browser.a(:text => pagina, :index => i))
+      sleep 2
       self.aguardar_loading
       sleep 2
       $encoded_img = $browser.driver.screenshot_as(:base64)
@@ -207,18 +208,18 @@ class Utils
   def clicar_botao_acao (acao)
     sleep 2
     case
-    when "Visualizar"
-      acao = /icon[_]?view/
+    when 'Visualizar'
+      acao = 'icon[_]?view'
 
     when 'Editar'
-      acao = /ico[_]?edit/
+      acao = 'ico[_]?edit'
     end
 
-    Watir::Watir.until {$browser.a(:id => acao).exist?}
+    Watir::Wait.until {$browser.a(:id => /#{acao}/).exist?}
 
-      if $browser.a(:id => acao).exist?
+      if $browser.a(:id => /#{acao}/).exist?
         sleep 2
-        $browser.a(:id => acao).click
+        $browser.a(:id => /#{acao}/).click
         result = true
       else
         result = false
