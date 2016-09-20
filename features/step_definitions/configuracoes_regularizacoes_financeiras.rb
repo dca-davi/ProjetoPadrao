@@ -1,12 +1,11 @@
 
-Entao(/^clicar no botão de visualização "([^"]*)"$/) do |lupa|
+Entao(/^clicar na acao "([^"]*)"$/) do |acao|
   next if @pass_test == true
   @regularizacao_financeira_utils = Utils.new
-  @regularizacao_financeira_utils.clicar_lupa (lupa)
-end
-
-Entao(/^clicar no botão de edição "([^"]*)"$/) do |editar|
-  next if @pass_test == true
-  @regularizacao_financeira_utils = Utils.new
-  @regularizacao_financeira_utils.clicar_editar (editar)
+  statusBtn = @regularizacao_financeira_utils.clicar_botao_acao (acao)
+  if !statusBtn && @tem_direito
+    fail("Usuario nao pode clicar no botão no qual tem direito")
+  elsif statusBtn && !@tem_direito
+    fail("usuario sem o direito consegue clicar no botão")
+  end
 end

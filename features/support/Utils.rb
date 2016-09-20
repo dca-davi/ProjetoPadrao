@@ -204,45 +204,30 @@ class Utils
       $encoded_img = $browser.driver.screenshot_as(:base64)
   end
 
-  def clicar_lupa (lupa)
-   sleep 2
-   case
-   when 'Detalhe'
-     lupa = /icon_view/
+  def clicar_botao_acao (acao)
+    sleep 2
+    case
+    when "Visualizar"
+      acao = /icon[_]?view/
 
-     when 'Editar'
-   editar = /ico_edit/
-   end
+    when 'Editar'
+      acao = /ico[_]?edit/
+    end
 
-   Watir::Wait.until {$browser.a(:id => lupa).exists?}
+    Watir::Watir.until {$browser.a(id: => acao).exist?}
 
-     if $browser.a(:id => lupa).exists?
-         sleep 2
-         $browser.a(:id => lupa).click
-     else
-         result = false
-     end
-     sleep 3
-       $encoded_img = $browser.driver.screenshot_as(:base64)
- end
+      if $browser.a(:id => acao).exist?
+        sleep 2
+        $browser.a(id: => acao).click
+        result = true
+      else
+        result = false
+      end
+      sleep 3
+      $encoded_img = $browser.driver.screenshot_as(:base64)
 
- def clicar_editar (editar)
-   sleep 2
-   case
-     when 'Editar'
-   editar = /ico_edit/
-   end
+      return result
+      
+    end
 
-   Watir::Wait.until {$browser.a(:id => editar).exists?}
-
-     if $browser.a(:id => editar).exists?
-         sleep 2
-         $browser.a(:id => editar).click
-     else
-         result = false
-     end
-     sleep 3
-       $encoded_img = $browser.driver.screenshot_as(:base64)
- end
-
-end
+  end

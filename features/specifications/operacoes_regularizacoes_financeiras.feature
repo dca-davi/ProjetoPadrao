@@ -44,7 +44,7 @@ Cenario: Validar direito CONFIGURACOES_MOTIVOS_AJUSTES_REMOVER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_MOTIVOS_AJUSTES_REMOVER"
 E que tenha/nao tenha acesso na tela "Motivo de ajuste"
 Quando clicar no botao "Pesquisar"
-E clicar no botão de edição "Editar"
+Entao clicar na acao "Editar"
 
 @CONFIGURACOES_MOTIVOS_AJUSTES_INCLUIR
 Cenario: Validar direito CONFIGURACOES_MOTIVOS_AJUSTES_INCLUIR
@@ -57,5 +57,5 @@ Cenario: Validar direito CONFIGURACOES_MOTIVOS_AJUSTES_REMOVER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_MOTIVOS_AJUSTES_REMOVER"
 E que tenha/nao tenha acesso na tela "Motivo de ajuste"
 Quando clicar no botao "Pesquisar"
-E clicar no botão de visualização "Detalhe"
+E clicar na acao "Visualizar"
 Entao clicar no botao "Excluir"
