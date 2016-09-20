@@ -6,12 +6,6 @@ Funcionalidade: Validar os direitos na tela Configuracoes > Demandas > Alcadas
 Contexto:
 Dado que eu faca login
 
-@CONFIGURACOES_DEMANDAS_ALCADAS_VER
-Cenario: Validar direito CONFIGURACOES_DEMANDAS_ALCADAS_VER
-Dado que tenha/nao tenha o direito "CONFIGURACOES_DEMANDAS_ALCADAS_VER"
-E que tenha/nao tenha acesso na tela "Alçadas"
-Entao o sistema exibira/nao exibira a tela "Alçada"
-
 @CONFIGURACOES_DEMANDAS_ALCADAS_INCLUIR
 Cenario: Validar direito CONFIGURACOES_DEMANDAS_ALCADAS_INCLUIR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_DEMANDAS_ALCADAS_INCLUIR"

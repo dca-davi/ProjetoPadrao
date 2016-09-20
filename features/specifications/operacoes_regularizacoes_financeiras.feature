@@ -16,15 +16,15 @@ Entao o sistema exibira/nao exibira a tela "Consulta de transações"
 Cenario: Validar direito OPERACOES_REGULARIZACOES_AJUSTE_VER
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_AJUSTE_VER"
 E que tenha/nao tenha acesso na tela "Ajustes financeiros"
-E que tenha/nao tenha acesso na tela "Pesquisar"
-Entao o sistema exibira/nao exibira a tela "Ajustes financeiros"
+Entao clicar na aba "Pesquisar"
+
 
 @OPERACOES_REGULARIZACOES_AJUSTE_SOLICITAR
 Cenario: Validar direito OPERACOES_REGULARIZACOES_AJUSTE_SOLICITAR
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_AJUSTE_SOLICITAR"
 E que tenha/nao tenha acesso na tela "Ajustes financeiros"
-E que tenha/nao tenha acesso na tela "Incluir"
-Entao o sistema exibira/nao exibira a tela "Ajustes financeiros"
+Entao clicar na aba "Incluir"
+
 
 @CLIENTES_NUMERODOCARTAOABERTO_DIGITAR
 Cenario: Validar direito CLIENTES_NUMERODOCARTAOABERTO_DIGITAR
@@ -50,7 +50,7 @@ Entao clicar na acao "Editar"
 Cenario: Validar direito CONFIGURACOES_MOTIVOS_AJUSTES_INCLUIR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_MOTIVOS_AJUSTES_INCLUIR"
 E que tenha/nao tenha acesso na tela "Motivo de ajuste"
-E que tenha/nao tenha acesso na tela "Incluir"
+Entao clicar na aba "Incluir"
 
 @CONFIGURACOES_MOTIVOS_AJUSTES_REMOVER
 Cenario: Validar direito CONFIGURACOES_MOTIVOS_AJUSTES_REMOVER
