@@ -72,7 +72,7 @@ Cenário: Validar direito CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_VER"
 E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
 Quando clicar na aba "Preço Especial"
-Entao a aplicacao exibira/nao exibira a tela "Resultados"
+Entao a aplicacao exibira/nao exibira o modulo "Resultados"
 
 @CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_DETALHE_VER
 Cenário: Validar direito CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_DETALHE_VER

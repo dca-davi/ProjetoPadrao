@@ -1,5 +1,3 @@
-#CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_VER
-Entao(/^a aplicacao exibira\/nao exibira a tela "([^"]*)"$/) do |resultados|
-   expect(@navegador.find_element(:css, ".alert").text).to eq(msg)
-   @navegador.quit
+Entao(/^a aplicacao exibira\/nao exibira a tela "([^"]*)"$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
 end
