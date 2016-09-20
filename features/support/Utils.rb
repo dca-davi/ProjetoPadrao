@@ -214,11 +214,11 @@ class Utils
       acao = /ico[_]?edit/
     end
 
-    Watir::Watir.until {$browser.a(id: => acao).exist?}
+    Watir::Watir.until {$browser.a(:id => acao).exist?}
 
       if $browser.a(:id => acao).exist?
         sleep 2
-        $browser.a(id: => acao).click
+        $browser.a(:id => acao).click
         result = true
       else
         result = false
@@ -227,7 +227,7 @@ class Utils
       $encoded_img = $browser.driver.screenshot_as(:base64)
 
       return result
-      
+
     end
 
   end
