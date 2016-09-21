@@ -161,4 +161,5 @@ Entao(/^poderei\/nao poderei editar o item com motivo "([^"]*)"$/) do |motivo|
     elsif statusCampo && !@tem_direito
         raise('Usuario pode editar o item no qual nao tem direito')
     end
+
 end

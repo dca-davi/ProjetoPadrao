@@ -18,4 +18,5 @@ Entao(/^localizar o frame "([^"]*)"$/) do |texto|
   elsif nomeFrame && !@tem_direito
     fail("usuario sem o direito consegue visualizar o frame")
   end
+
 end
