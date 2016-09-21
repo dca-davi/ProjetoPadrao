@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class Utils
 
   def visit
