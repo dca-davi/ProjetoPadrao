@@ -198,9 +198,9 @@ class Utils
 
     def clicar_botao_acao(acao)
         sleep 2
-        if 'Visualizar'
+        if acao == 'Visualizar'
             acao = 'icon[_]?view'
-        elsif 'Editar'
+        elsif acao == 'Editar'
             acao = 'ico[_]?edit'
         end
         sleep 2
@@ -232,3 +232,26 @@ class Utils
         result
     end
 end
+
+    def preencher_campo_input(valor, campo)
+        case campo.downcase
+        when "t\u00F3pico de manuten\u00E7\u00E3o"
+            campo = 'topicMaintenanceId_input'
+        when "subt\u00F3pico de manuten\u00E7\u00E3o"
+            campo = 'subTopicMaintenanceId_input'
+        end
+
+        $browser.text_field(id: /:#{campo}$/).when_present.set valor
+        aguardar_loading
+        $browser.send_keys :tab
+        aguardar_loading
+
+        if $browser.text_field(id: /:#{campo}$/).value != ''
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+            return true
+        else
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+            return false
+        end
+    end
+  end
