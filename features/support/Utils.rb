@@ -254,4 +254,25 @@ class Utils
             return false
         end
     end
-  end
+
+    def selecionar_combo_box(combo, servico)
+        sleep 3
+        if $browser.label(text: combo).exist?
+            sleep 2
+            $browser.label(text: combo).click
+            result = true
+        else
+            result = false
+      end
+
+        if $browser.li(text: servico).exist?
+            sleep 2
+            $browser.li(text: servico).click
+            result = true
+        else
+            result = false
+      end
+        sleep 4
+        $encoded_img = $browser.driver.screenshot_as(:base64)
+ end
+end
