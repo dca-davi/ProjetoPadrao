@@ -263,7 +263,7 @@ class Utils
             result = true
         else
             result = false
-      end
+        end
 
         if $browser.li(text: servico).exist?
             sleep 2
@@ -271,8 +271,8 @@ class Utils
             result = true
         else
             result = false
-      end
+        end
         sleep 4
         $encoded_img = $browser.driver.screenshot_as(:base64)
- end
+    end
 end

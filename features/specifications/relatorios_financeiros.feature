@@ -36,8 +36,15 @@ Dado que tenha/nao tenha o direito "RELATORIOS_FINANCEIROS_DEBITOSENVIADOSAOSBAN
 E que tenha/nao tenha acesso na tela "Débitos enviados"
 Entao o sistema exibira/nao exibira a tela "Débitos enviados"
 
+#@RELATORIOS_DIVERGENCIASRESUMO_VER
+#Cenario: Validar direito RELATORIOS_DIVERGENCIASRESUMO_VER
+#Dado que tenha/nao tenha o direito "RELATORIOS_DIVERGENCIASRESUMO_VER"
+#E que tenha/nao tenha acesso na tela "Divergências do resumo financeiro"
+#Entao o sistema exibira/nao exibira a tela "Divergências"
+
+
 @RELATORIOS_DIVERGENCIASRESUMO_VER
 Cenario: Validar direito RELATORIOS_DIVERGENCIASRESUMO_VER
 Dado que tenha/nao tenha o direito "RELATORIOS_DIVERGENCIASRESUMO_VER"
-E que tenha/nao tenha acesso na tela "Divergências do resumo financeiro"
-Entao o sistema exibira/nao exibira a tela "Divergências"
+E que tenha/nao tenha acesso na tela "Contrato padrão"
+Entao Clicar no combo "Selecione" e selecionar a opcao "Serviço"
