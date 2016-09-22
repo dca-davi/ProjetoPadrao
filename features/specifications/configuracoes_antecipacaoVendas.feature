@@ -66,7 +66,7 @@ Quando clicar na aba "Preço Especial"
 E clicar na aba "Incluir"
 Entao o sistema exibira/nao exibira a tela "Precificação"
 
-### DEMIS ==>
+# Demis >>>
 @CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_VER
 Cenário: Validar direito CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_VER"
@@ -74,40 +74,40 @@ E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
 Quando clicar na aba "Preço Especial"
 Entao a aplicacao exibira/nao exibira o painel grid "Resultados"
 
-#@CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_DETALHE_VER
-#Cenário: Validar direito CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_DETALHE_VER
-#Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_DETALHE_VER"
-#E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
-#Quando clicar na aba "Preço Especial"
-#E clicar no ícone de acao visualizar "Lupa"
-#Entao a aplicacao exibira/nao exibira o pop-up "Detalhe do preço especial"
+@CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_DETALHE_VER
+Cenário: Validar direito CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_DETALHE_VER
+Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_DETALHE_VER"
+E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
+Quando clicar na aba "Preço Especial"
+E clicar na acao "Visualizar"
+Entao localizar o frame "Detalhe do preço especial"
 
-#@CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_INCLUIR
-#Cenário: Validar direito CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_INCLUIR
-#Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_INCLUIR"
-#E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
-#Quando clicar na aba "Preço Especial"
-#E clicar no ícone de acao visualizar "Lupa"
-#Entao a aplicacao exibira/nao exibira o pop-up "Detalhe do preço especial"
+@CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_INCLUIR
+Cenário: Validar direito CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_INCLUIR
+Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_INCLUIR"
+E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
+Quando clicar na aba "Preço Especial"
+E clicar no link "Incluir"
+Entao  localizar o frame "Dados da Pesquisa"
 
-#@CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_EDITAR
-#Cenário: Validar direito CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_EDITAR
-#Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_EDITAR"
-#E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
-#Quando clicar na aba "Preço Especial"
-#E clicar no ícone de acao visualizar "Lupa"
-#Entao a aplicacao exibira/nao exibira o pop-up "Detalhe do preço especial"
+@CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_EDITAR
+Cenário: Validar direito CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_EDITAR
+Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_EDITAR"
+E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
+Quando clicar na aba "Preço Especial"
+E clicar na acao "Editar"
+Entao localizar o frame "Edição do preço especial"
 
-#@CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_REMOVER
-#Cenário: Validar direito CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_REMOVER
-#Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_REMOVER"
-#E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
-#Quando clicar na aba "Preço Especial"
-#E clicar no ícone de acao visualizar "Lupa"
-#Entao a aplicacao exibira/nao exibira o pop-up "Detalhe do preço especial"
-### <== DEMIS
+@CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_REMOVER
+Cenário: Validar direito CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_REMOVER
+Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_REMOVER"
+E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
+Quando clicar na aba "Preço Especial"
+E clicar na acao "Remover"
+Entao localizar o frame "Cancelar"
+# Demis <<<
 
-### LUCAS
+# Lucas >>>
 @SETUP_ARVCONFIGURACOES_GERAIS_ATRIBUICAOCATEGORIAPRECO_EDITAR
 Cenario: Validar direito SETUP_ARVCONFIGURACOES_GERAIS_ATRIBUICAOCATEGORIAPRECO_EDITAR
 Dado que tenha/nao tenha o direito "SETUP_ARVCONFIGURACOES_GERAIS_ATRIBUICAOCATEGORIAPRECO_EDITAR"
@@ -156,5 +156,24 @@ Dado que tenha/nao tenha o direito "SETUP_ARV_CUSTOS_CDI_INCLUIR"
 E que tenha/nao tenha acesso na tela "Custos"
 E clicar na aba "CDI"
 Entao clicar no botao "Incluir"
+# Lucas <<<
 
-### LUCAS
+# Raraael >>>
+@CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOES_GERAIS_VER
+Cenario: Validar direito CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOES_GERAIS_VER
+Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOES_GERAIS_VER"
+E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
+Entao o sistema exibira/nao exibira a tela "Antecipação de Vendas - Configurações Gerais"
+
+@CONFIGURACOES_ANTECIPACAOVENDAS_CONFGERAIS_CARTAONAOPRESENTE_VER
+Cenario: Validar direito CONFIGURACOES_ANTECIPACAOVENDAS_CONFGERAIS_CARTAONAOPRESENTE_VER
+Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_CONFGERAIS_CARTAONAOPRESENTE_VER"
+E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
+Entao localizar o frame "Cartão não presente"
+
+@CONFIGURACOES_ANTECIPACAOVENDAS_CONFGERAIS_CARTAONAOPRESENTE_EDITAR
+Cenario: Validar direito CONFIGURACOES_ANTECIPACAOVENDAS_CONFGERAIS_CARTAONAOPRESENTE_EDITAR
+Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_CONFGERAIS_CARTAONAOPRESENTE_EDITAR"
+E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
+Entao clicar no botao "Editar dados" do frame "Cartão não presente"
+# Rafael <<<
