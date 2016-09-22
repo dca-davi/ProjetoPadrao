@@ -18,5 +18,11 @@ end
 Quando(/^clicar no botao "([^"]*)"$/) do |botao|
     next if @pass_test == true
     @trava_prazo_utils = Utils.new
-    @trava_prazo_utils.clicar_botao_tela botao
+    btnTela = @trava_prazo_utils.clicar_botao_tela botao
+    if !btnTela && @tem_direito
+      fail('Usuario nao pode clicar no botão no qual tem direito')
+    elsif btnTela && !@tem_direito
+      fail('Usuario pode clicar no botão que não tem direito')
+    end
+
 end

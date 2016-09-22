@@ -127,7 +127,7 @@ class Utils
     end
 
     def clicar_botao_tela(botao)
-        result = true
+        #result = true
         sleep 2
         Watir::Wait.until { $browser.button(text: botao).exists? }
         if $browser.button(text: botao).exists?
@@ -216,14 +216,13 @@ class Utils
         sleep 3
         $encoded_img = $browser.driver.screenshot_as(:base64)
 
-        result
+        return result
       end
 
     # LUCAS
     def validar_frame(texto)
-        sleep 2
-        if $browser.a(text: texto).exist?
-            sleep 2
+        sleep 4
+        if $browser.a(:text => texto).exists?
             result = true
         else
             result = false
@@ -231,7 +230,7 @@ class Utils
         sleep 3
         $encoded_img = $browser.driver.screenshot_as(:base64)
 
-        result
+        return result
     end
 
     def preencher_campo_input(valor, campo)
@@ -257,9 +256,9 @@ class Utils
     end
 
     def selecionar_combo_box(combo, servico)
-        sleep 3
+        sleep 1
         if $browser.label(text: combo).exist?
-            sleep 2
+            sleep 1
             $browser.label(text: combo).click
             result = true
         else
@@ -267,13 +266,14 @@ class Utils
         end
 
         if $browser.li(text: servico).exist?
-            sleep 2
+            sleep 1
             $browser.li(text: servico).click
             result = true
         else
             result = false
         end
-        sleep 4
+        sleep 3
         $encoded_img = $browser.driver.screenshot_as(:base64)
     end
+
 end
