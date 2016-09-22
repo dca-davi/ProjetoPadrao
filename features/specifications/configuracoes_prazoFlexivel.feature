@@ -31,3 +31,11 @@ Dado que tenha/nao tenha o direito "CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_CAT
 E que tenha/nao tenha acesso na tela "Precificação_prazoFlexivel"
 E clicar no botao "Editar" do frame "Resultados"
 Entao o sistema exibira/nao exibira a tela "Precificação"
+
+@CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_SEGMENTACAOPRAZO_EDITAR
+Cenario: Validar direito CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_SEGMENTACAOPRAZO_EDITAR
+Dado que tenha/nao tenha o direito "CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_SEGMENTACAOPRAZO_EDITAR"
+E que tenha/nao tenha acesso na tela "Precificação_prazoFlexivel"
+E clicar na aba "Segmentação do Prazo Flexível"
+E clicar no botao "Editar" do frame "Dados da segmentação"
+Entao o sistema exibira/nao exibira a tela "Precificação"

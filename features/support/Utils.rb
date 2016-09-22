@@ -129,7 +129,6 @@ class Utils
     def clicar_botao_tela(botao)
         result = true
         sleep 2
-        $encoded_img = $browser.driver.screenshot_as(:base64)
         Watir::Wait.until { $browser.button(text: botao).exists? }
         if $browser.button(text: botao).exists?
             sleep 2
@@ -137,6 +136,8 @@ class Utils
         else
             result = false
         end
+        sleep 6
+        $encoded_img = $browser.driver.screenshot_as(:base64)
         result
     end
 
@@ -200,14 +201,18 @@ class Utils
     def clicar_botao_acao(acao)
         sleep 2
         if acao == 'Visualizar'
-            acao = 'icon[_]?view'
+            acao = 'icon[_]?view|btn_detail'
         elsif acao == 'Editar'
-            acao = 'ico[_]?edit'
+            acao = 'ico[_]?edit|btn_edit'
         end
         sleep 2
-        if $browser.a(id: /#{acao}/).exist?
+        if $browser.a(id: /#{acao}$/).exist?
             sleep 2
-            $browser.a(id: /#{acao}/).click
+            $browser.a(id: /#{acao}$/).click
+            result = true
+        elsif $browser.button(id: /#{acao}$/).exist?
+            sleep 2
+            $browser.button(id: /#{acao}$/).click
             result = true
         else
             result = false
@@ -218,7 +223,7 @@ class Utils
         result
       end
 
-    # LUCAS
+    # Validar Frames >>> Lucas >>>
     def validar_frame(texto)
         sleep 2
         result = if $browser.a(text: texto).exist? || $browser.div(text: texto).exist?
@@ -231,6 +236,7 @@ class Utils
 
         result
     end
+    # Lucas <<<
 
     def preencher_campo_input(valor, campo)
         case campo.downcase
