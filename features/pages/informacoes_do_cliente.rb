@@ -7,21 +7,24 @@ class Info_do_cliente
         Watir::Wait.until { $browser.button(text: botao).exists? }
         sleep 1
         case frame.downcase
-        when 'dados de cadastro', 'dados do tipo de pagamento', "detalhe da al\u00E7ada", "taxa efetiva m\u00E1xima", "par\u00E2metro para c\u00E1lculo do share", "\u00FAltimas transa\u00E7\u00F5es", 'resultados'
+        when 'dados de cadastro', 'dados do tipo de pagamento', "detalhe da al\u00E7ada", "taxa efetiva m\u00E1xima", "par\u00E2metro para c\u00E1lculo do share", "\u00FAltimas transa\u00E7\u00F5es", "resultados"
             if $browser.button(text: botao, index: 0).attribute_value('aria-disabled') == 'false'
                 $browser.button(text: botao, index: 0).click
+                sleep 3
             else
                 result = false
             end
-        when "endere\u00E7o do contrato", "atribui\u00E7\u00E3o de categoria/pre\u00E7o", "atribui\u00E7\u00E3o de categoria/pre\u00E7o"
+        when "endere\u00E7o do contrato", "atribui\u00E7\u00E3o de categoria/pre\u00E7o", "atribui\u00E7\u00E3o de categoria/pre\u00E7o", "dados da segmentação"
             if $browser.button(text: botao, index: 1).attribute_value('aria-disabled') == 'false'
                 $browser.button(text: botao, index: 1).click
+                sleep 3
             else
                 result = false
             end
         when "situa\u00E7\u00E3o do cliente", "antecipa\u00E7\u00E3o programada", 'reserva financeira'
             if $browser.button(text: botao, index: 2).attribute_value('aria-disabled') == 'false'
                 $browser.button(text: botao, index: 2).click
+                sleep 3
             else
                 result = false
             end
@@ -29,21 +32,25 @@ class Info_do_cliente
         when "valor m\u00EDnimo por opera\u00E7\u00E3o"
             if $browser.button(text: botao, index: 3).attribute_value('aria-disabled') == 'false'
                 $browser.button(text: botao, index: 3).click
+                sleep 3
             else
                 result = false
             end
         when 'ramos de atividade restritos'
             if $browser.button(text: botao, index: 4).attribute_value('aria-disabled') == 'false'
                 $browser.button(text: botao, index: 4).click
+                sleep 3
             else
                 result = false
             end
         when "cart\u00E3o n\u00E3o presente"
             if $browser.button(text: botao, index: 5).attribute_value('aria-disabled') == 'false'
                 $browser.button(text: botao, index: 5).click
+                sleep 3
             else
                 result = false
             end
+
         else
             raise('informar frame valido')
           end

@@ -129,7 +129,6 @@ class Utils
     def clicar_botao_tela(botao)
         result = true
         sleep 2
-        $encoded_img = $browser.driver.screenshot_as(:base64)
         Watir::Wait.until { $browser.button(text: botao).exists? }
         if $browser.button(text: botao).exists?
             sleep 2
@@ -137,6 +136,8 @@ class Utils
         else
             result = false
         end
+        sleep 6
+        $encoded_img = $browser.driver.screenshot_as(:base64)
         result
     end
 
