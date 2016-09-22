@@ -228,15 +228,11 @@ class Utils
     # Validar Frames >>> Lucas >>>
     def validar_frame(texto)
         sleep 2
-        if $browser.a(text: texto).exist?
-            sleep 2
-            result = true
-        elsif $browser.div(text: texto).exist?
-            sleep 2
-            result = true
-        else
-            result = false
-        end
+        result = if $browser.a(text: texto).exist? || $browser.div(text: texto).exist?
+                     true
+                 else
+                     false
+                 end
         sleep 3
         $encoded_img = $browser.driver.screenshot_as(:base64)
 
