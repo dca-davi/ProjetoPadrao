@@ -204,6 +204,8 @@ class Utils
             acao = 'icon[_]?view|btn_detail'
         elsif acao == 'Editar'
             acao = 'ico[_]?edit|btn_edit'
+        elsif acao == 'Remover'
+            acao = 'ico[_]?cancel|btn_cancel'
         end
         sleep 2
         if $browser.a(id: /#{acao}$/).exist?
