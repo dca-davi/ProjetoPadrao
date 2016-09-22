@@ -200,14 +200,18 @@ class Utils
     def clicar_botao_acao(acao)
         sleep 2
         if acao == 'Visualizar'
-            acao = 'icon[_]?view'
+            acao = 'icon[_]?view|btn_detail'
         elsif acao == 'Editar'
-            acao = 'ico[_]?edit'
+            acao = 'ico[_]?edit|btn_edit'
         end
         sleep 2
-        if $browser.a(id: /#{acao}/).exist?
+        if $browser.a(id: /#{acao}$/).exist?
             sleep 2
-            $browser.a(id: /#{acao}/).click
+            $browser.a(id: /#{acao}$/).click
+            result = true
+        elsif $browser.button(id: /#{acao}$/).exist?
+            sleep 2
+            $browser.button(id: /#{acao}$/).click
             result = true
         else
             result = false
@@ -218,10 +222,13 @@ class Utils
         result
       end
 
-    # LUCAS
+    # Validar Frames >>> Lucas >>>
     def validar_frame(texto)
         sleep 2
         if $browser.a(text: texto).exist?
+            sleep 2
+            result = true
+        elsif $browser.div(text: texto).exist?
             sleep 2
             result = true
         else
@@ -232,6 +239,7 @@ class Utils
 
         result
     end
+    # Lucas <<<
 
     def preencher_campo_input(valor, campo)
         case campo.downcase
