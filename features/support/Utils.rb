@@ -137,7 +137,9 @@ class Utils
         else
             result = false
         end
-        sleep 6
+        sleep 4
+        aguardar_loading
+        sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
         result
     end

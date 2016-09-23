@@ -115,6 +115,13 @@ Dado que tenha/nao tenha o direito "SETUP_ARV_CUSTOS_CDI_INCLUIR"
 E que tenha/nao tenha acesso na tela "Custos"
 E clicar na aba "CDI"
 Entao clicar no botao "Incluir"
+
+@CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAORESERVAFINANCEIRA_EXPORTAR
+Cenario: Validar direito CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAORESERVAFINANCEIRA_EXPORTAR
+Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAORESERVAFINANCEIRA_EXPORTAR"
+E que tenha/nao tenha acesso na tela "Exceção_antecipaçãoVendas"
+E o sistema exibira/nao exibira a tela "Exceção"
+Entao clicar no botao "Exportar"
 # Lucas <<<
 
 # Raraael >>>

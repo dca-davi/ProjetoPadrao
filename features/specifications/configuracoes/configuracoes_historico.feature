@@ -47,3 +47,11 @@ Dado que tenha/nao tenha o direito "CONFIGURACOES_HISTORICO_HISTORICOMANUTENCOES
 E que tenha/nao tenha acesso na tela "Histórico de manutenção"
 Quando informar "Antecipação de vendas" no campo "Tópico de manutenção"
 Entao posso/nao posso informar "PREÇO" no campo "Subtópico de manutenção"
+
+@CONFIGURACOES_HISTORICOMANUTENCOES_FINANCEIRAS_VER
+Cenario: Validar direito CONFIGURACOES_HISTORICOMANUTENCOES_FINANCEIRAS_VER
+Dado que tenha/nao tenha o direito "CONFIGURACOES_HISTORICOMANUTENCOES_FINANCEIRAS_VER"
+E que tenha/nao tenha acesso na tela "Histórico de manutenção"
+Quando informar "Cliente" no campo "Tópico de manutenção"
+E clicar no botao "Pesquisar"
+Então localizar o frame "Resultados"
