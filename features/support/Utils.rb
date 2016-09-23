@@ -133,6 +133,7 @@ class Utils
         if $browser.button(text: botao).exists?
             sleep 2
             $browser.button(text: botao).click
+            result = true
         else
             result = false
         end
