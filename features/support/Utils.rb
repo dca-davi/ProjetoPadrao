@@ -127,7 +127,7 @@ class Utils
     end
 
     def clicar_botao_tela(botao)
-        #result = true
+        # result = true
         sleep 2
         Watir::Wait.until { $browser.button(text: botao).exists? }
         if $browser.button(text: botao).exists?
@@ -223,12 +223,11 @@ class Utils
         sleep 3
         $encoded_img = $browser.driver.screenshot_as(:base64)
 
-        return result
+        result
       end
 
     # Validar Frames >>> Lucas >>>
     def validar_frame(texto)
-
         sleep 2
         result = if $browser.a(text: texto).exist? || $browser.div(text: texto).exist?
                      true
@@ -239,7 +238,7 @@ class Utils
         sleep 3
         $encoded_img = $browser.driver.screenshot_as(:base64)
 
-        return result
+        result
     end
     # Lucas <<<
 
@@ -265,19 +264,19 @@ class Utils
         end
     end
 
-    def selecionar_combo_box(combo, servico)
+    def selecionar_combo_box(opcao, combo_default)
         sleep 1
-        if $browser.label(text: combo).exist?
+        if $browser.label(text: combo_default).exist?
             sleep 1
-            $browser.label(text: combo).click
+            $browser.label(text: combo_default).click
             result = true
         else
             result = false
         end
 
-        if $browser.li(text: servico).exist?
+        if $browser.li(text: opcao).exist?
             sleep 1
-            $browser.li(text: servico).click
+            $browser.li(text: opcao).click
             result = true
         else
             result = false
@@ -286,4 +285,10 @@ class Utils
         $encoded_img = $browser.driver.screenshot_as(:base64)
     end
 
+    def selecionar_valor_combobox(id, valor)
+        Watir::Wait.until { $browser.div(id: /#{id}/).exists? }
+        $browser.execute_script('arguments[0].click()', $browser.div(id: /#{id}/).li(text: valor))
+        aguardar_loading
+        $encoded_img = $browser.driver.screenshot_as(:base64)
+    end
 end
