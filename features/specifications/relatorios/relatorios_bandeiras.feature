@@ -32,3 +32,19 @@ E selecionar a opcao "Débito/Crédito" no campo "Tipo Ação" da tela Controle 
 E informar o periodo de "11/09/2016" ate "14/09/2016"
 Quando clicar no botao "Pesquisar"
 Entao o botao "Exportar" devera estar habilitado/desabilitado
+
+@RELATORIOS_BANDEIRAS_CONTROLEREAPRESENTACOES_EXPORTAR
+Cenario: Validar direito RELATORIOS_BANDEIRAS_CONTROLEREAPRESENTACOES_EXPORTAR
+Dado que tenha/nao tenha o direito "RELATORIOS_BANDEIRAS_CONTROLEREAPRESENTACOES_EXPORTAR"
+E que tenha/nao tenha acesso na tela "Controle de reapresentações"
+E informar o periodo de "11/09/2016" ate "14/09/2016"
+Quando clicar no botao "Pesquisar"
+Entao o link "Exportar" devera estar habilitado/desabilitado
+
+@RELATORIOS_BANDEIRAS_CONTROLEREMESSAS_EXPORTAR
+Cenario: Validar direito RELATORIOS_BANDEIRAS_CONTROLEREMESSAS_EXPORTAR
+Dado que tenha/nao tenha o direito "RELATORIOS_BANDEIRAS_CONTROLEREMESSAS_EXPORTAR"
+E que tenha/nao tenha acesso na tela "Controle de remessas"
+Quando informar "0237 - BRADESCO S/A" no campo "Banco"
+E clicar no botao "Pesquisar"
+Entao o botao "Exportar" devera estar habilitado/desabilitado
