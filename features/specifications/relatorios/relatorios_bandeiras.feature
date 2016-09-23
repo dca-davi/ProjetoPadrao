@@ -23,3 +23,12 @@ Cenario: Validar direito RELATORIOS_BANDEIRAS_CONTROLEDEACOESDECHARGEBACK_VER
 Dado que tenha/nao tenha o direito "RELATORIOS_BANDEIRAS_CONTROLEDEACOESDECHARGEBACK_VER"
 E que tenha/nao tenha acesso na tela "Controle de ação de chargeback"
 Entao o sistema exibira/nao exibira a tela "Controle de ação de chargeback"
+
+@RELATORIOS_BANDEIRAS_CONTROLEDEACOESDECHARGEBACK_EXPORTAR
+Cenario: Validar direito RELATORIOS_BANDEIRAS_CONTROLEDEACOESDECHARGEBACK_EXPORTAR
+Dado que tenha/nao tenha o direito "RELATORIOS_BANDEIRAS_CONTROLEDEACOESDECHARGEBACK_EXPORTAR"
+E que tenha/nao tenha acesso na tela "Controle de ação de chargeback"
+E selecionar a opcao "Débito/Crédito" no campo "Tipo Ação" da tela Controle de acao de chargeback
+E informar o periodo de "11/09/2016" ate "14/09/2016"
+Quando clicar no botao "Pesquisar"
+Entao o botao "Exportar" devera estar habilitado/desabilitado

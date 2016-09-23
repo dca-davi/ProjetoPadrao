@@ -291,4 +291,12 @@ class Utils
         aguardar_loading
         $encoded_img = $browser.driver.screenshot_as(:base64)
     end
+
+    def informar_periodo(de, ate)
+        2.times { $browser.text_field(id: /initialDate_input$/).set de }
+        sleep 1
+        2.times { $browser.text_field(id: /finalDate_input$/).set ate }
+        sleep 1
+        $browser.send_keys :tab
+    end
 end
