@@ -7,14 +7,14 @@ class Info_do_cliente
         Watir::Wait.until { $browser.button(text: botao).exists? }
         sleep 1
         case frame.downcase
-        when 'dados de cadastro', 'dados do tipo de pagamento', "detalhe da al\u00E7ada", "taxa efetiva m\u00E1xima", "par\u00E2metro para c\u00E1lculo do share", "\u00FAltimas transa\u00E7\u00F5es", "resultados"
+        when 'dados de cadastro', 'dados do tipo de pagamento', "detalhe da al\u00E7ada", "taxa efetiva m\u00E1xima", "par\u00E2metro para c\u00E1lculo do share", "\u00FAltimas transa\u00E7\u00F5es", 'resultados'
             if $browser.button(text: botao, index: 0).attribute_value('aria-disabled') == 'false'
                 $browser.button(text: botao, index: 0).click
                 sleep 3
             else
                 result = false
             end
-        when "endere\u00E7o do contrato", "atribui\u00E7\u00E3o de categoria/pre\u00E7o", "atribui\u00E7\u00E3o de categoria/pre\u00E7o", "dados da segmenta\u00E7\u00E3o", "resultados"
+        when "endere\u00E7o do contrato", "atribui\u00E7\u00E3o de categoria/pre\u00E7o", "atribui\u00E7\u00E3o de categoria/pre\u00E7o", "dados da segmenta\u00E7\u00E3o", 'resultados'
             if $browser.button(text: botao, index: 1).attribute_value('aria-disabled') == 'false'
                 $browser.button(text: botao, index: 1).click
                 sleep 3
@@ -212,6 +212,30 @@ class Info_do_cliente
     def click_primeiro_valorDia
         $browser.a(id: /link_cash_in_today/, index: 0).wait_until_present
         $browser.a(id: /link_cash_in_today/, index: 0).click
+        @@utils.aguardar_loading
+    end
+
+    def click_valor_movimentacao(item, dia = 'hoje')
+        case dia
+        when 'ontem'
+            dia = 'yesterday'
+        when 'hoje'
+            dia = 'today'
+        when 'atual'
+            dia = 'current'
+        else
+            raise("parametro dia inv\u00E1lido")
+        end
+
+        case item
+        when 'Vendas'
+            $browser.a(id: /link_cash_in_#{dia}/, index: 0).wait_until_present
+            $browser.a(id: /link_cash_in_#{dia}/, index: 0).click
+        when 'Ajustes financeiros'
+            $browser.a(id: /link_adjustment_#{dia}/, index: 0).wait_until_present
+            $browser.a(id: /link_adjustment_#{dia}/, index: 0).click
+        end
+
         @@utils.aguardar_loading
     end
 end
