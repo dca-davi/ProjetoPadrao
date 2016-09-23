@@ -248,6 +248,8 @@ class Utils
             campo = 'topicMaintenanceId_input'
         when "subt\u00F3pico de manuten\u00E7\u00E3o"
             campo = 'subTopicMaintenanceId_input'
+        when 'banco'
+            campo = 'input_ClearingConsignmentsControlBeanbank_input'
         end
 
         $browser.text_field(id: /:#{campo}$/).when_present.set valor
@@ -293,10 +295,23 @@ class Utils
     end
 
     def informar_periodo(de, ate)
-        2.times { $browser.text_field(id: /initialDate_input$/).set de }
+        2.times { $browser.text_field(id: /[I|i]nitialDate_input$/).set de }
         sleep 1
-        2.times { $browser.text_field(id: /finalDate_input$/).set ate }
+        2.times { $browser.text_field(id: /[F|f]inalDate_input$/).set ate }
         sleep 1
         $browser.send_keys :tab
+        $encoded_img = $browser.driver.screenshot_as(:base64)
+    end
+
+    def validar_link(texto, i = 0)
+        sleep 1
+        if $browser.a(text: texto, index: i).present?
+            $browser.a(text: texto, index: i).click
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+            return true
+        else
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+            return false
+        end
     end
 end
