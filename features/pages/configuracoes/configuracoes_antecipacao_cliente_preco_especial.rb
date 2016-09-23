@@ -1,6 +1,6 @@
-class Configuracoes_antecipacaoVendas_precificacao
+class Configuracoes_antecipacao_cliente_preco_especial
     # Demis >>>
-    def validar_painel_grid
+    def validar_painel_grid(_grid)
         if $browser.div(id: /tabViewSpecialPriceId/).span(text: 'Resultados').exists?
             $encoded_img = $browser.driver.screenshot_as(:base64)
             return true
