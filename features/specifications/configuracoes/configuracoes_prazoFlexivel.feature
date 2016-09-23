@@ -37,5 +37,18 @@ Cenario: Validar direito CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_SEGMENTACAOPRA
 Dado que tenha/nao tenha o direito "CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_SEGMENTACAOPRAZO_EDITAR"
 E que tenha/nao tenha acesso na tela "Precificação_prazoFlexivel"
 E clicar na aba "Segmentação do Prazo Flexível"
-E clicar no botao "Editar" do frame "Dados da segmentação"
-Entao o sistema exibira/nao exibira a tela "Precificação"
+Entao clicar no botao "Editar" do frame "Dados da segmentação"
+
+@CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_CATEGORIAS_VER
+Cenario: Validar direito CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_CATEGORIAS_VER
+Dado que tenha/nao tenha o direito "CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_CATEGORIAS_VER"
+E que tenha/nao tenha acesso na tela "Precificação_prazoFlexivel"
+E o sistema exibira/nao exibira a tela "Precificação"
+Entao clicar no botao "Editar" do frame "Resultados"
+
+@CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_CATEGORIAS_REMOVER
+Cenario: Validar direito CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_CATEGORIAS_REMOVER
+Dado que tenha/nao tenha o direito "CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_CATEGORIAS_REMOVER"
+E que tenha/nao tenha acesso na tela "Precificação_prazoFlexivel"
+E o sistema exibira/nao exibira a tela "Precificação"
+Entao clicar no botao "Cancelar tabela" do frame "Resultados"
