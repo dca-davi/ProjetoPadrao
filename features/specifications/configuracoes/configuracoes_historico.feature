@@ -55,3 +55,11 @@ E que tenha/nao tenha acesso na tela "Histórico de manutenção"
 Quando informar "Cliente" no campo "Tópico de manutenção"
 E clicar no botao "Pesquisar"
 Então localizar o frame "Resultados"
+
+@CONFIGURACOES_HISTORICOALTERACOES_CADASTROCIELO_VER
+Cenario: Validar direito CONFIGURACOES_HISTORICOALTERACOES_CADASTROCIELO_VER
+Dado que tenha/nao tenha o direito "CONFIGURACOES_HISTORICOALTERACOES_CADASTROCIELO_VER"
+E que tenha/nao tenha acesso na tela "Histórico de manutenção"
+Quando informar "Cliente" no campo "Tópico de manutenção"
+E clicar no botao "Pesquisar"
+Então localizar o frame "Resultados"
