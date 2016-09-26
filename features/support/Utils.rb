@@ -266,27 +266,6 @@ class Utils
         end
     end
 
-    def selecionar_combo_box(opcao, combo_default)
-        sleep 1
-        if $browser.label(text: combo_default).exist?
-            sleep 1
-            $browser.label(text: combo_default).click
-            result = true
-        else
-            result = false
-        end
-
-        if $browser.li(text: opcao).exist?
-            sleep 1
-            $browser.li(text: opcao).click
-            result = true
-        else
-            result = false
-        end
-        sleep 3
-        $encoded_img = $browser.driver.screenshot_as(:base64)
-    end
-
     def selecionar_valor_combobox(id, valor, i = 0)
         Watir::Wait.until { $browser.div(id: /#{id}/).exists? }
         $browser.execute_script('arguments[0].click()', $browser.div(id: /#{id}/, index: i).li(text: valor))
