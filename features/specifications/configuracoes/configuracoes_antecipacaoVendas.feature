@@ -124,7 +124,7 @@ E o sistema exibira/nao exibira a tela "Exceção"
 Entao clicar no botao "Exportar"
 # Lucas <<<
 
-# Raraael >>>
+# Rafael >>>
 @CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOES_GERAIS_VER
 Cenario: Validar direito CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOES_GERAIS_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOES_GERAIS_VER"

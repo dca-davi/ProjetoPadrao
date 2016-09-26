@@ -203,12 +203,15 @@ class Utils
 
     def clicar_botao_acao(acao)
         sleep 2
-        if acao == 'Visualizar'
+        case acao
+        when 'Visualizar'
             acao = 'icon[_]?view|btn_detail'
-        elsif acao == 'Editar'
-            acao = 'ico[_]?edit|btn_edit'
-        elsif acao == 'Remover'
+        when 'Editar'
+            acao = 'ico[_]?edit|btn_edit|button_W33'
+        when 'Remover'
             acao = 'ico[_]?cancel|btn_cancel'
+        when 'Aprovar'
+            acao = 'button_FPi'
         end
         sleep 2
         if $browser.a(id: /#{acao}$/).exist?
@@ -247,19 +250,21 @@ class Utils
     def preencher_campo_input(valor, campo)
         case campo.downcase
         when "t\u00F3pico de manuten\u00E7\u00E3o"
-            campo = 'topicMaintenanceId_input'
+            campo = ':topicMaintenanceId_input'
         when "subt\u00F3pico de manuten\u00E7\u00E3o"
-            campo = 'subTopicMaintenanceId_input'
+            campo = ':subTopicMaintenanceId_input'
         when 'banco'
             campo = 'input_ClearingConsignmentsControlBeanbank_input'
+        when 'protocolo'
+            campo = 'input_ClearingSefazDemandListBeanfilterprotocolNumber'
         end
 
-        $browser.text_field(id: /:#{campo}$/).when_present.set valor
+        $browser.text_field(id: /#{campo}$/).when_present.set valor
         aguardar_loading
         $browser.send_keys :tab
         aguardar_loading
 
-        if $browser.text_field(id: /:#{campo}$/).value != ''
+        if $browser.text_field(id: /#{campo}$/).value != ''
             $encoded_img = $browser.driver.screenshot_as(:base64)
             return true
         else
