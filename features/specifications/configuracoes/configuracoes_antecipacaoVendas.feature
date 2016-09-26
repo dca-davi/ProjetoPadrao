@@ -122,6 +122,7 @@ Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAORESER
 E que tenha/nao tenha acesso na tela "Exceção_antecipaçãoVendas"
 E o sistema exibira/nao exibira a tela "Exceção"
 Entao clicar no botao "Exportar"
+
 # Lucas <<<
 
 # Raraael >>>

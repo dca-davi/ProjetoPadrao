@@ -25,3 +25,19 @@ Dado que tenha/nao tenha o direito "CLIENTES_INFORMACOESFINANCEIRAS_EXPORTAR"
 E que tenha/nao tenha acesso na tela "Resumo financeiro"
 Quando selecionar um valor na tabela de Informacoes financeiras
 Entao o botao "Exportar" devera estar habilitado/desabilitado
+
+@CLIENTES_INFORMACOESFINANCEIRAS_INTERCAMBIO_VER
+Cenario: Validar direito CLIENTES_INFORMACOESFINANCEIRAS_INTERCAMBIO_VER
+Dado que tenha/nao tenha o direito "CLIENTES_INFORMACOESFINANCEIRAS_INTERCAMBIO_VER"
+E que tenha/nao tenha acesso na tela "Resumo financeiro"
+E selecionar o item "vendas" de "hoje"
+Quando clicar no item em consolidado de vendas
+Então Expandir o campo da transação de venda
+
+@CLIENTES_INFORMACOESFINANCEIRAS_VENDASCONSOLIDADAS_INTERCAMBIO_VER
+Cenario: Validar direito CLIENTES_INFORMACOESFINANCEIRAS_VENDASCONSOLIDADAS_INTERCAMBIO_VER
+Dado que tenha/nao tenha o direito "CLIENTES_INFORMACOESFINANCEIRAS_VENDASCONSOLIDADAS_INTERCAMBIO_VER"
+E que tenha/nao tenha acesso na tela "Resumo financeiro"
+E selecionar o item "vendas" de "ontem"
+Quando clicar no item em consolidado de vendas
+Então Expandir o campo da transação de venda
