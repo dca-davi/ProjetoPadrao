@@ -41,6 +41,8 @@ class Operacoes_Rejeicao
           result = false
         end
       end
+      sleep 2
+        $encoded_img = $browser.driver.screenshot_as(:base64)
     end
 
 end

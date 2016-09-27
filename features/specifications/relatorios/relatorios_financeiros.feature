@@ -41,3 +41,18 @@ Cenario: Validar direito RELATORIOS_DIVERGENCIASRESUMO_VER
 Dado que tenha/nao tenha o direito "RELATORIOS_DIVERGENCIASRESUMO_VER"
 E que tenha/nao tenha acesso na tela "Divergências do resumo financeiro"
 Entao o sistema exibira/nao exibira a tela "Divergências"
+
+@RELATORIOS_FINANCEIROS_CONTABEIS_VER
+Cenario: Validar direito RELATORIOS_FINANCEIROS_CONTABEIS_VER
+Dado que tenha/nao tenha o direito "RELATORIOS_FINANCEIROS_CONTABEIS_VER"
+E que tenha/nao tenha acesso na tela "Resumo contábil sintético"
+Quando selecionar a data "27/09/2016" da pagina "Resumo contábil sintético"
+Entao clicar no botao "Pesquisar"
+
+@RELATORIOS_FINANCEIROS_PAGAMENTOSBAIXADOSSEMRETORNODOSBANCOS_EXPORTAR
+Cenario: Validar direito RELATORIOS_FINANCEIROS_PAGAMENTOSBAIXADOSSEMRETORNODOSBANCOS_EXPORTAR
+Dado que tenha/nao tenha o direito "RELATORIOS_FINANCEIROS_PAGAMENTOSBAIXADOSSEMRETORNODOSBANCOS_EXPORTAR"
+E que tenha/nao tenha acesso na tela "Pagamentos baixados sem retorno"
+Quando selecionar a data "27/09/2016" da pagina "Pagamentos baixados sem retorno"
+Entao clicar no botao "Pesquisar"
+Entao clicar no botao "Exportar"
