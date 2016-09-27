@@ -137,7 +137,9 @@ class Utils
         else
             result = false
         end
-        sleep 6
+        sleep 4
+        aguardar_loading
+        sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
         result
     end
@@ -201,12 +203,15 @@ class Utils
 
     def clicar_botao_acao(acao)
         sleep 2
-        if acao == 'Visualizar'
+        case acao
+        when 'Visualizar'
             acao = 'icon[_]?view|btn_detail'
-        elsif acao == 'Editar'
-            acao = 'ico[_]?edit|btn_edit'
-        elsif acao == 'Remover'
+        when 'Editar'
+            acao = 'ico[_]?edit|btn_edit|button_W33'
+        when 'Remover'
             acao = 'ico[_]?cancel|btn_cancel'
+        when 'Aprovar'
+            acao = 'button_FPi'
         end
         sleep 2
         if $browser.a(id: /#{acao}$/).exist?
@@ -245,17 +250,21 @@ class Utils
     def preencher_campo_input(valor, campo)
         case campo.downcase
         when "t\u00F3pico de manuten\u00E7\u00E3o"
-            campo = 'topicMaintenanceId_input'
+            campo = ':topicMaintenanceId_input'
         when "subt\u00F3pico de manuten\u00E7\u00E3o"
-            campo = 'subTopicMaintenanceId_input'
+            campo = ':subTopicMaintenanceId_input'
+        when 'banco'
+            campo = 'input_ClearingConsignmentsControlBeanbank_input'
+        when 'protocolo'
+            campo = 'input_ClearingSefazDemandListBeanfilterprotocolNumber'
         end
 
-        $browser.text_field(id: /:#{campo}$/).when_present.set valor
+        $browser.text_field(id: /#{campo}$/).when_present.set valor
         aguardar_loading
         $browser.send_keys :tab
         aguardar_loading
 
-        if $browser.text_field(id: /:#{campo}$/).value != ''
+        if $browser.text_field(id: /#{campo}$/).value != ''
             $encoded_img = $browser.driver.screenshot_as(:base64)
             return true
         else
@@ -264,31 +273,31 @@ class Utils
         end
     end
 
-    def selecionar_combo_box(opcao, combo_default)
-        sleep 1
-        if $browser.label(text: combo_default).exist?
-            sleep 1
-            $browser.label(text: combo_default).click
-            result = true
-        else
-            result = false
-        end
-
-        if $browser.li(text: opcao).exist?
-            sleep 1
-            $browser.li(text: opcao).click
-            result = true
-        else
-            result = false
-        end
-        sleep 3
+    def selecionar_valor_combobox(id, valor, i = 0)
+        Watir::Wait.until { $browser.div(id: /#{id}/).exists? }
+        $browser.execute_script('arguments[0].click()', $browser.div(id: /#{id}/, index: i).li(text: valor))
+        aguardar_loading
         $encoded_img = $browser.driver.screenshot_as(:base64)
     end
 
-    def selecionar_valor_combobox(id, valor)
-        Watir::Wait.until { $browser.div(id: /#{id}/).exists? }
-        $browser.execute_script('arguments[0].click()', $browser.div(id: /#{id}/).li(text: valor))
-        aguardar_loading
+    def informar_periodo(de, ate)
+        2.times { $browser.text_field(id: /[I|i]nitialDate_input$/).set de }
+        sleep 1
+        2.times { $browser.text_field(id: /[F|f]inalDate_input$/).set ate }
+        sleep 1
+        $browser.send_keys :tab
         $encoded_img = $browser.driver.screenshot_as(:base64)
+    end
+
+    def validar_link(texto, i = 0)
+        sleep 1
+        if $browser.a(text: texto, index: i).present?
+            $browser.a(text: texto, index: i).click
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+            return true
+        else
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+            return false
+        end
     end
 end
