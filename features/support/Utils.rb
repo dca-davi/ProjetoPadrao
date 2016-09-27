@@ -257,6 +257,9 @@ class Utils
             campo = 'input_ClearingConsignmentsControlBeanbank_input'
         when 'protocolo'
             campo = 'input_ClearingSefazDemandListBeanfilterprotocolNumber'
+        when 'banco acumulo diario'
+            campo = 'tabAccumulatedDaily:bancoAssociation_input'
+
         end
 
         $browser.text_field(id: /#{campo}$/).when_present.set valor
