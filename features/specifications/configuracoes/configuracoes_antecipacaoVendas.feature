@@ -123,6 +123,26 @@ E que tenha/nao tenha acesso na tela "Exceção_antecipaçãoVendas"
 E o sistema exibira/nao exibira a tela "Exceção"
 Entao clicar no botao "Exportar"
 
+@SETUP_ARV_CUSTOS_CUSTO_CAPTACAO_EDITAR
+Cenario: Validar direito SETUP_ARV_CUSTOS_CUSTO_CAPTACAO_EDITAR
+Dado que tenha/nao tenha o direito "SETUP_ARV_CUSTOS_CUSTO_CAPTACAO_EDITAR"
+E que tenha/nao tenha acesso na tela "Custos"
+Quando clicar na aba "CUSTO DE CAPTAÇÃO"
+E selecionar o botao: "incluir - custo de captacao"
+E informar "29,22" no campo "previsto - incluir"
+Entao clicar no botao: "confirmar - custo de captacao - incluir"
+Quando clicar no botao: "ok"
+E clicar na acao "editar - antecipação de vendas - custos"
+Quando informar "35,00" no campo "previsto - editar"
+E clicar no botao: "confirmar - custo de captacao - editar"
+Entao clicar no botao: "ok - editar"
+
+
+
+
+
+#Entao clicar no botao "Exportar"
+
 # Lucas <<<
 
 # Rafael >>>

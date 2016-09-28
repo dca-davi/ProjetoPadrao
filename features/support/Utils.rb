@@ -205,13 +205,15 @@ class Utils
         sleep 2
         case acao
         when 'Visualizar'
-            acao = 'icon[_]?view|btn_detail'
+            acao = 'icon[_]?view|btn_detail|button_RSR'
         when 'Editar'
-            acao = 'ico[_]?edit|btn_edit|button_W33'
+            acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi'
         when 'Remover'
             acao = 'ico[_]?cancel|btn_cancel'
         when 'Aprovar'
             acao = 'button_FPi'
+          when 'editar - antecipação de vendas - custos'
+            acao = 'tabCosts:table_captation_costs:0:buttonEditId'
         end
         sleep 2
         if $browser.a(id: /#{acao}$/).exist?
@@ -257,6 +259,20 @@ class Utils
             campo = 'input_ClearingConsignmentsControlBeanbank_input'
         when 'protocolo'
             campo = 'input_ClearingSefazDemandListBeanfilterprotocolNumber'
+        when 'banco - acumulo diario'
+            campo = 'tabAccumulatedDaily:bancoAssociation_input'
+        when 'numero do cliente individual'
+            campo = 'tabProduct:mskClientIdentificationNumber'
+        when 'cnpj'
+            campo = 'tabProduct:mskClientIdentificationNumber'
+        when 'raiz do cnpj'
+            campo = 'tabProduct:mskClientIdentificationNumber'
+        when 'cpf'
+            campo = 'tabProduct:mskClientIdentificationNumber'
+          when 'previsto - incluir'
+            campo = 'tabCosts:input_ArvCostCaptationBeancostCaptationSelectedpcCdiForecast_pPP'
+          when 'previsto - editar'
+            campo = 'tabCosts:input_ArvCostCaptationBeancostCaptationSelectedpcCdiForecast'
         end
 
         $browser.text_field(id: /#{campo}$/).when_present.set valor

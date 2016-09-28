@@ -82,5 +82,5 @@ class Trava_Prazo_Vencido
             end
             $encoded_img = $browser.driver.screenshot_as(:base64)
         end
-    end
+    end    
 end
