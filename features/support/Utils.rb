@@ -205,7 +205,7 @@ class Utils
         sleep 2
         case acao
         when 'Visualizar'
-            acao = 'icon[_]?view|btn_detail'
+            acao = 'icon[_]?view|btn_detail|button_RSR'
         when 'Editar'
             acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi'
         when 'Remover'
@@ -259,13 +259,13 @@ class Utils
             campo = 'input_ClearingSefazDemandListBeanfilterprotocolNumber'
         when 'banco - acumulo diario'
             campo = 'tabAccumulatedDaily:bancoAssociation_input'
-          when 'numero do cliente individual'
+        when 'numero do cliente individual'
             campo = 'tabProduct:mskClientIdentificationNumber'
-          when 'cnpj'
+        when 'cnpj'
             campo = 'tabProduct:mskClientIdentificationNumber'
-          when 'raiz do cnpj'
+        when 'raiz do cnpj'
             campo = 'tabProduct:mskClientIdentificationNumber'
-          when 'cpf'
+        when 'cpf'
             campo = 'tabProduct:mskClientIdentificationNumber'
         end
 
