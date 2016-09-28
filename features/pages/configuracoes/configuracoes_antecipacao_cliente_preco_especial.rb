@@ -4,9 +4,6 @@ class Configuracoes_antecipacao_cliente_preco_especial
         if $browser.div(id: /tabViewSpecialPriceId/).span(text: 'Resultados').exists?
             $encoded_img = $browser.driver.screenshot_as(:base64)
             return true
-        # elsif $browser.div(id: /label_search_data/).span(text: 'Dados da Pesquisa').exists?
-        #    $encoded_img = $browser.driver.screenshot_as(:base64)
-        #    return true
         else
             $encoded_img = $browser.driver.screenshot_as(:base64)
             return false

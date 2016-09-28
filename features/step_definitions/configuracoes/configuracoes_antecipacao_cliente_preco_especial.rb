@@ -1,5 +1,5 @@
 # CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_VER
-Entao(/^a aplicacao exibira\/nao exibira o painel grid "([^"]*)"$/) do |painel|
+Entao(/^a aplicacao exibira\/nao exibira o painel grid da tela cacfv "([^"]*)"$/) do |painel|
     cavp = Configuracoes_antecipacao_cliente_preco_especial.new
     cavpGridResultados = cavp.validar_painel_grid(painel)
     if !cavpGridResultados && @tem_direito

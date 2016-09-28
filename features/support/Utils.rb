@@ -257,6 +257,16 @@ class Utils
             campo = 'input_ClearingConsignmentsControlBeanbank_input'
         when 'protocolo'
             campo = 'input_ClearingSefazDemandListBeanfilterprotocolNumber'
+        when 'banco - acumulo diario'
+            campo = 'tabAccumulatedDaily:bancoAssociation_input'
+          when 'numero do cliente individual'
+            campo = 'tabProduct:mskClientIdentificationNumber'
+          when 'cnpj'
+            campo = 'tabProduct:mskClientIdentificationNumber'
+          when 'raiz do cnpj'
+            campo = 'tabProduct:mskClientIdentificationNumber'
+          when 'cpf'
+            campo = 'tabProduct:mskClientIdentificationNumber'
         end
 
         $browser.text_field(id: /#{campo}$/).when_present.set valor
