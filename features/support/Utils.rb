@@ -207,7 +207,7 @@ class Utils
         when 'Visualizar'
             acao = 'icon[_]?view|btn_detail'
         when 'Editar'
-            acao = 'ico[_]?edit|btn_edit|button_W33'
+            acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi'
         when 'Remover'
             acao = 'ico[_]?cancel|btn_cancel'
         when 'Aprovar'

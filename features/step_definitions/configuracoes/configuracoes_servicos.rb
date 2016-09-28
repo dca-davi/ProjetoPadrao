@@ -8,3 +8,9 @@ Entao(/^selecionar a opcao "([^"]*)" no campo "([^"]*)" da tela contrato padrao$
         raise('Usuario nao tem direito para selecionar o ComboBox')
     end
 end
+
+Quando(/^selecionar o Indice "([^"]*)"$/) do |valor|
+    next if @pass_test == true
+    config = Configuracoes.new
+    config.selecionar_indice(valor)
+end
