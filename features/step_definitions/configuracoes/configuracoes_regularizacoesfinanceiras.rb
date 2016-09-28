@@ -11,7 +11,8 @@ end
 
 # CONFIGURACOES_REGULARIZACOESFINANCEIRAS_REGRADELIBERACAO_VER
 Entao(/^a aplicacao exibira\/nao exibira o painel grid da tela crfrl "([^"]*)"$/) do |painel|
-    @@Configuracoes_regularizaoesfinanceiras.validar_painel_grid(painel)
+    crfr = Configuracoes_regularizaoesfinanceiras.new
+    crfrlGridResultados = crfr.validar_painel_grid(painel)
     if !crfrlGridResultados && @tem_direito
         raise('Usuario nao pode acessar a opcao na qual tem direito')
     elsif crfrlGridResultados && !@tem_direito
