@@ -8,12 +8,20 @@ Contexto:
 Dado que eu faca login
 #E informe o EC "1018242187"
 
-
 @OPERACOES_ANTECIPACAOVENDAS_ACUMDIARIOBANCO_VER
 Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_ACUMDIARIOBANCO_VER
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ACUMDIARIOBANCO_VER"
 E que tenha/nao tenha acesso na tela "Acumulado diário"
 Quando clicar na aba "Por Banco"
-Quando informar "1-BANCO DO BRASIL S.A." no campo "banco acumulo diario"
+Quando informar "1-BANCO DO BRASIL S.A." no campo "banco - acumulo diario"
 E selecionar a data "08/09/2016" da pagina "Acumulado diario - Por banco"
-Então clicar no botao "Pesquisar"
+Entao clicar no botao "Pesquisar"
+
+@OPERACOES_ANTECIPACAOVENDAS_ACUMDIARIOCANAL_VER
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_ACUMDIARIOBANCO_VER
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ACUMDIARIOBANCO_VER"
+E que tenha/nao tenha acesso na tela "Acumulado diário"
+Quando clicar na aba "Por Canal"
+Quando selecionar "CENTRAL" do campo "canal - acumulado diario"
+E selecionar a data "08/09/2016" da pagina "Acumulado diario - Por canal"
+Entao clicar no botao Pesquisar

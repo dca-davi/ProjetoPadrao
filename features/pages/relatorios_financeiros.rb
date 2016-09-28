@@ -22,10 +22,23 @@ class Relatorios_financeiros
     else
       result = false
     end
-  #Usado para a tela de Operações - antecipacao de vendas
+  #Usado para a tela de Operações - antecipacao de vendas >>
   when 'Acumulado diario - Por banco'
     if $browser.text_field(:id => /tabAccumulatedDaily:paymentDayId_input/).exist?
     2.times {$browser.text_field(:id => /tabAccumulatedDaily:paymentDayId_input/).set data}
+    sleep 2
+    $browser.send_keys :tab
+    result = true
+  else
+    result = false
+  end
+  sleep 2
+      $encoded_img = $browser.driver.screenshot_as(:base64)
+
+
+  when 'Acumulado diario - Por canal'
+    if $browser.text_field(:id => /tabAccumulatedDaily:paymentDayChannelId_input/).exist?
+    2.times {$browser.text_field(:id => /tabAccumulatedDaily:paymentDayChannelId_input/).set data}
     sleep 2
     $browser.send_keys :tab
     result = true
