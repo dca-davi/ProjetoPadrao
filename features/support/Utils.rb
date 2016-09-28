@@ -212,6 +212,8 @@ class Utils
             acao = 'ico[_]?cancel|btn_cancel'
         when 'Aprovar'
             acao = 'button_FPi'
+          when 'editar - antecipação de vendas - custos'
+            acao = 'tabCosts:table_captation_costs:0:buttonEditId'
         end
         sleep 2
         if $browser.a(id: /#{acao}$/).exist?
@@ -267,6 +269,10 @@ class Utils
             campo = 'tabProduct:mskClientIdentificationNumber'
           when 'cpf'
             campo = 'tabProduct:mskClientIdentificationNumber'
+          when 'previsto - incluir'
+            campo = 'tabCosts:input_ArvCostCaptationBeancostCaptationSelectedpcCdiForecast_pPP'
+          when 'previsto - editar'
+            campo = 'tabCosts:input_ArvCostCaptationBeancostCaptationSelectedpcCdiForecast'
         end
 
         $browser.text_field(id: /#{campo}$/).when_present.set valor

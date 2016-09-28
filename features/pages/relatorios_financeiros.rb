@@ -1,4 +1,5 @@
 class Relatorios_financeiros
+  @@utils = Utils.new
 
   def informar_periodo_unico(data, tela)
 

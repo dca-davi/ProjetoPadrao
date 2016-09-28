@@ -1,4 +1,4 @@
-Entao(/^o campo "([^"]*)" existe\/nao existe$/) do |campo|\
+Entao(/^o campo "([^"]*)" existe\/nao existe$/) do |campo|
     next if @pass_test == true
     utils = Utils.new
     statusCampo = utils.verificar_label(campo)

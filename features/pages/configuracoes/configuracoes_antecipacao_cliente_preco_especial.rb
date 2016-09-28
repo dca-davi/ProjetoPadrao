@@ -1,4 +1,5 @@
 class Configuracoes_antecipacao_cliente_preco_especial
+  @@utils = Utils.new
     # Demis >>>
     def validar_painel_grid(_grid)
         if $browser.div(id: /tabViewSpecialPriceId/).span(text: 'Resultados').exists?
