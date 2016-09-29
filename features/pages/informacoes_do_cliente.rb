@@ -216,14 +216,14 @@ class Info_do_cliente
     end
 
     def click_valor_movimentacao(item, dia = 'hoje')
-      sleep 1
+        sleep 1
         case dia
         when 'ontem'
-          dia = 'yesterday'
+            dia = 'yesterday'
         when 'hoje'
-          dia = 'today'
+            dia = 'today'
         when 'atual'
-          dia = 'current'
+            dia = 'current'
         else
             raise("parametro dia inv\u00E1lido")
         end
@@ -231,15 +231,25 @@ class Info_do_cliente
         sleep 3
         case item
         when 'vendas'
-          $browser.a(id: /form:tabVisao:link_cash_in_#{dia}/).wait_until_present
-          $browser.a(id: /form:tabVisao:link_cash_in_#{dia}/).click
+            $browser.a(id: /form:tabVisao:link_cash_in_#{dia}/).wait_until_present
+            $browser.a(id: /form:tabVisao:link_cash_in_#{dia}/).click
         when 'ajustes financeiros'
-          $browser.a(id: /form:tabVisao:link_cash_in_#{dia}/).wait_until_present
-          $browser.a(id: /form:tabVisao:link_cash_in_#{dia}/).click
+            $browser.a(id: /form:tabVisao:link_cash_in_#{dia}/).wait_until_present
+            $browser.a(id: /form:tabVisao:link_cash_in_#{dia}/).click
         end
         sleep 2
         @@utils.aguardar_loading
         sleep 1
         $encoded_img = $browser.driver.screenshot_as(:base64)
+    end
+
+    def conta_truncada?
+        valor = $browser.tbody(id: /MerchantBanks_data/).td(index: 3).text
+
+        if (valor.include? 'x') || (valor.include? 'X')
+            return true
+        else
+            return false
+        end
     end
 end

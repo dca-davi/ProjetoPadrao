@@ -150,11 +150,18 @@ class Utils
             $encoded_img = $browser.driver.screenshot_as(:base64)
             return false
         else
-            $browser.li(text: aba).wait_until_present
-            $browser.li(text: aba).click
-            sleep 3
-            $encoded_img = $browser.driver.screenshot_as(:base64)
-            return true
+            Watir::Wait.until { $browser.li(text: aba).exist? }
+            if $browser.li(text: aba).present?
+                $browser.li(text: aba).click
+                sleep 3
+                $encoded_img = $browser.driver.screenshot_as(:base64)
+                return true
+            else
+                $browser.execute_script('arguments[0].click()', $browser.li(text: aba))
+                sleep 3
+                $encoded_img = $browser.driver.screenshot_as(:base64)
+                return true
+            end
         end
     end
 
@@ -170,12 +177,12 @@ class Utils
         end
     end
 
-    def validar_botao(botao)
-        Watir::Wait.until { $browser.button(text: botao).exists? }
-        if $browser.button(text: botao).attribute_value('aria-disabled') == 'true'
+    def validar_botao(botao, i = 0, click = true)
+        Watir::Wait.until { $browser.button(text: botao, index: i).exists? }
+        if $browser.button(text: botao, index: i).attribute_value('aria-disabled') == 'true'
             result = false
         else
-            $browser.button(text: botao).click
+            $browser.button(text: botao, index: i).click if click
             result = true
         end
         sleep 3
@@ -205,14 +212,14 @@ class Utils
         sleep 2
         case acao
         when 'Visualizar'
-            acao = 'icon[_]?view|btn_detail|button_RSR'
+            acao = 'icon[_]?view|btn_detail|button_RSR|button_Jvn'
         when 'Editar'
             acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi'
         when 'Remover'
             acao = 'ico[_]?cancel|btn_cancel'
         when 'Aprovar'
             acao = 'button_FPi'
-          when 'editar - antecipação de vendas - custos'
+        when 'editar - antecipação de vendas - custos'
             acao = 'tabCosts:table_captation_costs:0:buttonEditId'
         end
         sleep 2
@@ -269,10 +276,12 @@ class Utils
             campo = 'tabProduct:mskClientIdentificationNumber'
         when 'cpf'
             campo = 'tabProduct:mskClientIdentificationNumber'
-          when 'previsto - incluir'
+        when 'previsto - incluir'
             campo = 'tabCosts:input_ArvCostCaptationBeancostCaptationSelectedpcCdiForecast_pPP'
-          when 'previsto - editar'
+        when 'previsto - editar'
             campo = 'tabCosts:input_ArvCostCaptationBeancostCaptationSelectedpcCdiForecast'
+        when 'numero do cliente - excecao'
+            campo = 'tabViewExceptionId:tabViewAbsentCard_id:txtSearchClientId'
         end
 
         $browser.text_field(id: /#{campo}$/).when_present.set valor
