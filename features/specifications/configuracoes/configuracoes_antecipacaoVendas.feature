@@ -148,11 +148,6 @@ E informar "1007595105" no campo "numero do cliente - excecao"
 Quando clicar no botao "OK" da tela excecao - cartao nao presente - incluir
 E selecionar o numero do clinte
 Entao clicar no botao "Confirmar"
-
-
-
-
-
 # Lucas <<<
 
 # Rafael >>>
@@ -174,3 +169,17 @@ Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_CONFGERAIS_C
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
 Entao clicar no botao "Editar dados" do frame "Cartão não presente"
 # Rafael <<<
+
+# Demis >>>
+@CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECIPACAOPROGRAMADA_EDITAR
+Cenario: Validar direito CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECIPACAOPROGRAMADA_EDITAR
+Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECIPACAOPROGRAMADA_EDITAR"
+E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
+Entao clicar no botao "Editar dados" do frame "Antecipação programada"
+
+@CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECIPACAOPROGRAMADA_VER
+Cenario: Validar direito CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECIPACAOPROGRAMADA_VER
+Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECIPACAOPROGRAMADA_VER"
+E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
+Entao localizar o fram "Antecipação programada"
+# Demis <<<

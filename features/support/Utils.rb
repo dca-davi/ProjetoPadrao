@@ -177,12 +177,12 @@ class Utils
         end
     end
 
-    def validar_botao(botao)
-        Watir::Wait.until { $browser.button(text: botao).exists? }
-        if $browser.button(text: botao).attribute_value('aria-disabled') == 'true'
+    def validar_botao(botao, i = 0, click = true)
+        Watir::Wait.until { $browser.button(text: botao, index: i).exists? }
+        if $browser.button(text: botao, index: i).attribute_value('aria-disabled') == 'true'
             result = false
         else
-            $browser.button(text: botao).click
+            $browser.button(text: botao, index: i).click if click
             result = true
         end
         sleep 3
@@ -212,7 +212,7 @@ class Utils
         sleep 2
         case acao
         when 'Visualizar'
-            acao = 'icon[_]?view|btn_detail|button_RSR'
+            acao = 'icon[_]?view|btn_detail|button_RSR|button_Jvn'
         when 'Editar'
             acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi'
         when 'Remover'
