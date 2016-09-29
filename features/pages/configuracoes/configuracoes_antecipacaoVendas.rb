@@ -59,4 +59,28 @@ class Configuracoes_antecipacaoVendas
     sleep 4
     $encoded_img = $browser.driver.screenshot_as(:base64)
   end
+
+  def selecionar_radiobutton(frame)
+
+    case frame
+    when 'Todos da raiz'
+         if $browser.label(:text=> 'Todos da raiz').exist?
+           $browser.label(:text=> 'Todos da raiz').click
+           sleep 1
+           result = true
+         else
+           result - false
+         end
+       when 'Individualmente'
+         if $browser.label(:text=> 'Individualmente').exist?
+           $browser.label(:text=> 'Individualmente').click
+           sleep 1
+           result = true
+         else
+           result - false
+         end
+       end
+       sleep 3
+       $encoded_img = $browser.driver.screenshot_as(:base64)
+     end
 end

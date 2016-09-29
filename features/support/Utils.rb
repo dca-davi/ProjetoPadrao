@@ -273,6 +273,8 @@ class Utils
             campo = 'tabCosts:input_ArvCostCaptationBeancostCaptationSelectedpcCdiForecast_pPP'
           when 'previsto - editar'
             campo = 'tabCosts:input_ArvCostCaptationBeancostCaptationSelectedpcCdiForecast'
+          when 'numero do cliente - excecao'
+            campo = 'tabViewExceptionId:tabViewAbsentCard_id:txtSearchClientId'
         end
 
         $browser.text_field(id: /#{campo}$/).when_present.set valor
