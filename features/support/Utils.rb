@@ -153,12 +153,12 @@ class Utils
             Watir::Wait.until { $browser.li(text: aba).exist? }
             if $browser.li(text: aba).present?
                 $browser.li(text: aba).click
-                sleep 3
+                sleep 6
                 $encoded_img = $browser.driver.screenshot_as(:base64)
                 return true
             else
                 $browser.execute_script('arguments[0].click()', $browser.li(text: aba))
-                sleep 3
+                sleep 6
                 $encoded_img = $browser.driver.screenshot_as(:base64)
                 return true
             end

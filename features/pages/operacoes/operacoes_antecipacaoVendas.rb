@@ -38,4 +38,5 @@ class Operacoes_antecipacaoVendas
     sleep 3
       $encoded_img = $browser.driver.screenshot_as(:base64)
     end
+
 end
