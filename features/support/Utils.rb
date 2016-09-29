@@ -150,18 +150,18 @@ class Utils
             $encoded_img = $browser.driver.screenshot_as(:base64)
             return false
         else
-          Watir::Wait {$browser.li(text: aba).exist?}
-          if $browser.li(text: aba).present?
-            $browser.li(text: aba).click
-            sleep 3
-            $encoded_img = $browser.driver.screenshot_as(:base64)
-            return true
-          else
-            $browser.execute_script("arguments[0].click()", $browser.li(text: aba))
-            sleep 3
-            $encoded_img = $browser.driver.screenshot_as(:base64)
-            return true 
-          end
+            Watir::Wait.until { $browser.li(text: aba).exist? }
+            if $browser.li(text: aba).present?
+                $browser.li(text: aba).click
+                sleep 3
+                $encoded_img = $browser.driver.screenshot_as(:base64)
+                return true
+            else
+                $browser.execute_script('arguments[0].click()', $browser.li(text: aba))
+                sleep 3
+                $encoded_img = $browser.driver.screenshot_as(:base64)
+                return true
+            end
         end
     end
 
@@ -219,7 +219,7 @@ class Utils
             acao = 'ico[_]?cancel|btn_cancel'
         when 'Aprovar'
             acao = 'button_FPi'
-          when 'editar - antecipação de vendas - custos'
+        when 'editar - antecipação de vendas - custos'
             acao = 'tabCosts:table_captation_costs:0:buttonEditId'
         end
         sleep 2
@@ -276,11 +276,11 @@ class Utils
             campo = 'tabProduct:mskClientIdentificationNumber'
         when 'cpf'
             campo = 'tabProduct:mskClientIdentificationNumber'
-          when 'previsto - incluir'
+        when 'previsto - incluir'
             campo = 'tabCosts:input_ArvCostCaptationBeancostCaptationSelectedpcCdiForecast_pPP'
-          when 'previsto - editar'
+        when 'previsto - editar'
             campo = 'tabCosts:input_ArvCostCaptationBeancostCaptationSelectedpcCdiForecast'
-          when 'numero do cliente - excecao'
+        when 'numero do cliente - excecao'
             campo = 'tabViewExceptionId:tabViewAbsentCard_id:txtSearchClientId'
         end
 
