@@ -69,7 +69,7 @@ class Configuracoes_antecipacaoVendas
            sleep 1
            result = true
          else
-           result - false
+           result = false
          end
        when 'Individualmente'
          if $browser.label(:text=> 'Individualmente').exist?
@@ -77,10 +77,47 @@ class Configuracoes_antecipacaoVendas
            sleep 1
            result = true
          else
-           result - false
+           result = false
          end
        end
        sleep 3
+       $encoded_img = $browser.driver.screenshot_as(:base64)
+     end
+
+     def incluir_cartao_nao_presente
+       if $browser.li(text: "Incluir").exist?
+         $browser.execute_script("arguments[0].click()", $browser.li(:text => "Incluir", :index => 1))
+         sleep 1
+         result = true
+       else
+         result = false
+       end
+       $encoded_img = $browser.driver.screenshot_as(:base64)
+     end
+
+     def botao_incluir_cartao_nao_presente(botao)
+       sleep 2
+       if $browser.button(:id => /btnOkSearch$/).exist?
+         $browser.button(:id => /btnOkSearch$/).click
+         result = true
+       else
+         result = false
+       end
+       sleep 4
+       @@utils.aguardar_loading
+       sleep 1
+       $encoded_img = $browser.driver.screenshot_as(:base64)
+     end
+
+     def adicionar_novos_clientes
+       if $browser.tbody(:id => 'tabViewExceptionId:tabViewAbsentCard_id:tableIncludeCardId_data', :index => 0).exist?
+         $browser.tbody(:id => 'tabViewExceptionId:tabViewAbsentCard_id:tableIncludeCardId_data', :index => 0).click
+         sleep 1
+         result = true
+       else
+         result = false
+       end
+       sleep 2
        $encoded_img = $browser.driver.screenshot_as(:base64)
      end
 end

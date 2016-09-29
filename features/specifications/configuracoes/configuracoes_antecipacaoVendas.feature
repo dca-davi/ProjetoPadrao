@@ -142,10 +142,11 @@ Cenario: Validar direito CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAO_CARTAONAOPRESEN
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAO_CARTAONAOPRESENTE_EDITAR"
 E que tenha/nao tenha acesso na tela "Exceção_antecipaçãoVendas"
 Quando clicar na aba "Cartão não presente"
-Entao o link "Incluir" deve estar habilitado/desabilitado
+Entao clicar na opcao incluir em cartao nao presente
 Quando clicar selecionar a opcao "Individualmente"
 E informar "1007595105" no campo "numero do cliente - excecao"
-Quando clicar no botao "OK"
+Quando clicar no botao "OK" da tela excecao - cartao nao presente - incluir
+E selecionar o numero do clinte
 Entao clicar no botao "Confirmar"
 # Lucas <<<
 
