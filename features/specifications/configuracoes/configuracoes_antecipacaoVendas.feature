@@ -136,13 +136,6 @@ E clicar na acao "editar - antecipação de vendas - custos"
 Quando informar "35,00" no campo "previsto - editar"
 E clicar no botao: "confirmar - custo de captacao - editar"
 Entao clicar no botao: "ok - editar"
-
-
-
-
-
-#Entao clicar no botao "Exportar"
-
 # Lucas <<<
 
 # Rafael >>>
@@ -164,3 +157,17 @@ Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_CONFGERAIS_C
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
 Entao clicar no botao "Editar dados" do frame "Cartão não presente"
 # Rafael <<<
+
+# Demis >>>
+@CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECIPACAOPROGRAMADA_EDITAR
+Cenario: Validar direito CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECIPACAOPROGRAMADA_EDITAR
+Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECIPACAOPROGRAMADA_EDITAR"
+E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
+Entao clicar no botao "Editar dados" do frame "Antecipação programada"
+
+@CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECIPACAOPROGRAMADA_VER
+Cenario: Validar direito CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECIPACAOPROGRAMADA_VER
+Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECIPACAOPROGRAMADA_VER"
+E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
+Entao localizar o fram "Antecipação programada"
+# Demis <<<
