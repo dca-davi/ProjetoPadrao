@@ -4,7 +4,7 @@ class Configuracoes_regularizaoesfinanceiras
   @@utils = Utils.new
     # Demis >>>
     def validar_painel_grid(_grid)
-        if $browser.span(text: 'Dados da pesquisa').exists?
+        if $browser.div(text: 'Dados da pesquisa').exists?
             $encoded_img = $browser.driver.screenshot_as(:base64)
             return true
         else

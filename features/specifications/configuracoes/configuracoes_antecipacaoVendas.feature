@@ -137,11 +137,20 @@ Quando informar "35,00" no campo "previsto - editar"
 E clicar no botao: "confirmar - custo de captacao - editar"
 Entao clicar no botao: "ok - editar"
 
+@CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAO_CARTAONAOPRESENTE_EDITAR
+Cenario: Validar direito CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAO_CARTAONAOPRESENTE_EDITAR
+Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAO_CARTAONAOPRESENTE_EDITAR"
+E que tenha/nao tenha acesso na tela "Exceção_antecipaçãoVendas"
+Quando clicar na aba "Cartão não presente"
+Entao o link "Incluir" deve estar habilitado/desabilitado
+Quando clicar selecionar a opcao "Individualmente"
+E informar "1007595105" no campo "numero do cliente - excecao"
+Quando clicar no botao "OK"
+Entao clicar no botao "Confirmar"
 
 
 
 
-#Entao clicar no botao "Exportar"
 
 # Lucas <<<
 
