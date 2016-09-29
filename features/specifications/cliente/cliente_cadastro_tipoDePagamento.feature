@@ -24,8 +24,8 @@ E clicar no botao "Editar" do frame "Dados do tipo de pagamento"
 Entao o campo Codigo Amex devera estar habilitado/desabilitado
 
 @CLIENTES_CADASTRO_INFO_TIPODEPAGAMENTO_EDITAR
-Cenario: Validar direito CLIENTES_CADASTRO_INFO_TIPODEPAGAMENTOAMEX_EDITAR
-Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_TIPODEPAGAMENTOAMEX_EDITAR"
+Cenario: Validar direito CLIENTES_CADASTRO_INFO_TIPODEPAGAMENTO_EDITAR
+Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_TIPODEPAGAMENTO_EDITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
 Quando clicar na aba "Tipo de pagamento"
 E clicar na acao "Visualizar"

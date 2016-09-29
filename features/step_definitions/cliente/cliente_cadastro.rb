@@ -161,5 +161,15 @@ Entao(/^poderei\/nao poderei editar o item com motivo "([^"]*)"$/) do |motivo|
     elsif statusCampo && !@tem_direito
         raise('Usuario pode editar o item no qual nao tem direito')
     end
+end
 
+Entao(/^o campo conta esta\/nao esta truncado$/) do
+    next if @pass_test == true
+    info_cli = Info_do_cliente.new
+    statusCampo = info_cli.conta_truncada?
+    if statusCampo && @tem_direito
+        raise('Usuario nao pode ver o item no qual tem direito')
+    elsif !statusCampo && !@tem_direito
+        raise('Usuario pode ver o item no qual nao tem direito')
+    end
 end
