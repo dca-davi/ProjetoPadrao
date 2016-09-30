@@ -132,7 +132,7 @@ class Utils
         Watir::Wait.until { $browser.button(text: botao).exists? }
         if $browser.button(text: botao).exists?
             sleep 2
-            $browser.button(text: botao).click
+            $browser.button(text: botao).click || $browser.button(text: botao, :index => 0).click
             result = true
         else
             result = false
@@ -146,6 +146,7 @@ class Utils
 
     def acessar_aba(aba)
         sleep 2
+
         if $browser.li(text: aba).attribute_value('class').include? 'ui-state-disabled'
             $encoded_img = $browser.driver.screenshot_as(:base64)
             return false
@@ -221,6 +222,9 @@ class Utils
             acao = 'button_FPi'
         when 'editar - antecipação de vendas - custos'
             acao = 'tabCosts:table_captation_costs:0:buttonEditId'
+
+          when 'visualizar - detalhe disponivel'
+            acao = 'tabOperationAnticipation:button_Arv_msg_arvprepaymentoperation_u57'
         end
         sleep 2
         if $browser.a(id: /#{acao}$/).exist?
@@ -243,7 +247,7 @@ class Utils
     # Validar Frames >>> Lucas >>>
     def validar_frame(texto)
         sleep 2
-        result = if $browser.a(text: texto).exist? || $browser.div(text: texto).exist?
+        result = if $browser.a(text: texto).exist? || $browser.div(text: texto).exist? || $browser.th(text: texto).exist? || $browser.label(text: texto).exist?
                      true
                  else
                      false
@@ -282,6 +286,14 @@ class Utils
             campo = 'tabCosts:input_ArvCostCaptationBeancostCaptationSelectedpcCdiForecast'
         when 'numero do cliente - excecao'
             campo = 'tabViewExceptionId:tabViewAbsentCard_id:txtSearchClientId'
+        when 'preco - antecipacao avulsa'
+            campo = 'tabOperationAnticipation:inputValNegociateId'
+
+
+        when 'numero do cliente - operacoes realizadas'
+            campo = 'formConsultationSalesAnticipationOperations:inputClientNumberId'
+        when 'numero da operacao - operacoes realizadas'
+            campo = 'formConsultationSalesAnticipationOperations:mskMassiveProtocol'
         end
 
         $browser.text_field(id: /#{campo}$/).when_present.set valor
