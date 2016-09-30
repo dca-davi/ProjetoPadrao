@@ -14,6 +14,7 @@ class Info_do_cliente
             else
                 result = false
             end
+
         when "endere\u00E7o do contrato", "atribui\u00E7\u00E3o de categoria/pre\u00E7o", "atribui\u00E7\u00E3o de categoria/pre\u00E7o", "dados da segmenta\u00E7\u00E3o", 'resultados'
             if $browser.button(text: botao, index: 1).attribute_value('aria-disabled') == 'false'
                 $browser.button(text: botao, index: 1).click
@@ -37,6 +38,7 @@ class Info_do_cliente
             else
                 result = false
             end
+
         when 'ramos de atividade restritos'
             if $browser.button(text: botao, index: 4).attribute_value('aria-disabled') == 'false'
                 $browser.button(text: botao, index: 4).click
@@ -44,6 +46,7 @@ class Info_do_cliente
             else
                 result = false
             end
+
         when "cart\u00E3o n\u00E3o presente"
             if $browser.button(text: botao, index: 5).attribute_value('aria-disabled') == 'false'
                 $browser.button(text: botao, index: 5).click
@@ -52,9 +55,16 @@ class Info_do_cliente
                 result = false
             end
 
+        when 'editar dados'
+            if $browser.button(text: botao, index: 6).attribute_value('aria-disabled') == 'false'
+                $browser.button(text: botao, index: 6).click
+                sleep 3
+            else
+                result = false
+            end
         else
             raise('informar frame valido')
-          end
+        end
 
         @@utils.aguardar_loading
         $encoded_img = $browser.driver.screenshot_as(:base64)

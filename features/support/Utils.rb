@@ -40,6 +40,9 @@ class Utils
         when 'Exceção_prazoFlexivel'
             i = 1
             pagina = "Exce\u00E7\u00E3o"
+        when 'Reprocessamento_monitoraçãoFuncional'
+            i = 0
+            pagina = 'Reprocessamento'
         end
 
         sleep 2
