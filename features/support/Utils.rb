@@ -252,7 +252,7 @@ class Utils
     # Validar Frames >>> Lucas >>>
     def validar_frame(texto)
         sleep 2
-        result = if $browser.a(text: texto).exist? || $browser.div(text: texto).exist? || $browser.th(text: texto).exist? || $browser.label(text: texto).exist?
+        result = if $browser.td(title: texto).exist? ||$browser.a(text: texto).exist? || $browser.div(text: texto).exist? || $browser.th(text: texto).exist? || $browser.label(text: texto).exist?
                      true
                  else
                      false
