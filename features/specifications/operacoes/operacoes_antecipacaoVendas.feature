@@ -120,3 +120,19 @@ E selecionar "Efetivado" do campo "Status"
 E selecionar a data "30/09/2016" da pagina "Data de pagamento de"
 Quando selecionar a data "30/09/2016" da pagina "Data de pagamento ate"
 Entao clicar no botao "Pesquisar"
+
+@OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CANCELARCLIENTE_EDITAR
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CANCELARCLIENTE_EDITAR
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CANCELARCLIENTE_EDITAR"
+E que tenha/nao tenha acesso na tela "Operações realizadas"
+Quando clicar na acao "cancelar"
+E selecionar "solicitacao do cliente" do campo "Motivo"
+Então clicar no botao "Sim"
+
+@OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CANCELAROUTROS_EDITAR
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CANCELAROUTROS_EDITAR
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CANCELAROUTROS_EDITAR"
+E que tenha/nao tenha acesso na tela "Operações realizadas"
+Quando clicar na acao "cancelar"
+E selecionar "outros" do campo "Motivo"
+Então clicar no botao "Sim"

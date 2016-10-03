@@ -14,6 +14,16 @@ class Operacoes_antecipacaoVendas
       end
       sleep 1
 
+    when 'Motivo'
+      if $browser.div(:id => "frmCancelOperations:cmb_motivo_label").exist?
+        $browser.div(id: "frmCancelOperations:cmb_motivo_label").click
+        sleep 1
+        result = true
+      else
+        result = false
+      end
+      sleep 1
+
   when 'Status'
     if $browser.div(:id => "formConsultationSalesAnticipationOperations:cmb_status_label").exist?
       $browser.div(:id => "formConsultationSalesAnticipationOperations:cmb_status_label").click
@@ -34,6 +44,27 @@ class Operacoes_antecipacaoVendas
       else
         result = false
       end
+
+    when "solicitacao do cliente"
+      if $browser.li(:text => "Solicitação do cliente").exist?
+        $browser.li(:text => "Solicitação do cliente").click
+        sleep 1
+        result = true
+      else
+        result = false
+      end
+
+    when "outros"
+      if $browser.li(:text => "Outros").exist?
+        $browser.li(:text => "Outros").click
+        sleep 1
+        result = true
+      else
+        result = false
+      end
+
+
+
     end
     $encoded_img = $browser.driver.screenshot_as(:base64)
   end
@@ -91,6 +122,4 @@ class Operacoes_antecipacaoVendas
     @@utils.aguardar_loading
     $encoded_img = $browser.driver.screenshot_as(:base64)
   end
-
-
 end

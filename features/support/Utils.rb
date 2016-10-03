@@ -221,6 +221,8 @@ class Utils
             acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi'
         when 'Remover'
             acao = 'ico[_]?cancel|btn_cancel'
+          when 'cancelar'############################################################################
+            acao = 'formConsultationSalesAnticipationOperations:latestTransactionsTable:2:btn_cancel'
         when 'Aprovar'
             acao = 'button_FPi'
         when 'editar - antecipação de vendas - custos'

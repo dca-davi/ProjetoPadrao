@@ -36,3 +36,12 @@ Quando (/^Expandir o campo da transação de venda$/) do
      raise('Usuario nao tem direito clicar no item Consolidado de vendas')
   end
 end
+
+Quando (/^Validar o frame "([^"]*)"$/) do |texto|
+  next if @pass_test == true
+   @cliente_resumo_financeiro = Informacoes_financeiras.new
+   vldfram = @cliente_resumo_financeiro.validar_frame_resumo_financeiro(texto)
+   if !vldfram
+     raise('Frame nao localizado')
+  end
+end
