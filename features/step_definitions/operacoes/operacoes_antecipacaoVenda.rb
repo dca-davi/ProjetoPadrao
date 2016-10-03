@@ -47,3 +47,13 @@ Quando (/^confirmar a efetivacao$/) do
     raise 'Usuario pode clicar no botao de confirmacao no qual nao tem direito'
   end
 end
+
+Quando (/^informar "([^"]*)" do campo$/) do |input,campo|
+@operacoes_antecipacaoVenda = Operacoes_antecipacaoVendas.new
+btninp = @operacoes_antecipacaoVenda.selecionar_info_cliente(input)
+if !btninp && @tem_direito
+  fail 'Usuario nao pode informar o campo no qual tem direito'
+  elsif btninp && !@tem_direito
+    fail 'Usuario pode informar o campo no qual nao tem direito'
+  end
+end
