@@ -133,9 +133,9 @@ class Utils
         # result = true
         sleep 2
         Watir::Wait.until { $browser.button(text: botao).exists? }
-        if $browser.button(text: botao).exists?
+        if $browser.button(text: botao).exist?
             sleep 2
-            $browser.button(text: botao).click
+            $browser.button(text: botao, index: 0).click
             result = true
         else
             result = false
