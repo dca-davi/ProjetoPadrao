@@ -167,6 +167,13 @@ Cenario: Validar direito CONFIGURACOES_ANTECIPACAOVENDAS_CONFGERAIS_CARTAONAOPRE
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_CONFGERAIS_CARTAONAOPRESENTE_EDITAR"
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
 Entao clicar no botao "Editar dados" do frame "Cartão não presente"
+
+@CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAORESERVAFINANCEIRA_VER
+Cenario: Validar direito CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAORESERVAFINANCEIRA_VER
+Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAORESERVAFINANCEIRA_VER"
+E que tenha/nao tenha acesso na tela "Exceção_antecipaçãoVendas"
+Entao o sistema exibira/nao exibira a tela "Exceção"
+
 # Rafael <<<
 
 # Demis >>>

@@ -30,28 +30,29 @@ E que tenha/nao tenha acesso na tela "Consulta de transações"
 Entao o campo "N° do cartão aberto" existe/nao existe
 
 # Demis >>>
+@OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTE_VER
+Cenario: Validar direito OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTE_EDITAR
+Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTE_EDITAR"
+E que tenha/nao tenha acesso na tela "Envio de débitos ao cliente"
+Entao clicar no botao "Pesquisar"
+
 @OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTE_EDITAR
 Cenario: Validar direito OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTE_EDITAR
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTE_EDITAR"
-E que tenha/nao tenha acesso na tela "Ajustes financeiros"
-Entao clicar na aba "Pesquisar"
-
-@OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTE_VER
-Cenario: Validar direito OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTE_VER
-Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTE_VER"
 E que tenha/nao tenha acesso na tela "Envio de débitos ao cliente"
-Entao clicar na aba "Pesquisar"
-
-@OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTEANULACAO_EDITAR
-Cenario: Validar direito OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTEANULACAO_EDITAR
-Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTEANULACAO_EDITAR"
-E que tenha/nao tenha acesso na tela "Ajustes financeiros"
 Entao clicar na aba "Pesquisar"
 
 @OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTEANULACAO_VER
 Cenario: Validar direito OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTEANULACAO_VER
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTEANULACAO_VER"
-E que tenha/nao tenha acesso na tela "Ajustes financeiros"
+E que tenha/nao tenha acesso na tela "Envio de débitos ao cliente"
+Entao clicar na aba "ANULAÇÃO"
+E clicar no botao "Pesquisar" da aba anulacao
+
+@OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTEANULACAO_EDITAR
+Cenario: Validar direito OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTEANULACAO_EDITAR
+Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTEANULACAO_EDITAR"
+E que tenha/nao tenha acesso na tela "Envio de débitos ao cliente"
 Entao clicar na aba "Pesquisar"
 # Demis <<<
 

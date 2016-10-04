@@ -1,17 +1,31 @@
 class Cliente_Resumo_financeiro
-  @@utils = Utils.new
+    @@utils = Utils.new
 
-  def clicar_consolidado_vendas
-    sleep 2
-    if  $browser.tr(:data_ri => "0").td(:index => 0).exist?
-      $browser.tr(:data_ri => "0").td(:index => 0).click
-      result = true
-    else
-      result = false
+    def clicar_consolidado_vendas
+        sleep 2
+        if $browser.tr(data_ri: '0').td(index: 0).exist?
+            $browser.tr(data_ri: '0').td(index: 0).click
+            result = true
+        else
+            result = false
+        end
+        sleep 3
+        @@utils.aguardar_loading
+        sleep 2
+        $encoded_img = $browser.driver.screenshot_as(:base64)
     end
-    sleep 3
-    @@utils.aguardar_loading
-    sleep 2
-    $encoded_img = $browser.driver.screenshot_as(:base64)
-  end
+
+    def clicar_detalhado_vendas
+        sleep 2
+        if $browser.tr(data_ri: '0').td(index: 1).exist?
+            2.times { $browser.tr(data_ri: '0').td(index: 1).click }
+            result = true
+        else
+            result = false
+        end
+        sleep 3
+        @@utils.aguardar_loading
+        sleep 2
+        $encoded_img = $browser.driver.screenshot_as(:base64)
+    end
 end

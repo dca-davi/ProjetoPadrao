@@ -133,9 +133,13 @@ class Utils
         # result = true
         sleep 2
         Watir::Wait.until { $browser.button(text: botao).exists? }
-        if $browser.button(text: botao).exists?
+        if $browser.button(text: botao).exist?
             sleep 2
+<<<<<<< HEAD
             $browser.button(text: botao, :index => 0).click
+=======
+            $browser.button(text: botao, index: 0).click
+>>>>>>> 248fea0efcead917c454a2446e08eed79030d6ff
             result = true
         else
             result = false
@@ -221,7 +225,7 @@ class Utils
             acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi'
         when 'Remover'
             acao = 'ico[_]?cancel|btn_cancel'
-          when 'cancelar'############################################################################
+        when 'cancelar' ############################################################################
             acao = 'formConsultationSalesAnticipationOperations:latestTransactionsTable:2:btn_cancel'
         when 'Aprovar'
             acao = 'button_FPi'
@@ -259,7 +263,7 @@ class Utils
     # Validar Frames >>> Lucas >>>
     def validar_frame(texto)
         sleep 2
-        result = if $browser.td(title: texto).exist? ||$browser.a(text: texto).exist? || $browser.div(text: texto).exist? || $browser.th(text: texto).exist? || $browser.label(text: texto).exist?
+        result = if $browser.td(title: texto).exist? || $browser.a(text: texto).exist? || $browser.div(text: texto).exist? || $browser.th(text: texto).exist? || $browser.label(text: texto).exist?
                      true
                  else
                      false
@@ -312,12 +316,12 @@ class Utils
             campo = 'tab_request:formRequest:cancellation_number'
         end
 
-        $browser.text_field(id: /#{campo}$/, :index => 0).when_present.set valor
+        $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
         aguardar_loading
         $browser.send_keys :tab
         aguardar_loading
 
-        if $browser.text_field(id: /#{campo}$/, :index => 0).value != ''
+        if $browser.text_field(id: /#{campo}$/, index: 0).value != ''
             $encoded_img = $browser.driver.screenshot_as(:base64)
             return true
         else
