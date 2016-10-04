@@ -136,3 +136,41 @@ E que tenha/nao tenha acesso na tela "Operações realizadas"
 Quando clicar na acao "cancelar"
 E selecionar "outros" do campo "Motivo"
 Então clicar no botao "Sim"
+
+@OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CDICLIENTE_VER
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CDICLIENTE_VER
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CDICLIENTE_VER"
+E que tenha/nao tenha acesso na tela "Operações realizadas"
+Quando clicar na acao "Visualizar - operacoes realizadas"
+E localizar o frame "Percentual CDI"
+E localizar o frame "(Cliente)"
+
+@OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_DIFUTURO_VER
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_DIFUTURO_VER
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_DIFUTURO_VER"
+E que tenha/nao tenha acesso na tela "Operações realizadas"
+Quando clicar na acao "Visualizar - operacoes realizadas"
+Entao localizar o frame "DI futuro"
+
+@OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_VER
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_VER
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_VER"
+E que tenha/nao tenha acesso na tela "Operações realizadas"
+Quando informar "1018242187" no campo "numero do cliente - operacoes realizadas"
+E clicar no botao "Pesquisar"
+Entao clicar na acao "Visualizar - operacoes realizadas"
+
+@OPERACOES_ANTECIPACAOVENDAS_PERIODOANTECIPADO_VER
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_PERIODOANTECIPADO_VER
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_PERIODOANTECIPADO_VER"
+E que tenha/nao tenha acesso na tela "Operações realizadas"
+Quando informar "1018242187" no campo "numero do cliente - operacoes realizadas"
+E clicar no botao "Pesquisar"
+Entao clicar na acao "Visualizar - operacoes realizadas"
+
+@OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_VER
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_VER
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_VER"
+E que tenha/nao tenha acesso na tela "Antecipação programadas cadastradas"
+Quando informar "1018242187" no campo "numero do cliente - antecipacao programadas cadastradas"
+Entao clicar no botao "Pesquisar"
