@@ -56,3 +56,17 @@ E que tenha/nao tenha acesso na tela "Pagamentos baixados sem retorno"
 Quando selecionar a data "27/09/2016" da pagina "Pagamentos baixados sem retorno"
 Entao clicar no botao "Pesquisar"
 Entao clicar no botao "Exportar"
+
+@RELATORIOS_FINANCEIROS_GERENCIAMENTOCARTEIRAS_DEBITO_VER
+Cenario: Validar direito RELATORIOS_FINANCEIROS_GERENCIAMENTOCARTEIRAS_DEBITO_VER
+Dado que tenha/nao tenha o direito "RELATORIOS_FINANCEIROS_GERENCIAMENTOCARTEIRAS_DEBITO_VER"
+E que tenha/nao tenha acesso na tela "Gerenciamento de carteiras"
+E o sistema exibira/nao exibira a tela "Gerenciamento de carteiras"
+Entao clicar na aba "DÉBITOS"
+
+@RELATORIOS_FINANCEIROS_GERENCIAMENTOCARTEIRAS_COBRANCA_VER
+Cenario: Validar direito RELATORIOS_FINANCEIROS_GERENCIAMENTOCARTEIRAS_COBRANCA_VER
+Dado que tenha/nao tenha o direito "RELATORIOS_FINANCEIROS_GERENCIAMENTOCARTEIRAS_COBRANCA_VER"
+E que tenha/nao tenha acesso na tela "Gerenciamento de carteiras"
+E o sistema exibira/nao exibira a tela "Gerenciamento de carteiras"
+Entao clicar na aba "COBRANÇA"

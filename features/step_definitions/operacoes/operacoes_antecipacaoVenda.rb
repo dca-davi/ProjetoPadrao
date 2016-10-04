@@ -57,3 +57,13 @@ if !btninp && @tem_direito
     fail 'Usuario pode informar o campo no qual nao tem direito'
   end
 end
+
+Quando (/^selecionar a opcao "([^"]*)"$/) do |radio|
+@operacoes_antecipacaoVenda = Utils.new
+btnradio = @operacoes_antecipacaoVenda.selecionar_radio_button(radio)
+if !btnradio && @tem_direito
+  fail 'Usuario nao pode selecionar o campo no qual tem direito'
+  elsif btnradio && !@tem_direito
+    fail 'Usuario pode selecionar o campo no qual nao tem direito'
+  end
+end

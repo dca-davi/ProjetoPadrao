@@ -135,7 +135,7 @@ class Utils
         Watir::Wait.until { $browser.button(text: botao).exists? }
         if $browser.button(text: botao).exists?
             sleep 2
-            $browser.button(text: botao).click || $browser.button(text: botao, :index => 0).click
+            $browser.button(text: botao, :index => 0).click
             result = true
         else
             result = false
@@ -227,10 +227,12 @@ class Utils
             acao = 'button_FPi'
         when 'editar - antecipação de vendas - custos'
             acao = 'tabCosts:table_captation_costs:0:buttonEditId'
-          when 'Visualizar - operacoes realizadas'
+        when 'Visualizar - operacoes realizadas'
             acao = 'formConsultationSalesAnticipationOperations:latestTransactionsTable:0:btn_detail'
-          when 'visualizar - detalhe disponivel'
+        when 'visualizar - detalhe disponivel'
             acao = 'tabOperationAnticipation:button_Arv_msg_arvprepaymentoperation_u57'
+        when 'detalhar - reprocessamento de vendas'
+            acao = 'tab_reprocessing_sales:searchReprocessingSales:reprocessingSales:0:image_w9Z'
         end
         sleep 2
         if $browser.a(id: /#{acao}$/).exist?
@@ -240,6 +242,10 @@ class Utils
         elsif $browser.button(id: /#{acao}$/).exist?
             sleep 2
             $browser.button(id: /#{acao}$/).click
+            result = true
+        elsif $browser.img(id: /#{acao}$/).exist?
+            sleep 2
+            $browser.img(id: /#{acao}$/).click
             result = true
         else
             result = false
@@ -300,6 +306,10 @@ class Utils
             campo = 'formConsultationSalesAnticipationOperations:mskMassiveProtocol'
         when 'numero do cliente - antecipacao programadas cadastradas'
             campo = 'formArvConsultAntecipationScheduledRegistered:inputClientNumberId'
+        when 'numero da solicitacao - reprocessamento de vendas'
+            campo = 'tab_reprocessing_sales:searchReprocessingSales:input_SearchReprocessingSalesBeannuRequestReentry'
+        when 'numero da solicitacao - cancelamento e reversão de vendas'
+            campo = 'tab_request:formRequest:cancellation_number'
         end
 
         $browser.text_field(id: /#{campo}$/, :index => 0).when_present.set valor
@@ -343,4 +353,17 @@ class Utils
             return false
         end
     end
+
+    def selecionar_radio_button(radio)
+      if $browser.label(text: radio, index: 0).exist?
+        $browser.label(text: radio, index: 0).click
+        sleep 2
+        result = true
+      else
+        result = false
+      end
+      sleep 2
+      $encoded_img = $browser.driver.screenshot_as(:base64)
+    end
+
 end

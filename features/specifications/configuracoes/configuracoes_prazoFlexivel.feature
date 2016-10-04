@@ -67,3 +67,10 @@ Dado que tenha/nao tenha o direito "CONFIGURACOES_PRAZOFLEXIVEL_GERAL_ATRIBUICAO
 E que tenha/nao tenha acesso na tela "Geral_prazoFlexivel"
 E o sistema exibira/nao exibira a tela "Geral"
 # Demis <<<
+
+@CONFIGURACOES_PRAZOFLEXIVEL_EXCECAO_VER
+Cenario: Validar direito CONFIGURACOES_PRAZOFLEXIVEL_EXCECAO_VER
+Dado que tenha/nao tenha o direito "CONFIGURACOES_PRAZOFLEXIVEL_EXCECAO_VER"
+E que tenha/nao tenha acesso na tela "Exceção_prazoFlexivel"
+E o sistema exibira/nao exibira a tela "Exceção"
+Entao clicar no botao "Pesquisar"
