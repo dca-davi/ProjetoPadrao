@@ -1,4 +1,5 @@
 class Operacoes_antecipacaoVendas
+  @@utils = Utils.new
 
   def selecione_combo_operacoes(frame, item)
 
@@ -12,17 +13,58 @@ class Operacoes_antecipacaoVendas
         result = false
       end
       sleep 1
-    end
 
-    case item
-    when "CENTRAL"
-      if $browser.li(:text => "CENTRAL").exist?
-        $browser.li(:text => "CENTRAL").click
+    when 'Motivo'
+      if $browser.div(:id => "frmCancelOperations:cmb_motivo_label").exist?
+        $browser.div(id: "frmCancelOperations:cmb_motivo_label").click
         sleep 1
         result = true
       else
         result = false
       end
+      sleep 1
+
+  when 'Status'
+    if $browser.div(:id => "formConsultationSalesAnticipationOperations:cmb_status_label").exist?
+      $browser.div(:id => "formConsultationSalesAnticipationOperations:cmb_status_label").click
+      sleep 1
+      result = true
+    else
+      result = false
+    end
+
+  end
+
+    case item
+    when "Efetivado"
+      if $browser.li(:text => "Efetivado").exist?
+        $browser.li(:text => "Efetivado").click
+        sleep 1
+        result = true
+      else
+        result = false
+      end
+
+    when "solicitacao do cliente"
+      if $browser.li(:text => "Solicitação do cliente").exist?
+        $browser.li(:text => "Solicitação do cliente").click
+        sleep 1
+        result = true
+      else
+        result = false
+      end
+
+    when "outros"
+      if $browser.li(:text => "Outros").exist?
+        $browser.li(:text => "Outros").click
+        sleep 1
+        result = true
+      else
+        result = false
+      end
+
+
+
     end
     $encoded_img = $browser.driver.screenshot_as(:base64)
   end
@@ -36,7 +78,48 @@ class Operacoes_antecipacaoVendas
       result = false
     end
     sleep 3
+    $encoded_img = $browser.driver.screenshot_as(:base64)
+  end
+
+    def clicar_aba_precificacao
+      if $browser.a(href: '#tabOperationAnticipation:tabPricing').exist?
+        $browser.a(href: '#tabOperationAnticipation:tabPricing').click
+        sleep 1
+        result = true
+      else
+        result = false
+      end
+      sleep 2
+      @@utils.aguardar_loading
       $encoded_img = $browser.driver.screenshot_as(:base64)
     end
 
+    def clicar_no_link(link)
+    case link
+    when 'Alterar valores de negociacao'
+      if $browser.a(id: 'tabOperationAnticipation:link_Arv_msg_arvprepaymentaltervalues_run', :index => 0).exist?
+        $browser.a(id: 'tabOperationAnticipation:link_Arv_msg_arvprepaymentaltervalues_run', :index => 0).click
+        sleep 1
+        result = true
+      else
+        result = false
+      end
+    end
+    sleep 2
+    @@utils.aguardar_loading
+    $encoded_img = $browser.driver.screenshot_as(:base64)
+  end
+
+  def clicar_botao_ok
+    if $browser.button(id: "tabOperationAnticipation:button_Arv_msg_yes_cMd", index: 0).exist?
+      $browser.button(id: "tabOperationAnticipation:button_Arv_msg_yes_cMd", index: 0).click
+      sleep 2
+      result = true
+    else
+      result = false
+    end
+    sleep 2
+    @@utils.aguardar_loading
+    $encoded_img = $browser.driver.screenshot_as(:base64)
+  end
 end

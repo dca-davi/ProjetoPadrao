@@ -31,3 +31,146 @@ Cenario: Validar direito OPERACOES_ANTECIPACAO_CANAL_CENTRALDEANTECIPACAO_VER
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAO_CANAL_CENTRALDEANTECIPACAO_VER"
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
 Entao o sistema exibira/nao exibira a tela "Operação de Antecipação"
+
+@OPERACOES_ANTECIPACAOVENDAS_OPERACAOANTECIPACAO_CLIENTEPRECO_VER
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_OPERACAOANTECIPACAO_CLIENTEPRECO_VER
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERACAOANTECIPACAO_CLIENTEPRECO_VER"
+E que tenha/nao tenha acesso na tela "Operação de antecipação"
+Quando selecionar a aba precificacao
+E localizar o frame "Preço Especial"
+E localizar o frame "Categoria"
+Então localizar o frame "Alçada"
+
+@OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_AVANCADO_DIFUTURO_VER
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_AVANCADO_DIFUTURO_VER
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_AVANCADO_DIFUTURO_VER"
+E que tenha/nao tenha acesso na tela "Operação de antecipação"
+Quando clicar na aba "Antecipação Avulsa"
+Entao localizar o frame "DI futuro"
+
+@OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_DETALHEDISPONIVEL_VER
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_DETALHEDISPONIVEL_VER
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_DETALHEDISPONIVEL_VER"
+E que tenha/nao tenha acesso na tela "Operação de antecipação"
+Quando clicar na aba "Antecipação Avulsa"
+Entao clicar na acao "visualizar - detalhe disponivel"
+
+@OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_NEGOCIACAO_CDICIELO_VER
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_NEGOCIACAO_CDICIELO_VER
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_NEGOCIACAO_CDICIELO_VER"
+E que tenha/nao tenha acesso na tela "Operação de antecipação"
+Quando clicar na aba "Antecipação Avulsa"
+E localizar o frame "Percentual CDI"
+Entao localizar o frame "(Cielo)"
+
+@OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_NEGOCIACAO_CDICLIENTE_VER
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_NEGOCIACAO_CDICIELO_VER
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_NEGOCIACAO_CDICIELO_VER"
+E que tenha/nao tenha acesso na tela "Operação de antecipação"
+Quando clicar na aba "Antecipação Avulsa"
+E localizar o frame "Percentual CDI"
+Entao localizar o frame "(Cliente)"
+
+@OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_NEGOCIACAO_EDITAR
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_NEGOCIACAO_EDITAR
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_NEGOCIACAO_EDITAR"
+E que tenha/nao tenha acesso na tela "Operação de antecipação"
+Quando clicar na aba "Antecipação Avulsa"
+Entao selecionar clicar no link "Alterar valores de negociacao"
+E informar "5,38" no campo "preco - antecipacao avulsa"
+Entao clicar no botao "OK"
+
+@OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_RESULTADOBASICO_VER
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_RESULTADOBASICO_VER
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_RESULTADOBASICO_VER"
+E que tenha/nao tenha acesso na tela "Operação de antecipação"
+Quando clicar na aba "Antecipação Avulsa"
+E localizar o frame "Resultados"
+E localizar o frame "Período de antecipação"
+E localizar o frame "Taxa efetiva"
+E localizar o frame "Custo de captação"
+E localizar o frame "Prazo médio"
+E localizar o frame "DI futuro"
+E localizar o frame "Prazo médio"
+E localizar o frame "Custo de captação"
+Entao localizar o frame "Receita líquida"
+
+@OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_SOLICITAR
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_SOLICITAR
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_SOLICITAR"
+E que tenha/nao tenha acesso na tela "Operação de antecipação"
+Quando clicar na aba "Antecipação Avulsa"
+E clicar no botao "Efetivar Operação"
+Entao confirmar a efetivacao
+
+@OPERACOES_ANTECIPACAOVENDAS_OPERANTECIPACAO_AVULSA_VER
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_OPERANTECIPACAO_AVULSA_VER
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERANTECIPACAO_AVULSA_VER"
+E que tenha/nao tenha acesso na tela "Operação de antecipação"
+Quando clicar na aba "Antecipação Avulsa"
+Entao o sistema exibira/nao exibira a tela "Operação de Antecipação"
+
+@OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_AVANCADO_VER
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_AVANCADO_VER
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_AVANCADO_VER"
+E que tenha/nao tenha acesso na tela "Operações realizadas"
+E informar "2000006420" no campo "numero do cliente - operacoes realizadas"
+E informar "9239" no campo "numero da operacao - operacoes realizadas"
+E selecionar "Efetivado" do campo "Status"
+E selecionar a data "30/09/2016" da pagina "Data de pagamento de"
+Quando selecionar a data "30/09/2016" da pagina "Data de pagamento ate"
+Entao clicar no botao "Pesquisar"
+
+@OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CANCELARCLIENTE_EDITAR
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CANCELARCLIENTE_EDITAR
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CANCELARCLIENTE_EDITAR"
+E que tenha/nao tenha acesso na tela "Operações realizadas"
+Quando clicar na acao "cancelar"
+E selecionar "solicitacao do cliente" do campo "Motivo"
+Então clicar no botao "Sim"
+
+@OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CANCELAROUTROS_EDITAR
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CANCELAROUTROS_EDITAR
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CANCELAROUTROS_EDITAR"
+E que tenha/nao tenha acesso na tela "Operações realizadas"
+Quando clicar na acao "cancelar"
+E selecionar "outros" do campo "Motivo"
+Então clicar no botao "Sim"
+
+@OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CDICLIENTE_VER
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CDICLIENTE_VER
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CDICLIENTE_VER"
+E que tenha/nao tenha acesso na tela "Operações realizadas"
+Quando clicar na acao "Visualizar - operacoes realizadas"
+E localizar o frame "Percentual CDI"
+E localizar o frame "(Cliente)"
+
+@OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_DIFUTURO_VER
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_DIFUTURO_VER
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_DIFUTURO_VER"
+E que tenha/nao tenha acesso na tela "Operações realizadas"
+Quando clicar na acao "Visualizar - operacoes realizadas"
+Entao localizar o frame "DI futuro"
+
+@OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_VER
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_VER
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_VER"
+E que tenha/nao tenha acesso na tela "Operações realizadas"
+Quando informar "1018242187" no campo "numero do cliente - operacoes realizadas"
+E clicar no botao "Pesquisar"
+Entao clicar na acao "Visualizar - operacoes realizadas"
+
+@OPERACOES_ANTECIPACAOVENDAS_PERIODOANTECIPADO_VER
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_PERIODOANTECIPADO_VER
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_PERIODOANTECIPADO_VER"
+E que tenha/nao tenha acesso na tela "Operações realizadas"
+Quando informar "1018242187" no campo "numero do cliente - operacoes realizadas"
+E clicar no botao "Pesquisar"
+Entao clicar na acao "Visualizar - operacoes realizadas"
+
+@OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_VER
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_VER
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_VER"
+E que tenha/nao tenha acesso na tela "Antecipação programadas cadastradas"
+Quando informar "1018242187" no campo "numero do cliente - antecipacao programadas cadastradas"
+Entao clicar no botao "Pesquisar"

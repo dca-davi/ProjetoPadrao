@@ -10,9 +10,35 @@ class Relatorios_financeiros
       sleep 2
       $browser.send_keys :tab
       result = true
+      $encoded_img = $browser.driver.screenshot_as(:base64)
     else
       result = false
+      $encoded_img = $browser.driver.screenshot_as(:base64)
     end
+
+  when 'Data de pagamento de'
+  if $browser.text_field(:id => /startDateRequestId_input/).exist?
+    2.times {$browser.text_field(:id => /startDateRequestId_input/).set data}
+    sleep 2
+    $browser.send_keys :tab
+    result = true
+    $encoded_img = $browser.driver.screenshot_as(:base64)
+  else
+    result = false
+    $encoded_img = $browser.driver.screenshot_as(:base64)
+  end
+
+when 'Data de pagamento ate'
+if $browser.text_field(:id => /endDateRequestId_input/).exist?
+  2.times {$browser.text_field(:id => /endDateRequestId_input/).set data}
+  sleep 2
+  $browser.send_keys :tab
+  result = true
+  $encoded_img = $browser.driver.screenshot_as(:base64)
+else
+  result = false
+  $encoded_img = $browser.driver.screenshot_as(:base64)
+end
 
     when 'Pagamentos baixados sem retorno'
       if $browser.text_field(:id => /dateFilter_input/).exist?
@@ -20,8 +46,10 @@ class Relatorios_financeiros
       sleep 2
       $browser.send_keys :tab
       result = true
+      $encoded_img = $browser.driver.screenshot_as(:base64)
     else
       result = false
+      $encoded_img = $browser.driver.screenshot_as(:base64)
     end
   #Usado para a tela de Operações - antecipacao de vendas >>
   when 'Acumulado diario - Por banco'
@@ -30,6 +58,7 @@ class Relatorios_financeiros
     sleep 2
     $browser.send_keys :tab
     result = true
+    $encoded_img = $browser.driver.screenshot_as(:base64)
   else
     result = false
   end

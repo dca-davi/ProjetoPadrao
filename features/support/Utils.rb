@@ -149,6 +149,7 @@ class Utils
 
     def acessar_aba(aba)
         sleep 2
+
         if $browser.li(text: aba).attribute_value('class').include? 'ui-state-disabled'
             $encoded_img = $browser.driver.screenshot_as(:base64)
             return false
@@ -220,10 +221,16 @@ class Utils
             acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi'
         when 'Remover'
             acao = 'ico[_]?cancel|btn_cancel'
+        when 'cancelar' ############################################################################
+            acao = 'formConsultationSalesAnticipationOperations:latestTransactionsTable:2:btn_cancel'
         when 'Aprovar'
             acao = 'button_FPi'
         when 'editar - antecipação de vendas - custos'
             acao = 'tabCosts:table_captation_costs:0:buttonEditId'
+        when 'Visualizar - operacoes realizadas'
+            acao = 'formConsultationSalesAnticipationOperations:latestTransactionsTable:0:btn_detail'
+        when 'visualizar - detalhe disponivel'
+            acao = 'tabOperationAnticipation:button_Arv_msg_arvprepaymentoperation_u57'
         end
         sleep 2
         if $browser.a(id: /#{acao}$/).exist?
@@ -246,7 +253,7 @@ class Utils
     # Validar Frames >>> Lucas >>>
     def validar_frame(texto)
         sleep 2
-        result = if $browser.a(text: texto).exist? || $browser.div(text: texto).exist?
+        result = if $browser.td(title: texto).exist? || $browser.a(text: texto).exist? || $browser.div(text: texto).exist? || $browser.th(text: texto).exist? || $browser.label(text: texto).exist?
                      true
                  else
                      false
@@ -285,14 +292,22 @@ class Utils
             campo = 'tabCosts:input_ArvCostCaptationBeancostCaptationSelectedpcCdiForecast'
         when 'numero do cliente - excecao'
             campo = 'tabViewExceptionId:tabViewAbsentCard_id:txtSearchClientId'
+        when 'preco - antecipacao avulsa'
+            campo = 'tabOperationAnticipation:inputValNegociateId'
+        when 'numero do cliente - operacoes realizadas'
+            campo = 'formConsultationSalesAnticipationOperations:inputClientNumberId'
+        when 'numero da operacao - operacoes realizadas'
+            campo = 'formConsultationSalesAnticipationOperations:mskMassiveProtocol'
+        when 'numero do cliente - antecipacao programadas cadastradas'
+            campo = 'formArvConsultAntecipationScheduledRegistered:inputClientNumberId'
         end
 
-        $browser.text_field(id: /#{campo}$/).when_present.set valor
+        $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
         aguardar_loading
         $browser.send_keys :tab
         aguardar_loading
 
-        if $browser.text_field(id: /#{campo}$/).value != ''
+        if $browser.text_field(id: /#{campo}$/, index: 0).value != ''
             $encoded_img = $browser.driver.screenshot_as(:base64)
             return true
         else
