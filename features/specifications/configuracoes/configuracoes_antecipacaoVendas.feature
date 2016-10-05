@@ -66,7 +66,6 @@ Quando clicar na aba "Preço Especial"
 E clicar na aba "Incluir"
 Entao o sistema exibira/nao exibira a tela "Precificação"
 
-# Lucas >>>
 @SETUP_ARVCONFIGURACOES_GERAIS_ATRIBUICAOCATEGORIAPRECO_EDITAR
 Cenario: Validar direito SETUP_ARVCONFIGURACOES_GERAIS_ATRIBUICAOCATEGORIAPRECO_EDITAR
 Dado que tenha/nao tenha o direito "SETUP_ARVCONFIGURACOES_GERAIS_ATRIBUICAOCATEGORIAPRECO_EDITAR"
@@ -147,7 +146,7 @@ Quando clicar selecionar a opcao "Individualmente"
 E informar "1007595105" no campo "numero do cliente - excecao"
 Quando clicar no botao "OK"
 Entao clicar no botao "Confirmar"
-# Lucas <<<
+
 
 # Rafael >>>
 @CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOES_GERAIS_VER

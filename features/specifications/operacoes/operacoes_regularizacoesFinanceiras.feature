@@ -94,3 +94,11 @@ Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_TRATAMENTODEBITOSEM
 E que tenha/nao tenha acesso na tela "Débitos ao cliente sem retorno"
 E o sistema exibira/nao exibira a tela "Débito ao cliente sem retorno"
 Entao localizar o frame "Resultados"
+
+@OPERACOES_REGULARIZACOES_AJUSTE_DETALHE_VER
+Cenario: Validar direito OPERACOES_REGULARIZACOES_AJUSTE_DETALHE_VER
+Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_AJUSTE_DETALHE_VER"
+E que tenha/nao tenha acesso na tela "Ajustes financeiros"
+E informar "13507217" no campo "numero da solicitacao - ajustes financeiros"
+Quando clicar no botao "Pesquisar"
+Entao localizar o frame "Efetivada"
