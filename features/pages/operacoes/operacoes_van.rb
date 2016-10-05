@@ -12,10 +12,28 @@ class Operacoes_Van
         result = false
       end
 
+    when 'Status'
+      if $browser.label(:id => 'formArvConsultAntecipationScheduledRegistered:cmb_status_label', :text => 'Selecione', :index => 0).exist?
+        $browser.label(:id => 'formArvConsultAntecipationScheduledRegistered:cmb_status_label', :text => 'Selecione', :index => 0).click
+        sleep 1
+        result = true
+      else
+        result = false
+      end
+
       case  tipo
       when 'AMEX'
         if $browser.li(:text => 'AMEX', :index => 0).exist?
           $browser.li(:text => 'AMEX', :index => 0).click
+          sleep 1
+          result = true
+        else
+          result = false
+        end
+
+      when 'Vigente'
+        if $browser.li(:text => 'Vigente', :index => 0).exist?
+          $browser.li(:text => 'Vigente', :index => 0).click
           sleep 1
           result = true
         else
