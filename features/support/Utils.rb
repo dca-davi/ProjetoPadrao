@@ -25,6 +25,10 @@ class Utils
             i = 1
             pagina = 'Geral'
 
+        when 'Custos_antecipaçãoVendas'
+            i = 0
+            pagina = 'Custos'
+
         when 'Precificação_antecipaçãoVendas'
             i = 0
             pagina = 'Precificação'
@@ -231,6 +235,12 @@ class Utils
             acao = 'formConsultationSalesAnticipationOperations:latestTransactionsTable:0:btn_detail'
         when 'visualizar - detalhe disponivel'
             acao = 'tabOperationAnticipation:button_Arv_msg_arvprepaymentoperation_u57'
+        when 'Atribuir para' # Bonequinho - Tela Fila de Trabalho
+            acao = 'link_ZTw'
+        when 'Atribuir' # Atribuir - Tela Fila de Trabalho
+            acao = 'link_OXZ'
+        when 'Liberar' # Liberar - Tela Fila de Trabalho
+            acao = 'link_VY9'
         end
         sleep 2
         if $browser.a(id: /#{acao}$/).exist?

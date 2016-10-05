@@ -173,7 +173,6 @@ Cenario: Validar direito CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAORESERVAFINANCEIR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAORESERVAFINANCEIRA_VER"
 E que tenha/nao tenha acesso na tela "Exceção_antecipaçãoVendas"
 Entao o sistema exibira/nao exibira a tela "Exceção"
-
 # Rafael <<<
 
 # Demis >>>
@@ -188,4 +187,28 @@ Cenario: Validar direito CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECIPACAOPROGRA
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECIPACAOPROGRAMADA_VER"
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
 Entao localizar o frame "Antecipação programada"
+
+#@SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER
+#Cenario: Validar direito SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER
+#Dado que tenha/nao tenha o direito "SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER"
+#E que tenha/nao tenha acesso na tela "Custos_antecipaçãoVendas"
+#Entao o sistema exibira/nao exibira a tela "Antecipação de Vendas - Custos"
+
+#@SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_EDITAR
+#Cenario: Validar direito SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER
+#Dado que tenha/nao tenha o direito "SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER"
+#E que tenha/nao tenha acesso na tela "Custos_antecipaçãoVendas"
+#Entao o sistema exibira/nao exibira a tela "Antecipação de Vendas - Custos"
+
+#@SETUP_ARV_CUSTOS_PROARV_PARAMETROS_VER
+#Cenario: Validar direito SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER
+#Dado que tenha/nao tenha o direito "SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER"
+#E que tenha/nao tenha acesso na tela "Custos_antecipaçãoVendas"
+#Entao o sistema exibira/nao exibira a tela "Antecipação de Vendas - Custos"
+
+#@SETUP_ARV_CUSTOS_PROARV_PARAMETROS_EDITAR
+#Cenario: Validar direito SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER
+#Dado que tenha/nao tenha o direito "SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER"
+#E que tenha/nao tenha acesso na tela "Custos_antecipaçãoVendas"
+#Entao o sistema exibira/nao exibira a tela "Antecipação de Vendas - Custos"
 # Demis <<<

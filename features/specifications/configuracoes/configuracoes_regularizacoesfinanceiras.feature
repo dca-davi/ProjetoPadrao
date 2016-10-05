@@ -34,6 +34,10 @@ Dado que tenha/nao tenha o direito "CONFIGURACOES_REGULARIZACOESFINANCEIRAS_REGR
 E que tenha/nao tenha acesso na tela "Regra de cancelamento"
 Entao a aplicacao exibira/nao exibira o painel grid da tela crf "Dados da pesquisa"
 
+@SETUP_CANCELAMENTOS_LISTADEREGRA_EDITAR
+
+# Demis <<<
+
 # Lucas >>>
 @CONFIGURACOES_MOTIVOS_AJUSTES_VER
 Cenario: Validar direito CONFIGURACOES_MOTIVOS_AJUSTES_VER
