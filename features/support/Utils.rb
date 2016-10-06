@@ -222,7 +222,7 @@ class Utils
         when 'Visualizar'
             acao = 'icon[_]?view|btn_detail|button_RSR|button_Jvn'
         when 'Editar'
-            acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi'
+            acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi|tabRejectionCapture:resultTableTreat:0:j_idt422'
         when 'Remover'
             acao = 'ico[_]?cancel|btn_cancel'
         when 'cancelar'
@@ -247,10 +247,12 @@ class Utils
             acao = 'flowForm:workQueueList:0:link_ZTw'
         when 'cancelar - coluna acao'
             acao = 'formArvConsultAntecipationScheduledRegistered:latestTransactionsTable:0:btn_cancel'
+        when 'Exportar'
+            acao = 'tabRejectionCapture:j_idt261|button_Settlement_msg_buttonexport_'
     end
 
         sleep 2
-        if $browser.a(id: /#{acao}$/).exist?
+        if $browser.a(id: /#{acao}$/  ).exist?
             sleep 2
             $browser.a(id: /#{acao}$/).click
             result = true
@@ -331,7 +333,14 @@ class Utils
             campo = 'tabFlexiblePrecification:dtStartCurrentStep1_id_input'
         when 'numero da solicitacao - ajustes financeiros'
             campo = 'tab_regularization:input_SearchRegularizationBeansearchRegularizationDTOrequestNumber'
-
+        when 'data de rejeicao - de'
+            campo = 'tabRejectionCapture:initialRejectionDateTreatment_input|tabRejectionCapture:initialRejectionDate_input'
+        when 'data de rejeicao - ate'
+            campo = 'tabRejectionCapture:finalRejectionDateTreatment_input|tabRejectionCapture:finalRejectionDate_input'
+        when 'data programada - de'
+            campo = 'j_idt196:dtEffectiveOf_input'
+        when 'data programada - ate'
+            campo = 'j_idt196:dtEffectiveUntil_input'
         end
 
         $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
