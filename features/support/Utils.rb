@@ -247,6 +247,8 @@ class Utils
             acao = 'flowForm:workQueueList:0:link_ZTw'
         when 'cancelar - coluna acao'
             acao = 'formArvConsultAntecipationScheduledRegistered:latestTransactionsTable:0:btn_cancel'
+        when 'Reverter'
+            acao = 'include_reversion_link'
     end
 
         sleep 2
@@ -331,7 +333,8 @@ class Utils
             campo = 'tabFlexiblePrecification:dtStartCurrentStep1_id_input'
         when 'numero da solicitacao - ajustes financeiros'
             campo = 'tab_regularization:input_SearchRegularizationBeansearchRegularizationDTOrequestNumber'
-
+        when 'codigo da venda'
+            campo = 'tab_request:formRequest:sale_code'
         end
 
         $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor

@@ -102,3 +102,13 @@ E que tenha/nao tenha acesso na tela "Ajustes financeiros"
 E informar "13507217" no campo "numero da solicitacao - ajustes financeiros"
 Quando clicar no botao "Pesquisar"
 Entao localizar o frame "Efetivada"
+
+@OPERACOES_REGULARIZACOES_REVERSAOCANCELAMENTO_SOLICITAR
+Cenario: Validar direito OPERACOES_REGULARIZACOES_REVERSAOCANCELAMENTO_SOLICITAR
+Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_REVERSAOCANCELAMENTO_SOLICITAR"
+E que tenha/nao tenha acesso na tela "Cancelamento e reversão de vendas"
+Quando selecionar a opcao "Cancelamento de vendas"
+E informar "627406028342762" no campo "codigo da venda"
+Quando clicar no botao "Pesquisar"
+E clicar na acao "Reverter"
+Entao clicar no botao "Reverter"
