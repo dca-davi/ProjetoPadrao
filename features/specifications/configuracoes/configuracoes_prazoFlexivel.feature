@@ -67,3 +67,17 @@ Dado que tenha/nao tenha o direito "CONFIGURACOES_PRAZOFLEXIVEL_GERAL_ATRIBUICAO
 E que tenha/nao tenha acesso na tela "Geral_prazoFlexivel"
 E o sistema exibira/nao exibira a tela "Geral"
 # Demis <<<
+
+@CONFIGURACOES_PRAZOFLEXIVEL_EXCECAO_VER
+Cenario: Validar direito CONFIGURACOES_PRAZOFLEXIVEL_EXCECAO_VER
+Dado que tenha/nao tenha o direito "CONFIGURACOES_PRAZOFLEXIVEL_EXCECAO_VER"
+E que tenha/nao tenha acesso na tela "Exceção_prazoFlexivel"
+E o sistema exibira/nao exibira a tela "Exceção"
+Entao clicar no botao "Pesquisar"
+
+@CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_PRECOSEALCADAS_EDITAR
+Cenario: Validar direito CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_PRECOSEALCADAS_EDITAR
+Dado que tenha/nao tenha o direito "CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_PRECOSEALCADAS_EDITAR"
+E que tenha/nao tenha acesso na tela "Precificação_prazoFlexivel"
+E clicar na aba "Preços e Alçadas"
+Entao clicar no botao "Editar" da aba - Precos e Alcadas

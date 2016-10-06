@@ -174,3 +174,26 @@ Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGC
 E que tenha/nao tenha acesso na tela "Antecipação programadas cadastradas"
 Quando informar "1018242187" no campo "numero do cliente - antecipacao programadas cadastradas"
 Entao clicar no botao "Pesquisar"
+
+# Demis >>>
+@OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGTODOS_VER
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_VER
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_VER"
+E que tenha/nao tenha acesso na tela "Antecipação programadas cadastradas"
+Entao localizar o frame "Últimas Transações"
+
+@OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CDIGERENCIAL_VER
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CDIGERENCIAL_VER
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CDIGERENCIAL_VER"
+E que tenha/nao tenha acesso na tela "Operações realizadas"
+Entao localizar o frame "Últimas Transações"
+E clicar na acao "Visualizar"
+# Demis <<<
+
+@OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROG_EDITAR
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROG_EDITAR
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROG_EDITAR"
+E que tenha/nao tenha acesso na tela "Antecipação programadas cadastradas"
+E selecionar o combobox "Status" e a opcao "Vigente"
+Quando clicar no botao "Pesquisar"
+Entao clicar na acao "cancelar - coluna acao"

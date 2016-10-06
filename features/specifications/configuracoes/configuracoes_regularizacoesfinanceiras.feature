@@ -6,7 +6,6 @@ Funcionalidade: Validar os direitos na tela Configurações > Regularizações f
 Contexto:
 Dado que eu faca login
 
-# Demis >>>
 @CONFIGURACOES_REGULARIZACOESFINANCEIRAS_REGRADELIBERACAO_VER
 Cenário: Validar direito CONFIGURACOES_REGULARIZACOESFINANCEIRAS_REGRADELIBERACAO_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_REGULARIZACOESFINANCEIRAS_REGRADELIBERACAO_VER"
@@ -34,7 +33,8 @@ Dado que tenha/nao tenha o direito "CONFIGURACOES_REGULARIZACOESFINANCEIRAS_REGR
 E que tenha/nao tenha acesso na tela "Regra de cancelamento"
 Entao a aplicacao exibira/nao exibira o painel grid da tela crf "Dados da pesquisa"
 
-# Lucas >>>
+#@SETUP_CANCELAMENTOS_LISTADEREGRA_EDITAR
+
 @CONFIGURACOES_MOTIVOS_AJUSTES_VER
 Cenario: Validar direito CONFIGURACOES_MOTIVOS_AJUSTES_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_MOTIVOS_AJUSTES_VER"
@@ -62,4 +62,3 @@ E que tenha/nao tenha acesso na tela "Motivo de ajuste"
 Quando clicar no botao "Pesquisar"
 E clicar na acao "Visualizar"
 Entao clicar no botao "Excluir"
-# Lucas <<<

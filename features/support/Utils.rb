@@ -25,6 +25,10 @@ class Utils
             i = 1
             pagina = 'Geral'
 
+        when 'Custos_antecipaçãoVendas'
+            i = 0
+            pagina = 'Custos'
+
         when 'Precificação_antecipaçãoVendas'
             i = 0
             pagina = 'Precificação'
@@ -133,14 +137,14 @@ class Utils
         # result = true
         sleep 2
         Watir::Wait.until { $browser.button(text: botao).exists? }
-        if $browser.button(text: botao).exists?
+        if $browser.button(text: botao).exist?
             sleep 2
-            $browser.button(text: botao).click || $browser.button(text: botao, :index => 0).click
+            $browser.button(text: botao, index: 0).click
             result = true
         else
             result = false
         end
-        sleep 4
+        sleep 5
         aguardar_loading
         sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
@@ -221,17 +225,32 @@ class Utils
             acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi'
         when 'Remover'
             acao = 'ico[_]?cancel|btn_cancel'
-          when 'cancelar'############################################################################
+        when 'cancelar'
             acao = 'formConsultationSalesAnticipationOperations:latestTransactionsTable:2:btn_cancel'
         when 'Aprovar'
             acao = 'button_FPi'
         when 'editar - antecipação de vendas - custos'
             acao = 'tabCosts:table_captation_costs:0:buttonEditId'
-          when 'Visualizar - operacoes realizadas'
+        when 'Visualizar - operacoes realizadas'
             acao = 'formConsultationSalesAnticipationOperations:latestTransactionsTable:0:btn_detail'
-          when 'visualizar - detalhe disponivel'
+        when 'visualizar - detalhe disponivel'
             acao = 'tabOperationAnticipation:button_Arv_msg_arvprepaymentoperation_u57'
-        end
+        when 'Atribuir para' # Bonequinho - Tela Fila de Trabalho
+            acao = 'link_ZTw'
+        when 'Atribuir' # Atribuir - Tela Fila de Trabalho
+            acao = 'link_OXZ'
+        when 'Liberar' # Liberar - Tela Fila de Trabalho
+            acao = 'link_VY9'
+        when 'detalhar - reprocessamento de vendas'
+            acao = 'tab_reprocessing_sales:searchReprocessingSales:reprocessingSales:0:image_w9Z'
+        when 'atribuir'
+            acao = 'flowForm:workQueueList:0:link_ZTw'
+        when 'cancelar - coluna acao'
+            acao = 'formArvConsultAntecipationScheduledRegistered:latestTransactionsTable:0:btn_cancel'
+        when 'Reverter'
+            acao = 'include_reversion_link'
+    end
+
         sleep 2
         if $browser.a(id: /#{acao}$/).exist?
             sleep 2
@@ -241,19 +260,24 @@ class Utils
             sleep 2
             $browser.button(id: /#{acao}$/).click
             result = true
+        elsif $browser.img(id: /#{acao}$/).exist?
+            sleep 2
+            $browser.img(id: /#{acao}$/).click
+            result = true
         else
             result = false
         end
-        sleep 3
+        sleep 1
+        aguardar_loading
+        sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
 
         result
       end
 
-    # Validar Frames >>> Lucas >>>
     def validar_frame(texto)
-        sleep 2
-        result = if $browser.td(title: texto).exist? ||$browser.a(text: texto).exist? || $browser.div(text: texto).exist? || $browser.th(text: texto).exist? || $browser.label(text: texto).exist?
+        sleep 6
+        result = if $browser.td(title: texto).exist? || $browser.a(text: texto).exist? || $browser.div(text: texto).exist? || $browser.th(text: texto).exist? || $browser.label(text: texto).exist? || $browser.tr(text: texto).exist? || $browser.span(text: texto).exist?
                      true
                  else
                      false
@@ -264,7 +288,6 @@ class Utils
 
         result
     end
-    # Lucas <<<
 
     def preencher_campo_input(valor, campo)
         case campo.downcase
@@ -300,14 +323,26 @@ class Utils
             campo = 'formConsultationSalesAnticipationOperations:mskMassiveProtocol'
         when 'numero do cliente - antecipacao programadas cadastradas'
             campo = 'formArvConsultAntecipationScheduledRegistered:inputClientNumberId'
+        when 'numero da solicitacao - reprocessamento de vendas'
+            campo = 'tab_reprocessing_sales:searchReprocessingSales:input_SearchReprocessingSalesBeannuRequestReentry'
+        when 'numero da solicitacao - cancelamento e reversão de vendas'
+            campo = 'tab_request:formRequest:cancellation_number'
+        when 'Preço base - % CDI'
+            campo = 'tabFlexiblePrecification:tablePriceBaseStep1_id:0:txtCdiStep1_id_input'
+        when 'inicio da vigencia'
+            campo = 'tabFlexiblePrecification:dtStartCurrentStep1_id_input'
+        when 'numero da solicitacao - ajustes financeiros'
+            campo = 'tab_regularization:input_SearchRegularizationBeansearchRegularizationDTOrequestNumber'
+        when 'codigo da venda'
+            campo = 'tab_request:formRequest:sale_code'
         end
 
-        $browser.text_field(id: /#{campo}$/, :index => 0).when_present.set valor
+        $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
         aguardar_loading
         $browser.send_keys :tab
         aguardar_loading
 
-        if $browser.text_field(id: /#{campo}$/, :index => 0).value != ''
+        if $browser.text_field(id: /#{campo}$/, index: 0).value != ''
             $encoded_img = $browser.driver.screenshot_as(:base64)
             return true
         else
@@ -342,5 +377,17 @@ class Utils
             $encoded_img = $browser.driver.screenshot_as(:base64)
             return false
         end
+    end
+
+    def selecionar_radio_button(radio)
+        if $browser.label(text: radio, index: 0).exist?
+            $browser.label(text: radio, index: 0).click
+            sleep 2
+            result = true
+        else
+            result = false
+        end
+        sleep 2
+        $encoded_img = $browser.driver.screenshot_as(:base64)
     end
 end
