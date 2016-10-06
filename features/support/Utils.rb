@@ -353,7 +353,6 @@ class Utils
             campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtonsu'
         when 'comentario-reentrada de venda'
             campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtoobservations'
->>>>>>> 1a12be0b72da0e3a86f1030feb14dd0407e59dae
         end
 
         $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
