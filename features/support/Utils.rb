@@ -333,7 +333,6 @@ class Utils
             campo = 'tabFlexiblePrecification:dtStartCurrentStep1_id_input'
         when 'numero da solicitacao - ajustes financeiros'
             campo = 'tab_regularization:input_SearchRegularizationBeansearchRegularizationDTOrequestNumber'
-<<<<<<< HEAD
         when 'data de rejeicao - de'
             campo = 'tabRejectionCapture:initialRejectionDateTreatment_input|tabRejectionCapture:initialRejectionDate_input'
         when 'data de rejeicao - ate'
@@ -342,7 +341,6 @@ class Utils
             campo = 'j_idt196:dtEffectiveOf_input'
         when 'data programada - ate'
             campo = 'j_idt196:dtEffectiveUntil_input'
-=======
         when 'data de liquidação - tratamento'
             campo = 'formModal:dateSettlementTreatment_input'
         when 'codigo da venda'
@@ -365,8 +363,6 @@ class Utils
             campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtonsu'
         when 'comentario-reentrada de venda'
             campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtoobservations'
->>>>>>> 1a12be0b72da0e3a86f1030feb14dd0407e59dae
->>>>>>> 187fbb9974fef80dd6f5f232b650daa38b5115ed
         end
 
         $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
