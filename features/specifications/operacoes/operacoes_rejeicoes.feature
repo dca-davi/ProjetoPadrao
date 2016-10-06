@@ -46,3 +46,8 @@ Dado que tenha/nao tenha o direito "OPERACOES_REJEICOES_MANUTENCOES_CADASTRAIS_V
 E que tenha/nao tenha acesso na tela "Manutenções cadastrais"
 Quando selecionar a opcao "Rejeitada" do campo "Situação da solicitação"
 Entao clicar no botao "Pesquisar"
+
+@OPERACOES_REJEICOES_PAGAMENTOSDEBITOS_ANULAR_EDITAR
+Cenario: Validar direito OPERACOES_REJEICOES_PAGAMENTOSDEBITOS_ANULAR_EDITAR
+Dado que tenha/nao tenha o direito "OPERACOES_REJEICOES_PAGAMENTOSDEBITOS_ANULAR_EDITAR"
+E que tenha/nao tenha acesso na tela "Depósitos e débitos"

@@ -41,8 +41,8 @@ class Trava_Prazo_Vencido
     end
 
     def validar_botao_exportar_grid(_botao)
-        Watir::Wait.until { $browser.input(value: /Exportar/).exists? }
-        result = if $browser.input(value: /Exportar/).exists?
+        Watir::Wait.until { $browser.button(value: /Exportar/).exists? }
+        result = if $browser.button(value: /Exportar/).exists?
                      true
                  else
                      false
@@ -82,5 +82,5 @@ class Trava_Prazo_Vencido
             end
             $encoded_img = $browser.driver.screenshot_as(:base64)
         end
-    end    
+    end
 end
