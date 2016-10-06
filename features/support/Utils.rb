@@ -135,8 +135,8 @@ class Utils
 
     def clicar_botao_tela(botao)
         # result = true
-        sleep 2
-        Watir::Wait.until { $browser.button(text: botao).exists? }
+        sleep 1
+        #Watir::Wait.until { $browser.button(text: botao).exists? }
         if $browser.button(text: botao).exist?
             sleep 2
             $browser.button(text: botao, index: 0).click
@@ -144,8 +144,6 @@ class Utils
         else
             result = false
         end
-        sleep 5
-        aguardar_loading
         sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
         result
@@ -222,7 +220,7 @@ class Utils
         when 'Visualizar'
             acao = 'icon[_]?view|btn_detail|button_RSR|button_Jvn'
         when 'Editar'
-            acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi'
+            acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi|tabRejectionCapture:resultTableTreat:0:j_idt422'
         when 'Remover'
             acao = 'ico[_]?cancel|btn_cancel'
         when 'cancelar'
@@ -247,10 +245,14 @@ class Utils
             acao = 'flowForm:workQueueList:0:link_ZTw'
         when 'cancelar - coluna acao'
             acao = 'formArvConsultAntecipationScheduledRegistered:latestTransactionsTable:0:btn_cancel'
-    end
+        when 'Exportar'
+            acao = 'tabRejectionCapture:j_idt261|button_Settlement_msg_buttonexport_'
+        when 'Reverter'
+            acao = 'include_reversion_link'
+        end
 
         sleep 2
-        if $browser.a(id: /#{acao}$/).exist?
+        if $browser.a(id: /#{acao}$/  ).exist?
             sleep 2
             $browser.a(id: /#{acao}$/).click
             result = true
@@ -331,7 +333,36 @@ class Utils
             campo = 'tabFlexiblePrecification:dtStartCurrentStep1_id_input'
         when 'numero da solicitacao - ajustes financeiros'
             campo = 'tab_regularization:input_SearchRegularizationBeansearchRegularizationDTOrequestNumber'
-
+        when 'data de rejeicao - de'
+            campo = 'tabRejectionCapture:initialRejectionDateTreatment_input|tabRejectionCapture:initialRejectionDate_input'
+        when 'data de rejeicao - ate'
+            campo = 'tabRejectionCapture:finalRejectionDateTreatment_input|tabRejectionCapture:finalRejectionDate_input'
+        when 'data programada - de'
+            campo = 'j_idt196:dtEffectiveOf_input'
+        when 'data programada - ate'
+            campo = 'j_idt196:dtEffectiveUntil_input'
+        when 'data de liquidação - tratamento'
+            campo = 'formModal:dateSettlementTreatment_input'
+        when 'codigo da venda'
+            campo = 'tab_request:formRequest:sale_code'
+        when 'n do cliente -reentrada de venda'
+            campo = 'tab_reprocessing_sales:client_number'
+        when 'codigo de autorização-reentrada de venda'
+            campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtoauthorizationCode'
+        when "n do cartao aberto-reentrada de venda"
+            campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtocardOpen'
+        when 'data da autorizacao-reentrada de venda'
+            campo = 'tab_reprocessing_sales:authorization_date_input'
+        when 'valor da autorizacao-reentrada de venda'
+            campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeanauthorizationValue'
+        when 'tipo de pagamento-reentrada de venda'
+            campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeanpaymentTypeSelected_input'
+        when 'terminal-reentrada de venda'
+            campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtoterminal'
+        when 'nsu-reentrada de venda'
+            campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtonsu'
+        when 'comentario-reentrada de venda'
+            campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtoobservations'
         end
 
         $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor

@@ -1,13 +1,13 @@
 #language: pt
 
-@CLIENTES_CADASTRO_DOMICILIO_BANCARIO
+@ALL @CLIENTES_CADASTRO_DOMICILIO_BANCARIO
 Funcionalidade: Validar os direitos na tela Cliente > Cadastro > Informacoes do cliente > Domicilio Bancario
 
 Contexto:
 Dado que eu faca login
 E informe o EC "1018242187"
 
-@CLIENTES_CADASTRO_INFO_DOMICILIOBANCARIO_VER
+@CLIENTES_CADASTRO_INFO_DOMICILIOBANCARIO_VER @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito CLIENTES_CADASTRO_INFO_DOMICILIOBANCARIO_VER
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_DOMICILIOBANCARIO_VER"
 E que tenha/nao tenha acesso na tela "Informações do cliente"

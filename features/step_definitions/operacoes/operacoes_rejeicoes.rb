@@ -24,3 +24,13 @@ Quando (/^selecionar a opcao "([^"]*)" do campo "([^"]*)"$/) do |item, frame|
     raise 'Usuario pode clicar na opcao na qual tem direito'
   end
 end
+
+Quando (/^clicar no botao "([^"]*)" da tela captura$/) do |botao|
+  @operacoes_rejeicao = Operacoes_Rejeicao.new
+  btnPesquisar = @operacoes_rejeicao.clicar_botao_pequisar_captura_tratamento(botao)
+  if !btnPesquisar && @tem_direito
+    raise 'Usuario nao pode clicar no botao no qual tem direito'
+  elsif btnPesquisar && !@tem_direito
+    raise 'Usuario pode clicar no botao no qual tem direito'
+  end
+end

@@ -102,3 +102,41 @@ E que tenha/nao tenha acesso na tela "Ajustes financeiros"
 E informar "13507217" no campo "numero da solicitacao - ajustes financeiros"
 Quando clicar no botao "Pesquisar"
 Entao localizar o frame "Efetivada"
+
+<<<<<<< HEAD
+@OPERACOES_REGULARIZACOES_TRATAMENTODEBITOSEMRETORNO_SOLICITAR
+Cenario: Validar direito OPERACOES_REGULARIZACOES_TRATAMENTODEBITOSEMRETORNO_SOLICITAR
+Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_TRATAMENTODEBITOSEMRETORNO_SOLICITAR"
+E que tenha/nao tenha acesso na tela "Débitos ao cliente sem retorno"
+E selecionar "a primeira opcao da coluna Tratamento"
+Quando clicar no botao "Confirmar"
+E informar "05/10/2016" no campo "data de liquidação - tratamento"
+Entao clicar no botao "Confirmar" da tela de tratamento
+=======
+@OPERACOES_REGULARIZACOES_REVERSAOCANCELAMENTO_SOLICITAR
+Cenario: Validar direito OPERACOES_REGULARIZACOES_REVERSAOCANCELAMENTO_SOLICITAR
+Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_REVERSAOCANCELAMENTO_SOLICITAR"
+E que tenha/nao tenha acesso na tela "Cancelamento e reversão de vendas"
+Quando selecionar a opcao "Cancelamento de vendas"
+E informar "627406028342762" no campo "codigo da venda"
+Quando clicar no botao "Pesquisar"
+E clicar na acao "Reverter"
+Entao clicar no botao "Reverter"
+
+@OPERACOES_REGULARIZACOES_REPROCESSAMENTO_REENTRADA_SOLICITAR
+Cenario: Validar direito OPERACOES_REGULARIZACOES_REPROCESSAMENTO_REENTRADA_SOLICITAR
+Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_REPROCESSAMENTO_REENTRADA_SOLICITAR"
+E que tenha/nao tenha acesso na tela "Reprocessamento de vendas"
+Entao clicar na aba "REENTRADA DE VENDA"
+Entao informar "1018242187" no campo "n do cliente -reentrada de venda"
+E clicar no botao "OK"
+E informar "123456" no campo "codigo de autorização-reentrada de venda"
+E informar "5308698871257860" no campo "n do cartao aberto-reentrada de venda"
+E informar "02/10/2016" no campo "data da autorizacao-reentrada de venda"
+E informar "1.234,56" no campo "valor da autorizacao-reentrada de venda"
+E informar "1011-MASTERCARD Débito À vista" no campo "tipo de pagamento-reentrada de venda"
+E informar "44450498" no campo "terminal-reentrada de venda"
+E informar "381347" no campo "nsu-reentrada de venda"
+E informar "Teste" no campo "comentario-reentrada de venda"
+Entao clicar no botao "Continuar"
+>>>>>>> 1a12be0b72da0e3a86f1030feb14dd0407e59dae
