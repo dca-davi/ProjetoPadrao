@@ -1,17 +1,17 @@
 #language: pt
-@ALL @OPERACOES_REGULARIZACOES_FINANCEIRAS
+@OPERACOES_REGULARIZACOES_FINANCEIRAS
 Funcionalidade: Validar os direitos na tela Operacoes > Regularizações financeiras
 
 Contexto:
 Dado que eu faca login
 
-@OPERACOES_CONSULTA_TRANSACAO_VER @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
+@OPERACOES_CONSULTA_TRANSACAO_VER
 Cenario: Validar direito OPERACOES_CONSULTA_TRANSACAO_VER
 Dado que tenha/nao tenha o direito "OPERACOES_CONSULTA_TRANSACAO_VER"
 E que tenha/nao tenha acesso na tela "Consulta de transações"
 Entao o sistema exibira/nao exibira a tela "Consulta de transações"
 
-@OPERACOES_REGULARIZACOES_AJUSTE_VER @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
+@OPERACOES_REGULARIZACOES_AJUSTE_VER
 Cenario: Validar direito OPERACOES_REGULARIZACOES_AJUSTE_VER
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_AJUSTE_VER"
 E que tenha/nao tenha acesso na tela "Ajustes financeiros"
@@ -112,3 +112,20 @@ E informar "627406028342762" no campo "codigo da venda"
 Quando clicar no botao "Pesquisar"
 E clicar na acao "Reverter"
 Entao clicar no botao "Reverter"
+
+@OPERACOES_REGULARIZACOES_REPROCESSAMENTO_REENTRADA_SOLICITAR
+Cenario: Validar direito OPERACOES_REGULARIZACOES_REPROCESSAMENTO_REENTRADA_SOLICITAR
+Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_REPROCESSAMENTO_REENTRADA_SOLICITAR"
+E que tenha/nao tenha acesso na tela "Reprocessamento de vendas"
+Entao clicar na aba "REENTRADA DE VENDA"
+Entao informar "1018242187" no campo "n do cliente -reentrada de venda"
+E clicar no botao "OK"
+E informar "123456" no campo "codigo de autorização-reentrada de venda"
+E informar "5308698871257860" no campo "n do cartao aberto-reentrada de venda"
+E informar "02/10/2016" no campo "data da autorizacao-reentrada de venda"
+E informar "1.234,56" no campo "valor da autorizacao-reentrada de venda"
+E informar "1011-MASTERCARD Débito À vista" no campo "tipo de pagamento-reentrada de venda"
+E informar "44450498" no campo "terminal-reentrada de venda"
+E informar "381347" no campo "nsu-reentrada de venda"
+E informar "Teste" no campo "comentario-reentrada de venda"
+Entao clicar no botao "Continuar"

@@ -335,6 +335,24 @@ class Utils
             campo = 'tab_regularization:input_SearchRegularizationBeansearchRegularizationDTOrequestNumber'
         when 'codigo da venda'
             campo = 'tab_request:formRequest:sale_code'
+        when 'n do cliente -reentrada de venda'
+            campo = 'tab_reprocessing_sales:client_number'
+        when 'codigo de autorização-reentrada de venda'
+            campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtoauthorizationCode'
+        when "n do cartao aberto-reentrada de venda"
+            campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtocardOpen'
+        when 'data da autorizacao-reentrada de venda'
+            campo = 'tab_reprocessing_sales:authorization_date_input'
+        when 'valor da autorizacao-reentrada de venda'
+            campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeanauthorizationValue'
+        when 'tipo de pagamento-reentrada de venda'
+            campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeanpaymentTypeSelected_input'
+        when 'terminal-reentrada de venda'
+            campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtoterminal'
+        when 'nsu-reentrada de venda'
+            campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtonsu'
+        when 'comentario-reentrada de venda'
+            campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtoobservations'
         end
 
         $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
