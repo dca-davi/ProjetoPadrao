@@ -131,8 +131,8 @@ class Utils
 
     def clicar_botao_tela(botao)
         # result = true
-        sleep 2
-        Watir::Wait.until { $browser.button(text: botao).exists? }
+        sleep 1
+        #Watir::Wait.until { $browser.button(text: botao).exists? }
         if $browser.button(text: botao).exist?
             sleep 2
             $browser.button(text: botao, index: 0).click
@@ -140,8 +140,6 @@ class Utils
         else
             result = false
         end
-        sleep 5
-        aguardar_loading
         sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
         result
@@ -323,7 +321,8 @@ class Utils
             campo = 'tabFlexiblePrecification:dtStartCurrentStep1_id_input'
         when 'numero da solicitacao - ajustes financeiros'
             campo = 'tab_regularization:input_SearchRegularizationBeansearchRegularizationDTOrequestNumber'
-
+        when 'data de liquidação - tratamento'
+            campo = 'formModal:dateSettlementTreatment_input'
         end
 
         $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
