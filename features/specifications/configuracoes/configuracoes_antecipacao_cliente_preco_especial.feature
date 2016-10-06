@@ -1,6 +1,6 @@
 #language: pt
 
-@CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL
+@ALL @CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL
 Funcionalidade: Validar os direitos na tela Configurações > Antecipação de vendas > Precificacao
 
 Contexto:

@@ -76,7 +76,39 @@ end
     result = false
   end
   sleep 2
-      $encoded_img = $browser.driver.screenshot_as(:base64)
+  $encoded_img = $browser.driver.screenshot_as(:base64)
     end
   end
+
+  def selecionar_tabela_resumo_contabil_sintetico(tipo)
+    case tipo
+    when 'captura de vendas - vendas'
+    if $browser.label(id: 'reportSummry:label_SummarizedAccountingSaleReportBeansummaryAccountingDTOvlSalesAcceptedFIC').exist?
+      $browser.label(id: 'reportSummry:label_SummarizedAccountingSaleReportBeansummaryAccountingDTOvlSalesAcceptedFIC').click
+      sleep 2
+      result = true
+    else
+      result = false
+    end
+  end
+  sleep 2
+  $encoded_img = $browser.driver.screenshot_as(:base64)
+end
+
+def validar_botao_exportar(botao)
+    # result = true
+    sleep 1
+    Watir::Wait.until { $browser.button(text: botao).exists? }
+    if $browser.button(text: botao).exist?
+        sleep 1
+        result = true
+    else
+        result = false
+    end
+    sleep 2
+    $encoded_img = $browser.driver.screenshot_as(:base64)
+    result
+end
+
+
 end

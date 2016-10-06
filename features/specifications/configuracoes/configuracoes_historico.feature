@@ -1,6 +1,6 @@
 #language: pt
 
-@CONFIGURACOES_HISTORICO
+@ALL @CONFIGURACOES_HISTORICO
 Funcionalidade: Validar os direitos na tela Configuracoes > Historico
 
 Contexto:
@@ -20,7 +20,7 @@ E que tenha/nao tenha acesso na tela "Histórico de manutenção"
 Quando informar "Antecipação de vendas" no campo "Tópico de manutenção"
 Entao posso/nao posso informar "CUSTO OPERACIONAL" no campo "Subtópico de manutenção"
 
-@CONFIGURACOES_HISTORICO_HISTORICOMANUTENCOES_PARAMETROSCONFIGGERAL_VER
+@CONFIGURACOES_HISTORICO_HISTORICOMANUTENCOES_PARAMETROSCONFIGGERAL_VER @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito CONFIGURACOES_HISTORICO_HISTORICOMANUTENCOES_PARAMETROSCONFIGGERAL_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_HISTORICO_HISTORICOMANUTENCOES_PARAMETROSCONFIGGERAL_VER"
 E que tenha/nao tenha acesso na tela "Histórico de manutenção"
@@ -41,7 +41,7 @@ E que tenha/nao tenha acesso na tela "Histórico de manutenção"
 Quando informar "Antecipação de vendas" no campo "Tópico de manutenção"
 Entao posso/nao posso informar "TARIFA DE LIQUIDAÇÃO PROARV" no campo "Subtópico de manutenção"
 
-@CONFIGURACOES_HISTORICO_HISTORICOMANUTENCOES_TABELA_PRECO_VER
+@CONFIGURACOES_HISTORICO_HISTORICOMANUTENCOES_TABELA_PRECO_VER @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito CONFIGURACOES_HISTORICO_HISTORICOMANUTENCOES_TABELA_PRECO_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_HISTORICO_HISTORICOMANUTENCOES_TABELA_PRECO_VER"
 E que tenha/nao tenha acesso na tela "Histórico de manutenção"

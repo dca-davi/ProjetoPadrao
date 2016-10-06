@@ -1,19 +1,19 @@
 #language: pt
 
-@CONFIGURACOES_ANTECIPACAOVENDAS
+@ALL @CONFIGURACOES_ANTECIPACAOVENDAS
 Funcionalidade: Validar os direitos na tela Configurações > Antecipação de vendas
 
 Contexto:
 Dado que eu faca login
 
-@CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_CONSULTAGERAL_VER
+@CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_CONSULTAGERAL_VER @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_CONSULTAGERAL_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_CONSULTAGERAL_VER"
 E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
 E que tenha/nao tenha acesso na tela "Consulta geral"
 Entao o sistema exibira/nao exibira a tela "Precificação"
 
-@CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_CONSULTAPORCANAL_VER
+@CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_CONSULTAPORCANAL_VER @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_CONSULTAPORCANAL_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_CONSULTAPORCANAL_VER"
 E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
@@ -25,7 +25,7 @@ Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOE
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
 Entao localizar o frame "Taxa efetiva máxima"
 
-@CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOES_RESERVAFINANCEIRA_VER
+@CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOES_RESERVAFINANCEIRA_VER @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOES_RESERVAFINANCEIRA_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOES_RESERVAFINANCEIRA_VER"
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
@@ -66,6 +66,13 @@ Quando clicar na aba "Preço Especial"
 E clicar na aba "Incluir"
 Entao o sistema exibira/nao exibira a tela "Precificação"
 
+@CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_PRECOESPECIAL_VER
+Cenario: Validar direito CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_PRECOESPECIAL_VER
+Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_PRECOESPECIAL_VER"
+E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
+Quando clicar na aba "Preço Especial"
+Entao podera/nao podera acessar a aba "Preço Especial"
+
 @SETUP_ARVCONFIGURACOES_GERAIS_ATRIBUICAOCATEGORIAPRECO_EDITAR
 Cenario: Validar direito SETUP_ARVCONFIGURACOES_GERAIS_ATRIBUICAOCATEGORIAPRECO_EDITAR
 Dado que tenha/nao tenha o direito "SETUP_ARVCONFIGURACOES_GERAIS_ATRIBUICAOCATEGORIAPRECO_EDITAR"
@@ -90,7 +97,7 @@ Dado que tenha/nao tenha o direito "SETUP_ARV_CUSTOS_CUSTO_CAPTACAO_VER"
 E que tenha/nao tenha acesso na tela "Custos"
 Entao clicar na aba "CUSTO DE CAPTAÇÃO"
 
-@SETUP_ARVCONFIGURACOES_GERAIS_ATRIBUICAOCATEGORIAPRECO_VER
+@SETUP_ARVCONFIGURACOES_GERAIS_ATRIBUICAOCATEGORIAPRECO_VER @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito SETUP_ARVCONFIGURACOES_GERAIS_ATRIBUICAOCATEGORIAPRECO_VER
 Dado que tenha/nao tenha o direito "SETUP_ARVCONFIGURACOES_GERAIS_ATRIBUICAOCATEGORIAPRECO_VER"
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
@@ -102,7 +109,7 @@ Dado que tenha/nao tenha o direito "SETUP_ARVCONFIGURACOES_GERAIS_RAMOSDEATIVIDA
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
 Entao clicar no botao "Editar dados" do frame "Ramos de atividade restritos"
 
-@SETUP_ARVCONFIGURACOES_GERAIS_RAMOSDEATIVIDADERESTRITOS_VER
+@SETUP_ARVCONFIGURACOES_GERAIS_RAMOSDEATIVIDADERESTRITOS_VER @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito SETUP_ARVCONFIGURACOES_GERAIS_RAMOSDEATIVIDADERESTRITOS_VER
 Dado que tenha/nao tenha o direito "SETUP_ARVCONFIGURACOES_GERAIS_RAMOSDEATIVIDADERESTRITOS_VER"
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
@@ -147,9 +154,14 @@ E informar "1007595105" no campo "numero do cliente - excecao"
 Quando clicar no botao "OK"
 Entao clicar no botao "Confirmar"
 
+@CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_CONSULTAGERAL_EDITAR
+Cenario: Validar direito CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_CONSULTAGERAL_EDITAR
+Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_CONSULTAGERAL_EDITAR"
+E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
+E que tenha/nao tenha acesso na tela "Consulta geral"
+Entao o botao "Editar" devera estar habilitado/desabilitado
 
-# Rafael >>>
-@CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOES_GERAIS_VER
+@CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOES_GERAIS_VER @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOES_GERAIS_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOES_GERAIS_VER"
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
@@ -172,16 +184,14 @@ Cenario: Validar direito CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAORESERVAFINANCEIR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAORESERVAFINANCEIRA_VER"
 E que tenha/nao tenha acesso na tela "Exceção_antecipaçãoVendas"
 Entao o sistema exibira/nao exibira a tela "Exceção"
-# Rafael <<<
 
-# Demis >>>
 @CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECIPACAOPROGRAMADA_EDITAR
 Cenario: Validar direito CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECIPACAOPROGRAMADA_EDITAR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECIPACAOPROGRAMADA_EDITAR"
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
 Entao clicar no botao "Editar dados" do frame "Antecipação programada"
 
-@CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECIPACAOPROGRAMADA_VER
+@CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECIPACAOPROGRAMADA_VER @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECIPACAOPROGRAMADA_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECIPACAOPROGRAMADA_VER"
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
@@ -210,4 +220,3 @@ Entao localizar o frame "Antecipação programada"
 #Dado que tenha/nao tenha o direito "SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER"
 #E que tenha/nao tenha acesso na tela "Custos_antecipaçãoVendas"
 #Entao o sistema exibira/nao exibira a tela "Antecipação de Vendas - Custos"
-# Demis <<<

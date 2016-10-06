@@ -1,12 +1,12 @@
 #language: pt
 
-@OPERACOES_HIERARQUIA
+@ALL @OPERACOES_HIERARQUIA
 Funcionalidade: Validar os direitos na tela Operacoes > Hierarquia > Grupo de pagamento
 
 Contexto:
 Dado que eu faca login
 
-@OPERACOES_HIERARQUIA_GRUPODEPAGAMENTO_VER
+@OPERACOES_HIERARQUIA_GRUPODEPAGAMENTO_VER  @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito OPERACOES_HIERARQUIA_GRUPODEPAGAMENTO_VER
 Dado que tenha/nao tenha o direito "OPERACOES_HIERARQUIA_GRUPODEPAGAMENTO_VER"
 E que tenha/nao tenha acesso na tela "Grupo de pagamento"

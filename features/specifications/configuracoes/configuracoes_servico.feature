@@ -1,5 +1,5 @@
 #language: pt
-@CONFIGURACOES_SERVICO
+@ALL @CONFIGURACOES_SERVICO
 Funcionalidade: Validar os direitos na tela Configurações > Serviços
 
 Contexto:

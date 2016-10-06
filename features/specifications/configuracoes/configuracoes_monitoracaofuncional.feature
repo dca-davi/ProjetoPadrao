@@ -1,6 +1,6 @@
 #language: pt
 
-@CONFIGURACOES_ANTECIPACAOVENDAS
+@ALL @CONFIGURACOES_MONITORACAOFUNCIONAL
 Funcionalidade: Validar os direitos na tela Configurações > Monitoração Funcional
 
 Contexto:

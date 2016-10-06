@@ -1,6 +1,6 @@
 #language: pt
 
-@RELATORIOS_FINANCEIROS
+@ALL @RELATORIOS_FINANCEIROS
 Funcionalidade: Validar os direitos nos menus Relatorios > Relatorios financeiros
 
 Contexto:
@@ -70,3 +70,10 @@ Dado que tenha/nao tenha o direito "RELATORIOS_FINANCEIROS_GERENCIAMENTOCARTEIRA
 E que tenha/nao tenha acesso na tela "Gerenciamento de carteiras"
 E o sistema exibira/nao exibira a tela "Gerenciamento de carteiras"
 Entao clicar na aba "COBRANÇA"
+
+@RELATORIOS_FINANCEIROS_CONTABEIS_EXPORTAR
+Cenario: Validar direito RELATORIOS_FINANCEIROS_CONTABEIS_EXPORTAR
+Dado que tenha/nao tenha o direito "RELATORIOS_FINANCEIROS_CONTABEIS_EXPORTAR"
+E que tenha/nao tenha acesso na tela "Resumo contábil sintético"
+E selecionar a opcao "captura de vendas - vendas" da tela resumo contabil sintetico
+Entao clicar no botao "Exportar" da tela captura de vendas
