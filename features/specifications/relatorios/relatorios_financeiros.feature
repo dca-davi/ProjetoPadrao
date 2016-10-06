@@ -1,6 +1,6 @@
 #language: pt
 
-@RELATORIOS_FINANCEIROS
+@ALL @RELATORIOS_FINANCEIROS
 Funcionalidade: Validar os direitos nos menus Relatorios > Relatorios financeiros
 
 Contexto:

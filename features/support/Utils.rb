@@ -25,6 +25,10 @@ class Utils
             i = 1
             pagina = 'Geral'
 
+        when 'Custos_antecipaçãoVendas'
+            i = 0
+            pagina = 'Custos'
+
         when 'Precificação_antecipaçãoVendas'
             i = 0
             pagina = 'Precificação'
@@ -229,13 +233,21 @@ class Utils
             acao = 'formConsultationSalesAnticipationOperations:latestTransactionsTable:0:btn_detail'
         when 'visualizar - detalhe disponivel'
             acao = 'tabOperationAnticipation:button_Arv_msg_arvprepaymentoperation_u57'
+        when 'Atribuir para' # Bonequinho - Tela Fila de Trabalho
+            acao = 'link_ZTw'
+        when 'Atribuir' # Atribuir - Tela Fila de Trabalho
+            acao = 'link_OXZ'
+        when 'Liberar' # Liberar - Tela Fila de Trabalho
+            acao = 'link_VY9'
         when 'detalhar - reprocessamento de vendas'
             acao = 'tab_reprocessing_sales:searchReprocessingSales:reprocessingSales:0:image_w9Z'
         when 'atribuir'
             acao = 'flowForm:workQueueList:0:link_ZTw'
         when 'cancelar - coluna acao'
             acao = 'formArvConsultAntecipationScheduledRegistered:latestTransactionsTable:0:btn_cancel'
-          end
+        when 'Reverter'
+            acao = 'include_reversion_link'
+    end
 
         sleep 2
         if $browser.a(id: /#{acao}$/).exist?
@@ -261,7 +273,6 @@ class Utils
         result
       end
 
-
     def validar_frame(texto)
         sleep 6
         result = if $browser.td(title: texto).exist? || $browser.a(text: texto).exist? || $browser.div(text: texto).exist? || $browser.th(text: texto).exist? || $browser.label(text: texto).exist? || $browser.tr(text: texto).exist? || $browser.span(text: texto).exist?
@@ -275,7 +286,6 @@ class Utils
 
         result
     end
-
 
     def preencher_campo_input(valor, campo)
         case campo.downcase
@@ -323,6 +333,27 @@ class Utils
             campo = 'tab_regularization:input_SearchRegularizationBeansearchRegularizationDTOrequestNumber'
         when 'data de liquidação - tratamento'
             campo = 'formModal:dateSettlementTreatment_input'
+        when 'codigo da venda'
+            campo = 'tab_request:formRequest:sale_code'
+        when 'n do cliente -reentrada de venda'
+            campo = 'tab_reprocessing_sales:client_number'
+        when 'codigo de autorização-reentrada de venda'
+            campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtoauthorizationCode'
+        when "n do cartao aberto-reentrada de venda"
+            campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtocardOpen'
+        when 'data da autorizacao-reentrada de venda'
+            campo = 'tab_reprocessing_sales:authorization_date_input'
+        when 'valor da autorizacao-reentrada de venda'
+            campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeanauthorizationValue'
+        when 'tipo de pagamento-reentrada de venda'
+            campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeanpaymentTypeSelected_input'
+        when 'terminal-reentrada de venda'
+            campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtoterminal'
+        when 'nsu-reentrada de venda'
+            campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtonsu'
+        when 'comentario-reentrada de venda'
+            campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtoobservations'
+>>>>>>> 1a12be0b72da0e3a86f1030feb14dd0407e59dae
         end
 
         $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
@@ -368,15 +399,14 @@ class Utils
     end
 
     def selecionar_radio_button(radio)
-      if $browser.label(text: radio, index: 0).exist?
-        $browser.label(text: radio, index: 0).click
+        if $browser.label(text: radio, index: 0).exist?
+            $browser.label(text: radio, index: 0).click
+            sleep 2
+            result = true
+        else
+            result = false
+        end
         sleep 2
-        result = true
-      else
-        result = false
-      end
-      sleep 2
-      $encoded_img = $browser.driver.screenshot_as(:base64)
+        $encoded_img = $browser.driver.screenshot_as(:base64)
     end
-
 end

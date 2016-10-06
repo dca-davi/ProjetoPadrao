@@ -1,6 +1,6 @@
 #language: pt
 
-@CONFIGURACOES_REGULATORIOS
+@ALL @CONFIGURACOES_REGULATORIOS
 Funcionalidade: Validar os direitos na tela Configuracoes > Regulatorios
 
 Contexto:

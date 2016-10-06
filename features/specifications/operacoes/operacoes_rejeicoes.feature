@@ -1,7 +1,7 @@
 #language: pt
 #encoding: utf-8
 
-@OPERACOES_REJEICOES
+@ALL @OPERACOES_REJEICOES
 Funcionalidade: Validar os direitos na tela Operacoes > Rejeicoes
 
 Contexto:
@@ -39,7 +39,6 @@ Dado que tenha/nao tenha o direito "OPERACOES_REJEITADOS_PAGAMENTOSEDEBITOS_EXPO
 E que tenha/nao tenha acesso na tela "Depósitos e débitos"
 Quando informar os filtros na tela "Depósitos | Débitos" e clicar no botao "Pesquisar"
 Entao o botao "Exportar" estara habilitado/desabilitado
-
 
 @OPERACOES_REJEICOES_MANUTENCOES_CADASTRAIS_VER
 Cenario: Validar direito OPERACOES_REJEICOES_MANUTENCOES_CADASTRAIS_VER

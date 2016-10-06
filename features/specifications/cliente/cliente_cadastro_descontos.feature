@@ -1,6 +1,6 @@
 #language: pt
 
-@CLIENTES_CADASTRO_DESCONTOS
+@ALL @CLIENTES_CADASTRO_DESCONTOS
 Funcionalidade: Validar os direitos na tela Cliente > Cadastro > Informacoes do cliente > Descontos
 
 Contexto:

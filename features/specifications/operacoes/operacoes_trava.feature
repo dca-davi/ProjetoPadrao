@@ -1,7 +1,7 @@
 #language: pt
 #encoding: utf-8
 
-@OPERACOES_TRAVA
+@ALL @OPERACOES_TRAVA
 Funcionalidade: Validar os direitos na tela Operacoes > Trava
 
 Contexto:

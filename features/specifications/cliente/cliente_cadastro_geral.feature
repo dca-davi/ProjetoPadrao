@@ -1,13 +1,13 @@
 #language: pt
 
-@CLIENTES_CADASTRO_GERAL
+@ALL @CLIENTES_CADASTRO_GERAL
 Funcionalidade: Validar os direitos na tela Cliente > Cadastro > Informacoes do cliente > Geral
 
 Contexto:
 Dado que eu faca login
 E informe o EC "1018242187"
 
-@CLIENTES_CADASTRO_INFO_GERAL_VER
+@CLIENTES_CADASTRO_INFO_GERAL_VER @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito CLIENTES_CADASTRO_INFO_GERAL_VER
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_GERAL_VER"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
@@ -45,7 +45,7 @@ E clicar no botao "Editar Dados" do frame "Situação do Cliente"
 Quando o campo Status do cadastro estiver como "Fechado"
 Entao o campo contem/nao contem a opcao "Código F"
 
-@CLIENTES_CADASTRO_INFO_SITUACAODOCLIENTE_MOTIVO_DECISAOCOMERCIAL_EDITAR
+@CLIENTES_CADASTRO_INFO_SITUACAODOCLIENTE_MOTIVO_DECISAOCOMERCIAL_EDITAR @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito CLIENTES_CADASTRO_INFO_SITUACAODOCLIENTE_MOTIVO_DECISAOCOMERCIAL_EDITAR
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_SITUACAODOCLIENTE_MOTIVO_DECISAOCOMERCIAL_EDITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
@@ -61,7 +61,7 @@ E clicar no botao "Editar Dados" do frame "Situação do Cliente"
 Quando o campo Status do cadastro estiver como "Fechado"
 Entao o campo contem/nao contem a opcao "Decisão jurídica"
 
-@CLIENTES_CADASTRO_INFO_SITUACAODOCLIENTE_MOTIVO_SOLICITACAODOCLIENTE_EDITAR
+@CLIENTES_CADASTRO_INFO_SITUACAODOCLIENTE_MOTIVO_SOLICITACAODOCLIENTE_EDITAR @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito CLIENTES_CADASTRO_INFO_SITUACAODOCLIENTE_MOTIVO_SOLICITACAODOCLIENTE_EDITAR
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_SITUACAODOCLIENTE_MOTIVO_SOLICITACAODOCLIENTE_EDITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
@@ -69,7 +69,7 @@ E clicar no botao "Editar Dados" do frame "Situação do Cliente"
 Quando o campo Status do cadastro estiver como "Fechado"
 Entao o campo contem/nao contem a opcao "Solicitação do cliente"
 
-@CLIENTES_CADASTRO_INFO_SITUACAODOCLIENTE_ABRIRFECHAR_EDITAR
+@CLIENTES_CADASTRO_INFO_SITUACAODOCLIENTE_ABRIRFECHAR_EDITAR @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito CLIENTES_CADASTRO_INFO_SITUACAODOCLIENTE_ABRIRFECHAR_EDITAR
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_SITUACAODOCLIENTE_ABRIRFECHAR_EDITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
@@ -102,14 +102,14 @@ E que tenha/nao tenha acesso na tela "Informações do cliente"
 Quando clicar no botao "Editar Dados" do frame "Dados de cadastro"
 Entao o campo "Razão Social" deve/nao deve estar habilitado
 
-@CLIENTES_CADASTRO_INFO_SITE_EDITAR
+@CLIENTES_CADASTRO_INFO_SITE_EDITAR @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito CLIENTES_CADASTRO_INFO_SITE_EDITAR
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_SITE_EDITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
 Quando clicar no botao "Editar Dados" do frame "Dados de cadastro"
 Entao o campo "Site" deve/nao deve estar habilitado
 
-@CLIENTES_CADASTRO_INFO_GERAL_DADOSDECONTATOS_EDITAR
+@CLIENTES_CADASTRO_INFO_GERAL_DADOSDECONTATOS_EDITAR  @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito CLIENTES_CADASTRO_INFO_GERAL_DADOSDECONTATOS_EDITAR
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_GERAL_DADOSDECONTATOS_EDITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
@@ -122,14 +122,14 @@ Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_ENDERECODECONTRATO_ED
 E que tenha/nao tenha acesso na tela "Informações do cliente"
 Entao o botao "Editar Dados" do frame "Endereço do contrato" estara habilitado/desabilitado
 
-@CLIENTES_CADASTRO_INFO_ENDERECO_EDITAR
+@CLIENTES_CADASTRO_INFO_ENDERECO_EDITAR  @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito CLIENTES_CADASTRO_INFO_ENDERECO_EDITAR
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_ENDERECO_EDITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
 Quando clicar na aba "ENDEREÇO"
 Entao o botao "Editar" dados de contato esta habilitado/desabilitado
 
-@CLIENTE_GERAL_BLOQUEIOS_VER
+@CLIENTE_GERAL_BLOQUEIOS_VER @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito CLIENTE_GERAL_BLOQUEIOS_VER
 Dado que tenha/nao tenha o direito "CLIENTE_GERAL_BLOQUEIOS_VER"
 E que tenha/nao tenha acesso na tela "Informações do cliente"

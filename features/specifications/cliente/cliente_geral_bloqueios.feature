@@ -1,6 +1,6 @@
 #language: pt
 
-@CLIENTES_CADASTRO_BLOQUEIOS
+@ALL @CLIENTES_CADASTRO_BLOQUEIOS
 Funcionalidade: Validar os direitos na tela Cliente > Cadastro > Informacoes do cliente > Bloqueios
 
 Contexto:

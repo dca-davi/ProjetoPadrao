@@ -1,6 +1,6 @@
 #language: pt
 
-@CLIENTES_CADASTRO_INFO_SERVICOS
+@ALL @CLIENTES_CADASTRO_INFO_SERVICOS
 Funcionalidade: Validar os direitos na tela Cliente > Cadastro > Informacoes do cliente > Canal de Venda
 
 Contexto:

@@ -1,14 +1,14 @@
 #language: pt
 #encoding: utf-8
 
-@OPERACOES_VAN
+@ALL @OPERACOES_VAN
 Funcionalidade: Validar os direitos na tela Operacoes > Van
 
 Contexto:
 Dado que eu faca login
 E informe o EC "1018242187"
 
-@OPERACOES_VAN_HABILITACAODESABILITACAO_VER
+@OPERACOES_VAN_HABILITACAODESABILITACAO_VER @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito OPERACOES_VAN_HABILITACAODESABILITACAO_VER
 Dado que tenha/nao tenha o direito "OPERACOES_VAN_HABILITACAODESABILITACAO_VER"
 E que tenha/nao tenha acesso na tela "Habilitação e desabilitação"

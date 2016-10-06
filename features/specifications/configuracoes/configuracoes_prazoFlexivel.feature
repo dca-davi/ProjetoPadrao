@@ -1,6 +1,6 @@
 #language: pt
 
-@CONFIGURACOES_PRAZOFLEXIVEL
+@ALL @CONFIGURACOES_PRAZOFLEXIVEL
 Funcionalidade: Validar os direitos na tela Configuracoes > Prazo Flexivel
 
 Contexto:
