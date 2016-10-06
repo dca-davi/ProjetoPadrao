@@ -1,6 +1,6 @@
 #language: pt
 
-@CONFIGURACOES_REGULARIZACOESFINANCEIRAS
+@ALL @CONFIGURACOES_REGULARIZACOESFINANCEIRAS
 Funcionalidade: Validar os direitos na tela Configurações > Regularizações financeiras > Precificacao
 
 Contexto:

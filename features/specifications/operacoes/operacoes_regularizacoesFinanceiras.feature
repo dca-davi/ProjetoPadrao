@@ -1,17 +1,17 @@
 #language: pt
-@OPERACOES_REGULARIZACOES_FINANCEIRAS
+@ALL @OPERACOES_REGULARIZACOES_FINANCEIRAS
 Funcionalidade: Validar os direitos na tela Operacoes > Regularizações financeiras
 
 Contexto:
 Dado que eu faca login
 
-@OPERACOES_CONSULTA_TRANSACAO_VER
+@OPERACOES_CONSULTA_TRANSACAO_VER @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito OPERACOES_CONSULTA_TRANSACAO_VER
 Dado que tenha/nao tenha o direito "OPERACOES_CONSULTA_TRANSACAO_VER"
 E que tenha/nao tenha acesso na tela "Consulta de transações"
 Entao o sistema exibira/nao exibira a tela "Consulta de transações"
 
-@OPERACOES_REGULARIZACOES_AJUSTE_VER
+@OPERACOES_REGULARIZACOES_AJUSTE_VER @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito OPERACOES_REGULARIZACOES_AJUSTE_VER
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_AJUSTE_VER"
 E que tenha/nao tenha acesso na tela "Ajustes financeiros"

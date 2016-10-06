@@ -1,7 +1,7 @@
 #language: pt
 #encoding: utf-8
 
-@OPERACOES_REJEICOES
+@ALL @OPERACOES_REJEICOES
 Funcionalidade: Validar os direitos na tela Operacoes > Rejeicoes
 
 Contexto:

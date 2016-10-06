@@ -1,6 +1,6 @@
 #language: pt
 
-@CONFIGURACOES_TIPO_PAGAMENTO
+@ALL @CONFIGURACOES_TIPO_PAGAMENTO
 Funcionalidade: Validar os direitos na tela Configuracoes > Tipo de pagamentos
 
 Contexto:
@@ -19,7 +19,7 @@ E que tenha/nao tenha acesso na tela "Preço padrão"
 Quando clicar na aba "ATUALIZAR"
 Entao podera/nao podera acessar a aba "ATUALIZAR"
 
-@CONFIGURACOES_TIPODEPAGAMENTO_VER
+@CONFIGURACOES_TIPODEPAGAMENTO_VER @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito CONFIGURACOES_TIPODEPAGAMENTO_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_TIPODEPAGAMENTO_VER"
 E que tenha/nao tenha acesso na tela "Pesquisa"

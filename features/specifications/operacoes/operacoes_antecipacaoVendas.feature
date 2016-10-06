@@ -1,7 +1,7 @@
 #language: pt
 #encoding: utf-8
 
-@OPERACOES_ANTECIPACAOVENDAS
+@ALL @OPERACOES_ANTECIPACAOVENDAS
 Funcionalidade: Validar os direitos na tela Operacoes > Antecipacao de Vendas
 
 Contexto:
@@ -26,7 +26,7 @@ Quando selecionar "CENTRAL" do campo "canal - acumulado diario"
 E selecionar a data "08/09/2016" da pagina "Acumulado diario - Por canal"
 Entao clicar no botao Pesquisar
 
-@OPERACOES_ANTECIPACAO_CANAL_CENTRALDEANTECIPACAO_VER
+@OPERACOES_ANTECIPACAO_CANAL_CENTRALDEANTECIPACAO_VER  @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito OPERACOES_ANTECIPACAO_CANAL_CENTRALDEANTECIPACAO_VER
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAO_CANAL_CENTRALDEANTECIPACAO_VER"
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
@@ -48,7 +48,7 @@ E que tenha/nao tenha acesso na tela "Operação de antecipação"
 Quando clicar na aba "Antecipação Avulsa"
 Entao localizar o frame "DI futuro"
 
-@OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_DETALHEDISPONIVEL_VER
+@OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_DETALHEDISPONIVEL_VER @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_DETALHEDISPONIVEL_VER
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_DETALHEDISPONIVEL_VER"
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
@@ -63,9 +63,9 @@ Quando clicar na aba "Antecipação Avulsa"
 E localizar o frame "Percentual CDI"
 Entao localizar o frame "(Cielo)"
 
-@OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_NEGOCIACAO_CDICLIENTE_VER
-Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_NEGOCIACAO_CDICIELO_VER
-Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_NEGOCIACAO_CDICIELO_VER"
+@OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_NEGOCIACAO_CDICLIENTE_VER @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_NEGOCIACAO_CDICLIENTE_VER
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_NEGOCIACAO_CDICLIENTE_VER"
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
 Quando clicar na aba "Antecipação Avulsa"
 E localizar o frame "Percentual CDI"
@@ -80,7 +80,7 @@ Entao selecionar clicar no link "Alterar valores de negociacao"
 E informar "5,38" no campo "preco - antecipacao avulsa"
 Entao clicar no botao "OK"
 
-@OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_RESULTADOBASICO_VER
+@OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_RESULTADOBASICO_VER @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_RESULTADOBASICO_VER
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_RESULTADOBASICO_VER"
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
@@ -103,7 +103,7 @@ Quando clicar na aba "Antecipação Avulsa"
 E clicar no botao "Efetivar Operação"
 Entao confirmar a efetivacao
 
-@OPERACOES_ANTECIPACAOVENDAS_OPERANTECIPACAO_AVULSA_VER
+@OPERACOES_ANTECIPACAOVENDAS_OPERANTECIPACAO_AVULSA_VER @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_OPERANTECIPACAO_AVULSA_VER
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERANTECIPACAO_AVULSA_VER"
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
@@ -137,7 +137,7 @@ Quando clicar na acao "cancelar"
 E selecionar "outros" do campo "Motivo"
 Então clicar no botao "Sim"
 
-@OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CDICLIENTE_VER
+@OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CDICLIENTE_VER @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CDICLIENTE_VER
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CDICLIENTE_VER"
 E que tenha/nao tenha acesso na tela "Operações realizadas"
@@ -152,7 +152,7 @@ E que tenha/nao tenha acesso na tela "Operações realizadas"
 Quando clicar na acao "Visualizar - operacoes realizadas"
 Entao localizar o frame "DI futuro"
 
-@OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_VER
+  @OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_VER @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_VER
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_VER"
 E que tenha/nao tenha acesso na tela "Operações realizadas"
@@ -168,7 +168,7 @@ Quando informar "1018242187" no campo "numero do cliente - operacoes realizadas"
 E clicar no botao "Pesquisar"
 Entao clicar na acao "Visualizar - operacoes realizadas"
 
-@OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_VER
+@OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_VER @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_VER
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_VER"
 E que tenha/nao tenha acesso na tela "Antecipação programadas cadastradas"

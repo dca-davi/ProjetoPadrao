@@ -1,6 +1,6 @@
 #language: pt
 
-@RELATORIOS_BANDEIRAS
+@ALL @RELATORIOS_BANDEIRAS
 Funcionalidade: Validar os direitos nos menus Relatorios > bandeiras
 
 Contexto:

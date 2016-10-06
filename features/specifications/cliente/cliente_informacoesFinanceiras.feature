@@ -1,19 +1,19 @@
 #language: pt
 
-@CLIENTES_INFORMACOESFINANCEIRAS
+@ALL @CLIENTES_INFORMACOESFINANCEIRAS
 Funcionalidade: Validar os direitos na tela Cliente > Extratos > Resumo Financeiro
 
 Contexto:
 Dado que eu faca login
 E informe o EC "1018242187"
 
-@CLIENTES_INFORMACOESFINANCEIRAS_VER
+@CLIENTES_INFORMACOESFINANCEIRAS_VER @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito CLIENTES_INFORMACOESFINANCEIRAS_VER
 Dado que tenha/nao tenha o direito "CLIENTES_INFORMACOESFINANCEIRAS_VER"
 E que tenha/nao tenha acesso na tela "Resumo financeiro"
 Entao o sistema exibira/nao exibira a tela "Resumo financeiro"
 
-@CLIENTES_INFORMACOESFINANCEIRAS_BUSCAAVANCADA_VER
+@CLIENTES_INFORMACOESFINANCEIRAS_BUSCAAVANCADA_VER @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito CLIENTES_INFORMACOESFINANCEIRAS_BUSCAAVANCADA_VER
 Dado que tenha/nao tenha o direito "CLIENTES_INFORMACOESFINANCEIRAS_BUSCAAVANCADA_VER"
 E que tenha/nao tenha acesso na tela "Resumo financeiro"

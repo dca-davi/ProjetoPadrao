@@ -1,6 +1,6 @@
 #language: pt
 
-@CONFIGURACOES_DEMANDAS_ALCADAS
+@ALL @CONFIGURACOES_DEMANDAS_ALCADAS
 Funcionalidade: Validar os direitos na tela Configuracoes > Demandas > Alcadas
 
 Contexto:
