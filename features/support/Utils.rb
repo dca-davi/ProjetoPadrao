@@ -145,9 +145,12 @@ class Utils
             result = false
         end
         sleep 2
+        aguardar_loading
         $encoded_img = $browser.driver.screenshot_as(:base64)
         result
     end
+
+
 
     def acessar_aba(aba)
         sleep 2
@@ -215,10 +218,10 @@ class Utils
     end
 
     def clicar_botao_acao(acao)
-        sleep 2
+        sleep 3
         case acao
         when 'Visualizar'
-            acao = 'icon[_]?view|btn_detail|button_RSR|button_Jvn'
+            acao = 'icon[_]?view|btn_detail|button_RSR|button_Jvn|link_SMe'
         when 'Editar'
             acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi|tabRejectionCapture:resultTableTreat:0:j_idt422'
         when 'Remover'
@@ -255,7 +258,11 @@ class Utils
             acao = '0:button_0Tn'
     end
 
+<<<<<<< HEAD
 
+=======
+        end
+>>>>>>> 8c35b5043a20afee020b21654056c802e03ad837
 
         sleep 2
         if $browser.a(id: /#{acao}$/  ).exist?
@@ -369,6 +376,8 @@ class Utils
             campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtonsu'
         when 'comentario-reentrada de venda'
             campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtoobservations'
+          when 'pesquisa - numero do cliente - cancelamento e reversao de vendas'
+            campo = 'tab_request:formRequest:cancellation_number'
         when 'data autorizacao inicio-cancelamento reversao de vendas'
             campo = 'tab_request:formTransactionForCancellation:initial_date_input'
         when 'data autorizacao fim-cancelamento reversao de vendas'
@@ -448,6 +457,5 @@ class Utils
         $encoded_img = $browser.driver.screenshot_as(:base64)
         result = false
       end
-
     end
 end
