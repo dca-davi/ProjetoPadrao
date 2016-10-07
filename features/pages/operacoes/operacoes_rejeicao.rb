@@ -1,4 +1,5 @@
 class Operacoes_Rejeicao
+  @@utils = Utils.new
 
   def selecione_combo(frame, item)
 
@@ -94,4 +95,16 @@ class Operacoes_Rejeicao
         $encoded_img = $browser.driver.screenshot_as(:base64)
     end
 
+    def clicar_botao_pequisar_captura_tratamento(botao)
+      if $browser.button(text: botao,index:1).exist?
+        $browser.button(text: botao,index:1).click
+        sleep 2
+        result = true
+      else
+        result = false
+      end
+      sleep 1
+      @@utils.aguardar_loading
+      $encoded_img = $browser.driver.screenshot_as(:base64)
+    end
 end

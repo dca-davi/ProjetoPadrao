@@ -8,3 +8,25 @@ Quando (/^selecionar a data "([^"]*)" da pagina "([^"]*)"$/) do |data, tela|
         raise('Usuario nao tem direito para selecionar a data')
     end
 end
+
+Quando (/^selecionar a opcao "([^"]*)" da tela resumo contabil sintetico$/) do |tipo|
+    next if @pass_test == true
+    @relatorios_financeiro = Relatorios_financeiros.new
+    btnData = @relatorios_financeiro.selecionar_tabela_resumo_contabil_sintetico(tipo)
+    if !btnData && @tem_direito
+        raise('Usuario com direito nao consegue selecionar a opcao')
+    elsif btnData && !@tem_direito
+        raise('Usuario nao tem direito para selecionar a opcao')
+    end
+end
+
+Quando (/^clicar no botao "([^"]*)" da tela captura de vendas$/) do |botao|
+    next if @pass_test == true
+    @relatorios_financeiro = Relatorios_financeiros.new
+    validbtn = @relatorios_financeiro.validar_botao_exportar(botao)
+    if !validbtn && @tem_direito
+        raise('Usuario com direito nao consegue clicar no botao')
+    elsif validbtn && !@tem_direito
+        raise('Usuario nao tem direito para clicar no botao')
+    end
+end

@@ -103,6 +103,15 @@ E informar "13507217" no campo "numero da solicitacao - ajustes financeiros"
 Quando clicar no botao "Pesquisar"
 Entao localizar o frame "Efetivada"
 
+@OPERACOES_REGULARIZACOES_TRATAMENTODEBITOSEMRETORNO_SOLICITAR
+Cenario: Validar direito OPERACOES_REGULARIZACOES_TRATAMENTODEBITOSEMRETORNO_SOLICITAR
+Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_TRATAMENTODEBITOSEMRETORNO_SOLICITAR"
+E que tenha/nao tenha acesso na tela "Débitos ao cliente sem retorno"
+E selecionar "a primeira opcao da coluna Tratamento"
+Quando clicar no botao "Confirmar"
+E informar "05/10/2016" no campo "data de liquidação - tratamento"
+Entao clicar no botao "Confirmar" da tela de tratamento
+
 @OPERACOES_REGULARIZACOES_REVERSAOCANCELAMENTO_SOLICITAR
 Cenario: Validar direito OPERACOES_REGULARIZACOES_REVERSAOCANCELAMENTO_SOLICITAR
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_REVERSAOCANCELAMENTO_SOLICITAR"
