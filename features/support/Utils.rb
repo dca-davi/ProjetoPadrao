@@ -408,4 +408,16 @@ class Utils
         sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
     end
+
+    def validar_btn_exportar(botao)
+      Watir::Wait.until { $browser.button(text: botao).exists? }
+      if $browser.button(text: botao, aria_disabled: "false").exist?
+        $encoded_img = $browser.driver.screenshot_as(:base64)
+        result = true
+      else
+        $encoded_img = $browser.driver.screenshot_as(:base64)
+        result = false
+      end
+
+    end
 end

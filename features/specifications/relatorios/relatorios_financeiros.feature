@@ -54,8 +54,9 @@ Cenario: Validar direito RELATORIOS_FINANCEIROS_PAGAMENTOSBAIXADOSSEMRETORNODOSB
 Dado que tenha/nao tenha o direito "RELATORIOS_FINANCEIROS_PAGAMENTOSBAIXADOSSEMRETORNODOSBANCOS_EXPORTAR"
 E que tenha/nao tenha acesso na tela "Pagamentos baixados sem retorno"
 Quando selecionar a data "27/09/2016" da pagina "Pagamentos baixados sem retorno"
-Entao clicar no botao "Pesquisar"
-Entao clicar no botao "Exportar"
+E clicar no botao "Pesquisar"
+Entao o botao "Exportar" estara habilitado/desabilitado
+
 
 @RELATORIOS_FINANCEIROS_GERENCIAMENTOCARTEIRAS_DEBITO_VER
 Cenario: Validar direito RELATORIOS_FINANCEIROS_GERENCIAMENTOCARTEIRAS_DEBITO_VER
