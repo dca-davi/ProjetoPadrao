@@ -249,13 +249,13 @@ class Utils
             acao = 'tabRejectionCapture:j_idt261|button_Settlement_msg_buttonexport_'
         when 'Reverter'
             acao = 'include_reversion_link'
-<<<<<<< HEAD
         when 'Cancelamento'
             acao = 'cancellation_link'
+        when 'editar - CUSTO OPERACIONAL - custos'
+            acao = '0:button_0Tn'
     end
-=======
-        end
->>>>>>> 5ad62f650408729d06c87062530c4d218894a8d9
+
+
 
         sleep 2
         if $browser.a(id: /#{acao}$/  ).exist?
@@ -381,6 +381,8 @@ class Utils
             campo = 'tab_request:formTransactionForCancellation:input_SearchTransactionForCancellationBeandtonuTerminal'
         when 'valor cancelamento-cancelamento reversao de vendas'
             campo = 'tab_request:input_IncludeRequestCancellationSaleBeanrefundValue'
+        when 'mesa-custo-operacional'
+            campo = 'input_ArvCostOperatingBeancostOperatingSelectedvlCostTable'
         end
 
         $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor

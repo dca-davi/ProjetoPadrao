@@ -198,6 +198,20 @@ Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECI
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
 Entao localizar o frame "Antecipação programada"
 
+@SETUP_ARV_CUSTOS_CUSTO_OPERACIONAL_EDITAR
+Cenario: Validar direito SETUP_ARV_CUSTOS_CUSTO_OPERACIONAL_EDITAR
+Dado que tenha/nao tenha o direito "SETUP_ARV_CUSTOS_CUSTO_OPERACIONAL_EDITAR"
+E que tenha/nao tenha acesso na tela "Custos"
+Quando clicar na aba "CUSTO OPERACIONAL"
+#E selecionar o botao "Incluir"
+#E informar "29,22" no campo "mesa-custo-operacional"
+#Entao clicar no botao "Confirmar"
+#Quando clicar no botao "ok"
+E clicar na acao "editar - CUSTO OPERACIONAL - custos"
+Quando informar "35,00" no campo "mesa-custo-operacional"
+E clicar no botao "Confirmar"
+#Entao clicar no botao "OK"
+
 #@SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER
 #Cenario: Validar direito SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER
 #Dado que tenha/nao tenha o direito "SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER"
