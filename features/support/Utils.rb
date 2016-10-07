@@ -145,9 +145,12 @@ class Utils
             result = false
         end
         sleep 2
+        aguardar_loading
         $encoded_img = $browser.driver.screenshot_as(:base64)
         result
     end
+
+
 
     def acessar_aba(aba)
         sleep 2
@@ -215,10 +218,10 @@ class Utils
     end
 
     def clicar_botao_acao(acao)
-        sleep 2
+        sleep 3
         case acao
         when 'Visualizar'
-            acao = 'icon[_]?view|btn_detail|button_RSR|button_Jvn'
+            acao = 'icon[_]?view|btn_detail|button_RSR|button_Jvn|link_SMe'
         when 'Editar'
             acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi|tabRejectionCapture:resultTableTreat:0:j_idt422'
         when 'Remover'
@@ -249,7 +252,17 @@ class Utils
             acao = 'tabRejectionCapture:j_idt261|button_Settlement_msg_buttonexport_'
         when 'Reverter'
             acao = 'include_reversion_link'
+        when 'Cancelamento'
+            acao = 'cancellation_link'
+        when 'editar - CUSTO OPERACIONAL - custos'
+            acao = '0:button_0Tn'
+    end
+
+<<<<<<< HEAD
+
+=======
         end
+>>>>>>> 8c35b5043a20afee020b21654056c802e03ad837
 
         sleep 2
         if $browser.a(id: /#{acao}$/).exist?
@@ -363,6 +376,22 @@ class Utils
             campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtonsu'
         when 'comentario-reentrada de venda'
             campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtoobservations'
+          when 'pesquisa - numero do cliente - cancelamento e reversao de vendas'
+            campo = 'tab_request:formRequest:cancellation_number'
+        when 'data autorizacao inicio-cancelamento reversao de vendas'
+            campo = 'tab_request:formTransactionForCancellation:initial_date_input'
+        when 'data autorizacao fim-cancelamento reversao de vendas'
+            campo = 'tab_request:formTransactionForCancellation:final_date_input'
+        when 'n do cliente -cancelamento reversao de vendas'
+            campo = 'tab_request:formTransactionForCancellation:input_SearchTransactionForCancellationBeandtonuCustomer'
+        when 'nsu-cancelamento reversao de vendas'
+            campo = 'tab_request:formTransactionForCancellation:input_SearchTransactionForCancellationBeandtonuSerialSequenceTransaction'
+        when 'terminal-cancelamento reversao de vendas'
+            campo = 'tab_request:formTransactionForCancellation:input_SearchTransactionForCancellationBeandtonuTerminal'
+        when 'valor cancelamento-cancelamento reversao de vendas'
+            campo = 'tab_request:input_IncludeRequestCancellationSaleBeanrefundValue'
+        when 'mesa-custo-operacional'
+            campo = 'input_ArvCostOperatingBeancostOperatingSelectedvlCostTable'
         end
 
         $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
@@ -420,13 +449,14 @@ class Utils
     end
 
     def validar_btn_exportar(botao)
-        Watir::Wait.until { $browser.button(text: botao).exists? }
-        if $browser.button(text: botao, index: 1, aria_disabled: 'false').exist?
-            $encoded_img = $browser.driver.screenshot_as(:base64)
-            result = true
-        else
-            $encoded_img = $browser.driver.screenshot_as(:base64)
-            result = false
-        end
+      Watir::Wait.until { $browser.button(text: botao).exists? }
+      if $browser.button(text: botao, aria_disabled: "false").exist?
+        $encoded_img = $browser.driver.screenshot_as(:base64)
+        result = true
+      else
+        $encoded_img = $browser.driver.screenshot_as(:base64)
+        result = false
+      end
+
     end
 end

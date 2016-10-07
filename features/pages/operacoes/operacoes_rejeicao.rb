@@ -107,4 +107,17 @@ class Operacoes_Rejeicao
       @@utils.aguardar_loading
       $encoded_img = $browser.driver.screenshot_as(:base64)
     end
+
+    def clicar_botao_input
+    if $browser.button(name: 'tabRejectionCapture:j_idt261',index: 0).exist?
+          $browser.button(name: 'tabRejectionCapture:j_idt261',index: 0).click
+          result = true
+        else
+            result = false
+        end
+        sleep 5
+        $encoded_img = $browser.driver.screenshot_as(:base64)
+    end
+
+
 end

@@ -71,4 +71,4 @@ E que tenha/nao tenha acesso na tela "Captura"
 E informar "06/09/2016" no campo "data de rejeicao - de"
 E informar "06/10/2016" no campo "data de rejeicao - ate"
 Quando clicar no botao "Pesquisar"
-E o botao "Exportar" estara habilitado/desabilitado
+Entao clicar no botao exportar
