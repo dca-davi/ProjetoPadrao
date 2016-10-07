@@ -138,3 +138,30 @@ E informar "44450498" no campo "terminal-reentrada de venda"
 E informar "381347" no campo "nsu-reentrada de venda"
 E informar "Teste" no campo "comentario-reentrada de venda"
 Entao clicar no botao "Continuar"
+
+@OPERACOES_REGULARIZACOES_CANCELAMENTOVENDAS_DETALHE_VER
+Cenario: Validar direito OPERACOES_REGULARIZACOES_CANCELAMENTOVENDAS_DETALHE_VER
+Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_CANCELAMENTOVENDAS_DETALHE_VER"
+E que tenha/nao tenha acesso na tela "Cancelamento e reversão de vendas"
+Quando selecionar a opcao "Cancelamento de vendas"
+E selecionar a opcao "Código"
+Quando informar "13522742" no campo "pesquisa - numero do cliente - cancelamento e reversao de vendas"
+E clicar no botao "Pesquisar"
+Entao clicar na acao "Visualizar"
+E o sistema exibira/nao exibira a tela "Detalhe da solicitação de cancelamento de venda"
+E clicar no botao "Voltar"
+Quando selecionar a opcao "Reversão de cancelamentos"
+E informar "13511736" no campo "pesquisa - numero do cliente - cancelamento e reversao de vendas"
+Entao clicar no botao "Pesquisar"
+E clicar na acao "Visualizar"
+Entao o sistema exibira/nao exibira a tela "Detalhe da solicitação de cancelamento de venda"
+
+@OPERACOES_REGULARIZACOES_CANCELAMENTOVENDAS_SOLICITACAO_VER
+Cenario: Validar direito OPERACOES_REGULARIZACOES_CANCELAMENTOVENDAS_SOLICITACAO_VER
+Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_CANCELAMENTOVENDAS_SOLICITACAO_VER"
+E que tenha/nao tenha acesso na tela "Cancelamento e reversão de vendas"
+Quando selecionar a opcao "Cancelamento de vendas"
+E selecionar a opcao "Código"
+Quando informar "13522742" no campo "pesquisa - numero do cliente - cancelamento e reversao de vendas"
+E clicar no botao "Pesquisar"
+Entao localizar o frame "Resultados"
