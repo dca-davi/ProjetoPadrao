@@ -5,12 +5,13 @@ Quando(/^informar os filtros na tela "([^"]*)" e clicar no botao "([^"]*)"$/) do
     utils.clicar_botao_tela botao
 end
 
-Entao(/^o botao "([^"]*)" estara habilitado\/desabilitado$/) do |botao|
-    @trava_rejeicao = Trava_Prazo_Vencido.new
-    @trava_rejeicao.validar_botao_exportar_grid botao
-    if !@tem_direito && @trava_rejeicao
-        raise 'Usuario pode acessar a opcao na qual tem direito'
-    elsif @tem_direito && !@trava_rejeicao
+
+Quando(/^o botao "([^"]*)" estara habilitado\/desabilitado$/) do |botao|
+    @operacoes_rejeicoes = Utils.new
+    btnExprt = @operacoes_rejeicoes.validar_btn_exportar(botao)
+    if btnExprt && !@tem_direito
+        raise 'Usuario pode acessar a opcao na qual nao tem direito'
+    elsif !btnExprt && @tem_direito
         raise 'Usuario nao pode acessar a opcao na qual tem direito'
     end
 end

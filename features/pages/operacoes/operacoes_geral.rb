@@ -41,8 +41,10 @@ class Trava_Prazo_Vencido
     end
 
     def validar_botao_exportar_grid(_botao)
-    @M07a    Watir::Wait.until { $browser.input(value: /Exportar/).exists? }
+        Watir::Wait.until { $browser.input(value: /Exportar/).exists? }
         result = if $browser.input(value: /Exportar/).exists?
+        Watir::Wait.until { $browser.button(value: /Exportar/).exists? }
+        result = if $browser.button(value: /Exportar/).exists?
                      true
                  else
                      false
