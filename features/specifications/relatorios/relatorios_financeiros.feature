@@ -78,3 +78,12 @@ Dado que tenha/nao tenha o direito "RELATORIOS_FINANCEIROS_CONTABEIS_EXPORTAR"
 E que tenha/nao tenha acesso na tela "Resumo contábil sintético"
 E selecionar a opcao "captura de vendas - vendas" da tela resumo contabil sintetico
 Entao clicar no botao "Exportar" da tela captura de vendas
+
+@RELATORIOS_FINANCEIROS_DEBITOSENVIADOSAOSBANCOS_EXPORTAR
+Cenario: Validar direito RELATORIOS_FINANCEIROS_DEBITOSENVIADOSAOSBANCOS_EXPORTAR
+Dado que tenha/nao tenha o direito "RELATORIOS_FINANCEIROS_DEBITOSENVIADOSAOSBANCOS_EXPORTAR"
+E que tenha/nao tenha acesso na tela "Débitos enviados"
+E informar "01/10/2016" no campo "data programada - de"
+E informar "06/10/2016" no campo "data programada - ate"
+Quando clicar no botao "Pesquisar"
+E o botao "Exportar" estara habilitado/desabilitado
