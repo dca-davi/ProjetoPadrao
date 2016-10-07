@@ -13,4 +13,18 @@ class Operacoes_regularizacoesFinanceiras
         sleep 1
         $encoded_img = $browser.driver.screenshot_as(:base64)
     end
+
+    def botao_pesquisar_incluir_cancelamento(botao)
+        if $browser.button(text: botao, index: 1).exist?
+            $browser.button(text: botao, index: 1).click
+            sleep 3
+            result = true
+        else
+            result = false
+        end
+        sleep 3
+        @@utils.aguardar_loading
+        sleep 1
+        $encoded_img = $browser.driver.screenshot_as(:base64)
+    end
 end

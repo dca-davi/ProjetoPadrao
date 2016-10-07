@@ -249,6 +249,8 @@ class Utils
             acao = 'formArvConsultAntecipationScheduledRegistered:latestTransactionsTable:0:btn_cancel'
         when 'Reverter'
             acao = 'include_reversion_link'
+        when 'Cancelamento'
+            acao = 'cancellation_link'
     end
 
         sleep 2
@@ -353,6 +355,18 @@ class Utils
             campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtonsu'
         when 'comentario-reentrada de venda'
             campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtoobservations'
+        when 'data autorizacao inicio-cancelamento reversao de vendas'
+            campo = 'tab_request:formTransactionForCancellation:initial_date_input'
+        when 'data autorizacao fim-cancelamento reversao de vendas'
+            campo = 'tab_request:formTransactionForCancellation:final_date_input'
+        when 'n do cliente -cancelamento reversao de vendas'
+            campo = 'tab_request:formTransactionForCancellation:input_SearchTransactionForCancellationBeandtonuCustomer'
+        when 'nsu-cancelamento reversao de vendas'
+            campo = 'tab_request:formTransactionForCancellation:input_SearchTransactionForCancellationBeandtonuSerialSequenceTransaction'
+        when 'terminal-cancelamento reversao de vendas'
+            campo = 'tab_request:formTransactionForCancellation:input_SearchTransactionForCancellationBeandtonuTerminal'
+        when 'valor cancelamento-cancelamento reversao de vendas'
+            campo = 'tab_request:input_IncludeRequestCancellationSaleBeanrefundValue'
         end
 
         $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor

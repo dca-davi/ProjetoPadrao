@@ -129,3 +129,18 @@ E informar "44450498" no campo "terminal-reentrada de venda"
 E informar "381347" no campo "nsu-reentrada de venda"
 E informar "Teste" no campo "comentario-reentrada de venda"
 Entao clicar no botao "Continuar"
+
+@OPERACOES_REGULARIZACOES_CANCELAMENTOVENDAS_SOLICITAR
+Cenario: Validar direito OPERACOES_REGULARIZACOES_CANCELAMENTOVENDAS_SOLICITAR
+Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_CANCELAMENTOVENDAS_SOLICITAR"
+E que tenha/nao tenha acesso na tela "Cancelamento e reversão de vendas"
+Entao clicar na aba "Incluir cancelamento"
+Entao informar "03/09/2016" no campo "data autorizacao inicio-cancelamento reversao de vendas"
+E informar "09/09/2016" no campo "data autorizacao fim-cancelamento reversao de vendas"
+E informar "1018242187" no campo "n do cliente -cancelamento reversao de vendas"
+E informar "381347" no campo "nsu-cancelamento reversao de vendas"
+E informar "44450498" no campo "terminal-cancelamento reversao de vendas"
+Entao clicar no botao "Pesquisar" da aba Incluir Cancelamento
+E clicar na acao "Cancelamento"
+Entao informar "1.234,56" no campo "valor cancelamento-cancelamento reversao de vendas"
+Entao clicar no botao "Continuar"
