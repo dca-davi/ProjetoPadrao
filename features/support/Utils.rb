@@ -221,7 +221,7 @@ class Utils
         when 'Visualizar'
             acao = 'icon[_]?view|btn_detail|button_RSR|button_Jvn|link_SMe'
         when 'Editar'
-            acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi|tabRejectionCapture:resultTableTreat:0:j_idt422'
+            acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi|tabRejectionCapture:resultTableTreat:0:j_idt422|j_idt211|link_h4Q'
         when 'Remover'
             acao = 'ico[_]?cancel|btn_cancel'
         when 'cancelar'
@@ -379,7 +379,13 @@ class Utils
             campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtonsu'
         when 'comentario-reentrada de venda'
             campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtoobservations'
+<<<<<<< HEAD
         when 'pesquisa - numero do cliente - cancelamento e reversao de vendas'
+=======
+<<<<<<< HEAD
+=======
+          when 'pesquisa - numero do cliente - cancelamento e reversao de vendas'
+>>>>>>> bf947ea78acb93e2b01011fec5c518d4c0bb4037
             campo = 'tab_request:formRequest:cancellation_number'
         when 'data autorizacao inicio-cancelamento reversao de vendas'
             campo = 'tab_request:formTransactionForCancellation:initial_date_input'
@@ -395,6 +401,7 @@ class Utils
             campo = 'tab_request:input_IncludeRequestCancellationSaleBeanrefundValue'
         when 'mesa-custo-operacional'
             campo = 'input_ArvCostOperatingBeancostOperatingSelectedvlCostTable'
+>>>>>>> ec13c4adc3150379e4b7a5c22ea7fc86990d99a0
         end
 
         $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
@@ -415,6 +422,18 @@ class Utils
         Watir::Wait.until { $browser.div(id: /#{id}/).exists? }
         $browser.execute_script('arguments[0].click()', $browser.div(id: /#{id}/, index: i).li(text: valor))
         aguardar_loading
+        $encoded_img = $browser.driver.screenshot_as(:base64)
+    end
+
+    def selecionar_valor_combobox_label(valor)
+        if $browser.div(id: "j_idt194:indecesMenu").exist?
+          $browser.div(id: "j_idt194:indecesMenu").click
+          $browser.li(text: valor).click
+          sleep 1
+          result = true
+        else
+          result = false
+        end
         $encoded_img = $browser.driver.screenshot_as(:base64)
     end
 
@@ -450,6 +469,7 @@ class Utils
         sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
     end
+<<<<<<< HEAD
 
     def validar_btn_exportar(botao)
         Watir::Wait.until { $browser.button(text: botao).exists? }
@@ -462,3 +482,6 @@ class Utils
         end
     end
 end
+=======
+  end
+>>>>>>> bf947ea78acb93e2b01011fec5c518d4c0bb4037

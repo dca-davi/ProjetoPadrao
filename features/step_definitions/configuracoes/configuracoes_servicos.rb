@@ -14,3 +14,14 @@ Quando(/^selecionar o Indice "([^"]*)"$/) do |valor|
     config = Configuracoes.new
     config.selecionar_indice(valor)
 end
+
+Entao(/^selecionar o item "([^"]*)"$/) do |valor|
+    next if @pass_test == true
+    @configuracoes_servicos = Utils.new
+    statitem = @configuracoes_servicos.selecionar_valor_combobox_label(valor)
+    if !statitem && @tem_direito
+        raise("Usuario nao pode selecionar a opcao na qual tem direito")
+    elsif statitem && !@tem_direito
+        raise("usuario sem o direito consegue selecionar a opcao")
+    end
+end
