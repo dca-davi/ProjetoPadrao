@@ -150,8 +150,6 @@ class Utils
         result
     end
 
-
-
     def acessar_aba(aba)
         sleep 2
 
@@ -217,7 +215,7 @@ class Utils
         $encoded_img = $browser.driver.screenshot_as(:base64)
     end
 
-    def clicar_botao_acao(acao)
+    def clicar_botao_acao(acao, i = 0)
         sleep 3
         case acao
         when 'Visualizar'
@@ -256,15 +254,16 @@ class Utils
             acao = 'cancellation_link'
         when 'editar - CUSTO OPERACIONAL - custos'
             acao = '0:button_0Tn'
-    end
-
-<<<<<<< HEAD
-
-=======
+        when 'Visualizar Planos do cliente'
+            acao = 'button_ZeM'
+        when 'Visualizar Maquinas do cliente'
+            acao = '3:button_ACW'
+        when 'Remover Desconto vigente/programado'
+            acao = 'icoDelete'
+            i = 1
         end
->>>>>>> 8c35b5043a20afee020b21654056c802e03ad837
 
-        sleep 2
+        sleep 3
         if $browser.a(id: /#{acao}$/).exist?
             sleep 2
             $browser.a(id: /#{acao}$/).click
@@ -276,6 +275,10 @@ class Utils
         elsif $browser.img(id: /#{acao}$/).exist?
             sleep 2
             $browser.img(id: /#{acao}$/).click
+            result = true
+        elsif $browser.span(class: /#{acao}/, index: i).parent.exist?
+            sleep 2
+            $browser.span(class: /#{acao}/, index: i).parent.click
             result = true
         else
             result = false
@@ -376,7 +379,7 @@ class Utils
             campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtonsu'
         when 'comentario-reentrada de venda'
             campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtoobservations'
-          when 'pesquisa - numero do cliente - cancelamento e reversao de vendas'
+        when 'pesquisa - numero do cliente - cancelamento e reversao de vendas'
             campo = 'tab_request:formRequest:cancellation_number'
         when 'data autorizacao inicio-cancelamento reversao de vendas'
             campo = 'tab_request:formTransactionForCancellation:initial_date_input'
@@ -449,14 +452,13 @@ class Utils
     end
 
     def validar_btn_exportar(botao)
-      Watir::Wait.until { $browser.button(text: botao).exists? }
-      if $browser.button(text: botao, aria_disabled: "false").exist?
-        $encoded_img = $browser.driver.screenshot_as(:base64)
-        result = true
-      else
-        $encoded_img = $browser.driver.screenshot_as(:base64)
-        result = false
-      end
-
+        Watir::Wait.until { $browser.button(text: botao).exists? }
+        if $browser.button(text: botao, aria_disabled: 'false').exist?
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+            result = true
+        else
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+            result = false
+        end
     end
 end
