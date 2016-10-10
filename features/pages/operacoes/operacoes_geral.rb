@@ -51,6 +51,7 @@ class Trava_Prazo_Vencido
                  end
         $encoded_img = $browser.driver.screenshot_as(:base64)
     end
+  end
 
     def preencher_filtros(tela)
         case tela
@@ -85,4 +86,4 @@ class Trava_Prazo_Vencido
             $encoded_img = $browser.driver.screenshot_as(:base64)
         end
     end
-end
+  end
