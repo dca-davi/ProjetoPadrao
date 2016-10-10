@@ -256,13 +256,8 @@ class Utils
             acao = 'cancellation_link'
         when 'editar - CUSTO OPERACIONAL - custos'
             acao = '0:button_0Tn'
+
     end
-
-<<<<<<< HEAD
-
-=======
-        end
->>>>>>> 8c35b5043a20afee020b21654056c802e03ad837
 
         sleep 2
         if $browser.a(id: /#{acao}$/  ).exist?
