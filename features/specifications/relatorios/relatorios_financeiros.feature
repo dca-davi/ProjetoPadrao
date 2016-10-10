@@ -87,3 +87,10 @@ E informar "01/10/2016" no campo "data programada - de"
 E informar "06/10/2016" no campo "data programada - ate"
 Quando clicar no botao "Pesquisar"
 E o botao "Exportar" estara habilitado/desabilitado
+
+@RELATORIOS_RELATORIOSFINANCEIROS_LIQUIDACAOSPB_REJEITADO_EXPORTAR
+Cenario: Validar direito RELATORIOS_RELATORIOSFINANCEIROS_LIQUIDACAOSPB_REJEITADO_EXPORTAR
+Dado que tenha/nao tenha o direito "RELATORIOS_RELATORIOSFINANCEIROS_LIQUIDACAOSPB_REJEITADO_EXPORTAR"
+E que tenha/nao tenha acesso na tela "Liquidação financeira - SPB"
+E clicar na aba "REJEITADOS PÓS GRADE"
+Entao o botao "Exportar" estara habilitado/desabilitado

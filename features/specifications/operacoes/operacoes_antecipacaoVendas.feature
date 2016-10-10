@@ -197,3 +197,9 @@ E que tenha/nao tenha acesso na tela "Antecipação programadas cadastradas"
 E selecionar o combobox "Status" e a opcao "Vigente"
 Quando clicar no botao "Pesquisar"
 Entao clicar na acao "cancelar - coluna acao"
+
+@OPERACOES_ANTECIPACAO_VENDAS_OPERACAO_ANTECIPACAO_ALCADA_A01_VER
+Cenario: Validar direito OPERACOES_ANTECIPACAO_VENDAS_OPERACAO_ANTECIPACAO_ALCADA_A01_VER
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAO_VENDAS_OPERACAO_ANTECIPACAO_ALCADA_A01_VER"
+E que tenha/nao tenha acesso na tela "Operação de antecipação"
+Entao clicar na aba "Precificação"
