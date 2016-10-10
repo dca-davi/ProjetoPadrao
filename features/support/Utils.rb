@@ -136,7 +136,7 @@ class Utils
     def clicar_botao_tela(botao)
         # result = true
         sleep 1
-        #Watir::Wait.until { $browser.button(text: botao).exists? }
+        # Watir::Wait.until { $browser.button(text: botao).exists? }
         if $browser.button(text: botao).exist?
             sleep 2
             $browser.button(text: botao, index: 0).click
@@ -260,7 +260,7 @@ class Utils
     end
 
         sleep 2
-        if $browser.a(id: /#{acao}$/  ).exist?
+        if $browser.a(id: /#{acao}$/).exist?
             sleep 2
             $browser.a(id: /#{acao}$/).click
             result = true
@@ -357,7 +357,7 @@ class Utils
             campo = 'tab_reprocessing_sales:client_number'
         when 'codigo de autorização-reentrada de venda'
             campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtoauthorizationCode'
-        when "n do cartao aberto-reentrada de venda"
+        when 'n do cartao aberto-reentrada de venda'
             campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtocardOpen'
         when 'data da autorizacao-reentrada de venda'
             campo = 'tab_reprocessing_sales:authorization_date_input'
@@ -452,5 +452,6 @@ class Utils
         $encoded_img = $browser.driver.screenshot_as(:base64)
         result = false
       end
+
     end
 end
