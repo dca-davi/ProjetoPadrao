@@ -47,6 +47,9 @@ class Utils
         when 'Reprocessamento_monitoraçãoFuncional'
             i = 0
             pagina = 'Reprocessamento'
+        when 'controleDeAcaoDeChargeback'
+            i = 0
+            pagina = "Controle de a\u00E7\u00E3o de chargeback"
         end
 
         sleep 2
@@ -149,8 +152,6 @@ class Utils
         $encoded_img = $browser.driver.screenshot_as(:base64)
         result
     end
-
-
 
     def acessar_aba(aba)
         sleep 2
@@ -257,12 +258,6 @@ class Utils
         when 'editar - CUSTO OPERACIONAL - custos'
             acao = '0:button_0Tn'
     end
-
-<<<<<<< HEAD
-
-=======
-        end
->>>>>>> 8c35b5043a20afee020b21654056c802e03ad837
 
         sleep 2
         if $browser.a(id: /#{acao}$/).exist?
@@ -376,7 +371,7 @@ class Utils
             campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtonsu'
         when 'comentario-reentrada de venda'
             campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtoobservations'
-          when 'pesquisa - numero do cliente - cancelamento e reversao de vendas'
+        when 'pesquisa - numero do cliente - cancelamento e reversao de vendas'
             campo = 'tab_request:formRequest:cancellation_number'
         when 'data autorizacao inicio-cancelamento reversao de vendas'
             campo = 'tab_request:formTransactionForCancellation:initial_date_input'
@@ -392,6 +387,8 @@ class Utils
             campo = 'tab_request:input_IncludeRequestCancellationSaleBeanrefundValue'
         when 'mesa-custo-operacional'
             campo = 'input_ArvCostOperatingBeancostOperatingSelectedvlCostTable'
+        when 'Banco - Envio de Debitos ao Cliente'
+            campo = 'tab_bebit_balance:formInclude:input_IncludeCuttingDebitBalanceSendBeanmodelvalueDomicileBank_input'
         end
 
         $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
@@ -449,14 +446,13 @@ class Utils
     end
 
     def validar_btn_exportar(botao)
-      Watir::Wait.until { $browser.button(text: botao).exists? }
-      if $browser.button(text: botao, aria_disabled: "false").exist?
-        $encoded_img = $browser.driver.screenshot_as(:base64)
-        result = true
-      else
-        $encoded_img = $browser.driver.screenshot_as(:base64)
-        result = false
-      end
-
+        Watir::Wait.until { $browser.button(text: botao).exists? }
+        if $browser.button(text: botao, aria_disabled: 'false').exist?
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+            result = true
+        else
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+            result = false
+        end
     end
 end
