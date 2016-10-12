@@ -218,13 +218,13 @@ class Utils
         $encoded_img = $browser.driver.screenshot_as(:base64)
     end
 
-    def clicar_botao_acao(acao)
+    def clicar_botao_acao(acao, i = 0)
         sleep 3
         case acao
         when 'Visualizar'
             acao = 'icon[_]?view|btn_detail|button_RSR|button_Jvn|link_SMe'
         when 'Editar'
-            acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi|tabRejectionCapture:resultTableTreat:0:j_idt422'
+            acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi|tabRejectionCapture:resultTableTreat:0:j_idt422|j_idt211|link_h4Q'
         when 'Remover'
             acao = 'ico[_]?cancel|btn_cancel'
         when 'cancelar'
@@ -260,6 +260,16 @@ class Utils
     end
 
         sleep 2
+        when 'Visualizar Planos do cliente'
+            acao = 'button_ZeM'
+        when 'Visualizar Maquinas do cliente'
+            acao = '3:button_ACW'
+        when 'Remover Desconto vigente/programado'
+            acao = 'icoDelete'
+            i = 1
+        end
+
+        sleep 3
         if $browser.a(id: /#{acao}$/).exist?
             sleep 2
             $browser.a(id: /#{acao}$/).click
@@ -271,6 +281,10 @@ class Utils
         elsif $browser.img(id: /#{acao}$/).exist?
             sleep 2
             $browser.img(id: /#{acao}$/).click
+            result = true
+        elsif $browser.span(class: /#{acao}/, index: i).parent.exist?
+            sleep 2
+            $browser.span(class: /#{acao}/, index: i).parent.click
             result = true
         else
             result = false
@@ -409,6 +423,18 @@ class Utils
         Watir::Wait.until { $browser.div(id: /#{id}/).exists? }
         $browser.execute_script('arguments[0].click()', $browser.div(id: /#{id}/, index: i).li(text: valor))
         aguardar_loading
+        $encoded_img = $browser.driver.screenshot_as(:base64)
+    end
+
+    def selecionar_valor_combobox_label(valor)
+        if $browser.div(id: 'j_idt194:indecesMenu').exist?
+            $browser.div(id: 'j_idt194:indecesMenu').click
+            $browser.li(text: valor).click
+            sleep 1
+            result = true
+        else
+            result = false
+        end
         $encoded_img = $browser.driver.screenshot_as(:base64)
     end
 
