@@ -49,3 +49,11 @@ Cenario: Validar direito CONFIGURACOES_SERVICOS_PRECOPADRAO_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_SERVICOS_PRECOPADRAO_VER"
 E que tenha/nao tenha acesso na tela "Preço padrão"
 Entao o sistema exibira/nao exibira a tela "Preço padrão"
+
+@CONFIGURACOES_SERVICOS_INDICESECONOMICOS_EDITAR
+Cenario: Validar direito CONFIGURACOES_SERVICOS_INDICESECONOMICOS_EDITAR
+Dado que tenha/nao tenha o direito "CONFIGURACOES_SERVICOS_INDICESECONOMICOS_EDITAR"
+E que tenha/nao tenha acesso na tela "Índices econômicos"
+E selecionar o item "IGPM Acumulado nos Últimos 12 Meses"
+Entao clicar no botao "Pesquisar"
+E clicar na acao "Editar"

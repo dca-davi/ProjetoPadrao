@@ -47,6 +47,9 @@ class Utils
         when 'Reprocessamento_monitoraçãoFuncional'
             i = 0
             pagina = 'Reprocessamento'
+        when 'controleDeAcaoDeChargeback'
+            i = 0
+            pagina = "Controle de a\u00E7\u00E3o de chargeback"
         end
 
 
@@ -137,7 +140,7 @@ class Utils
     def clicar_botao_tela(botao)
         # result = true
         sleep 1
-        #Watir::Wait.until { $browser.button(text: botao).exists? }
+        # Watir::Wait.until { $browser.button(text: botao).exists? }
         if $browser.button(text: botao).exist?
             sleep 2
             $browser.button(text: botao, index: 0).click
@@ -151,18 +154,20 @@ class Utils
         result
     end
 
-
-
-    def acessar_aba(aba)
+    def acessar_aba(aba, i = 0)
         sleep 2
-
-        if $browser.li(text: aba).attribute_value('class').include? 'ui-state-disabled'
+        case aba
+        when 'Incluir_PrazoFlexivel'
+            aba = 'Incluir'
+            i = 1
+        end
+        if $browser.li(text: aba, index: i).attribute_value('class').include? 'ui-state-disabled'
             $encoded_img = $browser.driver.screenshot_as(:base64)
             return false
         else
-            Watir::Wait.until { $browser.li(text: aba).exist? }
-            if $browser.li(text: aba).present?
-                $browser.li(text: aba).click
+            Watir::Wait.until { $browser.li(text: aba, index: i).exist? }
+            if $browser.li(text: aba, index: i).present?
+                $browser.li(text: aba, index: i).click
                 sleep 6
                 $encoded_img = $browser.driver.screenshot_as(:base64)
                 return true
@@ -175,12 +180,17 @@ class Utils
         end
     end
 
-    def validar_acesso_aba(aba)
+    def validar_acesso_aba(aba, i = 0)
         sleep 2
+        case aba
+        when 'Incluir_PrazoFlexivel'
+            aba = 'Incluir'
+            i = 1
+        end
         aguardar_loading
         sleep 2
-        Watir::Wait.until { $browser.a(text: aba).exists? }
-        if $browser.li(text: aba).attribute_value('aria-expanded') == 'true'
+        Watir::Wait.until { $browser.a(text: aba, index: i).exists? }
+        if $browser.li(text: aba, index: i).attribute_value('aria-expanded') == 'true'
             return true
         else
             return false
@@ -218,7 +228,7 @@ class Utils
         $encoded_img = $browser.driver.screenshot_as(:base64)
     end
 
-    def clicar_botao_acao(acao)
+    def clicar_botao_acao(acao, i = 0)
         sleep 3
         case acao
 
@@ -228,6 +238,8 @@ class Utils
             acao = 'icon[_]?view|btn_detail|button_RSR|button_Jvn|link_SMe|j_idt307:0:button_rnw|0:btn_detail'
         when 'Editar'
             acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi|tabRejectionCapture:resultTableTreat:0:j_idt422|0:buttonEditId|link_h4Q'
+        when 'Editar Dados de contato'
+            acao = 'btn_info_contact_edit'
         when 'Remover'
             acao = 'ico[_]?cancel|btn_cancel'
         when 'cancelar'
@@ -258,11 +270,22 @@ class Utils
             acao = 'include_reversion_link'
         when 'Cancelamento'
             acao = 'cancellation_link'
-    end
+        when 'editar - CUSTO OPERACIONAL - custos'
+            acao = '0:button_0Tn'
+        when 'Visualizar Planos do cliente'
+            acao = 'button_ZeM'
+        when 'Visualizar Maquinas do cliente'
+            acao = '3:button_ACW'
+        when 'Remover Desconto vigente/programado'
+            acao = 'icoDelete'
+            i = 1
+        when 'Salvar'
+            acao = 'tabOperationAnticipation:tabScheduledAnticipation:btn_save'
+        end
 
 
-        sleep 2
-        if $browser.a(id: /#{acao}$/  ).exist?
+        sleep 3
+        if $browser.a(id: /#{acao}$/).exist?
             sleep 2
             $browser.a(id: /#{acao}$/).click
             result = true
@@ -273,6 +296,10 @@ class Utils
         elsif $browser.img(id: /#{acao}$/).exist?
             sleep 2
             $browser.img(id: /#{acao}$/).click
+            result = true
+        elsif $browser.span(class: /#{acao}/, index: i).parent.exist?
+            sleep 2
+            $browser.span(class: /#{acao}/, index: i).parent.click
             result = true
         else
             result = false
@@ -310,7 +337,7 @@ class Utils
         when "subt\u00F3pico de manuten\u00E7\u00E3o"
             campo = ':subTopicMaintenanceId_input'
         when 'banco'
-            campo = 'input_ClearingConsignmentsControlBeanbank_input'
+            campo = 'input_ClearingConsignmentsControlBeanbank_input|tab_bebit_balance:formInclude:input_IncludeCuttingDebitBalanceSendBeanmodelvalueDomicileBank_input'
         when 'protocolo'
             campo = 'input_ClearingSefazDemandListBeanfilterprotocolNumber'
         when 'banco - acumulo diario'
@@ -363,7 +390,7 @@ class Utils
             campo = 'tab_reprocessing_sales:client_number'
         when 'codigo de autorização-reentrada de venda'
             campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtoauthorizationCode'
-        when "n do cartao aberto-reentrada de venda"
+        when 'n do cartao aberto-reentrada de venda'
             campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtocardOpen'
         when 'data da autorizacao-reentrada de venda'
             campo = 'tab_reprocessing_sales:authorization_date_input'
@@ -377,7 +404,7 @@ class Utils
             campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtonsu'
         when 'comentario-reentrada de venda'
             campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesWithoutLogBeandtoobservations'
-          when 'pesquisa - numero do cliente - cancelamento e reversao de vendas'
+        when 'pesquisa - numero do cliente - cancelamento e reversao de vendas'
             campo = 'tab_request:formRequest:cancellation_number'
         when 'data autorizacao inicio-cancelamento reversao de vendas'
             campo = 'tab_request:formTransactionForCancellation:initial_date_input'
@@ -391,6 +418,14 @@ class Utils
             campo = 'tab_request:formTransactionForCancellation:input_SearchTransactionForCancellationBeandtonuTerminal'
         when 'valor cancelamento-cancelamento reversao de vendas'
             campo = 'tab_request:input_IncludeRequestCancellationSaleBeanrefundValue'
+        when 'mesa-custo-operacional'
+            campo = 'input_ArvCostOperatingBeancostOperatingSelectedvlCostTable'
+        when 'data_inicio_pesq_avan_extrato'
+            campo = 'tabGeralPesquisaAvancada:formAutorizacaoMultiFiltros:dataDeTran_input'
+        when 'data_fim_pesq_avan_extrato'
+            campo = 'tabGeralPesquisaAvancada:formAutorizacaoMultiFiltros:dataAteTran_input'
+        when '4_dig_cartao_pesq_avan_extrato'
+            campo = 'tabGeralPesquisaAvancada:formAutorizacaoMultiFiltros:j_idt320'
         end
 
         $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
@@ -411,6 +446,18 @@ class Utils
         Watir::Wait.until { $browser.div(id: /#{id}/).exists? }
         $browser.execute_script('arguments[0].click()', $browser.div(id: /#{id}/, index: i).li(text: valor))
         aguardar_loading
+        $encoded_img = $browser.driver.screenshot_as(:base64)
+    end
+
+    def selecionar_valor_combobox_label(valor)
+        if $browser.div(id: 'j_idt194:indecesMenu').exist?
+            $browser.div(id: 'j_idt194:indecesMenu').click
+            $browser.li(text: valor).click
+            sleep 1
+            result = true
+        else
+            result = false
+        end
         $encoded_img = $browser.driver.screenshot_as(:base64)
     end
 
@@ -447,6 +494,7 @@ class Utils
         $encoded_img = $browser.driver.screenshot_as(:base64)
     end
 
+
     def validar_btn_exportar(botao) #pode validar todos os botes e nao somente o exportar
       Watir::Wait.until { $browser.button(text: botao).exists? }
       if $browser.button(text: botao, aria_disabled: "false").exist?
@@ -456,5 +504,28 @@ class Utils
         $encoded_img = $browser.driver.screenshot_as(:base64)
         result = false
       end
+    end
+
+    def selecionar_radio_button_tabela(linha, coluna = 0)
+        if $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna).exist?
+            $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna).click
+            sleep 2
+            result = true
+        else
+            result = false
+      end
+        sleep 2
+        $encoded_img = $browser.driver.screenshot_as(:base64)
+    end
+
+    def validar_btn_exportar(botao)
+        Watir::Wait.until { $browser.button(text: botao).exists? }
+        if $browser.button(text: botao, aria_disabled: 'false').exist?
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+            result = true
+        else
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+            result = false
+        end
     end
 end

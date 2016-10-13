@@ -189,8 +189,11 @@ Entao o sistema exibira/nao exibira a tela "Exceção"
 @CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECIPACAOPROGRAMADA_EDITAR
 Cenario: Validar direito CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECIPACAOPROGRAMADA_EDITAR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECIPACAOPROGRAMADA_EDITAR"
-E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
-Entao clicar no botao "Editar dados" do frame "Antecipação programada"
+E que tenha/nao tenha acesso na tela "controleDeAcaoDeChargeback"
+E selecionar a opcao "Débito/Crédito" no campo "Tipo Ação" da tela Controle de acao de chargeback
+E informar o periodo de "11/09/2016" ate "14/09/2016"
+Quando clicar no botao "Pesquisar"
+Entao o botao "Exportar" devera estar habilitado/desabilitado
 
 @CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECIPACAOPROGRAMADA_VER @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECIPACAOPROGRAMADA_VER
@@ -226,3 +229,56 @@ Quando clicar na aba "Tarifa de liquidação"
 E o botao "Pesquisar" estara habilitado/desabilitado
 E clicar no botao "Editar"
 Entao o botao "Salvar" estara habilitado/desabilitado
+
+@SETUP_ARV_CUSTOS_CUSTO_OPERACIONAL_EDITAR
+Cenario: Validar direito SETUP_ARV_CUSTOS_CUSTO_OPERACIONAL_EDITAR
+Dado que tenha/nao tenha o direito "SETUP_ARV_CUSTOS_CUSTO_OPERACIONAL_EDITAR"
+E que tenha/nao tenha acesso na tela "Custos"
+Quando clicar na aba "CUSTO OPERACIONAL"
+#E selecionar o botao "Incluir"
+#E informar "29,22" no campo "mesa-custo-operacional"
+#Entao clicar no botao "Confirmar"
+#Quando clicar no botao "ok"
+E clicar na acao "editar - CUSTO OPERACIONAL - custos"
+Quando informar "35,00" no campo "mesa-custo-operacional"
+E clicar no botao "Confirmar"
+#Entao clicar no botao "OK"
+
+@CONFIGURACOES_AQUISICAORECEBIVEIS_EXCECAO_ANTECIPPRAZOFLEXIVEL_VER
+Cenario: Validar direito CONFIGURACOES_AQUISICAORECEBIVEIS_EXCECAO_ANTECIPPRAZOFLEXIVEL_VER
+Dado que tenha/nao tenha o direito "CONFIGURACOES_AQUISICAORECEBIVEIS_EXCECAO_ANTECIPPRAZOFLEXIVEL_VER"
+E que tenha/nao tenha acesso na tela "Exceção_antecipaçãoVendas"
+Entao o sistema exibira/nao exibira a tela "Exceção"
+Quando clicar na aba "Antecipação de Prazo Flexível"
+
+@CONFIGURACOES_AQUISICAORECEBIVEIS_EXCECAO_ANTECIPPRAZOFLEXIVEL_EDITAR
+Cenario: Validar direito CONFIGURACOES_AQUISICAORECEBIVEIS_EXCECAO_ANTECIPPRAZOFLEXIVEL_EDITAR
+Dado que tenha/nao tenha o direito "CONFIGURACOES_AQUISICAORECEBIVEIS_EXCECAO_ANTECIPPRAZOFLEXIVEL_EDITAR"
+E que tenha/nao tenha acesso na tela "Exceção_antecipaçãoVendas"
+Quando clicar na aba "Antecipação de Prazo Flexível"
+E clicar na aba "Incluir_PrazoFlexivel"
+Entao podera/nao podera acessar a aba "Incluir_PrazoFlexivel"
+
+#@SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER
+#Cenario: Validar direito SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER
+#Dado que tenha/nao tenha o direito "SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER"
+#E que tenha/nao tenha acesso na tela "Custos_antecipaçãoVendas"
+#Entao o sistema exibira/nao exibira a tela "Antecipação de Vendas - Custos"
+
+#@SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_EDITAR
+#Cenario: Validar direito SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER
+#Dado que tenha/nao tenha o direito "SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER"
+#E que tenha/nao tenha acesso na tela "Custos_antecipaçãoVendas"
+#Entao o sistema exibira/nao exibira a tela "Antecipação de Vendas - Custos"
+
+#@SETUP_ARV_CUSTOS_PROARV_PARAMETROS_VER
+#Cenario: Validar direito SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER
+#Dado que tenha/nao tenha o direito "SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER"
+#E que tenha/nao tenha acesso na tela "Custos_antecipaçãoVendas"
+#Entao o sistema exibira/nao exibira a tela "Antecipação de Vendas - Custos"
+
+#@SETUP_ARV_CUSTOS_PROARV_PARAMETROS_EDITAR
+#Cenario: Validar direito SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER
+#Dado que tenha/nao tenha o direito "SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER"
+#E que tenha/nao tenha acesso na tela "Custos_antecipaçãoVendas"
+#Entao o sistema exibira/nao exibira a tela "Antecipação de Vendas - Custos"

@@ -24,4 +24,3 @@ class Configuracoes_servico
         end
     end
 end
-# b.execute_script("arguments[0].click()", b.div(:id => /j_idt[\d]+_panel/).li(:text => "Serviço"))

@@ -30,3 +30,11 @@ E que tenha/nao tenha acesso na tela "Informações do cliente"
 Quando clicar na aba "Tipo de pagamento"
 E clicar na acao "Visualizar"
 Entao sera/nao sera possivel editar todos os campos do tipo de pagamento
+
+@CLIENTES_CADASTRO_INFO_FORMADECOBRANCAEPRECO_EDITAR
+Cenario: Validar direito CLIENTES_CADASTRO_INFO_FORMADECOBRANCAEPRECO_EDITAR
+Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_FORMADECOBRANCAEPRECO_EDITAR"
+E que tenha/nao tenha acesso na tela "Informações do cliente"
+Quando clicar na aba "Tipo de pagamento"
+E clicar na acao "Visualizar"
+Entao o botao "Editar" do frame "Remuneracao" estara habilitado/desabilitado
