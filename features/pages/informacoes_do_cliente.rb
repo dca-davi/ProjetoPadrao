@@ -23,7 +23,7 @@ class Info_do_cliente
                 result = false
             end
 
-        when "situa\u00E7\u00E3o do cliente", "antecipa\u00E7\u00E3o programada", 'reserva financeira'
+        when "situa\u00E7\u00E3o do cliente", 'remuneracao', "antecipa\u00E7\u00E3o programada", 'reserva financeira'
             if $browser.button(text: botao, index: 2).attribute_value('aria-disabled') == 'false'
                 $browser.button(text: botao, index: 2).click
                 sleep 3

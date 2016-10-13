@@ -31,8 +31,8 @@ Entao o campo "N° do cartão aberto" existe/nao existe
 
 # Demis >>>
 @OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTE_VER
-Cenario: Validar direito OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTE_EDITAR
-Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTE_EDITAR"
+Cenario: Validar direito OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTE_VER
+Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTE_VER"
 E que tenha/nao tenha acesso na tela "Envio de débitos ao cliente"
 Entao clicar no botao "Pesquisar"
 
@@ -40,7 +40,8 @@ Entao clicar no botao "Pesquisar"
 Cenario: Validar direito OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTE_EDITAR
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTE_EDITAR"
 E que tenha/nao tenha acesso na tela "Envio de débitos ao cliente"
-Entao clicar na aba "Pesquisar"
+Entao informar "104-CAIXA ECONOMICA FEDERAL S.A." no campo "Banco - Envio de Debitos ao Cliente"
+E clicar no botao "Pesquisar"
 
 @OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTEANULACAO_VER
 Cenario: Validar direito OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTEANULACAO_VER
@@ -53,8 +54,9 @@ E clicar no botao "Pesquisar" da aba anulacao
 Cenario: Validar direito OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTEANULACAO_EDITAR
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTEANULACAO_EDITAR"
 E que tenha/nao tenha acesso na tela "Envio de débitos ao cliente"
-Entao clicar na aba "Pesquisar"
-# Demis <<<
+Quando clicar na aba "Pesquisar"
+Entao selecionar a opção Tratamento em alguma solicitação e clicar em Confirmar
+E clicar no botao OK do pop-up
 
 @OPERACOES_REGULARIZACOES_REPROCESSAMENTO_SOLICITACAO_VER
 Cenario: Validar direito OPERACOES_REGULARIZACOES_REPROCESSAMENTO_SOLICITACAO_VER

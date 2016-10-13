@@ -21,6 +21,13 @@ E que tenha/nao tenha acesso na tela "Fila de trabalho"
 E o sistema exibira/nao exibira a tela "Fila de trabalho"
 Entao clicar na acao "Liberar"
 
+@OPERACOES_DEMANDAS_FILADETRABALHO_ACOMP_EDITAR
+Cenario: Validar direito OPERACOES_DEMANDAS_FILADETRABALHO_ACOMP_EDITAR
+Dado que tenha/nao tenha o direito "OPERACOES_DEMANDAS_FILADETRABALHO_ACOMP_EDITAR"
+E que tenha/nao tenha acesso na tela "Fila de trabalho"
+E o sistema exibira/nao exibira a tela "Fila de trabalho"
+Entao clicar na acao "Editar"
+
 @OPERACOES_DEMANDAS_FILADETRABALHO_ACOMP_ALCADASNEGOCIACAO_VER
 Cenario: Validar direito OPERACOES_DEMANDAS_FILADETRABALHO_ACOMP_ALCADASNEGOCIACAO_VER
 Dado que tenha/nao tenha o direito "OPERACOES_DEMANDAS_FILADETRABALHO_ACOMP_ALCADASNEGOCIACAO_VER"
