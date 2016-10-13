@@ -35,9 +35,19 @@ Quando (/^clicar no botao "([^"]*)" da tela captura$/) do |botao|
     end
 end
 
-Dado(/^selecionar "([^"]*)" no combo\-box "([^"]*)"$/) do |opcao, combo_box|
-    @operacoes_rejeicoes = Utils.new
-    comboBox = @operacoes_rejeicao.selecionar_valor_combobox(opcao, combo_box)
+Dado(/^selecionar "([^"]*)" no combo\-box Bandeira$/) do |valor|
+    @operacoes_rejeicoes = Operacoes_Rejeicao.new
+    comboBox = @operacoes_rejeicoes.selecionar_combobox_depositos_debitos(valor)
+    if !comboBox && @tem_direito
+        raise 'Usuario nao pode clicar no botao no qual tem direito'
+    elsif comboBox && !@tem_direito
+        raise 'Usuario pode clicar no botao no qual tem direito'
+    end
+end
+
+Entao(/^selecionar "([^"]*)" no combo\-box do pop\-up$/) do |valor|
+    @operacoes_rejeicoes = Operacoes_Rejeicao.new
+    comboBox = @operacoes_rejeicoes.selecionar_combobox_depositos_debitos_pop_up(valor)
     if !comboBox && @tem_direito
         raise 'Usuario nao pode clicar no botao no qual tem direito'
     elsif comboBox && !@tem_direito
