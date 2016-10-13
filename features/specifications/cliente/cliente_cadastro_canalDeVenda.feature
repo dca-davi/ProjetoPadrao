@@ -37,3 +37,19 @@ E que tenha/nao tenha acesso na tela "Informações do cliente"
 Quando clicar na aba "CANAL DE VENDA"
 E clicar na aba "Incluir"
 Entao podera/nao podera acessar a aba "Incluir"
+
+@CLIENTES_CAD_INFOCLIENTE_MAQCANALVENDA_PLANOSCLIENTE_ACAODESC_INCLUIR
+Cenario: Validar direito CLIENTES_CAD_INFOCLIENTE_MAQCANALVENDA_PLANOSCLIENTE_ACAODESC_INCLUIR
+Dado que tenha/nao tenha o direito "CLIENTES_CAD_INFOCLIENTE_MAQCANALVENDA_PLANOSCLIENTE_ACAODESC_INCLUIR"
+E que tenha/nao tenha acesso na tela "Informações do cliente"
+Quando clicar na aba "CANAL DE VENDA"
+E clicar na aba "Incluir"
+Entao podera/nao podera acessar a aba "Incluir"
+
+@CLIENTES_CADASTRO_INFO_CANALDEVENDA_EDITAR
+Cenario: Validar direito CLIENTES_CADASTRO_INFO_CANALDEVENDA_EDITAR
+Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_CANALDEVENDA_EDITAR"
+E que tenha/nao tenha acesso na tela "Informações do cliente"
+Quando clicar na aba "CANAL DE VENDA"
+E clicar na aba "Incluir"
+Entao podera/nao podera acessar a aba "Incluir"
