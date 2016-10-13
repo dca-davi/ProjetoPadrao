@@ -51,6 +51,15 @@ Entao clicar no botao "Pesquisar"
 Cenario: Validar direito OPERACOES_REJEICOES_PAGAMENTOSDEBITOS_ANULAR_EDITAR
 Dado que tenha/nao tenha o direito "OPERACOES_REJEICOES_PAGAMENTOSDEBITOS_ANULAR_EDITAR"
 E que tenha/nao tenha acesso na tela "Depósitos e débitos"
+E selecionar a opcao "Regular"
+E selecionar a opcao "Crédito"
+E informar "33-BANCO SANTANDER BRASIL S.A." no campo "Banco"
+E selecionar "MASTERCARD" no combo-box "Bandeira"
+E informar "06/06/2016" no campo "data-de"
+E informar "06/10/2016" no campo "data-ate"
+E clicar no botao "Pesquisar"
+
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 @OPERACOES_REJEICOESCAPTURA_DETALHES_REMOVER
 Cenario: Validar direito OPERACOES_REJEICOESCAPTURA_DETALHES_REMOVER

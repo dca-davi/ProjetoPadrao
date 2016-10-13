@@ -260,7 +260,7 @@ class Utils
         when 'editar - CUSTO OPERACIONAL - custos'
             acao = '0:button_0Tn'
 
-        sleep 2
+            sleep 2
         when 'Visualizar Planos do cliente'
             acao = 'button_ZeM'
         when 'Visualizar Maquinas do cliente'
@@ -269,11 +269,8 @@ class Utils
             acao = 'icoDelete'
             i = 1
         when 'Salvar'
-          acao = 'tabOperationAnticipation:tabScheduledAnticipation:btn_save'
+            acao = 'tabOperationAnticipation:tabScheduledAnticipation:btn_save'
         end
-
-    end
-
 
         sleep 3
         if $browser.a(id: /#{acao}$/).exist?
@@ -324,7 +321,7 @@ class Utils
         when "subt\u00F3pico de manuten\u00E7\u00E3o"
             campo = ':subTopicMaintenanceId_input'
         when 'banco'
-            campo = 'input_ClearingConsignmentsControlBeanbank_input|tab_bebit_balance:formInclude:input_IncludeCuttingDebitBalanceSendBeanmodelvalueDomicileBank_input'
+            campo = 'input_ClearingConsignmentsControlBeanbank_input|tab_bebit_balance:formInclude:input_IncludeCuttingDebitBalanceSendBeanmodelvalueDomicileBank_input|tab_deposits_debits:formReport:input_OperationsTreatRejectedManualBeanmodelvalueDomicileBank_input'
         when 'protocolo'
             campo = 'input_ClearingSefazDemandListBeanfilterprotocolNumber'
         when 'banco - acumulo diario'
@@ -361,6 +358,10 @@ class Utils
             campo = 'tabFlexiblePrecification:dtStartCurrentStep1_id_input'
         when 'numero da solicitacao - ajustes financeiros'
             campo = 'tab_regularization:input_SearchRegularizationBeansearchRegularizationDTOrequestNumber'
+        when 'data-de'
+            campo = 'tab_deposits_debits:formReport:dtSetrTo_input'
+        when 'data-ate'
+            campo = 'tab_deposits_debits:formReport:dtSetrUntil_input'
         when 'data de rejeicao - de'
             campo = 'tabRejectionCapture:initialRejectionDateTreatment_input|tabRejectionCapture:initialRejectionDate_input'
         when 'data de rejeicao - ate'
@@ -481,16 +482,28 @@ class Utils
         $encoded_img = $browser.driver.screenshot_as(:base64)
     end
 
-    def selecionar_radio_button_tabela(linha, coluna = 0)
-      if $browser.tr(data_ri: (linha.to_i-1).to_s).td(index: coluna).exist?
-        $browser.tr(data_ri: (linha.to_i-1).to_s).td(index: coluna).click
+    def selecionar_check_box_tabela(linha, coluna = 0)
+        if $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna.to_i - 1).exist?
+            $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna.to_i - 1).click
+            sleep 2
+            result = true
+        else
+            result = false
+        end
         sleep 2
-        result = true
-    else
-        result = false
+        $encoded_img = $browser.driver.screenshot_as(:base64)
     end
-    sleep 2
-    $encoded_img = $browser.driver.screenshot_as(:base64)
+
+    def selecionar_radio_button_tabela(linha, coluna = 0)
+        if $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna).exist?
+            $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna).click
+            sleep 2
+            result = true
+        else
+            result = false
+        end
+        sleep 2
+        $encoded_img = $browser.driver.screenshot_as(:base64)
     end
 
     def validar_btn_exportar(botao)
