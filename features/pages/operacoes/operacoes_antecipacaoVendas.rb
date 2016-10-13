@@ -32,10 +32,29 @@ class Operacoes_antecipacaoVendas
     else
       result = false
     end
+  when 'Dia - antecipacao programada'
+    if $browser.div(:id => "tabOperationAnticipation:tabScheduledAnticipation:dayId_label").exist?
+      $browser.div(:id => "tabOperationAnticipation:tabScheduledAnticipation:dayId_label").click
+      sleep 1
+      result = true
+    else
+      result = false
+    end
+
 
   end
 
     case item
+
+    when "Terça-feira"
+      if $browser.li(:text => "Terça-feira").exist?
+        $browser.li(:text => "Terça-feira").click
+        sleep 1
+        result = true
+      else
+        result = false
+      end
+
     when "Efetivado"
       if $browser.li(:text => "Efetivado").exist?
         $browser.li(:text => "Efetivado").click

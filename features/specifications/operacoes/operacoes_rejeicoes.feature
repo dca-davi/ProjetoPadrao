@@ -40,13 +40,6 @@ E que tenha/nao tenha acesso na tela "Depósitos e débitos"
 Quando informar os filtros na tela "Depósitos | Débitos" e clicar no botao "Pesquisar"
 Entao o botao "Exportar" estara habilitado/desabilitado
 
-@OPERACOES_REJEICOES_MANUTENCOES_CADASTRAIS_VER
-Cenario: Validar direito OPERACOES_REJEICOES_MANUTENCOES_CADASTRAIS_VER
-Dado que tenha/nao tenha o direito "OPERACOES_REJEICOES_MANUTENCOES_CADASTRAIS_VER"
-E que tenha/nao tenha acesso na tela "Manutenções cadastrais"
-Quando selecionar a opcao "Rejeitada" do campo "Situação da solicitação"
-Entao clicar no botao "Pesquisar"
-
 @OPERACOES_REJEICOES_PAGAMENTOSDEBITOS_ANULAR_EDITAR
 Cenario: Validar direito OPERACOES_REJEICOES_PAGAMENTOSDEBITOS_ANULAR_EDITAR
 Dado que tenha/nao tenha o direito "OPERACOES_REJEICOES_PAGAMENTOSDEBITOS_ANULAR_EDITAR"
@@ -72,3 +65,17 @@ E informar "06/09/2016" no campo "data de rejeicao - de"
 E informar "06/10/2016" no campo "data de rejeicao - ate"
 Quando clicar no botao "Pesquisar"
 Entao clicar no botao exportar
+
+@OPERACOES_REJEICOES_MANUTENCOES_CADASTRAIS_EDITAR
+Cenario: Validar direito OPERACOES_REJEICOES_MANUTENCOES_CADASTRAIS_EDITAR
+Dado que tenha/nao tenha o direito "OPERACOES_REJEICOES_MANUTENCOES CADASTRAIS_EDITAR"
+E que tenha/nao tenha acesso na tela "Manutenções cadastrais"
+E clicar no botao "Pesquisar"
+Quando clicar na acao "Tratar"
+Entao o botao "Sim" estara habilitado/desabilitado
+
+@OPERACOES_REJEICOES_MANUTENCOES_CADASTRAIS_VER
+Cenario: Validar direito OPERACOES_REJEICOES_MANUTENCOES_CADASTRAIS_VER
+Dado que tenha/nao tenha o direito "OPERACOES_REJEICOES_MANUTENCOES_CADASTRAIS_VER"
+E que tenha/nao tenha acesso na tela "Manutenções cadastrais"
+Entao o botao "Pesquisar" estara habilitado/desabilitado

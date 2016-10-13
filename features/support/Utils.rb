@@ -49,6 +49,7 @@ class Utils
             pagina = 'Reprocessamento'
         end
 
+
         sleep 2
         Watir::Wait.until { $browser.a(text: pagina, index: i).exists? }
         if $browser.a(text: pagina, index: i).attribute_value('onclick') == 'return false;'
@@ -220,10 +221,13 @@ class Utils
     def clicar_botao_acao(acao)
         sleep 3
         case acao
+
+        when 'Tratar'
+            acao = 'btnProcess'
         when 'Visualizar'
-            acao = 'icon[_]?view|btn_detail|button_RSR|button_Jvn|link_SMe'
+            acao = 'icon[_]?view|btn_detail|button_RSR|button_Jvn|link_SMe|j_idt307:0:button_rnw|0:btn_detail'
         when 'Editar'
-            acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi|tabRejectionCapture:resultTableTreat:0:j_idt422'
+            acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi|tabRejectionCapture:resultTableTreat:0:j_idt422|0:buttonEditId|link_h4Q'
         when 'Remover'
             acao = 'ico[_]?cancel|btn_cancel'
         when 'cancelar'
@@ -256,7 +260,6 @@ class Utils
             acao = 'cancellation_link'
     end
 
-        end
 
         sleep 2
         if $browser.a(id: /#{acao}$/  ).exist?
@@ -298,6 +301,10 @@ class Utils
 
     def preencher_campo_input(valor, campo)
         case campo.downcase
+        when 'numero de parcelas - criterios de antecipacao - de'
+          campo = 'tabOperationAnticipation:tabScheduledAnticipation:installmentsBegin'
+        when 'numero de parcelas - criterios de antecipacao - ate'
+          campo = 'tabOperationAnticipation:tabScheduledAnticipation:installmentsEnd'
         when "t\u00F3pico de manuten\u00E7\u00E3o"
             campo = ':topicMaintenanceId_input'
         when "subt\u00F3pico de manuten\u00E7\u00E3o"
@@ -440,7 +447,7 @@ class Utils
         $encoded_img = $browser.driver.screenshot_as(:base64)
     end
 
-    def validar_btn_exportar(botao)
+    def validar_btn_exportar(botao) #pode validar todos os botes e nao somente o exportar
       Watir::Wait.until { $browser.button(text: botao).exists? }
       if $browser.button(text: botao, aria_disabled: "false").exist?
         $encoded_img = $browser.driver.screenshot_as(:base64)
