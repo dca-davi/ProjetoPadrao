@@ -267,7 +267,10 @@ class Utils
         when 'Remover Desconto vigente/programado'
             acao = 'icoDelete'
             i = 1
+        when 'Salvar'
+          acao = 'tabOperationAnticipation:tabScheduledAnticipation:btn_save'
         end
+
 
         sleep 3
         if $browser.a(id: /#{acao}$/).exist?
@@ -318,7 +321,7 @@ class Utils
         when "subt\u00F3pico de manuten\u00E7\u00E3o"
             campo = ':subTopicMaintenanceId_input'
         when 'banco'
-            campo = 'input_ClearingConsignmentsControlBeanbank_input'
+            campo = 'input_ClearingConsignmentsControlBeanbank_input|tab_bebit_balance:formInclude:input_IncludeCuttingDebitBalanceSendBeanmodelvalueDomicileBank_input'
         when 'protocolo'
             campo = 'input_ClearingSefazDemandListBeanfilterprotocolNumber'
         when 'banco - acumulo diario'
@@ -407,8 +410,6 @@ class Utils
             campo = 'tabGeralPesquisaAvancada:formAutorizacaoMultiFiltros:dataAteTran_input'
         when '4_dig_cartao_pesq_avan_extrato'
             campo = 'tabGeralPesquisaAvancada:formAutorizacaoMultiFiltros:j_idt320'
-        when 'Banco - Envio de Debitos ao Cliente'
-            campo = 'tab_bebit_balance:formInclude:input_IncludeCuttingDebitBalanceSendBeanmodelvalueDomicileBank_input'
         end
 
         $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
@@ -475,6 +476,18 @@ class Utils
         end
         sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
+    end
+
+    def selecionar_radio_button_tabela(linha, coluna = 0)
+      if $browser.tr(data_ri: (linha.to_i-1).to_s).td(index: coluna).exist?
+        $browser.tr(data_ri: (linha.to_i-1).to_s).td(index: coluna).click
+        sleep 2
+        result = true
+    else
+        result = false
+    end
+    sleep 2
+    $encoded_img = $browser.driver.screenshot_as(:base64)
     end
 
     def validar_btn_exportar(botao)

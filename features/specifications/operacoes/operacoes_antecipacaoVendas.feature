@@ -203,3 +203,14 @@ Cenario: Validar direito OPERACOES_ANTECIPACAO_VENDAS_OPERACAO_ANTECIPACAO_ALCAD
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAO_VENDAS_OPERACAO_ANTECIPACAO_ALCADA_A01_VER"
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
 Entao clicar na aba "Precificação"
+
+@OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_CRITERIOS_CRIAR
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_CRITERIOS_CRIAR
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_CRITERIOS_CRIAR"
+E que tenha/nao tenha acesso na tela "Operação de antecipação"
+Quando clicar na aba "Antecipação Programada"
+E clicar na aba "Incluir"
+E selecionar a opcao "Diário"
+E selecionar a opcao "Valor total"
+Quando selecionar a opcao "Preço negociado"
+E clicar no botao "Salvar"
