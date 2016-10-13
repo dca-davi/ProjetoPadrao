@@ -33,7 +33,27 @@ class Operacoes_antecipacaoVendas
       result = false
     end
 
+  when 'Demanda-Abertura de demanda'
+    if $browser.div(:id => "cmb_dmd_type").exist?
+      $browser.div(:id => "cmb_dmd_type").click
+      sleep 1
+      result = true
+    else
+      result = false
+    end
+
+  when 'Tipo da solicitação-Abertura de demanda'
+    if $browser.div(:id => "cmb_req_type").exist?
+      $browser.div(:id => "cmb_req_type").click
+      sleep 1
+      result = true
+    else
+      result = false
+    end
+
+
   end
+
 
     case item
     when "Efetivado"
@@ -57,6 +77,24 @@ class Operacoes_antecipacaoVendas
     when "outros"
       if $browser.li(:text => "Outros").exist?
         $browser.li(:text => "Outros").click
+        sleep 1
+        result = true
+      else
+        result = false
+      end
+
+    when "Solicitação para Regularização Financeira"
+      if $browser.li(:text => "Solicitação para Regularização Financeira").exist?
+        $browser.li(:text => "Solicitação para Regularização Financeira").click
+        sleep 1
+        result = true
+      else
+        result = false
+      end
+
+    when 'Pedido de reprocessamento de vendas'
+      if $browser.li(:text => "Pedido de reprocessamento de vendas").exist?
+        $browser.li(:text => "Pedido de reprocessamento de vendas").click
         sleep 1
         result = true
       else

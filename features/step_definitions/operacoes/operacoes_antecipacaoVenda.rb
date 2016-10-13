@@ -1,4 +1,5 @@
 Quando (/^selecionar "([^"]*)" do campo "([^"]*)"$/) do |item, frame|
+  next if @pass_test == true
   @operacaoes_antecipacaoVenda = Operacoes_antecipacaoVendas.new
   btmComboCanal = @operacaoes_antecipacaoVenda.selecione_combo_operacoes(frame, item)
   if !btmComboCanal && @tem_direito
@@ -9,6 +10,7 @@ Quando (/^selecionar "([^"]*)" do campo "([^"]*)"$/) do |item, frame|
 end
 
 Entao (/^clicar no botao Pesquisar$/) do
+  next if @pass_test == true
   @operacaoes_antecipacaoVenda = Operacoes_antecipacaoVendas.new
   btm = @operacaoes_antecipacaoVenda.clicar_botao_esp
   if !btm && @tem_direito
@@ -19,6 +21,7 @@ Entao (/^clicar no botao Pesquisar$/) do
 end
 
 Entao (/^selecionar a aba precificacao$/) do
+  next if @pass_test == true
   @operacaoes_antecipacaoVenda = Operacoes_antecipacaoVendas.new
   abaprecific = @operacaoes_antecipacaoVenda.clicar_aba_precificacao
   if !abaprecific && @tem_direito
@@ -29,6 +32,7 @@ Entao (/^selecionar a aba precificacao$/) do
 end
 
 Quando (/^selecionar clicar no link "([^"]*)"$/) do |link|
+  next if @pass_test == true
   @operacaoes_antecipacaoVenda = Operacoes_antecipacaoVendas.new
   clklink = @operacaoes_antecipacaoVenda.clicar_no_link(link)
   if !clklink && @tem_direito
@@ -39,6 +43,7 @@ Quando (/^selecionar clicar no link "([^"]*)"$/) do |link|
 end
 
 Quando (/^confirmar a efetivacao$/) do
+  next if @pass_test == true
   @operacaoes_antecipacaoVenda = Operacoes_antecipacaoVendas.new
   clkok = @operacaoes_antecipacaoVenda.clicar_botao_ok
   if !clkok && @tem_direito
@@ -49,6 +54,7 @@ Quando (/^confirmar a efetivacao$/) do
 end
 
 Quando (/^informar "([^"]*)" do campo$/) do |input,campo|
+next if @pass_test == true
 @operacoes_antecipacaoVenda = Operacoes_antecipacaoVendas.new
 btninp = @operacoes_antecipacaoVenda.selecionar_info_cliente(input)
 if !btninp && @tem_direito
@@ -59,6 +65,7 @@ if !btninp && @tem_direito
 end
 
 Quando (/^selecionar a opcao "([^"]*)"$/) do |radio|
+next if @pass_test == true
 @operacoes_antecipacaoVenda = Utils.new
 btnradio = @operacoes_antecipacaoVenda.selecionar_radio_button(radio)
 if !btnradio && @tem_direito
