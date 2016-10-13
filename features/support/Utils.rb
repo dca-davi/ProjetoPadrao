@@ -261,6 +261,8 @@ class Utils
         when 'Remover Desconto vigente/programado'
             acao = 'icoDelete'
             i = 1
+        when 'Salvar'
+          acao = 'tabOperationAnticipation:tabScheduledAnticipation:btn_save'
         end
 
         sleep 3
@@ -462,6 +464,18 @@ class Utils
         end
         sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
+    end
+
+    def selecionar_radio_button_tabela(linha, coluna = 0)
+      if $browser.tr(data_ri: (linha.to_i-1).to_s).td(index: coluna).exist?
+        $browser.tr(data_ri: (linha.to_i-1).to_s).td(index: coluna).click
+        sleep 2
+        result = true
+    else
+        result = false
+    end
+    sleep 2
+    $encoded_img = $browser.driver.screenshot_as(:base64)
     end
 
     def validar_btn_exportar(botao)
