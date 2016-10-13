@@ -153,16 +153,20 @@ class Utils
         result
     end
 
-    def acessar_aba(aba)
+    def acessar_aba(aba, i = 0)
         sleep 2
-
-        if $browser.li(text: aba).attribute_value('class').include? 'ui-state-disabled'
+        case aba
+        when 'Incluir_PrazoFlexivel'
+            aba = 'Incluir'
+            i = 1
+        end
+        if $browser.li(text: aba, index: i).attribute_value('class').include? 'ui-state-disabled'
             $encoded_img = $browser.driver.screenshot_as(:base64)
             return false
         else
-            Watir::Wait.until { $browser.li(text: aba).exist? }
-            if $browser.li(text: aba).present?
-                $browser.li(text: aba).click
+            Watir::Wait.until { $browser.li(text: aba, index: i).exist? }
+            if $browser.li(text: aba, index: i).present?
+                $browser.li(text: aba, index: i).click
                 sleep 6
                 $encoded_img = $browser.driver.screenshot_as(:base64)
                 return true
@@ -175,12 +179,17 @@ class Utils
         end
     end
 
-    def validar_acesso_aba(aba)
+    def validar_acesso_aba(aba, i = 0)
         sleep 2
+        case aba
+        when 'Incluir_PrazoFlexivel'
+            aba = 'Incluir'
+            i = 1
+        end
         aguardar_loading
         sleep 2
-        Watir::Wait.until { $browser.a(text: aba).exists? }
-        if $browser.li(text: aba).attribute_value('aria-expanded') == 'true'
+        Watir::Wait.until { $browser.a(text: aba, index: i).exists? }
+        if $browser.li(text: aba, index: i).attribute_value('aria-expanded') == 'true'
             return true
         else
             return false
@@ -259,9 +268,7 @@ class Utils
             acao = 'cancellation_link'
         when 'editar - CUSTO OPERACIONAL - custos'
             acao = '0:button_0Tn'
-    end
-
-        sleep 2
+            sleep 2
         when 'Visualizar Planos do cliente'
             acao = 'button_ZeM'
         when 'Visualizar Maquinas do cliente'

@@ -222,6 +222,14 @@ E que tenha/nao tenha acesso na tela "Exceção_antecipaçãoVendas"
 Entao o sistema exibira/nao exibira a tela "Exceção"
 Quando clicar na aba "Antecipação de Prazo Flexível"
 
+@CONFIGURACOES_AQUISICAORECEBIVEIS_EXCECAO_ANTECIPPRAZOFLEXIVEL_EDITAR
+Cenario: Validar direito CONFIGURACOES_AQUISICAORECEBIVEIS_EXCECAO_ANTECIPPRAZOFLEXIVEL_EDITAR
+Dado que tenha/nao tenha o direito "CONFIGURACOES_AQUISICAORECEBIVEIS_EXCECAO_ANTECIPPRAZOFLEXIVEL_EDITAR"
+E que tenha/nao tenha acesso na tela "Exceção_antecipaçãoVendas"
+Quando clicar na aba "Antecipação de Prazo Flexível"
+E clicar na aba "Incluir_PrazoFlexivel"
+Entao podera/nao podera acessar a aba "Incluir_PrazoFlexivel"
+
 #@SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER
 #Cenario: Validar direito SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER
 #Dado que tenha/nao tenha o direito "SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER"
