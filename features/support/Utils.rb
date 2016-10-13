@@ -259,8 +259,6 @@ class Utils
             acao = 'cancellation_link'
         when 'editar - CUSTO OPERACIONAL - custos'
             acao = '0:button_0Tn'
-    end
-
         sleep 2
         when 'Visualizar Planos do cliente'
             acao = 'button_ZeM'
