@@ -59,4 +59,13 @@ E que tenha/nao tenha acesso na tela "Resumo financeiro"
 E selecionar o item "vendas" de "ontem"
 Quando clicar no item em consolidado de vendas
 E clicar no item da transacao de vendas
+Entao localizar o frame "Dados do Chip - Envio"
+
+@CLIENTES_EXTRATO_RESUMOFINANCEIRO_HISTORICOVENDAS_CICLODEVIDAEMISSOR_VER
+Cenario: Validar direito CLIENTES_EXTRATO_RESUMOFINANCEIRO_HISTORICOVENDAS_CICLODEVIDAEMISSOR_VER
+Dado que tenha/nao tenha o direito "CLIENTES_EXTRATO_RESUMOFINANCEIRO_HISTORICOVENDAS_CICLODEVIDAEMISSOR_VER"
+E que tenha/nao tenha acesso na tela "Resumo financeiro"
+E selecionar o item "vendas" de "ontem"
+Quando clicar no item em consolidado de vendas
+E clicar no item da transacao de vendas
 Entao localizar o frame "Ciclo de Vida Emissor"
