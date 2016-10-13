@@ -40,7 +40,7 @@ Entao clicar no botao "Pesquisar"
 Cenario: Validar direito OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTE_EDITAR
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTE_EDITAR"
 E que tenha/nao tenha acesso na tela "Envio de débitos ao cliente"
-Entao informar "104-CAIXA ECONOMICA FEDERAL S.A." no campo "Banco - Envio de Debitos ao Cliente"
+Entao informar "104-CAIXA ECONOMICA FEDERAL S.A." no campo "Banco"
 E clicar no botao "Pesquisar"
 
 @OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTEANULACAO_VER

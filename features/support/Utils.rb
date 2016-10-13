@@ -259,9 +259,8 @@ class Utils
             acao = 'cancellation_link'
         when 'editar - CUSTO OPERACIONAL - custos'
             acao = '0:button_0Tn'
-    end
 
-        sleep 2
+            sleep 2
         when 'Visualizar Planos do cliente'
             acao = 'button_ZeM'
         when 'Visualizar Maquinas do cliente'
@@ -269,7 +268,7 @@ class Utils
         when 'Remover Desconto vigente/programado'
             acao = 'icoDelete'
             i = 1
-        end
+    end
 
         sleep 3
         if $browser.a(id: /#{acao}$/).exist?
@@ -320,7 +319,7 @@ class Utils
         when "subt\u00F3pico de manuten\u00E7\u00E3o"
             campo = ':subTopicMaintenanceId_input'
         when 'banco'
-            campo = 'input_ClearingConsignmentsControlBeanbank_input'
+            campo = 'input_ClearingConsignmentsControlBeanbank_input|tab_bebit_balance:formInclude:input_IncludeCuttingDebitBalanceSendBeanmodelvalueDomicileBank_input'
         when 'protocolo'
             campo = 'input_ClearingSefazDemandListBeanfilterprotocolNumber'
         when 'banco - acumulo diario'
@@ -409,8 +408,6 @@ class Utils
             campo = 'tabGeralPesquisaAvancada:formAutorizacaoMultiFiltros:dataAteTran_input'
         when '4_dig_cartao_pesq_avan_extrato'
             campo = 'tabGeralPesquisaAvancada:formAutorizacaoMultiFiltros:j_idt320'
-        when 'Banco - Envio de Debitos ao Cliente'
-            campo = 'tab_bebit_balance:formInclude:input_IncludeCuttingDebitBalanceSendBeanmodelvalueDomicileBank_input'
         end
 
         $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
