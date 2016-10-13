@@ -272,7 +272,7 @@ class Utils
         when 'editar - CUSTO OPERACIONAL - custos'
             acao = '0:button_0Tn'
 
-        sleep 2
+            sleep 2
         when 'Visualizar Planos do cliente'
             acao = 'button_ZeM'
         when 'Visualizar Maquinas do cliente'
@@ -329,9 +329,9 @@ class Utils
     def preencher_campo_input(valor, campo)
         case campo.downcase
         when 'numero de parcelas - criterios de antecipacao - de'
-          campo = 'tabOperationAnticipation:tabScheduledAnticipation:installmentsBegin'
+            campo = 'tabOperationAnticipation:tabScheduledAnticipation:installmentsBegin'
         when 'numero de parcelas - criterios de antecipacao - ate'
-          campo = 'tabOperationAnticipation:tabScheduledAnticipation:installmentsEnd'
+            campo = 'tabOperationAnticipation:tabScheduledAnticipation:installmentsEnd'
         when "t\u00F3pico de manuten\u00E7\u00E3o"
             campo = ':topicMaintenanceId_input'
         when "subt\u00F3pico de manuten\u00E7\u00E3o"
@@ -520,16 +520,17 @@ class Utils
         end
         sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
+    end
 
-    def validar_btn_exportar(botao) #pode validar todos os botes e nao somente o exportar
-      Watir::Wait.until { $browser.button(text: botao).exists? }
-      if $browser.button(text: botao, aria_disabled: "false").exist?
-        $encoded_img = $browser.driver.screenshot_as(:base64)
-        result = true
-      else
-        $encoded_img = $browser.driver.screenshot_as(:base64)
-        result = false
-      end
+    def validar_btn_exportar(botao) # pode validar todos os botes e nao somente o exportar
+        Watir::Wait.until { $browser.button(text: botao).exists? }
+        if $browser.button(text: botao, aria_disabled: 'false').exist?
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+            result = true
+        else
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+            result = false
+        end
     end
 
     def selecionar_radio_button_tabela(linha, coluna = 0)
