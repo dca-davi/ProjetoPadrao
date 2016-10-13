@@ -387,6 +387,13 @@ class Utils
             campo = 'tab_request:input_IncludeRequestCancellationSaleBeanrefundValue'
         when 'mesa-custo-operacional'
             campo = 'input_ArvCostOperatingBeancostOperatingSelectedvlCostTable'
+        when 'data_inicio_pesq_avan_extrato'
+            campo = 'tabGeralPesquisaAvancada:formAutorizacaoMultiFiltros:dataDeTran_input'
+        when 'data_fim_pesq_avan_extrato'
+            campo = 'tabGeralPesquisaAvancada:formAutorizacaoMultiFiltros:dataAteTran_input'
+        when '4_dig_cartao_pesq_avan_extrato'
+            campo = 'tabGeralPesquisaAvancada:formAutorizacaoMultiFiltros:j_idt320'
+
         end
 
         $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
