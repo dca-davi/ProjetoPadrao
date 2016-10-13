@@ -47,6 +47,9 @@ class Utils
         when 'Reprocessamento_monitoraçãoFuncional'
             i = 0
             pagina = 'Reprocessamento'
+        when 'controleDeAcaoDeChargeback'
+            i = 0
+            pagina = "Controle de a\u00E7\u00E3o de chargeback"
         end
 
         sleep 2
@@ -256,6 +259,9 @@ class Utils
             acao = 'cancellation_link'
         when 'editar - CUSTO OPERACIONAL - custos'
             acao = '0:button_0Tn'
+    end
+
+        sleep 2
         when 'Visualizar Planos do cliente'
             acao = 'button_ZeM'
         when 'Visualizar Maquinas do cliente'
@@ -397,7 +403,8 @@ class Utils
             campo = 'tab_request:input_IncludeRequestCancellationSaleBeanrefundValue'
         when 'mesa-custo-operacional'
             campo = 'input_ArvCostOperatingBeancostOperatingSelectedvlCostTable'
-
+        when 'Banco - Envio de Debitos ao Cliente'
+            campo = 'tab_bebit_balance:formInclude:input_IncludeCuttingDebitBalanceSendBeanmodelvalueDomicileBank_input'
         end
 
         $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
