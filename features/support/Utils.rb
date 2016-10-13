@@ -47,6 +47,9 @@ class Utils
         when 'Reprocessamento_monitoraçãoFuncional'
             i = 0
             pagina = 'Reprocessamento'
+        when 'controleDeAcaoDeChargeback'
+            i = 0
+            pagina = "Controle de a\u00E7\u00E3o de chargeback"
         end
 
         sleep 2
@@ -222,6 +225,8 @@ class Utils
             acao = 'icon[_]?view|btn_detail|button_RSR|button_Jvn|link_SMe'
         when 'Editar'
             acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi|tabRejectionCapture:resultTableTreat:0:j_idt422|j_idt211|link_h4Q'
+        when 'Editar Dados de contato'
+            acao = 'btn_info_contact_edit'
         when 'Remover'
             acao = 'ico[_]?cancel|btn_cancel'
         when 'cancelar'
@@ -254,6 +259,8 @@ class Utils
             acao = 'cancellation_link'
         when 'editar - CUSTO OPERACIONAL - custos'
             acao = '0:button_0Tn'
+
+        sleep 2
         when 'Visualizar Planos do cliente'
             acao = 'button_ZeM'
         when 'Visualizar Maquinas do cliente'
@@ -264,6 +271,9 @@ class Utils
         when 'Salvar'
           acao = 'tabOperationAnticipation:tabScheduledAnticipation:btn_save'
         end
+
+    end
+
 
         sleep 3
         if $browser.a(id: /#{acao}$/).exist?
@@ -314,7 +324,7 @@ class Utils
         when "subt\u00F3pico de manuten\u00E7\u00E3o"
             campo = ':subTopicMaintenanceId_input'
         when 'banco'
-            campo = 'input_ClearingConsignmentsControlBeanbank_input'
+            campo = 'input_ClearingConsignmentsControlBeanbank_input|tab_bebit_balance:formInclude:input_IncludeCuttingDebitBalanceSendBeanmodelvalueDomicileBank_input'
         when 'protocolo'
             campo = 'input_ClearingSefazDemandListBeanfilterprotocolNumber'
         when 'banco - acumulo diario'
@@ -397,7 +407,12 @@ class Utils
             campo = 'tab_request:input_IncludeRequestCancellationSaleBeanrefundValue'
         when 'mesa-custo-operacional'
             campo = 'input_ArvCostOperatingBeancostOperatingSelectedvlCostTable'
-
+        when 'data_inicio_pesq_avan_extrato'
+            campo = 'tabGeralPesquisaAvancada:formAutorizacaoMultiFiltros:dataDeTran_input'
+        when 'data_fim_pesq_avan_extrato'
+            campo = 'tabGeralPesquisaAvancada:formAutorizacaoMultiFiltros:dataAteTran_input'
+        when '4_dig_cartao_pesq_avan_extrato'
+            campo = 'tabGeralPesquisaAvancada:formAutorizacaoMultiFiltros:j_idt320'
         end
 
         $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
