@@ -12,7 +12,7 @@ Quando(/^o botao "([^"]*)" estara habilitado\/desabilitado$/) do |botao|
     if btnExprt && !@tem_direito
         raise 'Usuario pode acessar a opcao na qual nao tem direito'
     elsif !btnExprt && @tem_direito
-        raise 'Usuario nao pode acessar a opcao na qual tem direito'
+        raise 'Usuario nao pode acessar a opcao na qual nao tem direito'
     end
 end
 
@@ -22,7 +22,7 @@ Quando (/^selecionar a opcao "([^"]*)" do campo "([^"]*)"$/) do |item, frame|
   if !btmCombo && @tem_direito
     raise 'Usuario nao pode clicar na opcao na qual tem direito'
   elsif btmCombo && !@tem_direito
-    raise 'Usuario pode clicar na opcao na qual tem direito'
+    raise 'Usuario pode clicar na opcao na qual nao tem direito'
   end
 end
 
@@ -32,6 +32,6 @@ Quando (/^clicar no botao "([^"]*)" da tela captura$/) do |botao|
   if !btnPesquisar && @tem_direito
     raise 'Usuario nao pode clicar no botao no qual tem direito'
   elsif btnPesquisar && !@tem_direito
-    raise 'Usuario pode clicar no botao no qual tem direito'
+    raise 'Usuario pode clicar no botao no qual nao tem direito'
   end
 end

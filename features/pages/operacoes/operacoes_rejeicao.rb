@@ -4,6 +4,7 @@ class Operacoes_Rejeicao
   def selecione_combo(frame, item)
 
     case  frame
+
     when 'Situação da solicitação'
       if $browser.div(:id => "cmbRequestSituation").exist?
         $browser.div(:id => "cmbRequestSituation").click
@@ -118,6 +119,5 @@ class Operacoes_Rejeicao
         sleep 5
         $encoded_img = $browser.driver.screenshot_as(:base64)
     end
-
 
 end

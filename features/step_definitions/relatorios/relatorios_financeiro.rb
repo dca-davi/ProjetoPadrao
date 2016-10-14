@@ -30,3 +30,14 @@ Quando (/^clicar no botao "([^"]*)" da tela captura de vendas$/) do |botao|
         raise('Usuario nao tem direito para clicar no botao')
     end
 end
+
+Quando (/^clicar no valor bruto$/) do
+    next if @pass_test == true
+    @relatorios_financeiro = Relatorios_financeiros.new
+    valorbtn = @relatorios_financeiro.clicar_valor_bruto
+    if !valorbtn && @tem_direito
+        raise('Usuario com direito nao consegue clicar no valor')
+    elsif valorbtn && !@tem_direito
+        raise('Usuario nao tem direito para clicar no valor')
+    end
+end

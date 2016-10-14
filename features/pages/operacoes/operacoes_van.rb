@@ -58,6 +58,15 @@ class Operacoes_Van
          result = false
        end
 
+     when 'Liberar bloqueio de cancelamento'
+       if $browser.li(text: 'Liberar bloqueio de cancelamento',index: 0).exist?
+        $browser.li(text: 'Liberar bloqueio de cancelamento',index: 0).click
+        sleep 1
+        result = true
+      else
+        result = false
+      end
+
     end
     sleep 5
     $encoded_img = $browser.driver.screenshot_as(:base64)
