@@ -1,5 +1,6 @@
 # CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_VER
 Entao(/^a aplicacao exibira\/nao exibira o painel grid da tela cacfv "([^"]*)"$/) do |painel|
+    next if @pass_test == true
     cavp = Configuracoes_antecipacao_cliente_preco_especial.new
     cavpGridResultados = cavp.validar_painel_grid(painel)
     if !cavpGridResultados && @tem_direito
@@ -11,6 +12,7 @@ end
 
 # CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_INCLUIR
 Quando(/^clicar no link "([^"]*)"$/) do |incluir|
+    next if @pass_test == true
     cavp = Configuracoes_antecipacao_cliente_preco_especial.new
     cavpLinkIncluir = cavp.clicar_link_acao(incluir)
 end

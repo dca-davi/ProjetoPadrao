@@ -1,4 +1,5 @@
 Entao(/^o sistema exibira\/nao exibira a tela "([^"]*)"$/) do |tela|
+    next if @pass_test == true
     @trava_prazo = Trava_Prazo_Vencido.new
     status = @trava_prazo.validar_pagina(tela)
     raise("A tela não é #{tela}") if status == false

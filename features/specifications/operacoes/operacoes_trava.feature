@@ -50,3 +50,13 @@ Cenario: Validar direito OPERACOES_TRAVA_TRATAMENTOMANUAL_EDITAR
 Dado que tenha/nao tenha o direito "OPERACOES_TRAVA_TRATAMENTOMANUAL_EDITAR"
 E que tenha/nao tenha acesso na tela "Efetuar trava e destrava manual"
 Entao o botao "Salvar" estara habilitado/desabilitado
+
+@OPERACOES_TRAVA_REJEICAO_EDITAR
+Cenario: Validar direito OPERACOES_TRAVA_REJEICAO_EDITAR
+Dado que tenha/nao tenha o direito "OPERACOES_TRAVA_REJEICAO_EDITAR"
+E que tenha/nao tenha acesso na tela "Rejeições"
+Entao informar "01/05/2016" no campo "data-de"
+E informar "10/10/2016" no campo "data-ate"
+E clicar no botao "Pesquisar"
+Entao selecionar o check-box da linha "1" na coluna "1" da tabela resultados
+E clicar no botao "Finalizar"

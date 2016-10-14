@@ -1,4 +1,5 @@
 Quando(/^informar os filtros na tela "([^"]*)" e clicar no botao "([^"]*)"$/) do |tela, botao|
+    next if @pass_test == true
     filtros = Trava_Prazo_Vencido.new
     filtros.preencher_filtros tela
     utils = Utils.new
@@ -6,6 +7,7 @@ Quando(/^informar os filtros na tela "([^"]*)" e clicar no botao "([^"]*)"$/) do
 end
 
 Quando(/^o botao "([^"]*)" estara habilitado\/desabilitado$/) do |botao|
+    next if @pass_test == true
     @operacoes_rejeicoes = Utils.new
     btnExprt = @operacoes_rejeicoes.validar_btn_exportar(botao)
     if btnExprt && !@tem_direito
@@ -16,6 +18,7 @@ Quando(/^o botao "([^"]*)" estara habilitado\/desabilitado$/) do |botao|
 end
 
 Quando (/^selecionar a opcao "([^"]*)" do campo "([^"]*)"$/) do |item, frame|
+    next if @pass_test == true
     @trava_rejeicao = Operacoes_Rejeicao.new
     btmCombo = @trava_rejeicao.selecione_combo(frame, item)
     if !btmCombo && @tem_direito
@@ -26,6 +29,7 @@ Quando (/^selecionar a opcao "([^"]*)" do campo "([^"]*)"$/) do |item, frame|
 end
 
 Quando (/^clicar no botao "([^"]*)" da tela captura$/) do |botao|
+    next if @pass_test == true
     @operacoes_rejeicao = Operacoes_Rejeicao.new
     btnPesquisar = @operacoes_rejeicao.clicar_botao_pequisar_captura_tratamento(botao)
     if !btnPesquisar && @tem_direito
@@ -36,6 +40,7 @@ Quando (/^clicar no botao "([^"]*)" da tela captura$/) do |botao|
 end
 
 Dado(/^selecionar "([^"]*)" no combo\-box Bandeira$/) do |valor|
+    next if @pass_test == true
     @operacoes_rejeicoes = Operacoes_Rejeicao.new
     comboBox = @operacoes_rejeicoes.selecionar_combobox_depositos_debitos(valor)
     if !comboBox && @tem_direito
@@ -46,6 +51,7 @@ Dado(/^selecionar "([^"]*)" no combo\-box Bandeira$/) do |valor|
 end
 
 Entao(/^selecionar "([^"]*)" no combo\-box do pop\-up$/) do |valor|
+    next if @pass_test == true
     @operacoes_rejeicoes = Operacoes_Rejeicao.new
     comboBox = @operacoes_rejeicoes.selecionar_combobox_depositos_debitos_pop_up(valor)
     if !comboBox && @tem_direito
@@ -56,6 +62,7 @@ Entao(/^selecionar "([^"]*)" no combo\-box do pop\-up$/) do |valor|
 end
 
 Entao(/^selecionar a opcao "([^"]*)" da aba Anulacao$/) do |valor|
+    next if @pass_test == true
     @operacoes_rejeicoes = Utils.new
     radioButton = @operacoes_rejeicoes.selecionar_radio_button(valor, 1)
     if !radioButton && @tem_direito
