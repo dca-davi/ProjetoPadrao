@@ -54,3 +54,13 @@ Entao(/^selecionar "([^"]*)" no combo\-box do pop\-up$/) do |valor|
         raise 'Usuario pode clicar no botao no qual tem direito'
     end
 end
+
+Entao(/^selecionar a opcao "([^"]*)" da aba Anulacao$/) do |valor|
+    @operacoes_rejeicoes = Utils.new
+    radioButton = @operacoes_rejeicoes.selecionar_radio_button(valor, 1)
+    if !radioButton && @tem_direito
+        raise 'Usuario nao pode clicar no botao no qual tem direito'
+    elsif radioButton && !@tem_direito
+        raise 'Usuario pode clicar no botao no qual tem direito'
+    end
+end

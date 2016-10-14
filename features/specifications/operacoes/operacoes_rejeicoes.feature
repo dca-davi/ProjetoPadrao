@@ -46,9 +46,9 @@ Dado que tenha/nao tenha o direito "OPERACOES_REJEICOES_PAGAMENTOSDEBITOS_ANULAR
 E que tenha/nao tenha acesso na tela "Depósitos e débitos"
 E selecionar a opcao "Regular"
 E selecionar a opcao "Crédito"
-E informar "104-CAIXA ECONOMICA FEDERAL S.A." no campo "Banco"
-E selecionar "ELO" no combo-box Bandeira
-E informar "01/01/2015" no campo "data-de"
+E informar "237-BANCO BRADESCO S.A." no campo "Banco"
+E selecionar "VISA" no combo-box Bandeira
+E informar "01/11/2015" no campo "data-de"
 E informar "10/10/2016" no campo "data-ate"
 E clicar no botao "Pesquisar"
 Entao selecionar o check-box da linha "1" na coluna "8" da tabela resultados
@@ -57,13 +57,18 @@ E selecionar a opcao "Baixa manual"
 E selecionar "Retorno para a agenda" no combo-box do pop-up
 E clicar no botao "Confirmar"
 E clicar no botao "Sim"
+E clicar no botao "OK"
 Entao clicar na aba "ANULAÇÃO"
 E selecionar a opcao "Por Banco/Bandeira"
-E selecionar a opcao "Crédito"
+E selecionar a opcao "Crédito" da aba Anulacao
 E selecionar a opcao "Baixa manual"
-E informar "104-CAIXA ECONOMICA FEDERAL S.A." no campo "Banco"
-E selecionar "ELO" no combo-box Bandeira
+E informar "237-BANCO BRADESCO S.A." no campo "Banco"
+E selecionar "VISA" no combo-box Bandeira
 E clicar no botao "Pesquisar"
+Entao selecionar o check-box da linha "1" na coluna "8" da tabela resultados
+E clicar no botao "Confirmar"
+E clicar no botao "Sim"
+E clicar no botao "OK"
 
 @OPERACOES_REJEICOESCAPTURA_DETALHES_REMOVER
 Cenario: Validar direito OPERACOES_REJEICOESCAPTURA_DETALHES_REMOVER
