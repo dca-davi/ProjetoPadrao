@@ -160,7 +160,7 @@ class Utils
         when 'Incluir_PrazoFlexivel'
             aba = 'Incluir'
             i = 1
-        when 'Parametros - PRO ANTECIPACAO DE VENDAS'#
+        when 'Parametros - PRO ANTECIPACAO DE VENDAS' #
             aba = 'Parâmetros'
             i = 1
         end
@@ -243,8 +243,8 @@ class Utils
             acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi|tabRejectionCapture:resultTableTreat:0:j_idt422|buttonEditId|link_h4Q|'
         when 'Editar Dados de contato'
             acao = 'btn_info_contact_edit'
-        when "Editar - PRO ANTECIPACAO DE VENDAS"
-            acao = "tabProarv:frmCostProarvParam:table_costs_proarv_param:0:buttonEditId"
+        when 'Editar - PRO ANTECIPACAO DE VENDAS'
+            acao = 'tabProarv:frmCostProarvParam:table_costs_proarv_param:0:buttonEditId'
         when 'Remover'
             acao = 'ico[_]?cancel|btn_cancel'
         when 'cancelar'
@@ -286,11 +286,11 @@ class Utils
             i = 1
         when 'Salvar'
 
-          acao = 'tabOperationAnticipation:tabScheduledAnticipation:btn_save'
+            acao = 'tabOperationAnticipation:tabScheduledAnticipation:btn_save'
         when 'Continuar'
-          acao = 'j_idt248_next'
+            acao = 'j_idt248_next'
         when 'reprocessamento'
-          acao = 'button_Ipb'
+            acao = 'button_Ipb'
             acao = 'tabOperationAnticipation:tabScheduledAnticipation:btn_save'
 
         end
@@ -341,13 +341,13 @@ class Utils
     def preencher_campo_input(valor, campo)
         case campo.downcase
         when  'numero do cliente - consulta de transacoes'
-          campo = 'tabPesquisaTransacao:formTransaction:input_SearchTransactionBeandtonuCustomer'
+            campo = 'tabPesquisaTransacao:formTransaction:input_SearchTransactionBeandtonuCustomer'
         when  'Data da Autorização - consulta de transacoes - de'
-          campo = 'tabPesquisaTransacao:formTransaction:initial_date_input'
+            campo = 'tabPesquisaTransacao:formTransaction:initial_date_input'
         when  'Data da Autorização - consulta de transacoes - ate'
-          campo = 'tabPesquisaTransacao:formTransaction:final_date_input'
-        when "data de rejeicao - bandeira"
-          campo = 'formRejectedFlag:initialRejectDate_input'
+            campo = 'tabPesquisaTransacao:formTransaction:final_date_input'
+        when 'data de rejeicao - bandeira'
+            campo = 'formRejectedFlag:initialRejectDate_input'
         when 'numero de parcelas - criterios de antecipacao - de'
             campo = 'tabOperationAnticipation:tabScheduledAnticipation:installmentsBegin'
         when 'numero de parcelas - criterios de antecipacao - ate'
@@ -459,7 +459,7 @@ class Utils
         when 'comentario'
             campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesBeandtoobservations'
         else
-              raise 'Campo não encontrado'
+            raise 'Campo não encontrado'
         end
 
         $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
@@ -537,13 +537,8 @@ class Utils
             result = false
         end
         sleep 2
-        result = true
-      else
-        result = false
-      end
-      sleep 2
-      $encoded_img = $browser.driver.screenshot_as(:base64)
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        result
     end
 
     def selecionar_radio_button_tabela(linha, coluna = 0)
