@@ -44,3 +44,9 @@ Cenario: Validar direito OPERACOES_TRAVA_MOVHISTORICOCIP_VER
 Dado que tenha/nao tenha o direito "OPERACOES_TRAVA_MOVHISTORICOCIP_VER"
 E que tenha/nao tenha acesso na tela "Movimento CIP"
 Entao o sistema exibira/nao exibira a tela "Movimento CIP (Varredura)"
+
+@OPERACOES_TRAVA_TRATAMENTOMANUAL_EDITAR
+Cenario: Validar direito OPERACOES_TRAVA_TRATAMENTOMANUAL_EDITAR
+Dado que tenha/nao tenha o direito "OPERACOES_TRAVA_TRATAMENTOMANUAL_EDITAR"
+E que tenha/nao tenha acesso na tela "Efetuar trava e destrava manual"
+Entao o botao "Salvar" estara habilitado/desabilitado
