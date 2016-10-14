@@ -155,6 +155,7 @@ class Utils
 
     def acessar_aba(aba, i = 0)
         sleep 2
+        aguardar_loading
         case aba
         when 'Incluir_PrazoFlexivel'
             aba = 'Incluir'
@@ -473,9 +474,9 @@ class Utils
         end
     end
 
-    def selecionar_radio_button(radio)
-        if $browser.label(text: radio, index: 0).exist?
-            $browser.label(text: radio, index: 0).click
+    def selecionar_radio_button(radio, i = 0)
+        if $browser.label(text: radio, index: i).exist?
+            $browser.label(text: radio, index: i).click
             sleep 2
             result = true
         else
