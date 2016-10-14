@@ -259,8 +259,6 @@ class Utils
             acao = 'cancellation_link'
         when 'editar - CUSTO OPERACIONAL - custos'
             acao = '0:button_0Tn'
-
-        sleep 2
         when 'Visualizar Planos do cliente'
             acao = 'button_ZeM'
         when 'Visualizar Maquinas do cliente'
@@ -270,12 +268,14 @@ class Utils
             i = 1
         when 'Salvar'
           acao = 'tabOperationAnticipation:tabScheduledAnticipation:btn_save'
+        when 'Continuar'
+          acao = 'j_idt248_next'
+        when 'reprocessamento'
+          acao = 'button_Ipb'
         end
 
-    end
-
-
         sleep 3
+        aguardar_loading
         if $browser.a(id: /#{acao}$/).exist?
             sleep 2
             $browser.a(id: /#{acao}$/).click
@@ -355,7 +355,7 @@ class Utils
             campo = 'tab_reprocessing_sales:searchReprocessingSales:input_SearchReprocessingSalesBeannuRequestReentry'
         when 'numero da solicitacao - cancelamento e reversão de vendas'
             campo = 'tab_request:formRequest:cancellation_number'
-        when 'Preço base - % CDI'
+        when 'Preço base - % CDI'.downcase
             campo = 'tabFlexiblePrecification:tablePriceBaseStep1_id:0:txtCdiStep1_id_input'
         when 'inicio da vigencia'
             campo = 'tabFlexiblePrecification:dtStartCurrentStep1_id_input'
@@ -413,6 +413,16 @@ class Utils
             campo = 'tabGeralPesquisaAvancada:formAutorizacaoMultiFiltros:dataAteTran_input'
         when '4_dig_cartao_pesq_avan_extrato'
             campo = 'tabGeralPesquisaAvancada:formAutorizacaoMultiFiltros:j_idt320'
+        when 'data autorizacao reprocessamento de vendas - de'
+            campo = 'tab_reprocessing_sales:initial_date_transaction_input'
+        when 'data autorizacao reprocessamento de vendas - ate'
+            campo = 'tab_reprocessing_sales:final_date_transaction_input'
+        when 'codigo de autorizacao'
+            campo = 'input_IncludeReprocessingSalesBeandtoauthorizationCode'
+        when 'comentario'
+            campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesBeandtoobservations'
+        else
+              raise 'Campo não encontrado'
         end
 
         $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
@@ -486,11 +496,11 @@ class Utils
         $browser.tr(data_ri: (linha.to_i-1).to_s).td(index: coluna).click
         sleep 2
         result = true
-    else
+      else
         result = false
-    end
-    sleep 2
-    $encoded_img = $browser.driver.screenshot_as(:base64)
+      end
+      sleep 2
+      $encoded_img = $browser.driver.screenshot_as(:base64)
     end
 
     def validar_btn_exportar(botao)

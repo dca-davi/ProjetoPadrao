@@ -6,7 +6,7 @@ Funcionalidade: Validar os direitos na tela Operacoes > Rejeicoes
 
 Contexto:
 Dado que eu faca login
-E informe o EC "1018242187"
+E informe o EC "1010756114"
 
 @OPERACOES_REJEICOESBANDEIRA_VER
 Cenario: Validar direito OPERACOES_REJEICOESBANDEIRA_VER
@@ -72,3 +72,13 @@ E informar "06/09/2016" no campo "data de rejeicao - de"
 E informar "06/10/2016" no campo "data de rejeicao - ate"
 Quando clicar no botao "Pesquisar"
 Entao clicar no botao exportar
+
+@OPERACOES_REJEICOESCAPTURA_TRATAMENTO_ANULACAO_INCLUIR
+Cenario: Validar direito OPERACOES_REJEICOESCAPTURA_TRATAMENTO_ANULACAO_INCLUIR
+Dado que tenha/nao tenha o direito "OPERACOES_REJEICOESCAPTURA_TRATAMENTO_ANULACAO_INCLUIR"
+E que tenha/nao tenha acesso na tela "Captura"
+E clicar na aba "TRATAMENTO"
+Quando selecionar a opcao "Reentrada"
+E informar "06/09/2016" no campo "data de rejeicao - de"
+E informar "10/09/2016" no campo "data de rejeicao - ate"
+Quando clicar no botao "Pesquisar"

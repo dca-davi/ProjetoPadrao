@@ -51,8 +51,17 @@ class Operacoes_antecipacaoVendas
       result = false
     end
 
+  when 'Status-Reprocessamento de Venda'
+    if $browser.div(:id => "tab_reprocessing_sales:combo_ReprocessingSalesSearchTransactionBeandtocaptureStatusId_label").exist?
+      $browser.div(:id => "tab_reprocessing_sales:combo_ReprocessingSalesSearchTransactionBeandtocaptureStatusId_label").click
+      sleep 1
+      result = true
+    else
+      result = false
+    end
 
   end
+
 
 
     case item
@@ -101,6 +110,14 @@ class Operacoes_antecipacaoVendas
         result = false
       end
 
+    when 'Autorização desfeita'
+      if $browser.li(:text => "Autorização Desfeita").exist?
+        $browser.li(:text => "Autorização Desfeita").click
+        sleep 1
+        result = true
+      else
+        result = false
+      end
 
 
     end
