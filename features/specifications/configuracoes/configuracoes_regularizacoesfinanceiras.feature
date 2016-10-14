@@ -72,3 +72,12 @@ E selecionar o combobox "parametro - regra de cancelamento" e a opcao "Liberar c
 E localizar e clicar no botao "Pesquisar"
 Quando clicar na acao "Visualizar"
 Entao o botao "Excluir" estara habilitado/desabilitado
+
+@CONFIGURACOES_REGULARIZACOESFINANCEIRAS_REGRADELIBERACAOBLOQUEIO_EDITAR
+Cenario: Validar direito CONFIGURACOES_REGULARIZACOESFINANCEIRAS_REGRADELIBERACAOBLOQUEIO_EDITAR
+Dado que tenha/nao tenha o direito "CONFIGURACOES_REGULARIZACOESFINANCEIRAS_REGRADELIBERACAOBLOQUEIO_EDITAR"
+E que tenha/nao tenha acesso na tela "Regra de cancelamento"
+Quando clicar na aba "REGRA DE LIBERAÇÃO"
+E selecionar o combobox "parametro - regra de cancelamento" e a opcao "Liberar bloqueio de cancelamento"
+E localizar e clicar no botao "Pesquisar"
+Entao clicar na acao "Visualizar"

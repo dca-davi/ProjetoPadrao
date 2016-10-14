@@ -4,6 +4,16 @@ class Operacoes_antecipacaoVendas
   def selecione_combo_operacoes(frame, item)
 
     case  frame
+
+    when 'bandeiras - bandeira'  #tela operacoes - rejeicoes - bandeira
+      if $browser.div(:id => "formRejectedFlag:cardAssociationCombo_label").exist?
+        $browser.div(:id => "formRejectedFlag:cardAssociationCombo_label").click
+        sleep 1
+        result = true
+      else
+        result = false
+      end
+      sleep 1
     when 'canal - acumulado diario'
       if $browser.div(:id => "tabAccumulatedDaily:idChannel_label").exist?
         $browser.div(:id => "tabAccumulatedDaily:idChannel_label").click
@@ -74,6 +84,15 @@ class Operacoes_antecipacaoVendas
 
 
     case item
+
+    when 'Mastercard' #tela operacoes - rejeicoes - bandeira
+      if $browser.li(:text => "Mastercard").exist?
+        $browser.li(:text => "Mastercard").click
+        sleep 1
+        result = true
+      else
+        result = false
+      end
 
     when "Terça-feira"
       if $browser.li(:text => "Terça-feira").exist?

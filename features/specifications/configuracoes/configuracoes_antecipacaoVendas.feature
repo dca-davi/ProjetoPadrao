@@ -259,6 +259,22 @@ Quando clicar na aba "Antecipação de Prazo Flexível"
 E clicar na aba "Incluir_PrazoFlexivel"
 Entao podera/nao podera acessar a aba "Incluir_PrazoFlexivel"
 
+@SETUP_ARV_CUSTOS_PROARV_PARAMETROS_VER
+Cenario: Validar direito SETUP_ARV_CUSTOS_PROARV_PARAMETROS_VER
+Dado que tenha/nao tenha o direito "SETUP_ARV_CUSTOS_PROARV_PARAMETROS_VER"
+E que tenha/nao tenha acesso na tela "Pró-antecipação de vendas"
+Quando clicar na aba "Parametros - PRO ANTECIPACAO DE VENDAS"
+Entao localizar o frame "Parâmetros"
+
+@SETUP_ARV_CUSTOS_PROARV_PARAMETROS_EDITAR
+Cenario: Validar direito SETUP_ARV_CUSTOS_PROARV_PARAMETROS_EDITAR
+Dado que tenha/nao tenha o direito "SETUP_ARV_CUSTOS_PROARV_PARAMETROS_EDITAR"
+E que tenha/nao tenha acesso na tela "Pró-antecipação de vendas"
+Quando clicar na aba "Parametros - PRO ANTECIPACAO DE VENDAS"
+E clicar na acao "Editar - PRO ANTECIPACAO DE VENDAS"
+Entao o botao "Confirmar" estara habilitado/desabilitado
+
+
 #@SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER
 #Cenario: Validar direito SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER
 #Dado que tenha/nao tenha o direito "SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER"

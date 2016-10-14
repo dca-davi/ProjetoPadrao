@@ -160,6 +160,9 @@ class Utils
         when 'Incluir_PrazoFlexivel'
             aba = 'Incluir'
             i = 1
+        when 'Parametros - PRO ANTECIPACAO DE VENDAS'#
+            aba = 'Parâmetros'
+            i = 1
         end
         if $browser.li(text: aba, index: i).attribute_value('class').include? 'ui-state-disabled'
             $encoded_img = $browser.driver.screenshot_as(:base64)
@@ -235,11 +238,13 @@ class Utils
         when 'Tratar'
             acao = 'btnProcess'
         when 'Visualizar'
-            acao = 'icon[_]?view|btn_detail|button_RSR|button_Jvn|link_SMe|j_idt307:0:button_rnw|0:btn_detail'
+            acao = 'icon[_]?view|btn_detail|button_RSR|button_Jvn|link_SMe|j_idt307:0:button_rnw|0:btn_detail|label_lupaSelected'
         when 'Editar'
-            acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi|tabRejectionCapture:resultTableTreat:0:j_idt422|0:buttonEditId|link_h4Q'
+            acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi|tabRejectionCapture:resultTableTreat:0:j_idt422|buttonEditId|link_h4Q|'
         when 'Editar Dados de contato'
             acao = 'btn_info_contact_edit'
+        when "Editar - PRO ANTECIPACAO DE VENDAS"
+            acao = "tabProarv:frmCostProarvParam:table_costs_proarv_param:0:buttonEditId"
         when 'Remover'
             acao = 'ico[_]?cancel|btn_cancel'
         when 'cancelar'
@@ -335,6 +340,14 @@ class Utils
 
     def preencher_campo_input(valor, campo)
         case campo.downcase
+        when  'numero do cliente - consulta de transacoes'
+          campo = 'tabPesquisaTransacao:formTransaction:input_SearchTransactionBeandtonuCustomer'
+        when  'Data da Autorização - consulta de transacoes - de'
+          campo = 'tabPesquisaTransacao:formTransaction:initial_date_input'
+        when  'Data da Autorização - consulta de transacoes - ate'
+          campo = 'tabPesquisaTransacao:formTransaction:final_date_input'
+        when "data de rejeicao - bandeira"
+          campo = 'formRejectedFlag:initialRejectDate_input'
         when 'numero de parcelas - criterios de antecipacao - de'
             campo = 'tabOperationAnticipation:tabScheduledAnticipation:installmentsBegin'
         when 'numero de parcelas - criterios de antecipacao - ate'
