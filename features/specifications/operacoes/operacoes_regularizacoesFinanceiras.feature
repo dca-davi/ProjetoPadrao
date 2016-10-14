@@ -187,3 +187,20 @@ Entao clicar no botao "Pesquisar" da aba Incluir Cancelamento
 E clicar na acao "Cancelamento"
 Entao informar "1.234,56" no campo "valor cancelamento-cancelamento reversao de vendas"
 Entao clicar no botao "Continuar"
+
+@OPERACOES_REGULARIZACOES_REPROCESSAMENTO_SOLICITAR
+Cenario: Validar direito OPERACOES_REGULARIZACOES_REPROCESSAMENTO_SOLICITAR
+Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_REPROCESSAMENTO_SOLICITAR"
+E que tenha/nao tenha acesso na tela "Reprocessamento de vendas"
+Entao clicar na aba "REENTRADA DE VENDA"
+Entao informar "1018242187" no campo "n do cliente -reentrada de venda"
+E clicar no botao "OK"
+E informar "123456" no campo "codigo de autorização-reentrada de venda"
+E informar "5308698871257860" no campo "n do cartao aberto-reentrada de venda"
+E informar "02/10/2016" no campo "data da autorizacao-reentrada de venda"
+E informar "1.234,56" no campo "valor da autorizacao-reentrada de venda"
+E informar "1011-MASTERCARD Débito À vista" no campo "tipo de pagamento-reentrada de venda"
+E informar "44450498" no campo "terminal-reentrada de venda"
+E informar "381347" no campo "nsu-reentrada de venda"
+E informar "Teste" no campo "comentario-reentrada de venda"
+Entao clicar no botao "Continuar"
