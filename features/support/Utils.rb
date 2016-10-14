@@ -52,7 +52,6 @@ class Utils
             pagina = "Controle de a\u00E7\u00E3o de chargeback"
         end
 
-
         sleep 2
         Watir::Wait.until { $browser.a(text: pagina, index: i).exists? }
         if $browser.a(text: pagina, index: i).attribute_value('onclick') == 'return false;'
@@ -156,6 +155,7 @@ class Utils
 
     def acessar_aba(aba, i = 0)
         sleep 2
+        aguardar_loading
         case aba
         when 'Incluir_PrazoFlexivel'
             aba = 'Incluir'
@@ -277,6 +277,8 @@ class Utils
             acao = 'cancellation_link'
         when 'editar - CUSTO OPERACIONAL - custos'
             acao = '0:button_0Tn'
+
+            sleep 2
         when 'Visualizar Planos do cliente'
             acao = 'button_ZeM'
         when 'Visualizar Maquinas do cliente'
@@ -287,7 +289,6 @@ class Utils
         when 'Salvar'
             acao = 'tabOperationAnticipation:tabScheduledAnticipation:btn_save'
         end
-
 
         sleep 3
         if $browser.a(id: /#{acao}$/).exist?
@@ -342,15 +343,15 @@ class Utils
         when "data de rejeicao - bandeira"
           campo = 'formRejectedFlag:initialRejectDate_input'
         when 'numero de parcelas - criterios de antecipacao - de'
-          campo = 'tabOperationAnticipation:tabScheduledAnticipation:installmentsBegin'
+            campo = 'tabOperationAnticipation:tabScheduledAnticipation:installmentsBegin'
         when 'numero de parcelas - criterios de antecipacao - ate'
-          campo = 'tabOperationAnticipation:tabScheduledAnticipation:installmentsEnd'
+            campo = 'tabOperationAnticipation:tabScheduledAnticipation:installmentsEnd'
         when "t\u00F3pico de manuten\u00E7\u00E3o"
             campo = ':topicMaintenanceId_input'
         when "subt\u00F3pico de manuten\u00E7\u00E3o"
             campo = ':subTopicMaintenanceId_input'
         when 'banco'
-            campo = 'input_ClearingConsignmentsControlBeanbank_input|tab_bebit_balance:formInclude:input_IncludeCuttingDebitBalanceSendBeanmodelvalueDomicileBank_input'
+            campo = 'input_ClearingConsignmentsControlBeanbank_input|tab_bebit_balance:formInclude:input_IncludeCuttingDebitBalanceSendBeanmodelvalueDomicileBank_input|tab_deposits_debits:formReport:input_OperationsTreatRejectedManualBeanmodelvalueDomicileBank_input'
         when 'protocolo'
             campo = 'input_ClearingSefazDemandListBeanfilterprotocolNumber'
         when 'banco - acumulo diario'
@@ -387,6 +388,10 @@ class Utils
             campo = 'tabFlexiblePrecification:dtStartCurrentStep1_id_input'
         when 'numero da solicitacao - ajustes financeiros'
             campo = 'tab_regularization:input_SearchRegularizationBeansearchRegularizationDTOrequestNumber'
+        when 'data-de'
+            campo = 'tab_deposits_debits:formReport:dtSetrTo_input'
+        when 'data-ate'
+            campo = 'tab_deposits_debits:formReport:dtSetrUntil_input'
         when 'data de rejeicao - de'
             campo = 'tabRejectionCapture:initialRejectionDateTreatment_input|tabRejectionCapture:initialRejectionDate_input'
         when 'data de rejeicao - ate'
@@ -495,9 +500,9 @@ class Utils
         end
     end
 
-    def selecionar_radio_button(radio)
-        if $browser.label(text: radio, index: 0).exist?
-            $browser.label(text: radio, index: 0).click
+    def selecionar_radio_button(radio, i = 0)
+        if $browser.label(text: radio, index: i).exist?
+            $browser.label(text: radio, index: i).click
             sleep 2
             result = true
         else
@@ -507,16 +512,39 @@ class Utils
         $encoded_img = $browser.driver.screenshot_as(:base64)
     end
 
+    def selecionar_check_box_tabela(linha, coluna = 0)
+        if $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna.to_i - 1).exist?
+            $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna.to_i - 1).click
+            sleep 2
+            result = true
+        else
+            result = false
+        end
+        sleep 2
+        $encoded_img = $browser.driver.screenshot_as(:base64)
+    end
 
-    def validar_btn_exportar(botao) #pode validar todos os botes e nao somente o exportar
-      Watir::Wait.until { $browser.button(text: botao).exists? }
-      if $browser.button(text: botao, aria_disabled: "false").exist?
+    def selecionar_radio_button_tabela(linha, coluna = 0)
+        if $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna).exist?
+            $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna).click
+            sleep 2
+            result = true
+        else
+            result = false
+        end
+        sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
-        result = true
-      else
-        $encoded_img = $browser.driver.screenshot_as(:base64)
-        result = false
-      end
+    end
+
+    def validar_btn_exportar(botao) # pode validar todos os botes e nao somente o exportar
+        Watir::Wait.until { $browser.button(text: botao).exists? }
+        if $browser.button(text: botao, aria_disabled: 'false').exist?
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+            result = true
+        else
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+            result = false
+        end
     end
 
     def selecionar_radio_button_tabela(linha, coluna = 0)
