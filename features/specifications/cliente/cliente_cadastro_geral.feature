@@ -135,3 +135,12 @@ Dado que tenha/nao tenha o direito "CLIENTE_GERAL_BLOQUEIOS_VER"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
 Quando clicar na aba "Bloqueios"
 Entao podera/nao podera acessar a aba "Bloqueios"
+
+@CLIENTES_CADASTRO_INFO_GERAL_DADOSDECADASTRO_NOMENOCOMPROVANTEDEVENDA_EDITAR
+Cenario: Validar direito CLIENTES_CADASTRO_INFO_GERAL_DADOSDECADASTRO_NOMENOCOMPROVANTEDEVENDA_EDITAR
+Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_GERAL_DADOSDECADASTRO_NOMENOCOMPROVANTEDEVENDA_EDITAR"
+E que tenha/nao tenha acesso na tela "Informações do cliente"
+Quando clicar na aba "GERAL"
+E clicar na aba "Dados do cliente"
+Quando clicar no botao "Editar Dados" do frame "dados de cadastro"
+Então o botao "Salvar" estara habilitado/desabilitado

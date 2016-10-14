@@ -62,3 +62,13 @@ E que tenha/nao tenha acesso na tela "Motivo de ajuste"
 Quando clicar no botao "Pesquisar"
 E clicar na acao "Visualizar"
 Entao clicar no botao "Excluir"
+
+@CONFIGURACOES_REGULARIZACOESFINANCEIRAS_REGRADELIBERACAOSALDO_EDITAR
+Cenario: Validar direito CONFIGURACOES_REGULARIZACOESFINANCEIRAS_REGRADELIBERACAOSALDO_EDITAR
+Dado que tenha/nao tenha o direito "CONFIGURACOES_REGULARIZACOESFINANCEIRAS_REGRADELIBERACAOSALDO_EDITAR"
+E que tenha/nao tenha acesso na tela "Regra de cancelamento"
+Quando clicar na aba "REGRA DE LIBERAÇÃO"
+E selecionar o combobox "parametro - regra de cancelamento" e a opcao "Liberar consulta de saldo"
+E localizar e clicar no botao "Pesquisar"
+Quando clicar na acao "Visualizar"
+Entao o botao "Excluir" estara habilitado/desabilitado

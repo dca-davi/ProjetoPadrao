@@ -13,4 +13,17 @@ class Configuracoes_regularizaoesfinanceiras
         end
     end
     # Demis <<<
+
+    def btn_pesquisar_index1(btn)
+      if $browser.button(text: btn, index: 1).exist?
+        $browser.button(text: btn, index: 1).click
+        sleep 2
+        result = true
+      else
+      result = false
+    end
+    sleep 1
+    @@utils.aguardar_loading
+    $encoded_img = $browser.driver.screenshot_as(:base64)
+  end
 end

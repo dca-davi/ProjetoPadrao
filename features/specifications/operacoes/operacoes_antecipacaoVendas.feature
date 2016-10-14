@@ -160,14 +160,6 @@ Quando informar "1018242187" no campo "numero do cliente - operacoes realizadas"
 E clicar no botao "Pesquisar"
 Entao clicar na acao "Visualizar - operacoes realizadas"
 
-@OPERACOES_ANTECIPACAOVENDAS_PERIODOANTECIPADO_VER
-Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_PERIODOANTECIPADO_VER
-Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_PERIODOANTECIPADO_VER"
-E que tenha/nao tenha acesso na tela "Operações realizadas"
-Quando informar "1018242187" no campo "numero do cliente - operacoes realizadas"
-E clicar no botao "Pesquisar"
-Entao clicar na acao "Visualizar - operacoes realizadas"
-
 @OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_VER @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_VER
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_VER"
@@ -197,6 +189,83 @@ E que tenha/nao tenha acesso na tela "Antecipação programadas cadastradas"
 E selecionar o combobox "Status" e a opcao "Vigente"
 Quando clicar no botao "Pesquisar"
 Entao clicar na acao "cancelar - coluna acao"
+
+@OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_BCODOMICILIO_CRIAR
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_BCODOMICILIO_CRIAR
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_BCODOMICILIO_CRIAR"
+E que tenha/nao tenha acesso na tela "Operação de antecipação"
+E clicar na aba "Antecipação Programada"
+E clicar na aba "Incluir"
+Quando selecionar a opcao "Critérios de antecipação"
+E selecionar a opcao "1 | 1480 | 37510 - 1"
+Então o botao "Salvar" estara habilitado/desabilitado
+
+@OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_NUMEROPARC_CRIAR
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_NUMEROPARC_CRIAR
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_NUMEROPARC_CRIAR"
+E que tenha/nao tenha acesso na tela "Operação de antecipação"
+E clicar na aba "Antecipação Programada"
+E clicar na aba "Incluir"
+Quando selecionar a opcao "Critérios de antecipação"
+E informar "1" no campo "numero de parcelas - criterios de antecipacao - de"
+E informar "3" no campo "numero de parcelas - criterios de antecipacao - ate"
+Então o botao "Salvar" estara habilitado/desabilitado
+
+@OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_SEMANAL_CRIAR
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_SEMANAL_CRIAR
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_SEMANAL_CRIAR"
+E que tenha/nao tenha acesso na tela "Operação de antecipação"
+E clicar na aba "Antecipação Programada"
+E clicar na aba "Incluir"
+Quando selecionar a opcao "Semanal"
+E selecionar "Terça-feira" do campo "Dia - antecipacao programada"
+Então o botao "Salvar" estara habilitado/desabilitado
+
+@OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_TIPOPAGTO_CRIAR
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_TIPOPAGTO_CRIAR
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_TIPOPAGTO_CRIAR"
+E que tenha/nao tenha acesso na tela "Operação de antecipação"
+E clicar na aba "Antecipação Programada"
+E clicar na aba "Incluir"
+Quando selecionar a opcao "Critérios de antecipação"
+E selecionar a opcao "Crédito Parcelado loja"
+E selecionar a opcao "Crédito À vista"
+Então o botao "Salvar" estara habilitado/desabilitado
+
+@OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_CRIAR
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_CRIAR
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_CRIAR"
+E que tenha/nao tenha acesso na tela "Operação de antecipação"
+E clicar na aba "Antecipação Programada"
+E clicar na aba "Incluir"
+Entao o botao "Salvar" estara habilitado/desabilitado
+
+@OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_BANDEIRA_CRIAR
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_BANDEIRA_CRIAR
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_BANDEIRA_CRIAR"
+E que tenha/nao tenha acesso na tela "Operação de antecipação"
+E clicar na aba "Antecipação Programada"
+E clicar na aba "Incluir"
+Quando selecionar a opcao "Critérios de antecipação"
+E selecionar a opcao "CREDSYSTEM"
+Entao o botao "Salvar" estara habilitado/desabilitado
+
+@OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_MENSAL_CRIAR
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_MENSAL_CRIAR
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_MENSAL_CRIAR"
+E que tenha/nao tenha acesso na tela "Operação de antecipação"
+E clicar na aba "Antecipação Programada"
+E clicar na aba "Incluir"
+Quando selecionar a opcao "Personalizada"
+Entao o botao "Salvar" estara habilitado/desabilitado
+
+@OPERACOES_ANTECIPACAOVENDAS_PERIODOANTECIPADO_VER
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_PERIODOANTECIPADO_VER
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_PERIODOANTECIPADO_VER"
+E que tenha/nao tenha acesso na tela "Operações realizadas"
+Entao o botao "Pesquisar" estara habilitado/desabilitado
+E clicar na acao "Visualizar"
+Entao localizar o frame "Período de antecipação"
 
 @OPERACOES_ANTECIPACAO_VENDAS_OPERACAO_ANTECIPACAO_ALCADA_A01_VER
 Cenario: Validar direito OPERACOES_ANTECIPACAO_VENDAS_OPERACAO_ANTECIPACAO_ALCADA_A01_VER
