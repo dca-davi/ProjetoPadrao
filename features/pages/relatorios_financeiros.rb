@@ -110,5 +110,20 @@ def validar_botao_exportar(botao)
     result
 end
 
+def clicar_valor_bruto
+  if $browser.label(id: /reportSummry:label_SummarizedAccountingSaleReportBeansummaryAccountingDTOvlSalesAcceptedFIC/).exist?
+    $browser.label(id: /reportSummry:label_SummarizedAccountingSaleReportBeansummaryAccountingDTOvlSalesAcceptedFIC/).click
+    sleep 2
+    result = true
+  else
+    result = false
+  end
+  sleep 3
+  $encoded_img = $browser.driver.screenshot_as(:base64)
+end#
+
+
+
+
 
 end

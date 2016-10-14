@@ -13,7 +13,7 @@ Quando(/^o botao "([^"]*)" estara habilitado\/desabilitado$/) do |botao|
     if btnExprt && !@tem_direito
         raise 'Usuario pode acessar a opcao na qual nao tem direito'
     elsif !btnExprt && @tem_direito
-        raise 'Usuario nao pode acessar a opcao na qual tem direito'
+        raise 'Usuario nao pode acessar a opcao na qual nao tem direito'
     end
 end
 
@@ -22,21 +22,20 @@ Quando (/^selecionar a opcao "([^"]*)" do campo "([^"]*)"$/) do |item, frame|
     @trava_rejeicao = Operacoes_Rejeicao.new
     btmCombo = @trava_rejeicao.selecione_combo(frame, item)
     if !btmCombo && @tem_direito
-        raise 'Usuario nao pode clicar na opcao na qual tem direito'
+      raise 'Usuario nao pode clicar na opcao na qual tem direito'
     elsif btmCombo && !@tem_direito
-        raise 'Usuario pode clicar na opcao na qual tem direito'
+      raise 'Usuario pode clicar na opcao na qual nao tem direito'
     end
 end
 
 Quando (/^clicar no botao "([^"]*)" da tela captura$/) do |botao|
-    next if @pass_test == true
-    @operacoes_rejeicao = Operacoes_Rejeicao.new
-    btnPesquisar = @operacoes_rejeicao.clicar_botao_pequisar_captura_tratamento(botao)
-    if !btnPesquisar && @tem_direito
-        raise 'Usuario nao pode clicar no botao no qual tem direito'
-    elsif btnPesquisar && !@tem_direito
-        raise 'Usuario pode clicar no botao no qual tem direito'
-    end
+  @operacoes_rejeicao = Operacoes_Rejeicao.new
+  btnPesquisar = @operacoes_rejeicao.clicar_botao_pequisar_captura_tratamento(botao)
+  if !btnPesquisar && @tem_direito
+    raise 'Usuario nao pode clicar no botao no qual tem direito'
+  elsif btnPesquisar && !@tem_direito
+    raise 'Usuario pode clicar no botao no qual nao tem direito'
+  end
 end
 
 Dado(/^selecionar "([^"]*)" no combo\-box Bandeira$/) do |valor|

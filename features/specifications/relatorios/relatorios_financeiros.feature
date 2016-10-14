@@ -94,3 +94,11 @@ Dado que tenha/nao tenha o direito "RELATORIOS_RELATORIOSFINANCEIROS_LIQUIDACAOS
 E que tenha/nao tenha acesso na tela "Liquidação financeira - SPB"
 E clicar na aba "REJEITADOS PÓS GRADE"
 Entao o botao "Exportar" estara habilitado/desabilitado
+
+@RELATORIOS_RELATORIOSFINANCEIROS_RESUMOCONTABILSINTETICO_EXPORTAR
+Cenario: Validar direito RELATORIOS_RELATORIOSFINANCEIROS_RESUMOCONTABILSINTETICO_EXPORTAR
+Dado que tenha/nao tenha o direito "RELATORIOS_RELATORIOSFINANCEIROS_RESUMOCONTABILSINTETICO_EXPORTAR"
+E que tenha/nao tenha acesso na tela "Resumo contábil sintético"
+E clicar no valor bruto
+E o botao "Pesquisar" estara habilitado/desabilitado
+Entao o botao "Exportar" estara habilitado/desabilitado

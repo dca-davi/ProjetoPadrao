@@ -167,7 +167,6 @@ E que tenha/nao tenha acesso na tela "Antecipação programadas cadastradas"
 Quando informar "1018242187" no campo "numero do cliente - antecipacao programadas cadastradas"
 Entao clicar no botao "Pesquisar"
 
-# Demis >>>
 @OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGTODOS_VER
 Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_VER
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_VER"
@@ -180,7 +179,6 @@ Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_C
 E que tenha/nao tenha acesso na tela "Operações realizadas"
 Entao localizar o frame "Últimas Transações"
 E clicar na acao "Visualizar"
-# Demis <<<
 
 @OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROG_EDITAR
 Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROG_EDITAR
@@ -283,3 +281,17 @@ E selecionar a opcao "Diário"
 E selecionar a opcao "Valor total"
 Quando selecionar a opcao "Preço negociado"
 E clicar no botao "Salvar"
+
+@OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_AVANCADO_VER @teste
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_AVANCADO_VER
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_AVANCADO_VER"
+E que tenha/nao tenha acesso na tela "Operação de antecipação"
+Quando clicar na aba "Antecipação Avulsa"
+Entao localizar o frame "Resultados"
+
+@OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_PAGAMENTO_VER @teste
+Cenario: Validar direito OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_PAGAMENTO_VER
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_PAGAMENTO_VER"
+E que tenha/nao tenha acesso na tela "Operação de antecipação"
+Quando clicar na aba "Antecipação Avulsa"
+Entao localizar o frame "Pagamento"

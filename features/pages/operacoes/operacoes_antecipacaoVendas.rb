@@ -4,6 +4,16 @@ class Operacoes_antecipacaoVendas
   def selecione_combo_operacoes(frame, item)
 
     case  frame
+
+    when 'bandeiras - bandeira'  #tela operacoes - rejeicoes - bandeira
+      if $browser.div(:id => "formRejectedFlag:cardAssociationCombo_label").exist?
+        $browser.div(:id => "formRejectedFlag:cardAssociationCombo_label").click
+        sleep 1
+        result = true
+      else
+        result = false
+      end
+      sleep 1
     when 'canal - acumulado diario'
       if $browser.div(:id => "tabAccumulatedDaily:idChannel_label").exist?
         $browser.div(:id => "tabAccumulatedDaily:idChannel_label").click
@@ -60,11 +70,29 @@ class Operacoes_antecipacaoVendas
       result = false
     end
 
+  when 'Status-Reprocessamento de Venda'
+    if $browser.div(:id => "tab_reprocessing_sales:combo_ReprocessingSalesSearchTransactionBeandtocaptureStatusId_label").exist?
+      $browser.div(:id => "tab_reprocessing_sales:combo_ReprocessingSalesSearchTransactionBeandtocaptureStatusId_label").click
+      sleep 1
+      result = true
+    else
+      result = false
+    end
 
   end
 
 
+
     case item
+
+    when 'Mastercard' #tela operacoes - rejeicoes - bandeira
+      if $browser.li(:text => "Mastercard").exist?
+        $browser.li(:text => "Mastercard").click
+        sleep 1
+        result = true
+      else
+        result = false
+      end
 
     when "Terça-feira"
       if $browser.li(:text => "Terça-feira").exist?
@@ -120,6 +148,14 @@ class Operacoes_antecipacaoVendas
         result = false
       end
 
+    when 'Autorização desfeita'
+      if $browser.li(:text => "Autorização Desfeita").exist?
+        $browser.li(:text => "Autorização Desfeita").click
+        sleep 1
+        result = true
+      else
+        result = false
+      end
 
 
     end
