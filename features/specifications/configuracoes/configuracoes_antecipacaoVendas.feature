@@ -201,6 +201,35 @@ Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECI
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
 Entao localizar o frame "Antecipação programada"
 
+@SETUP_ARVCONFIGURACOES_GERAIS_VALORMINIMOPOROPERACAOEMCADACANAL_EDITAR
+Cenario: Validar direito SETUP_ARVCONFIGURACOES_GERAIS_VALORMINIMOPOROPERACAOEMCADACANAL_EDITAR
+Dado que tenha/nao tenha o direito "SETUP_ARVCONFIGURACOES_GERAIS_VALORMINIMOPOROPERACAOEMCADACANAL_EDITAR"
+E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
+E clicar no botao "Editar dados" do frame "Valor mínimo por operação"
+Entao o botao "Salvar" estara habilitado/desabilitado
+
+@SETUP_ARVCONFIGURACOES_GERAIS_VALORMINIMOPOROPERACAOEMCADACANAL_VER
+Cenario: Validar direito SETUP_ARVCONFIGURACOES_GERAIS_VALORMINIMOPOROPERACAOEMCADACANAL_VER
+Dado que tenha/nao tenha o direito "SETUP_ARVCONFIGURACOES_GERAIS_VALORMINIMOPOROPERACAOEMCADACANAL_VER"
+E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
+Entao clicar no botao "Editar dados" do frame "Valor mínimo por operação"
+
+@SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER
+Cenario: Validar direito SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER
+Dado que tenha/nao tenha o direito "SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER"
+E que tenha/nao tenha acesso na tela "Pró-antecipação de vendas"
+Quando clicar na aba "Tarifa de liquidação"
+Entao o botao "Pesquisar" estara habilitado/desabilitado
+
+@SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_EDITAR
+Cenario: Validar direito SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_EDITAR
+Dado que tenha/nao tenha o direito "SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_EDITAR"
+E que tenha/nao tenha acesso na tela "Pró-antecipação de vendas"
+Quando clicar na aba "Tarifa de liquidação"
+E o botao "Pesquisar" estara habilitado/desabilitado
+E clicar no botao "Editar"
+Entao o botao "Salvar" estara habilitado/desabilitado
+
 @SETUP_ARV_CUSTOS_CUSTO_OPERACIONAL_EDITAR
 Cenario: Validar direito SETUP_ARV_CUSTOS_CUSTO_OPERACIONAL_EDITAR
 Dado que tenha/nao tenha o direito "SETUP_ARV_CUSTOS_CUSTO_OPERACIONAL_EDITAR"
@@ -221,6 +250,14 @@ Dado que tenha/nao tenha o direito "CONFIGURACOES_AQUISICAORECEBIVEIS_EXCECAO_AN
 E que tenha/nao tenha acesso na tela "Exceção_antecipaçãoVendas"
 Entao o sistema exibira/nao exibira a tela "Exceção"
 Quando clicar na aba "Antecipação de Prazo Flexível"
+
+@CONFIGURACOES_AQUISICAORECEBIVEIS_EXCECAO_ANTECIPPRAZOFLEXIVEL_EDITAR
+Cenario: Validar direito CONFIGURACOES_AQUISICAORECEBIVEIS_EXCECAO_ANTECIPPRAZOFLEXIVEL_EDITAR
+Dado que tenha/nao tenha o direito "CONFIGURACOES_AQUISICAORECEBIVEIS_EXCECAO_ANTECIPPRAZOFLEXIVEL_EDITAR"
+E que tenha/nao tenha acesso na tela "Exceção_antecipaçãoVendas"
+Quando clicar na aba "Antecipação de Prazo Flexível"
+E clicar na aba "Incluir_PrazoFlexivel"
+Entao podera/nao podera acessar a aba "Incluir_PrazoFlexivel"
 
 #@SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER
 #Cenario: Validar direito SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER

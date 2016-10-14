@@ -1,5 +1,5 @@
 #language: pt
-@OPERACOES_REGULARIZACOES_FINANCEIRAS
+@Operacoes_regularizacoesFinanceiras
 Funcionalidade: Validar os direitos na tela Operacoes > Regularizações financeiras
 
 Contexto:
@@ -42,6 +42,9 @@ Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODED
 E que tenha/nao tenha acesso na tela "Envio de débitos ao cliente"
 Entao informar "104-CAIXA ECONOMICA FEDERAL S.A." no campo "Banco"
 E clicar no botao "Pesquisar"
+E selecionar o check-box da linha "1" na coluna "10" da tabela resultados
+E clicar no botao "Confirmar"
+E clicar no botao "Sim"
 
 @OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTEANULACAO_VER
 Cenario: Validar direito OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTEANULACAO_VER
@@ -54,9 +57,11 @@ E clicar no botao "Pesquisar" da aba anulacao
 Cenario: Validar direito OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTEANULACAO_EDITAR
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTEANULACAO_EDITAR"
 E que tenha/nao tenha acesso na tela "Envio de débitos ao cliente"
-Quando clicar na aba "Pesquisar"
-Entao selecionar a opção Tratamento em alguma solicitação e clicar em Confirmar
-E clicar no botao OK do pop-up
+E clicar na aba "ANULAÇÃO"
+E clicar no botao "Pesquisar" da aba anulacao
+Entao selecionar o check-box da linha "1" na coluna "10" da tabela resultados
+E clicar no botao "Confirmar" da aba anulacao
+E clicar no botao "Sim" da aba anulacao
 
 @OPERACOES_REGULARIZACOES_REPROCESSAMENTO_SOLICITACAO_VER
 Cenario: Validar direito OPERACOES_REGULARIZACOES_REPROCESSAMENTO_SOLICITACAO_VER

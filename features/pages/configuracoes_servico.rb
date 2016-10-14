@@ -20,6 +20,7 @@ class Configuracoes_servico
 
         when "Vig\u00EAncia"
             @@utils.selecionar_valor_combobox('j_idt[\d]+_panel', valor, 5)
+
         end
     end
 end

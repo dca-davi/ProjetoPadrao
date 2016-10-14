@@ -1,6 +1,6 @@
 class Operacoes_Van
 
-  def selecione_combo_Van(combo, tipo)
+  def selecione_combo_Van(combo, tipo) #Serve para selecionar outros combos
 
     case  combo
     when 'Bandeira'
@@ -15,6 +15,15 @@ class Operacoes_Van
     when 'Status'
       if $browser.label(:id => 'formArvConsultAntecipationScheduledRegistered:cmb_status_label', :text => 'Selecione', :index => 0).exist?
         $browser.label(:id => 'formArvConsultAntecipationScheduledRegistered:cmb_status_label', :text => 'Selecione', :index => 0).click
+        sleep 1
+        result = true
+      else
+        result = false
+      end
+
+    when 'parametro - regra de cancelamento'
+      if $browser.label(:id => 'tab_tabGeral:tab_constraint:cancelSearchForm:comboParam_label', :index => 0).exist?
+        $browser.label(:id => 'tab_tabGeral:tab_constraint:cancelSearchForm:comboParam_label', :index => 0).click
         sleep 1
         result = true
       else
@@ -39,6 +48,15 @@ class Operacoes_Van
         else
           result = false
         end
+
+      when 'Liberar consulta de saldo'
+        if $browser.li(text: 'Liberar consulta de saldo',index: 0).exist?
+         $browser.li(text: 'Liberar consulta de saldo',index: 0).click
+         sleep 1
+         result = true
+       else
+         result = false
+       end
 
     end
     sleep 5
