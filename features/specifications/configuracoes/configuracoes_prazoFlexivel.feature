@@ -53,7 +53,6 @@ E que tenha/nao tenha acesso na tela "Precificação_prazoFlexivel"
 E o sistema exibira/nao exibira a tela "Precificação"
 Entao clicar no botao "Cancelar tabela" do frame "Resultados"
 
-# Demis >>>
 @CONFIGURACOES_PRAZOFLEXIVEL_GERAL_ATRIBUICAOCATEGORIAPRECO_EDITAR
 Cenario: Validar direito CONFIGURACOES_PRAZOFLEXIVEL_GERAL_ATRIBUICAOCATEGORIAPRECO_EDITAR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_PRAZOFLEXIVEL_GERAL_ATRIBUICAOCATEGORIAPRECO_EDITAR"
@@ -66,7 +65,6 @@ Cenario: Validar direito CONFIGURACOES_PRAZOFLEXIVEL_GERAL_ATRIBUICAOCATEGORIAPR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_PRAZOFLEXIVEL_GERAL_ATRIBUICAOCATEGORIAPRECO_VER"
 E que tenha/nao tenha acesso na tela "Geral_prazoFlexivel"
 E o sistema exibira/nao exibira a tela "Geral"
-# Demis <<<
 
 @CONFIGURACOES_PRAZOFLEXIVEL_EXCECAO_VER
 Cenario: Validar direito CONFIGURACOES_PRAZOFLEXIVEL_EXCECAO_VER

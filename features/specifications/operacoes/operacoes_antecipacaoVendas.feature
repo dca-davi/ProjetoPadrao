@@ -26,7 +26,7 @@ Quando selecionar "CENTRAL" do campo "canal - acumulado diario"
 E selecionar a data "08/09/2016" da pagina "Acumulado diario - Por canal"
 Entao clicar no botao Pesquisar
 
-@OPERACOES_ANTECIPACAO_CANAL_CENTRALDEANTECIPACAO_VER  @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
+@OPERACOES_ANTECIPACAO_CANAL_CENTRALDEANTECIPACAO_VER @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA
 Cenario: Validar direito OPERACOES_ANTECIPACAO_CANAL_CENTRALDEANTECIPACAO_VER
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAO_CANAL_CENTRALDEANTECIPACAO_VER"
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
@@ -295,3 +295,15 @@ Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVUL
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
 Quando clicar na aba "Antecipação Avulsa"
 Entao localizar o frame "Pagamento"
+
+@OPERACOES_ANTECIPACAO_CANAL_MESADEOPERACOES_VER
+Cenario: Validar direito OPERACOES_ANTECIPACAO_CANAL_CENTRALDEANTECIPACAO_VER
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAO_CANAL_CENTRALDEANTECIPACAO_VER"
+E que tenha/nao tenha acesso na tela "Operação de antecipação"
+Entao o sistema exibira/nao exibira a tela "Operação de Antecipação"
+
+@OPERACOES_ANTECIPACAO_VENDAS_OPERACAO_ANTECIPACAO_INFO_CLIENTE_VER
+Cenario: Validar direito OPERACOES_ANTECIPACAO_VENDAS_OPERACAO_ANTECIPACAO_INFO_CLIENTE_VER
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAO_VENDAS_OPERACAO_ANTECIPACAO_INFO_CLIENTE_VER"
+E que tenha/nao tenha acesso na tela "Operação de antecipação"
+Entao o sistema exibira/nao exibira a tela "Operação de Antecipação"

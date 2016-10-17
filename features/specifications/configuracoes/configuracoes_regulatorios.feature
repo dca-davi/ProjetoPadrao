@@ -7,6 +7,7 @@ Contexto:
 Dado que eu faca login
 
 @CONFIGURACOES_REGULATORIOS_DECRED_VER
+@CONTABILIDADE_NEGOCIO_E_TRIBUTARIO_ANALISTA
 Cenario: Validar direito CONFIGURACOES_REGULATORIOS_DECRED_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_REGULATORIOS_DECRED_VER"
 E que tenha/nao tenha acesso na tela "DECRED"

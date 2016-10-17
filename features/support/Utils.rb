@@ -516,6 +516,18 @@ class Utils
         end
     end
 
+    def clicar_link(texto, i = 0)
+        sleep 1
+        if $browser.a(text: texto, index: i).present?
+            $browser.a(text: texto, index: i).click
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+            return true
+        else
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+            return false
+        end
+    end
+
     def selecionar_radio_button(radio, i = 0)
         if $browser.label(text: radio, index: i).exist?
             $browser.label(text: radio, index: i).click

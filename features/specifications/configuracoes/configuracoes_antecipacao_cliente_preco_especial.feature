@@ -8,6 +8,7 @@ Dado que eu faca login
 
 # Demis >>>
 @CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_VER
+@GESTAO_ECONOMICA_ANALISTA
 Cenário: Validar direito CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_VER"
 E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
@@ -15,6 +16,7 @@ Quando clicar na aba "Preço Especial"
 Entao a aplicacao exibira/nao exibira o painel grid da tela cacfv "Resultados"
 
 @CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_DETALHE_VER
+@GESTAO_ECONOMICA_ANALISTA
 Cenário: Validar direito CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_DETALHE_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_DETALHE_VER"
 E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
@@ -27,7 +29,7 @@ Cenário: Validar direito CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_INCLUI
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_INCLUIR"
 E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
 Quando clicar na aba "Preço Especial"
-E clicar no link "Incluir"
+E clicar no link acao "Incluir"
 Entao  localizar o frame "Dados da Pesquisa"
 
 @CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_EDITAR
