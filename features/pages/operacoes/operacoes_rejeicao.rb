@@ -119,5 +119,4 @@ class Operacoes_Rejeicao
         sleep 5
         $encoded_img = $browser.driver.screenshot_as(:base64)
     end
-
 end

@@ -35,6 +35,7 @@ end
 
 # CONFIGURACOES_REGULARIZACOESFINANCEIRAS_REGRASDECANCELAMENTO_VER
 Entao(/^a aplicacao exibira\/nao exibira o painel grid da tela crf "([^"]*)"$/) do |painel|
+    next if @pass_test == true
     crf = Configuracoes_regularizaoesfinanceiras.new
     crfGridResultados = crf.validar_painel_grid(painel)
     if !crfGridResultados && @tem_direito
@@ -46,6 +47,7 @@ end
 
 # CONFIGURACOES_REGULARIZACOESFINANCEIRAS_REGRADELIBERACAO_VER
 Entao(/^a aplicacao exibira\/nao exibira o painel grid da tela crfrl "([^"]*)"$/) do |painel|
+    next if @pass_test == true
     crfr = Configuracoes_regularizaoesfinanceiras.new
     crfrlGridResultados = crfr.validar_painel_grid(painel)
     if !crfrlGridResultados && @tem_direito
@@ -56,12 +58,12 @@ Entao(/^a aplicacao exibira\/nao exibira o painel grid da tela crfrl "([^"]*)"$/
 end
 
 Entao(/^localizar e clicar no botao "([^"]*)"$/) do |btn|
-next if @pass_test == true
-@configuracoes_regularizacoes_financeiras = Configuracoes_regularizaoesfinanceiras.new
-btnindex = @configuracoes_regularizacoes_financeiras.btn_pesquisar_index1(btn)
-if !btnindex && @tem_direito
-    raise("Usuario com direito nao consegue clicar no botao")
-elsif btnindex && !@tem_direito
-    raise('usuario sem o direito consegue clicar no botao')
-end
+    next if @pass_test == true
+    @configuracoes_regularizacoes_financeiras = Configuracoes_regularizaoesfinanceiras.new
+    btnindex = @configuracoes_regularizacoes_financeiras.btn_pesquisar_index1(btn)
+    if !btnindex && @tem_direito
+        raise("Usuario com direito nao consegue clicar no botao")
+    elsif btnindex && !@tem_direito
+        raise('usuario sem o direito consegue clicar no botao')
+    end
 end

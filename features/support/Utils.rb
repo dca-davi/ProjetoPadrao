@@ -160,7 +160,7 @@ class Utils
         when 'Incluir_PrazoFlexivel'
             aba = 'Incluir'
             i = 1
-        when 'Parametros - PRO ANTECIPACAO DE VENDAS'#
+        when 'Parametros - PRO ANTECIPACAO DE VENDAS' #
             aba = 'Parâmetros'
             i = 1
         end
@@ -243,8 +243,8 @@ class Utils
             acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi|tabRejectionCapture:resultTableTreat:0:j_idt422|buttonEditId|link_h4Q|'
         when 'Editar Dados de contato'
             acao = 'btn_info_contact_edit'
-        when "Editar - PRO ANTECIPACAO DE VENDAS"
-            acao = "tabProarv:frmCostProarvParam:table_costs_proarv_param:0:buttonEditId"
+        when 'Editar - PRO ANTECIPACAO DE VENDAS'
+            acao = 'tabProarv:frmCostProarvParam:table_costs_proarv_param:0:buttonEditId'
         when 'Remover'
             acao = 'ico[_]?cancel|btn_cancel'
         when 'cancelar'
@@ -277,8 +277,6 @@ class Utils
             acao = 'cancellation_link'
         when 'editar - CUSTO OPERACIONAL - custos'
             acao = '0:button_0Tn'
-
-            sleep 2
         when 'Visualizar Planos do cliente'
             acao = 'button_ZeM'
         when 'Visualizar Maquinas do cliente'
@@ -287,10 +285,18 @@ class Utils
             acao = 'icoDelete'
             i = 1
         when 'Salvar'
+
             acao = 'tabOperationAnticipation:tabScheduledAnticipation:btn_save'
+        when 'Continuar'
+            acao = 'j_idt248_next'
+        when 'reprocessamento'
+            acao = 'button_Ipb'
+            acao = 'tabOperationAnticipation:tabScheduledAnticipation:btn_save'
+
         end
 
         sleep 3
+        aguardar_loading
         if $browser.a(id: /#{acao}$/).exist?
             sleep 2
             $browser.a(id: /#{acao}$/).click
@@ -335,13 +341,13 @@ class Utils
     def preencher_campo_input(valor, campo)
         case campo.downcase
         when  'numero do cliente - consulta de transacoes'
-          campo = 'tabPesquisaTransacao:formTransaction:input_SearchTransactionBeandtonuCustomer'
+            campo = 'tabPesquisaTransacao:formTransaction:input_SearchTransactionBeandtonuCustomer'
         when  'Data da Autorização - consulta de transacoes - de'
-          campo = 'tabPesquisaTransacao:formTransaction:initial_date_input'
+            campo = 'tabPesquisaTransacao:formTransaction:initial_date_input'
         when  'Data da Autorização - consulta de transacoes - ate'
-          campo = 'tabPesquisaTransacao:formTransaction:final_date_input'
-        when "data de rejeicao - bandeira"
-          campo = 'formRejectedFlag:initialRejectDate_input'
+            campo = 'tabPesquisaTransacao:formTransaction:final_date_input'
+        when 'data de rejeicao - bandeira'
+            campo = 'formRejectedFlag:initialRejectDate_input'
         when 'numero de parcelas - criterios de antecipacao - de'
             campo = 'tabOperationAnticipation:tabScheduledAnticipation:installmentsBegin'
         when 'numero de parcelas - criterios de antecipacao - ate'
@@ -382,16 +388,16 @@ class Utils
             campo = 'tab_reprocessing_sales:searchReprocessingSales:input_SearchReprocessingSalesBeannuRequestReentry'
         when 'numero da solicitacao - cancelamento e reversão de vendas'
             campo = 'tab_request:formRequest:cancellation_number'
-        when 'Preço base - % CDI'
+        when 'Preço base - % CDI'.downcase
             campo = 'tabFlexiblePrecification:tablePriceBaseStep1_id:0:txtCdiStep1_id_input'
         when 'inicio da vigencia'
             campo = 'tabFlexiblePrecification:dtStartCurrentStep1_id_input'
         when 'numero da solicitacao - ajustes financeiros'
             campo = 'tab_regularization:input_SearchRegularizationBeansearchRegularizationDTOrequestNumber'
         when 'data-de'
-            campo = 'tab_deposits_debits:formReport:dtSetrTo_input'
+            campo = 'tab_deposits_debits:formReport:dtSetrTo_input|dateIn_input'
         when 'data-ate'
-            campo = 'tab_deposits_debits:formReport:dtSetrUntil_input'
+            campo = 'tab_deposits_debits:formReport:dtSetrUntil_input|dateOut_input'
         when 'data de rejeicao - de'
             campo = 'tabRejectionCapture:initialRejectionDateTreatment_input|tabRejectionCapture:initialRejectionDate_input'
         when 'data de rejeicao - ate'
@@ -444,6 +450,16 @@ class Utils
             campo = 'tabGeralPesquisaAvancada:formAutorizacaoMultiFiltros:dataAteTran_input'
         when '4_dig_cartao_pesq_avan_extrato'
             campo = 'tabGeralPesquisaAvancada:formAutorizacaoMultiFiltros:j_idt320'
+        when 'data autorizacao reprocessamento de vendas - de'
+            campo = 'tab_reprocessing_sales:initial_date_transaction_input'
+        when 'data autorizacao reprocessamento de vendas - ate'
+            campo = 'tab_reprocessing_sales:final_date_transaction_input'
+        when 'codigo de autorizacao'
+            campo = 'input_IncludeReprocessingSalesBeandtoauthorizationCode'
+        when 'comentario'
+            campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesBeandtoobservations'
+        else
+            raise 'Campo não encontrado'
         end
 
         $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
@@ -500,6 +516,18 @@ class Utils
         end
     end
 
+    def clicar_link(texto, i = 0)
+        sleep 1
+        if $browser.a(text: texto, index: i).present?
+            $browser.a(text: texto, index: i).click
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+            return true
+        else
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+            return false
+        end
+    end
+
     def selecionar_radio_button(radio, i = 0)
         if $browser.label(text: radio, index: i).exist?
             $browser.label(text: radio, index: i).click
@@ -522,6 +550,7 @@ class Utils
         end
         sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        result
     end
 
     def selecionar_radio_button_tabela(linha, coluna = 0)
