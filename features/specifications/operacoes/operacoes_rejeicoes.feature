@@ -135,3 +135,16 @@ Cenario: Validar direito OPERACOES_REJEICOES_MANUTENCOES_CADASTRAIS_VER
 Dado que tenha/nao tenha o direito "OPERACOES_REJEICOES_MANUTENCOES_CADASTRAIS_VER"
 E que tenha/nao tenha acesso na tela "Manutenções cadastrais"
 Entao o botao "Pesquisar" estara habilitado/desabilitado
+
+@OPERACOES_MASTER_REJEITADOS_PAGAMENTOSEDEBITOS_EDITAR
+Cenario: Validar direito OPERACOES_MASTER_REJEITADOS_PAGAMENTOSEDEBITOS_EDITAR
+Dado que tenha/nao tenha o direito "OPERACOES_MASTER_REJEITADOS_PAGAMENTOSEDEBITOS_EDITAR"
+E que tenha/nao tenha acesso na tela "Depósitos e débitos"
+E selecionar a opcao "Regular"
+E selecionar a opcao "Crédito"
+E selecionar a opcao "Débito"
+E informar "104-CAIXA ECONOMICA FEDERAL S.A." no campo "Banco"
+E informar "01/09/2016" no campo "data-de"
+E informar "09/09/2016" no campo "data-ate"
+E clicar no botao "Pesquisar"
+Entao selecionar o check-box todos na coluna "8" da tabela resultados
