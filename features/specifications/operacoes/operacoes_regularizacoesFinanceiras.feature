@@ -250,3 +250,15 @@ E informar "44450498" no campo "terminal-reentrada de venda"
 E informar "381347" no campo "nsu-reentrada de venda"
 E informar "Teste" no campo "comentario-reentrada de venda"
 Entao clicar no botao "Continuar"
+
+@CANAL_BACKOFFICE_VER
+Cenario: Validar direito CANAL_BACKOFFICE_VER
+Dado que tenha/nao tenha o direito "CANAL_BACKOFFICE_VER"
+E que tenha/nao tenha acesso na tela "Consulta de transações"
+Entao o botao "Pesquisar" estara habilitado/desabilitado
+
+@CANAL_CENTRAL_VER
+Cenario: Validar direito CANAL_CENTRAL_VER
+Dado que tenha/nao tenha o direito "CANAL_CENTRAL_VER"
+E que tenha/nao tenha acesso na tela "Consulta de transações"
+Entao o botao "Pesquisar" estara habilitado/desabilitado
