@@ -111,7 +111,6 @@ E informar "06/10/2016" no campo "data de rejeicao - ate"
 Quando clicar no botao "Pesquisar"
 Entao clicar no botao exportar
 
-
 @OPERACOES_REJEICOESCAPTURA_TRATAMENTO_ANULACAO_INCLUIR
 Cenario: Validar direito OPERACOES_REJEICOESCAPTURA_TRATAMENTO_ANULACAO_INCLUIR
 Dado que tenha/nao tenha o direito "OPERACOES_REJEICOESCAPTURA_TRATAMENTO_ANULACAO_INCLUIR"
@@ -120,7 +119,7 @@ E clicar na aba "TRATAMENTO"
 Quando selecionar a opcao "Reentrada"
 E informar "06/09/2016" no campo "data de rejeicao - de"
 E informar "10/09/2016" no campo "data de rejeicao - ate"
-Quando clicar no botao "Pesquisar"
+Entao clicar no botao "Pesquisar"
 
 @OPERACOES_REJEICOES_MANUTENCOES_CADASTRAIS_EDITAR
 Cenario: Validar direito OPERACOES_REJEICOES_MANUTENCOES_CADASTRAIS_EDITAR
@@ -148,3 +147,36 @@ E informar "01/09/2016" no campo "data-de"
 E informar "09/09/2016" no campo "data-ate"
 E clicar no botao "Pesquisar"
 Entao selecionar o check-box todos na coluna "8" da tabela resultados
+
+@OPERACOES_REJEICOESBANDEIRA_ELO_DINERS_DETALHES_EDITAR
+Cenario: Validar direito OPERACOES_REJEICOESBANDEIRA_ELO_DINERS_DETALHES_EDITAR
+Dado que tenha/nao tenha o direito "OPERACOES_REJEICOESBANDEIRA_ELO_DINERS_DETALHES_EDITAR"
+E que tenha/nao tenha acesso na tela "Bandeira"
+Quando informar "01092016" no campo data inicial de rejeicao
+E informar "09092016" no campo data final de rejeicao
+E selecionar a opcao "Elo" do combo-box "Bandeira"
+E clicar no botao "Pesquisar"
+Entao clicar na acao "Visualizar"
+E o botao "Editar todos" estara habilitado/desabilitado
+
+@OPERACOES_REJEICOESBANDEIRA_MASTERCARD_DETALHES_EDITAR
+Cenario: Validar direito OPERACOES_REJEICOESBANDEIRA_MASTERCARD_DETALHES_EDITAR
+Dado que tenha/nao tenha o direito "OPERACOES_REJEICOESBANDEIRA_MASTERCARD_DETALHES_EDITAR"
+E que tenha/nao tenha acesso na tela "Bandeira"
+Quando informar "01092016" no campo data inicial de rejeicao
+E informar "09092016" no campo data final de rejeicao
+E selecionar a opcao "Mastercard" do combo-box "Bandeira"
+E clicar no botao "Pesquisar"
+Entao clicar na acao "Visualizar"
+E o botao "Editar todos" estara habilitado/desabilitado
+
+@OPERACOES_REJEICOESBANDEIRA_VISA_DETALHES_TCR0_EDITAR
+Cenario: Validar direito OPERACOES_REJEICOESBANDEIRA_VISA_DETALHES_TCR0_EDITAR
+Dado que tenha/nao tenha o direito "OPERACOES_REJEICOESBANDEIRA_VISA_DETALHES_TCR0_EDITAR"
+E que tenha/nao tenha acesso na tela "Bandeira"
+Quando informar "01092016" no campo data inicial de rejeicao
+E informar "09092016" no campo data final de rejeicao
+E selecionar a opcao "Visa" do combo-box "Bandeira"
+E clicar no botao "Pesquisar"
+Entao clicar na acao "Visualizar"
+E o botao "Editar todos" estara habilitado/desabilitado
