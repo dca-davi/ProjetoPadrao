@@ -31,7 +31,7 @@ end
 
 Quando(/^clicar no botao exportar$/) do
     next if @pass_test == true
-    @operacoes_trava = Operacoes_Rejeicao.new
+    @operacoes_trava = Operacoes_Rejeicoes.new
     btnput = @operacoes_trava.clicar_botao_input
     if !btnput && @tem_direito
       fail('Usuario nao pode clicar no botão no qual tem direito')

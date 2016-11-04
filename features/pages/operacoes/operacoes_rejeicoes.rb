@@ -1,4 +1,4 @@
-class Operacoes_Rejeicao
+class Operacoes_Rejeicoes
     @@utils = Utils.new
 
     def selecione_combo(frame, item)
@@ -118,6 +118,60 @@ class Operacoes_Rejeicao
         $encoded_img = $browser.driver.screenshot_as(:base64)
     end
 
+    def selecione_combo_box(combo, opcao)
+        case combo
+        when 'Bandeira'
+            if $browser.div(id: 'formRejectedFlag:cardAssociationCombo_label').exist?
+                $browser.div(id: 'formRejectedFlag:cardAssociationCombo_label').click
+                sleep 1
+                result = true
+            else
+                result = false
+            end
+        end
+
+        case opcao
+        when 'Elo'
+            if $browser.li(text: 'Elo').exist?
+                $browser.li(text: 'Elo').present?
+                $browser.li(text: 'Elo').visible?
+                sleep 2
+                $browser.li(text: 'Elo').click
+                sleep 1
+                result = true
+            else
+                result = false
+            end
+            sleep 2
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+
+        when 'Mastercard'
+            if $browser.li(text: 'Mastercard').exist?
+                sleep 2
+                $browser.li(text: 'Mastercard').click
+                sleep 1
+                result = true
+            else
+                result = false
+            end
+            sleep 2
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+
+        when 'Visa'
+            if $browser.li(text: 'Visa').exist?
+                sleep 2
+                $browser.li(text: 'Visa').click
+                sleep 1
+                result = true
+            else
+                result = false
+            end
+
+            sleep 2
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+        end
+    end
+
     def selecionar_combobox_depositos_debitos(valor)
         if $browser.div(id: 'tab_deposits_debits:formReport:cardAssociation_label').exist?
             $browser.div(id: 'tab_deposits_debits:formReport:cardAssociation_label').click
@@ -134,6 +188,32 @@ class Operacoes_Rejeicao
         if $browser.div(id: 'tab_deposits_debits:formModal:combo_OperationsTreatRejectedManualBeanmodelreasonLowerManualValue_label').exist?
             $browser.div(id: 'tab_deposits_debits:formModal:combo_OperationsTreatRejectedManualBeanmodelreasonLowerManualValue_label').click
             $browser.li(text: valor).click
+            sleep 1
+            result = true
+        else
+            result = false
+        end
+        $encoded_img = $browser.driver.screenshot_as(:base64)
+    end
+
+    def preencher_campo_data_inicial(data)
+        if $browser.input(id: 'formRejectedFlag:initialRejectDate_input').exist?
+            $browser.input(id: 'formRejectedFlag:initialRejectDate_input').send_keys :clear
+            $browser.input(id: 'formRejectedFlag:initialRejectDate_input').send_keys(data)
+            $browser.send_keys :tab
+            sleep 1
+            result = true
+        else
+            result = false
+        end
+        $encoded_img = $browser.driver.screenshot_as(:base64)
+    end
+
+    def preencher_campo_data_final(data)
+        if $browser.input(id: 'formRejectedFlag:finalRejectDate_input').exist?
+            $browser.input(id: 'formRejectedFlag:finalRejectDate_input').send_keys :clear
+            $browser.input(id: 'formRejectedFlag:finalRejectDate_input').send_keys(data)
+            $browser.send_keys :tab
             sleep 1
             result = true
         else
