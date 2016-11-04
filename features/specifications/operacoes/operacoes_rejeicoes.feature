@@ -118,9 +118,10 @@ Dado que tenha/nao tenha o direito "OPERACOES_REJEICOESCAPTURA_TRATAMENTO_ANULAC
 E que tenha/nao tenha acesso na tela "Captura"
 E clicar na aba "TRATAMENTO"
 Quando selecionar a opcao "Reentrada"
-E informar "06/09/2016" no campo "data de rejeicao - de"
-E informar "10/09/2016" no campo "data de rejeicao - ate"
+E informar "06/09/2016" no campo "data de rejeicao Tratamento - de"
+E informar "10/09/2016" no campo "data de rejeicao Tratamento - ate"
 Quando clicar no botao "Pesquisar"
+Entao o botao "Reentrada" estara habilitado/desabilitado
 
 @OPERACOES_REJEICOES_MANUTENCOES_CADASTRAIS_EDITAR
 Cenario: Validar direito OPERACOES_REJEICOES_MANUTENCOES_CADASTRAIS_EDITAR

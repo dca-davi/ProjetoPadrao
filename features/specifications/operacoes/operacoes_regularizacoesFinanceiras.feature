@@ -29,13 +29,21 @@ Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_AJUSTE_VER"
 E que tenha/nao tenha acesso na tela "Ajustes financeiros"
 Entao clicar na aba "Pesquisar"
 
+@OPERACOES_REGULARIZACOES_MASTER_AJUSTE_EDITAR
+Cenario: Validar direito OPERACOES_REGULARIZACOES_MASTER_AJUSTE_EDITAR
+Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_MASTER_AJUSTE_EDITAR"
+E que tenha/nao tenha acesso na tela "Ajustes financeiros"
+Quando clicar na aba "Incluir"
+Entao podera/nao podera acessar a aba "Incluir"
+
 @OPERACOES_REGULARIZACOES_AJUSTE_SOLICITAR
 @BACKOFFICE_ANALISTA_FORNECEDOR @PLANEJA_BACKOFFICE_COBRAN_FATURA_ANALISTA @CHARGEBACK_ANALISTA_INTERCAMBIO
 @JURIDICO_CONTENCIOSO_ANALISTA
 Cenario: Validar direito OPERACOES_REGULARIZACOES_AJUSTE_SOLICITAR
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_AJUSTE_SOLICITAR"
 E que tenha/nao tenha acesso na tela "Ajustes financeiros"
-Entao clicar na aba "Incluir"
+Quando clicar na aba "Incluir"
+Entao podera/nao podera acessar a aba "Incluir"
 
 @CLIENTES_NUMERODOCARTAOABERTO_DIGITAR
 @BACKOFFICE_ANALISTA_FORNECEDOR @CHARGEBACK_ANALISTA_INTERCAMBIO

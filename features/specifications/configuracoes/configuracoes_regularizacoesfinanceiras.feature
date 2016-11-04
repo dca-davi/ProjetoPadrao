@@ -1,7 +1,7 @@
 #language: pt
 
 @ALL @CONFIGURACOES_REGULARIZACOESFINANCEIRAS
-Funcionalidade: Validar os direitos na tela Configurações > Regularizações financeiras > Precificacao
+Funcionalidade: Validar os direitos na tela Configurações > Regularizações financeiras
 
 Contexto:
 Dado que eu faca login
@@ -81,3 +81,11 @@ Quando clicar na aba "REGRA DE LIBERAÇÃO"
 E selecionar o combobox "parametro - regra de cancelamento" e a opcao "Liberar bloqueio de cancelamento"
 E localizar e clicar no botao "Pesquisar"
 Entao clicar na acao "Visualizar"
+
+@SETUP_CANCELAMENTOS_LISTADEREGRA_EDITAR
+Cenario: Validar direito SETUP_CANCELAMENTOS_LISTADEREGRA_EDITAR
+Dado que tenha/nao tenha o direito "SETUP_CANCELAMENTOS_LISTADEREGRA_EDITAR"
+E que tenha/nao tenha acesso na tela "Regra de cancelamento"
+Quando clicar na aba "REGRA DE LIBERAÇÃO"
+E clicar na aba "Incluir regra de liberação"
+Entao podera/nao podera acessar a aba "INCLUIR"

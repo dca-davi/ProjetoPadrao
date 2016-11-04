@@ -73,9 +73,24 @@ E que tenha/nao tenha acesso na tela "Exceção_prazoFlexivel"
 E o sistema exibira/nao exibira a tela "Exceção"
 Entao clicar no botao "Pesquisar"
 
+@CONFIGURACOES_PRAZOFLEXIVEL_EXCECAO_EDITAR
+Cenario: Validar direito CONFIGURACOES_PRAZOFLEXIVEL_EXCECAO_EDITAR
+Dado que tenha/nao tenha o direito "CONFIGURACOES_PRAZOFLEXIVEL_EXCECAO_EDITAR"
+E que tenha/nao tenha acesso na tela "Exceção_prazoFlexivel"
+E o sistema exibira/nao exibira a tela "Exceção"
+E clicar no botao "Pesquisar"
+E clicar na acao "Remover"
+
 @CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_PRECOSEALCADAS_EDITAR
 Cenario: Validar direito CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_PRECOSEALCADAS_EDITAR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_PRECOSEALCADAS_EDITAR"
 E que tenha/nao tenha acesso na tela "Precificação_prazoFlexivel"
 E clicar na aba "Preços e Alçadas"
 Entao clicar no botao "Editar" da aba - Precos e Alcadas
+
+@CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_PRECOSEALCADAS_VER
+Cenario: Validar direito CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_PRECOSEALCADAS_VER
+Dado que tenha/nao tenha o direito "CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_PRECOSEALCADAS_VER"
+E que tenha/nao tenha acesso na tela "Precificação_prazoFlexivel"
+E clicar na aba "Preços e Alçadas"
+Entao podera/nao podera acessar a aba "Preços e Alçadas"

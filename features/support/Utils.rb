@@ -140,9 +140,12 @@ class Utils
         # result = true
         sleep 1
         # Watir::Wait.until { $browser.button(text: botao).exists? }
-        if $browser.button(text: botao).exist?
+        if $browser.button(text: botao, index: 0).present?
             sleep 2
             $browser.button(text: botao, index: 0).click
+            result = true
+        elsif $browser.button(text: botao, index: 1).present?
+            $browser.button(text: botao, index: 1).click
             result = true
         else
             result = false
@@ -162,6 +165,9 @@ class Utils
             i = 1
         when 'Parametros - PRO ANTECIPACAO DE VENDAS' #
             aba = 'Parâmetros'
+            i = 1
+        when 'Incluir regra de liberação'
+            aba = 'INCLUIR'
             i = 1
         end
         if $browser.li(text: aba, index: i).attribute_value('class').include? 'ui-state-disabled'
@@ -191,9 +197,11 @@ class Utils
             i = 1
         end
         aguardar_loading
-        sleep 2
-        Watir::Wait.until { $browser.a(text: aba, index: i).exists? }
+        sleep 5
+        # Watir::Wait.until { $browser.a(text: aba, index: /0|1/).exists? }
         if $browser.li(text: aba, index: i).attribute_value('aria-expanded') == 'true'
+            return true
+        elsif $browser.li(text: aba, index: 1).attribute_value('aria-expanded') == 'true'
             return true
         else
             return false
@@ -246,7 +254,7 @@ class Utils
         when 'Editar - PRO ANTECIPACAO DE VENDAS'
             acao = 'tabProarv:frmCostProarvParam:table_costs_proarv_param:0:buttonEditId'
         when 'Remover'
-            acao = 'ico[_]?cancel|btn_cancel'
+            acao = 'ico[_]?cancel|btn_cancel|.*frmEligibilitySearch:dTEligibilityExceptions.*'
         when 'cancelar'
             acao = 'formConsultationSalesAnticipationOperations:latestTransactionsTable:2:btn_cancel'
         when 'Aprovar'
@@ -402,6 +410,10 @@ class Utils
             campo = 'tabRejectionCapture:initialRejectionDateTreatment_input|tabRejectionCapture:initialRejectionDate_input'
         when 'data de rejeicao - ate'
             campo = 'tabRejectionCapture:finalRejectionDateTreatment_input|tabRejectionCapture:finalRejectionDate_input'
+        when 'data de rejeicao tratamento - de'
+            campo = 'initialRejectionDateTreatment_input'
+        when 'data de rejeicao tratamento - ate'
+            campo = 'finalRejectionDateTreatment_input'
         when 'data programada - de'
             campo = 'j_idt196:dtEffectiveOf_input'
         when 'data programada - ate'
