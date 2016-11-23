@@ -8,7 +8,7 @@ Dado que eu faca login
 E informe o EC "1018242187"
 
 @CLIENTES_NUMERODOCARTAOABERTO_VER
-Cenario: Validar direito CLIENTES_NUMERODOCARTAOABERTO_VER
+Cenario: CT.SEGINFO - [AUT] CLIENTES_NUMERODOCARTAOABERTO_VER
 Dado que tenha/nao tenha o direito "CLIENTES_NUMERODOCARTAOABERTO_VER"
 E que tenha/nao tenha acesso na tela "Pesquisa Avançada"
 Entao informar "05/09/2016" no campo "data_inicio_pesq_avan_extrato"

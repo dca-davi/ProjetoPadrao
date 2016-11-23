@@ -11,6 +11,7 @@ end
 
 Dado(/^que tenha\/nao tenha o direito "([^"]*)"$/) do |direito|
     puts "<b>Perfil:</b> #{$perfil}"
+    $direito_evidencia = direito # POG
     @tem_direito = @utils.tem_direito?(direito)
     statusDir = @utils.verificar_direito_star(direito, @tem_direito)
     raise(statusDir) unless statusDir.nil?

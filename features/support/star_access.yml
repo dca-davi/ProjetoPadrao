@@ -1,87 +1,117 @@
-Full:
-  user: eyvegg
-  pass: Amor2005
-
+Inteligencia_e_Performance_Analista:
+  user: STAR_A_TES_PAGA_AN
+  pass: C!elo2016
 Relacionamento_Suporte_Comercial_Analista:
-  user: star-hml-perfil48
+  user: STAR_A_REL_COME_AN
   pass: C!elo2016
-
-Cadastro_Analista_Cielo:
-  user: star-hml-cad
+Mercados_em_Expansao_Analista:
+  user: STAR_A_MER_EXPA_AN
   pass: C!elo2016
-
-Cadastro_Analista_Cielo_Aprovador:
-  user: star-hml-cadapr
-  pass: C!elo2016
-
-Central_Help_Desk_Analista:
-  user: star-hml-HD
-  pass: C!elo2016
-
-Logistica_de_Atendimento_a_Clientes_Analista:
-  user: star-hml-logistica
-  pass: C!elo2016
-
-Backoffice_Analista_Fornecedor:
-  user: star-hml-perfil27
-  pass: C!elo2016
-
-Planeja_Backoffice_Cobran_Fatura_Analista:
-  user: star-hml-perfil45
-  pass: C!elo2016
-
-Controle_Sistemas_Financeiros_Conciliacao:
-  user: star-hml-perfil34
-  pass: C!elo2016
-
-Tesouraria_e_Contas_a_Pagar_Analista:
-  user: star-hml-perfil55
-  pass: C!elo2016
-
-Chargeback_Analista_Intercambio:
-  user: star-hml-chargeback
-  pass: C!elo2016
-
-Central_de_Relacionamento_Analista:
-  user: star-hml-perfil30
-  pass: C!elo2016
-
-Tesouraria_Analista:
-  user: star-hml-perfil54
-  pass: C!elo2016
-
-Central_Antecipacao_Coordenador:
-  user: star-hml-perfil62
-  pass: C!elo2016
-
-Central_Antecipacao_Analista:
-  user: star-hml-teste360
-  pass: C!elo2016
-
-Gestao_Economica_Analista:
-  user: star-hml-teste361
-  pass: C!elo2016
-
 Canais_Alternativos_Analista:
-  user: star-hml-perfil28
+  user: STAR_A_CTR_HD_AN_CL
   pass: C!elo2016
-
+Cadastro_Analista_Cielo_Aprovador:
+  user: STAR_A_CTR_REL_AN
+  pass: C!elo2016
+Logistica_Suprimentos_Analista:
+  user: STAR_A_LOD_AN
+  pass: C!elo2016
+Central_Help_Desk_Analista:
+  user: STAR_A_LOG_CLIE_AN
+  pass: C!elo2016
+Central_Help_Desk_Cielo_Analista:
+  user: 
+  pass: C!elo2016
+Logistica_de_Atendimento_a_Clientes_Analista:
+  user: STAR_A_LOG_CLIE_AN
+  pass: C!elo2016
+Cadastro_Analista_Fornecedor:
+  user: STAR_A_CTR_REL_CO
+  pass: C!elo2016
+Backoffice_Analista_Fornecedor:
+  user: STAR_A_CAD_FOR_AP
+  pass: C!elo2016
+Planeja_Backoffice_Cobran_Fatura_Analista:
+  user: STAR_A_PLA_FATU_AN
+  pass: C!elo2016
+Controle_Sistemas_Financeiros_Conciliacao:
+  user: STAR_A_PRD_CO
+  pass: C!elo2016
 Contabilidade_Negocio_e_Tributario_Analista:
-  user: star-hml-perfil33
+  user: STAR_A_PRD_GE
   pass: C!elo2016
-
+Tesouraria_e_Contas_a_Pagar_Analista:
+  user: STAR_A_TES_PAGA_AN
+  pass: C!elo2016
+Chargeback_Analista_Intercambio:
+  user: STAR_A_MER_EXPA_AN
+  pass: C!elo2016
+Chargeback_Analista_Monitoria:
+  user: STAR_A_OUV_AN
+  pass: C!elo2016
 Juridico_Contencioso_Analista:
-  user: star-hml-conc
+  user: STAR_A_JUD_AN
   pass: C!elo2016
-
+Ouvidoria_Analista:
+  user: STAR_A_OUV_AN
+  pass: C!elo2016
 CRM_Coordenador:
-  user: star-hml-perfil35
+  user: STAR_A_REL_COME_AN
   pass: C!elo2016
-
-Antecipacao_de_Vendas_Tesouraria_Analista:
-  user: star-hml-teste362
+Central_de_Relacionamento_Analista:
+  user: STAR_A_INT_PERF_AN
   pass: C!elo2016
-
-Antecipacao_de_Vendas_Tesouraria_Coordenador:
-  user: star-hml-teste363
+Servicos_Risco_Prevencao_Seguranca_Analista:
+  user: STAR_A_SER_SEGU_AN
+  pass: C!elo2016
+Solucoes_Analista:
+  user: STAR_A_SOL_AN
+  pass: C!elo2016
+Sustentacao_Analista:
+  user: STAR_A_SUS_AN
+  pass: C!elo2016
+Servicos_BackOffice_Diretor:
+  user: STAR_A_SED_DI
+  pass: C!elo2016
+Auditoria_Interna:
+  user: STAR_A_CAD_CIELO_AP
+  pass: C!elo2016
+Processamento_de_Backoffice_Coordenador:
+  user: STAR_A_PRO_BACK_CO
+  pass: C!elo2016
+Processamento_BackOffice_Gerente:
+  user: STAR_A_PRD_GE
+  pass: C!elo2016
+Servicos_e_Operacoes_Financeiras_Diretor:
+  user: STAR_A_SER_FINA_DI
+  pass: C!elo2016
+Tesouraria_Analista:
+  user: STAR_A_TES_AN
+  pass: C!elo2016
+Cadastro_Fornecedor_Aprovador:
+  user: STAR_A_CTR_HD_AN
+  pass: C!elo2016
+Servicos_BackOffice_Gerente:
+  user: STAR_A_SED_GE
+  pass: C!elo2016
+Projeto_BOB_Consulta:
+  user: STAR_A_PRD_CO
+  pass: C!elo2016
+Servicos_Risco_Prevencao_Seguranca_Fornecedor:
+  user: STAR_A_SER_SEGU_FO
+  pass: C!elo2016
+Antecipacao_de_Vendas_Gerente:
+  user: STAR_A_ARV_GER
+  pass: C!elo2016
+Antecipacao_de_Vendas_Intelig_Comercial_Coordenador:
+  user: STAR_A_ARV_INT_CO
+  pass: C!elo2016
+Antecipacao_de_Vendas_Intelig_Comer_Analista:
+  user: STAR_A_ARV_INT_AN
+  pass: C!elo2016
+Antecipacao_de_Vendas_Exec_Comercial_Coord:
+  user: STAR_A_ARV_COML_CO
+  pass: C!elo2016
+Antecipacao_de_Vendas_Exec_Comercial_Analista:
+  user: STAR_A_ARV_COML_AN
   pass: C!elo2016

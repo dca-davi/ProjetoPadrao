@@ -57,12 +57,22 @@ end
 Entao(/^o campo "([^"]*)" deve\/nao deve estar habilitado$/) do |campo|
     next if @pass_test == true
     info_cli = Info_do_cliente.new
-
+    utils = Utils.new
     case campo.downcase
     when "raz\u00E3o social"
         statusCampo = info_cli.verificar_campo_razaoSocial
     when 'site'
         statusCampo = info_cli.verificar_campo_site
+    when 'logradouro'
+        utils.aguardar_loading
+
+        Watir::Wait.until { $browser.input(id: 'tab_tabGeral:frmAddress:nmStreet').present? }
+        sleep 5
+        statusCampo = if $browser.input(id: 'tab_tabGeral:frmAddress:nmStreet').attribute_value('aria-disabled') == 'true'
+                          false
+                      else
+                          true
+                      end
     end
 
     if !statusCampo && @tem_direito

@@ -5,13 +5,13 @@ class Trava_Prazo_Vencido
         sleep 1
         @@utils.aguardar_loading
         sleep 2
-        if $browser.h1(text: tela).exist?
-            $encoded_img = $browser.driver.screenshot_as(:base64)
-            return true
-        else
-            $encoded_img = $browser.driver.screenshot_as(:base64)
-            return false
+        if $browser.h1(text: tela).exist?            
+            result = true
+        else            
+            result = false
         end
+        $encoded_img = $browser.driver.screenshot_as(:base64)
+        result
     end
 
     def validar_botao(botao)

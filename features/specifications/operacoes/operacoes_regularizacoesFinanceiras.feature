@@ -12,7 +12,7 @@ Dado que eu faca login
 @CENTRAL_ANTECIPACAO_COORDENADOR @CENTRAL_ANTECIPACAO_ANALISTA @GESTAO_ECONOMICA_ANALISTA
 @JURIDICO_CONTENCIOSO_ANALISTA @CRM_COORDENADOR @ANTECIPACAO_DE_VENDAS_TESOURARIA_ANALISTA
 @ANTECIPACAO_DE_VENDAS_TESOURARIA_COORDENADOR
-Cenario: Validar direito OPERACOES_CONSULTA_TRANSACAO_VER
+Cenario: CT.SEGINFO - [AUT] OPERACOES_CONSULTA_TRANSACAO_VER
 Dado que tenha/nao tenha o direito "OPERACOES_CONSULTA_TRANSACAO_VER"
 E que tenha/nao tenha acesso na tela "Consulta de transações"
 Entao o sistema exibira/nao exibira a tela "Consulta de transações"
@@ -24,13 +24,13 @@ Entao o sistema exibira/nao exibira a tela "Consulta de transações"
 @CENTRAL_ANTECIPACAO_ANALISTA @GESTAO_ECONOMICA_ANALISTA @CONTABILIDADE_NEGOCIO_E_TRIBUTARIO_ANALISTA
 @JURIDICO_CONTENCIOSO_ANALISTA @CRM_COORDENADOR @ANTECIPACAO_DE_VENDAS_TESOURARIA_ANALISTA
 @ANTECIPACAO_DE_VENDAS_TESOURARIA_COORDENADOR
-Cenario: Validar direito OPERACOES_REGULARIZACOES_AJUSTE_VER
+Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_AJUSTE_VER
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_AJUSTE_VER"
 E que tenha/nao tenha acesso na tela "Ajustes financeiros"
 Entao clicar na aba "Pesquisar"
 
 @OPERACOES_REGULARIZACOES_MASTER_AJUSTE_EDITAR
-Cenario: Validar direito OPERACOES_REGULARIZACOES_MASTER_AJUSTE_EDITAR
+Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_MASTER_AJUSTE_EDITAR
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_MASTER_AJUSTE_EDITAR"
 E que tenha/nao tenha acesso na tela "Ajustes financeiros"
 Quando clicar na aba "Incluir"
@@ -39,7 +39,7 @@ Entao podera/nao podera acessar a aba "Incluir"
 @OPERACOES_REGULARIZACOES_AJUSTE_SOLICITAR
 @BACKOFFICE_ANALISTA_FORNECEDOR @PLANEJA_BACKOFFICE_COBRAN_FATURA_ANALISTA @CHARGEBACK_ANALISTA_INTERCAMBIO
 @JURIDICO_CONTENCIOSO_ANALISTA
-Cenario: Validar direito OPERACOES_REGULARIZACOES_AJUSTE_SOLICITAR
+Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_AJUSTE_SOLICITAR
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_AJUSTE_SOLICITAR"
 E que tenha/nao tenha acesso na tela "Ajustes financeiros"
 Quando clicar na aba "Incluir"
@@ -47,19 +47,19 @@ Entao podera/nao podera acessar a aba "Incluir"
 
 @CLIENTES_NUMERODOCARTAOABERTO_DIGITAR
 @BACKOFFICE_ANALISTA_FORNECEDOR @CHARGEBACK_ANALISTA_INTERCAMBIO
-Cenario: Validar direito CLIENTES_NUMERODOCARTAOABERTO_DIGITAR
+Cenario: CT.SEGINFO - [AUT] CLIENTES_NUMERODOCARTAOABERTO_DIGITAR
 Dado que tenha/nao tenha o direito "CLIENTES_NUMERODOCARTAOABERTO_DIGITAR"
 E que tenha/nao tenha acesso na tela "Consulta de transações"
 Entao o campo "N° do cartão aberto" existe/nao existe
 
 @OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTE_VER
-Cenario: Validar direito OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTE_VER
+Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTE_VER
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTE_VER"
 E que tenha/nao tenha acesso na tela "Envio de débitos ao cliente"
 Entao clicar no botao "Pesquisar"
 
 @OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTE_EDITAR
-Cenario: Validar direito OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTE_EDITAR
+Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTE_EDITAR
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTE_EDITAR"
 E que tenha/nao tenha acesso na tela "Envio de débitos ao cliente"
 Entao informar "104-CAIXA ECONOMICA FEDERAL S.A." no campo "Banco"
@@ -69,14 +69,14 @@ E clicar no botao "Confirmar"
 E clicar no botao "Sim"
 
 @OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTEANULACAO_VER
-Cenario: Validar direito OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTEANULACAO_VER
+Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTEANULACAO_VER
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTEANULACAO_VER"
 E que tenha/nao tenha acesso na tela "Envio de débitos ao cliente"
 Entao clicar na aba "ANULAÇÃO"
 E clicar no botao "Pesquisar" da aba anulacao
 
 @OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTEANULACAO_EDITAR
-Cenario: Validar direito OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTEANULACAO_EDITAR
+Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTEANULACAO_EDITAR
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOESFINANCEIRAS_ENVIODEDEBITOAOCLIENTEANULACAO_EDITAR"
 E que tenha/nao tenha acesso na tela "Envio de débitos ao cliente"
 E clicar na aba "ANULAÇÃO"
@@ -91,7 +91,7 @@ E clicar no botao "Sim" da aba anulacao
 @CENTRAL_ANTECIPACAO_COORDENADOR @CENTRAL_ANTECIPACAO_ANALISTA @GESTAO_ECONOMICA_ANALISTA
 @JURIDICO_CONTENCIOSO_ANALISTA @CRM_COORDENADOR @ANTECIPACAO_DE_VENDAS_TESOURARIA_ANALISTA
 @ANTECIPACAO_DE_VENDAS_TESOURARIA_COORDENADOR
-Cenario: Validar direito OPERACOES_REGULARIZACOES_REPROCESSAMENTO_SOLICITACAO_VER
+Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_REPROCESSAMENTO_SOLICITACAO_VER
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_REPROCESSAMENTO_SOLICITACAO_VER"
 E que tenha/nao tenha acesso na tela "Reprocessamento de vendas"
 Quando informar "2913" no campo "numero da solicitacao - reprocessamento de vendas"
@@ -103,7 +103,7 @@ Entao clicar no botao "Pesquisar"
 @CENTRAL_ANTECIPACAO_COORDENADOR @CENTRAL_ANTECIPACAO_ANALISTA @GESTAO_ECONOMICA_ANALISTA
 @JURIDICO_CONTENCIOSO_ANALISTA @CRM_COORDENADOR @ANTECIPACAO_DE_VENDAS_TESOURARIA_ANALISTA
 @ANTECIPACAO_DE_VENDAS_TESOURARIA_COORDENADOR
-Cenario: Validar direito OPERACOES_REGULARIZACOES_REPROCESSAMENTO_SOLICITACAO_DETALHE_VER
+Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_REPROCESSAMENTO_SOLICITACAO_DETALHE_VER
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_REPROCESSAMENTO_SOLICITACAO_DETALHE_VER"
 E que tenha/nao tenha acesso na tela "Reprocessamento de vendas"
 Quando informar "2913" no campo "numero da solicitacao - reprocessamento de vendas"
@@ -116,7 +116,7 @@ Então clicar na acao "detalhar - reprocessamento de vendas"
 @CHARGEBACK_ANALISTA_INTERCAMBIO @CENTRAL_DE_RELACIONAMENTO_ANALISTA @CENTRAL_ANTECIPACAO_COORDENADOR
 @CENTRAL_ANTECIPACAO_ANALISTA @GESTAO_ECONOMICA_ANALISTA @CRM_COORDENADOR
 @ANTECIPACAO_DE_VENDAS_TESOURARIA_ANALISTA @ANTECIPACAO_DE_VENDAS_TESOURARIA_COORDENADOR
-Cenario: Validar direito OPERACOES_REGULARIZACOES_REVERSAOCANCELAMENTO_SOLICITACAO_VER
+Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_REVERSAOCANCELAMENTO_SOLICITACAO_VER
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_REVERSAOCANCELAMENTO_SOLICITACAO_VER"
 E que tenha/nao tenha acesso na tela "Cancelamento e reversão de vendas"
 Quando selecionar a opcao "Reversão de cancelamentos"
@@ -124,7 +124,7 @@ E informar "13510654" no campo "numero da solicitacao - cancelamento e reversão
 Entao clicar no botao "Pesquisar"
 
 @OPERACOES_REGULARIZACOES_TRATAMENTODEBITOSEMRETORNO_EXPORTAR
-Cenario: Validar direito OPERACOES_REGULARIZACOES_TRATAMENTODEBITOSEMRETORNO_EXPORTAR
+Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_TRATAMENTODEBITOSEMRETORNO_EXPORTAR
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_TRATAMENTODEBITOSEMRETORNO_EXPORTAR"
 E que tenha/nao tenha acesso na tela "Débitos ao cliente sem retorno"
 Quando selecionar "a primeira opcao da coluna Tratamento"
@@ -132,7 +132,7 @@ E clicar no botao "Exportar"
 Entao clicar no botao "Atualizar"
 
 @OPERACOES_REGULARIZACOES_TRATAMENTODEBITOSEMRETORNO_VER
-Cenario: Validar direito OPERACOES_REGULARIZACOES_TRATAMENTODEBITOSEMRETORNO_VER
+Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_TRATAMENTODEBITOSEMRETORNO_VER
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_TRATAMENTODEBITOSEMRETORNO_VER"
 E que tenha/nao tenha acesso na tela "Débitos ao cliente sem retorno"
 E o sistema exibira/nao exibira a tela "Débito ao cliente sem retorno"
@@ -144,7 +144,7 @@ Entao localizar o frame "Resultados"
 @CENTRAL_DE_RELACIONAMENTO_ANALISTA @CENTRAL_ANTECIPACAO_COORDENADOR @CENTRAL_ANTECIPACAO_ANALISTA
 @GESTAO_ECONOMICA_ANALISTA @CONTABILIDADE_NEGOCIO_E_TRIBUTARIO_ANALISTA @JURIDICO_CONTENCIOSO_ANALISTA
 @CRM_COORDENADOR @ANTECIPACAO_DE_VENDAS_TESOURARIA_ANALISTA @ANTECIPACAO_DE_VENDAS_TESOURARIA_COORDENADOR
-Cenario: Validar direito OPERACOES_REGULARIZACOES_AJUSTE_DETALHE_VER
+Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_AJUSTE_DETALHE_VER
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_AJUSTE_DETALHE_VER"
 E que tenha/nao tenha acesso na tela "Ajustes financeiros"
 E informar "13507217" no campo "numero da solicitacao - ajustes financeiros"
@@ -152,7 +152,7 @@ Quando clicar no botao "Pesquisar"
 Entao localizar o frame "Efetivada"
 
 @OPERACOES_REGULARIZACOES_TRATAMENTODEBITOSEMRETORNO_SOLICITAR
-Cenario: Validar direito OPERACOES_REGULARIZACOES_TRATAMENTODEBITOSEMRETORNO_SOLICITAR
+Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_TRATAMENTODEBITOSEMRETORNO_SOLICITAR
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_TRATAMENTODEBITOSEMRETORNO_SOLICITAR"
 E que tenha/nao tenha acesso na tela "Débitos ao cliente sem retorno"
 E selecionar "a primeira opcao da coluna Tratamento"
@@ -163,7 +163,7 @@ Entao clicar no botao "Confirmar" da tela de tratamento
 @OPERACOES_REGULARIZACOES_REVERSAOCANCELAMENTO_SOLICITAR
 @BACKOFFICE_ANALISTA_FORNECEDOR @CHARGEBACK_ANALISTA_INTERCAMBIO @CENTRAL_DE_RELACIONAMENTO_ANALISTA
 @CRM_COORDENADOR
-Cenario: Validar direito OPERACOES_REGULARIZACOES_REVERSAOCANCELAMENTO_SOLICITAR
+Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_REVERSAOCANCELAMENTO_SOLICITAR
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_REVERSAOCANCELAMENTO_SOLICITAR"
 E que tenha/nao tenha acesso na tela "Cancelamento e reversão de vendas"
 Quando selecionar a opcao "Cancelamento de vendas"
@@ -174,7 +174,7 @@ Entao clicar no botao "Reverter"
 
 @OPERACOES_REGULARIZACOES_REPROCESSAMENTO_REENTRADA_SOLICITAR
 @BACKOFFICE_ANALISTA_FORNECEDOR @CHARGEBACK_ANALISTA_INTERCAMBIO
-Cenario: Validar direito OPERACOES_REGULARIZACOES_REPROCESSAMENTO_REENTRADA_SOLICITAR
+Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_REPROCESSAMENTO_REENTRADA_SOLICITAR
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_REPROCESSAMENTO_REENTRADA_SOLICITAR"
 E que tenha/nao tenha acesso na tela "Reprocessamento de vendas"
 Entao clicar na aba "REENTRADA DE VENDA"
@@ -195,7 +195,7 @@ Entao clicar no botao "Continuar"
 @CENTRAL_DE_RELACIONAMENTO_ANALISTA @CENTRAL_ANTECIPACAO_COORDENADOR @CENTRAL_ANTECIPACAO_ANALISTA
 @GESTAO_ECONOMICA_ANALISTA @JURIDICO_CONTENCIOSO_ANALISTA @CRM_COORDENADOR
 @ANTECIPACAO_DE_VENDAS_TESOURARIA_ANALISTA @ANTECIPACAO_DE_VENDAS_TESOURARIA_COORDENADOR
-Cenario: Validar direito OPERACOES_REGULARIZACOES_CANCELAMENTOVENDAS_DETALHE_VER
+Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_CANCELAMENTOVENDAS_DETALHE_VER
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_CANCELAMENTOVENDAS_DETALHE_VER"
 E que tenha/nao tenha acesso na tela "Cancelamento e reversão de vendas"
 Quando selecionar a opcao "Cancelamento de vendas"
@@ -216,7 +216,7 @@ Entao o sistema exibira/nao exibira a tela "Detalhe da solicitação de cancelam
 @CHARGEBACK_ANALISTA_INTERCAMBIO @CENTRAL_DE_RELACIONAMENTO_ANALISTA @CENTRAL_ANTECIPACAO_COORDENADOR
 @CENTRAL_ANTECIPACAO_ANALISTA @GESTAO_ECONOMICA_ANALISTA @JURIDICO_CONTENCIOSO_ANALISTA
 @CRM_COORDENADOR @ANTECIPACAO_DE_VENDAS_TESOURARIA_ANALISTA @ANTECIPACAO_DE_VENDAS_TESOURARIA_COORDENADOR
-Cenario: Validar direito OPERACOES_REGULARIZACOES_CANCELAMENTOVENDAS_SOLICITACAO_VER
+Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_CANCELAMENTOVENDAS_SOLICITACAO_VER
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_CANCELAMENTOVENDAS_SOLICITACAO_VER"
 E que tenha/nao tenha acesso na tela "Cancelamento e reversão de vendas"
 Quando selecionar a opcao "Cancelamento de vendas"
@@ -227,7 +227,7 @@ Entao localizar o frame "Resultados"
 
 @OPERACOES_REGULARIZACOES_CANCELAMENTOVENDAS_SOLICITAR
 @BACKOFFICE_ANALISTA_FORNECEDOR @CENTRAL_DE_RELACIONAMENTO_ANALISTA @CRM_COORDENADOR
-Cenario: Validar direito OPERACOES_REGULARIZACOES_CANCELAMENTOVENDAS_SOLICITAR
+Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_CANCELAMENTOVENDAS_SOLICITAR
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_CANCELAMENTOVENDAS_SOLICITAR"
 E que tenha/nao tenha acesso na tela "Cancelamento e reversão de vendas"
 Entao clicar na aba "Incluir cancelamento"
@@ -243,7 +243,7 @@ Entao clicar no botao "Continuar"
 
 @OPERACOES_REGULARIZACOES_REPROCESSAMENTO_SOLICITAR
 @BACKOFFICE_ANALISTA_FORNECEDOR @CHARGEBACK_ANALISTA_INTERCAMBIO
-Cenario: Validar direito OPERACOES_REGULARIZACOES_REPROCESSAMENTO_SOLICITAR
+Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_REPROCESSAMENTO_SOLICITAR
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_REPROCESSAMENTO_SOLICITAR"
 E que tenha/nao tenha acesso na tela "Reprocessamento de vendas"
 Entao clicar na aba "REENTRADA DE VENDA"
@@ -260,13 +260,47 @@ E informar "Teste" no campo "comentario-reentrada de venda"
 Entao clicar no botao "Continuar"
 
 @CANAL_BACKOFFICE_VER
-Cenario: Validar direito CANAL_BACKOFFICE_VER
+Cenario: CT.SEGINFO - [AUT] CANAL_BACKOFFICE_VER
 Dado que tenha/nao tenha o direito "CANAL_BACKOFFICE_VER"
 E que tenha/nao tenha acesso na tela "Consulta de transações"
 Entao o botao "Pesquisar" estara habilitado/desabilitado
 
 @CANAL_CENTRAL_VER
-Cenario: Validar direito CANAL_CENTRAL_VER
+Cenario: CT.SEGINFO - [AUT] CANAL_CENTRAL_VER
 Dado que tenha/nao tenha o direito "CANAL_CENTRAL_VER"
 E que tenha/nao tenha acesso na tela "Consulta de transações"
 Entao o botao "Pesquisar" estara habilitado/desabilitado
+
+@OPERACOES_REGULARIZACOES_MASTER_REPROCESSAMENTO_EDITAR
+Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_MASTER_REPROCESSAMENTO_EDITAR
+Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_MASTER_REPROCESSAMENTO_EDITAR"
+E que tenha/nao tenha acesso na tela "Reprocessamento de vendas"
+Entao clicar na aba "TRATAMENTO DE VENDA"
+E informar "04/11/2016" no campo "reprocessamento de vendas - data autorizacao - de"
+E informar "04/11/2016" no campo "reprocessamento de vendas - data autorizacao - ate"
+E informar "353211" no campo "reprocessamento de vendas - nsu"
+Quando clicar no botao "Pesquisar" da tela de tratamento
+E clicar na acao "Reverter"
+Entao o botao "Continuar" devera estar habilitado/desabilitado
+
+@OPERACOES_REGULARIZACOES_REPROCESSAMENTO_AUTORIZACAO_EDITAR
+Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_REPROCESSAMENTO_AUTORIZACAO_EDITAR
+Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_REPROCESSAMENTO_AUTORIZACAO_EDITAR"
+E que tenha/nao tenha acesso na tela "Reprocessamento de vendas"
+Entao clicar na aba "TRATAMENTO DE VENDA"
+E informar "04/11/2016" no campo "reprocessamento de vendas - data autorizacao - de"
+E informar "04/11/2016" no campo "reprocessamento de vendas - data autorizacao - ate"
+E informar "359403" no campo "reprocessamento de vendas - nsu"
+Quando clicar no botao "Pesquisar" da tela de tratamento
+E clicar na acao "Reverter"
+E informar "359403" no campo "reprocessamento de vendas - codigo de autorizacao"
+Entao o botao "Continuar" devera estar habilitado/desabilitado
+
+@OPERACOES_REGULARIZACOES_MASTER_CANCELAMENTO_E_REVERSAO_EDITAR
+Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_MASTER_CANCELAMENTO_E_REVERSAO_EDITAR
+Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_MASTER_CANCELAMENTO_E_REVERSAO_EDITAR"
+E que tenha/nao tenha acesso na tela "Cancelamento e reversão de vendas"
+E informar "13523883" no campo "cancelamento e reversao de vendas - numero da solicitacao"
+E clicar no botao "Pesquisar"
+E clicar na acao "Reverter"
+Entao o botao "Reverter" devera estar habilitado/desabilitado

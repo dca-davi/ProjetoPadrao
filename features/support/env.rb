@@ -1,11 +1,22 @@
+# pages implementation
 TEST_DATA_DIR = './features/pages'.freeze
 
+# TEST usage
 require 'watir-webdriver'
 require 'test/unit'
 require 'spreadsheet'
 require 'magic_encoding'
-require File.dirname(__FILE__) + '/lib/configuration'
 
+# REST API usage
+require 'rest-client'
+require 'base64'
+require 'nokogiri'
+
+# config file
+require File.dirname(__FILE__) + '/lib/configuration'
+# require File.dirname(__FILE__) + '/hooks'
+
+# yaml files with containing variable data
 URL = Configuration['url']
 USER = StarAccess['user']
 PASS = StarAccess['pass']

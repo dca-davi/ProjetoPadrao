@@ -45,7 +45,7 @@ class Utils
             i = 1
             pagina = "Exce\u00E7\u00E3o"
         when 'Reprocessamento_monitoraçãoFuncional'
-            i = 0
+            i = 1
             pagina = 'Reprocessamento'
         when 'controleDeAcaoDeChargeback'
             i = 0
@@ -118,7 +118,7 @@ class Utils
     end
 
     def verificar_direito_star(nome_direito, direito_planilha)
-        url = /.*web\//.match($browser.url).to_s + 'common/teste-osb.xhtml'
+        url = /.*web[ti]*\//.match($browser.url).to_s + 'common/teste-osb.xhtml'
         $browser.goto url
         $browser.button(text: 'Show OpenAM Granted Authorities').when_present.click
         sleep 1
@@ -280,7 +280,7 @@ class Utils
         when 'Exportar'
             acao = 'tabRejectionCapture:j_idt261|button_Settlement_msg_buttonexport_'
         when 'Reverter'
-            acao = 'include_reversion_link'
+            acao = 'include_reversion_link|tab_reprocessing_sales:result_table_transaction:0:button_Ipb|tab_request:formRequest:request_results:0:include_reversion_link'
         when 'Cancelamento'
             acao = 'cancellation_link'
         when 'editar - CUSTO OPERACIONAL - custos'
@@ -300,7 +300,8 @@ class Utils
         when 'reprocessamento'
             acao = 'button_Ipb'
             acao = 'tabOperationAnticipation:tabScheduledAnticipation:btn_save'
-
+        when 'Editar endereço'
+            acao = 'tab_tabGeral:frmAddress:merchantAddressID:0:btn_info_address_edit'
         end
 
         sleep 3
@@ -470,6 +471,18 @@ class Utils
             campo = 'input_IncludeReprocessingSalesBeandtoauthorizationCode'
         when 'comentario'
             campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesBeandtoobservations'
+        when 'reprocessamento de vendas - data autorizacao - de'
+            campo = 'tab_reprocessing_sales:initial_date_transaction_input'
+        when 'reprocessamento de vendas - data autorizacao - ate'
+            campo = 'tab_reprocessing_sales:final_date_transaction_input'
+        when 'reprocessamento de vendas - nsu'
+            campo = 'tab_reprocessing_sales:input_ReprocessingSalesSearchTransactionBeandtonuSerialSequenceTransaction'
+        when 'reprocessamento de vendas - codigo de autorizacao'
+            campo = 'tab_reprocessing_sales:input_IncludeReprocessingSalesBeandtoauthorizationCode'
+        when 'cancelamento e reversao de vendas - numero da solicitacao'
+            campo = 'tab_request:formRequest:cancellation_number'
+        when 'cep'
+            campo = 'tab_tabGeral:frmAddress:inputSearchCep'
         else
             raise 'Campo não encontrado'
         end
@@ -598,5 +611,61 @@ class Utils
       end
         sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
+    end
+
+    def formata_data_atual(formato)
+        case formato
+        when 'dd/mm/aaaa'
+            format_atual = '%d/%m/%Y'
+        when 'aaaa-mm-dd'
+            format_atual = '%Y-%m-%d'
+        end
+        Time.now.strftime(format_atual)
+      end
+
+    def obtem_dados_ct(nome_coluna_ct, nome_coluna_ciclo, nome_ct, nome_ciclo)
+        book = Spreadsheet.open('./features/Get-Instance-Run-ID.xls')
+        sheet1 = book.worksheet 0
+        column_counter = sheet1.column_count
+        row_counter = sheet1.row_count
+        dados = {}
+        encontrado = false
+        
+        for count_column_cycle in 0...column_counter
+        if sheet1.cell(0, count_column_cycle) == nome_coluna_ciclo
+            selected_column_ciclo = count_column_cycle
+        end
+        end
+        
+        for count_column in 0...column_counter
+        if sheet1.cell(0, count_column) == nome_coluna_ct 
+            for count_row in 1...row_counter
+            if nome_ciclo.nil?
+            if sheet1.cell(count_row, count_column) == nome_ct
+            for count_total in 0...column_counter
+                chave = sheet1.cell(0, count_total).to_s
+                valor = sheet1.cell(count_row, count_total).to_s
+                dados[chave] = valor
+            end
+            encontrado = true
+            end
+            else
+            if sheet1.cell(count_row, count_column) == nome_ct && sheet1.cell(count_row, selected_column_ciclo) == nome_ciclo
+            for count_total in 0...column_counter
+                chave = sheet1.cell(0, count_total).to_s
+                valor = sheet1.cell(count_row, count_total).to_s
+                dados[chave] = valor
+            end
+            encontrado = true
+            end
+            end
+            end
+        end
+        end
+        if encontrado.equal? false
+        raise "Não foi possível encontrar o ciclo informado. Por gentileza, verifique a planilha de dados ou o parâmetro da chamada."
+        else
+        return dados
+        end
     end
 end

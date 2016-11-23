@@ -1,8 +1,8 @@
 Entao(/^o sistema exibira\/nao exibira a tela "([^"]*)"$/) do |tela|
     next if @pass_test == true
     @trava_prazo = Trava_Prazo_Vencido.new
-    status = @trava_prazo.validar_pagina(tela)
-    raise("A tela não é #{tela}") if status == false
+    status_tela = @trava_prazo.validar_pagina(tela)    
+    raise("A tela não é " + tela) unless status_tela 
 end
 
 Entao(/^o botao "([^"]*)" devera estar habilitado\/desabilitado$/) do |botao|
@@ -27,7 +27,6 @@ Quando(/^clicar no botao "([^"]*)"$/) do |botao|
     end
 
 end
-
 
 Quando(/^clicar no botao exportar$/) do
     next if @pass_test == true

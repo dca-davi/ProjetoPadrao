@@ -28,4 +28,20 @@ class Demandas
             return false
         end
     end
+
+    # selecionar checkbox em Cliente- Demandas
+    def selecionar_opcao_ckb
+        sleep 1
+        if $browser.tr(class: 'ui-widget-content ui-datatable-even ui-datatable-selectable').td(index: 0).exist?
+            $browser.tr(class: 'ui-widget-content ui-datatable-even ui-datatable-selectable').td(index: 0).click
+            sleep 2
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+            return true
+
+        else
+            sleep 2
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+            return false
+        end
+    end
 end
