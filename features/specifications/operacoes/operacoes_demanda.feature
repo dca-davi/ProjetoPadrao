@@ -41,6 +41,12 @@ E que tenha/nao tenha acesso na tela "Fila de trabalho"
 E o sistema exibira/nao exibira a tela "Fila de trabalho"
 Entao clicar na acao "Liberar"
 
+@OPERACOES_DEMANDAS_FILA_TRABALHO_ATRIBUIRPARA_EDITAR
+Cenario: CT.SEGINFO - [AUT] OPERACOES_DEMANDAS_FILA_TRABALHO_ATRIBUIRPARA_EDITAR
+Dado que tenha/nao tenha o direito "OPERACOES_DEMANDAS_FILA_TRABALHO_ATRIBUIRPARA_EDITAR"
+E que tenha/nao tenha acesso na tela "Fila de trabalho"
+E o sistema exibira/nao exibira a tela "Fila de trabalho"
+Entao clicar na acao "Editar"
 
 @OPERACOES_DEMANDAS_DETALHE_ATIVIDADE_EDITAR
 @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA @CADASTRO_ANALISTA_CIELO @CADASTRO_ANALISTA_CIELO_APROVADOR

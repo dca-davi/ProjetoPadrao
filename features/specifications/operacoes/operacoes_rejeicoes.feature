@@ -39,6 +39,12 @@ Dado que tenha/nao tenha o direito "OPERACOES_REJEITADOS_PAGAMENTOSEDEBITOS_VER"
 E que tenha/nao tenha acesso na tela "Depósitos e débitos"
 Entao o sistema exibira/nao exibira a tela "Depósitos | Débitos"
 
+@OPERACOES_REJEITADOS_PAGAMENTOSEDEBITOS_EDITAR
+Cenario: CT.SEGINFO - [AUT] OPERACOES_REJEITADOS_PAGAMENTOSEDEBITOS_EDITAR
+Dado que tenha/nao tenha o direito "OPERACOES_REJEITADOS_PAGAMENTOSEDEBITOS_EDITAR"
+E que tenha/nao tenha acesso na tela "Depósitos e débitos"
+Entao o sistema exibira/nao exibira a tela "Depósitos | Débitos"
+
 @OPERACOES_REJEICOESBANDEIRA_EXPORTAR
 @CONTROLE_SISTEMAS_FINANCEIROS_CONCILIACAO @CHARGEBACK_ANALISTA_INTERCAMBIO @GESTAO_ECONOMICA_ANALISTA
 @CONTABILIDADE_NEGOCIO_E_TRIBUTARIO_ANALISTA

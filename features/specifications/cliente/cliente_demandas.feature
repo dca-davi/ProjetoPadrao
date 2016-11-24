@@ -36,3 +36,12 @@ E selecionar "Instalação de Cielo Mobile" do campo "tipo da solicitacao"
 E Selecionar a opcao da sessao - Solicitante
 Quando clicar no botao "Continuar"
 Entao o botao "Continuar" devera estar habilitado/desabilitado
+
+@CLIENTES_DEMANDAS_ABERTURA_REGULARIZACOES_FINANCEIRAS_SOLICITAR
+Cenario: CT.SEGINFO - [AUT] CLIENTES_DEMANDAS_ABERTURA_REGULARIZACOES_FINANCEIRAS_SOLICITAR
+Dado que tenha/nao tenha o direito "CLIENTES_DEMANDAS_ABERTURA_REGULARIZACOES_FINANCEIRAS_SOLICITAR"
+E que tenha/nao tenha acesso na tela "Abertura de demanda"
+E selecionar "Solicitação para Regularização Financeira" do campo "demanda"
+E selecionar "Solicitação para Regularização Financeira/Cadastro" do campo "demanda"
+Quando clicar no botao "Continuar"
+Entao o botao "Continuar" devera estar habilitado/desabilitado
