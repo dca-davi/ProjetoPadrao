@@ -623,49 +623,69 @@ class Utils
         Time.now.strftime(format_atual)
       end
 
-    def obtem_dados_ct(nome_coluna_ct, nome_coluna_ciclo, nome_ct, nome_ciclo)
+    def obtem_dados_ct(nome_coluna_release, nome_coluna_testset, nome_coluna_ciclo, nome_coluna_ct, nome_release, nome_testset, nome_ciclo, nome_ct)
         book = Spreadsheet.open('./features/Get-Instance-Run-ID.xls')
         sheet1 = book.worksheet 0
         column_counter = sheet1.column_count
         row_counter = sheet1.row_count
         dados = {}
+        found_release = false
+        found_testset = false
+        found_cycle = false
         encontrado = false
-        
-        for count_column_cycle in 0...column_counter
-        if sheet1.cell(0, count_column_cycle) == nome_coluna_ciclo
-            selected_column_ciclo = count_column_cycle
-        end
-        end
-        
-        for count_column in 0...column_counter
-        if sheet1.cell(0, count_column) == nome_coluna_ct 
-            for count_row in 1...row_counter
-            if nome_ciclo.nil?
-            if sheet1.cell(count_row, count_column) == nome_ct
-            for count_total in 0...column_counter
-                chave = sheet1.cell(0, count_total).to_s
-                valor = sheet1.cell(count_row, count_total).to_s
-                dados[chave] = valor
-            end
-            encontrado = true
-            end
-            else
-            if sheet1.cell(count_row, count_column) == nome_ct && sheet1.cell(count_row, selected_column_ciclo) == nome_ciclo
-            for count_total in 0...column_counter
-                chave = sheet1.cell(0, count_total).to_s
-                valor = sheet1.cell(count_row, count_total).to_s
-                dados[chave] = valor
-            end
-            encontrado = true
-            end
-            end
-            end
-        end
-        end
-        if encontrado.equal? false
-        raise "Não foi possível encontrar o ciclo informado. Por gentileza, verifique a planilha de dados ou o parâmetro da chamada."
-        else
-        return dados
+
+    for count_column_release in 0...column_counter
+        if sheet1.cell(0, count_column_release) == nome_coluna_release
+            selected_column_release = count_column_release
+            found_release = true
         end
     end
+
+    for count_column_testset in 0...column_counter
+        if sheet1.cell(0, count_column_testset) == nome_coluna_testset
+            selected_column_testset = count_column_testset
+            found_testset = true
+        end
+    end
+
+    for count_column_cycle in 0...column_counter
+        if sheet1.cell(0, count_column_cycle) == nome_coluna_ciclo
+            selected_column_ciclo = count_column_cycle
+            found_cycle = true
+        end
+    end
+
+    raise "N\xC3\xA3o foi poss\xC3\xADvel encontrar a coluna Release. Por gentileza, verifique a planilha de dados." unless found_release
+    raise "N\xC3\xA3o foi poss\xC3\xADvel encontrar a coluna Testset. Por gentileza, verifique a planilha de dados." unless found_testset
+    raise "N\xC3\xA3o foi poss\xC3\xADvel encontrar a coluna Ciclo. Por gentileza, verifique a planilha de dados." unless found_cycle
+
+    for count_column in 0...column_counter
+        next unless sheet1.cell(0, count_column) == nome_coluna_ct
+        for count_row in 0...row_counter
+            if nome_testset.nil? || nome_testset == 'N'
+                if sheet1.cell(count_row, count_column) == nome_ct && sheet1.cell(count_row, selected_column_ciclo) == nome_ciclo && sheet1.cell(count_row, selected_column_release) == nome_release
+                    for count_total in 0...column_counter
+                        chave = sheet1.cell(0, count_total).to_s
+                        valor = sheet1.cell(count_row, count_total).to_s
+                        dados[chave] = valor
+                    end
+                    encontrado = true
+                end
+            else
+                if sheet1.cell(count_row, count_column) == nome_ct && sheet1.cell(count_row, selected_column_ciclo) == nome_ciclo && sheet1.cell(count_row, selected_column_release) == nome_release && sheet1.cell(count_row, selected_column_testset) == nome_testset
+                    for count_total in 0...column_counter
+                        chave = sheet1.cell(0, count_total).to_s
+                        valor = sheet1.cell(count_row, count_total).to_s
+                        dados[chave] = valor
+                    end
+                    encontrado = true
+                end
+            end
+        end
+    end
+
+    raise "N\xC3\xA3o foi poss\xC3\xADvel encontrar a Release, Testset ou Ciclo informados. Por gentileza, verifique a planilha de dados ou os par\xC3\xA2metros da chamada." unless encontrado.equal? true
+    return dados
+
+  end
 end

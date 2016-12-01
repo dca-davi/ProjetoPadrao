@@ -13,8 +13,10 @@ Before do |scenario|
         browser = Watir::Browser.new :ie
     end
 
+    $release = ENV['RELEASE_ALM']
+    $testset = ENV['TESTSET_ALM']
     $perfil = ENV['PERFIL']
-    $ciclo = ENV['CICLO']
+    $ciclo = ENV['CICLO_ALM']
     $ALM = ENV['EVIDENCIA_ALM']
     $browser = browser
     $tag_cenario = scenario.source_tag_names
@@ -28,8 +30,11 @@ Before do |scenario|
     if $ALM != 'N'
 
         @utils = Utils.new
-        @dados_ct = @utils.obtem_dados_ct('TEST_NAME', 'CYCLE_NAME', $cenario_name, $ciclo)
+        @dados_ct = @utils.obtem_dados_ct('RELEASE_NAME', 'TESTSET_NAME', 'CYCLE_NAME', 'TEST_NAME', $release, $testset, $ciclo, $cenario_name)
 
+        @test_release = @dados_ct['RELEASE_NAME']
+        @test_folder = @dados_ct['TESTSET_NAME']
+        @test_cycle = @dados_ct['CYCLE_NAME']
         $test_id = @dados_ct['TEST_ID'].to_i
         $test_instance_id = @dados_ct['TEST_INSTANCE_ID'].to_i
         $test_type = @dados_ct['TEST_TYPE']

@@ -29,8 +29,8 @@ Entao o sistema exibira/nao exibira a tela "Índices econômicos"
 
 @CONFIGURACOES_SERVICOS_INDICESECONOMICOS_INCLUIR
 @PLANEJA_BACKOFFICE_COBRAN_FATURA_ANALISTA
-Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_SERVICOS_INDICESECONOMICOS_VER
-Dado que tenha/nao tenha o direito "CONFIGURACOES_SERVICOS_INDICESECONOMICOS_VER"
+Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_SERVICOS_INDICESECONOMICOS_INCLUIR
+Dado que tenha/nao tenha o direito "CONFIGURACOES_SERVICOS_INDICESECONOMICOS_INCLUIR"
 E que tenha/nao tenha acesso na tela "Índices econômicos"
 Quando selecionar o Indice "IGPM Acumulado nos Últimos 12 Meses"
 E clicar no botao "Pesquisar"

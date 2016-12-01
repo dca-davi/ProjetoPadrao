@@ -130,7 +130,7 @@ Entao o botao "Reentrada" estara habilitado/desabilitado
 
 @OPERACOES_REJEICOES_MANUTENCOES_CADASTRAIS_EDITAR
 Cenario: CT.SEGINFO - [AUT] OPERACOES_REJEICOES_MANUTENCOES_CADASTRAIS_EDITAR
-Dado que tenha/nao tenha o direito "OPERACOES_REJEICOES_MANUTENCOES CADASTRAIS_EDITAR"
+Dado que tenha/nao tenha o direito "OPERACOES_REJEICOES_MANUTENCOES_CADASTRAIS_EDITAR"
 E que tenha/nao tenha acesso na tela "Manutenções cadastrais"
 E clicar no botao "Pesquisar"
 Quando clicar na acao "Tratar"

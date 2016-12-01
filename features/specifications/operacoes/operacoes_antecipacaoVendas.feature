@@ -224,8 +224,8 @@ Entao clicar no botao "Pesquisar"
 
 @OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGTODOS_VER
 @CONTROLE_SISTEMAS_FINANCEIROS_CONCILIACAO @GESTAO_ECONOMICA_ANALISTA
-Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_VER
-Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_VER"
+Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGTODOS_VER
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGTODOS_VER"
 E que tenha/nao tenha acesso na tela "Antecipação programadas cadastradas"
 Entao localizar o frame "Últimas Transações"
 
@@ -371,8 +371,8 @@ Quando clicar na aba "Antecipação Avulsa"
 Entao localizar o frame "Pagamento"
 
 @OPERACOES_ANTECIPACAO_CANAL_MESADEOPERACOES_VER
-Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAO_CANAL_CENTRALDEANTECIPACAO_VER
-Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAO_CANAL_CENTRALDEANTECIPACAO_VER"
+Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAO_CANAL_MESADEOPERACOES_VER
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAO_CANAL_MESADEOPERACOES_VER"
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
 Entao o sistema exibira/nao exibira a tela "Operação de Antecipação"
 
