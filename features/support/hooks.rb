@@ -65,8 +65,8 @@ AfterStep do
         @utils = Utils.new
         $alm_rest.criar_step(Hash[
                     'execution-date' => @utils.formata_data_atual('aaaa-mm-dd'),
-                    'description' => $step_name.capitalize,
-                    'name' => $step_name.capitalize,
+                    'description' => @utils.sub_maiusculas($step_name),
+                    'name' => @utils.sub_maiusculas($step_name),
                     'test-id' => $test_id,
                     'status' => 'Passed',
                     'parent-id' => $run_id
@@ -89,8 +89,8 @@ After do |scenario|
             @utils = Utils.new
             $alm_rest.criar_step(Hash[
                         'execution-date' => @utils.formata_data_atual('aaaa-mm-dd'),
-                        'description' => $step_name.capitalize + ' (Erro: ' + scenario.exception.message + ')',
-                        'name' => $step_name.capitalize,
+                        'description' => @utils.sub_maiusculas($step_name + ' (Erro: ' + scenario.exception.message + ')'),
+                        'name' => @utils.sub_maiusculas($step_name),
                         'test-id' => $test_id,
                         'status' => $status_run,
                         'parent-id' => $run_id
@@ -113,5 +113,6 @@ at_exit do
             'run_id' => $run_id,
             'entidade' => 'runs'
             ])
+        $alm_rest.desconectar
     end
 end

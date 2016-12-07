@@ -9,6 +9,8 @@ module ALM
             @cookiesHash
             @arquivo = Manipula_arquivo.new
             @xml_path = './XML' # 'C:/Git/automation-test-seginfo/XML'
+			@valor_proxy
+			verifica_IP            
         end
 
         def autenticar(usuario, senha)
@@ -16,18 +18,27 @@ module ALM
             @response_auth = RestClient::Request.execute(
                 method: :get,
                 url: 'https://almcielo.saas.hp.com/qcbin/authentication-point/authenticate',
-                headers: { Authorization: usuario_hash }
-                # proxy: 'http://proxypac:8080/'
+                headers: { Authorization: usuario_hash },
+                :proxy => @valor_proxy
             )
             @token = @response_auth.cookies.values[0]
             @response_session = RestClient::Request.execute(
                 method: :post,
                 url: 'https://almcielo.saas.hp.com/qcbin/rest/site-session',
-                cookies: { LWSSO_COOKIE_KEY: @token }
-                # proxy: 'http://proxypac:8080/'
+                cookies: { LWSSO_COOKIE_KEY: @token },
+                :proxy => @valor_proxy
             )
             @cookiesHash = Hash['cookie_key' => @response_session.cookies.values[2], 'qcsession' => @response_session.cookies.values[3]]
         end
+
+        def desconectar
+			@response_descon = RestClient::Request.execute(
+															:method => :get, 
+															:url => 'https://almcielo.saas.hp.com/qcbin/authentication-point/logout',
+															:cookies => { :LWSSO_COOKIE_KEY => @token },  
+															:proxy => @valor_proxy
+														)
+		end
 
         def criptografar(hash)
             crypt = Base64.encode64(hash)
@@ -49,8 +60,8 @@ module ALM
                 cookies: {
                     LWSSO_COOKIE_KEY: @cookiesHash['cookie_key'],
                     QCSession: @cookiesHash['qcsession']
-                }
-                # proxy: 'http://proxypac:8080/'
+                },
+                :proxy => @valor_proxy
             )
         rescue RestClient::ExceptionWithResponse => err
             raise err.response
@@ -71,8 +82,8 @@ module ALM
                 cookies: {
                     LWSSO_COOKIE_KEY: @cookiesHash['cookie_key'],
                     QCSession: @cookiesHash['qcsession']
-                }
-                # proxy: 'http://proxypac:8080/'
+                },
+                :proxy => @valor_proxy
             )
         rescue RestClient::ExceptionWithResponse => err
             raise err.response
@@ -97,8 +108,8 @@ module ALM
                 cookies: {
                     LWSSO_COOKIE_KEY: @cookiesHash['cookie_key'],
                     QCSession: @cookiesHash['qcsession']
-                }
-                # proxy: 'http://proxypac:8080/'
+                },
+                :proxy => @valor_proxy
             )
         rescue RestClient::ExceptionWithResponse => err
             raise err.response
@@ -117,8 +128,8 @@ module ALM
                 cookies: {
                     LWSSO_COOKIE_KEY: @cookiesHash['cookie_key'],
                     QCSession: @cookiesHash['qcsession']
-                }
-                # proxy: 'http://proxypac:8080/'
+                },
+                :proxy => @valor_proxy
             )
             arquivo.close
         rescue RestClient::ExceptionWithResponse => err
@@ -134,6 +145,21 @@ module ALM
                 @conteudo_xml.to_xml
             end
             @conteudo_xml
-        end
+        end        
+
+		def obter_IP
+			Socket.ip_address_list.detect{|intf| intf.ipv4_private?}
+		end
+
+		def verifica_IP
+			@ip = obter_IP.ip_address
+			case @ip[0...6]
+				when '10.10.' #Rede Spread
+					@valor_proxy = nil
+				else 		  #Rede Cielo
+					@valor_proxy = 'http://proxypac:8080/'
+			end
+		end
+
        end
 end

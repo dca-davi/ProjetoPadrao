@@ -7,6 +7,9 @@ require 'test/unit'
 require 'spreadsheet'
 require 'magic_encoding'
 
+#LAN Connection Info
+require 'socket'
+
 # REST API usage
 require 'rest-client'
 require 'base64'
