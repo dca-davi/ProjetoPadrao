@@ -20,7 +20,7 @@ Logistica_Suprimentos_Analista:
   user: STAR_A_LOD_AN
   pass: C!elo2016
 Central_Help_Desk_Analista:
-  user: STAR_A_LOG_CLIE_AN
+  user: star-hml-HD
   pass: C!elo2016
 Central_Help_Desk_Cielo_Analista:
   user: star-hml-HD
