@@ -183,3 +183,34 @@ Entao(/^o campo conta esta\/nao esta truncado$/) do
         raise('Usuario pode ver o item no qual nao tem direito')
     end
 end
+
+Entao(/^se o EC nao tiver um plano o botao "([^"]*)" do frame "([^"]*)" estara habilitado\/desabilitado$/) do |botao,frame|
+    next if @pass_test == true
+    info_cli = Info_do_cliente.new
+    if $browser.span(text: frame).parent.parent.td(text: /dados para serem exibidos$/).present?
+        statusbtn = info_cli.clicar_botao_frame(botao, frame)
+        if !statusbtn && @tem_direito
+        raise('Usuario nao pode clicar no botao que tem direito')
+        elsif statusbtn && !@tem_direito
+            raise('Usuario pode clicar no botao que nao tem direito')
+        end
+    else
+        raise('O EC já tem um plano ativo')
+    end
+end
+
+Entao(/^se o EC tiver um plano o botão "([^"]*)" do frame "([^"]*)" estara habilitado\/desabilitado$/) do |botao, frame|
+  next if @pass_test == true
+  utils = Utils.new
+  utils.aguardar_loading
+  if !$browser.span(text: frame).parent.parent.td(text: /dados para serem exibidos$/).exist?
+        statusbtn = utils.clicar_botao_acao(botao)
+        if !statusbtn && @tem_direito
+        raise('Usuario nao pode clicar no botao que tem direito')
+        elsif statusbtn && !@tem_direito
+            raise('Usuario pode clicar no botao que nao tem direito')
+        end
+    else
+        raise('O EC não tem um plano ativo')
+    end
+end

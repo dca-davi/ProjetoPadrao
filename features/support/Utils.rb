@@ -248,7 +248,7 @@ class Utils
         when 'Visualizar'
             acao = 'icon[_]?view|btn_detail|button_RSR|button_Jvn|link_SMe|j_idt307:0:button_rnw|0:btn_detail|label_lupaSelected'
         when 'Editar'
-            acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi|tabRejectionCapture:resultTableTreat:0:j_idt422|buttonEditId|link_h4Q|'
+            acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi|tabRejectionCapture:resultTableTreat:0:j_idt422|buttonEditId|link_h4Q|button_edit'
         when 'Editar Dados de contato'
             acao = 'btn_info_contact_edit'
         when 'Editar - PRO ANTECIPACAO DE VENDAS'

@@ -325,3 +325,10 @@ Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAORESER
 E que tenha/nao tenha acesso na tela "Exceção_antecipaçãoVendas"
 Quando clicar na aba "Incluir"
 Entao podera/nao podera acessar a aba "Incluir"
+
+@CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_PRECOESPECIAL_EXPORTAR @R4
+Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_PRECOESPECIAL_EXPORTAR
+Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_PRECOESPECIAL_EXPORTAR"
+E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
+Quando clicar na aba "Preço Especial"
+Entao o botao "Exportar" estara habilitado/desabilitado

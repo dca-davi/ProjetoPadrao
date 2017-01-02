@@ -26,7 +26,6 @@ Before do |scenario|
         @passos = scenario.test_steps.map(&:name)
         @passos.delete('AfterStep hook')
 
-
     if $ALM != 'N'
 
         @utils = Utils.new

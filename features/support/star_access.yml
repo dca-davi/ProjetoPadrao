@@ -1,5 +1,8 @@
+Full:
+  user: eyvegg
+  pass: Amor2005
 Inteligencia_e_Performance_Analista:
-  user: STAR_A_TES_PAGA_AN
+  user: star-hml-perfil38
   pass: C!elo2016
 Relacionamento_Suporte_Comercial_Analista:
   user: STAR_A_REL_COME_AN
@@ -20,7 +23,7 @@ Central_Help_Desk_Analista:
   user: STAR_A_LOG_CLIE_AN
   pass: C!elo2016
 Central_Help_Desk_Cielo_Analista:
-  user: 
+  user: star-hml-HD
   pass: C!elo2016
 Logistica_de_Atendimento_a_Clientes_Analista:
   user: STAR_A_LOG_CLIE_AN
@@ -38,16 +41,16 @@ Controle_Sistemas_Financeiros_Conciliacao:
   user: STAR_A_PRD_CO
   pass: C!elo2016
 Contabilidade_Negocio_e_Tributario_Analista:
-  user: STAR_A_PRD_GE
+  user: star-hml-perfil33
   pass: C!elo2016
 Tesouraria_e_Contas_a_Pagar_Analista:
   user: STAR_A_TES_PAGA_AN
   pass: C!elo2016
 Chargeback_Analista_Intercambio:
-  user: STAR_A_MER_EXPA_AN
+  user: star-hml-chargeback
   pass: C!elo2016
 Chargeback_Analista_Monitoria:
-  user: STAR_A_OUV_AN
+  user: star-hml-monitoria
   pass: C!elo2016
 Juridico_Contencioso_Analista:
   user: STAR_A_JUD_AN
@@ -56,7 +59,7 @@ Ouvidoria_Analista:
   user: STAR_A_OUV_AN
   pass: C!elo2016
 CRM_Coordenador:
-  user: STAR_A_REL_COME_AN
+  user: star-hml-CoordCRM
   pass: C!elo2016
 Central_de_Relacionamento_Analista:
   user: STAR_A_INT_PERF_AN
