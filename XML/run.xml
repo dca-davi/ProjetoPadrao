@@ -9,6 +9,9 @@
 		<Field Name="testcycl-id">
 			<Value></Value>
 		</Field>
+		<Field Name="cycle-id">
+			<Value></Value>
+		</Field>
 		<Field Name="subtype-id">
 			<Value></Value>
 		</Field>

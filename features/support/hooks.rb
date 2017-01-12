@@ -36,6 +36,7 @@ Before do |scenario|
         @test_cycle = @dados_ct['CYCLE_NAME']
         $test_id = @dados_ct['TEST_ID'].to_i
         $test_instance_id = @dados_ct['TEST_INSTANCE_ID'].to_i
+        @test_set_id = @dados_ct['TEST_SET_ID'].to_i
         $test_type = @dados_ct['TEST_TYPE']
         $test_name = @dados_ct['TEST_NAME']
 
@@ -45,6 +46,7 @@ Before do |scenario|
                           'name' => $test_name,
                           'test-id' => $test_id,
                           'testcycl-id' => $test_instance_id,
+                          'cycle-id' => @test_set_id, 
                           'subtype-id' => 'hp.qc.run.' + $test_type,
                           'owner' => 'automation.spr',
                           'status' => 'Not Completed',
