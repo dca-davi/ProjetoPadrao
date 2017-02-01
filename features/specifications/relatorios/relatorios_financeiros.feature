@@ -102,3 +102,16 @@ E que tenha/nao tenha acesso na tela "Resumo contábil sintético"
 E clicar no valor bruto
 E o botao "Pesquisar" estara habilitado/desabilitado
 Entao o botao "Exportar" estara habilitado/desabilitado
+
+@RELATORIOS_RELATORIOSFINANCEIROS_LANCAMENTOSSEMRETORNO_VER @R4
+Cenario: CT.SEGINFO - [AUT] RELATORIOS_RELATORIOSFINANCEIROS_LANCAMENTOSSEMRETORNO_VER
+Dado que tenha/nao tenha o direito "RELATORIOS_RELATORIOSFINANCEIROS_LANCAMENTOSSEMRETORNO_VER"
+E que tenha/nao tenha acesso na tela "Lançamentos sem retorno"
+Entao o sistema exibira/nao exibira a tela "Lançamentos sem retorno"
+
+@RELATORIOS_RELATORIOSFINANCEIROS_LANCAMENTOSSEMRETORNO_EXPORTAR @R4
+Cenario: CT.SEGINFO - [AUT] RELATORIOS_RELATORIOSFINANCEIROS_LANCAMENTOSSEMRETORNO_EXPORTAR
+Dado que tenha/nao tenha o direito "RELATORIOS_RELATORIOSFINANCEIROS_LANCAMENTOSSEMRETORNO_EXPORTAR"
+E que tenha/nao tenha acesso na tela "Lançamentos sem retorno"
+Entao o botao "Exportar" estara habilitado/desabilitado
+

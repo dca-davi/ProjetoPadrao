@@ -50,6 +50,9 @@ class Utils
         when 'controleDeAcaoDeChargeback'
             i = 0
             pagina = "Controle de a\u00E7\u00E3o de chargeback"
+        when 'Trava_Excecao'
+            i = 2
+            pagina = "Exceção"
         end
 
         sleep 2
@@ -621,10 +624,6 @@ class Utils
             format_atual = '%Y-%m-%d'
         end
         Time.now.strftime(format_atual)
-    end
-
-    def sub_maiusculas(var)
-        return var.sub(/^./, &:upcase)
     end
 
     def obtem_dados_ct(nome_coluna_release, nome_coluna_testset, nome_coluna_ciclo, nome_coluna_ct, nome_release, nome_testset, nome_ciclo, nome_ct)
