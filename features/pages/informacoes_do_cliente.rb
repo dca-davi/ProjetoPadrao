@@ -55,7 +55,7 @@ class Info_do_cliente
                 result = false
             end
 
-        when 'editar dados'
+        when 'editar dados', 'fidc'
             if $browser.button(text: botao, index: 6).attribute_value('aria-disabled') == 'false'
                 $browser.button(text: botao, index: 6).click
                 sleep 3

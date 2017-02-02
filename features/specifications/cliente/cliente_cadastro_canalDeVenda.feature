@@ -70,7 +70,7 @@ E clicar na aba "Incluir"
 Entao podera/nao podera acessar a aba "Incluir"
 
 
-@CLIENTES_CADASTRO_INFO_CANALDEVENDA_LISTAR_MAQUINA_INCLUIR
+@CLIENTES_CADASTRO_INFO_CANALDEVENDA_LISTAR_MAQUINA_INCLUIR @R4
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_CANALDEVENDA_LISTAR_MAQUINA_INCLUIR
 E informe o EC "1014766947"
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_CANALDEVENDA_LISTAR_MAQUINA_INCLUIR"
@@ -78,7 +78,7 @@ E que tenha/nao tenha acesso na tela "Informações do cliente"
 Quando clicar na aba "CANAL DE VENDA"
 Entao se o EC nao tiver um plano o botao "Incluir plano" do frame "Planos do cliente" estara habilitado/desabilitado
 
-@CLIENTES_CADASTRO_INFO_CANALDEVENDA_LISTAR_MAQUINA_EDITAR
+@CLIENTES_CADASTRO_INFO_CANALDEVENDA_LISTAR_MAQUINA_EDITAR @R4
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_CANALDEVENDA_LISTAR_MAQUINA_EDITAR
 E informe o EC "1018242187"
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_CANALDEVENDA_LISTAR_MAQUINA_EDITAR"

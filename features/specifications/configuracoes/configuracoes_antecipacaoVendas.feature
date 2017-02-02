@@ -332,3 +332,16 @@ Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO
 E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
 Quando clicar na aba "Preço Especial"
 Entao o botao "Exportar" estara habilitado/desabilitado
+
+@CONFIGURACOES_ANTECIPACAOVENDAS_CONFGERAIS_FIDC_VER @R4
+Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_CONFGERAIS_FIDC_VER
+Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_CONFGERAIS_FIDC_VER"
+E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
+Entao localizar o frame "Taxa efetiva máxima"
+
+@CONFIGURACOES_ANTECIPACAOVENDAS_CONFGERAIS_FIDC_EDITAR @R4
+Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_CONFGERAIS_FIDC_EDITAR
+Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_CONFGERAIS_FIDC_EDITAR"
+E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
+E clicar no botao "Editar dados" do frame "FIDC"
+Entao o botao "Salvar" estara habilitado/desabilitado

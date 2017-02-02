@@ -15,6 +15,10 @@ require 'rest-client'
 require 'base64'
 require 'nokogiri'
 
+require './features/support/Utils'
+require './features/support/ALMRest'                   # ALM RESTApi libs
+require './features/support/RestCall'                  # ALM RESTApi libs
+
 # config file
 require File.dirname(__FILE__) + '/lib/configuration'
 # require File.dirname(__FILE__) + '/hooks'

@@ -1,16 +1,14 @@
 Before do |scenario|
-    require_relative 'ALMRest.rb'
-
     case ENV['BROWSER']
-    when 'ie'
-        browser = Watir::Browser.new :ie
-        browser.timeout = 240
-    when 'ff'
-        browser = Watir::Browser.new :ff
-    when 'chrome'
-        browser = Watir::Browser.new :chrome
-    else
-        browser = Watir::Browser.new :ie
+        when 'ie'
+            browser = Watir::Browser.new :ie
+            browser.timeout = 240
+        when 'ff'
+            browser = Watir::Browser.new :ff
+        when 'chrome'
+            browser = Watir::Browser.new :chrome
+        else
+            browser = Watir::Browser.new :ie
     end
 
     $release = ENV['RELEASE_ALM']
@@ -18,84 +16,51 @@ Before do |scenario|
     $perfil = ENV['PERFIL']
     $ciclo = ENV['CICLO_ALM']
     $ALM = ENV['EVIDENCIA_ALM']
+
     $browser = browser
+
     $tag_cenario = scenario.source_tag_names
     $cenario_name = scenario.name
 
-        @step_name_index = 0
-        @passos = scenario.test_steps.map(&:name)
-        @passos.delete('AfterStep hook')
+    $step_name_index = 0
+    $passos = scenario.test_steps.map(&:name)
+    $passos.delete('AfterStep hook')
 
     if $ALM != 'N'
-
-        @utils = Utils.new
-        @dados_ct = @utils.obtem_dados_ct('RELEASE_NAME', 'TESTSET_NAME', 'CYCLE_NAME', 'TEST_NAME', $release, $testset, $ciclo, $cenario_name)
-
-        @test_release = @dados_ct['RELEASE_NAME']
-        @test_folder = @dados_ct['TESTSET_NAME']
-        @test_cycle = @dados_ct['CYCLE_NAME']
-        $test_id = @dados_ct['TEST_ID'].to_i
-        $test_instance_id = @dados_ct['TEST_INSTANCE_ID'].to_i
-        @test_set_id = @dados_ct['TEST_SET_ID'].to_i
-        $test_type = @dados_ct['TEST_TYPE']
-        $test_name = @dados_ct['TEST_NAME']
-
-        $alm_rest = ALM::REST.new('CIELO', 'PJ_000212_BoB_Best_of_Both')
-        $alm_rest.autenticar('automation.spr', 'Automation1234')
-        $criar_run = $alm_rest.criar_run(Hash[
-                          'name' => $test_name,
-                          'test-id' => $test_id,
-                          'testcycl-id' => $test_instance_id,
-                          'cycle-id' => @test_set_id, 
-                          'subtype-id' => 'hp.qc.run.' + $test_type,
-                          'owner' => 'automation.spr',
-                          'status' => 'Not Completed',
-                          'user-01' => 'Real'
-                          ])
-        $run_id = $alm_rest.obter_valor_XML('id', $criar_run)
-  end
+        $rest_ALM = RestCall.new
+        $rest_ALM.conectar_ALM
+        $rest_ALM.obter_dados_ALM($release, $testset, $ciclo, $cenario_name)
+        $rest_ALM.criar_run_ALM
+    end
 end
 
 AfterStep do
+    Utils.new.autoit_mover_mouse
     embed("data:image/png;base64,#{$encoded_img}", 'image/png') unless $encoded_img.nil?
     $encoded_img = nil
 
     if $ALM != 'N'
-        $step_name = @passos[@step_name_index]
-
-        @utils = Utils.new
-        $alm_rest.criar_step(Hash[
-                    'execution-date' => @utils.formata_data_atual('aaaa-mm-dd'),
-                    'description' => @utils.sub_maiusculas($step_name),
-                    'name' => @utils.sub_maiusculas($step_name),
-                    'test-id' => $test_id,
-                    'status' => 'Passed',
-                    'parent-id' => $run_id
-                    ])
-        @step_name_index += 1
-  end
+        $step_name = $passos[$step_name_index]
+	    $rest_ALM.criar_step_ALM($step_name, nil, 'Passed')
+        $step_name_index += 1
+    end
 end
 
 After do |scenario|
     if scenario.failed?
+        # $email_recipient = 'email$email.com' # digite o email que receberá alerta de falha de execução do teste.
         sleep 1
         $encoded_img = $browser.driver.screenshot_as(:base64)
         embed("data:image/png;base64,#{$encoded_img}", 'image/png') unless $encoded_img.nil?
 
         $encoded_img = nil
 
-        $step_name = @passos[@step_name_index]
+        $step_name = $passos[$step_name_index]
         $status_run = 'Failed'
+
         if $ALM != 'N'
-            @utils = Utils.new
-            $alm_rest.criar_step(Hash[
-                        'execution-date' => @utils.formata_data_atual('aaaa-mm-dd'),
-                        'description' => @utils.sub_maiusculas($step_name + ' (Erro: ' + scenario.exception.message + ')'),
-                        'name' => @utils.sub_maiusculas($step_name),
-                        'test-id' => $test_id,
-                        'status' => $status_run,
-                        'parent-id' => $run_id
-                        ])
+            $rest_ALM.criar_step_ALM($step_name, scenario.exception.message, $status_run)
+			# $rest_ALM.enviar_email_ALM($email_recipient)
         end
     else
         $status_run = 'Passed'
@@ -104,16 +69,13 @@ After do |scenario|
 end
 
 at_exit do
+    begin
     if $ALM != 'N'
-        $alm_rest.atualizar_run(Hash[
-            'id' => $run_id,
-            'status' => $status_run
-            ])
-        $alm_rest.enviar_evidencia(Hash[
-            'caminho_arquivo' => "./Reports/Direito #{$direito_evidencia} - Perfil #{$perfil}.html",
-            'run_id' => $run_id,
-            'entidade' => 'runs'
-            ])
-        $alm_rest.desconectar
+      $rest_ALM.atualizar_run_ALM($status_run)
+      $rest_ALM.enviar_evidencia_ALM('runs', 'report')
+      $rest_ALM.desconectar_ALM
     end
+  rescue => e
+    #nothing to do because it will appear on report.
+  end 
 end

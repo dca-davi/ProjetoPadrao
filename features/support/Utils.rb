@@ -50,6 +50,9 @@ class Utils
         when 'controleDeAcaoDeChargeback'
             i = 0
             pagina = "Controle de a\u00E7\u00E3o de chargeback"
+        when 'Trava_Excecao'
+            i = 2
+            pagina = "Exceção"
         end
 
         sleep 2
@@ -623,10 +626,18 @@ class Utils
         Time.now.strftime(format_atual)
     end
 
-    def sub_maiusculas(var)
-        return var.sub(/^./, &:upcase)
+    ########################################################################################################################
+    # AutoIT
+    ########################################################################################################################
+    def autoit_mover_mouse
+        diretorio = File.expand_path File.dirname(__FILE__) + '/'
+        system(diretorio + '/autoit/mover_mouse.exe')
     end
 
+
+    ########################################################################################################################
+    # ALM
+    ########################################################################################################################
     def obtem_dados_ct(nome_coluna_release, nome_coluna_testset, nome_coluna_ciclo, nome_coluna_ct, nome_release, nome_testset, nome_ciclo, nome_ct)
         book = Spreadsheet.open('./features/Get-Instance-Run-ID.xls')
         sheet1 = book.worksheet 0
