@@ -35,6 +35,7 @@ for count in 1...perfis.row_count               # Percorrer todos os perfis da p
         file << "cd C:\\Git\\automation-test-seginfo\n"
         file << "echo Executando Direito #{direito} - Perfil #{perfil}\n"
         file << "cucumber --tag @#{direito} Perfil=#{perfil} --format html --out=\"./Reports/Direito #{direito} - Perfil #{perfil}.html\" TEST_ENV=#{ambiente} CICLO_ALM=\"[Automação] Prevenção e Segurança\" RELEASE_ALM=\"[HML] Homologação Ciclo 1\" TESTSET_ALM=\"#{testset}\" EVIDENCIA_ALM=S \n"
+		file << "cucumber --tag @#{direito} Perfil=#{perfil} --format html --out report.html TEST_ENV=#{ambiente} CICLO_ALM=\"[Automação] Prevenção e Segurança\" RELEASE_ALM=\"[HML] Homologação Ciclo 1\" TESTSET_ALM=\"#{testset}\" EVIDENCIA_ALM=S \n"
         file << "cd #{dirname}\n"
         file.close
 
