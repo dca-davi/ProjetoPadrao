@@ -86,7 +86,7 @@ class RestCall < ALM::REST
 
     def enviar_evidencia_ALM(entidade, nome_teste)
         @alm_rest.enviar_evidencia(Hash[
-										'caminho_arquivo' => "./#{nome_teste}.html",  
+										'caminho_arquivo' => "./Reports/#{nome_teste}.html", 
 										'run_id' => @run_id,
 										'entidade' => entidade
 										]
