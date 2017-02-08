@@ -51,27 +51,29 @@ for count in 1...perfis.row_count               # Percorrer todos os perfis da p
     system 'mkdir', dirname unless File.directory?(dirname)                         # Criar o diretório caso não exista
     fileG = File.open(fileGname, 'w')                                               # Abrir o arquivo criado
     puts fileGname                                                                  # Imprime o nome do arquivo gerado          
+	
+	if !File.exist? nome_arquivo_log
+		# fecha_processos_excel
+		wmi = WIN32OLE.connect("winmgmts://")
+		processos = wmi.ExecQuery("Select * from Win32_Process Where NAME = 'EXCEL.exe'")
+		processos.each do |processo|
+			Process.kill('KILL', processo.ProcessID.to_i)
+		end
+		sleep 2
 
-    # fecha_processos_excel
-    wmi = WIN32OLE.connect("winmgmts://")
-    processos = wmi.ExecQuery("Select * from Win32_Process Where NAME = 'EXCEL.exe'")
-    processos.each do |processo|
-        Process.kill('KILL', processo.ProcessID.to_i)
-    end
-    sleep 2
-
-    #criar log execução
-    excel = WIN32OLE.new('excel.application')    
-    wb = excel.WorkBooks.add
-    ws = wb.WorkSheets.add
-    ws.name = 'Status'
-    ws.Cells(1, 1).value = "NOME_TESTE"
-    ws.Cells(1, 2).value = "STATUS"
-    ws.Cells(1, 3).value = "DATA"
-    ws.Cells(1, 4).value = "HORA"
-    ws.Cells(1, 5).value = "OBSERVAÇÃO"
-    wb.saveas("#{nome_arquivo_log}")
-    wb.close
+		#criar log execução
+		excel = WIN32OLE.new('excel.application')    
+		wb = excel.WorkBooks.add
+		ws = wb.WorkSheets.add
+		ws.name = 'Status'
+		ws.Cells(1, 1).value = "NOME_TESTE"
+		ws.Cells(1, 2).value = "STATUS"
+		ws.Cells(1, 3).value = "DATA"
+		ws.Cells(1, 4).value = "HORA"
+		ws.Cells(1, 5).value = "OBSERVAÇÃO"
+		wb.SaveAs("#{nome_arquivo_log}")
+		wb.close
+	end
     
     fileG << "cd C:\\Git\\automation-test-seginfo\n"
     fileG << "git pull seginfo master\n"
