@@ -177,6 +177,9 @@ class Utils
         when 'Incluir regra de liberação'
             aba = 'INCLUIR'
             i = 1
+        when 'Incluir Cobrança'
+            aba = 'INCLUIR'
+            i = 1
         end
         if $browser.li(text: aba, index: i).attribute_value('class').include? 'ui-state-disabled'
             $encoded_img = $browser.driver.screenshot_as(:base64)
