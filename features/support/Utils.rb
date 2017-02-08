@@ -710,4 +710,37 @@ class Utils
     raise "N\xC3\xA3o foi poss\xC3\xADvel encontrar a Release, Testset ou Ciclo informados. Por gentileza, verifique a planilha de dados ou os par\xC3\xA2metros da chamada." unless encontrado.equal? true
     return dados
   end
+
+    def adicionar_registro_log_execucao(caminho_arquivo, nome_teste, status, data, hora, observacao)
+        fecha_processos_excel
+        excel = WIN32OLE.new('excel.application')
+        excel.visible = true
+        workbook = excel.WorkBooks.open(caminho_arquivo)
+        worksheet = workbook.WorkSheets('Status')
+        linha = 1
+        loop do
+            linha += 1
+            comparacao = worksheet.Cells(linha, 1).value
+            break unless comparacao == nil
+            break unless comparacao == nome_teste
+        end
+        worksheet.Cells(linha, 1).value = nome_teste
+        worksheet.Cells(linha, 2).value = status
+        worksheet.Cells(linha, 3).value = data
+        worksheet.Cells(linha, 4).value = hora
+        worksheet.Cells(linha, 5).value = observacao.message unless observacao.equal? nil #observação -> objeto scenario.exception
+        workbook.save
+        workbook.close
+        fecha_processos_excel
+    end
+
+    def fecha_processos_excel
+        require 'win32ole'
+        wmi = WIN32OLE.connect("winmgmts://")
+        processos = wmi.ExecQuery("Select * from Win32_Process Where NAME = 'EXCEL.exe'")
+        processos.each do |processo|
+            Process.kill('KILL', processo.ProcessID.to_i)
+        end
+        sleep 2
+    end
 end

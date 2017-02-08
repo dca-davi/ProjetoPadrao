@@ -65,6 +65,14 @@ After do |scenario|
     else
         $status_run = 'Passed'
      end
+    $data_teste = Time.now.strftime('%d/%m/%Y')
+    $hora_teste = Time.now.strftime('%H:%M')
+
+    $caminho_log_execucao = ENV['CAMINHO_LOG_EXECUCAO']
+    if $caminho_log_execucao != nil
+        Utils.new.adicionar_registro_log_execucao($caminho_log_execucao, $cenario_name, $status_run, $data_teste, $hora_teste, scenario.exception)
+    end
+
     $browser.close
 end
 
