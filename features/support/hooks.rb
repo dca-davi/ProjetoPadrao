@@ -65,6 +65,8 @@ After do |scenario|
     else
         $status_run = 'Passed'
      end
+    $data_teste = Time.now.strftime('%d/%m/%Y')
+    $hora_teste = Time.now.strftime('%H:%M')
 
     $caminho_log_execucao = ENV['CAMINHO_LOG_EXECUCAO']
     if $caminho_log_execucao != nil

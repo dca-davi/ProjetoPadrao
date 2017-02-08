@@ -27,6 +27,3 @@ require File.dirname(__FILE__) + '/lib/configuration'
 URL = Configuration['url']
 USER = StarAccess['user']
 PASS = StarAccess['pass']
-
-$data_teste = Time.now.strftime('%d/%m/%Y')
-$hora_teste = Time.now.strftime('%H:%M')

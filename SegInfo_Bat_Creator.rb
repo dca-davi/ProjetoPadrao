@@ -27,8 +27,8 @@ for count in 1...perfis.row_count               # Percorrer todos os perfis da p
 
         Dir.mkdir dirname unless File.directory?(dirname)                               # Criar o diretório caso não exista
         file = File.open(filename, 'w')                                                 # Abrir o arquivo criado
-        # report_name = "./Reports/Direito #{direito} - Perfil #{perfil}.html"          # Nome do arquivo do report
-        report_name = "report.html"                                                     # Nome do arquivo do report
+        report_name = "./Reports/Direito #{direito} - Perfil #{perfil}.html"          # Nome do arquivo do report
+        #report_name = "report.html"                                                     # Nome do arquivo do report
         #puts filename                                                                  # Imprime o nome do arquivo gerado
 
         files << filename
