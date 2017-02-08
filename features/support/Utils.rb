@@ -36,7 +36,9 @@ class Utils
         when 'Precificação_prazoFlexivel'
             i = 1
             pagina = 'Precificação'
-
+        when 'Precificação_Trava'
+            i = 2
+            pagina = 'Precificação'
         when 'Exceção_antecipaçãoVendas'
             i = 0
             pagina = "Exce\u00E7\u00E3o"
@@ -53,6 +55,9 @@ class Utils
         when 'Trava_Excecao'
             i = 2
             pagina = "Exceção"
+        when 'Goldlist_MDR'
+            i = 1
+            pagina = 'Goldlist'
         end
 
         sleep 2
@@ -257,7 +262,7 @@ class Utils
         when 'Editar - PRO ANTECIPACAO DE VENDAS'
             acao = 'tabProarv:frmCostProarvParam:table_costs_proarv_param:0:buttonEditId'
         when 'Remover'
-            acao = 'ico[_]?cancel|btn_cancel|.*frmEligibilitySearch:dTEligibilityExceptions.*'
+            acao = 'ico[_]?cancel|btn_cancel|.*frmEligibilitySearch:dTEligibilityExceptions.*|.*frmGoldlistSearch:dTOfferRestrictions:0.*'
         when 'cancelar'
             acao = 'formConsultationSalesAnticipationOperations:latestTransactionsTable:2:btn_cancel'
         when 'Aprovar'
@@ -369,7 +374,7 @@ class Utils
         when "subt\u00F3pico de manuten\u00E7\u00E3o"
             campo = ':subTopicMaintenanceId_input'
         when 'banco'
-            campo = 'input_ClearingConsignmentsControlBeanbank_input|tab_bebit_balance:formInclude:input_IncludeCuttingDebitBalanceSendBeanmodelvalueDomicileBank_input|tab_deposits_debits:formReport:input_OperationsTreatRejectedManualBeanmodelvalueDomicileBank_input'
+            campo = 'input_ClearingConsignmentsControlBeanbank_input|tab_bebit_balance:formInclude:input_IncludeCuttingDebitBalanceSendBeanmodelvalueDomicileBank_input|tab_deposits_debits:formReport:input_OperationsTreatRejectedManualBeanmodelvalueDomicileBank_input|frmSearchBillingPrice:autoComplete_bancko_preci_acc_input'
         when 'protocolo'
             campo = 'input_ClearingSefazDemandListBeanfilterprotocolNumber'
         when 'banco - acumulo diario'
