@@ -15,6 +15,9 @@ require 'rest-client'
 require 'base64'
 require 'nokogiri'
 
+require 'win32ole'
+require 'etc'
+
 require './features/support/Utils'
 require './features/support/ALMRest'                   # ALM RESTApi libs
 require './features/support/RestCall'                  # ALM RESTApi libs

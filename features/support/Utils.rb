@@ -728,18 +728,21 @@ class Utils
         worksheet.Cells(linha, 2).value = status
         worksheet.Cells(linha, 3).value = data
         worksheet.Cells(linha, 4).value = hora
-        worksheet.Cells(linha, 5).value = observacao.message unless observacao.equal? nil #observação -> objeto scenario.exception
+        if observacao.equal? nil
+            worksheet.Cells(linha, 5).value = ' '
+        else
+            worksheet.Cells(linha, 5).value = observacao.message
+        end
         workbook.save
         workbook.close
         fecha_processos_excel
     end
 
     def fecha_processos_excel
-        require 'win32ole'
         wmi = WIN32OLE.connect("winmgmts://")
         processos = wmi.ExecQuery("Select * from Win32_Process Where NAME = 'EXCEL.exe'")
         processos.each do |processo|
-            Process.kill('KILL', processo.ProcessID.to_i)
+            Process.kill('KILL', processo.ProcessID.to_i) if processo.execMethod_('GetOwner').User.downcase == Etc.getlogin.downcase
         end
         sleep 2
     end
