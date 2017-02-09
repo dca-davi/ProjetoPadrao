@@ -70,7 +70,12 @@ After do |scenario|
 
     $caminho_log_execucao = ENV['CAMINHO_LOG_EXECUCAO']
     if $caminho_log_execucao != nil
-        Utils.new.adicionar_registro_log_execucao($caminho_log_execucao, $cenario_name, $status_run, $data_teste, $hora_teste, scenario.exception)
+		if ENV['SOBRESCREVE_REGISTRO_LOG'].downcase == 's'
+			$sobrescreve_registro_log = true
+		else
+			$sobrescreve_registro_log = false
+		end
+        Utils.new.adicionar_registro_log_execucao($caminho_log_execucao, $cenario_name, $status_run, $data_teste, $hora_teste, scenario.exception, $sobrescreve_registro_log)
     end
 
     $browser.close

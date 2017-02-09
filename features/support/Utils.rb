@@ -711,7 +711,7 @@ class Utils
     return dados
   end
 
-    def adicionar_registro_log_execucao(caminho_arquivo, nome_teste, status, data, hora, observacao)
+    def adicionar_registro_log_execucao(caminho_arquivo, nome_teste, status, data, hora, observacao, sobrescrever_registro=false)
         fecha_processos_excel
         excel = WIN32OLE.new('excel.application')
         excel.visible = true
@@ -721,8 +721,8 @@ class Utils
         loop do
             linha += 1
             comparacao = worksheet.Cells(linha, 1).value
-            break unless comparacao == nil
-            break unless comparacao == nome_teste
+			break if comparacao == nil
+			break if comparacao == nome_teste if sobrescrever_registro
         end
         worksheet.Cells(linha, 1).value = nome_teste
         worksheet.Cells(linha, 2).value = status
