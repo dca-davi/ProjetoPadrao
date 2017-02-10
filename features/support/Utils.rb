@@ -257,7 +257,7 @@ class Utils
         when 'Tratar'
             acao = 'btnProcess'
         when 'Visualizar'
-            acao = 'icon[_]?view|btn_detail|button_RSR|button_Jvn|link_SMe|j_idt307:0:button_rnw|0:btn_detail|label_lupaSelected'
+            acao = 'ico[n]?[_]?view|btn_detail|button_RSR|button_Jvn|link_SMe|j_idt307:0:button_rnw|0:btn_detail|label_lupaSelected'
         when 'Editar'
             acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi|tabRejectionCapture:resultTableTreat:0:j_idt422|buttonEditId|link_h4Q|button_edit'
         when 'Editar Dados de contato'
@@ -300,11 +300,12 @@ class Utils
             acao = 'button_ZeM'
         when 'Visualizar Maquinas do cliente'
             acao = '3:button_ACW'
+        when 'Visualizar Contrato'
+            acao = 'tab_tabGeral:dtbServiceContract:0:btn_view_service_contract'
         when 'Remover Desconto vigente/programado'
             acao = 'icoDelete'
             i = 1
         when 'Salvar'
-
             acao = 'tabOperationAnticipation:tabScheduledAnticipation:btn_save'
         when 'Continuar'
             acao = 'j_idt248_next'

@@ -5,7 +5,7 @@ Funcionalidade: Validar os direitos na tela Cliente > Cadastro > Informacoes do 
 
 Contexto:
 Dado que eu faca login
-E informe o EC "1018242187"
+E informe o EC "2000096586"
 
 @CLIENTES_CADASTRO_INFO_GERAL_VER
 @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA @CADASTRO_ANALISTA_CIELO @CADASTRO_ANALISTA_CIELO_APROVADOR
@@ -200,3 +200,11 @@ Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFOCLIENTE_CONTRATOS_VER"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
 Quando clicar na aba "Contratos"
 Entao podera/nao podera acessar a aba "Contratos"
+
+@CLIENTES_CADASTRO_INFOCLIENTE_CONTRATOS_REMOVER @R4
+Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFOCLIENTE_CONTRATOS_REMOVER
+Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFOCLIENTE_CONTRATOS_REMOVER"
+E que tenha/nao tenha acesso na tela "Informações do cliente"
+Quando clicar na aba "Contratos"
+E clicar na acao "Visualizar Contrato"
+Entao o botao "Excluir" estara habilitado/desabilitado
