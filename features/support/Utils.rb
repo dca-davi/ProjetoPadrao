@@ -712,7 +712,7 @@ class Utils
     return dados
   end
 
-    def adicionar_registro_log_execucao(caminho_arquivo, nome_teste, status, data, hora, observacao)
+    def adicionar_registro_log_execucao(caminho_arquivo, nome_teste, status, data, hora, observacao, sobrescrever_registro=false)
         fecha_processos_excel
         excel = WIN32OLE.new('excel.application')
         excel.visible = true
@@ -722,25 +722,28 @@ class Utils
         loop do
             linha += 1
             comparacao = worksheet.Cells(linha, 1).value
-            break unless comparacao == nil
-            break unless comparacao == nome_teste
+			break if comparacao == nil
+			break if comparacao == nome_teste if sobrescrever_registro
         end
         worksheet.Cells(linha, 1).value = nome_teste
         worksheet.Cells(linha, 2).value = status
         worksheet.Cells(linha, 3).value = data
         worksheet.Cells(linha, 4).value = hora
-        worksheet.Cells(linha, 5).value = observacao.message unless observacao.equal? nil #observação -> objeto scenario.exception
+        if observacao.equal? nil
+            worksheet.Cells(linha, 5).value = ' '
+        else
+            worksheet.Cells(linha, 5).value = observacao.message
+        end
         workbook.save
         workbook.close
         fecha_processos_excel
     end
 
     def fecha_processos_excel
-        require 'win32ole'
         wmi = WIN32OLE.connect("winmgmts://")
         processos = wmi.ExecQuery("Select * from Win32_Process Where NAME = 'EXCEL.exe'")
         processos.each do |processo|
-            Process.kill('KILL', processo.ProcessID.to_i)
+            Process.kill('KILL', processo.ProcessID.to_i) if processo.execMethod_('GetOwner').User.downcase == Etc.getlogin.downcase
         end
         sleep 2
     end
