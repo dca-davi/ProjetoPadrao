@@ -17,6 +17,7 @@ Cadastro_Analista_Cielo_Aprovador:
 Central_Help_Desk_Analista:
   user: star-hml-HD
   pass: C!elo2016
+  
 
 Logistica_de_Atendimento_a_Clientes_Analista:
   user: star-hml-logistica
@@ -45,6 +46,10 @@ Chargeback_Analista_Intercambio:
 Central_de_Relacionamento_Analista:
   user: star-hml-perfil30
   pass: C!elo2016
+
+Central_de_Relacionamento_Coordenador:
+  user: star-hml-perfil31
+  pass: C!elo2017
 
 Tesouraria_Analista:
   user: star-hml-perfil54

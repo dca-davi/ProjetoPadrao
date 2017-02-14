@@ -64,6 +64,9 @@ CRM_Coordenador:
 Central_de_Relacionamento_Analista:
   user: STAR_A_INT_PERF_AN
   pass: C!elo2016
+Central_de_Relacionamento_Coordenador:
+  user: star-hml-perfil31
+  pass: C!elo2017
 Servicos_Risco_Prevencao_Seguranca_Analista:
   user: STAR_A_SER_SEGU_AN
   pass: C!elo2016
