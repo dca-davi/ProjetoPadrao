@@ -97,8 +97,12 @@ Quando(/^clicar na aba "([^"]*)"$/) do |aba|
     next if @pass_test == true
     utils = Utils.new
     statusAba = utils.acessar_aba(aba)
+    
+    # puts "Acesso a aba: #{statusAba} + Tem direito? #{@tem_direito}"
     if !statusAba && @tem_direito
         raise('Usuario nao pode acessar aba no qual tem direito')
+    # elsif statusAba && !@tem_direito
+    #     raise('Usuario pode acessar aba no qual não tem direito')        
     elsif !statusAba && !@tem_direito
         @pass_test = true
     end

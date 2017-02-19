@@ -181,11 +181,18 @@ class Utils
             aba = 'INCLUIR'
             i = 1
         end
-        if $browser.li(text: aba, index: i).attribute_value('class').include? 'ui-state-disabled'
+        
+        # puts "Aba existe? #{$browser.li(text: aba, index: i).exist?}"
+        if !$browser.li(text: aba, index: i).exist?
             $encoded_img = $browser.driver.screenshot_as(:base64)
             return false
+
+        elsif $browser.li(text: aba, index: i).attribute_value('class').include? 'ui-state-disabled'
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+            return false    
         else
-            Watir::Wait.until { $browser.li(text: aba, index: i).exist? }
+            
+            # Watir::Wait.until { $browser.li(text: aba, index: i).exist? }
             if $browser.li(text: aba, index: i).present?
                 $browser.li(text: aba, index: i).click
                 sleep 6
@@ -299,7 +306,7 @@ class Utils
         when 'Visualizar Planos do cliente'
             acao = 'button_ZeM'
         when 'Visualizar Maquinas do cliente'
-            acao = '3:button_ACW'
+            acao = '0:button_ACW'
         when 'Visualizar Contrato'
             acao = 'tab_tabGeral:dtbServiceContract:0:btn_view_service_contract'
         when 'Remover Desconto vigente/programado'
@@ -498,8 +505,10 @@ class Utils
         else
             raise 'Campo não encontrado'
         end
-
-        $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
+        
+        # $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
+        Watir::Wait.until { $browser.text_field(id: /#{campo}$/, index: 0).exist? }
+        $browser.text_field(id: /#{campo}$/, index: 0).set valor
         aguardar_loading
         $browser.send_keys :tab
         aguardar_loading

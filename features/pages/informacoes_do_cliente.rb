@@ -23,7 +23,15 @@ class Info_do_cliente
                 result = false
             end
 
-        when "situa\u00E7\u00E3o do cliente", 'remuneracao', "antecipa\u00E7\u00E3o programada", 'reserva financeira'
+        when "remuneracao", "antecipa\u00E7\u00E3o programada", 'reserva financeira'
+            if $browser.button(text: botao, index: 1).attribute_value('aria-disabled') == 'false'
+                $browser.button(text: botao, index: 1).click
+                sleep 3
+            else
+                result = false
+            end
+
+        when "situa\u00E7\u00E3o do cliente"
             if $browser.button(text: botao, index: 2).attribute_value('aria-disabled') == 'false'
                 $browser.button(text: botao, index: 2).click
                 sleep 3
@@ -153,9 +161,9 @@ class Info_do_cliente
     end
 
     def verificar_campo_codigoAmex
-        Watir::Wait.until { $browser.input(id: /amexId/).exists? }
+        # Watir::Wait.until { $browser.input(id: /amexID/).exists? }
         sleep 1
-        statusCampo = $browser.input(id: /amexId/).attribute_value('aria-disabled')
+        statusCampo = $browser.input(id: /amexID/).attribute_value('aria-disabled') if $browser.input(id: /amexID/).exists? rescue 'false'
         $encoded_img = $browser.driver.screenshot_as(:base64)
         if statusCampo == 'true'
             return false
