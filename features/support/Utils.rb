@@ -181,7 +181,7 @@ class Utils
             aba = 'INCLUIR'
             i = 1
         end
-        
+
         # puts "Aba existe? #{$browser.li(text: aba, index: i).exist?}"
         if !$browser.li(text: aba, index: i).exist?
             $encoded_img = $browser.driver.screenshot_as(:base64)
@@ -189,9 +189,9 @@ class Utils
 
         elsif $browser.li(text: aba, index: i).attribute_value('class').include? 'ui-state-disabled'
             $encoded_img = $browser.driver.screenshot_as(:base64)
-            return false    
+            return false
         else
-            
+
             # Watir::Wait.until { $browser.li(text: aba, index: i).exist? }
             if $browser.li(text: aba, index: i).present?
                 $browser.li(text: aba, index: i).click
@@ -264,7 +264,7 @@ class Utils
         when 'Tratar'
             acao = 'btnProcess'
         when 'Visualizar'
-            acao = 'ico[n]?[_]?view|btn_detail|button_RSR|button_Jvn|link_SMe|j_idt307:0:button_rnw|0:btn_detail|label_lupaSelected'
+            acao = 'ico[n]?[_]?view|btn_detail|button_RSR|button_Jvn|link_SMe|0:button_rnw|0:btn_detail|label_lupaSelected'
         when 'Editar'
             acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi|tabRejectionCapture:resultTableTreat:0:j_idt422|buttonEditId|link_h4Q|button_edit'
         when 'Editar Dados de contato'
@@ -505,7 +505,7 @@ class Utils
         else
             raise 'Campo não encontrado'
         end
-        
+
         # $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
         Watir::Wait.until { $browser.text_field(id: /#{campo}$/, index: 0).exist? }
         $browser.text_field(id: /#{campo}$/, index: 0).set valor
