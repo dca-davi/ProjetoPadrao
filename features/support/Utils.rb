@@ -318,11 +318,10 @@ class Utils
             acao = 'j_idt248_next'
         when 'reprocessamento'
             acao = 'button_Ipb'
-            acao = 'tabOperationAnticipation:tabScheduledAnticipation:btn_save'
         when 'Editar endereço'
             acao = 'tab_tabGeral:frmAddress:merchantAddressID:0:btn_info_address_edit'
         end
-
+        
         sleep 3
         aguardar_loading
         if $browser.a(id: /#{acao}$/).exist?
