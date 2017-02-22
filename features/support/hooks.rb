@@ -72,7 +72,7 @@ at_exit do
     begin
     if $ALM != 'N'
       $rest_ALM.atualizar_run_ALM($status_run)
-      $rest_ALM.enviar_evidencia_ALM('runs', 'report')
+      $rest_ALM.enviar_evidencia_ALM('runs', "Direito #{$direito_evidencia} - Perfil #{$perfil}")
       $rest_ALM.desconectar_ALM
     end
   rescue => e
