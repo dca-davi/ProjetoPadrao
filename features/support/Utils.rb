@@ -321,7 +321,7 @@ class Utils
         when 'Editar endereço'
             acao = 'tab_tabGeral:frmAddress:merchantAddressID:0:btn_info_address_edit'
         end
-        
+
         sleep 3
         aguardar_loading
         if $browser.a(id: /#{acao}$/).exist?
