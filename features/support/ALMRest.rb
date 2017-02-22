@@ -45,6 +45,28 @@ module ALM
 			return 'Basic '+crypt.to_s
 		end
 
+		def checar_status_instancia_teste(hash)
+			# conteudo = @arquivo.ler_arquivo('../XML/instance_test.xml')
+            conteudo = @arquivo.ler_arquivo("#{@xml_path}/instance_test.xml")
+            xml_alterado = manipula_XML(conteudo, hash, 'instance_test')
+			return RestClient::Request.execute(
+												:method => :get, 
+												:url => 'https://almcielo.saas.hp.com/qcbin/rest/domains/'+@dominio+'/projects/'+@projeto+'/test-instances/'+hash['id'].to_s, 
+												:payload => xml_alterado.to_s, 
+												:headers => { 
+															:'Content-Type' => 'application/xml', 
+															:'Accept' => 'application/xml'
+														}, 
+												:cookies => {
+															:LWSSO_COOKIE_KEY => @cookiesHash['cookie_key'], 
+															:QCSession => @cookiesHash['qcsession']
+														},
+												:proxy => @valor_proxy
+											)
+			rescue RestClient::ExceptionWithResponse => err
+			raise err.response
+		end
+
         def criar_run(hash)
             # conteudo = @arquivo.ler_arquivo('../XML/run.xml')
             conteudo = @arquivo.ler_arquivo("#{@xml_path}/run.xml")
@@ -162,7 +184,7 @@ module ALM
 			@conteudo_xml = Nokogiri::XML(conteudo).root
 			hash.each do |chave, valor|
 			  case tipo
-			    when 'run'
+			    when 'run', 'instance_test'
 				  conteudo_novo_xml = @conteudo_xml.at_xpath("//Entity/Fields/Field[@Name='#{chave}']/Value")
 			    when 'email'
 				  conteudo_novo_xml = @conteudo_xml.at_xpath("//mail/#{chave}")

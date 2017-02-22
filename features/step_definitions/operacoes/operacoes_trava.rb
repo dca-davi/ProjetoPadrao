@@ -2,7 +2,11 @@ Entao(/^o sistema exibira\/nao exibira a tela "([^"]*)"$/) do |tela|
     next if @pass_test == true
     @trava_prazo = Trava_Prazo_Vencido.new
     status_tela = @trava_prazo.validar_pagina(tela)    
-    raise("A tela não é " + tela) unless status_tela 
+    if !status_tela && @tem_direito
+        raise('Usuario nao tem acesso a tela ' + tela + ' no qual tem direito')
+    elsif status_tela && !@tem_direito
+        raise('Usuario tem acesso a tela ' + tela + ' no qual nao tem direito')
+    end 
 end
 
 Entao(/^o botao "([^"]*)" devera estar habilitado\/desabilitado$/) do |botao|

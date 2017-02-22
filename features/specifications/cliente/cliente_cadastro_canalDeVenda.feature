@@ -69,7 +69,6 @@ Quando clicar na aba "CANAL DE VENDA"
 E clicar na aba "Incluir"
 Entao podera/nao podera acessar a aba "Incluir"
 
-
 @CLIENTES_CADASTRO_INFO_CANALDEVENDA_LISTAR_MAQUINA_INCLUIR @R4
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_CANALDEVENDA_LISTAR_MAQUINA_INCLUIR
 E informe o EC "1014766947"
