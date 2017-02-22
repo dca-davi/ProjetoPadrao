@@ -11,11 +11,24 @@ Before do |scenario|
             browser = Watir::Browser.new :ie
     end
 
+    status_teste = false
+
     $release = ENV['RELEASE_ALM']
     $testset = ENV['TESTSET_ALM']
     $perfil = ENV['PERFIL']
     $ciclo = ENV['CICLO_ALM']
     $ALM = ENV['EVIDENCIA_ALM']
+    $exec_status_desejado = ENV['EXECUTAR_STATUS']
+
+    if !$exec_status_desejado.to_s.empty? 
+        tipo_status = ['Passed', 'Blocked', 'No Run', 'Failed', 'N/A', 'Not Completed', 'Cancelado', 'Prorrogado']
+        tipo_status.each do |valor_status|
+            if valor_status == $exec_status_desejado
+                status_teste = true
+            end
+        end
+        raise 'Informe um status ALM [Parâmetro: EXECUTAR_STATUS] correto.' if status_teste == false
+    end
 
     $browser = browser
 
@@ -29,7 +42,10 @@ Before do |scenario|
     if $ALM != 'N'
         $rest_ALM = RestCall.new
         $rest_ALM.conectar_ALM
-        $rest_ALM.obter_dados_ALM($release, $testset, $ciclo, $cenario_name)
+        $rest_ALM.obter_dados_ALM($release, $testset, $ciclo, $cenario_name) 
+        if !$exec_status_desejado.to_s.empty?       
+            skip_this_scenario unless $rest_ALM.checar_status_ALM == $exec_status_desejado
+        end
         $rest_ALM.criar_run_ALM
     end
 end
@@ -65,11 +81,24 @@ After do |scenario|
     else
         $status_run = 'Passed'
      end
+    $data_teste = Time.now.strftime('%d/%m/%Y')
+    $hora_teste = Time.now.strftime('%H:%M')
+
+    $caminho_log_execucao = ENV['CAMINHO_LOG_EXECUCAO']
+    if $caminho_log_execucao != nil
+		if ENV['SOBRESCREVE_REGISTRO_LOG'].downcase == 's'
+			$sobrescreve_registro_log = true
+		else
+			$sobrescreve_registro_log = false
+		end
+        Utils.new.adicionar_registro_log_execucao($caminho_log_execucao, $cenario_name, $status_run, $data_teste, $hora_teste, scenario.exception, $sobrescreve_registro_log)
+    end
+
     $browser.close
 end
 
 at_exit do
-    begin
+  begin
     if $ALM != 'N'
       $rest_ALM.atualizar_run_ALM($status_run)
       $rest_ALM.enviar_evidencia_ALM('runs', "Direito #{$direito_evidencia} - Perfil #{$perfil}")

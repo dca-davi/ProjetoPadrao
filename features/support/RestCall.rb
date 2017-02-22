@@ -27,6 +27,14 @@ class RestCall < ALM::REST
          @alm_rest.desconectar
     end
 
+    def checar_status_ALM
+        @checar_status = @alm_rest.checar_status_instancia_teste(Hash[
+                                                                    'id' => @test_instance_id
+                                                                    ]
+                                                                )
+        return @alm_rest.obter_valor_XML('status', @checar_status)
+    end
+
     def criar_run_ALM
         @criar_run = @alm_rest.criar_run(Hash[
 											'name' => @test_name,
@@ -86,7 +94,7 @@ class RestCall < ALM::REST
 
     def enviar_evidencia_ALM(entidade, nome_teste)
         @alm_rest.enviar_evidencia(Hash[
-										'caminho_arquivo' => "./Reports/#{nome_teste}.html",  
+										'caminho_arquivo' => "./Reports/#{nome_teste}.html", 
 										'run_id' => @run_id,
 										'entidade' => entidade
 										]

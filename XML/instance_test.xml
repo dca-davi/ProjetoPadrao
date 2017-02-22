@@ -1,0 +1,7 @@
+<Entity Type="test-instance">
+	<Fields>
+		<Field Name="id">
+			<Value></Value>
+		</Field>
+	</Fields>
+</Entity>

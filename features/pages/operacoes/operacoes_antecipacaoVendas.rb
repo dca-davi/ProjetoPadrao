@@ -58,6 +58,10 @@ class Operacoes_antecipacaoVendas
                 $browser.div(id: 'formConsultationSalesAnticipationOperations:cmb_status_label').click
                 sleep 1
                 result = true
+            elsif $browser.div(id: 'tbView:tabBilling_exemption_id:cmbStatusEnumBillingExemptionId').exist?
+                $browser.div(id: 'tbView:tabBilling_exemption_id:cmbStatusEnumBillingExemptionId').click
+                sleep 1
+                result = true
             else
                 result = false
             end

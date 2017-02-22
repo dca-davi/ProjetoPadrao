@@ -36,7 +36,9 @@ class Utils
         when 'Precificação_prazoFlexivel'
             i = 1
             pagina = 'Precificação'
-
+        when 'Precificação_Trava'
+            i = 2
+            pagina = 'Precificação'
         when 'Exceção_antecipaçãoVendas'
             i = 0
             pagina = "Exce\u00E7\u00E3o"
@@ -53,6 +55,9 @@ class Utils
         when 'Trava_Excecao'
             i = 2
             pagina = "Exceção"
+        when 'Goldlist_MDR'
+            i = 1
+            pagina = 'Goldlist'
         end
 
         sleep 2
@@ -172,12 +177,22 @@ class Utils
         when 'Incluir regra de liberação'
             aba = 'INCLUIR'
             i = 1
+        when 'Incluir Cobrança'
+            aba = 'INCLUIR'
+            i = 1
         end
-        if $browser.li(text: aba, index: i).attribute_value('class').include? 'ui-state-disabled'
+
+        # puts "Aba existe? #{$browser.li(text: aba, index: i).exist?}"
+        if !$browser.li(text: aba, index: i).exist?
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+            return false
+
+        elsif $browser.li(text: aba, index: i).attribute_value('class').include? 'ui-state-disabled'
             $encoded_img = $browser.driver.screenshot_as(:base64)
             return false
         else
-            Watir::Wait.until { $browser.li(text: aba, index: i).exist? }
+
+            # Watir::Wait.until { $browser.li(text: aba, index: i).exist? }
             if $browser.li(text: aba, index: i).present?
                 $browser.li(text: aba, index: i).click
                 sleep 6
@@ -249,7 +264,7 @@ class Utils
         when 'Tratar'
             acao = 'btnProcess'
         when 'Visualizar'
-            acao = 'icon[_]?view|btn_detail|button_RSR|button_Jvn|link_SMe|j_idt307:0:button_rnw|0:btn_detail|label_lupaSelected'
+            acao = 'ico[n]?[_]?view|btn_detail|button_RSR|button_Jvn|link_SMe|j_idt307:0:button_rnw|0:btn_detail|label_lupaSelected'
         when 'Editar'
             acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi|tabRejectionCapture:resultTableTreat:0:j_idt422|buttonEditId|link_h4Q|button_edit'
         when 'Editar Dados de contato'
@@ -257,7 +272,7 @@ class Utils
         when 'Editar - PRO ANTECIPACAO DE VENDAS'
             acao = 'tabProarv:frmCostProarvParam:table_costs_proarv_param:0:buttonEditId'
         when 'Remover'
-            acao = 'ico[_]?cancel|btn_cancel|.*frmEligibilitySearch:dTEligibilityExceptions.*'
+            acao = 'ico[_]?cancel|btn_cancel|.*frmEligibilitySearch:dTEligibilityExceptions.*|.*frmGoldlistSearch:dTOfferRestrictions:0.*'
         when 'cancelar'
             acao = 'formConsultationSalesAnticipationOperations:latestTransactionsTable:2:btn_cancel'
         when 'Aprovar'
@@ -291,12 +306,13 @@ class Utils
         when 'Visualizar Planos do cliente'
             acao = 'button_ZeM'
         when 'Visualizar Maquinas do cliente'
-            acao = '3:button_ACW'
+            acao = '0:button_ACW'
+        when 'Visualizar Contrato'
+            acao = 'tab_tabGeral:dtbServiceContract:0:btn_view_service_contract'
         when 'Remover Desconto vigente/programado'
             acao = 'icoDelete'
             i = 1
         when 'Salvar'
-
             acao = 'tabOperationAnticipation:tabScheduledAnticipation:btn_save'
         when 'Continuar'
             acao = 'j_idt248_next'
@@ -311,20 +327,16 @@ class Utils
         aguardar_loading
         if $browser.a(id: /#{acao}$/).exist?
             sleep 2
-            $browser.a(id: /#{acao}$/).click
-            result = true
+            result = click_trata_exception?($browser.a(id: /#{acao}$/))
         elsif $browser.button(id: /#{acao}$/).exist?
             sleep 2
-            $browser.button(id: /#{acao}$/).click
-            result = true
+            result = click_trata_exception?($browser.button(id: /#{acao}$/))
         elsif $browser.img(id: /#{acao}$/).exist?
             sleep 2
-            $browser.img(id: /#{acao}$/).click
-            result = true
+            result = click_trata_exception?($browser.img(id: /#{acao}$/))
         elsif $browser.span(class: /#{acao}/, index: i).parent.exist?
             sleep 2
-            $browser.span(class: /#{acao}/, index: i).parent.click
-            result = true
+            result = click_trata_exception?($browser.span(class: /#{acao}/, index: i).parent)
         else
             result = false
         end
@@ -335,6 +347,16 @@ class Utils
 
         result
       end
+
+    def click_trata_exception?(elemento)
+      begin
+        elemento.click
+        result = true
+      rescue  Watir::Exception::ObjectDisabledException
+        result = false
+      end
+      result
+    end
 
     def validar_frame(texto)
         sleep 6
@@ -369,7 +391,7 @@ class Utils
         when "subt\u00F3pico de manuten\u00E7\u00E3o"
             campo = ':subTopicMaintenanceId_input'
         when 'banco'
-            campo = 'input_ClearingConsignmentsControlBeanbank_input|tab_bebit_balance:formInclude:input_IncludeCuttingDebitBalanceSendBeanmodelvalueDomicileBank_input|tab_deposits_debits:formReport:input_OperationsTreatRejectedManualBeanmodelvalueDomicileBank_input'
+            campo = 'input_ClearingConsignmentsControlBeanbank_input|tab_bebit_balance:formInclude:input_IncludeCuttingDebitBalanceSendBeanmodelvalueDomicileBank_input|tab_deposits_debits:formReport:input_OperationsTreatRejectedManualBeanmodelvalueDomicileBank_input|frmSearchBillingPrice:autoComplete_bancko_preci_acc_input'
         when 'protocolo'
             campo = 'input_ClearingSefazDemandListBeanfilterprotocolNumber'
         when 'banco - acumulo diario'
@@ -490,7 +512,9 @@ class Utils
             raise 'Campo não encontrado'
         end
 
-        $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
+        # $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
+        Watir::Wait.until { $browser.text_field(id: /#{campo}$/, index: 0).exist? }
+        $browser.text_field(id: /#{campo}$/, index: 0).set valor
         aguardar_loading
         $browser.send_keys :tab
         aguardar_loading
@@ -702,4 +726,40 @@ class Utils
     raise "N\xC3\xA3o foi poss\xC3\xADvel encontrar a Release, Testset ou Ciclo informados. Por gentileza, verifique a planilha de dados ou os par\xC3\xA2metros da chamada." unless encontrado.equal? true
     return dados
   end
+
+    def adicionar_registro_log_execucao(caminho_arquivo, nome_teste, status, data, hora, observacao, sobrescrever_registro=false)
+        fecha_processos_excel
+        excel = WIN32OLE.new('excel.application')
+        excel.visible = true
+        workbook = excel.WorkBooks.open(caminho_arquivo)
+        worksheet = workbook.WorkSheets('Status')
+        linha = 1
+        loop do
+            linha += 1
+            comparacao = worksheet.Cells(linha, 1).value
+			break if comparacao == nil
+			break if comparacao == nome_teste if sobrescrever_registro
+        end
+        worksheet.Cells(linha, 1).value = nome_teste
+        worksheet.Cells(linha, 2).value = status
+        worksheet.Cells(linha, 3).value = data
+        worksheet.Cells(linha, 4).value = hora
+        if observacao.equal? nil
+            worksheet.Cells(linha, 5).value = ' '
+        else
+            worksheet.Cells(linha, 5).value = observacao.message
+        end
+        workbook.save
+        workbook.close
+        fecha_processos_excel
+    end
+
+    def fecha_processos_excel
+        wmi = WIN32OLE.connect("winmgmts://")
+        processos = wmi.ExecQuery("Select * from Win32_Process Where NAME = 'EXCEL.exe'")
+        processos.each do |processo|
+            Process.kill('KILL', processo.ProcessID.to_i) if processo.execMethod_('GetOwner').User.downcase == Etc.getlogin.downcase
+        end
+        sleep 2
+    end
 end

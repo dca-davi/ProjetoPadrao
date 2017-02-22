@@ -387,3 +387,9 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAOVENDAS_ANTECPROGRAMADASCADASTRA
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ANTECPROGRAMADASCADASTRADAS_EXPORTAR"
 E que tenha/nao tenha acesso na tela "Antecipação programadas cadastradas"
 Entao o botao "Exportar" estara habilitado/desabilitado
+
+@OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_EXPORTAR @R4
+Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_EXPORTAR
+Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_EXPORTAR"
+E que tenha/nao tenha acesso na tela "Operações realizadas"
+Entao o botao "Exportar" estara habilitado/desabilitado
