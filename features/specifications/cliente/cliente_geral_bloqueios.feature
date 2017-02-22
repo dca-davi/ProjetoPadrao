@@ -5,7 +5,7 @@ Funcionalidade: Validar os direitos na tela Cliente > Cadastro > Informacoes do 
 
 Contexto:
 Dado que eu faca login
-E informe o EC "1018242187"
+E informe o EC "2000060131"
 
 @CLIENTES_GERAL_BLOQUEIOS_MOTIVO_ANALISEDECOBRANCA_EDITAR
 @PLANEJA_BACKOFFICE_COBRAN_FATURA_ANALISTA
