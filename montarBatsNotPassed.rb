@@ -2,7 +2,7 @@
 require 'find'
 ######excel---####require 'axlsx'
 # modificar pastas de reports e bats
-pathReport ="C:/Users/rafael.carvalho/git_SegInfo/automation-test-seginfo/Reports/"
+pathReport ="C:/Git/automation-test-seginfo/Reports/"
 
 pathBat = "C:/Interface/"
 
@@ -25,26 +25,26 @@ begin
       next unless File.file?(path)
       # files << path
       str = path
-      strPerfil = str[str.index(' - Perfil ') + 10,  str.index('.html') - (str.index(' - ') + 10)] 
+      strPerfil = str[str.index(' - Perfil ') + 10,  str.index('.html') - (str.index(' - ') + 10)]
       strDireito = str[str.index('Direito ')+8, str.index(' - ') - (str.index('Direito ')+8) ]
       strColunas = strPerfil + "," + strDireito
       strExecutar = 'call "' + pathBat + strPerfil + '/Perfil ' + strPerfil + ' - Direito ' + strDireito + '.bat"'
-      puts 'validando...'
-        
-        if strPerfilAnterior != strPerfil
-            if strPerfilAnterior == ""
-                strPerfilAnterior = strPerfil
-            else   
-                open( pathBat + strPerfilAnterior + '/!rodar_faileds.bat', 'w') do |t|
-                  t.puts files
-                  gerados << pathBat + strPerfilAnterior + '/!rodar_faileds.bat'
-                end
-                files = []
-                strPerfilAnterior = strPerfil
-            end
-        end
-        
-        puts 'validacao feita... incluindo no relatorio'
+      #puts 'validando...'
+
+        # if strPerfilAnterior != strPerfil
+        #     if strPerfilAnterior == ""
+        #         strPerfilAnterior = strPerfil
+        #     else
+        #         open( pathBat + strPerfilAnterior + '/!rodar_faileds.bat', 'w') do |t|
+        #           t.puts files
+        #           gerados << pathBat + strPerfilAnterior + '/!rodar_faileds.bat'
+        #         end
+        #         files = []
+        #         strPerfilAnterior = strPerfil
+        #     end
+        # end
+
+        puts 'validacao feita... incluindo no bat'
         files << strExecutar unless File.readlines(path).grep(/1 scenario \(1 passed/).size > 0
     end
 rescue
@@ -52,14 +52,14 @@ rescue
 end
 
 
-open( pathBat + strPerfilAnterior + '/!rodar_faileds.bat', 'w') do |t|
+open( pathBat + strPerfilAnterior + '!rodar_faileds.bat', 'w') do |t|
   t.puts files
-  gerados << pathBat + strPerfilAnterior + '/!rodar_faileds.bat'
+  gerados << pathBat + strPerfilAnterior + '!rodar_faileds.bat'
 end
 
 
 
-# relatorio de execução 
+# relatorio de execução
 puts ''
 puts ''
 puts '-------------------------------------------'
