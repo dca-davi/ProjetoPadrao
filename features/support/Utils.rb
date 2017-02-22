@@ -58,6 +58,9 @@ class Utils
         when 'Goldlist_MDR'
             i = 1
             pagina = 'Goldlist'
+        when 'Pesquisa Avançada'
+            i = 0
+            pagina = "Pesquisa avançada"
         end
 
         sleep 2
