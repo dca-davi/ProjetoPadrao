@@ -326,20 +326,16 @@ class Utils
         aguardar_loading
         if $browser.a(id: /#{acao}$/).exist?
             sleep 2
-            $browser.a(id: /#{acao}$/).click
-            result = true
+            result = click_trata_exception?($browser.a(id: /#{acao}$/))
         elsif $browser.button(id: /#{acao}$/).exist?
             sleep 2
-            $browser.button(id: /#{acao}$/).click
-            result = true
+            result = click_trata_exception?($browser.button(id: /#{acao}$/))
         elsif $browser.img(id: /#{acao}$/).exist?
             sleep 2
-            $browser.img(id: /#{acao}$/).click
-            result = true
+            result = click_trata_exception?($browser.img(id: /#{acao}$/))
         elsif $browser.span(class: /#{acao}/, index: i).parent.exist?
             sleep 2
-            $browser.span(class: /#{acao}/, index: i).parent.click
-            result = true
+            result = click_trata_exception?($browser.span(class: /#{acao}/, index: i).parent)
         else
             result = false
         end
@@ -350,6 +346,16 @@ class Utils
 
         result
       end
+
+    def click_trata_exception?(elemento)
+      begin
+        elemento.click
+        result = true
+      rescue  Watir::Exception::ObjectDisabledException
+        result = false
+      end
+      result
+    end
 
     def validar_frame(texto)
         sleep 6
