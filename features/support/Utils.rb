@@ -326,6 +326,7 @@ class Utils
 
         sleep 3
         aguardar_loading
+        sleep 3
         if $browser.a(id: /#{acao}$/).exist?
             sleep 2
             result = click_trata_exception?($browser.a(id: /#{acao}$/))
@@ -509,22 +510,29 @@ class Utils
             campo = 'tab_request:formRequest:cancellation_number'
         when 'cep'
             campo = 'tab_tabGeral:frmAddress:inputSearchCep'
+        when 'quantidade de parcelas - tipo de pagamento'
+            campo = 'tab_tabGeral:tabProduct:paymentPanel:qtdInstallments'
         else
             raise 'Campo não encontrado'
         end
 
         # $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
-        Watir::Wait.until { $browser.text_field(id: /#{campo}$/, index: 0).exist? }
-        $browser.text_field(id: /#{campo}$/, index: 0).set valor
-        aguardar_loading
-        $browser.send_keys :tab
-        aguardar_loading
+        #Watir::Wait.until { $browser.text_field(id: /#{campo}$/, index: 0).exist? }
+        sleep 2
+        if $browser.text_field(id: /#{campo}$/, index: 0).exist?
+            $browser.text_field(id: /#{campo}$/, index: 0).set valor 
+            aguardar_loading
+            $browser.send_keys :tab
+            aguardar_loading
 
-        if $browser.text_field(id: /#{campo}$/, index: 0).value != ''
-            $encoded_img = $browser.driver.screenshot_as(:base64)
-            return true
+            if $browser.text_field(id: /#{campo}$/, index: 0).value != ''
+                $encoded_img = $browser.driver.screenshot_as(:base64)
+                return true
+            else
+                $encoded_img = $browser.driver.screenshot_as(:base64)
+                return false
+            end
         else
-            $encoded_img = $browser.driver.screenshot_as(:base64)
             return false
         end
     end

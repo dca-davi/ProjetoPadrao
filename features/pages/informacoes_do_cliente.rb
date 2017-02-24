@@ -163,7 +163,7 @@ class Info_do_cliente
     def verificar_campo_codigoAmex
         # Watir::Wait.until { $browser.input(id: /amexID/).exists? }
         sleep 1
-        statusCampo = $browser.input(id: /amexID/).attribute_value('aria-disabled') if $browser.input(id: /amexID/).exists? rescue 'false'
+        statusCampo = $browser.input(id: /amexId/).attribute_value('aria-disabled') if $browser.input(id: /amexId/).exists? rescue 'false'
         $encoded_img = $browser.driver.screenshot_as(:base64)
         if statusCampo == 'true'
             return false
