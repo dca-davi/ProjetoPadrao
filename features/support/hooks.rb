@@ -1,6 +1,6 @@
 Before do |scenario|
 
-    Utils.new.fecha_processo('iexplore')
+    #Utils.new.fecha_processo('ie')
 
     $status_teste = false
 

@@ -730,7 +730,7 @@ class Utils
   end
 
     def adicionar_registro_log_execucao(caminho_arquivo, nome_teste, status, data, hora, observacao, sobrescrever_registro=false)
-        fecha_processos('EXCEL')
+        fecha_processo_excel
         excel = WIN32OLE.new('excel.application')
         excel.visible = true
         workbook = excel.WorkBooks.open(caminho_arquivo)
@@ -753,26 +753,31 @@ class Utils
         end
         workbook.save
         workbook.close
-        fecha_processo('EXCEL')
+        fecha_processos_excel
     end
     
     # DESCONTINUADO
-    # def fecha_processos_excel
-    #     wmi = WIN32OLE.connect("winmgmts://")
-    #     processos = wmi.ExecQuery("Select * from Win32_Process Where NAME = 'EXCEL.exe'")
-    #     processos.each do |processo|
-    #         Process.kill('KILL', processo.ProcessID.to_i) if processo.execMethod_('GetOwner').User.downcase == Etc.getlogin.downcase
-    #     end
-    #     sleep 2
-    # end
-
-    def fecha_processo(nome_processo)
+    def fecha_processos_excel
         wmi = WIN32OLE.connect("winmgmts://")
-        processos = wmi.ExecQuery("Select * from Win32_Process Where NAME = '#{nome_processo}.exe'")
+        processos = wmi.ExecQuery("Select * from Win32_Process Where NAME = 'EXCEL.exe'")
         processos.each do |processo|
             Process.kill('KILL', processo.ProcessID.to_i) if processo.execMethod_('GetOwner').User.downcase == Etc.getlogin.downcase
         end
         sleep 2
     end
+
+    # def fecha_processo(nome_processo)
+    #     wmi = WIN32OLE.connect("winmgmts://")
+    #     case tipo
+    #         when 'ie'
+    #             processos = wmi.ExecQuery("Select * from Win64_Process Where NAME = 'iexplore.exe'")
+    #         when 'EXCEL'
+    #             processos = wmi.ExecQuery("Select * from Win32_Process Where NAME = 'EXCEL.exe'")
+    #     end
+    #     processos.each do |processo|
+    #         Process.kill('KILL', processo.ProcessID.to_i) if processo.execMethod_('GetOwner').User.downcase == Etc.getlogin.downcase
+    #     end
+    #     sleep 2
+    # end
 
 end
