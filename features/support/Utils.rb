@@ -730,7 +730,7 @@ class Utils
   end
 
     def adicionar_registro_log_execucao(caminho_arquivo, nome_teste, status, data, hora, observacao, sobrescrever_registro=false)
-        fecha_processo_excel
+        fecha_processos_excel
         excel = WIN32OLE.new('excel.application')
         excel.visible = true
         workbook = excel.WorkBooks.open(caminho_arquivo)
