@@ -510,6 +510,8 @@ class Utils
             campo = 'tab_request:formRequest:cancellation_number'
         when 'cep'
             campo = 'tab_tabGeral:frmAddress:inputSearchCep'
+        when 'quantidade de parcelas - tipo de pagamento'
+            campo = 'tab_tabGeral:tabProduct:paymentPanel:qtdInstallments'
         else
             raise 'Campo não encontrado'
         end
@@ -755,7 +757,7 @@ class Utils
         workbook.close
         fecha_processos_excel
     end
-    
+
     def fecha_processos_excel
         wmi = WIN32OLE.connect("winmgmts://")
         processos = wmi.ExecQuery("Select * from Win32_Process Where NAME = 'EXCEL.exe'")

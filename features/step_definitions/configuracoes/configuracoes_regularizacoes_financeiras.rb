@@ -5,7 +5,8 @@ Entao(/^clicar na acao "([^"]*)"$/) do |acao|
     if !statusBtn && @tem_direito
         raise("Usuario nao pode clicar no bot\u00E3o no qual tem direito")
     elsif statusBtn && !@tem_direito
-        raise("usuario sem o direito consegue clicar no bot\u00E3o")
+      puts !acao.match(/emover/)
+        raise("usuario sem o direito consegue clicar no bot\u00E3o") unless $direito_evidencia.match("CLIENTES_CAD_INFOCLIENTE_CANALVENDA_MAQSCLIENTE_ACAODESC_REMOVER") && !acao.match(/emover/)
     end
 end
 
@@ -23,12 +24,15 @@ end
 Entao(/^sera\/nao sera possivel editar todos os campos do tipo de pagamento$/) do
     next if @pass_test == true
     utils = Utils.new
-    btnUm = utils.validar_botao('Editar', 0, false)
-    btnDois = utils.validar_botao('Editar', 1, false)
-    btnTres = utils.validar_botao('Editar', 2, false)
-    if (!btnUm || !btnDois || !btnTres) && @tem_direito
+    #btnUm = utils.validar_botao('Editar', 0, false)
+    #btnDois = utils.validar_botao('Editar', 1, false)
+    #btnTres = utils.validar_botao('Editar', 2, false)
+    optUm = utils.selecionar_radio_button('Sim')
+    txtUm = utils.preencher_campo_input('36', 'quantidade de parcelas - tipo de pagamento')
+
+    if (!optUm || !txtUm) && @tem_direito
         raise("Usuario nao pode clicar no bot\u00E3o no qual tem direito")
-    elsif (btnUm || btnDois || btnTres) && !@tem_direito
+    elsif (optUm || txtUm) && !@tem_direito
         raise("usuario sem o direito consegue clicar no bot\u00E3o")
     end
 end
