@@ -277,7 +277,7 @@ class Utils
         when 'Remover'
             acao = 'ico[_]?cancel|btn_cancel|.*frmEligibilitySearch:dTEligibilityExceptions.*|.*frmGoldlistSearch:dTOfferRestrictions:0.*'
         when 'cancelar'
-            acao = 'formConsultationSalesAnticipationOperations:latestTransactionsTable:2:btn_cancel'
+            acao = 'formConsultationSalesAnticipationOperations:latestTransactionsTable:.*:btn_cancel'
         when 'Aprovar'
             acao = 'button_FPi'
         when 'editar - antecipação de vendas - custos'
