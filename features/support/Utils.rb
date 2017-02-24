@@ -278,7 +278,7 @@ class Utils
         when 'Remover'
             acao = 'ico[_]?cancel|btn_cancel|.*frmEligibilitySearch:dTEligibilityExceptions.*|.*frmGoldlistSearch:dTOfferRestrictions:0.*'
         when 'cancelar'
-            acao = 'formConsultationSalesAnticipationOperations:latestTransactionsTable:2:btn_cancel'
+            acao = 'formConsultationSalesAnticipationOperations:latestTransactionsTable:.*:btn_cancel'
         when 'Aprovar'
             acao = 'button_FPi'
         when 'editar - antecipação de vendas - custos'
@@ -756,7 +756,7 @@ class Utils
         workbook.close
         fecha_processos_excel
     end
-
+    
     def fecha_processos_excel
         wmi = WIN32OLE.connect("winmgmts://")
         processos = wmi.ExecQuery("Select * from Win32_Process Where NAME = 'EXCEL.exe'")
@@ -765,4 +765,5 @@ class Utils
         end
         sleep 2
     end
+
 end

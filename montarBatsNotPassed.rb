@@ -2,8 +2,12 @@
 require 'find'
 ######excel---####require 'axlsx'
 # modificar pastas de reports e bats
+<<<<<<< HEAD
 
 pathReport ="C:/Users/davi.alves/Git/automation-test-seginfo/automation-test-seginfo/Reports"
+=======
+pathReport ="C:/Git/automation-test-seginfo/Reports/"
+>>>>>>> 5a1e6db7b6ebf07cd72963c7f5d541a1d57912af
 
 pathBat = "C:/Interface/seginfo/"
 
