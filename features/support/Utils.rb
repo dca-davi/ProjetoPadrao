@@ -327,6 +327,7 @@ class Utils
 
         sleep 3
         aguardar_loading
+        sleep 3
         if $browser.a(id: /#{acao}$/).exist?
             sleep 2
             result = click_trata_exception?($browser.a(id: /#{acao}$/))
