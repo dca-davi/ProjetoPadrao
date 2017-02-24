@@ -137,7 +137,6 @@ class Utils
         grants = grants.to_s.sub(/^.*\:/, '').strip
         grants = grants.split(/,\s*/)
         $encoded_img = $browser.driver.screenshot_as(:base64)
-
         if !grants.include?("RIGHT_#{nome_direito}") && direito_planilha
             return "O perfil utilizado não esta condizente com a planilha de direitos! / Direito: #{nome_direito}"
         elsif grants.include?("RIGHT_#{nome_direito}") && !direito_planilha
@@ -555,6 +554,7 @@ class Utils
             result = false
         end
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        result
     end
 
     def informar_periodo(de, ate)
@@ -591,7 +591,7 @@ class Utils
     end
 
     def selecionar_radio_button(radio, i = 0)
-        if $browser.label(text: radio, index: i).exist?
+        if $browser.label(text: radio).exist?
             $browser.label(text: radio, index: i).click
             sleep 2
             result = true
@@ -600,6 +600,7 @@ class Utils
         end
         sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        return result
     end
 
     def selecionar_check_box_tabela(linha, coluna = 0)
@@ -625,6 +626,7 @@ class Utils
         end
         sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        result
     end
 
     def validar_btn_exportar(botao) # pode validar todos os botes e nao somente o exportar
@@ -648,6 +650,7 @@ class Utils
       end
         sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        result
     end
 
     def formata_data_atual(formato)
