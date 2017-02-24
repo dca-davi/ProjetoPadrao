@@ -515,17 +515,22 @@ class Utils
         end
 
         # $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
-        Watir::Wait.until { $browser.text_field(id: /#{campo}$/, index: 0).exist? }
-        $browser.text_field(id: /#{campo}$/, index: 0).set valor
-        aguardar_loading
-        $browser.send_keys :tab
-        aguardar_loading
+        #Watir::Wait.until { $browser.text_field(id: /#{campo}$/, index: 0).exist? }
+        sleep 2
+        if $browser.text_field(id: /#{campo}$/, index: 0).exist?
+            $browser.text_field(id: /#{campo}$/, index: 0).set valor 
+            aguardar_loading
+            $browser.send_keys :tab
+            aguardar_loading
 
-        if $browser.text_field(id: /#{campo}$/, index: 0).value != ''
-            $encoded_img = $browser.driver.screenshot_as(:base64)
-            return true
+            if $browser.text_field(id: /#{campo}$/, index: 0).value != ''
+                $encoded_img = $browser.driver.screenshot_as(:base64)
+                return true
+            else
+                $encoded_img = $browser.driver.screenshot_as(:base64)
+                return false
+            end
         else
-            $encoded_img = $browser.driver.screenshot_as(:base64)
             return false
         end
     end
