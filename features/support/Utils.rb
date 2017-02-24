@@ -267,7 +267,7 @@ class Utils
         when 'Tratar'
             acao = 'btnProcess'
         when 'Visualizar'
-            acao = 'ico[n]?[_]?view|btn_detail|button_RSR|button_Jvn|link_SMe|j_idt307:0:button_rnw|0:btn_detail|label_lupaSelected'
+            acao = 'ico[n]?[_]?view|btn_detail|button_RSR|button_Jvn|link_SMe|0:button_rnw|0:btn_detail|label_lupaSelected'
         when 'Editar'
             acao = 'ico[_]?edit|btn_edit|button_W33|button_9Mi|tabRejectionCapture:resultTableTreat:0:j_idt422|buttonEditId|link_h4Q|button_edit'
         when 'Editar Dados de contato'
@@ -277,7 +277,7 @@ class Utils
         when 'Remover'
             acao = 'ico[_]?cancel|btn_cancel|.*frmEligibilitySearch:dTEligibilityExceptions.*|.*frmGoldlistSearch:dTOfferRestrictions:0.*'
         when 'cancelar'
-            acao = 'formConsultationSalesAnticipationOperations:latestTransactionsTable:2:btn_cancel'
+            acao = 'formConsultationSalesAnticipationOperations:latestTransactionsTable:.*:btn_cancel'
         when 'Aprovar'
             acao = 'button_FPi'
         when 'editar - antecipação de vendas - custos'
@@ -321,7 +321,6 @@ class Utils
             acao = 'j_idt248_next'
         when 'reprocessamento'
             acao = 'button_Ipb'
-            acao = 'tabOperationAnticipation:tabScheduledAnticipation:btn_save'
         when 'Editar endereço'
             acao = 'tab_tabGeral:frmAddress:merchantAddressID:0:btn_info_address_edit'
         end
@@ -731,7 +730,7 @@ class Utils
   end
 
     def adicionar_registro_log_execucao(caminho_arquivo, nome_teste, status, data, hora, observacao, sobrescrever_registro=false)
-        fecha_processos_excel
+        fecha_processo_excel
         excel = WIN32OLE.new('excel.application')
         excel.visible = true
         workbook = excel.WorkBooks.open(caminho_arquivo)
@@ -756,7 +755,8 @@ class Utils
         workbook.close
         fecha_processos_excel
     end
-
+    
+    # DESCONTINUADO
     def fecha_processos_excel
         wmi = WIN32OLE.connect("winmgmts://")
         processos = wmi.ExecQuery("Select * from Win32_Process Where NAME = 'EXCEL.exe'")
@@ -765,4 +765,19 @@ class Utils
         end
         sleep 2
     end
+
+    # def fecha_processo(nome_processo)
+    #     wmi = WIN32OLE.connect("winmgmts://")
+    #     case tipo
+    #         when 'ie'
+    #             processos = wmi.ExecQuery("Select * from Win64_Process Where NAME = 'iexplore.exe'")
+    #         when 'EXCEL'
+    #             processos = wmi.ExecQuery("Select * from Win32_Process Where NAME = 'EXCEL.exe'")
+    #     end
+    #     processos.each do |processo|
+    #         Process.kill('KILL', processo.ProcessID.to_i) if processo.execMethod_('GetOwner').User.downcase == Etc.getlogin.downcase
+    #     end
+    #     sleep 2
+    # end
+
 end

@@ -1,4 +1,7 @@
 Before do |scenario|
+
+    #Utils.new.fecha_processo('ie')
+
     $status_teste = false
 
     $release = ENV['RELEASE_ALM']
