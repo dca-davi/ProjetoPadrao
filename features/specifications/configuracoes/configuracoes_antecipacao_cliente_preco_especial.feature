@@ -30,7 +30,7 @@ Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPEC
 E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
 Quando clicar na aba "Preço Especial"
 E clicar no link acao "Incluir"
-Entao  localizar o frame "Dados da Pesquisa"
+Entao  localizar o frame "Selecionar o cliente"
 
 @CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_EDITAR
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_EDITAR
