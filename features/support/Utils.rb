@@ -11,6 +11,7 @@ class Utils
         $browser.textarea(id: 'IDToken1').set USER.to_s
         $browser.textarea(id: 'IDToken2').set PASS.to_s
         $browser.button(name: 'Login.Submit').click
+        aguardar_loading
         $encoded_img = $browser.driver.screenshot_as(:base64)
     end
 
