@@ -756,7 +756,6 @@ class Utils
         fecha_processos_excel
     end
     
-    # DESCONTINUADO
     def fecha_processos_excel
         wmi = WIN32OLE.connect("winmgmts://")
         processos = wmi.ExecQuery("Select * from Win32_Process Where NAME = 'EXCEL.exe'")
@@ -765,19 +764,5 @@ class Utils
         end
         sleep 2
     end
-
-    # def fecha_processo(nome_processo)
-    #     wmi = WIN32OLE.connect("winmgmts://")
-    #     case tipo
-    #         when 'ie'
-    #             processos = wmi.ExecQuery("Select * from Win64_Process Where NAME = 'iexplore.exe'")
-    #         when 'EXCEL'
-    #             processos = wmi.ExecQuery("Select * from Win32_Process Where NAME = 'EXCEL.exe'")
-    #     end
-    #     processos.each do |processo|
-    #         Process.kill('KILL', processo.ProcessID.to_i) if processo.execMethod_('GetOwner').User.downcase == Etc.getlogin.downcase
-    #     end
-    #     sleep 2
-    # end
 
 end
