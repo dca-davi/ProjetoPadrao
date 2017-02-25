@@ -20,12 +20,16 @@ class Info_do_cliente
           end
 
         when "endere\u00E7o do contrato", "atribui\u00E7\u00E3o de categoria/pre\u00E7o", "atribui\u00E7\u00E3o de categoria/pre\u00E7o", "dados da segmenta\u00E7\u00E3o", 'resultados'
+          if $browser.button(text: botao).exists?
             if $browser.button(text: botao, index: 1).attribute_value('aria-disabled') == 'false'
                 $browser.button(text: botao, index: 1).click
                 sleep 3
             else
                 result = false
             end
+          else
+              result = false
+          end
 
         when "remuneracao", "antecipa\u00E7\u00E3o programada", 'reserva financeira'
             if $browser.button(text: botao, index: 1).attribute_value('aria-disabled') == 'false'

@@ -377,6 +377,7 @@ class Utils
     end
 
     def preencher_campo_input(valor, campo)
+        var_i = 0
         case campo.downcase
         when  'numero do cliente - consulta de transacoes'
             campo = 'tabPesquisaTransacao:formTransaction:input_SearchTransactionBeandtonuCustomer'
@@ -491,7 +492,8 @@ class Utils
         when 'data_fim_pesq_avan_extrato'
             campo = 'tabGeralPesquisaAvancada:formAutorizacaoMultiFiltros:dataAteTran_input'
         when '4_dig_cartao_pesq_avan_extrato'
-            campo = 'tabGeralPesquisaAvancada:formAutorizacaoMultiFiltros:j_idt320'
+            campo = 'tabGeralPesquisaAvancada:formAutorizacaoMultiFiltros:.*'
+            var_i = 5
         when 'data autorizacao reprocessamento de vendas - de'
             campo = 'tab_reprocessing_sales:initial_date_transaction_input'
         when 'data autorizacao reprocessamento de vendas - ate'
@@ -520,14 +522,15 @@ class Utils
 
         # $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
         #Watir::Wait.until { $browser.text_field(id: /#{campo}$/, index: 0).exist? }
+
         sleep 2
-        if $browser.text_field(id: /#{campo}$/, index: 0).exist?
-            $browser.text_field(id: /#{campo}$/, index: 0).set valor 
+        if $browser.text_field(id: /#{campo}$/, index: var_i).exist?
+            $browser.text_field(id: /#{campo}$/, index: var_i).set valor
             aguardar_loading
             $browser.send_keys :tab
             aguardar_loading
 
-            if $browser.text_field(id: /#{campo}$/, index: 0).value != ''
+            if $browser.text_field(id: /#{campo}$/, index: var_i).value != ''
                 $encoded_img = $browser.driver.screenshot_as(:base64)
                 return true
             else
