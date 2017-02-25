@@ -137,7 +137,6 @@ class Utils
         grants = grants.to_s.sub(/^.*\:/, '').strip
         grants = grants.split(/,\s*/)
         $encoded_img = $browser.driver.screenshot_as(:base64)
-
         if !grants.include?("RIGHT_#{nome_direito}") && direito_planilha
             return "O perfil utilizado não esta condizente com a planilha de direitos! / Direito: #{nome_direito}"
         elsif grants.include?("RIGHT_#{nome_direito}") && !direito_planilha
@@ -329,6 +328,7 @@ class Utils
 
         sleep 3
         aguardar_loading
+        sleep 3
         if $browser.a(id: /#{acao}$/).exist?
             sleep 2
             result = click_trata_exception?($browser.a(id: /#{acao}$/))
@@ -512,22 +512,29 @@ class Utils
             campo = 'tab_request:formRequest:cancellation_number'
         when 'cep'
             campo = 'tab_tabGeral:frmAddress:inputSearchCep'
+        when 'quantidade de parcelas - tipo de pagamento'
+            campo = 'tab_tabGeral:tabProduct:paymentPanel:qtdInstallments'
         else
             raise 'Campo não encontrado'
         end
 
         # $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
-        Watir::Wait.until { $browser.text_field(id: /#{campo}$/, index: 0).exist? }
-        $browser.text_field(id: /#{campo}$/, index: 0).set valor
-        aguardar_loading
-        $browser.send_keys :tab
-        aguardar_loading
+        #Watir::Wait.until { $browser.text_field(id: /#{campo}$/, index: 0).exist? }
+        sleep 2
+        if $browser.text_field(id: /#{campo}$/, index: 0).exist?
+            $browser.text_field(id: /#{campo}$/, index: 0).set valor 
+            aguardar_loading
+            $browser.send_keys :tab
+            aguardar_loading
 
-        if $browser.text_field(id: /#{campo}$/, index: 0).value != ''
-            $encoded_img = $browser.driver.screenshot_as(:base64)
-            return true
+            if $browser.text_field(id: /#{campo}$/, index: 0).value != ''
+                $encoded_img = $browser.driver.screenshot_as(:base64)
+                return true
+            else
+                $encoded_img = $browser.driver.screenshot_as(:base64)
+                return false
+            end
         else
-            $encoded_img = $browser.driver.screenshot_as(:base64)
             return false
         end
     end
@@ -549,6 +556,7 @@ class Utils
             result = false
         end
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        result
     end
 
     def informar_periodo(de, ate)
@@ -585,7 +593,7 @@ class Utils
     end
 
     def selecionar_radio_button(radio, i = 0)
-        if $browser.label(text: radio, index: i).exist?
+        if $browser.label(text: radio).exist?
             $browser.label(text: radio, index: i).click
             sleep 2
             result = true
@@ -594,6 +602,7 @@ class Utils
         end
         sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        return result
     end
 
     def selecionar_check_box_tabela(linha, coluna = 0)
@@ -619,6 +628,7 @@ class Utils
         end
         sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        result
     end
 
     def validar_btn_exportar(botao) # pode validar todos os botes e nao somente o exportar
@@ -642,6 +652,7 @@ class Utils
       end
         sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        result
     end
 
     def formata_data_atual(formato)
@@ -757,7 +768,7 @@ class Utils
         workbook.close
         fecha_processos_excel
     end
-    
+
     def fecha_processos_excel
         wmi = WIN32OLE.connect("winmgmts://")
         processos = wmi.ExecQuery("Select * from Win32_Process Where NAME = 'EXCEL.exe'")

@@ -39,6 +39,7 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_DEMANDAS_FILA_TRABALHO_LIBERAR_EDITAR
 Dado que tenha/nao tenha o direito "OPERACOES_DEMANDAS_FILA_TRABALHO_LIBERAR_EDITAR"
 E que tenha/nao tenha acesso na tela "Fila de trabalho"
 E o sistema exibira/nao exibira a tela "Fila de trabalho"
+E clicar na acao "Atribuir"
 Entao clicar na acao "Liberar"
 
 @OPERACOES_DEMANDAS_FILA_TRABALHO_ATRIBUIRPARA_EDITAR
@@ -46,6 +47,7 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_DEMANDAS_FILA_TRABALHO_ATRIBUIRPARA_EDITAR
 Dado que tenha/nao tenha o direito "OPERACOES_DEMANDAS_FILA_TRABALHO_ATRIBUIRPARA_EDITAR"
 E que tenha/nao tenha acesso na tela "Fila de trabalho"
 E o sistema exibira/nao exibira a tela "Fila de trabalho"
+E clicar na acao "Atribuir"
 Entao clicar na acao "Editar"
 
 @OPERACOES_DEMANDAS_DETALHE_ATIVIDADE_EDITAR
@@ -56,6 +58,7 @@ Entao clicar na acao "Editar"
 Cenario: CT.SEGINFO - [AUT] OPERACOES_DEMANDAS_DETALHE_ATIVIDADE_EDITAR
 Dado que tenha/nao tenha o direito "OPERACOES_DEMANDAS_DETALHE_ATIVIDADE_EDITAR"
 E que tenha/nao tenha acesso na tela "Fila de trabalho"
+E clicar na acao "Atribuir"
 E clicar na acao "Editar"
 Quando clicar na aba "DETALHE"
 E selecionar a opcao "Sim"
@@ -66,6 +69,7 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_DEMANDAS_FILADETRABALHO_ACOMP_EDITAR
 Dado que tenha/nao tenha o direito "OPERACOES_DEMANDAS_FILADETRABALHO_ACOMP_EDITAR"
 E que tenha/nao tenha acesso na tela "Fila de trabalho"
 E o sistema exibira/nao exibira a tela "Fila de trabalho"
+E clicar na acao "Atribuir"
 Entao clicar na acao "Editar"
 
 @OPERACOES_DEMANDAS_FILADETRABALHO_ACOMP_ALCADASNEGOCIACAO_VER
