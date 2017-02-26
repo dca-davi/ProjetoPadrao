@@ -56,8 +56,11 @@ class Info_do_cliente
             end
 
         when 'ramos de atividade restritos'
-            if $browser.button(text: botao, index: 4).attribute_value('aria-disabled') == 'false'
-                $browser.button(text: botao, index: 4).click
+            if !$browser.span(class: 'ui-panel-title', text: 'Ramos de atividade restritos').exist?
+                result = false
+            elsif $browser.span(class: 'ui-panel-title', text: 'Ramos de atividade restritos').parent.parent.button(text: botao).attribute_value('aria-disabled') == 'false'
+                # $browser.button(text: botao, index: 4).click
+                $browser.span(class: 'ui-panel-title', text: 'Ramos de atividade restritos').parent.parent.button(text: botao).click
                 sleep 3
             else
                 result = false
@@ -210,7 +213,8 @@ class Info_do_cliente
     def selecionar_bandeira_filtro(bandeira)
         $browser.div(id: /mnuCardBrand/).wait_until_present
         sleep 1
-        $browser.div(id: /mnuCardBrand/).span(class: /ui-icon-triangle-1-s/).click
+        # $browser.div(id: /mnuCardBrand/).span(class: /ui-icon-triangle-1-s/).click
+        $browser.execute_script('arguments[0].click()',  $browser.div(id: /mnuCardBrand/).span(class: /ui-icon-triangle-1-s/))
         $browser.execute_script('arguments[0].click()', $browser.li(text: /#{bandeira}/, index: 0))
         sleep 1
         @@utils.aguardar_loading
