@@ -763,7 +763,7 @@ class Utils
         worksheet.Cells(linha, 2).value = status
         worksheet.Cells(linha, 3).value = data
         worksheet.Cells(linha, 4).value = hora
-        if observacao.equal? nil
+        if observacao.exception.equal? nil
             worksheet.Cells(linha, 5).value = ' '
             worksheet.Cells(linha, 6).value = ' '
         else
