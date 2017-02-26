@@ -71,6 +71,7 @@ class Utils
         else
             sleep 1
             $browser.execute_script('arguments[0].click()', $browser.a(text: pagina, index: i))
+            $browser.execute_script('arguments[0].click()', $browser.a(text: pagina, index: i))
             sleep 2
             aguardar_loading
             sleep 2

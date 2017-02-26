@@ -13,7 +13,7 @@ Dado que eu faca login
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_CONSULTAGERAL_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_CONSULTAGERAL_VER"
 E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
-E que tenha/nao tenha acesso na tela "Consulta geral"
+# E que tenha/nao tenha acesso na tela "Consulta geral"
 Entao o sistema exibira/nao exibira a tela "Precificação"
 
 @CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_CONSULTAPORCANAL_VER
