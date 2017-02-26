@@ -63,18 +63,23 @@ class Utils
             pagina = "Pesquisa avançada"
         end
 
-        sleep 2
-        Watir::Wait.until { $browser.a(text: pagina, index: i).exists? }
-        if $browser.a(text: pagina, index: i).attribute_value('onclick') == 'return false;'
+        # sleep 2
+        # Watir::Wait.until { $browser.a(text: pagina, index: i).exists? }
+        aguardar_loading
+        if !$browser.a(text: pagina, index: i).exists?
+            return false
+        
+        elsif $browser.a(text: pagina, index: i).attribute_value('onclick') == 'return false;'
             $encoded_img = $browser.driver.screenshot_as(:base64)
             return false
+        
         else
-            sleep 1
+            # sleep 1
             $browser.execute_script('arguments[0].click()', $browser.a(text: pagina, index: i))
-            $browser.execute_script('arguments[0].click()', $browser.a(text: pagina, index: i))
-            sleep 2
+            # $browser.execute_script('arguments[0].click()', $browser.a(text: pagina, index: i))
+            # sleep 2
             aguardar_loading
-            sleep 2
+            # sleep 2
             $encoded_img = $browser.driver.screenshot_as(:base64)
             return true
         end
@@ -339,7 +344,7 @@ class Utils
         elsif $browser.img(id: /#{acao}$/).exist?
             sleep 2
             result = click_trata_exception?($browser.img(id: /#{acao}$/))
-        elsif $browser.span(class: /#{acao}/, index: i).parent.exist?
+        elsif $browser.span(class: /#{acao}/, index: i).exist?
             sleep 2
             result = click_trata_exception?($browser.span(class: /#{acao}/, index: i).parent)
         else
@@ -524,20 +529,27 @@ class Utils
         # $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
         #Watir::Wait.until { $browser.text_field(id: /#{campo}$/, index: 0).exist? }
 
-        sleep 2
-        if $browser.text_field(id: /#{campo}$/, index: var_i).exist?
-            $browser.text_field(id: /#{campo}$/, index: var_i).set valor
-            aguardar_loading
-            $browser.send_keys :tab
-            aguardar_loading
-
-            if $browser.text_field(id: /#{campo}$/, index: var_i).value != ''
-                $encoded_img = $browser.driver.screenshot_as(:base64)
-                return true
-            else
-                $encoded_img = $browser.driver.screenshot_as(:base64)
+        # sleep 2
+        aguardar_loading
+        if $browser.text_field(id: /#{campo}$/, index: var_i).exist? # Valida se o campo existe
+            if $browser.text_field(id: /#{campo}$/, index: var_i).disabled? # valida se o campo está habilitado
                 return false
+            else
+                #ação caso o campo esteja habilitado
+                $browser.text_field(id: /#{campo}$/, index: var_i).set valor
+                aguardar_loading
+                $browser.send_keys :tab
+                aguardar_loading
+
+                if $browser.text_field(id: /#{campo}$/, index: var_i).value != ''
+                    $encoded_img = $browser.driver.screenshot_as(:base64)
+                    return true
+                else
+                    $encoded_img = $browser.driver.screenshot_as(:base64)
+                    return false
+                end
             end
+
         else
             return false
         end

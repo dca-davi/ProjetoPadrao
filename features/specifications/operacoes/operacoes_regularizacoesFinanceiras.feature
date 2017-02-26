@@ -301,7 +301,7 @@ Entao o botao "Continuar" devera estar habilitado/desabilitado
 Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_MASTER_CANCELAMENTO_E_REVERSAO_EDITAR
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_MASTER_CANCELAMENTO_E_REVERSAO_EDITAR"
 E que tenha/nao tenha acesso na tela "Cancelamento e reversão de vendas"
-E informar "13523883" no campo "cancelamento e reversao de vendas - numero da solicitacao"
+E informar "13606552" no campo "cancelamento e reversao de vendas - numero da solicitacao"
 E clicar no botao "Pesquisar"
 E clicar na acao "Reverter"
 Entao o botao "Reverter" devera estar habilitado/desabilitado

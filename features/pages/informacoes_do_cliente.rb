@@ -229,10 +229,10 @@ class Info_do_cliente
 
     def verificar_edicao_bloqueio(motivo)
         @@utils.aguardar_loading
-        $browser.tbody(id: /BlockingClient/).wait_until_present
         sleep 1
-        statusbtn = $browser.tbody(id: /BlockingClient/).td(text: /#{motivo}/).parent.button(index: 0).attribute_value('aria-disabled')
-        if statusbtn == 'true'
+        if !$browser.tbody(id: /BlockingClient/).exist?
+            return false
+        elsif $browser.tbody(id: /BlockingClient/).td(text: /#{motivo}/).parent.button(index: 0).attribute_value('aria-disabled') == 'true'
             return false
         else
             return true
