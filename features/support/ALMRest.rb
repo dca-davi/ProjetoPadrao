@@ -205,12 +205,12 @@ module ALM
 
 		def verifica_IP
 			@ip = obter_IP.ip_address
-			case @ip[0...6]
-				when '10.10.' #Rede Spread
+			# case @ip[0...6]
+				# when '10.10.' #Rede Spread
 					@valor_proxy = nil
-				else 		  #Rede Cielo
-					@valor_proxy = 'http://proxypac:8080/'
-			end
+				# else 		  #Rede Cielo
+					# @valor_proxy = 'http://proxypac:8080/'
+			# end
 		end
 
        end

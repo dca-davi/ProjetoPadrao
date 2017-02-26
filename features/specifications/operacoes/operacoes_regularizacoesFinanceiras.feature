@@ -147,6 +147,7 @@ Entao localizar o frame "Resultados"
 Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_AJUSTE_DETALHE_VER
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_AJUSTE_DETALHE_VER"
 E que tenha/nao tenha acesso na tela "Ajustes financeiros"
+E clicar na aba "Pequisar"
 E informar "13507217" no campo "numero da solicitacao - ajustes financeiros"
 Quando clicar no botao "Pesquisar"
 Entao localizar o frame "Efetivada"

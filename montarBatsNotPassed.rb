@@ -4,7 +4,7 @@ require 'find'
 # modificar pastas de reports e bats
 pathReport ="C:/Git/automation-test-seginfo/Reports/"
 
-pathBat = "C:/Interface/"
+pathBat = "C:/Interface/seginfo/"
 
 #variaveis auxiliares
 total_size = 0
