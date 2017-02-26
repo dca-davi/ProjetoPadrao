@@ -746,7 +746,7 @@ class Utils
     return dados
   end
 
-    def adicionar_registro_log_execucao(caminho_arquivo, nome_teste, status, data, hora, observacao, sobrescrever_registro=false)
+    def adicionar_registro_log_execucao(caminho_arquivo, nome_teste, status, data, hora, observacao, passo, sobrescrever_registro=false)
         fecha_processos_excel
         excel = WIN32OLE.new('excel.application')
         excel.visible = true
@@ -765,8 +765,10 @@ class Utils
         worksheet.Cells(linha, 4).value = hora
         if observacao.equal? nil
             worksheet.Cells(linha, 5).value = ' '
+            worksheet.Cells(linha, 6).value = ' '
         else
-            worksheet.Cells(linha, 5).value = observacao.message
+            worksheet.Cells(linha, 5).value = observacao.exception.message
+            worksheet.Cells(linha, 6).value = passo
         end
         workbook.save
         workbook.close
