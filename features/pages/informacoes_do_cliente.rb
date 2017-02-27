@@ -1,12 +1,21 @@
 class Info_do_cliente
     @@utils = Utils.new
 
+
     def clicar_botao_frame(botao, frame)
         result = true
         sleep 2
         #Watir::Wait.until { $browser.button(text: botao).exists? }
         sleep 1
         case frame.downcase
+
+        when "reserva financeira"
+          if $browser.div(id: /reservation_header/).parent.b(index:2).parent.button(text: botao).exist?
+            $browser.div(id: /reservation_header/).parent.b(index:2).parent.button(text: botao).click
+            sleep 3
+          else
+            result = false
+        end
 
         when 'dados de cadastro', 'dados do tipo de pagamento', "detalhe da al\u00E7ada", "taxa efetiva m\u00E1xima", "par\u00E2metro para c\u00E1lculo do share", "\u00FAltimas transa\u00E7\u00F5es", 'resultados', 'endereço', 'planos do cliente', "dados da segmenta\u00E7\u00E3o"
           if $browser.button(text: botao).exists?
@@ -32,7 +41,7 @@ class Info_do_cliente
               result = false
           end
 
-        when "remuneracao", "antecipa\u00E7\u00E3o programada", 'reserva financeira'
+        when "remuneracao", "antecipa\u00E7\u00E3o programada"
             if $browser.button(text: botao, index: 1).attribute_value('aria-disabled') == 'false'
                 $browser.button(text: botao, index: 1).click
                 sleep 3
@@ -68,7 +77,7 @@ class Info_do_cliente
             end
 
         when "cart\u00E3o n\u00E3o presente"
-            if $browser.button(text: botao, index: 5).exist? 
+            if $browser.button(text: botao, index: 5).exist?
                 if $browser.button(text: botao, index: 5).attribute_value('aria-disabled') == 'false'
                     $browser.button(text: botao, index: 5).click
                     sleep 3
