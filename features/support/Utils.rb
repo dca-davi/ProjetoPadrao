@@ -158,8 +158,12 @@ class Utils
         # Watir::Wait.until { $browser.button(text: botao).exists? }
         if $browser.button(text: botao, index: 0).present?
             sleep 2
-            $browser.button(text: botao, index: 0).click
-            result = true
+            if $browser.button(text: botao, index: 0).attribute_value('aria-disabled') == 'true'
+                result = false
+            else
+                $browser.button(text: botao, index: 0).click
+                result = true
+            end
         elsif $browser.button(text: botao, index: 1).present?
             $browser.button(text: botao, index: 1).click
             result = true
@@ -530,13 +534,6 @@ class Utils
         #Watir::Wait.until { $browser.text_field(id: /#{campo}$/, index: 0).exist? }
 
         sleep 2
-        if $browser.text_field(id: /#{campo}$/, index: 0).exist?
-            $browser.text_field(id: /#{campo}$/, index: 0).set valor
-            aguardar_loading
-            $browser.send_keys :tab
-            aguardar_loading
-
-        # sleep 2
         aguardar_loading
         if $browser.text_field(id: /#{campo}$/, index: var_i).exist? # Valida se o campo existe
             if $browser.text_field(id: /#{campo}$/, index: var_i).disabled? # valida se o campo está habilitado
