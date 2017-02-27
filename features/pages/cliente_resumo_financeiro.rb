@@ -34,11 +34,9 @@ class Cliente_Resumo_financeiro
         @@utils.aguardar_loading
         if $browser.div(id: /extrato__vendas_detalhado:idTbDetalhado/).table.exist?
             $browser.div(id: /extrato__vendas_detalhado:idTbDetalhado/).table.rows.each_with_index do | linha, index |
-                puts "AHHHHHHHHHHHHHHHHHHHHHHHHHHHH"
-                next if index = 0
+                next if index == 0
                 puts linha[0].div.exist?
                 if linha[0].div.exist?
-                    puts "OBA"
                     result = true
                     linha[0].div.click
                     @@utils.aguardar_loading
