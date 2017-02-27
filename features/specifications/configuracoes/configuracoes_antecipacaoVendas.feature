@@ -24,7 +24,7 @@ Entao o sistema exibira/nao exibira a tela "Precificação"
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_CONSULTAPORCANAL_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_CONSULTAPORCANAL_VER"
 E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
-E clicar na aba "Consulta por canal"
+E clicar na aba "Preço por canal"
 
 @CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOESGERAIS_TAXAEFETIVAMAXIMA_VER
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOESGERAIS_TAXAEFETIVAMAXIMA_VER
@@ -180,6 +180,7 @@ Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAO_CART
 E que tenha/nao tenha acesso na tela "Exceção_antecipaçãoVendas"
 Quando clicar na aba "Cartão não presente"
 Entao o link "Incluir" deve estar habilitado/desabilitado
+E clicar no link acao "INCLUIR"
 Quando clicar selecionar a opcao "Individualmente"
 E informar "1007595105" no campo "numero do cliente - excecao"
 Quando clicar no botao "OK"
