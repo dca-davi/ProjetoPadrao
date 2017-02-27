@@ -4,24 +4,33 @@ class Info_do_cliente
     def clicar_botao_frame(botao, frame)
         result = true
         sleep 2
-        Watir::Wait.until { $browser.button(text: botao).exists? }
+        #Watir::Wait.until { $browser.button(text: botao).exists? }
         sleep 1
         case frame.downcase
-        when 'dados de cadastro', 'dados do tipo de pagamento', "detalhe da al\u00E7ada", "taxa efetiva m\u00E1xima", "par\u00E2metro para c\u00E1lculo do share", "\u00FAltimas transa\u00E7\u00F5es", 'resultados', 'endereço', 'planos do cliente'
+
+        when 'dados de cadastro', 'dados do tipo de pagamento', "detalhe da al\u00E7ada", "taxa efetiva m\u00E1xima", "par\u00E2metro para c\u00E1lculo do share", "\u00FAltimas transa\u00E7\u00F5es", 'resultados', 'endereço', 'planos do cliente', "dados da segmenta\u00E7\u00E3o"
+          if $browser.button(text: botao).exists?
             if $browser.button(text: botao, index: 0).attribute_value('aria-disabled') == 'false'
                 $browser.button(text: botao, index: 0).click
                 sleep 3
             else
                 result = false
             end
+          else
+              result = false
+          end
 
         when "endere\u00E7o do contrato", "atribui\u00E7\u00E3o de categoria/pre\u00E7o", "atribui\u00E7\u00E3o de categoria/pre\u00E7o", "dados da segmenta\u00E7\u00E3o", 'resultados'
-            if $browser.button(text: botao, index: 1).attribute_value('aria-disabled') == 'false'
-                $browser.button(text: botao, index: 1).click
+          if $browser.button(text: botao).exists?
+            if $browser.button(text: botao, index: 0).attribute_value('aria-disabled') == 'false'
+                $browser.button(text: botao, index: 0).click
                 sleep 3
             else
                 result = false
             end
+          else
+              result = false
+          end
 
         when "remuneracao", "antecipa\u00E7\u00E3o programada", 'reserva financeira'
             if $browser.button(text: botao, index: 1).attribute_value('aria-disabled') == 'false'
@@ -48,17 +57,24 @@ class Info_do_cliente
             end
 
         when 'ramos de atividade restritos'
-            if $browser.button(text: botao, index: 4).attribute_value('aria-disabled') == 'false'
-                $browser.button(text: botao, index: 4).click
+            if !$browser.span(class: 'ui-panel-title', text: 'Ramos de atividade restritos').exist?
+                result = false
+            elsif $browser.span(class: 'ui-panel-title', text: 'Ramos de atividade restritos').parent.parent.button(text: botao).attribute_value('aria-disabled') == 'false'
+                # $browser.button(text: botao, index: 4).click
+                $browser.span(class: 'ui-panel-title', text: 'Ramos de atividade restritos').parent.parent.button(text: botao).click
                 sleep 3
             else
                 result = false
             end
 
         when "cart\u00E3o n\u00E3o presente"
-            if $browser.button(text: botao, index: 5).attribute_value('aria-disabled') == 'false'
-                $browser.button(text: botao, index: 5).click
-                sleep 3
+            if $browser.button(text: botao, index: 5).exist? 
+                if $browser.button(text: botao, index: 5).attribute_value('aria-disabled') == 'false'
+                    $browser.button(text: botao, index: 5).click
+                    sleep 3
+                else
+                    result = false
+                end
             else
                 result = false
             end
@@ -202,7 +218,8 @@ class Info_do_cliente
     def selecionar_bandeira_filtro(bandeira)
         $browser.div(id: /mnuCardBrand/).wait_until_present
         sleep 1
-        $browser.div(id: /mnuCardBrand/).span(class: /ui-icon-triangle-1-s/).click
+        # $browser.div(id: /mnuCardBrand/).span(class: /ui-icon-triangle-1-s/).click
+        $browser.execute_script('arguments[0].click()',  $browser.div(id: /mnuCardBrand/).span(class: /ui-icon-triangle-1-s/))
         $browser.execute_script('arguments[0].click()', $browser.li(text: /#{bandeira}/, index: 0))
         sleep 1
         @@utils.aguardar_loading
@@ -217,10 +234,10 @@ class Info_do_cliente
 
     def verificar_edicao_bloqueio(motivo)
         @@utils.aguardar_loading
-        $browser.tbody(id: /BlockingClient/).wait_until_present
         sleep 1
-        statusbtn = $browser.tbody(id: /BlockingClient/).td(text: /#{motivo}/).parent.button(index: 0).attribute_value('aria-disabled')
-        if statusbtn == 'true'
+        if !$browser.tbody(id: /BlockingClient/).exist?
+            return false
+        elsif $browser.tbody(id: /BlockingClient/).td(text: /#{motivo}/).parent.button(index: 0).attribute_value('aria-disabled') == 'true'
             return false
         else
             return true

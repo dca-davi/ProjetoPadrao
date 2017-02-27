@@ -2,7 +2,13 @@ Quando (/^selecionar "([^"]*)" do campo "([^"]*)", "([^"]*)"$/) do |item, frame,
     next if @pass_test == true
     @operacaoes_antecipacaoVenda = Operacoes_antecipacaoVendas.new
     btmComboCanal = @operacaoes_antecipacaoVenda.selecione_combo_operacoes(frame, item)
-    if !btmComboCanal && @tem_direito
+    case frame
+        when "demanda", "tipo da solicitacao"
+            validar = false
+        else
+            validar = true
+    end
+    if !btmComboCanal && @tem_direito && validar
         raise 'Usuario nao pode clicar na opcao na qual tem direito'
     elsif btmComboCanal && !@tem_direito
           if valida_step == "1"
