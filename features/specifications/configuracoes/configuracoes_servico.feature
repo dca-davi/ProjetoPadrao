@@ -15,7 +15,7 @@ E selecionar a opcao "Plano Máquina" no campo "Item"
 E selecionar a opcao "Plano de benefícios agenda" no campo "Nome do Contrato"
 E selecionar a opcao "Agenda Financeira" no campo "Forma de faturamento"
 E selecionar a opcao "Atual" no campo "Vigência"
-Quando clicar no botao "Pesquisar"
+Quando clicar no botao "Pesquisar", "0"
 Entao localizar o frame "Resultado"
 
 @CONFIGURACOES_SERVICOS_INDICESECONOMICOS_VER
@@ -33,8 +33,8 @@ Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_SERVICOS_INDICESECONOMICOS_INCLUIR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_SERVICOS_INDICESECONOMICOS_INCLUIR"
 E que tenha/nao tenha acesso na tela "Índices econômicos"
 Quando selecionar o Indice "IGPM Acumulado nos Últimos 12 Meses"
-E clicar no botao "Pesquisar"
-Entao o botao "Incluir" devera estar habilitado/desabilitado
+E clicar no botao "Pesquisar", "0"
+Entao o botao "Incluir", "1" devera estar habilitado/desabilitado
 
 @CONFIGURACOES_SERVICOS_PARAMETROS_VER
 @CADASTRO_ANALISTA_CIELO @CADASTRO_ANALISTA_CIELO_APROVADOR @CENTRAL_HELP_DESK_ANALISTA
@@ -54,7 +54,7 @@ Entao o sistema exibira/nao exibira a tela "Parâmetros"
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_SERVICOS_PARAMETROS_EDITAR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_SERVICOS_PARAMETROS_EDITAR"
 E que tenha/nao tenha acesso na tela "Parâmetros"
-Entao clicar na acao "Editar"
+Entao clicar na acao "Editar", "1"
 
 @CONFIGURACOES_SERVICOS_PRECOPADRAO_VER
 @CADASTRO_ANALISTA_CIELO @CADASTRO_ANALISTA_CIELO_APROVADOR @CENTRAL_HELP_DESK_ANALISTA
@@ -71,5 +71,5 @@ Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_SERVICOS_INDICESECONOMICOS_EDITAR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_SERVICOS_INDICESECONOMICOS_EDITAR"
 E que tenha/nao tenha acesso na tela "Índices econômicos"
 E selecionar o item "IGPM Acumulado nos Últimos 12 Meses"
-Entao clicar no botao "Pesquisar"
-E clicar na acao "Editar"
+Entao clicar no botao "Pesquisar", "0"
+E clicar na acao "Editar", "1"

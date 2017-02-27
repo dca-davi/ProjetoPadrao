@@ -18,7 +18,7 @@ E informe o EC "1018242187"
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_DOMICILIOBANCARIO_VER
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_DOMICILIOBANCARIO_VER"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
-Quando clicar na aba "Domicílio Bancário"
+Quando clicar na aba "Domicílio Bancário", "0"
 Entao podera/nao podera acessar a Tela de pesquisa
 
 @CLIENTES_CADASTRO_INFO_DOMICILIOBANCARIO_SOLICITAR
@@ -26,7 +26,7 @@ Entao podera/nao podera acessar a Tela de pesquisa
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_DOMICILIOBANCARIO_SOLICITAR
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_DOMICILIOBANCARIO_SOLICITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
-Quando clicar na aba "Domicílio Bancário"
+Quando clicar na aba "Domicílio Bancário", "0"
 Entao o link "INCLUIR" deve estar habilitado/desabilitado
 
 @CLIENTES_CADASTRO_INFO_DOMICILIOBANCARIO_APROVADOR_EDITAR
@@ -34,7 +34,7 @@ Entao o link "INCLUIR" deve estar habilitado/desabilitado
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_DOMICILIOBANCARIO_APROVADOR_EDITAR
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_DOMICILIOBANCARIO_APROVADOR_EDITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
-Quando clicar na aba "Domicílio Bancário"
+Quando clicar na aba "Domicílio Bancário", "0"
 Entao o link "CONFIGURAR" deve estar habilitado/desabilitado
 
 @CLIENTES_DOMICILIOBANCARIO_CONTACORRENTE_VER
@@ -45,5 +45,5 @@ Entao o link "CONFIGURAR" deve estar habilitado/desabilitado
 Cenario: CT.SEGINFO - [AUT] CLIENTES_DOMICILIOBANCARIO_CONTACORRENTE_VER
 Dado que tenha/nao tenha o direito "CLIENTES_DOMICILIOBANCARIO_CONTACORRENTE_VER"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
-Quando clicar na aba "Domicílio Bancário"
+Quando clicar na aba "Domicílio Bancário", "0"
 Entao o campo conta esta/nao esta truncado

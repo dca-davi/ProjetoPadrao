@@ -14,17 +14,17 @@ E que tenha/nao tenha acesso na tela "Pesquisa Avançada"
 Entao informar "05/09/2016" no campo "data_inicio_pesq_avan_extrato"
 E informar "04/10/2016" no campo "data_fim_pesq_avan_extrato"
 E informar "8804" no campo "4_dig_cartao_pesq_avan_extrato"
-Entao clicar no botao "Pesquisar"
+Entao clicar no botao "Pesquisar", "1"
 
 @CLIENTES_EXTRATOS_CARTACIRCULARIZACAO_DIARIO_EXPORTAR @R4
-Cenario: CT.SEGINFO - [AUT] CLIENTES_EXTRATOS_CARTACIRCULARIZACAO_DIARIO_EXPORTAR 
+Cenario: CT.SEGINFO - [AUT] CLIENTES_EXTRATOS_CARTACIRCULARIZACAO_DIARIO_EXPORTAR
 Dado que tenha/nao tenha o direito "CLIENTES_EXTRATOS_CARTACIRCULARIZACAO_DIARIO_EXPORTAR "
 E que tenha/nao tenha acesso na tela "Carta de circularização"
-Entao o botao "Exportar" estara habilitado/desabilitado
+Entao o botao "Exportar", "1" estara habilitado/desabilitado
 
 @CLIENTES_EXTRATOS_CARTACIRCULARIZACAO_MENSAL_EXPORTAR @R4
-Cenario: CT.SEGINFO - [AUT] CLIENTES_EXTRATOS_CARTACIRCULARIZACAO_MENSAL_EXPORTAR 
+Cenario: CT.SEGINFO - [AUT] CLIENTES_EXTRATOS_CARTACIRCULARIZACAO_MENSAL_EXPORTAR
 Dado que tenha/nao tenha o direito "CLIENTES_EXTRATOS_CARTACIRCULARIZACAO_MENSAL_EXPORTAR "
 E que tenha/nao tenha acesso na tela "Carta de circularização"
-E clicar na aba "Mensal"
-Entao o botao "Exportar" estara habilitado/desabilitado
+E clicar na aba "Mensal", "0"
+Entao o botao "Exportar", "1" estara habilitado/desabilitado

@@ -13,7 +13,7 @@ E informe o EC "1018242187"
 @CRM_COORDENADOR
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_GRUPODEPAGAMENTO_DADOSCONTATO_VER
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_GRUPODEPAGAMENTO_DADOSCONTATO_VER"
-Quando clicar na aba "Dados de Contato"
+Quando clicar na aba "Dados de Contato", "0"
 Entao podera/nao podera acessar a aba "Dados de Contato"
 
 @CLIENTES_CADASTRO_GRUPODEPAGAMENTO_DADOSCONTATO_EDITAR
@@ -21,5 +21,5 @@ Entao podera/nao podera acessar a aba "Dados de Contato"
 @CRM_COORDENADOR
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_GRUPODEPAGAMENTO_DADOSCONTATO_EDITAR
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_GRUPODEPAGAMENTO_DADOSCONTATO_EDITAR"
-Quando clicar na aba "Dados de Contato"
-Entao clicar na acao "Editar Dados de contato"
+Quando clicar na aba "Dados de Contato", "0"
+Entao clicar na acao "Editar Dados de contato", "1"

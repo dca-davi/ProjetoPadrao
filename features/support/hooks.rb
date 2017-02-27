@@ -56,7 +56,7 @@ AfterStep do
 
     if $ALM != 'N'
         $step_name = $passos[$step_name_index]
-	    $rest_ALM.criar_step_ALM($step_name, nil, 'Passed')
+	    # $rest_ALM.criar_step_ALM($step_name, nil, 'Passed')
         $step_name_index += 1
     end
 end
