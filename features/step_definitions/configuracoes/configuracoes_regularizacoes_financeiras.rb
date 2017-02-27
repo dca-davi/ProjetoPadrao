@@ -25,7 +25,16 @@ Entao(/^localizar o frame "([^"]*)", "([^"]*)"$/) do |texto, valida_step|
 end
 
 Entao(/^localizar o frame "([^"]*)"$/) do | texto |
-    steps %Q{ Entao localizar o frame "#{texto}, "1" }
+    next if @pass_test == true
+    @regularizacao_financeira_utils = Utils.new
+    nomeFrame = @regularizacao_financeira_utils.validar_frame(texto)
+    if !nomeFrame && @tem_direito
+        raise("Frame n\u00E3o localizado")
+    elsif nomeFrame && !@tem_direito
+        # if valida_step == "1"
+            raise('usuario sem o direito consegue visualizar o frame')
+        # end
+    end
 end
 
 Entao(/^sera\/nao sera possivel editar todos os campos do tipo de pagamento$/) do
