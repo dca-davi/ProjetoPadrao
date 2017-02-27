@@ -22,13 +22,13 @@ Entao o sistema exibira/nao exibira a tela "DIRF"
 Cenario: CT.SEGINFO - [AUT] CLIENTES_REGULATORIOS_DIRF_DEMONSTRATIVO_VER
 Dado que tenha/nao tenha o direito "CLIENTES_REGULATORIOS_DIRF_DEMONSTRATIVO_VER"
 E que tenha/nao tenha acesso na tela "DIRF"
-Quando clicar na aba "DEMONSTRATIVO"
+Quando clicar na aba "DEMONSTRATIVO", "0"
 Entao podera/nao podera acessar a aba "DEMONSTRATIVO"
 
 @CLIENTES_REGULATORIOS_DIRF_SOLICITAR
-@CENTRAL_DE_RELACIONAMENTO_ANALISTA @CONTABILIDADE_NEGOCIO_E_TRIBUTARIO_ANALISTA @CRM_COORDENADOR 
+@CENTRAL_DE_RELACIONAMENTO_ANALISTA @CONTABILIDADE_NEGOCIO_E_TRIBUTARIO_ANALISTA @CRM_COORDENADOR
 Cenario: CT.SEGINFO - [AUT] CLIENTES_REGULATORIOS_DIRF_SOLICITAR
 Dado que tenha/nao tenha o direito "CLIENTES_REGULATORIOS_DIRF_SOLICITAR"
 E que tenha/nao tenha acesso na tela "DIRF"
-Quando clicar na aba "SOLICITAÇÃO DA PRÉVIA"
+Quando clicar na aba "SOLICITAÇÃO DA PRÉVIA", "0"
 Entao podera/nao podera acessar a aba "SOLICITAÇÃO DA PRÉVIA"

@@ -68,11 +68,11 @@ class Utils
         aguardar_loading
         if !$browser.a(text: pagina, index: i).exists?
             return false
-        
+
         elsif $browser.a(text: pagina, index: i).attribute_value('onclick') == 'return false;'
             $encoded_img = $browser.driver.screenshot_as(:base64)
             return false
-        
+
         else
             # sleep 1
             $browser.execute_script('arguments[0].click()', $browser.a(text: pagina, index: i))
@@ -177,7 +177,7 @@ class Utils
         case aba
         when 'Incluir_PrazoFlexivel'
             aba = 'Incluir'
-            i = 1
+            i = 0
         when 'Parametros - PRO ANTECIPACAO DE VENDAS' #
             aba = 'Parâmetros'
             i = 1
@@ -225,14 +225,14 @@ class Utils
         case aba
         when 'Incluir_PrazoFlexivel'
             aba = 'Incluir'
-            i = 1
+            i = 0
         end
         aguardar_loading
         sleep 5
         # Watir::Wait.until { $browser.a(text: aba, index: /0|1/).exists? }
         if $browser.li(text: aba, index: i).attribute_value('aria-expanded') == 'true'
             return true
-        elsif $browser.li(text: aba, index: 1).attribute_value('aria-expanded') == 'true'
+        elsif $browser.li(text: aba, index: i).attribute_value('aria-expanded') == 'true'
             return true
         else
             return false
@@ -541,7 +541,7 @@ class Utils
         # $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
         #Watir::Wait.until { $browser.text_field(id: /#{campo}$/, index: 0).exist? }
 
-        # sleep 2
+        sleep 2
         aguardar_loading
         if $browser.text_field(id: /#{campo}$/, index: var_i).exist? # Valida se o campo existe
             if $browser.text_field(id: /#{campo}$/, index: var_i).disabled? # valida se o campo está habilitado

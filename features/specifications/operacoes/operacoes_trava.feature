@@ -21,7 +21,7 @@ Entao o sistema exibira/nao exibira a tela "Trava com Prazo Vencido"
 Cenario: CT.SEGINFO - [AUT] OPERACOES_TRAVA_PRAZOVENCIDO_EXPORTAR
 Dado que tenha/nao tenha o direito "OPERACOES_TRAVA_PRAZOVENCIDO_EXPORTAR"
 E que tenha/nao tenha acesso na tela "Trava com prazo vencido"
-Entao o botao "Exportar" devera estar habilitado/desabilitado
+Entao o botao "Exportar", "1" devera estar habilitado/desabilitado
 
 @OPERACOES_TRAVA_REJEICAO_VER
 @CADASTRO_ANALISTA_CIELO @CADASTRO_ANALISTA_CIELO_APROVADOR @BACKOFFICE_ANALISTA_FORNECEDOR
@@ -38,8 +38,8 @@ Entao o sistema exibira/nao exibira a tela "Rejeições"
 Cenario: CT.SEGINFO - [AUT] OPERACOES_TRAVA_REJEICAO_RELATORIO_EXPORTAR
 Dado que tenha/nao tenha o direito "OPERACOES_TRAVA_REJEICAO_RELATORIO_EXPORTAR"
 E que tenha/nao tenha acesso na tela "Rejeições"
-Quando clicar no botao "Pesquisar"
-Entao o botao "Exportar" devera estar habilitado/desabilitado
+Quando clicar no botao "Pesquisar", "0"
+Entao o botao "Exportar", "1" devera estar habilitado/desabilitado
 
 @OPERACOES_TRAVA_TRAVADESTRAVACLIENTE_VER
 @CADASTRO_ANALISTA_CIELO @CADASTRO_ANALISTA_CIELO_APROVADOR @CENTRAL_HELP_DESK_ANALISTA
@@ -64,15 +64,15 @@ Entao o sistema exibira/nao exibira a tela "Movimento CIP (Varredura)"
 Cenario: CT.SEGINFO - [AUT] OPERACOES_TRAVA_TRATAMENTOMANUAL_EDITAR
 Dado que tenha/nao tenha o direito "OPERACOES_TRAVA_TRATAMENTOMANUAL_EDITAR"
 E que tenha/nao tenha acesso na tela "Efetuar trava e destrava manual"
-Entao o botao "Salvar" estara habilitado/desabilitado
+Entao o botao "Salvar", "1" estara habilitado/desabilitado
 
 @OPERACOES_TRAVA_REJEICAO_EDITAR
-@BACKOFFICE_ANALISTA_FORNECEDOR 
+@BACKOFFICE_ANALISTA_FORNECEDOR
 Cenario: CT.SEGINFO - [AUT] OPERACOES_TRAVA_REJEICAO_EDITAR
 Dado que tenha/nao tenha o direito "OPERACOES_TRAVA_REJEICAO_EDITAR"
 E que tenha/nao tenha acesso na tela "Rejeições"
 Entao informar "01/05/2016" no campo "data-de"
 E informar "10/10/2016" no campo "data-ate"
-E clicar no botao "Pesquisar"
+E clicar no botao "Pesquisar", "0"
 Entao selecionar o check-box da linha "1" na coluna "1" da tabela resultados
-E clicar no botao "Finalizar"
+E clicar no botao "Finalizar", "1"

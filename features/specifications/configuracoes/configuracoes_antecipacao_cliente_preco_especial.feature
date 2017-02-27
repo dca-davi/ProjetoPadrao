@@ -12,7 +12,7 @@ Dado que eu faca login
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_VER"
 E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
-Quando clicar na aba "Preço Especial"
+Quando clicar na aba "Preço Especial", "0"
 Entao a aplicacao exibira/nao exibira o painel grid da tela cacfv "Resultados"
 
 @CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_DETALHE_VER
@@ -20,15 +20,15 @@ Entao a aplicacao exibira/nao exibira o painel grid da tela cacfv "Resultados"
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_DETALHE_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_DETALHE_VER"
 E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
-Quando clicar na aba "Preço Especial"
-E clicar na acao "Visualizar"
+Quando clicar na aba "Preço Especial", "0"
+E clicar na acao "Visualizar", "0"
 Entao localizar o frame "Detalhe do preço especial"
 
 @CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_INCLUIR
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_INCLUIR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_INCLUIR"
 E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
-Quando clicar na aba "Preço Especial"
+Quando clicar na aba "Preço Especial", "0"
 E clicar no link acao "Incluir"
 Entao  localizar o frame "Selecionar o cliente"
 
@@ -36,15 +36,15 @@ Entao  localizar o frame "Selecionar o cliente"
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_EDITAR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_EDITAR"
 E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
-Quando clicar na aba "Preço Especial"
-E clicar na acao "Editar"
+Quando clicar na aba "Preço Especial", "0"
+E clicar na acao "Editar", "0"
 Entao localizar o frame "Edição do preço especial"
 
 @CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_REMOVER
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_REMOVER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_REMOVER"
 E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
-Quando clicar na aba "Preço Especial"
-E clicar na acao "Remover"
+Quando clicar na aba "Preço Especial", "0"
+E clicar na acao "Remover", "0"
 Entao localizar o frame "Cancelar"
 # Demis <<<
