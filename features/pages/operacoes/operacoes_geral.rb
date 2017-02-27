@@ -70,6 +70,8 @@ class Trava_Prazo_Vencido
                 sleep 1
                 $browser.label(text: "Cr\u00E9dito").click
                 sleep 1
+                $browser.a(text: "Mais filtros").click
+                sleep 2
                 $browser.execute_script('arguments[0].click()', $browser.div(id: /cardAssociation_panel/).li(text: 'VISA'))
                 $browser.text_field(name: /dtSetrTo_input/).set (DateTime.now - 5).strftime('%d%m%Y')
                 sleep 5
