@@ -11,5 +11,5 @@ Dado que eu faca login
 Cenario: CT.SEGINFO - [AUT] OPERACOES_APOIO_RECUPERACAO_ANTECIPACAOVENDAS_DISPONIVEL_EDITAR
 Dado que tenha/nao tenha o direito "OPERACOES_APOIO_RECUPERACAO_ANTECIPACAOVENDAS_DISPONIVEL_EDITAR"
 E que tenha/nao tenha acesso na tela "ARV"
-E clicar na acao "Editar"
-Entao o botao "Sim" estara habilitado/desabilitado
+E clicar na acao "Editar", "0"
+Entao o botao "Sim", "1" estara habilitado/desabilitado

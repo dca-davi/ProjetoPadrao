@@ -16,16 +16,16 @@ Dado que eu faca login
 Cenario: CT.SEGINFO - [AUT] OPERACOES_HIERARQUIA_GRUPODEPAGAMENTO_VER
 Dado que tenha/nao tenha o direito "OPERACOES_HIERARQUIA_GRUPODEPAGAMENTO_VER"
 E que tenha/nao tenha acesso na tela "Grupo de pagamento"
-Quando clicar na aba "PESQUISAR"
+Quando clicar na aba "PESQUISAR", "0"
 E selecionar a opcao "Nº do cliente individual" do campo "Pesquisar grupo por"
 E informar "1007595105" no campo "numero do cliente individual"
-Entao clicar no botao "Pesquisar"
+Entao clicar no botao "Pesquisar", "1"
 
 @OPERACOES_HIERARQUIA_GRUPODEPAGAMENTO_EDITAR
 Cenario: CT.SEGINFO - [AUT] OPERACOES_HIERARQUIA_GRUPODEPAGAMENTO_EDITAR
 Dado que tenha/nao tenha o direito "OPERACOES_HIERARQUIA_GRUPODEPAGAMENTO_EDITAR"
 E que tenha/nao tenha acesso na tela "Grupo de pagamento"
 Quando informar "1007595105" no campo "numero do cliente individual"
-E clicar no botao "Pesquisar"
+E clicar no botao "Pesquisar", "0"
 E clicar no link "1007595105"
-Entao o botao "Editar Dados" estara habilitado/desabilitado
+Entao o botao "Editar Dados", "1" estara habilitado/desabilitado

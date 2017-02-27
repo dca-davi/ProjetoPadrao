@@ -52,7 +52,7 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_REJEICOESBANDEIRA_EXPORTAR
 Dado que tenha/nao tenha o direito "OPERACOES_REJEICOESBANDEIRA_EXPORTAR"
 E que tenha/nao tenha acesso na tela "Bandeira"
 Quando informar os filtros na tela "Bandeira" e clicar no botao "Pesquisar"
-Entao o botao "Exportar" estara habilitado/desabilitado
+Entao o botao "Exportar", "1" estara habilitado/desabilitado
 
 @OPERACOES_REJEITADOS_PAGAMENTOSEDEBITOS_EXPORTAR
 @BACKOFFICE_ANALISTA_FORNECEDOR @PLANEJA_BACKOFFICE_COBRAN_FATURA_ANALISTA @CHARGEBACK_ANALISTA_INTERCAMBIO
@@ -61,7 +61,7 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_REJEITADOS_PAGAMENTOSEDEBITOS_EXPORTAR
 Dado que tenha/nao tenha o direito "OPERACOES_REJEITADOS_PAGAMENTOSEDEBITOS_EXPORTAR"
 E que tenha/nao tenha acesso na tela "Depósitos e débitos"
 Quando informar os filtros na tela "Depósitos | Débitos" e clicar no botao "Pesquisar"
-Entao o botao "Exportar" estara habilitado/desabilitado
+Entao o botao "Exportar", "1" estara habilitado/desabilitado
 
 @OPERACOES_REJEICOES_PAGAMENTOSDEBITOS_ANULAR_EDITAR
 @BACKOFFICE_ANALISTA_FORNECEDOR @PLANEJA_BACKOFFICE_COBRAN_FATURA_ANALISTA
@@ -74,37 +74,38 @@ E informar "237-BANCO BRADESCO S.A." no campo "Banco"
 E selecionar "VISA" no combo-box Bandeira
 E informar "01/11/2015" no campo "data-de"
 E informar "10/10/2016" no campo "data-ate"
-E clicar no botao "Pesquisar"
+E clicar no botao "Pesquisar", "0"
 Entao selecionar o check-box da linha "1" na coluna "8" da tabela resultados
-E clicar no botao "Continuar"
+E clicar no botao "Continuar", "0"
 E selecionar a opcao "Baixa manual"
 E selecionar "Retorno para a agenda" no combo-box do pop-up
-E clicar no botao "Confirmar"
-E clicar no botao "Sim"
-E clicar no botao "OK"
-Entao clicar na aba "ANULAÇÃO"
+E clicar no botao "Confirmar", "0"
+E clicar no botao "Sim", "0"
+E clicar no botao "OK", "0"
+Entao clicar na aba "ANULAÇÃO", "0"
 E selecionar a opcao "Por Banco/Bandeira"
 E selecionar a opcao "Crédito" da aba Anulacao
 E selecionar a opcao "Baixa manual"
 E informar "237-BANCO BRADESCO S.A." no campo "Banco"
 E selecionar "VISA" no combo-box Bandeira
-E clicar no botao "Pesquisar"
+E clicar no botao "Pesquisar", "0"
 Entao selecionar o check-box da linha "1" na coluna "8" da tabela resultados
-E clicar no botao "Confirmar"
-E clicar no botao "Sim"
-E clicar no botao "OK"
+E clicar no botao "Confirmar", "0"
+E clicar no botao "Sim", "0"
+E clicar no botao "OK", "1"
 
 @OPERACOES_REJEICOESCAPTURA_DETALHES_REMOVER
 Cenario: CT.SEGINFO - [AUT] OPERACOES_REJEICOESCAPTURA_DETALHES_REMOVER
 Dado que tenha/nao tenha o direito "OPERACOES_REJEICOESCAPTURA_DETALHES_REMOVER"
 E que tenha/nao tenha acesso na tela "Captura"
-E clicar na aba "TRATAMENTO"
+E clicar na aba "TRATAMENTO", "0"
 Quando selecionar a opcao "Exclusão"
 E informar "06/09/2016" no campo "data de rejeicao - de"
 E informar "06/10/2016" no campo "data de rejeicao - ate"
-Quando clicar no botao "Pesquisar" da tela captura
-E clicar na acao "Editar"
-Entao clicar no botao "Excluir"
+Quando clicar no botao "Pesquisar", "0" da tela captura
+E clicar na acao "Editar", "0"
+Entao clicar no botao "Excluir", "1"
+
 
 @OPERACOES_REJEICOESCAPTURA_EXPORTAR
 @BACKOFFICE_ANALISTA_FORNECEDOR @CONTROLE_SISTEMAS_FINANCEIROS_CONCILIACAO @TESOURARIA_E_CONTAS_A_PAGAR_ANALISTA
@@ -114,33 +115,33 @@ Dado que tenha/nao tenha o direito "OPERACOES_REJEICOESCAPTURA_EXPORTAR"
 E que tenha/nao tenha acesso na tela "Captura"
 E informar "06/09/2016" no campo "data de rejeicao - de"
 E informar "06/10/2016" no campo "data de rejeicao - ate"
-Quando clicar no botao "Pesquisar"
+Quando clicar no botao "Pesquisar", "0"
 Entao clicar no botao exportar
 
 @OPERACOES_REJEICOESCAPTURA_TRATAMENTO_ANULACAO_INCLUIR
 Cenario: CT.SEGINFO - [AUT] OPERACOES_REJEICOESCAPTURA_TRATAMENTO_ANULACAO_INCLUIR
 Dado que tenha/nao tenha o direito "OPERACOES_REJEICOESCAPTURA_TRATAMENTO_ANULACAO_INCLUIR"
 E que tenha/nao tenha acesso na tela "Captura"
-E clicar na aba "TRATAMENTO"
+E clicar na aba "TRATAMENTO", "0"
 Quando selecionar a opcao "Reentrada"
 E informar "06/09/2016" no campo "data de rejeicao Tratamento - de"
 E informar "10/09/2016" no campo "data de rejeicao Tratamento - ate"
-Quando clicar no botao "Pesquisar"
-Entao o botao "Reentrada" estara habilitado/desabilitado
+Quando clicar no botao "Pesquisar", "0"
+Entao o botao "Reentrada", "1" estara habilitado/desabilitado
 
 @OPERACOES_REJEICOES_MANUTENCOES_CADASTRAIS_EDITAR
 Cenario: CT.SEGINFO - [AUT] OPERACOES_REJEICOES_MANUTENCOES_CADASTRAIS_EDITAR
 Dado que tenha/nao tenha o direito "OPERACOES_REJEICOES_MANUTENCOES_CADASTRAIS_EDITAR"
 E que tenha/nao tenha acesso na tela "Manutenções cadastrais"
-E clicar no botao "Pesquisar"
-Quando clicar na acao "Tratar"
-Entao o botao "Sim" estara habilitado/desabilitado
+E clicar no botao "Pesquisar", "0"
+Quando clicar na acao "Tratar", "0"
+Entao o botao "Sim", "1" estara habilitado/desabilitado
 
 @OPERACOES_REJEICOES_MANUTENCOES_CADASTRAIS_VER
 Cenario: CT.SEGINFO - [AUT] OPERACOES_REJEICOES_MANUTENCOES_CADASTRAIS_VER
 Dado que tenha/nao tenha o direito "OPERACOES_REJEICOES_MANUTENCOES_CADASTRAIS_VER"
 E que tenha/nao tenha acesso na tela "Manutenções cadastrais"
-Entao o botao "Pesquisar" estara habilitado/desabilitado
+Entao o botao "Pesquisar", "1" estara habilitado/desabilitado
 
 @OPERACOES_MASTER_REJEITADOS_PAGAMENTOSEDEBITOS_EDITAR
 Cenario: CT.SEGINFO - [AUT] OPERACOES_MASTER_REJEITADOS_PAGAMENTOSEDEBITOS_EDITAR
@@ -152,7 +153,7 @@ E selecionar a opcao "Débito"
 E informar "104-CAIXA ECONOMICA FEDERAL S.A." no campo "Banco"
 E informar "01/09/2016" no campo "data-de"
 E informar "09/09/2016" no campo "data-ate"
-E clicar no botao "Pesquisar"
+E clicar no botao "Pesquisar", "0"
 Entao selecionar o check-box todos na coluna "8" da tabela resultados
 
 @OPERACOES_REJEICOESBANDEIRA_ELO_DINERS_DETALHES_EDITAR
@@ -162,9 +163,9 @@ E que tenha/nao tenha acesso na tela "Bandeira"
 Quando informar "01092016" no campo data inicial de rejeicao
 E informar "09092016" no campo data final de rejeicao
 E selecionar a opcao "Elo" do combo-box "Bandeira"
-E clicar no botao "Pesquisar"
-Entao clicar na acao "Visualizar"
-E o botao "Editar todos" estara habilitado/desabilitado
+E clicar no botao "Pesquisar", "0"
+Entao clicar na acao "Visualizar", "0"
+E o botao "Editar todos", "1" estara habilitado/desabilitado
 
 @OPERACOES_REJEICOESBANDEIRA_MASTERCARD_DETALHES_EDITAR
 Cenario: CT.SEGINFO - [AUT] OPERACOES_REJEICOESBANDEIRA_MASTERCARD_DETALHES_EDITAR
@@ -173,9 +174,9 @@ E que tenha/nao tenha acesso na tela "Bandeira"
 Quando informar "01092016" no campo data inicial de rejeicao
 E informar "09092016" no campo data final de rejeicao
 E selecionar a opcao "Mastercard" do combo-box "Bandeira"
-E clicar no botao "Pesquisar"
-Entao clicar na acao "Visualizar"
-E o botao "Editar todos" estara habilitado/desabilitado
+E clicar no botao "Pesquisar", "0"
+Entao clicar na acao "Visualizar", "0"
+E o botao "Editar todos", "1" estara habilitado/desabilitado
 
 @OPERACOES_REJEICOESBANDEIRA_VISA_DETALHES_TCR0_EDITAR
 Cenario: CT.SEGINFO - [AUT] OPERACOES_REJEICOESBANDEIRA_VISA_DETALHES_TCR0_EDITAR
@@ -184,18 +185,18 @@ E que tenha/nao tenha acesso na tela "Bandeira"
 Quando informar "01092016" no campo data inicial de rejeicao
 E informar "09092016" no campo data final de rejeicao
 E selecionar a opcao "Visa" do combo-box "Bandeira"
-E clicar no botao "Pesquisar"
-Entao clicar na acao "Visualizar"
-E o botao "Editar todos" estara habilitado/desabilitado
+E clicar no botao "Pesquisar", "0"
+Entao clicar na acao "Visualizar", "0"
+E o botao "Editar todos", "1" estara habilitado/desabilitado
 
 @OPERACOES_REJEICOES_CAPTURA_DETALHES_SALVAR_INCLUIR
 Cenario: CT.SEGINFO - [AUT] OPERACOES_REJEICOES_CAPTURA_DETALHES_SALVAR_INCLUIR
 Dado que tenha/nao tenha o direito "OPERACOES_REJEICOES_CAPTURA_DETALHES_SALVAR_INCLUIR"
 E que tenha/nao tenha acesso na tela "Captura"
-E clicar na aba "TRATAMENTO"
+E clicar na aba "TRATAMENTO", "0"
 Quando selecionar a opcao "Exclusão"
 E informar "03/10/2016" no campo "data de rejeicao - de"
 E informar "07/10/2016" no campo "data de rejeicao - ate"
-Quando clicar no botao "Pesquisar" da tela captura
-E clicar na acao "Editar"
-Entao clicar no botao "Excluir"
+Quando clicar no botao "Pesquisar", "0" da tela captura
+E clicar na acao "Editar", "0"
+Entao clicar no botao "Excluir", "1"

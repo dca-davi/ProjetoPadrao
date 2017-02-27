@@ -529,6 +529,13 @@ class Utils
         # $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
         #Watir::Wait.until { $browser.text_field(id: /#{campo}$/, index: 0).exist? }
 
+        sleep 2
+        if $browser.text_field(id: /#{campo}$/, index: 0).exist?
+            $browser.text_field(id: /#{campo}$/, index: 0).set valor
+            aguardar_loading
+            $browser.send_keys :tab
+            aguardar_loading
+
         # sleep 2
         aguardar_loading
         if $browser.text_field(id: /#{campo}$/, index: var_i).exist? # Valida se o campo existe
@@ -648,10 +655,15 @@ class Utils
     end
 
     def validar_btn_exportar(botao) # pode validar todos os botes e nao somente o exportar
-        Watir::Wait.until { $browser.button(text: botao).exists? }
+        #Watir::Wait.until { $browser.button(text: botao).exists? }
+        sleep 2
         if $browser.button(text: botao, aria_disabled: 'false').exist?
             $encoded_img = $browser.driver.screenshot_as(:base64)
             result = true
+        elsif $browser.button(value: /#{botao}/).exist?
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+            result = true
+
         else
             $encoded_img = $browser.driver.screenshot_as(:base64)
             result = false

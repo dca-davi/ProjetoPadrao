@@ -112,7 +112,7 @@ Entao o botao de acao "Editar" do frame "Dados do Proprietário" devera estar ha
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_GERAL_DADOSDOCLIENTE_DADOSDECADASTRO_EDITAR
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_GERAL_DADOSDOCLIENTE_DADOSDECADASTRO_EDITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
-Entao o botao "Editar Dados" do frame "Dados de cadastro" estara habilitado/desabilitado
+Entao o botao "Editar Dados" do frame "Dados de cadastro", "1" estara habilitado/desabilitado
 
 @CLIENTES_CADASTRO_INFO_GERAL_DADOSDOCLIENTE_RAZAOSOCIAL_EDITAR
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_GERAL_DADOSDOCLIENTE_RAZAOSOCIAL_EDITAR
@@ -138,7 +138,7 @@ Entao o campo "Site" deve/nao deve estar habilitado
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_GERAL_DADOSDECONTATOS_EDITAR
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_GERAL_DADOSDECONTATOS_EDITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
-Quando clicar na aba "Dados de Contato"
+Quando clicar na aba "Dados de Contato", "0"
 Entao o botao "Editar" dados de contato esta habilitado/desabilitado
 
 @CLIENTES_CADASTRO_INFO_ENDERECODECONTRATO_EDITAR
@@ -147,7 +147,7 @@ Entao o botao "Editar" dados de contato esta habilitado/desabilitado
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_ENDERECODECONTRATO_EDITAR
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_ENDERECODECONTRATO_EDITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
-Entao o botao "Editar Dados" do frame "Endereço do contrato" estara habilitado/desabilitado
+Entao o botao "Editar Dados" do frame "Endereço do contrato", "1" estara habilitado/desabilitado
 
 @CLIENTES_CADASTRO_INFO_ENDERECO_EDITAR
 @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA @CADASTRO_ANALISTA_CIELO @CADASTRO_ANALISTA_CIELO_APROVADOR
@@ -156,7 +156,7 @@ Entao o botao "Editar Dados" do frame "Endereço do contrato" estara habilitado/
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_ENDERECO_EDITAR
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_ENDERECO_EDITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
-Quando clicar na aba "ENDEREÇO"
+Quando clicar na aba "ENDEREÇO", "0"
 Entao o botao "Editar" dados de contato esta habilitado/desabilitado
 
 @CLIENTE_GERAL_BLOQUEIOS_VER
@@ -169,7 +169,7 @@ Entao o botao "Editar" dados de contato esta habilitado/desabilitado
 Cenario: CT.SEGINFO - [AUT] CLIENTE_GERAL_BLOQUEIOS_VER
 Dado que tenha/nao tenha o direito "CLIENTE_GERAL_BLOQUEIOS_VER"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
-Quando clicar na aba "Bloqueios"
+Quando clicar na aba "Bloqueios", "0"
 Entao podera/nao podera acessar a aba "Bloqueios"
 
 @CLIENTES_CADASTRO_INFO_GERAL_DADOSDECADASTRO_NOMENOCOMPROVANTEDEVENDA_EDITAR
@@ -178,17 +178,17 @@ Entao podera/nao podera acessar a aba "Bloqueios"
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_GERAL_DADOSDECADASTRO_NOMENOCOMPROVANTEDEVENDA_EDITAR
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_GERAL_DADOSDECADASTRO_NOMENOCOMPROVANTEDEVENDA_EDITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
-Quando clicar na aba "GERAL"
-E clicar na aba "Dados do cliente"
+Quando clicar na aba "GERAL", "0"
+E clicar na aba "Dados do cliente", "0"
 Quando clicar no botao "Editar Dados" do frame "dados de cadastro"
-Então o botao "Salvar" estara habilitado/desabilitado
+Então o botao "Salvar", "1" estara habilitado/desabilitado
 
 @CLIENTES_INFO_CADASTRO_ENDERECO_MASTER_EDITAR
 Cenario: CT.SEGINFO - [AUT] CLIENTES_INFO_CADASTRO_ENDERECO_MASTER_EDITAR
 Dado que tenha/nao tenha o direito "CLIENTES_INFO_CADASTRO_ENDERECO_MASTER_EDITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
-Quando clicar na aba "ENDEREÇO"
-E clicar na acao "Editar endereço"
+Quando clicar na aba "ENDEREÇO", "0"
+E clicar na acao "Editar endereço", "0"
 E informar "93950000" no campo "CEP"
 E clicar no botao "Ok" do frame "Endereço"
 Entao o campo "Logradouro" deve/nao deve estar habilitado
@@ -198,13 +198,13 @@ Entao o campo "Logradouro" deve/nao deve estar habilitado
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFOCLIENTE_CONTRATOS_VER
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFOCLIENTE_CONTRATOS_VER"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
-Quando clicar na aba "Contratos"
+Quando clicar na aba "Contratos", "0"
 Entao podera/nao podera acessar a aba "Contratos"
 
 @CLIENTES_CADASTRO_INFOCLIENTE_CONTRATOS_REMOVER @R4
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFOCLIENTE_CONTRATOS_REMOVER
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFOCLIENTE_CONTRATOS_REMOVER"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
-Quando clicar na aba "Contratos"
-E clicar na acao "Visualizar Contrato"
-Entao o botao "Excluir" estara habilitado/desabilitado
+Quando clicar na aba "Contratos", "0"
+E clicar na acao "Visualizar Contrato", "0"
+Entao o botao "Excluir", "1" estara habilitado/desabilitado

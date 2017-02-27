@@ -18,7 +18,7 @@ E informe o EC "1018242187"
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_TIPODEPAGAMENTO_VER
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_TIPODEPAGAMENTO_VER"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
-Quando clicar na aba "Tipo de pagamento"
+Quando clicar na aba "Tipo de pagamento", "0"
 Entao podera/nao podera acessar a aba "Tipo de pagamento"
 
 @CLIENTES_CADASTRO_INFO_TIPODEPAGAMENTOAMEX_EDITAR
@@ -26,7 +26,7 @@ Entao podera/nao podera acessar a aba "Tipo de pagamento"
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_TIPODEPAGAMENTOAMEX_EDITAR
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_TIPODEPAGAMENTOAMEX_EDITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
-Quando clicar na aba "Tipo de pagamento"
+Quando clicar na aba "Tipo de pagamento", "0"
 E selecionar um item "AMEX"
 E clicar no botao "Editar" do frame "Dados do tipo de pagamento"
 Entao o campo Codigo Amex devera estar habilitado/desabilitado
@@ -38,8 +38,8 @@ Entao o campo Codigo Amex devera estar habilitado/desabilitado
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_TIPODEPAGAMENTO_EDITAR
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_TIPODEPAGAMENTO_EDITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
-Quando clicar na aba "Tipo de pagamento"
-E clicar na acao "Visualizar"
+Quando clicar na aba "Tipo de pagamento", "0"
+E clicar na acao "Visualizar", "0"
 E clicar no botao "Editar" do frame "Dados do tipo de pagamento"
 Entao sera/nao sera possivel editar todos os campos do tipo de pagamento
 
@@ -48,9 +48,9 @@ Entao sera/nao sera possivel editar todos os campos do tipo de pagamento
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_FORMADECOBRANCAEPRECO_EDITAR
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_FORMADECOBRANCAEPRECO_EDITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
-Quando clicar na aba "Tipo de pagamento"
-E clicar na acao "Visualizar"
-Entao o botao "Editar" do frame "Remuneracao" estara habilitado/desabilitado
+Quando clicar na aba "Tipo de pagamento", "0"
+E clicar na acao "Visualizar", "0"
+Entao o botao "Editar" do frame "Remuneracao", "1" estara habilitado/desabilitado
 
 @CLIENTES_CADASTRO_INFO_CODIGOAMEX_EDITAR
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_CODIGOAMEX_EDITAR

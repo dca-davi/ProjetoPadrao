@@ -25,23 +25,24 @@ Entao o sistema exibira/nao exibira a tela "Abertura de demanda"
 Cenario: CT.SEGINFO - [AUT] CLIENTE_DEMANDAS_ABERTURADEMANDA_INCLUIR
 Dado que tenha/nao tenha o direito "CLIENTE_DEMANDAS_ABERTURADEMANDA_INCLUIR"
 E que tenha/nao tenha acesso na tela "Abertura de demanda"
-Entao o botao "Continuar" devera estar habilitado/desabilitado
+Entao o botao "Continuar", "1" devera estar habilitado/desabilitado
 
 @CLIENTES_DEMANDAS_ABERTURA_LOJA_CIELO_SOLICITAR
 Cenario: CT.SEGINFO - [AUT] CLIENTES_DEMANDAS_ABERTURA_LOJA_CIELO_SOLICITAR
 Dado que tenha/nao tenha o direito "CLIENTES_DEMANDAS_ABERTURA_LOJA_CIELO_SOLICITAR"
 E que tenha/nao tenha acesso na tela "Abertura de demanda"
-E selecionar "Equipamento" do campo "demanda"
-E selecionar "Instalação de Cielo Mobile" do campo "tipo da solicitacao"
-E Selecionar a opcao da sessao - Solicitante
-Quando clicar no botao "Continuar"
-Entao o botao "Continuar" devera estar habilitado/desabilitado
+E selecionar "Equipamento" do campo "demanda", "0"
+E selecionar "Instalação de Cielo Mobile" do campo "tipo da solicitacao", "0"
+E Selecionar a opcao da sessao - Solicitante "0"
+Quando clicar no botao "Continuar", "0"
+Entao o botao "Continuar", "1" devera estar habilitado/desabilitado
 
 @CLIENTES_DEMANDAS_ABERTURA_REGULARIZACOES_FINANCEIRAS_SOLICITAR
 Cenario: CT.SEGINFO - [AUT] CLIENTES_DEMANDAS_ABERTURA_REGULARIZACOES_FINANCEIRAS_SOLICITAR
 Dado que tenha/nao tenha o direito "CLIENTES_DEMANDAS_ABERTURA_REGULARIZACOES_FINANCEIRAS_SOLICITAR"
 E que tenha/nao tenha acesso na tela "Abertura de demanda"
-E selecionar "Solicitação para Regularização Financeira" do campo "demanda"
-E selecionar "Solicitação para Regularização Financeira/Cadastro" do campo "demanda"
-Quando clicar no botao "Continuar"
-Entao o botao "Continuar" devera estar habilitado/desabilitado
+E selecionar "Solicitação para Regularização Financeira" do campo "demanda", "0"
+E selecionar "Pedido para regularizar cobrança indevida telefonia" do campo "tipo da solicitacao", "0"
+E Selecionar a opcao da sessao - Solicitante "0"
+Quando clicar no botao "Continuar", "0"
+Entao o botao "Continuar", "1" devera estar habilitado/desabilitado
