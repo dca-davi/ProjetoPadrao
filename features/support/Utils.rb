@@ -63,17 +63,23 @@ class Utils
             pagina = "Pesquisa avançada"
         end
 
-        sleep 2
-        Watir::Wait.until { $browser.a(text: pagina, index: i).exists? }
-        if $browser.a(text: pagina, index: i).attribute_value('onclick') == 'return false;'
+        # sleep 2
+        # Watir::Wait.until { $browser.a(text: pagina, index: i).exists? }
+        aguardar_loading
+        if !$browser.a(text: pagina, index: i).exists?
+            return false
+        
+        elsif $browser.a(text: pagina, index: i).attribute_value('onclick') == 'return false;'
             $encoded_img = $browser.driver.screenshot_as(:base64)
             return false
+        
         else
-            sleep 1
+            # sleep 1
             $browser.execute_script('arguments[0].click()', $browser.a(text: pagina, index: i))
-            sleep 2
+            # $browser.execute_script('arguments[0].click()', $browser.a(text: pagina, index: i))
+            # sleep 2
             aguardar_loading
-            sleep 2
+            # sleep 2
             $encoded_img = $browser.driver.screenshot_as(:base64)
             return true
         end
@@ -137,7 +143,6 @@ class Utils
         grants = grants.to_s.sub(/^.*\:/, '').strip
         grants = grants.split(/,\s*/)
         $encoded_img = $browser.driver.screenshot_as(:base64)
-
         if !grants.include?("RIGHT_#{nome_direito}") && direito_planilha
             return "O perfil utilizado não esta condizente com a planilha de direitos! / Direito: #{nome_direito}"
         elsif grants.include?("RIGHT_#{nome_direito}") && !direito_planilha
@@ -198,10 +203,12 @@ class Utils
             # Watir::Wait.until { $browser.li(text: aba, index: i).exist? }
             if $browser.li(text: aba, index: i).present?
                 $browser.li(text: aba, index: i).click
+                $browser.li(text: aba, index: i).click
                 sleep 6
                 $encoded_img = $browser.driver.screenshot_as(:base64)
                 return true
             else
+                $browser.execute_script('arguments[0].click()', $browser.li(text: aba))
                 $browser.execute_script('arguments[0].click()', $browser.li(text: aba))
                 sleep 6
                 $encoded_img = $browser.driver.screenshot_as(:base64)
@@ -327,6 +334,7 @@ class Utils
 
         sleep 3
         aguardar_loading
+        sleep 3
         if $browser.a(id: /#{acao}$/).exist?
             sleep 2
             result = click_trata_exception?($browser.a(id: /#{acao}$/))
@@ -336,7 +344,7 @@ class Utils
         elsif $browser.img(id: /#{acao}$/).exist?
             sleep 2
             result = click_trata_exception?($browser.img(id: /#{acao}$/))
-        elsif $browser.span(class: /#{acao}/, index: i).parent.exist?
+        elsif $browser.span(class: /#{acao}/, index: i).exist?
             sleep 2
             result = click_trata_exception?($browser.span(class: /#{acao}/, index: i).parent)
         else
@@ -375,6 +383,7 @@ class Utils
     end
 
     def preencher_campo_input(valor, campo)
+        var_i = 0
         case campo.downcase
         when  'numero do cliente - consulta de transacoes'
             campo = 'tabPesquisaTransacao:formTransaction:input_SearchTransactionBeandtonuCustomer'
@@ -489,7 +498,8 @@ class Utils
         when 'data_fim_pesq_avan_extrato'
             campo = 'tabGeralPesquisaAvancada:formAutorizacaoMultiFiltros:dataAteTran_input'
         when '4_dig_cartao_pesq_avan_extrato'
-            campo = 'tabGeralPesquisaAvancada:formAutorizacaoMultiFiltros:j_idt320'
+            campo = 'tabGeralPesquisaAvancada:formAutorizacaoMultiFiltros:.*'
+            var_i = 5
         when 'data autorizacao reprocessamento de vendas - de'
             campo = 'tab_reprocessing_sales:initial_date_transaction_input'
         when 'data autorizacao reprocessamento de vendas - ate'
@@ -510,22 +520,37 @@ class Utils
             campo = 'tab_request:formRequest:cancellation_number'
         when 'cep'
             campo = 'tab_tabGeral:frmAddress:inputSearchCep'
+        when 'quantidade de parcelas - tipo de pagamento'
+            campo = 'tab_tabGeral:tabProduct:paymentPanel:qtdInstallments'
         else
             raise 'Campo não encontrado'
         end
 
         # $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
-        Watir::Wait.until { $browser.text_field(id: /#{campo}$/, index: 0).exist? }
-        $browser.text_field(id: /#{campo}$/, index: 0).set valor
-        aguardar_loading
-        $browser.send_keys :tab
-        aguardar_loading
+        #Watir::Wait.until { $browser.text_field(id: /#{campo}$/, index: 0).exist? }
 
-        if $browser.text_field(id: /#{campo}$/, index: 0).value != ''
-            $encoded_img = $browser.driver.screenshot_as(:base64)
-            return true
+        # sleep 2
+        aguardar_loading
+        if $browser.text_field(id: /#{campo}$/, index: var_i).exist? # Valida se o campo existe
+            if $browser.text_field(id: /#{campo}$/, index: var_i).disabled? # valida se o campo está habilitado
+                return false
+            else
+                #ação caso o campo esteja habilitado
+                $browser.text_field(id: /#{campo}$/, index: var_i).set valor
+                aguardar_loading
+                $browser.send_keys :tab
+                aguardar_loading
+
+                if $browser.text_field(id: /#{campo}$/, index: var_i).value != ''
+                    $encoded_img = $browser.driver.screenshot_as(:base64)
+                    return true
+                else
+                    $encoded_img = $browser.driver.screenshot_as(:base64)
+                    return false
+                end
+            end
+
         else
-            $encoded_img = $browser.driver.screenshot_as(:base64)
             return false
         end
     end
@@ -547,6 +572,7 @@ class Utils
             result = false
         end
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        result
     end
 
     def informar_periodo(de, ate)
@@ -583,7 +609,7 @@ class Utils
     end
 
     def selecionar_radio_button(radio, i = 0)
-        if $browser.label(text: radio, index: i).exist?
+        if $browser.label(text: radio).exist?
             $browser.label(text: radio, index: i).click
             sleep 2
             result = true
@@ -592,6 +618,7 @@ class Utils
         end
         sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        return result
     end
 
     def selecionar_check_box_tabela(linha, coluna = 0)
@@ -617,6 +644,7 @@ class Utils
         end
         sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        result
     end
 
     def validar_btn_exportar(botao) # pode validar todos os botes e nao somente o exportar
@@ -640,6 +668,7 @@ class Utils
       end
         sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        result
     end
 
     def formata_data_atual(formato)
@@ -729,7 +758,7 @@ class Utils
     return dados
   end
 
-    def adicionar_registro_log_execucao(caminho_arquivo, nome_teste, status, data, hora, observacao, sobrescrever_registro=false)
+    def adicionar_registro_log_execucao(caminho_arquivo, nome_teste, status, data, hora, observacao, passo, sobrescrever_registro=false)
         fecha_processos_excel
         excel = WIN32OLE.new('excel.application')
         excel.visible = true
@@ -746,16 +775,18 @@ class Utils
         worksheet.Cells(linha, 2).value = status
         worksheet.Cells(linha, 3).value = data
         worksheet.Cells(linha, 4).value = hora
-        if observacao.equal? nil
+        if observacao.exception.equal? nil
             worksheet.Cells(linha, 5).value = ' '
+            worksheet.Cells(linha, 6).value = ' '
         else
-            worksheet.Cells(linha, 5).value = observacao.message
+            worksheet.Cells(linha, 5).value = observacao.exception.message
+            worksheet.Cells(linha, 6).value = passo
         end
         workbook.save
         workbook.close
         fecha_processos_excel
     end
-    
+
     def fecha_processos_excel
         wmi = WIN32OLE.connect("winmgmts://")
         processos = wmi.ExecQuery("Select * from Win32_Process Where NAME = 'EXCEL.exe'")

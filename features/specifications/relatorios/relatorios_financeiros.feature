@@ -21,8 +21,8 @@ Entao o sistema exibira/nao exibira a tela "Liquidação financeira - SPB"
 @RELATORIOS_FINANCEIROS_POSICAOPAGAMENTOSDEBITOSREJEITADOS_VER
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_FINANCEIROS_POSICAOPAGAMENTOSDEBITOSREJEITADOS_VER
 Dado que tenha/nao tenha o direito "RELATORIOS_FINANCEIROS_POSICAOPAGAMENTOSDEBITOSREJEITADOS_VER"
-E que tenha/nao tenha acesso na tela "Posição de pagamentos e débitos rejeitados"
-Entao o sistema exibira/nao exibira a tela "Posição de pagamentos e débitos rejeitados"
+E que tenha/nao tenha acesso na tela "Lançamentos sem retorno"
+Entao o sistema exibira/nao exibira a tela "Lançamentos sem retorno"
 
 @RELATORIOS_FINANCEIROS_PAGAMENTOSBAIXADOSSEMRETORNODOSBANCOS_VER
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_FINANCEIROS_PAGAMENTOSBAIXADOSSEMRETORNODOSBANCOS_VER
@@ -56,7 +56,6 @@ E que tenha/nao tenha acesso na tela "Pagamentos baixados sem retorno"
 Quando selecionar a data "27/09/2016" da pagina "Pagamentos baixados sem retorno"
 E clicar no botao "Pesquisar"
 Entao o botao "Exportar" estara habilitado/desabilitado
-
 
 @RELATORIOS_FINANCEIROS_GERENCIAMENTOCARTEIRAS_DEBITO_VER
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_FINANCEIROS_GERENCIAMENTOCARTEIRAS_DEBITO_VER
