@@ -25,7 +25,7 @@ Entao(/^localizar o frame "([^"]*)", "([^"]*)"$/) do |texto, valida_step|
 end
 
 Entao(/^localizar o frame "([^"]*)"$/) do | texto |
-    steps %Q{ Então localizar o frame "#{texto}, "1" }
+    steps %Q{ Entao localizar o frame "#{texto}, "1" }
 end
 
 Entao(/^sera\/nao sera possivel editar todos os campos do tipo de pagamento$/) do
