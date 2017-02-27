@@ -648,10 +648,15 @@ class Utils
     end
 
     def validar_btn_exportar(botao) # pode validar todos os botes e nao somente o exportar
-        Watir::Wait.until { $browser.button(text: botao).exists? }
+        #Watir::Wait.until { $browser.button(text: botao).exists? }
+        sleep 2
         if $browser.button(text: botao, aria_disabled: 'false').exist?
             $encoded_img = $browser.driver.screenshot_as(:base64)
             result = true
+        elsif $browser.button(value: /#{botao}/).exist?
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+            result = true
+
         else
             $encoded_img = $browser.driver.screenshot_as(:base64)
             result = false

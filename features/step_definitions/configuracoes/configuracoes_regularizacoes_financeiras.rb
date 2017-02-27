@@ -5,7 +5,7 @@ Entao(/^clicar na acao "([^"]*)"$/) do |acao|
     if !statusBtn && @tem_direito
         raise("Usuario nao pode clicar no bot\u00E3o no qual tem direito")
     elsif statusBtn && !@tem_direito
-        raise("usuario sem o direito consegue clicar no bot\u00E3o") unless $direito_evidencia.match("CLIENTES_CAD_INFOCLIENTE_CANALVENDA_MAQSCLIENTE_ACAODESC_REMOVER") && !acao.match(/emover/)
+        raise("usuario sem o direito consegue clicar no bot\u00E3o") unless $direito_evidencia.match("CLIENTES_CAD_INFOCLIENTE_CANALVENDA_MAQSCLIENTE_ACAODESC_REMOVER") && !acao.match(/emover/) || $direito_evidencia.downcase.include?('editar') && !acao.downcase.match('editar') 
     elsif statusBtn==false && @tem_direito==false
         @pass_test = true
     end

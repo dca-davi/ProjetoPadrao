@@ -12,8 +12,8 @@ class Configuracoes_antecipacao_cliente_preco_especial
     end
 
     def clicar_link_acao(_incluir)
-        if $browser.a(href: /tabIncludeId/, text: 'Incluir').exists?
-            $browser.a(href: /tabIncludeId/, text: 'Incluir').click
+        if $browser.a(text: _incluir).exists?
+            $browser.a(text: _incluir).click
             @@utils.aguardar_loading
             $encoded_img = $browser.driver.screenshot_as(:base64)
             return true
@@ -22,4 +22,5 @@ class Configuracoes_antecipacao_cliente_preco_especial
             return false
         end
     end
+    
 end
