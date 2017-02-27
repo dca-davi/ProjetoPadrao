@@ -102,7 +102,7 @@ E clicar na aba "TRATAMENTO"
 Quando selecionar a opcao "Exclusão"
 E informar "06/09/2016" no campo "data de rejeicao - de"
 E informar "06/10/2016" no campo "data de rejeicao - ate"
-Quando clicar no botao "Pesquisar" da tela captura
+Quando clicar no botao "Pesquisar"
 E clicar na acao "Editar"
 Entao clicar no botao "Excluir"
 
