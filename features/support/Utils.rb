@@ -530,11 +530,7 @@ class Utils
         #Watir::Wait.until { $browser.text_field(id: /#{campo}$/, index: 0).exist? }
 
         sleep 2
-        if $browser.text_field(id: /#{campo}$/, index: 0).exist?
-            $browser.text_field(id: /#{campo}$/, index: 0).set valor
-            aguardar_loading
-            $browser.send_keys :tab
-            aguardar_loading
+                
 
         # sleep 2
         aguardar_loading
