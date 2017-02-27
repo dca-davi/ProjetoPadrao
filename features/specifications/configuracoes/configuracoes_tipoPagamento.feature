@@ -21,7 +21,7 @@ Entao o sistema exibira/nao exibira a tela "Preço padrão"
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_PRECO_EDITAR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_PRECO_EDITAR"
 E que tenha/nao tenha acesso na tela "Preço padrão"
-Quando clicar na aba "ATUALIZAR"
+Quando clicar na aba "ATUALIZAR", "0"
 Entao podera/nao podera acessar a aba "ATUALIZAR"
 
 @CONFIGURACOES_TIPODEPAGAMENTO_VER
@@ -40,6 +40,6 @@ Entao o sistema exibira/nao exibira a tela "Tipo de pagamento"
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_TIPODEPAGAMENTO_EDITAR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_TIPODEPAGAMENTO_EDITAR"
 E que tenha/nao tenha acesso na tela "Pesquisa"
-Quando clicar no botao "Pesquisar"
-E clicar na acao "Visualizar"
-Entao o botao "Editar" devera estar habilitado/desabilitado
+Quando clicar no botao "Pesquisar", "0"
+E clicar na acao "Visualizar", "0"
+Entao o botao "Editar", "1" devera estar habilitado/desabilitado

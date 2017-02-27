@@ -10,14 +10,16 @@ Entao(/^clicar no botao "([^"]*)" da aba anulacao$/) do |botao|
     end
 end
 
-Entao(/^clicar no botao "([^"]*)" da aba Incluir Cancelamento$/) do |botao|
+Entao(/^clicar no botao "([^"]*)", "([^"]*)" da aba Incluir Cancelamento$/) do |botao, valida_step|
     next if @pass_test == true
     ic = Operacoes_regularizacoesFinanceiras.new
     icGridDadosDePesquisa = ic.botao_pesquisar_incluir_cancelamento(botao)
     if !icGridDadosDePesquisa && @tem_direito
         raise('Usuario nao pode acessar a opcao na qual tem direito')
     elsif icGridDadosDePesquisa && !@tem_direito
-        raise('usuario sem o direito consegue acessar a opcao')
+          if valida_step == "1"
+              raise('usuario sem o direito consegue acessar a opcao')
+          end
     end
 end
 

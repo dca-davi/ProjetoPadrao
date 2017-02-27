@@ -14,7 +14,7 @@ Dado que eu faca login
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_REGULARIZACOESFINANCEIRAS_REGRADELIBERACAO_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_REGULARIZACOESFINANCEIRAS_REGRADELIBERACAO_VER"
 E que tenha/nao tenha acesso na tela "Regra de cancelamento"
-Quando clicar na aba "REGRA DE LIBERAÇÃO"
+Quando clicar na aba "REGRA DE LIBERAÇÃO", "0"
 Entao a aplicacao exibira/nao exibira o painel grid da tela crfrl "Dados da pesquisa"
 
 @CONFIGURACOES_REGULARIZACOESFINANCEIRAS_REGRASDECANCELAMENTO_VER
@@ -36,7 +36,7 @@ Entao a aplicacao exibira/nao exibira o painel grid da tela crf "Dados da pesqui
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_MOTIVOS_AJUSTES_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_MOTIVOS_AJUSTES_VER"
 E que tenha/nao tenha acesso na tela "Motivo de ajuste"
-Quando clicar no botao "Pesquisar"
+Quando clicar no botao "Pesquisar", "0"
 Entao o sistema exibira/nao exibira a tela "Motivo de Ajuste"
 
 @CONFIGURACOES_MOTIVOS_AJUSTES_EDITAR
@@ -44,48 +44,48 @@ Entao o sistema exibira/nao exibira a tela "Motivo de Ajuste"
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_MOTIVOS_AJUSTES_EDITAR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_MOTIVOS_AJUSTES_EDITAR"
 E que tenha/nao tenha acesso na tela "Motivo de ajuste"
-Quando clicar no botao "Pesquisar"
-Entao clicar na acao "Editar"
+Quando clicar no botao "Pesquisar", "0"
+Entao clicar na acao "Editar", "1"
 
 @CONFIGURACOES_MOTIVOS_AJUSTES_INCLUIR
 @CONTABILIDADE_NEGOCIO_E_TRIBUTARIO_ANALISTA
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_MOTIVOS_AJUSTES_INCLUIR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_MOTIVOS_AJUSTES_INCLUIR"
 E que tenha/nao tenha acesso na tela "Motivo de ajuste"
-Entao clicar na aba "Incluir"
+Entao clicar na aba "Incluir", "1"
 
 @CONFIGURACOES_MOTIVOS_AJUSTES_REMOVER
 @CONTABILIDADE_NEGOCIO_E_TRIBUTARIO_ANALISTA
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_MOTIVOS_AJUSTES_REMOVER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_MOTIVOS_AJUSTES_REMOVER"
 E que tenha/nao tenha acesso na tela "Motivo de ajuste"
-Quando clicar no botao "Pesquisar"
-E clicar na acao "Visualizar"
-Entao clicar no botao "Excluir"
+Quando clicar no botao "Pesquisar", "0"
+E clicar na acao "Visualizar", "0"
+Entao clicar no botao "Excluir", "1"
 
 @CONFIGURACOES_REGULARIZACOESFINANCEIRAS_REGRADELIBERACAOSALDO_EDITAR
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_REGULARIZACOESFINANCEIRAS_REGRADELIBERACAOSALDO_EDITAR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_REGULARIZACOESFINANCEIRAS_REGRADELIBERACAOSALDO_EDITAR"
 E que tenha/nao tenha acesso na tela "Regra de cancelamento"
-Quando clicar na aba "REGRA DE LIBERAÇÃO"
+Quando clicar na aba "REGRA DE LIBERAÇÃO", "0"
 E selecionar o combobox "parametro - regra de cancelamento" e a opcao "Liberar consulta de saldo"
 E localizar e clicar no botao "Pesquisar"
-Quando clicar na acao "Visualizar"
-Entao o botao "Excluir" estara habilitado/desabilitado
+Quando clicar na acao "Visualizar", "0"
+Entao o botao "Excluir", "1" estara habilitado/desabilitado
 
 @CONFIGURACOES_REGULARIZACOESFINANCEIRAS_REGRADELIBERACAOBLOQUEIO_EDITAR
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_REGULARIZACOESFINANCEIRAS_REGRADELIBERACAOBLOQUEIO_EDITAR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_REGULARIZACOESFINANCEIRAS_REGRADELIBERACAOBLOQUEIO_EDITAR"
 E que tenha/nao tenha acesso na tela "Regra de cancelamento"
-Quando clicar na aba "REGRA DE LIBERAÇÃO"
+Quando clicar na aba "REGRA DE LIBERAÇÃO", "0"
 E selecionar o combobox "parametro - regra de cancelamento" e a opcao "Liberar bloqueio de cancelamento"
 E localizar e clicar no botao "Pesquisar"
-Entao clicar na acao "Visualizar"
+Entao clicar na acao "Visualizar", "1"
 
 @SETUP_CANCELAMENTOS_LISTADEREGRA_EDITAR
 Cenario: CT.SEGINFO - [AUT] SETUP_CANCELAMENTOS_LISTADEREGRA_EDITAR
 Dado que tenha/nao tenha o direito "SETUP_CANCELAMENTOS_LISTADEREGRA_EDITAR"
 E que tenha/nao tenha acesso na tela "Regra de cancelamento"
-Quando clicar na aba "REGRA DE LIBERAÇÃO"
-E clicar na aba "Incluir regra de liberação"
+Quando clicar na aba "REGRA DE LIBERAÇÃO", "0"
+E clicar na aba "Incluir regra de liberação", "0"
 Entao podera/nao podera acessar a aba "INCLUIR"

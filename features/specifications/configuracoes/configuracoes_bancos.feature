@@ -16,4 +16,4 @@ Entao o sistema exibira/nao exibira a tela "Domicílios"
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_BANCOS_DOMICILIO_EDITAR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_BANCOS_DOMICILIO_EDITAR"
 E que tenha/nao tenha acesso na tela "Domicílios"
-Entao clicar na acao "Editar"
+Entao clicar na acao "Editar", "1"

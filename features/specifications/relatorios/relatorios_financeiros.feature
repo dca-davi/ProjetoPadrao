@@ -47,15 +47,15 @@ Cenario: CT.SEGINFO - [AUT] RELATORIOS_FINANCEIROS_CONTABEIS_VER
 Dado que tenha/nao tenha o direito "RELATORIOS_FINANCEIROS_CONTABEIS_VER"
 E que tenha/nao tenha acesso na tela "Resumo contábil sintético"
 Quando selecionar a data "27/09/2016" da pagina "Resumo contábil sintético"
-Entao clicar no botao "Pesquisar"
+Entao clicar no botao "Pesquisar", "1"
 
 @RELATORIOS_FINANCEIROS_PAGAMENTOSBAIXADOSSEMRETORNODOSBANCOS_EXPORTAR
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_FINANCEIROS_PAGAMENTOSBAIXADOSSEMRETORNODOSBANCOS_EXPORTAR
 Dado que tenha/nao tenha o direito "RELATORIOS_FINANCEIROS_PAGAMENTOSBAIXADOSSEMRETORNODOSBANCOS_EXPORTAR"
 E que tenha/nao tenha acesso na tela "Pagamentos baixados sem retorno"
 Quando selecionar a data "27/09/2016" da pagina "Pagamentos baixados sem retorno"
-E clicar no botao "Pesquisar"
-Entao o botao "Exportar" estara habilitado/desabilitado
+E clicar no botao "Pesquisar", "0"
+Entao o botao "Exportar", "1" estara habilitado/desabilitado
 
 
 @RELATORIOS_FINANCEIROS_GERENCIAMENTOCARTEIRAS_DEBITO_VER
@@ -63,14 +63,14 @@ Cenario: CT.SEGINFO - [AUT] RELATORIOS_FINANCEIROS_GERENCIAMENTOCARTEIRAS_DEBITO
 Dado que tenha/nao tenha o direito "RELATORIOS_FINANCEIROS_GERENCIAMENTOCARTEIRAS_DEBITO_VER"
 E que tenha/nao tenha acesso na tela "Gerenciamento de carteiras"
 E o sistema exibira/nao exibira a tela "Gerenciamento de carteiras"
-Entao clicar na aba "DÉBITOS"
+Entao clicar na aba "DÉBITOS", "0"
 
 @RELATORIOS_FINANCEIROS_GERENCIAMENTOCARTEIRAS_COBRANCA_VER
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_FINANCEIROS_GERENCIAMENTOCARTEIRAS_COBRANCA_VER
 Dado que tenha/nao tenha o direito "RELATORIOS_FINANCEIROS_GERENCIAMENTOCARTEIRAS_COBRANCA_VER"
 E que tenha/nao tenha acesso na tela "Gerenciamento de carteiras"
 E o sistema exibira/nao exibira a tela "Gerenciamento de carteiras"
-Entao clicar na aba "COBRANÇA"
+Entao clicar na aba "COBRANÇA", "0"
 
 @RELATORIOS_FINANCEIROS_CONTABEIS_EXPORTAR
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_FINANCEIROS_CONTABEIS_EXPORTAR
@@ -85,23 +85,23 @@ Dado que tenha/nao tenha o direito "RELATORIOS_FINANCEIROS_DEBITOSENVIADOSAOSBAN
 E que tenha/nao tenha acesso na tela "Débitos enviados"
 E informar "01/10/2016" no campo "data programada - de"
 E informar "06/10/2016" no campo "data programada - ate"
-Quando clicar no botao "Pesquisar"
-E o botao "Exportar" estara habilitado/desabilitado
+Quando clicar no botao "Pesquisar", "0"
+E o botao "Exportar", "1" estara habilitado/desabilitado
 
 @RELATORIOS_RELATORIOSFINANCEIROS_LIQUIDACAOSPB_REJEITADO_EXPORTAR
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_RELATORIOSFINANCEIROS_LIQUIDACAOSPB_REJEITADO_EXPORTAR
 Dado que tenha/nao tenha o direito "RELATORIOS_RELATORIOSFINANCEIROS_LIQUIDACAOSPB_REJEITADO_EXPORTAR"
 E que tenha/nao tenha acesso na tela "Liquidação financeira - SPB"
-E clicar na aba "REJEITADOS PÓS GRADE"
-Entao o botao "Exportar" estara habilitado/desabilitado
+E clicar na aba "REJEITADOS PÓS GRADE", "0"
+Entao o botao "Exportar", "1" estara habilitado/desabilitado
 
 @RELATORIOS_RELATORIOSFINANCEIROS_RESUMOCONTABILSINTETICO_EXPORTAR
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_RELATORIOSFINANCEIROS_RESUMOCONTABILSINTETICO_EXPORTAR
 Dado que tenha/nao tenha o direito "RELATORIOS_RELATORIOSFINANCEIROS_RESUMOCONTABILSINTETICO_EXPORTAR"
 E que tenha/nao tenha acesso na tela "Resumo contábil sintético"
 E clicar no valor bruto
-E o botao "Pesquisar" estara habilitado/desabilitado
-Entao o botao "Exportar" estara habilitado/desabilitado
+E o botao "Pesquisar", "0" estara habilitado/desabilitado
+Entao o botao "Exportar", "1" estara habilitado/desabilitado
 
 @RELATORIOS_RELATORIOSFINANCEIROS_LANCAMENTOSSEMRETORNO_VER @R4
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_RELATORIOSFINANCEIROS_LANCAMENTOSSEMRETORNO_VER
@@ -113,5 +113,4 @@ Entao o sistema exibira/nao exibira a tela "Lançamentos sem retorno"
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_RELATORIOSFINANCEIROS_LANCAMENTOSSEMRETORNO_EXPORTAR
 Dado que tenha/nao tenha o direito "RELATORIOS_RELATORIOSFINANCEIROS_LANCAMENTOSSEMRETORNO_EXPORTAR"
 E que tenha/nao tenha acesso na tela "Lançamentos sem retorno"
-Entao o botao "Exportar" estara habilitado/desabilitado
-
+Entao o botao "Exportar", "1" estara habilitado/desabilitado

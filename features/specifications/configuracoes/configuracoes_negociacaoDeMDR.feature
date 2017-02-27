@@ -17,5 +17,5 @@ Entao o sistema exibira/nao exibira a tela "Goldlist"
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_NEGOCIACAO_MDR_GOLDLIST_INCLUIR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_NEGOCIACAO_MDR_GOLDLIST_INCLUIR"
 E que tenha/nao tenha acesso na tela "Goldlist_MDR"
-Quando clicar na aba "INCLUIR"
+Quando clicar na aba "INCLUIR", "0"
 Entao podera/nao podera acessar a aba "INCLUIR"

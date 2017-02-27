@@ -25,8 +25,8 @@ Dado que tenha/nao tenha o direito "CONFIGURACOES_REGULATORIOS_SEFAZ_EDITAR"
 E que tenha/nao tenha acesso na tela "SEFAZ"
 Quando selecionar Tipo de inclusao "Upload"
 E informar "809153" no campo "Protocolo"
-E clicar no botao "Buscar"
-Entao clicar na acao "Editar"
+E clicar no botao "Buscar", "0"
+Entao clicar na acao "Editar", "1"
 
 @CONFIGURACOES_REGULATORIOS_SEFAZ_APROVAR
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_REGULATORIOS_SEFAZ_APROVAR
@@ -34,5 +34,5 @@ Dado que tenha/nao tenha o direito "CONFIGURACOES_REGULATORIOS_SEFAZ_APROVAR"
 E que tenha/nao tenha acesso na tela "SEFAZ"
 Quando selecionar Tipo de inclusao "Upload"
 E informar "809153" no campo "Protocolo"
-E clicar no botao "Buscar"
-Entao clicar na acao "Aprovar"
+E clicar no botao "Buscar", "0"
+Entao clicar na acao "Aprovar", "1"
