@@ -10,37 +10,37 @@ Dado que eu faca login
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_RELATORIOSFINANCEIROS_RESUMOCONTABILSINTETICO_VER
 Dado que tenha/nao tenha o direito "RELATORIOS_RELATORIOSFINANCEIROS_RESUMOCONTABILSINTETICO_VER"
 E que tenha/nao tenha acesso na tela "Resumo contábil sintético"
-Entao o sistema exibira/nao exibira a tela "Resumo Contábil Sintético"
+Entao o sistema exibira/nao exibira a tela "Resumo Contábil Sintético", "1"
 
 @RELATORIOS_RELATORIOSFINANCEIROS_ENVIO_LIQUIDACAOSPB_VER
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_RELATORIOSFINANCEIROS_ENVIO_LIQUIDACAOSPB_VER
 Dado que tenha/nao tenha o direito "RELATORIOS_RELATORIOSFINANCEIROS_ENVIO_LIQUIDACAOSPB_VER"
 E que tenha/nao tenha acesso na tela "Liquidação financeira - SPB"
-Entao o sistema exibira/nao exibira a tela "Liquidação financeira - SPB"
+Entao o sistema exibira/nao exibira a tela "Liquidação financeira - SPB", "1"
 
 @RELATORIOS_FINANCEIROS_POSICAOPAGAMENTOSDEBITOSREJEITADOS_VER
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_FINANCEIROS_POSICAOPAGAMENTOSDEBITOSREJEITADOS_VER
 Dado que tenha/nao tenha o direito "RELATORIOS_FINANCEIROS_POSICAOPAGAMENTOSDEBITOSREJEITADOS_VER"
 E que tenha/nao tenha acesso na tela "Lançamentos sem retorno"
-Entao o sistema exibira/nao exibira a tela "Lançamentos sem retorno"
+Entao o sistema exibira/nao exibira a tela "Lançamentos sem retorno", "1"
 
 @RELATORIOS_FINANCEIROS_PAGAMENTOSBAIXADOSSEMRETORNODOSBANCOS_VER
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_FINANCEIROS_PAGAMENTOSBAIXADOSSEMRETORNODOSBANCOS_VER
 Dado que tenha/nao tenha o direito "RELATORIOS_FINANCEIROS_PAGAMENTOSBAIXADOSSEMRETORNODOSBANCOS_VER"
 E que tenha/nao tenha acesso na tela "Pagamentos baixados sem retorno"
-Entao o sistema exibira/nao exibira a tela "Pagamentos baixados sem retorno"
+Entao o sistema exibira/nao exibira a tela "Pagamentos baixados sem retorno", "1"
 
 @RELATORIOS_FINANCEIROS_DEBITOSENVIADOSAOSBANCOS_VER
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_FINANCEIROS_DEBITOSENVIADOSAOSBANCOS_VER
 Dado que tenha/nao tenha o direito "RELATORIOS_FINANCEIROS_DEBITOSENVIADOSAOSBANCOS_VER"
 E que tenha/nao tenha acesso na tela "Débitos enviados"
-Entao o sistema exibira/nao exibira a tela "Débitos enviados"
+Entao o sistema exibira/nao exibira a tela "Débitos enviados", "1"
 
 @RELATORIOS_DIVERGENCIASRESUMO_VER
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_DIVERGENCIASRESUMO_VER
 Dado que tenha/nao tenha o direito "RELATORIOS_DIVERGENCIASRESUMO_VER"
 E que tenha/nao tenha acesso na tela "Divergências do resumo financeiro"
-Entao o sistema exibira/nao exibira a tela "Divergências"
+Entao o sistema exibira/nao exibira a tela "Divergências", "1"
 
 @RELATORIOS_FINANCEIROS_CONTABEIS_VER
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_FINANCEIROS_CONTABEIS_VER
@@ -61,14 +61,14 @@ Entao o botao "Exportar", "1" estara habilitado/desabilitado
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_FINANCEIROS_GERENCIAMENTOCARTEIRAS_DEBITO_VER
 Dado que tenha/nao tenha o direito "RELATORIOS_FINANCEIROS_GERENCIAMENTOCARTEIRAS_DEBITO_VER"
 E que tenha/nao tenha acesso na tela "Gerenciamento de carteiras"
-E o sistema exibira/nao exibira a tela "Gerenciamento de carteiras"
+E o sistema exibira/nao exibira a tela "Gerenciamento de carteiras", "0"
 Entao clicar na aba "DÉBITOS", "0"
 
 @RELATORIOS_FINANCEIROS_GERENCIAMENTOCARTEIRAS_COBRANCA_VER
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_FINANCEIROS_GERENCIAMENTOCARTEIRAS_COBRANCA_VER
 Dado que tenha/nao tenha o direito "RELATORIOS_FINANCEIROS_GERENCIAMENTOCARTEIRAS_COBRANCA_VER"
 E que tenha/nao tenha acesso na tela "Gerenciamento de carteiras"
-E o sistema exibira/nao exibira a tela "Gerenciamento de carteiras"
+E o sistema exibira/nao exibira a tela "Gerenciamento de carteiras", "0"
 Entao clicar na aba "COBRANÇA", "0"
 
 @RELATORIOS_FINANCEIROS_CONTABEIS_EXPORTAR
@@ -106,7 +106,7 @@ Entao o botao "Exportar", "1" estara habilitado/desabilitado
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_RELATORIOSFINANCEIROS_LANCAMENTOSSEMRETORNO_VER
 Dado que tenha/nao tenha o direito "RELATORIOS_RELATORIOSFINANCEIROS_LANCAMENTOSSEMRETORNO_VER"
 E que tenha/nao tenha acesso na tela "Lançamentos sem retorno"
-Entao o sistema exibira/nao exibira a tela "Lançamentos sem retorno"
+Entao o sistema exibira/nao exibira a tela "Lançamentos sem retorno", "1"
 
 @RELATORIOS_RELATORIOSFINANCEIROS_LANCAMENTOSSEMRETORNO_EXPORTAR @R4
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_RELATORIOSFINANCEIROS_LANCAMENTOSSEMRETORNO_EXPORTAR

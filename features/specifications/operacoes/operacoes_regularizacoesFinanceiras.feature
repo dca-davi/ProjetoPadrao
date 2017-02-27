@@ -15,7 +15,7 @@ Dado que eu faca login
 Cenario: CT.SEGINFO - [AUT] OPERACOES_CONSULTA_TRANSACAO_VER
 Dado que tenha/nao tenha o direito "OPERACOES_CONSULTA_TRANSACAO_VER"
 E que tenha/nao tenha acesso na tela "Consulta de transações"
-Entao o sistema exibira/nao exibira a tela "Consulta de transações"
+Entao o sistema exibira/nao exibira a tela "Consulta de transações", "1"
 
 @OPERACOES_REGULARIZACOES_AJUSTE_VER
 @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA @CADASTRO_ANALISTA_CIELO @CADASTRO_ANALISTA_CIELO_APROVADOR
@@ -135,7 +135,7 @@ Entao clicar no botao "Atualizar", "1"
 Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_TRATAMENTODEBITOSEMRETORNO_VER
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_TRATAMENTODEBITOSEMRETORNO_VER"
 E que tenha/nao tenha acesso na tela "Débitos ao cliente sem retorno"
-E o sistema exibira/nao exibira a tela "Débito ao cliente sem retorno"
+E o sistema exibira/nao exibira a tela "Débito ao cliente sem retorno", "0"
 Entao localizar o frame "Resultados"
 
 @OPERACOES_REGULARIZACOES_AJUSTE_DETALHE_VER
@@ -204,13 +204,13 @@ E selecionar a opcao "Código"
 Quando informar "13522742" no campo "pesquisa - numero do cliente - cancelamento e reversao de vendas"
 E clicar no botao "Pesquisar", "0"
 Entao clicar na acao "Visualizar", "0"
-E o sistema exibira/nao exibira a tela "Detalhe da solicitação de cancelamento de venda"
+E o sistema exibira/nao exibira a tela "Detalhe da solicitação de cancelamento de venda", "0"
 E clicar no botao "Voltar", "0"
 Quando selecionar a opcao "Reversão de cancelamentos"
 E informar "13511736" no campo "pesquisa - numero do cliente - cancelamento e reversao de vendas"
 Entao clicar no botao "Pesquisar", "0"
 E clicar na acao "Visualizar", "0"
-Entao o sistema exibira/nao exibira a tela "Detalhe da solicitação de cancelamento de venda"
+Entao o sistema exibira/nao exibira a tela "Detalhe da solicitação de cancelamento de venda", "1"
 
 @OPERACOES_REGULARIZACOES_CANCELAMENTOVENDAS_SOLICITACAO_VER
 @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA @BACKOFFICE_ANALISTA_FORNECEDOR @PLANEJA_BACKOFFICE_COBRAN_FATURA_ANALISTA

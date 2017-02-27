@@ -11,13 +11,13 @@ Dado que eu faca login
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_REGULATORIOS_DECRED_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_REGULATORIOS_DECRED_VER"
 E que tenha/nao tenha acesso na tela "DECRED"
-Entao o sistema exibira/nao exibira a tela "DECRED"
+Entao o sistema exibira/nao exibira a tela "DECRED", "1"
 
 @CONFIGURACOES_REGULATORIOS_SEFAZ_VER
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_REGULATORIOS_SEFAZ_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_REGULATORIOS_SEFAZ_VER"
 E que tenha/nao tenha acesso na tela "SEFAZ"
-Entao o sistema exibira/nao exibira a tela "SEFAZ"
+Entao o sistema exibira/nao exibira a tela "SEFAZ", "1"
 
 @CONFIGURACOES_REGULATORIOS_SEFAZ_EDITAR
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_REGULATORIOS_SEFAZ_EDITAR

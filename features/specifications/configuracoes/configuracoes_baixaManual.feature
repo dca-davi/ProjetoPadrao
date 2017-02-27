@@ -13,7 +13,7 @@ Dado que eu faca login
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_BAIXAMANUAL_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_BAIXAMANUAL_VER"
 E que tenha/nao tenha acesso na tela "Baixa manual"
-Entao o sistema exibira/nao exibira a tela "Baixa manual"
+Entao o sistema exibira/nao exibira a tela "Baixa manual", "1"
 
 @CONFIGURACOES_BAIXAMANUAL_CODIGOS_EDITAR
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_BAIXAMANUAL_CODIGOS_EDITAR

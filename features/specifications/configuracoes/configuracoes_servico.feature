@@ -25,7 +25,7 @@ Entao localizar o frame "Resultado"
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_SERVICOS_INDICESECONOMICOS_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_SERVICOS_INDICESECONOMICOS_VER"
 E que tenha/nao tenha acesso na tela "Índices econômicos"
-Entao o sistema exibira/nao exibira a tela "Índices econômicos"
+Entao o sistema exibira/nao exibira a tela "Índices econômicos", "1"
 
 @CONFIGURACOES_SERVICOS_INDICESECONOMICOS_INCLUIR
 @PLANEJA_BACKOFFICE_COBRAN_FATURA_ANALISTA
@@ -46,7 +46,7 @@ Entao o botao "Incluir", "1" devera estar habilitado/desabilitado
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_SERVICOS_PARAMETROS_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_SERVICOS_PARAMETROS_VER"
 E que tenha/nao tenha acesso na tela "Parâmetros"
-Entao o sistema exibira/nao exibira a tela "Parâmetros"
+Entao o sistema exibira/nao exibira a tela "Parâmetros", "1"
 
 @CONFIGURACOES_SERVICOS_PARAMETROS_EDITAR
 @CADASTRO_ANALISTA_CIELO @CADASTRO_ANALISTA_CIELO_APROVADOR @CENTRAL_HELP_DESK_ANALISTA
@@ -64,7 +64,7 @@ Entao clicar na acao "Editar", "1"
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_SERVICOS_PRECOPADRAO_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_SERVICOS_PRECOPADRAO_VER"
 E que tenha/nao tenha acesso na tela "Preço padrão"
-Entao o sistema exibira/nao exibira a tela "Preço padrão"
+Entao o sistema exibira/nao exibira a tela "Preço padrão", "1"
 
 @CONFIGURACOES_SERVICOS_INDICESECONOMICOS_EDITAR
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_SERVICOS_INDICESECONOMICOS_EDITAR

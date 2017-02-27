@@ -10,7 +10,7 @@ Dado que eu faca login
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_CREDITOESPECIALIZADO_MANUTENCOESHABILITACAOCAIXA_VER
 Dado que tenha/nao tenha o direito "RELATORIOS_CREDITOESPECIALIZADO_MANUTENCOESHABILITACAOCAIXA_VER"
 E que tenha/nao tenha acesso na tela "Manutenções habilitação Caixa"
-Entao o sistema exibira/nao exibira a tela "Manutenções habilitação Caixa"
+Entao o sistema exibira/nao exibira a tela "Manutenções habilitação Caixa", "1"
 
 @RELATORIOS_CREDITOESPECIALIZADO_MANUTENCOESHABILITACAOCAIXA_EXPORTAR @R4
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_CREDITOESPECIALIZADO_MANUTENCOESHABILITACAOCAIXA_EXPORTAR

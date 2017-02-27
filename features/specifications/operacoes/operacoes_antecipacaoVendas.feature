@@ -37,7 +37,7 @@ Entao clicar no botao Pesquisar
 Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAO_CANAL_CENTRALDEANTECIPACAO_VER
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAO_CANAL_CENTRALDEANTECIPACAO_VER"
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
-Entao o sistema exibira/nao exibira a tela "Operação de Antecipação"
+Entao o sistema exibira/nao exibira a tela "Operação de Antecipação", "1"
 
 @OPERACOES_ANTECIPACAOVENDAS_OPERACAOANTECIPACAO_CLIENTEPRECO_VER
 @CENTRAL_DE_RELACIONAMENTO_ANALISTA @CENTRAL_ANTECIPACAO_COORDENADOR @CENTRAL_ANTECIPACAO_ANALISTA
@@ -137,7 +137,7 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAOVENDAS_OPERANTECIPACAO_AVULSA_V
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERANTECIPACAO_AVULSA_VER"
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
 Quando clicar na aba "Antecipação Avulsa", "0"
-Entao o sistema exibira/nao exibira a tela "Operação de Antecipação"
+Entao o sistema exibira/nao exibira a tela "Operação de Antecipação", "1"
 
 @OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_AVANCADO_VER
 Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_AVANCADO_VER
@@ -377,13 +377,13 @@ Entao localizar o frame "Pagamento"
 Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAO_CANAL_MESADEOPERACOES_VER
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAO_CANAL_MESADEOPERACOES_VER"
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
-Entao o sistema exibira/nao exibira a tela "Operação de Antecipação"
+Entao o sistema exibira/nao exibira a tela "Operação de Antecipação", "1"
 
 @OPERACOES_ANTECIPACAO_VENDAS_OPERACAO_ANTECIPACAO_INFO_CLIENTE_VER
 Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAO_VENDAS_OPERACAO_ANTECIPACAO_INFO_CLIENTE_VER
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAO_VENDAS_OPERACAO_ANTECIPACAO_INFO_CLIENTE_VER"
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
-Entao o sistema exibira/nao exibira a tela "Operação de Antecipação"
+Entao o sistema exibira/nao exibira a tela "Operação de Antecipação", "1"
 
 
 @OPERACOES_ANTECIPACAOVENDAS_ANTECPROGRAMADASCADASTRADAS_EXPORTAR @R4

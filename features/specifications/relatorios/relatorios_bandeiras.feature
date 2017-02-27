@@ -13,19 +13,19 @@ Dado que eu faca login
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_BANDEIRAS_CONTROLEREMESSAS_VER
 Dado que tenha/nao tenha o direito "RELATORIOS_BANDEIRAS_CONTROLEREMESSAS_VER"
 E que tenha/nao tenha acesso na tela "Controle de remessas"
-Entao o sistema exibira/nao exibira a tela "Controle de remessas"
+Entao o sistema exibira/nao exibira a tela "Controle de remessas", "1"
 
 @RELATORIOS_BANDEIRAS_CONTROLEREAPRESENTACOES_VER
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_BANDEIRAS_CONTROLEREAPRESENTACOES_VER
 Dado que tenha/nao tenha o direito "RELATORIOS_BANDEIRAS_CONTROLEREAPRESENTACOES_VER"
 E que tenha/nao tenha acesso na tela "Controle de reapresentações"
-Entao o sistema exibira/nao exibira a tela "Controle de reapresentações"
+Entao o sistema exibira/nao exibira a tela "Controle de reapresentações", "1"
 
 @RELATORIOS_BANDEIRAS_CONTROLEDEACOESDECHARGEBACK_VER
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_BANDEIRAS_CONTROLEDEACOESDECHARGEBACK_VER
 Dado que tenha/nao tenha o direito "RELATORIOS_BANDEIRAS_CONTROLEDEACOESDECHARGEBACK_VER"
 E que tenha/nao tenha acesso na tela "Controle de ação de chargeback"
-Entao o sistema exibira/nao exibira a tela "Controle de ação de chargeback"
+Entao o sistema exibira/nao exibira a tela "Controle de ação de chargeback", "1"
 
 @RELATORIOS_BANDEIRAS_CONTROLEDEACOESDECHARGEBACK_EXPORTAR
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_BANDEIRAS_CONTROLEDEACOESDECHARGEBACK_EXPORTAR

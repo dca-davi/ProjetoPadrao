@@ -18,7 +18,7 @@ E informe o EC "1018242187"
 Cenario: CT.SEGINFO - [AUT] CLIENTES_INFORMACOESFINANCEIRAS_VER
 Dado que tenha/nao tenha o direito "CLIENTES_INFORMACOESFINANCEIRAS_VER"
 E que tenha/nao tenha acesso na tela "Resumo financeiro"
-Entao o sistema exibira/nao exibira a tela "Resumo financeiro"
+Entao o sistema exibira/nao exibira a tela "Resumo financeiro", "1"
 
 @CLIENTES_INFORMACOESFINANCEIRAS_BUSCAAVANCADA_VER
 @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA @CADASTRO_ANALISTA_CIELO @CADASTRO_ANALISTA_CIELO_APROVADOR
@@ -31,7 +31,7 @@ Entao o sistema exibira/nao exibira a tela "Resumo financeiro"
 Cenario: CT.SEGINFO - [AUT] CLIENTES_INFORMACOESFINANCEIRAS_BUSCAAVANCADA_VER
 Dado que tenha/nao tenha o direito "CLIENTES_INFORMACOESFINANCEIRAS_BUSCAAVANCADA_VER"
 E que tenha/nao tenha acesso na tela "Resumo financeiro"
-Entao o sistema exibira/nao exibira a tela "Resumo financeiro"
+Entao o sistema exibira/nao exibira a tela "Resumo financeiro", "1"
 
 @CLIENTES_INFORMACOESFINANCEIRAS_EXPORTAR
 @BACKOFFICE_ANALISTA_FORNECEDOR @PLANEJA_BACKOFFICE_COBRAN_FATURA_ANALISTA @CHARGEBACK_ANALISTA_INTERCAMBIO
