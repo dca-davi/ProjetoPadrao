@@ -10,4 +10,4 @@ Dado que eu faca login
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_REGULATORIOS_BACEN_BILATERAL_VER
 Dado que tenha/nao tenha o direito "RELATORIOS_REGULATORIOS_BACEN_BILATERAL_VER"
 E que tenha/nao tenha acesso na tela "Bacen bilateral"
-Entao o sistema exibira/nao exibira a tela "Bacen bilateral"
+Entao o sistema exibira/nao exibira a tela "Bacen bilateral", "1"

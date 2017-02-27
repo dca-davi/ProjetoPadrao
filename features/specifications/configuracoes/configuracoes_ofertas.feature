@@ -11,18 +11,18 @@ Dado que eu faca login
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_OFERTAS_GOLDLIST_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_OFERTAS_GOLDLIST_VER"
 E que tenha/nao tenha acesso na tela "Goldlist"
-Entao o sistema exibira/nao exibira a tela "Goldlist"
+Entao o sistema exibira/nao exibira a tela "Goldlist", "1"
 
 @CONFIGURACOES_OFERTAS_GOLDLIST_REMOVER @R4
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_OFERTAS_GOLDLIST_REMOVER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_OFERTAS_GOLDLIST_REMOVER"
 E que tenha/nao tenha acesso na tela "Goldlist"
-Quando clicar no botao "Pesquisar"
-Entao clicar na acao "Remover"
+Quando clicar no botao "Pesquisar", "0"
+Entao clicar na acao "Remover", "1"
 
 @CONFIGURACOES_OFERTAS_GOLDLIST_INCLUIR @R4
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_OFERTAS_GOLDLIST_INCLUIR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_OFERTAS_GOLDLIST_INCLUIR"
 E que tenha/nao tenha acesso na tela "Goldlist"
-Quando clicar na aba "INCLUIR"
+Quando clicar na aba "INCLUIR", "0"
 Entao podera/nao podera acessar a aba "INCLUIR"

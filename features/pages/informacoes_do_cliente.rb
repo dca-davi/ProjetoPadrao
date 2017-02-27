@@ -4,9 +4,10 @@ class Info_do_cliente
 
     def clicar_botao_frame(botao, frame)
         result = true
-        sleep 2
+        @@utils.aguardar_loading
+        # sleep 2
         #Watir::Wait.until { $browser.button(text: botao).exists? }
-        sleep 1
+        # sleep 1
         case frame.downcase
 
         when "reserva financeira"
@@ -30,16 +31,15 @@ class Info_do_cliente
           end
 
         when "endere\u00E7o do contrato", "atribui\u00E7\u00E3o de categoria/pre\u00E7o", "atribui\u00E7\u00E3o de categoria/pre\u00E7o", "dados da segmenta\u00E7\u00E3o", 'resultados'
-          if $browser.button(text: botao).exists?
-            if $browser.button(text: botao, index: 0).attribute_value('aria-disabled') == 'false'
-                $browser.button(text: botao, index: 0).click
-                sleep 3
+            if !$browser.span(class: 'ui-panel-title', text: frame).exist?
+                result = false
+            elsif !$browser.span(class: 'ui-panel-title', text: frame).parent.parent.button(text: botao).exist?
+                result = false
+            elsif $browser.span(class: 'ui-panel-title', text: frame).parent.parent.button(text: botao).attribute_value('aria-disabled') == 'false'
+                $browser.span(class: 'ui-panel-title', text: frame).parent.parent.button(text: botao).click
             else
                 result = false
             end
-          else
-              result = false
-          end
 
         when "remuneracao", "antecipa\u00E7\u00E3o programada"
             if $browser.button(text: botao, index: 1).attribute_value('aria-disabled') == 'false'
@@ -71,19 +71,16 @@ class Info_do_cliente
             elsif $browser.span(class: 'ui-panel-title', text: 'Ramos de atividade restritos').parent.parent.button(text: botao).attribute_value('aria-disabled') == 'false'
                 # $browser.button(text: botao, index: 4).click
                 $browser.span(class: 'ui-panel-title', text: 'Ramos de atividade restritos').parent.parent.button(text: botao).click
-                sleep 3
             else
                 result = false
             end
 
         when "cart\u00E3o n\u00E3o presente"
-            if $browser.button(text: botao, index: 5).exist?
-                if $browser.button(text: botao, index: 5).attribute_value('aria-disabled') == 'false'
-                    $browser.button(text: botao, index: 5).click
-                    sleep 3
-                else
-                    result = false
-                end
+            if !$browser.span(class: 'ui-panel-title', text: 'Cartão não presente').exist?
+                result = false
+            elsif $browser.span(class: 'ui-panel-title', text: 'Cartão não presente').parent.parent.button(text: botao).attribute_value('aria-disabled') == 'false'
+                # $browser.button(text: botao, index: 5).click
+                $browser.span(class: 'ui-panel-title', text: 'Cartão não presente').parent.parent.button(text: botao).click
             else
                 result = false
             end
