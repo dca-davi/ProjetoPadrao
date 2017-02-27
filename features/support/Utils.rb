@@ -63,18 +63,23 @@ class Utils
             pagina = "Pesquisa avançada"
         end
 
-        sleep 2
-        Watir::Wait.until { $browser.a(text: pagina, index: i).exists? }
-        if $browser.a(text: pagina, index: i).attribute_value('onclick') == 'return false;'
+        # sleep 2
+        # Watir::Wait.until { $browser.a(text: pagina, index: i).exists? }
+        aguardar_loading
+        if !$browser.a(text: pagina, index: i).exists?
+            return false
+
+        elsif $browser.a(text: pagina, index: i).attribute_value('onclick') == 'return false;'
             $encoded_img = $browser.driver.screenshot_as(:base64)
             return false
+
         else
-            sleep 1
+            # sleep 1
             $browser.execute_script('arguments[0].click()', $browser.a(text: pagina, index: i))
-            $browser.execute_script('arguments[0].click()', $browser.a(text: pagina, index: i))
-            sleep 2
+            # $browser.execute_script('arguments[0].click()', $browser.a(text: pagina, index: i))
+            # sleep 2
             aguardar_loading
-            sleep 2
+            # sleep 2
             $encoded_img = $browser.driver.screenshot_as(:base64)
             return true
         end
@@ -148,11 +153,12 @@ class Utils
     end
 
     def clicar_botao_tela(botao)
-        # result = true
-        sleep 1
-        # Watir::Wait.until { $browser.button(text: botao).exists? }
-        if $browser.button(text: botao, index: 0).present?
-            sleep 2
+        result = true
+        aguardar_loading
+        if $cenario_name=="CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAO_CARTAONAOPRESENTE_EDITAR" && $browser.button(text: botao, index: 1).exist?
+            $browser.execute_script('arguments[0].click()', $browser.button(text: botao, index: 1))
+            result =true
+        elsif $browser.button(text: botao, index: 0).present?
             $browser.button(text: botao, index: 0).click
             result = true
         elsif $browser.button(text: botao, index: 1).present?
@@ -161,19 +167,17 @@ class Utils
         else
             result = false
         end
-        sleep 2
         aguardar_loading
         $encoded_img = $browser.driver.screenshot_as(:base64)
         result
     end
 
     def acessar_aba(aba, i = 0)
-        sleep 2
         aguardar_loading
         case aba
         when 'Incluir_PrazoFlexivel'
             aba = 'Incluir'
-            i = 1
+            i = 0
         when 'Parametros - PRO ANTECIPACAO DE VENDAS' #
             aba = 'Parâmetros'
             i = 1
@@ -185,7 +189,10 @@ class Utils
             i = 1
         end
 
-        # puts "Aba existe? #{$browser.li(text: aba, index: i).exist?}"
+        if $cenario_name=="CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAO_CARTAONAOPRESENTE_EDITAR"
+            i = 1 if aba=="Incluir"
+        end
+
         if !$browser.li(text: aba, index: i).exist?
             $encoded_img = $browser.driver.screenshot_as(:base64)
             return false
@@ -195,17 +202,18 @@ class Utils
             return false
         else
 
-            # Watir::Wait.until { $browser.li(text: aba, index: i).exist? }
             if $browser.li(text: aba, index: i).present?
-                $browser.li(text: aba, index: i).click
-                $browser.li(text: aba, index: i).click
-                sleep 6
+                until $browser.li(text: aba, index: i).attribute_value("aria-expanded")=="true"
+                    $browser.execute_script('arguments[0].click()', $browser.li(text: aba, index: i))
+                end
+                aguardar_loading
                 $encoded_img = $browser.driver.screenshot_as(:base64)
                 return true
             else
-                $browser.execute_script('arguments[0].click()', $browser.li(text: aba))
-                $browser.execute_script('arguments[0].click()', $browser.li(text: aba))
-                sleep 6
+                until $browser.li(text: aba, index: i).attribute_value("aria-expanded")=="true"
+                    $browser.execute_script('arguments[0].click()', $browser.li(text: aba, index: i))
+                end
+                aguardar_loading
                 $encoded_img = $browser.driver.screenshot_as(:base64)
                 return true
             end
@@ -217,14 +225,14 @@ class Utils
         case aba
         when 'Incluir_PrazoFlexivel'
             aba = 'Incluir'
-            i = 1
+            i = 0
         end
         aguardar_loading
         sleep 5
         # Watir::Wait.until { $browser.a(text: aba, index: /0|1/).exists? }
         if $browser.li(text: aba, index: i).attribute_value('aria-expanded') == 'true'
             return true
-        elsif $browser.li(text: aba, index: 1).attribute_value('aria-expanded') == 'true'
+        elsif $browser.li(text: aba, index: i).attribute_value('aria-expanded') == 'true'
             return true
         else
             return false
@@ -263,7 +271,7 @@ class Utils
     end
 
     def clicar_botao_acao(acao, i = 0)
-        sleep 3
+        aguardar_loading
         case acao
 
         when 'Tratar'
@@ -291,9 +299,26 @@ class Utils
         when 'Atribuir para' # Bonequinho - Tela Fila de Trabalho
             acao = 'link_ZTw'
         when 'Atribuir' # Atribuir - Tela Fila de Trabalho
-            acao = 'link_OXZ'
+            acao = ''
+            if $browser.div(id: /workQueueList/).table.exist?
+                $browser.div(id: /workQueueList/).table.tbody.rows.each do | linha |
+                    puts linha[0].text
+                    raise "Tela Fila de Trabalho - Erro: Não existem demandas a serem exibidas" if linha[0].text == "Não existem demandas a serem atendidas."
+                    acao = 'link_OXZ'
+                    break
+                end
+            end
+
         when 'Liberar' # Liberar - Tela Fila de Trabalho
-            acao = 'link_VY9'
+            if $browser.div(id: /workQueueList/).table.exist?
+                $browser.div(id: /workQueueList/).table.tbody.rows.each do | linha |
+                    puts linha[0].text
+                    raise "Tela Fila de Trabalho - Erro: Não existem demandas a serem exibidas" if linha[0].text == "Não existem demandas a serem atendidas."
+                    acao = 'link_VY9'
+                    break
+                end
+            end
+            
         when 'detalhar - reprocessamento de vendas'
             acao = 'tab_reprocessing_sales:searchReprocessingSales:reprocessingSales:0:image_w9Z'
         when 'atribuir'
@@ -327,27 +352,19 @@ class Utils
             acao = 'tab_tabGeral:frmAddress:merchantAddressID:0:btn_info_address_edit'
         end
 
-        sleep 3
         aguardar_loading
-        sleep 3
         if $browser.a(id: /#{acao}$/).exist?
-            sleep 2
             result = click_trata_exception?($browser.a(id: /#{acao}$/))
         elsif $browser.button(id: /#{acao}$/).exist?
-            sleep 2
             result = click_trata_exception?($browser.button(id: /#{acao}$/))
         elsif $browser.img(id: /#{acao}$/).exist?
-            sleep 2
             result = click_trata_exception?($browser.img(id: /#{acao}$/))
-        elsif $browser.span(class: /#{acao}/, index: i).parent.exist?
-            sleep 2
+        elsif $browser.span(class: /#{acao}/, index: i).exist?
             result = click_trata_exception?($browser.span(class: /#{acao}/, index: i).parent)
         else
             result = false
         end
-        sleep 1
         aguardar_loading
-        sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
 
         result
@@ -525,19 +542,26 @@ class Utils
         #Watir::Wait.until { $browser.text_field(id: /#{campo}$/, index: 0).exist? }
 
         sleep 2
-        if $browser.text_field(id: /#{campo}$/, index: var_i).exist?
-            $browser.text_field(id: /#{campo}$/, index: var_i).set valor
-            aguardar_loading
-            $browser.send_keys :tab
-            aguardar_loading
-
-            if $browser.text_field(id: /#{campo}$/, index: var_i).value != ''
-                $encoded_img = $browser.driver.screenshot_as(:base64)
-                return true
-            else
-                $encoded_img = $browser.driver.screenshot_as(:base64)
+        aguardar_loading
+        if $browser.text_field(id: /#{campo}$/, index: var_i).exist? # Valida se o campo existe
+            if $browser.text_field(id: /#{campo}$/, index: var_i).disabled? # valida se o campo está habilitado
                 return false
+            else
+                #ação caso o campo esteja habilitado
+                $browser.text_field(id: /#{campo}$/, index: var_i).set valor
+                aguardar_loading
+                $browser.send_keys :tab
+                aguardar_loading
+
+                if $browser.text_field(id: /#{campo}$/, index: var_i).value != ''
+                    $encoded_img = $browser.driver.screenshot_as(:base64)
+                    return true
+                else
+                    $encoded_img = $browser.driver.screenshot_as(:base64)
+                    return false
+                end
             end
+
         else
             return false
         end
@@ -636,10 +660,15 @@ class Utils
     end
 
     def validar_btn_exportar(botao) # pode validar todos os botes e nao somente o exportar
-        Watir::Wait.until { $browser.button(text: botao).exists? }
+        #Watir::Wait.until { $browser.button(text: botao).exists? }
+        sleep 2
         if $browser.button(text: botao, aria_disabled: 'false').exist?
             $encoded_img = $browser.driver.screenshot_as(:base64)
             result = true
+        elsif $browser.button(value: /#{botao}/).exist?
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+            result = true
+
         else
             $encoded_img = $browser.driver.screenshot_as(:base64)
             result = false

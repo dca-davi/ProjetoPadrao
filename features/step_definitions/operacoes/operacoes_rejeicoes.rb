@@ -6,12 +6,14 @@ Quando(/^informar os filtros na tela "([^"]*)" e clicar no botao "([^"]*)"$/) do
     utils.clicar_botao_tela botao
 end
 
-Quando(/^o botao "([^"]*)" estara habilitado\/desabilitado$/) do |botao|
+Quando(/^o botao "([^"]*)", "([^"]*)" estara habilitado\/desabilitado$/) do |botao, valida_step|
     next if @pass_test == true
     @operacoes_rejeicoes = Utils.new
     btnExprt = @operacoes_rejeicoes.validar_btn_exportar(botao)
     if btnExprt && !@tem_direito
-        raise 'Usuario pode acessar a opcao na qual nao tem direito'
+          if valida_step == "1"
+              raise 'Usuario pode acessar a opcao na qual nao tem direito'
+          end
     elsif !btnExprt && @tem_direito
         raise 'Usuario nao pode acessar a opcao na qual nao tem direito'
     end
@@ -28,13 +30,15 @@ Quando (/^selecionar a opcao "([^"]*)" do campo "([^"]*)"$/) do |item, frame|
     end
 end
 
-Quando (/^clicar no botao "([^"]*)" da tela captura$/) do |botao|
+Quando (/^clicar no botao "([^"]*)", "([^"]*)" da tela captura$/) do |botao, valida_step|
     @Operacoes_Rejeicoes = Operacoes_Rejeicoes.new
     btnPesquisar = @Operacoes_Rejeicoes.clicar_botao_pequisar_captura_tratamento(botao)
     if !btnPesquisar && @tem_direito
         raise 'Usuario nao pode clicar no botao no qual tem direito'
     elsif btnPesquisar && !@tem_direito
-        raise 'Usuario pode clicar no botao no qual nao tem direito'
+          if valida_step == "1"
+              raise 'Usuario pode clicar no botao no qual nao tem direito'
+          end
     end
 end
 

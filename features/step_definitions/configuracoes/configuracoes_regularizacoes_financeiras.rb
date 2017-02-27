@@ -1,24 +1,39 @@
-Entao(/^clicar na acao "([^"]*)"$/) do |acao|
+Entao(/^clicar na acao "([^"]*)", "([^"]*)"$/) do |acao, valida_step|
     next if @pass_test == true
     @regularizacao_financeira_utils = Utils.new
     statusBtn = @regularizacao_financeira_utils.clicar_botao_acao(acao)
     if !statusBtn && @tem_direito
         raise("Usuario nao pode clicar no bot\u00E3o no qual tem direito")
     elsif statusBtn && !@tem_direito
-        raise("usuario sem o direito consegue clicar no bot\u00E3o") unless $direito_evidencia.match("CLIENTES_CAD_INFOCLIENTE_CANALVENDA_MAQSCLIENTE_ACAODESC_REMOVER") && !acao.match(/emover/)
-    elsif statusBtn==false && @tem_direito==false
-        @pass_test = true
+        if valida_step == "1"
+            raise("usuario sem o direito consegue clicar no bot\u00E3o")
+        end
     end
 end
 
-Entao(/^localizar o frame "([^"]*)"$/) do |texto|
+Entao(/^localizar o frame "([^"]*)", "([^"]*)"$/) do |texto, valida_step|
     next if @pass_test == true
     @regularizacao_financeira_utils = Utils.new
     nomeFrame = @regularizacao_financeira_utils.validar_frame(texto)
     if !nomeFrame && @tem_direito
         raise("Frame n\u00E3o localizado")
     elsif nomeFrame && !@tem_direito
-        raise('usuario sem o direito consegue visualizar o frame')
+        if valida_step == "1"
+            raise('usuario sem o direito consegue visualizar o frame')
+        end
+    end
+end
+
+Entao(/^localizar o frame "([^"]*)"$/) do | texto |
+    next if @pass_test == true
+    @regularizacao_financeira_utils = Utils.new
+    nomeFrame = @regularizacao_financeira_utils.validar_frame(texto)
+    if !nomeFrame && @tem_direito
+        raise("Frame n\u00E3o localizado")
+    elsif nomeFrame && !@tem_direito
+        # if valida_step == "1"
+            raise('usuario sem o direito consegue visualizar o frame')
+        # end
     end
 end
 

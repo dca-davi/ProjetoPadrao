@@ -15,4 +15,4 @@ E informe o EC "1018242187"
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_GRUPOCOMERCIAL_EDITAR
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_GRUPOCOMERCIAL_EDITAR"
 E que tenha/nao tenha acesso na tela "Informações do grupo comercial"
-Entao o sistema exibira/nao exibira a tela "Informações do grupo comercial"
+Entao o sistema exibira/nao exibira a tela "Informações do grupo comercial", "1"
