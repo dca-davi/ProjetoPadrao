@@ -168,7 +168,7 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_REVERSAOCANCELAMENTO_SOLICI
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_REVERSAOCANCELAMENTO_SOLICITAR"
 E que tenha/nao tenha acesso na tela "Cancelamento e reversão de vendas"
 Quando selecionar a opcao "Cancelamento de vendas"
-E informar "627406028342762" no campo "codigo da venda"
+E informar "701206036721204" no campo "codigo da venda"
 Quando clicar no botao "Pesquisar", "0"
 E clicar na acao "Reverter", "0"
 Entao clicar no botao "Reverter", "1"
