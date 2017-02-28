@@ -100,8 +100,12 @@ class Info_do_cliente
 
         if !$browser.span(class: 'ui-panel-title', text: frame).exist?
             result = false
-        elsif $browser.span(class: 'ui-panel-title', text: frame).parent.parent.button(text: botao).attribute_value('aria-disabled') == 'false'
+        elsif $browser.span(class: 'ui-panel-title', text: frame).parent.parent.button(text: botao).exist?
+          if $browser.span(class: 'ui-panel-title', text: frame).parent.parent.button(text: botao).attribute_value('aria-disabled') == 'false'
             $browser.span(class: 'ui-panel-title', text: frame).parent.parent.button(text: botao).click
+          else
+              result = false
+          end
         else
             result = false
         end
