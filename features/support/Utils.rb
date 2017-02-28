@@ -669,9 +669,12 @@ class Utils
             $encoded_img = $browser.driver.screenshot_as(:base64)
             result = true
         elsif $browser.button(value: /#{botao}/).exist?
+          if $browser.button(value: /#{botao}/).attribute_value('aria-disabled') == 'true'
+              false
+          else
+              true
+          end
             $encoded_img = $browser.driver.screenshot_as(:base64)
-            result = true
-
         else
             $encoded_img = $browser.driver.screenshot_as(:base64)
             result = false
