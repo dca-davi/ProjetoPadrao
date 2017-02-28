@@ -46,8 +46,8 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAOVENDAS_OPERACAOANTECIPACAO_CLIE
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERACAOANTECIPACAO_CLIENTEPRECO_VER"
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
 Quando selecionar a aba precificacao
-E localizar o frame "Preço Especial", "0"
-E localizar o frame "Categoria", "0"
+E localizar o frame "Preço Especial", "1"
+E localizar o frame "Categoria", "1"
 Então localizar o frame "Alçada", "1"
 
 @OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_AVANCADO_DIFUTURO_VER
@@ -57,7 +57,7 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_AVANC
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_AVANCADO_DIFUTURO_VER"
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
 Quando clicar na aba "Antecipação Avulsa", "0"
-Entao localizar o frame "DI futuro"
+Entao localizar o frame "DI futuro", "1"
 
 @OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_DETALHEDISPONIVEL_VER
 @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA @PLANEJA_BACKOFFICE_COBRAN_FATURA_ANALISTA @CHARGEBACK_ANALISTA_INTERCAMBIO
@@ -75,8 +75,9 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_NEGOC
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_NEGOCIACAO_CDICIELO_VER"
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
 Quando clicar na aba "Antecipação Avulsa", "0"
-E localizar o frame "Percentual CDI", "0"
-Entao localizar o frame "(Cielo)"
+E localizar o frame "Percentual CDI", "1"
+Entao localizar o frame "(Cielo)", "1"
+
 
 @OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_NEGOCIACAO_CDICLIENTE_VER
 @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA @PLANEJA_BACKOFFICE_COBRAN_FATURA_ANALISTA @CHARGEBACK_ANALISTA_INTERCAMBIO
@@ -86,8 +87,9 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_NEGOC
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_NEGOCIACAO_CDICLIENTE_VER"
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
 Quando clicar na aba "Antecipação Avulsa", "0"
-E localizar o frame "Percentual CDI", "0"
-Entao localizar o frame "(Cliente)"
+E localizar o frame "Percentual CDI", "1"
+Entao localizar o frame "(Cliente)", "1"
+
 
 @OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_NEGOCIACAO_EDITAR
 @PLANEJA_BACKOFFICE_COBRAN_FATURA_ANALISTA @CHARGEBACK_ANALISTA_INTERCAMBIO @CENTRAL_DE_RELACIONAMENTO_ANALISTA
@@ -109,14 +111,14 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_RESUL
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_RESULTADOBASICO_VER"
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
 Quando clicar na aba "Antecipação Avulsa", "0"
-E localizar o frame "Resultados", "0"
-E localizar o frame "Período de antecipação", "0"
-E localizar o frame "Taxa efetiva", "0"
-E localizar o frame "Custo de captação", "0"
-E localizar o frame "Prazo médio", "0"
-E localizar o frame "DI futuro", "0"
-E localizar o frame "Prazo médio", "0"
-E localizar o frame "Custo de captação", "0"
+E localizar o frame "Resultados", "1"
+E localizar o frame "Período de antecipação", "1"
+E localizar o frame "Taxa efetiva", "1"
+E localizar o frame "Custo de captação", "1"
+E localizar o frame "Prazo médio", "1"
+E localizar o frame "DI futuro", "1"
+E localizar o frame "Prazo médio", "1"
+E localizar o frame "Custo de captação", "1"
 Entao localizar o frame "Receita líquida", "1"
 
 @OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_SOLICITAR
@@ -188,7 +190,7 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CDICLIENT
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CDICLIENTE_VER"
 E que tenha/nao tenha acesso na tela "Operações realizadas"
 Quando clicar na acao "Visualizar - operacoes realizadas", "0"
-E localizar o frame "Percentual CDI", "0"
+E localizar o frame "Percentual CDI", "1"
 E localizar o frame "(Cliente)", "1"
 
 @OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_DIFUTURO_VER

@@ -136,7 +136,7 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_TRATAMENTODEBITOSEMRETORNO_
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_TRATAMENTODEBITOSEMRETORNO_VER"
 E que tenha/nao tenha acesso na tela "Débitos ao cliente sem retorno"
 E o sistema exibira/nao exibira a tela "Débito ao cliente sem retorno", "0"
-Entao localizar o frame "Resultados"
+Entao localizar o frame "Resultados", "1"
 
 @OPERACOES_REGULARIZACOES_AJUSTE_DETALHE_VER
 @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA @BACKOFFICE_ANALISTA_FORNECEDOR @PLANEJA_BACKOFFICE_COBRAN_FATURA_ANALISTA
@@ -147,10 +147,10 @@ Entao localizar o frame "Resultados"
 Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_AJUSTE_DETALHE_VER
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_AJUSTE_DETALHE_VER"
 E que tenha/nao tenha acesso na tela "Ajustes financeiros"
-E clicar na aba "Pequisar"
+E clicar na aba "Pequisar", "0"
 E informar "13507217" no campo "numero da solicitacao - ajustes financeiros"
 Quando clicar no botao "Pesquisar", "0"
-Entao localizar o frame "Efetivada"
+Entao localizar o frame "Efetivada", "1"
 
 @OPERACOES_REGULARIZACOES_TRATAMENTODEBITOSEMRETORNO_SOLICITAR
 Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_TRATAMENTODEBITOSEMRETORNO_SOLICITAR
@@ -224,7 +224,7 @@ Quando selecionar a opcao "Cancelamento de vendas"
 E selecionar a opcao "Código"
 Quando informar "13522742" no campo "pesquisa - numero do cliente - cancelamento e reversao de vendas"
 E clicar no botao "Pesquisar", "0"
-Entao localizar o frame "Resultados"
+Entao localizar o frame "Resultados", "1"
 
 @OPERACOES_REGULARIZACOES_CANCELAMENTOVENDAS_SOLICITAR
 @BACKOFFICE_ANALISTA_FORNECEDOR @CENTRAL_DE_RELACIONAMENTO_ANALISTA @CRM_COORDENADOR
