@@ -456,7 +456,7 @@ class Utils
         when 'data-ate'
             campo = 'tab_deposits_debits:formReport:dtSetrUntil_input|dateOut_input|formRejectedFlag:finalRejectDate_input'
         when 'data de rejeicao - de'
-            campo = 'tabRejectionCapture:initialRejectionDateTreatment_input|tabRejectionCapture:initialRejectionDate_input'
+            campo = 'tabRejectionCapture:initialRejectionDate_input|tabRejectionCapture:initialRejectionDateTreatment_input' 
         when 'data de rejeicao - ate'
             campo = 'tabRejectionCapture:finalRejectionDateTreatment_input|tabRejectionCapture:finalRejectionDate_input'
         when 'data de rejeicao tratamento - de'
@@ -672,6 +672,14 @@ class Utils
         else
             $encoded_img = $browser.driver.screenshot_as(:base64)
             result = false
+        end
+    end
+
+    def validar_mensagem_sem_permissao
+        if $browser.span(text: "Usuário sem permissão de acesso").exist?
+            true           
+        else
+            false
         end
     end
 

@@ -35,7 +35,6 @@ Quando(/^clicar no botao "([^"]*)", "([^"]*)"$/) do |botao, valida_step|
               raise('Usuario pode clicar no botão que não tem direito')
           end
     end
-
 end
 
 Quando(/^clicar no botao exportar$/) do
