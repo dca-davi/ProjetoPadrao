@@ -158,7 +158,8 @@ class Utils
         if $cenario_name=="CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAO_CARTAONAOPRESENTE_EDITAR" && $browser.button(text: botao, index: 1).exist?
             $browser.execute_script('arguments[0].click()', $browser.button(text: botao, index: 1))
             result =true
-        elsif $browser.button(text: botao, index: 0).present?
+
+          elsif $browser.button(text: botao, index: 0).present? && $browser.button(text: botao, index: 0).attribute_value('aria-disabled') == 'false'
             $browser.button(text: botao, index: 0).click
             result = true
         elsif $browser.button(text: botao, index: 1).present?
@@ -193,31 +194,24 @@ class Utils
             i = 1 if aba=="Incluir"
         end
 
-        if !$browser.li(text: aba, index: i).exist?
-            $encoded_img = $browser.driver.screenshot_as(:base64)
-            return false
+      #elsif !$browser.li(text: aba, index: i).exist?
+      #      $encoded_img = $browser.driver.screenshot_as(:base64)
+      #      return false
 
-        elsif $browser.li(text: aba, index: i).attribute_value('class').include? 'ui-state-disabled'
-            $encoded_img = $browser.driver.screenshot_as(:base64)
-            return false
-        else
+      #  elsif $browser.li(text: aba, index: i).attribute_value('class').include? 'ui-state-disabled'
+      #      $encoded_img = $browser.driver.screenshot_as(:base64)
+      #      return false
+      #  else
 
-            if $browser.li(text: aba, index: i).present?
-                until $browser.li(text: aba, index: i).attribute_value("aria-expanded")=="true"
-                    $browser.execute_script('arguments[0].click()', $browser.li(text: aba, index: i))
-                end
-                aguardar_loading
-                $encoded_img = $browser.driver.screenshot_as(:base64)
-                return true
-            else
-                until $browser.li(text: aba, index: i).attribute_value("aria-expanded")=="true"
-                    $browser.execute_script('arguments[0].click()', $browser.li(text: aba, index: i))
-                end
-                aguardar_loading
-                $encoded_img = $browser.driver.screenshot_as(:base64)
-                return true
-            end
-        end
+      #      if $browser.li(text: aba, index: i).present?
+      #          until $browser.li(text: aba, index: i).attribute_value("aria-expanded")=="true"
+      #              $browser.execute_script('arguments[0].click()', $browser.li(text: aba, index: i))
+      #          end
+      #          aguardar_loading
+      #          $encoded_img = $browser.driver.screenshot_as(:base64)
+      #          return true
+      #      end
+      #  end
     end
 
     def validar_acesso_aba(aba, i = 0)
@@ -230,13 +224,15 @@ class Utils
         aguardar_loading
         sleep 5
         # Watir::Wait.until { $browser.a(text: aba, index: /0|1/).exists? }
-        if $browser.li(text: aba, index: i).attribute_value('aria-expanded') == 'true'
-            return true
+        if !$browser.li(text: aba, index: i).exist?
+          result = false
         elsif $browser.li(text: aba, index: i).attribute_value('aria-expanded') == 'true'
-            return true
-        else
-            return false
-        end
+              return true
+          elsif $browser.li(text: aba, index: i).attribute_value('aria-expanded') == 'true'
+              return true
+          else
+              result false
+          end
     end
 
     def validar_botao(botao, i = 0, click = true)
@@ -318,7 +314,7 @@ class Utils
                     break
                 end
             end
-            
+
         when 'detalhar - reprocessamento de vendas'
             acao = 'tab_reprocessing_sales:searchReprocessingSales:reprocessingSales:0:image_w9Z'
         when 'atribuir'

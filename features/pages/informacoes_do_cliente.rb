@@ -296,7 +296,7 @@ class Info_do_cliente
     end
 
     def conta_truncada?
-        valor = $browser.tbody(id: /MerchantBanks_data/).td(index: 3).text
+        valor = $browser.tbody(id: /dtbCompleteMerchantBanks_data/).td(index: 3).text
 
         if (valor.include? 'x') || (valor.include? 'X')
             return true
