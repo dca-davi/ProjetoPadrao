@@ -6,12 +6,14 @@ Quando(/^informar os filtros na tela "([^"]*)" e clicar no botao "([^"]*)"$/) do
     utils.clicar_botao_tela botao
 end
 
-Quando(/^o botao "([^"]*)" estara habilitado\/desabilitado$/) do |botao|
+Quando(/^o botao "([^"]*)", "([^"]*)" estara habilitado\/desabilitado$/) do |botao, valida_step|
     next if @pass_test == true
     @operacoes_rejeicoes = Utils.new
     btnExprt = @operacoes_rejeicoes.validar_btn_exportar(botao)
     if btnExprt && !@tem_direito
-        raise 'Usuario pode acessar a opcao na qual nao tem direito'
+          if valida_step == "1"
+              raise 'Usuario pode acessar a opcao na qual nao tem direito'
+          end
     elsif !btnExprt && @tem_direito
         raise 'Usuario nao pode acessar a opcao na qual nao tem direito'
     end
@@ -28,13 +30,15 @@ Quando (/^selecionar a opcao "([^"]*)" do campo "([^"]*)"$/) do |item, frame|
     end
 end
 
-Quando (/^clicar no botao "([^"]*)" da tela captura$/) do |botao|
+Quando (/^clicar no botao "([^"]*)", "([^"]*)" da tela captura$/) do |botao, valida_step|
     @Operacoes_Rejeicoes = Operacoes_Rejeicoes.new
     btnPesquisar = @Operacoes_Rejeicoes.clicar_botao_pequisar_captura_tratamento(botao)
     if !btnPesquisar && @tem_direito
         raise 'Usuario nao pode clicar no botao no qual tem direito'
     elsif btnPesquisar && !@tem_direito
-        raise 'Usuario pode clicar no botao no qual nao tem direito'
+          if valida_step == "1"
+              raise 'Usuario pode clicar no botao no qual nao tem direito'
+          end
     end
 end
 
@@ -44,8 +48,6 @@ Dado(/^selecionar "([^"]*)" no combo\-box Bandeira$/) do |valor|
     comboBox = @operacoes_rejeicoes.selecionar_combobox_depositos_debitos(valor)
     if !comboBox && @tem_direito
         raise 'Usuario nao pode clicar no botao no qual tem direito'
-    elsif comboBox && !@tem_direito
-        raise 'Usuario pode clicar no botao no qual tem direito'
     end
 end
 
@@ -56,7 +58,7 @@ Entao(/^selecionar "([^"]*)" no combo\-box do pop\-up$/) do |valor|
     if !comboBox && @tem_direito
         raise 'Usuario nao pode clicar no botao no qual tem direito'
     elsif comboBox && !@tem_direito
-        raise 'Usuario pode clicar no botao no qual tem direito'
+        raise 'Usuario pode clicar no botao no qual nao tem direito'
     end
 end
 
@@ -67,7 +69,7 @@ Entao(/^selecionar a opcao "([^"]*)" da aba Anulacao$/) do |valor|
     if !radioButton && @tem_direito
         raise 'Usuario nao pode clicar no botao no qual tem direito'
     elsif radioButton && !@tem_direito
-        raise 'Usuario pode clicar no botao no qual tem direito'
+        raise 'Usuario pode clicar no botao no qual nao tem direito'
     end
 end
 
@@ -78,7 +80,7 @@ Quando(/^selecionar "([^"]*)" no combo\-box "([^"]*)"$/) do |valor, item|
     if !comboBox && @tem_direito
         raise 'Usuario nao pode clicar no botao no qual tem direito'
     elsif comboBox && !@tem_direito
-        raise 'Usuario pode clicar no botao no qual tem direito'
+        raise 'Usuario pode clicar no botao no qual nao tem direito'
     end
 end
 
@@ -88,8 +90,6 @@ Quando(/^informar "([^"]*)" no campo data inicial de rejeicao$/) do |data|
     inputDate = @operacoes_rejeicoes.preencher_campo_data_inicial(data)
     if !inputDate && @tem_direito
         raise 'Usuario nao pode clicar no botao no qual tem direito'
-    elsif inputDate && !@tem_direito
-        raise 'Usuario pode clicar no botao no qual tem direito'
     end
 end
 
@@ -99,8 +99,6 @@ Quando(/^informar "([^"]*)" no campo data final de rejeicao$/) do |data|
     inputDate = @operacoes_rejeicoes.preencher_campo_data_final(data)
     if !inputDate && @tem_direito
         raise 'Usuario nao pode clicar no botao no qual tem direito'
-    elsif inputDate && !@tem_direito
-        raise 'Usuario pode clicar no botao no qual tem direito'
     end
 end
 
@@ -110,7 +108,5 @@ Quando(/^selecionar a opcao "([^"]*)" do combo\-box "([^"]*)"$/) do |opcao, comb
     comboBox = @operacoes_rejeicoes.selecione_combo_box(combo, opcao)
     if !comboBox && @tem_direito
         raise 'Usuario nao pode clicar no botao no qual tem direito'
-    elsif comboBox && !@tem_direito
-        raise 'Usuario pode clicar no botao no qual nao tem direito'
     end
 end

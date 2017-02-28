@@ -1,11 +1,19 @@
-Quando (/^selecionar "([^"]*)" do campo "([^"]*)"$/) do |item, frame|
+Quando (/^selecionar "([^"]*)" do campo "([^"]*)", "([^"]*)"$/) do |item, frame, valida_step|
     next if @pass_test == true
     @operacaoes_antecipacaoVenda = Operacoes_antecipacaoVendas.new
     btmComboCanal = @operacaoes_antecipacaoVenda.selecione_combo_operacoes(frame, item)
-    if !btmComboCanal && @tem_direito
+    case frame
+        when "demanda", "tipo da solicitacao", "Demanda-Abertura de demanda", "Tipo da solicitação-Abertura de demanda", "data autorizacao reprocessamento de vendas - de", "data autorizacao reprocessamento de vendas - ate", "Status-Reprocessamento de Venda"
+            validar = false
+        else
+            validar = true
+    end
+    if !btmComboCanal && @tem_direito && validar
         raise 'Usuario nao pode clicar na opcao na qual tem direito'
     elsif btmComboCanal && !@tem_direito
-        raise 'Usuario pode clicar na opcao na qual nao tem direito'
+          if valida_step == "1"
+              raise 'Usuario pode clicar na opcao na qual nao tem direito'
+          end
     end
 end
 
@@ -70,7 +78,5 @@ Quando (/^selecionar a opcao "([^"]*)"$/) do |radio|
     btnradio = @operacoes_antecipacaoVenda.selecionar_radio_button(radio)
     if !btnradio && @tem_direito
         raise 'Usuario nao pode selecionar o campo no qual tem direito'
-    elsif btnradio && !@tem_direito
-        raise 'Usuario pode selecionar o campo no qual nao tem direito'
-      end
+    end
 end

@@ -73,6 +73,7 @@ Entao(/^o campo "([^"]*)" deve\/nao deve estar habilitado$/) do |campo|
                       else
                           true
                       end
+        $encoded_img = $browser.driver.screenshot_as(:base64)
     end
 
     if !statusCampo && @tem_direito
@@ -82,28 +83,32 @@ Entao(/^o campo "([^"]*)" deve\/nao deve estar habilitado$/) do |campo|
     end
 end
 
-Entao(/^o botao "([^"]*)" do frame "([^"]*)" estara habilitado\/desabilitado$/) do |botao, frame|
+Entao(/^o botao "([^"]*)" do frame "([^"]*)", "([^"]*)" estara habilitado\/desabilitado$/) do |botao, frame, valida_step|
     next if @pass_test == true
     info_cli = Info_do_cliente.new
     statusBtn = info_cli.clicar_botao_frame(botao, frame)
     if !statusBtn && @tem_direito
         raise('Usuario nao pode clicar no botao no qual tem direito')
     elsif statusBtn && !@tem_direito
-        raise('Usuario pode clicar no botao no qual nao tem direito')
+        if valida_step == "1"
+            raise('Usuario pode clicar no botao no qual nao tem direito')
+        end
     end
 end
 
-Quando(/^clicar na aba "([^"]*)"$/) do |aba|
+Quando(/^clicar na aba "([^"]*)", "([^"]*)"$/) do |aba, i|
     next if @pass_test == true
     utils = Utils.new
-    statusAba = utils.acessar_aba(aba)
-    
+    statusAba = utils.acessar_aba(aba, i)
+
     # puts "Acesso a aba: #{statusAba} + Tem direito? #{@tem_direito}"
     if !statusAba && @tem_direito
         raise('Usuario nao pode acessar aba no qual tem direito')
     # elsif statusAba && !@tem_direito
-    #     raise('Usuario pode acessar aba no qual não tem direito')        
-    elsif !statusAba && !@tem_direito
+    #     raise('Usuario pode acessar aba no qual não tem direito')
+    elsif statusAba && !@tem_direito
+              raise('Usuario pode acessar aba no qual não tem direito')
+    elsif statusAba==false && @tem_direito==false
         @pass_test = true
     end
 end

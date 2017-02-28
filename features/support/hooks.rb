@@ -30,9 +30,9 @@ Before do |scenario|
         $rest_ALM.conectar_ALM
         $rest_ALM.obter_dados_ALM($release, $testset, $ciclo, $cenario_name) 
         if !$exec_status_desejado.to_s.empty?       
-            skip_this_scenario unless $rest_ALM.checar_status_ALM == $exec_status_desejado
+            skip_this_scenario if $rest_ALM.checar_status_ALM != $exec_status_desejado or $rest_ALM.checar_status_ALM == 'Passed'
         end
-        $rest_ALM.criar_run_ALM
+        $rest_ALM.criar_run_ALM('Not Completed')
     end
 
     case ENV['BROWSER']
@@ -56,7 +56,7 @@ AfterStep do
 
     if $ALM != 'N'
         $step_name = $passos[$step_name_index]
-	    $rest_ALM.criar_step_ALM($step_name, nil, 'Passed')
+	    # $rest_ALM.criar_step_ALM($step_name, nil, 'Passed')
         $step_name_index += 1
     end
 end
@@ -93,7 +93,7 @@ After do |scenario|
             else
                 $sobrescreve_registro_log = false
             end
-            Utils.new.adicionar_registro_log_execucao($caminho_log_execucao, $cenario_name, $status_run, $data_teste, $hora_teste, scenario.exception, $sobrescreve_registro_log)
+            Utils.new.adicionar_registro_log_execucao($caminho_log_execucao, $cenario_name, $status_run, $data_teste, $hora_teste, scenario, $step_name, $sobrescreve_registro_log)
         end
         $browser.close
     end

@@ -67,6 +67,28 @@ module ALM
 			raise err.response
 		end
 
+		def alterar_status_instancia_teste(hash)
+			# conteudo = @arquivo.ler_arquivo('../XML/alterar_status_instance_test.xml')
+            conteudo = @arquivo.ler_arquivo("#{@xml_path}/alterar_status_instance_test.xml")
+            xml_alterado = manipula_XML(conteudo, hash, 'alterar_status_instance_test')
+			return RestClient::Request.execute(
+												:method => :put, 
+												:url => 'https://almcielo.saas.hp.com/qcbin/rest/domains/'+@dominio+'/projects/'+@projeto+'/test-instances/'+hash['id'].to_s, 
+												:payload => xml_alterado.to_s, 
+												:headers => { 
+															:'Content-Type' => 'application/xml', 
+															:'Accept' => 'application/xml'
+														}, 
+												:cookies => {
+															:LWSSO_COOKIE_KEY => @cookiesHash['cookie_key'], 
+															:QCSession => @cookiesHash['qcsession']
+														},
+												:proxy => @valor_proxy
+											)
+			rescue RestClient::ExceptionWithResponse => err
+			raise err.response
+		end
+
         def criar_run(hash)
             # conteudo = @arquivo.ler_arquivo('../XML/run.xml')
             conteudo = @arquivo.ler_arquivo("#{@xml_path}/run.xml")
@@ -184,7 +206,7 @@ module ALM
 			@conteudo_xml = Nokogiri::XML(conteudo).root
 			hash.each do |chave, valor|
 			  case tipo
-			    when 'run', 'instance_test'
+			    when 'run', 'instance_test', 'alterar_status_instance_test'
 				  conteudo_novo_xml = @conteudo_xml.at_xpath("//Entity/Fields/Field[@Name='#{chave}']/Value")
 			    when 'email'
 				  conteudo_novo_xml = @conteudo_xml.at_xpath("//mail/#{chave}")
@@ -205,12 +227,12 @@ module ALM
 
 		def verifica_IP
 			@ip = obter_IP.ip_address
-			case @ip[0...6]
-				when '10.10.' #Rede Spread
+			# case @ip[0...6]
+				# when '10.10.' #Rede Spread
 					@valor_proxy = nil
-				else 		  #Rede Cielo
-					@valor_proxy = 'http://proxypac:8080/'
-			end
+				# else 		  #Rede Cielo
+					# @valor_proxy = 'http://proxypac:8080/'
+			# end
 		end
 
        end

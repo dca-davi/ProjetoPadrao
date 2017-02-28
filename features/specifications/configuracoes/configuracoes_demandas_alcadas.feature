@@ -15,7 +15,7 @@ E que tenha/nao tenha acesso na tela "Alçadas"
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_DEMANDAS_ALCADAS_INCLUIR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_DEMANDAS_ALCADAS_INCLUIR"
 E que tenha/nao tenha acesso na tela "Alçadas"
-Quando clicar na aba "INCLUIR"
+Quando clicar na aba "INCLUIR", "0"
 Entao podera/nao podera acessar a aba "INCLUIR"
 
 @CONFIGURACOES_DEMANDAS_ALCADAS_HISTORICOLIMITEALCADA_VER
@@ -24,7 +24,7 @@ Dado que tenha/nao tenha o direito "CONFIGURACOES_DEMANDAS_ALCADAS_HISTORICOLIMI
 E que tenha/nao tenha acesso na tela "Alçadas"
 Quando realizar uma pesquisa com situacao "Ativo"
 E selecionar visualizar no primeiro item da tela Alcadas
-E clicar na aba "Histórico"
+E clicar na aba "Histórico", "0"
 Entao podera/nao podera acessar a aba "Histórico"
 
 @CONFIGURACOES_DEMANDAS_ALCADAS_LIMITEALCADA_VER
