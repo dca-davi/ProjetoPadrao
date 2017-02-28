@@ -222,7 +222,7 @@ Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_CANCELAMENTOVENDAS_
 E que tenha/nao tenha acesso na tela "Cancelamento e reversão de vendas"
 Quando selecionar a opcao "Cancelamento de vendas"
 E selecionar a opcao "Código"
-Quando informar "13522742" no campo "pesquisa - numero do cliente - cancelamento e reversao de vendas"
+Quando informar "13555626" no campo "pesquisa - numero do cliente - cancelamento e reversao de vendas"
 E clicar no botao "Pesquisar", "0"
 Entao localizar o frame "Resultados", "1"
 
