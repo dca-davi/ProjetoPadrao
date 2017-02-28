@@ -86,7 +86,7 @@ class Utils
     end
 
     def tem_direito?(nome_direito)
-        book = Spreadsheet.open('features\direitoXperfil_V1.xls')
+        book = Spreadsheet.open('features\direitoXperfil_V1_atualizada.xls')
 
         sheet1 = book.worksheet 0
 
@@ -153,72 +153,74 @@ class Utils
     end
 
     def clicar_botao_tela(botao)
-        # result = true
-        sleep 1
-        # Watir::Wait.until { $browser.button(text: botao).exists? }
-        if $browser.button(text: botao, index: 0).present?
-            sleep 2
-            if $browser.button(text: botao, index: 0).attribute_value('aria-disabled') == 'true'
-                result = false
-            else
-                $browser.button(text: botao, index: 0).click
-                result = true
-            end
+        result = true
+        aguardar_loading
+        if $cenario_name=="CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAO_CARTAONAOPRESENTE_EDITAR" && $browser.button(text: botao, index: 1).exist?
+            $browser.execute_script('arguments[0].click()', $browser.button(text: botao, index: 1))
+            result =true
+
+          elsif $browser.button(text: botao, index: 0).present? && $browser.button(text: botao, index: 0).attribute_value('aria-disabled') == 'false'
+            $browser.button(text: botao, index: 0).click
+            result = true
         elsif $browser.button(text: botao, index: 1).present?
             $browser.button(text: botao, index: 1).click
             result = true
         else
             result = false
         end
-        sleep 2
         aguardar_loading
         $encoded_img = $browser.driver.screenshot_as(:base64)
         result
     end
 
-    def acessar_aba(aba, i = 0)
-        sleep 2
-        aguardar_loading
-        case aba
-        when 'Incluir_PrazoFlexivel'
-            aba = 'Incluir'
-            i = 0
-        when 'Parametros - PRO ANTECIPACAO DE VENDAS' #
-            aba = 'Parâmetros'
-            i = 1
-        when 'Incluir regra de liberação'
-            aba = 'INCLUIR'
-            i = 1
-        when 'Incluir Cobrança'
-            aba = 'INCLUIR'
-            i = 1
-        end
+    def acessar_aba(aba, i)
+      # aguardar_loading
+      #  case aba
+      #  when 'Incluir_PrazoFlexivel'
+      #      aba = 'Incluir'
+      #      i = 0
+      #  when 'Parametros - PRO ANTECIPACAO DE VENDAS' #
+      #      aba = 'Parâmetros'
+      #      i = 1
+      #  when 'Incluir regra de liberação'
+      #      aba = 'INCLUIR'
+      #      i = 1
+      #  when 'Incluir Cobrança'
+      #      aba = 'INCLUIR'
+      #      i = 1
+      #  end
 
-        # puts "Aba existe? #{$browser.li(text: aba, index: i).exist?}"
-        if !$browser.li(text: aba, index: i).exist?
-            $encoded_img = $browser.driver.screenshot_as(:base64)
-            return false
+      #  if $cenario_name=="CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAO_CARTAONAOPRESENTE_EDITAR"
+      #      i = 1 if aba=="Incluir"
+      #  end
 
-        elsif $browser.li(text: aba, index: i).attribute_value('class').include? 'ui-state-disabled'
-            $encoded_img = $browser.driver.screenshot_as(:base64)
-            return false
-        else
-
-            # Watir::Wait.until { $browser.li(text: aba, index: i).exist? }
-            if $browser.li(text: aba, index: i).present?
-                $browser.li(text: aba, index: i).click
-                $browser.li(text: aba, index: i).click
-                sleep 6
-                $encoded_img = $browser.driver.screenshot_as(:base64)
-                return true
+          if !$browser.li(text: aba).exist?
+            result = false
+            elsif $browser.li(text: aba).attribute_value("class").include? 'state-disabled'
+              result = false
             else
-                $browser.execute_script('arguments[0].click()', $browser.li(text: aba))
-                $browser.execute_script('arguments[0].click()', $browser.li(text: aba))
-                sleep 6
-                $encoded_img = $browser.driver.screenshot_as(:base64)
-                return true
-            end
-        end
+              $browser.li(text: aba, index: i.to_i).click
+              result = true
+          end
+
+      #elsif !$browser.li(text: aba, index: i).exist?
+      #      $encoded_img = $browser.driver.screenshot_as(:base64)
+      #      return false
+
+      #  elsif $browser.li(text: aba, index: i).attribute_value('class').include? 'ui-state-disabled'
+      #      $encoded_img = $browser.driver.screenshot_as(:base64)
+      #      return false
+      #  else
+
+      #      if $browser.li(text: aba, index: i).present?
+      #          until $browser.li(text: aba, index: i).attribute_value("aria-expanded")=="true"
+      #              $browser.execute_script('arguments[0].click()', $browser.li(text: aba, index: i))
+      #          end
+      #          aguardar_loading
+      #          $encoded_img = $browser.driver.screenshot_as(:base64)
+      #          return true
+      #      end
+      #  end
     end
 
     def validar_acesso_aba(aba, i = 0)
@@ -229,15 +231,22 @@ class Utils
             i = 0
         end
         aguardar_loading
-        sleep 5
+
+        #sleep 5
         # Watir::Wait.until { $browser.a(text: aba, index: /0|1/).exists? }
+        #if !$browser.li(text: aba, index: i).exist?
+        #  result = false
+
+        sleep 3
         if $browser.li(text: aba, index: i).attribute_value('aria-expanded') == 'true'
             return true
         elsif $browser.li(text: aba, index: i).attribute_value('aria-expanded') == 'true'
-            return true
-        else
-            return false
-        end
+              return true
+          elsif $browser.li(text: aba, index: i).attribute_value('aria-expanded') == 'true'
+              return true
+          else
+              result false
+          end
     end
 
     def validar_botao(botao, i = 0, click = true)
@@ -272,7 +281,7 @@ class Utils
     end
 
     def clicar_botao_acao(acao, i = 0)
-        sleep 3
+        aguardar_loading
         case acao
 
         when 'Tratar'
@@ -300,9 +309,26 @@ class Utils
         when 'Atribuir para' # Bonequinho - Tela Fila de Trabalho
             acao = 'link_ZTw'
         when 'Atribuir' # Atribuir - Tela Fila de Trabalho
-            acao = 'link_OXZ'
+            acao = ''
+            if $browser.div(id: /workQueueList/).table.exist?
+                $browser.div(id: /workQueueList/).table.tbody.rows.each do | linha |
+                    puts linha[0].text
+                    raise "Tela Fila de Trabalho - Erro: Não existem demandas a serem exibidas" if linha[0].text == "Não existem demandas a serem atendidas."
+                    acao = 'link_OXZ'
+                    break
+                end
+            end
+
         when 'Liberar' # Liberar - Tela Fila de Trabalho
-            acao = 'link_VY9'
+            if $browser.div(id: /workQueueList/).table.exist?
+                $browser.div(id: /workQueueList/).table.tbody.rows.each do | linha |
+                    puts linha[0].text
+                    raise "Tela Fila de Trabalho - Erro: Não existem demandas a serem exibidas" if linha[0].text == "Não existem demandas a serem atendidas."
+                    acao = 'link_VY9'
+                    break
+                end
+            end
+
         when 'detalhar - reprocessamento de vendas'
             acao = 'tab_reprocessing_sales:searchReprocessingSales:reprocessingSales:0:image_w9Z'
         when 'atribuir'
@@ -334,29 +360,23 @@ class Utils
             acao = 'button_Ipb'
         when 'Editar endereço'
             acao = 'tab_tabGeral:frmAddress:merchantAddressID:0:btn_info_address_edit'
+        when 'Visualizar Ajustes'
+            acao = 'tab_regularization:regularization_results:\d+:detail_link'
         end
 
-        sleep 3
         aguardar_loading
-        sleep 3
         if $browser.a(id: /#{acao}$/).exist?
-            sleep 2
             result = click_trata_exception?($browser.a(id: /#{acao}$/))
         elsif $browser.button(id: /#{acao}$/).exist?
-            sleep 2
             result = click_trata_exception?($browser.button(id: /#{acao}$/))
         elsif $browser.img(id: /#{acao}$/).exist?
-            sleep 2
             result = click_trata_exception?($browser.img(id: /#{acao}$/))
         elsif $browser.span(class: /#{acao}/, index: i).exist?
-            sleep 2
             result = click_trata_exception?($browser.span(class: /#{acao}/, index: i).parent)
         else
             result = false
         end
-        sleep 1
         aguardar_loading
-        sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
 
         result
@@ -373,14 +393,16 @@ class Utils
     end
 
     def validar_frame(texto)
-        sleep 6
+        aguardar_loading
+
+
         result = if $browser.td(title: texto).exist? || $browser.a(text: texto).exist? || $browser.div(text: texto).exist? || $browser.th(text: texto).exist? || $browser.label(text: texto).exist? || $browser.tr(text: texto).exist? || $browser.span(text: texto).exist?
                      true
                  else
                      false
                  end
 
-        sleep 3
+        aguardar_loading
         $encoded_img = $browser.driver.screenshot_as(:base64)
 
         result
@@ -448,7 +470,7 @@ class Utils
         when 'data-ate'
             campo = 'tab_deposits_debits:formReport:dtSetrUntil_input|dateOut_input|formRejectedFlag:finalRejectDate_input'
         when 'data de rejeicao - de'
-            campo = 'tabRejectionCapture:initialRejectionDateTreatment_input|tabRejectionCapture:initialRejectionDate_input'
+            campo = 'tabRejectionCapture:initialRejectionDate_input|tabRejectionCapture:initialRejectionDateTreatment_input'
         when 'data de rejeicao - ate'
             campo = 'tabRejectionCapture:finalRejectionDateTreatment_input|tabRejectionCapture:finalRejectionDate_input'
         when 'data de rejeicao tratamento - de'
@@ -667,6 +689,14 @@ class Utils
         end
     end
 
+    def validar_mensagem_sem_permissao
+        if $browser.span(text: "Usuário sem permissão de acesso").exist?
+            true
+        else
+            false
+        end
+    end
+
     def selecionar_radio_button_tabela(linha, coluna = 0)
         if $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna).exist?
             $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna).click
@@ -805,4 +835,11 @@ class Utils
         sleep 2
     end
 
+    def popup_contem_mensagem?(mensagem)
+      if $browser.div(class: /ui-dialog/&&/ui-overlay-visible/).span(text: /#{mensagem}/).exists?
+        return true
+      else
+        return false
+      end
+    end
 end

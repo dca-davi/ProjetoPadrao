@@ -15,8 +15,8 @@ E informe o EC "1018242187"
 Cenario: CT.SEGINFO - [AUT] OPERACOES_DEMANDAS_FILA_TRABALHO_VER
 Dado que tenha/nao tenha o direito "OPERACOES_DEMANDAS_FILA_TRABALHO_VER"
 E que tenha/nao tenha acesso na tela "Fila de trabalho"
-E o sistema exibira/nao exibira a tela "Fila de trabalho"
-Entao localizar o frame "Fila"
+E o sistema exibira/nao exibira a tela "Fila de trabalho", "0"
+Entao localizar o frame "Fila", "1"
 
 @OPERACOES_DEMANDAS_DADOS_PROPRIETARIO_VER
 @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA @CADASTRO_ANALISTA_CIELO @CADASTRO_ANALISTA_CIELO_APROVADOR
@@ -28,7 +28,7 @@ Entao localizar o frame "Fila"
 Cenario: CT.SEGINFO - [AUT] OPERACOES_DEMANDAS_DADOS_PROPRIETARIO_VER
 Dado que tenha/nao tenha o direito "OPERACOES_DEMANDAS_DADOS_PROPRIETARIO_VER"
 E que tenha/nao tenha acesso na tela "Fila de trabalho"
-Entao o sistema exibira/nao exibira a tela "Fila de trabalho"
+Entao o sistema exibira/nao exibira a tela "Fila de trabalho", "1"
 
 @OPERACOES_DEMANDAS_FILA_TRABALHO_LIBERAR_EDITAR
 @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA @CADASTRO_ANALISTA_CIELO @CADASTRO_ANALISTA_CIELO_APROVADOR
@@ -38,7 +38,7 @@ Entao o sistema exibira/nao exibira a tela "Fila de trabalho"
 Cenario: CT.SEGINFO - [AUT] OPERACOES_DEMANDAS_FILA_TRABALHO_LIBERAR_EDITAR
 Dado que tenha/nao tenha o direito "OPERACOES_DEMANDAS_FILA_TRABALHO_LIBERAR_EDITAR"
 E que tenha/nao tenha acesso na tela "Fila de trabalho"
-E o sistema exibira/nao exibira a tela "Fila de trabalho"
+E o sistema exibira/nao exibira a tela "Fila de trabalho", "0"
 E clicar na acao "Atribuir", "0"
 Entao clicar na acao "Liberar", "1"
 
@@ -46,7 +46,7 @@ Entao clicar na acao "Liberar", "1"
 Cenario: CT.SEGINFO - [AUT] OPERACOES_DEMANDAS_FILA_TRABALHO_ATRIBUIRPARA_EDITAR
 Dado que tenha/nao tenha o direito "OPERACOES_DEMANDAS_FILA_TRABALHO_ATRIBUIRPARA_EDITAR"
 E que tenha/nao tenha acesso na tela "Fila de trabalho"
-E o sistema exibira/nao exibira a tela "Fila de trabalho"
+E o sistema exibira/nao exibira a tela "Fila de trabalho", "0"
 E clicar na acao "Atribuir", "0"
 Entao clicar na acao "Editar", "1"
 
@@ -68,7 +68,7 @@ Entao o botao "Confirmar", "1" estara habilitado/desabilitado
 Cenario: CT.SEGINFO - [AUT] OPERACOES_DEMANDAS_FILADETRABALHO_ACOMP_EDITAR
 Dado que tenha/nao tenha o direito "OPERACOES_DEMANDAS_FILADETRABALHO_ACOMP_EDITAR"
 E que tenha/nao tenha acesso na tela "Fila de trabalho"
-E o sistema exibira/nao exibira a tela "Fila de trabalho"
+E o sistema exibira/nao exibira a tela "Fila de trabalho", "0"
 E clicar na acao "Atribuir", "0"
 Entao clicar na acao "Editar", "1"
 
@@ -77,18 +77,18 @@ Entao clicar na acao "Editar", "1"
 Cenario: CT.SEGINFO - [AUT] OPERACOES_DEMANDAS_FILADETRABALHO_ACOMP_ALCADASNEGOCIACAO_VER
 Dado que tenha/nao tenha o direito "OPERACOES_DEMANDAS_FILADETRABALHO_ACOMP_ALCADASNEGOCIACAO_VER"
 E que tenha/nao tenha acesso na tela "Fila de trabalho"
-E o sistema exibira/nao exibira a tela "Fila de trabalho"
+E o sistema exibira/nao exibira a tela "Fila de trabalho", "0"
 
 @OPERACOES_DEMANDAS_FILADETRABALHO_ACOMP_ALCADASNEGOCIACAO_APROVAR
 Cenario: CT.SEGINFO - [AUT] OPERACOES_DEMANDAS_FILADETRABALHO_ACOMP_ALCADASNEGOCIACAO_APROVAR
 Dado que tenha/nao tenha o direito "OPERACOES_DEMANDAS_FILADETRABALHO_ACOMP_ALCADASNEGOCIACAO_APROVAR"
 E que tenha/nao tenha acesso na tela "Fila de trabalho"
-E o sistema exibira/nao exibira a tela "Fila de trabalho"
+E o sistema exibira/nao exibira a tela "Fila de trabalho", "0"
 Entao clicar na acao "Liberar", "1"
 
 @OPERACOES_DEMANDAS_FILADETRABALHO_PRECIFICACAOPZFLEX_APROVAR
 Cenario: CT.SEGINFO - [AUT] OPERACOES_DEMANDAS_FILADETRABALHO_PRECIFICACAOPZFLEX_APROVAR
 Dado que tenha/nao tenha o direito "OPERACOES_DEMANDAS_FILADETRABALHO_PRECIFICACAOPZFLEX_APROVAR"
 E que tenha/nao tenha acesso na tela "Fila de trabalho"
-E o sistema exibira/nao exibira a tela "Fila de trabalho"
+E o sistema exibira/nao exibira a tela "Fila de trabalho", "0"
 Entao clicar na acao "Liberar", "1"

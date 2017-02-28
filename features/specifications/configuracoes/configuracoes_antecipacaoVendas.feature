@@ -14,7 +14,7 @@ Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_CONSULT
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_CONSULTAGERAL_VER"
 E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
 # E que tenha/nao tenha acesso na tela "Consulta geral"
-Entao o sistema exibira/nao exibira a tela "Precificação"
+Entao o sistema exibira/nao exibira a tela "Precificação", "1"
 
 @CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_CONSULTAPORCANAL_VER
 @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA @PLANEJA_BACKOFFICE_COBRAN_FATURA_ANALISTA @TESOURARIA_E_CONTAS_A_PAGAR_ANALISTA
@@ -31,7 +31,7 @@ E clicar na aba "Consulta por canal", "0"
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOESGERAIS_TAXAEFETIVAMAXIMA_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOESGERAIS_TAXAEFETIVAMAXIMA_VER"
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
-Entao localizar o frame "Taxa efetiva máxima"
+Entao localizar o frame "Taxa efetiva máxima", "1"
 
 @CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOES_RESERVAFINANCEIRA_VER
 @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA @PLANEJA_BACKOFFICE_COBRAN_FATURA_ANALISTA
@@ -42,13 +42,13 @@ Entao localizar o frame "Taxa efetiva máxima"
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOES_RESERVAFINANCEIRA_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOES_RESERVAFINANCEIRA_VER"
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
-Entao localizar o frame "Reserva financeira"
+Entao localizar o frame "Reserva financeira", "1"
 
 @CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAO_CARTAONAOPRESENTE_VER
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAO_CARTAONAOPRESENTE_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAO_CARTAONAOPRESENTE_VER"
 E que tenha/nao tenha acesso na tela "Exceção_antecipaçãoVendas"
-Entao o sistema exibira/nao exibira a tela "Exceção"
+Entao o sistema exibira/nao exibira a tela "Exceção", "0"
 E clicar na aba "Cartão não presente", "0"
 Entao o botao "Pesquisar", "1" estara habilitado/desabilitado
 
@@ -58,7 +58,7 @@ Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_CONSULT
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_CONSULTAPORCANAL_EDITAR"
 E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
 Quando clicar no botao "Editar", "0"
-Entao o sistema exibira/nao exibira a tela "Precificação"
+Entao o sistema exibira/nao exibira a tela "Precificação", "1"
 
 @CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOESGERAIS_TAXAEFETIVAMAXIMA_EDITAR
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOESGERAIS_TAXAEFETIVAMAXIMA_EDITAR
@@ -79,7 +79,7 @@ Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO
 E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
 Quando clicar na aba "Preço Especial", "0"
 E clicar na aba "Incluir", "0"
-Entao o sistema exibira/nao exibira a tela "Precificação"
+Entao o sistema exibira/nao exibira a tela "Precificação", "1"
 
 @CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_PRECOESPECIAL_VER
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_PRECOESPECIAL_VER
@@ -126,7 +126,7 @@ Entao clicar na aba "CUSTO DE CAPTAÇÃO", "1"
 Cenario: CT.SEGINFO - [AUT] SETUP_ARVCONFIGURACOES_GERAIS_ATRIBUICAOCATEGORIAPRECO_VER
 Dado que tenha/nao tenha o direito "SETUP_ARVCONFIGURACOES_GERAIS_ATRIBUICAOCATEGORIAPRECO_VER"
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
-Entao localizar o frame "Atribuição de categoria/preço"
+Entao localizar o frame "Atribuição de categoria/preço", "1"
 
 @SETUP_ARVCONFIGURACOES_GERAIS_RAMOSDEATIVIDADERESTRITOS_EDITAR
 Cenario: CT.SEGINFO - [AUT] SETUP_ARVCONFIGURACOES_GERAIS_RAMOSDEATIVIDADERESTRITOS_EDITAR
@@ -143,7 +143,7 @@ Entao clicar no botao "Editar dados" do frame "Ramos de atividade restritos"
 Cenario: CT.SEGINFO - [AUT] SETUP_ARVCONFIGURACOES_GERAIS_RAMOSDEATIVIDADERESTRITOS_VER
 Dado que tenha/nao tenha o direito "SETUP_ARVCONFIGURACOES_GERAIS_RAMOSDEATIVIDADERESTRITOS_VER"
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
-Entao localizar o frame "Ramos de atividade restritos"
+Entao localizar o frame "Ramos de atividade restritos", "1"
 
 @SETUP_ARV_CUSTOS_CDI_INCLUIR
 @ANTECIPACAO_DE_VENDAS_TESOURARIA_ANALISTA @ANTECIPACAO_DE_VENDAS_TESOURARIA_COORDENADOR
@@ -157,7 +157,7 @@ Entao clicar no botao "Incluir", "1"
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAORESERVAFINANCEIRA_EXPORTAR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAORESERVAFINANCEIRA_EXPORTAR"
 E que tenha/nao tenha acesso na tela "Exceção_antecipaçãoVendas"
-E o sistema exibira/nao exibira a tela "Exceção"
+E o sistema exibira/nao exibira a tela "Exceção", "0"
 Entao o botao "Exportar", "1" estara habilitado/desabilitado
 
 
@@ -203,13 +203,13 @@ Entao o botao "Editar", "1" devera estar habilitado/desabilitado
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOES_GERAIS_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOES_GERAIS_VER"
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
-Entao o sistema exibira/nao exibira a tela "Antecipação de Vendas - Configurações Gerais"
+Entao o sistema exibira/nao exibira a tela "Antecipação de Vendas - Configurações Gerais", "1"
 
 @CONFIGURACOES_ANTECIPACAOVENDAS_CONFGERAIS_CARTAONAOPRESENTE_VER
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_CONFGERAIS_CARTAONAOPRESENTE_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_CONFGERAIS_CARTAONAOPRESENTE_VER"
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
-Entao localizar o frame "Cartão não presente"
+Entao localizar o frame "Cartão não presente", "1"
 
 @CONFIGURACOES_ANTECIPACAOVENDAS_CONFGERAIS_CARTAONAOPRESENTE_EDITAR
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_CONFGERAIS_CARTAONAOPRESENTE_EDITAR
@@ -221,7 +221,7 @@ Entao clicar no botao "Editar dados" do frame "Cartão não presente"
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAORESERVAFINANCEIRA_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAORESERVAFINANCEIRA_VER"
 E que tenha/nao tenha acesso na tela "Exceção_antecipaçãoVendas"
-Entao o sistema exibira/nao exibira a tela "Exceção"
+Entao o sistema exibira/nao exibira a tela "Exceção", "1"
 
 @CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECIPACAOPROGRAMADA_EDITAR
 @CENTRAL_DE_RELACIONAMENTO_ANALISTA @CRM_COORDENADOR
@@ -241,7 +241,7 @@ Entao o botao "Exportar", "1" devera estar habilitado/desabilitado
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECIPACAOPROGRAMADA_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECIPACAOPROGRAMADA_VER"
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
-Entao localizar o frame "Antecipação programada"
+Entao localizar o frame "Antecipação programada", "1"
 
 @SETUP_ARVCONFIGURACOES_GERAIS_VALORMINIMOPOROPERACAOEMCADACANAL_EDITAR
 Cenario: CT.SEGINFO - [AUT] SETUP_ARVCONFIGURACOES_GERAIS_VALORMINIMOPOROPERACAOEMCADACANAL_EDITAR
@@ -294,7 +294,7 @@ E clicar no botao "Confirmar", "1"
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_AQUISICAORECEBIVEIS_EXCECAO_ANTECIPPRAZOFLEXIVEL_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_AQUISICAORECEBIVEIS_EXCECAO_ANTECIPPRAZOFLEXIVEL_VER"
 E que tenha/nao tenha acesso na tela "Exceção_antecipaçãoVendas"
-Entao o sistema exibira/nao exibira a tela "Exceção"
+Entao o sistema exibira/nao exibira a tela "Exceção", "0"
 Quando clicar na aba "Antecipação de Prazo Flexível", "0"
 
 @CONFIGURACOES_AQUISICAORECEBIVEIS_EXCECAO_ANTECIPPRAZOFLEXIVEL_EDITAR
@@ -311,7 +311,7 @@ Cenario: CT.SEGINFO - [AUT] SETUP_ARV_CUSTOS_PROARV_PARAMETROS_VER
 Dado que tenha/nao tenha o direito "SETUP_ARV_CUSTOS_PROARV_PARAMETROS_VER"
 E que tenha/nao tenha acesso na tela "Pró-antecipação de vendas"
 Quando clicar na aba "Parametros - PRO ANTECIPACAO DE VENDAS", "0"
-Entao localizar o frame "Parâmetros"
+Entao localizar o frame "Parâmetros", "1"
 
 @SETUP_ARV_CUSTOS_PROARV_PARAMETROS_EDITAR
 @ANTECIPACAO_DE_VENDAS_TESOURARIA_ANALISTA @ANTECIPACAO_DE_VENDAS_TESOURARIA_COORDENADOR
@@ -340,7 +340,7 @@ Entao o botao "Exportar", "1" estara habilitado/desabilitado
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_CONFGERAIS_FIDC_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_CONFGERAIS_FIDC_VER"
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
-Entao localizar o frame "Taxa efetiva máxima"
+Entao localizar o frame "Taxa efetiva máxima", "1"
 
 @CONFIGURACOES_ANTECIPACAOVENDAS_CONFGERAIS_FIDC_EDITAR @R4
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_CONFGERAIS_FIDC_EDITAR

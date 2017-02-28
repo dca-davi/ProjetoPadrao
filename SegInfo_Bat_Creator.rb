@@ -43,15 +43,15 @@ for count in 1...perfis.row_count               # Percorrer todos os perfis da p
         file << "cd #{dirname}\n"
         file.close
 
-        next if count == (direitos.row_count - 1)        
+        next if count == (direitos.row_count - 1)
     end
 
     fileGname = "#{current_path}\\#{perfil}\\!Todos direitos - #{perfil}.bat"
     dirname = File.dirname(fileGname)                                               # Coletar nome do diretório
     system 'mkdir', dirname unless File.directory?(dirname)                         # Criar o diretório caso não exista
     fileG = File.open(fileGname, 'w')                                               # Abrir o arquivo criado
-    puts fileGname                                                                  # Imprime o nome do arquivo gerado          
-	
+    puts fileGname                                                                  # Imprime o nome do arquivo gerado
+
 	if !File.exist? nome_arquivo_log
 		# fecha_processos_excel
 		wmi = WIN32OLE.connect("winmgmts://")
@@ -62,7 +62,7 @@ for count in 1...perfis.row_count               # Percorrer todos os perfis da p
 		sleep 2
 
 		#criar log execução
-		excel = WIN32OLE.new('excel.application')    
+		excel = WIN32OLE.new('excel.application')
 		wb = excel.WorkBooks.add
 		ws = wb.WorkSheets.add
 		ws.name = 'Status'
@@ -74,7 +74,7 @@ for count in 1...perfis.row_count               # Percorrer todos os perfis da p
 		wb.SaveAs("#{nome_arquivo_log}")
 		wb.close
 	end
-    
+
     fileG << "cd C:\\Git\\automation-test-seginfo\n"
     fileG << "git pull seginfo master\n"
     fileG << "cd #{dirname}\n\n"

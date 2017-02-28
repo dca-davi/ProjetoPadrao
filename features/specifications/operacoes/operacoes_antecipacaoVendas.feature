@@ -37,7 +37,7 @@ Entao clicar no botao Pesquisar
 Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAO_CANAL_CENTRALDEANTECIPACAO_VER
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAO_CANAL_CENTRALDEANTECIPACAO_VER"
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
-Entao o sistema exibira/nao exibira a tela "Operação de Antecipação"
+Entao o sistema exibira/nao exibira a tela "Operação de Antecipação", "1"
 
 @OPERACOES_ANTECIPACAOVENDAS_OPERACAOANTECIPACAO_CLIENTEPRECO_VER
 @CENTRAL_DE_RELACIONAMENTO_ANALISTA @CENTRAL_ANTECIPACAO_COORDENADOR @CENTRAL_ANTECIPACAO_ANALISTA
@@ -46,9 +46,9 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAOVENDAS_OPERACAOANTECIPACAO_CLIE
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERACAOANTECIPACAO_CLIENTEPRECO_VER"
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
 Quando selecionar a aba precificacao
-E localizar o frame "Preço Especial"
-E localizar o frame "Categoria"
-Então localizar o frame "Alçada"
+E localizar o frame "Preço Especial", "1"
+E localizar o frame "Categoria", "1"
+Então localizar o frame "Alçada", "1"
 
 @OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_AVANCADO_DIFUTURO_VER
 @TESOURARIA_E_CONTAS_A_PAGAR_ANALISTA @CENTRAL_DE_RELACIONAMENTO_ANALISTA @CENTRAL_ANTECIPACAO_COORDENADOR
@@ -57,7 +57,7 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_AVANC
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_AVANCADO_DIFUTURO_VER"
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
 Quando clicar na aba "Antecipação Avulsa", "0"
-Entao localizar o frame "DI futuro"
+Entao localizar o frame "DI futuro", "1"
 
 @OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_DETALHEDISPONIVEL_VER
 @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA @PLANEJA_BACKOFFICE_COBRAN_FATURA_ANALISTA @CHARGEBACK_ANALISTA_INTERCAMBIO
@@ -75,8 +75,8 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_NEGOC
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_NEGOCIACAO_CDICIELO_VER"
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
 Quando clicar na aba "Antecipação Avulsa", "0"
-E localizar o frame "Percentual CDI"
-Entao localizar o frame "(Cielo)"
+E localizar o frame "Percentual CDI", "1"
+Entao localizar o frame "(Cielo)", "1"
 
 @OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_NEGOCIACAO_CDICLIENTE_VER
 @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA @PLANEJA_BACKOFFICE_COBRAN_FATURA_ANALISTA @CHARGEBACK_ANALISTA_INTERCAMBIO
@@ -86,8 +86,8 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_NEGOC
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_NEGOCIACAO_CDICLIENTE_VER"
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
 Quando clicar na aba "Antecipação Avulsa", "0"
-E localizar o frame "Percentual CDI"
-Entao localizar o frame "(Cliente)"
+E localizar o frame "Percentual CDI", "1"
+Entao localizar o frame "(Cliente)", "1"
 
 @OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_NEGOCIACAO_EDITAR
 @PLANEJA_BACKOFFICE_COBRAN_FATURA_ANALISTA @CHARGEBACK_ANALISTA_INTERCAMBIO @CENTRAL_DE_RELACIONAMENTO_ANALISTA
@@ -109,15 +109,15 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_RESUL
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_RESULTADOBASICO_VER"
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
 Quando clicar na aba "Antecipação Avulsa", "0"
-E localizar o frame "Resultados"
-E localizar o frame "Período de antecipação"
-E localizar o frame "Taxa efetiva"
-E localizar o frame "Custo de captação"
-E localizar o frame "Prazo médio"
-E localizar o frame "DI futuro"
-E localizar o frame "Prazo médio"
-E localizar o frame "Custo de captação"
-Entao localizar o frame "Receita líquida"
+E localizar o frame "Resultados", "1"
+E localizar o frame "Período de antecipação", "1"
+E localizar o frame "Taxa efetiva", "1"
+E localizar o frame "Custo de captação", "1"
+E localizar o frame "Prazo médio", "1"
+E localizar o frame "DI futuro", "1"
+E localizar o frame "Prazo médio", "1"
+E localizar o frame "Custo de captação", "1"
+Entao localizar o frame "Receita líquida", "1"
 
 @OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_SOLICITAR
 @CENTRAL_DE_RELACIONAMENTO_ANALISTA @CENTRAL_ANTECIPACAO_COORDENADOR @CENTRAL_ANTECIPACAO_ANALISTA
@@ -137,7 +137,7 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAOVENDAS_OPERANTECIPACAO_AVULSA_V
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERANTECIPACAO_AVULSA_VER"
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
 Quando clicar na aba "Antecipação Avulsa", "0"
-Entao o sistema exibira/nao exibira a tela "Operação de Antecipação"
+Entao o sistema exibira/nao exibira a tela "Operação de Antecipação", "1"
 
 @OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_AVANCADO_VER
 Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_AVANCADO_VER
@@ -188,8 +188,8 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CDICLIENT
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CDICLIENTE_VER"
 E que tenha/nao tenha acesso na tela "Operações realizadas"
 Quando clicar na acao "Visualizar - operacoes realizadas", "0"
-E localizar o frame "Percentual CDI"
-E localizar o frame "(Cliente)"
+E localizar o frame "Percentual CDI", "1"
+E localizar o frame "(Cliente)", "1"
 
 @OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_DIFUTURO_VER
 @CENTRAL_DE_RELACIONAMENTO_ANALISTA @CENTRAL_ANTECIPACAO_COORDENADOR @CRM_COORDENADOR
@@ -226,18 +226,18 @@ Entao clicar no botao "Pesquisar", "1"
 Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGTODOS_VER
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGTODOS_VER"
 E que tenha/nao tenha acesso na tela "Antecipação programadas cadastradas"
-E selecionar o combobox "Status" e a opcao "Vigente"
+E selecionar o combobox "Status" e a opcao "Vigente", "0"
 Quando clicar no botao "Pesquisar"
-Entao localizar o frame "Últimas Transações"
+Entao localizar o frame "Últimas Transações", "1"
 
 @OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CDIGERENCIAL_VER
 @ANTECIPACAO_DE_VENDAS_TESOURARIA_COORDENADOR
 Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CDIGERENCIAL_VER
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CDIGERENCIAL_VER"
 E que tenha/nao tenha acesso na tela "Operações realizadas"
-E selecionar o combobox "Status" e a opcao "Vigente"
+E selecionar o combobox "Status" e a opcao "Vigente", "0"
 Quando clicar no botao "Pesquisar"
-Entao localizar o frame "Últimas Transações"
+Entao localizar o frame "Últimas Transações", "0"
 E clicar na acao "Visualizar", "1"
 
 @OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROG_EDITAR
@@ -246,7 +246,7 @@ E clicar na acao "Visualizar", "1"
 Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROG_EDITAR
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROG_EDITAR"
 E que tenha/nao tenha acesso na tela "Antecipação programadas cadastradas"
-E selecionar o combobox "Status" e a opcao "Vigente"
+E selecionar o combobox "Status" e a opcao "Vigente", "0"
 Quando clicar no botao "Pesquisar", "0"
 Entao clicar na acao "cancelar - coluna acao", "1"
 
@@ -334,7 +334,7 @@ Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_PERIODOANTECIPAD
 E que tenha/nao tenha acesso na tela "Operações realizadas"
 Entao o botao "Pesquisar", "1" estara habilitado/desabilitado
 E clicar na acao "Visualizar", "0"
-Entao localizar o frame "Período de antecipação"
+Entao localizar o frame "Período de antecipação", "1"
 
 @OPERACOES_ANTECIPACAO_VENDAS_OPERACAO_ANTECIPACAO_ALCADA_A01_VER
 @CENTRAL_DE_RELACIONAMENTO_ANALISTA @CENTRAL_ANTECIPACAO_COORDENADOR @CRM_COORDENADOR
@@ -361,7 +361,7 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_AVANC
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_AVANCADO_VER"
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
 Quando clicar na aba "Antecipação Avulsa", "0"
-Entao localizar o frame "Resultados"
+Entao localizar o frame "Resultados", "1"
 
 @OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_PAGAMENTO_VER
 @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA @PLANEJA_BACKOFFICE_COBRAN_FATURA_ANALISTA @CHARGEBACK_ANALISTA_INTERCAMBIO
@@ -371,19 +371,19 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_PAGAM
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_PAGAMENTO_VER"
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
 Quando clicar na aba "Antecipação Avulsa", "0"
-Entao localizar o frame "Pagamento"
+Entao localizar o frame "Pagamento", "1"
 
 @OPERACOES_ANTECIPACAO_CANAL_MESADEOPERACOES_VER
 Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAO_CANAL_MESADEOPERACOES_VER
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAO_CANAL_MESADEOPERACOES_VER"
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
-Entao o sistema exibira/nao exibira a tela "Operação de Antecipação"
+Entao o sistema exibira/nao exibira a tela "Operação de Antecipação", "1"
 
 @OPERACOES_ANTECIPACAO_VENDAS_OPERACAO_ANTECIPACAO_INFO_CLIENTE_VER
 Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAO_VENDAS_OPERACAO_ANTECIPACAO_INFO_CLIENTE_VER
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAO_VENDAS_OPERACAO_ANTECIPACAO_INFO_CLIENTE_VER"
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
-Entao o sistema exibira/nao exibira a tela "Operação de Antecipação"
+Entao o sistema exibira/nao exibira a tela "Operação de Antecipação", "1"
 
 
 @OPERACOES_ANTECIPACAOVENDAS_ANTECPROGRAMADASCADASTRADAS_EXPORTAR @R4

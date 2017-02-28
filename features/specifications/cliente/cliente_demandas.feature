@@ -16,7 +16,7 @@ E informe o EC "1018242187"
 Cenario: CT.SEGINFO - [AUT] CLIENTE_DEMANDAS_ABERTURADEMANDA_VER
 Dado que tenha/nao tenha o direito "CLIENTE_DEMANDAS_ABERTURADEMANDA_VER"
 E que tenha/nao tenha acesso na tela "Abertura de demanda"
-Entao o sistema exibira/nao exibira a tela "Abertura de demanda"
+Entao o sistema exibira/nao exibira a tela "Abertura de demanda", "1"
 
 @CLIENTE_DEMANDAS_ABERTURADEMANDA_INCLUIR
 @CADASTRO_ANALISTA_CIELO @CADASTRO_ANALISTA_CIELO_APROVADOR @CENTRAL_HELP_DESK_ANALISTA
@@ -44,5 +44,4 @@ E que tenha/nao tenha acesso na tela "Abertura de demanda"
 E selecionar "Solicitação para Regularização Financeira" do campo "demanda", "0"
 E selecionar "Pedido para regularizar cobrança indevida telefonia" do campo "tipo da solicitacao", "0"
 E Selecionar a opcao da sessao - Solicitante "0"
-Quando clicar no botao "Continuar", "0"
 Entao o botao "Continuar", "1" devera estar habilitado/desabilitado
