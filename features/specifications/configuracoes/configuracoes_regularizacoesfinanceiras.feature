@@ -69,7 +69,7 @@ Dado que tenha/nao tenha o direito "CONFIGURACOES_REGULARIZACOESFINANCEIRAS_REGR
 E que tenha/nao tenha acesso na tela "Regra de cancelamento"
 Quando clicar na aba "REGRA DE LIBERAÇÃO", "0"
 E selecionar o combobox "parametro - regra de cancelamento" e a opcao "Liberar consulta de saldo", "0"
-E localizar e clicar no botao "Pesquisar"
+E localizar e clicar no botao "Pesquisar", "0"
 Quando clicar na acao "Visualizar", "0"
 Entao o botao "Excluir", "1" estara habilitado/desabilitado
 
@@ -79,7 +79,7 @@ Dado que tenha/nao tenha o direito "CONFIGURACOES_REGULARIZACOESFINANCEIRAS_REGR
 E que tenha/nao tenha acesso na tela "Regra de cancelamento"
 Quando clicar na aba "REGRA DE LIBERAÇÃO", "0"
 E selecionar o combobox "parametro - regra de cancelamento" e a opcao "Liberar bloqueio de cancelamento", "0"
-E localizar e clicar no botao "Pesquisar"
+E localizar e clicar no botao "Pesquisar", "0"
 Entao clicar na acao "Visualizar", "1"
 
 @SETUP_CANCELAMENTOS_LISTADEREGRA_EDITAR

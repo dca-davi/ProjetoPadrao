@@ -77,13 +77,15 @@ Entao(/^a aplicacao exibira\/nao exibira o painel grid da tela crfrl "([^"]*)"$/
     end
 end
 
-Entao(/^localizar e clicar no botao "([^"]*)"$/) do |btn|
+Entao(/^localizar e clicar no botao "([^"]*)", "([^"]*)"$/) do |btn, valida_step|
     next if @pass_test == true
     @configuracoes_regularizacoes_financeiras = Configuracoes_regularizaoesfinanceiras.new
     btnindex = @configuracoes_regularizacoes_financeiras.btn_pesquisar_index1(btn)
     if !btnindex && @tem_direito
         raise("Usuario com direito nao consegue clicar no botao")
     elsif btnindex && !@tem_direito
-        raise('usuario sem o direito consegue clicar no botao')
+        if valida_step == "1"
+          raise('usuario sem o direito consegue clicar no botao')
+        end
     end
 end
