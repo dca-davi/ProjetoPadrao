@@ -17,5 +17,5 @@ E informe o EC "1018242187"
 Cenario: CT.SEGINFO - [AUT] CLIENTES_HISTORICOALTERACOES_CADASTROCLIENTE_VER
 Dado que tenha/nao tenha o direito "CLIENTES_HISTORICOALTERACOES_CADASTROCLIENTE_VER"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
-Quando clicar na aba "Histórico"
+Quando clicar na aba "Histórico", "0"
 Entao podera/nao podera acessar a aba "Histórico"

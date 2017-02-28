@@ -18,4 +18,4 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_VAN_HABILITACAODESABILITACAO_VER
 Dado que tenha/nao tenha o direito "OPERACOES_VAN_HABILITACAODESABILITACAO_VER"
 E que tenha/nao tenha acesso na tela "Habilitação e desabilitação"
 Quando selecionar o combobox "Bandeira" e a opcao "AMEX"
-Entao clicar no botao "Pesquisar"
+Entao clicar no botao "Pesquisar", "1"

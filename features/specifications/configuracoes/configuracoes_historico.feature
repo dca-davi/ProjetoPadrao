@@ -66,8 +66,8 @@ Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_HISTORICOMANUTENCOES_FINANCEIRAS_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_HISTORICOMANUTENCOES_FINANCEIRAS_VER"
 E que tenha/nao tenha acesso na tela "Histórico de manutenção"
 Quando informar "Cliente" no campo "Tópico de manutenção"
-E clicar no botao "Pesquisar"
-Então localizar o frame "Resultados"
+E clicar no botao "Pesquisar", "0"
+Então localizar o frame "Resultados", "1"
 
 @CONFIGURACOES_HISTORICOALTERACOES_CADASTROCIELO_VER
 @CADASTRO_ANALISTA_CIELO @CADASTRO_ANALISTA_CIELO_APROVADOR @CENTRAL_HELP_DESK_ANALISTA
@@ -78,5 +78,5 @@ Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_HISTORICOALTERACOES_CADASTROCIELO_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_HISTORICOALTERACOES_CADASTROCIELO_VER"
 E que tenha/nao tenha acesso na tela "Histórico de manutenção"
 Quando informar "Cliente" no campo "Tópico de manutenção"
-E clicar no botao "Pesquisar"
-Então localizar o frame "Resultados"
+E clicar no botao "Pesquisar", "0"
+Então localizar o frame "Resultados", "1"

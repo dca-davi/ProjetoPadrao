@@ -18,7 +18,7 @@ E informe o EC "1018242187"
 Cenario: CT.SEGINFO - [AUT] CLIENTES_INFORMACOESFINANCEIRAS_VER
 Dado que tenha/nao tenha o direito "CLIENTES_INFORMACOESFINANCEIRAS_VER"
 E que tenha/nao tenha acesso na tela "Resumo financeiro"
-Entao o sistema exibira/nao exibira a tela "Resumo financeiro"
+Entao o sistema exibira/nao exibira a tela "Resumo financeiro", "1"
 
 @CLIENTES_INFORMACOESFINANCEIRAS_BUSCAAVANCADA_VER
 @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA @CADASTRO_ANALISTA_CIELO @CADASTRO_ANALISTA_CIELO_APROVADOR
@@ -31,7 +31,7 @@ Entao o sistema exibira/nao exibira a tela "Resumo financeiro"
 Cenario: CT.SEGINFO - [AUT] CLIENTES_INFORMACOESFINANCEIRAS_BUSCAAVANCADA_VER
 Dado que tenha/nao tenha o direito "CLIENTES_INFORMACOESFINANCEIRAS_BUSCAAVANCADA_VER"
 E que tenha/nao tenha acesso na tela "Resumo financeiro"
-Entao o sistema exibira/nao exibira a tela "Resumo financeiro"
+Entao o sistema exibira/nao exibira a tela "Resumo financeiro", "1"
 
 @CLIENTES_INFORMACOESFINANCEIRAS_EXPORTAR
 @BACKOFFICE_ANALISTA_FORNECEDOR @PLANEJA_BACKOFFICE_COBRAN_FATURA_ANALISTA @CHARGEBACK_ANALISTA_INTERCAMBIO
@@ -40,7 +40,7 @@ Cenario: CT.SEGINFO - [AUT] CLIENTES_INFORMACOESFINANCEIRAS_EXPORTAR
 Dado que tenha/nao tenha o direito "CLIENTES_INFORMACOESFINANCEIRAS_EXPORTAR"
 E que tenha/nao tenha acesso na tela "Resumo financeiro"
 Quando selecionar um valor na tabela de Informacoes financeiras
-Entao o botao "Exportar" devera estar habilitado/desabilitado
+Entao o botao "Exportar", "1" devera estar habilitado/desabilitado
 
 @CLIENTES_INFORMACOESFINANCEIRAS_INTERCAMBIO_VER
 @BACKOFFICE_ANALISTA_FORNECEDOR @CONTROLE_SISTEMAS_FINANCEIROS_CONCILIACAO @TESOURARIA_E_CONTAS_A_PAGAR_ANALISTA
@@ -74,18 +74,18 @@ E que tenha/nao tenha acesso na tela "Resumo financeiro"
 E selecionar o item "vendas" de "ontem"
 Quando clicar no item em consolidado de vendas
 E clicar no item da transacao de vendas
-Entao localizar o frame "Dados do Chip - Envio"
+Entao localizar o frame "Dados do Chip - Envio", "1"
 
 @CLIENTES_INFORMACOESFINANCEIRAS_ENVIOPARABANDEIRA_VER
 @BACKOFFICE_ANALISTA_FORNECEDOR @PLANEJA_BACKOFFICE_COBRAN_FATURA_ANALISTA @CHARGEBACK_ANALISTA_INTERCAMBIO
-@TESOURARIA_ANALISTA 
+@TESOURARIA_ANALISTA
 Cenario: CT.SEGINFO - [AUT] CLIENTES_INFORMACOESFINANCEIRAS_ENVIOPARABANDEIRA_VER
 Dado que tenha/nao tenha o direito "CLIENTES_INFORMACOESFINANCEIRAS_ENVIOPARABANDEIRA_VER"
 E que tenha/nao tenha acesso na tela "Resumo financeiro"
 E selecionar o item "vendas" de "ontem"
 Quando clicar no item em consolidado de vendas
 E clicar no item da transacao de vendas
-Entao localizar o frame "Dados do Chip - Envio"
+Entao localizar o frame "Dados do Chip - Envio", "1"
 
 @CLIENTES_EXTRATO_RESUMOFINANCEIRO_HISTORICOVENDAS_CICLODEVIDAEMISSOR_VER
 Cenario: CT.SEGINFO - [AUT] CLIENTES_EXTRATO_RESUMOFINANCEIRO_HISTORICOVENDAS_CICLODEVIDAEMISSOR_VER
@@ -94,4 +94,4 @@ E que tenha/nao tenha acesso na tela "Resumo financeiro"
 E selecionar o item "vendas" de "ontem"
 Quando clicar no item em consolidado de vendas
 E clicar no item da transacao de vendas
-Entao localizar o frame "Ciclo de Vida Emissor"
+Entao localizar o frame "Ciclo de Vida Emissor", "1"
