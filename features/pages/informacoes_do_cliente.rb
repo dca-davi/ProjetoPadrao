@@ -175,7 +175,6 @@ class Info_do_cliente
 
         @@utils.aguardar_loading
         $encoded_img = $browser.driver.screenshot_as(:base64)
-        puts "RESULT::::::::::::::::::::::::::::::::: #{result}"
         result
     end
 
@@ -363,8 +362,9 @@ class Info_do_cliente
     end
 
     def conta_truncada?
-        valor = $browser.tbody(id: /dtbCompleteMerchantBanks_data/).td(index: 3).text
-
+        @@utils.aguardar_loading
+        sleep 1
+        valor = $browser.tbody(id: /MerchantBanks_data/).td(index: 3).text
         if (valor.include? 'x') || (valor.include? 'X')
             return true
         else
