@@ -22,7 +22,7 @@ Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPEC
 E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
 Quando clicar na aba "Preço Especial", "0"
 E clicar na acao "Visualizar", "0"
-Entao localizar o frame "Detalhe do preço especial"
+Entao localizar o frame "Detalhe do preço especial", "1"
 
 @CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_INCLUIR
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_INCLUIR
@@ -30,7 +30,7 @@ Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPEC
 E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
 Quando clicar na aba "Preço Especial", "0"
 E clicar no link acao "Incluir"
-Entao  localizar o frame "Selecionar o cliente"
+Entao  localizar o frame "Selecionar o cliente", "1"
 
 @CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_EDITAR
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_EDITAR
@@ -38,7 +38,7 @@ Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPEC
 E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
 Quando clicar na aba "Preço Especial", "0"
 E clicar na acao "Editar", "0"
-Entao localizar o frame "Edição do preço especial"
+Entao localizar o frame "Edição do preço especial", "1"
 
 @CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_REMOVER
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_REMOVER
@@ -46,5 +46,5 @@ Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPEC
 E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
 Quando clicar na aba "Preço Especial", "0"
 E clicar na acao "Remover", "0"
-Entao localizar o frame "Cancelar"
+Entao localizar o frame "Cancelar", "1"
 # Demis <<<

@@ -23,19 +23,19 @@ Entao(/^localizar o frame "([^"]*)", "([^"]*)"$/) do |texto, valida_step|
         end
     end
 end
-
-Entao(/^localizar o frame "([^"]*)"$/) do | texto |
-    next if @pass_test == true
-    @regularizacao_financeira_utils = Utils.new
-    nomeFrame = @regularizacao_financeira_utils.validar_frame(texto)
-    if !nomeFrame && @tem_direito
-        raise("Frame n\u00E3o localizado")
-    elsif nomeFrame && !@tem_direito
-        # if valida_step == "1"
-            raise('usuario sem o direito consegue visualizar o frame')
-        # end
-    end
-end
+#
+# Entao(/^localizar o frame "([^"]*)"$/) do | texto |
+#     next if @pass_test == true
+#     @regularizacao_financeira_utils = Utils.new
+#     nomeFrame = @regularizacao_financeira_utils.validar_frame(texto)
+#     if !nomeFrame && @tem_direito
+#         raise("Frame n\u00E3o localizado")
+#     elsif nomeFrame && !@tem_direito
+#         # if valida_step == "1"
+#             raise('usuario sem o direito consegue visualizar o frame')
+#         # end
+#     end
+# end
 
 Entao(/^sera\/nao sera possivel editar todos os campos do tipo de pagamento$/) do
     next if @pass_test == true
@@ -77,13 +77,15 @@ Entao(/^a aplicacao exibira\/nao exibira o painel grid da tela crfrl "([^"]*)"$/
     end
 end
 
-Entao(/^localizar e clicar no botao "([^"]*)"$/) do |btn|
+Entao(/^localizar e clicar no botao "([^"]*)", "([^"]*)"$/) do |btn, valida_step|
     next if @pass_test == true
     @configuracoes_regularizacoes_financeiras = Configuracoes_regularizaoesfinanceiras.new
     btnindex = @configuracoes_regularizacoes_financeiras.btn_pesquisar_index1(btn)
     if !btnindex && @tem_direito
         raise("Usuario com direito nao consegue clicar no botao")
     elsif btnindex && !@tem_direito
-        raise('usuario sem o direito consegue clicar no botao')
+        if valida_step == "1"
+          raise('usuario sem o direito consegue clicar no botao')
+        end
     end
 end

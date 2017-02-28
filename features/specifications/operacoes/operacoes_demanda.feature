@@ -16,7 +16,7 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_DEMANDAS_FILA_TRABALHO_VER
 Dado que tenha/nao tenha o direito "OPERACOES_DEMANDAS_FILA_TRABALHO_VER"
 E que tenha/nao tenha acesso na tela "Fila de trabalho"
 E o sistema exibira/nao exibira a tela "Fila de trabalho", "0"
-Entao localizar o frame "Fila"
+Entao localizar o frame "Fila", "1"
 
 @OPERACOES_DEMANDAS_DADOS_PROPRIETARIO_VER
 @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA @CADASTRO_ANALISTA_CIELO @CADASTRO_ANALISTA_CIELO_APROVADOR
