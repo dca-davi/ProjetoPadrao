@@ -78,7 +78,5 @@ Quando (/^selecionar a opcao "([^"]*)"$/) do |radio|
     btnradio = @operacoes_antecipacaoVenda.selecionar_radio_button(radio)
     if !btnradio && @tem_direito
         raise 'Usuario nao pode selecionar o campo no qual tem direito'
-    elsif btnradio && !@tem_direito
-        raise 'Usuario pode selecionar o campo no qual nao tem direito'
-      end
+    end
 end
