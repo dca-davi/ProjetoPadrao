@@ -224,14 +224,14 @@ class Operacoes_antecipacaoVendas
         @@utils.aguardar_loading
         result = true
 
-        if !$browser.li(text: 'Precificação').exist?
+        if !$browser.li(text: 'PRECIFICAÇÃO').exist?
             result = false
             puts 'existe'
-        elsif $browser.li(text: 'Precificação').attribute_value('class').include? 'state-disabled'
+        elsif $browser.li(text: 'PRECIFICAÇÃO').attribute_value('class').include? 'state-disabled'
             result = false
             puts 'disabled'
         else
-            $browser.li(text: 'Precificação').click
+            $browser.li(text: 'PRECIFICAÇÃO').click
         end
         @@utils.aguardar_loading
         $encoded_img = $browser.driver.screenshot_as(:base64)
