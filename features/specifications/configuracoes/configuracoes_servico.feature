@@ -16,7 +16,7 @@ E selecionar a opcao "Plano de benefícios agenda" no campo "Nome do Contrato"
 E selecionar a opcao "Agenda Financeira" no campo "Forma de faturamento"
 E selecionar a opcao "Atual" no campo "Vigência"
 Quando clicar no botao "Pesquisar", "0"
-Entao localizar o frame "Resultado"
+Entao localizar o frame "Resultado", "1"
 
 @CONFIGURACOES_SERVICOS_INDICESECONOMICOS_VER
 @CADASTRO_ANALISTA_CIELO @CADASTRO_ANALISTA_CIELO_APROVADOR @CENTRAL_HELP_DESK_ANALISTA

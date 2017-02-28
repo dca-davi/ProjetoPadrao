@@ -68,7 +68,7 @@ Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_REGULARIZACOESFINANCEIRAS_REGRADELIBER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_REGULARIZACOESFINANCEIRAS_REGRADELIBERACAOSALDO_EDITAR"
 E que tenha/nao tenha acesso na tela "Regra de cancelamento"
 Quando clicar na aba "REGRA DE LIBERAÇÃO", "0"
-E selecionar o combobox "parametro - regra de cancelamento" e a opcao "Liberar consulta de saldo"
+E selecionar o combobox "parametro - regra de cancelamento" e a opcao "Liberar consulta de saldo", "0"
 E localizar e clicar no botao "Pesquisar"
 Quando clicar na acao "Visualizar", "0"
 Entao o botao "Excluir", "1" estara habilitado/desabilitado
@@ -78,7 +78,7 @@ Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_REGULARIZACOESFINANCEIRAS_REGRADELIBER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_REGULARIZACOESFINANCEIRAS_REGRADELIBERACAOBLOQUEIO_EDITAR"
 E que tenha/nao tenha acesso na tela "Regra de cancelamento"
 Quando clicar na aba "REGRA DE LIBERAÇÃO", "0"
-E selecionar o combobox "parametro - regra de cancelamento" e a opcao "Liberar bloqueio de cancelamento"
+E selecionar o combobox "parametro - regra de cancelamento" e a opcao "Liberar bloqueio de cancelamento", "0"
 E localizar e clicar no botao "Pesquisar"
 Entao clicar na acao "Visualizar", "1"
 
