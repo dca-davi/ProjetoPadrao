@@ -173,26 +173,35 @@ class Utils
         result
     end
 
-    def acessar_aba(aba, i = 0)
-        aguardar_loading
-        case aba
-        when 'Incluir_PrazoFlexivel'
-            aba = 'Incluir'
-            i = 0
-        when 'Parametros - PRO ANTECIPACAO DE VENDAS' #
-            aba = 'Parâmetros'
-            i = 1
-        when 'Incluir regra de liberação'
-            aba = 'INCLUIR'
-            i = 1
-        when 'Incluir Cobrança'
-            aba = 'INCLUIR'
-            i = 1
-        end
+    def acessar_aba(aba, i)
+      # aguardar_loading
+      #  case aba
+      #  when 'Incluir_PrazoFlexivel'
+      #      aba = 'Incluir'
+      #      i = 0
+      #  when 'Parametros - PRO ANTECIPACAO DE VENDAS' #
+      #      aba = 'Parâmetros'
+      #      i = 1
+      #  when 'Incluir regra de liberação'
+      #      aba = 'INCLUIR'
+      #      i = 1
+      #  when 'Incluir Cobrança'
+      #      aba = 'INCLUIR'
+      #      i = 1
+      #  end
 
-        if $cenario_name=="CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAO_CARTAONAOPRESENTE_EDITAR"
-            i = 1 if aba=="Incluir"
-        end
+      #  if $cenario_name=="CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAO_CARTAONAOPRESENTE_EDITAR"
+      #      i = 1 if aba=="Incluir"
+      #  end
+
+          if !$browser.li(text: aba).exist?
+            result = false
+            elsif $browser.li(text: aba).attribute_value("class").include? 'state-disabled'
+              result = false
+            else
+              $browser.li(text: aba, index: i.to_i).click
+              result = true
+          end
 
       #elsif !$browser.li(text: aba, index: i).exist?
       #      $encoded_img = $browser.driver.screenshot_as(:base64)
@@ -452,7 +461,7 @@ class Utils
         when 'data-ate'
             campo = 'tab_deposits_debits:formReport:dtSetrUntil_input|dateOut_input|formRejectedFlag:finalRejectDate_input'
         when 'data de rejeicao - de'
-            campo = 'tabRejectionCapture:initialRejectionDate_input|tabRejectionCapture:initialRejectionDateTreatment_input' 
+            campo = 'tabRejectionCapture:initialRejectionDate_input|tabRejectionCapture:initialRejectionDateTreatment_input'
         when 'data de rejeicao - ate'
             campo = 'tabRejectionCapture:finalRejectionDateTreatment_input|tabRejectionCapture:finalRejectionDate_input'
         when 'data de rejeicao tratamento - de'
@@ -673,7 +682,7 @@ class Utils
 
     def validar_mensagem_sem_permissao
         if $browser.span(text: "Usuário sem permissão de acesso").exist?
-            true           
+            true
         else
             false
         end
