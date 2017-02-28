@@ -228,8 +228,7 @@ class Utils
             i = 0
         end
         aguardar_loading
-        sleep 5
-        # Watir::Wait.until { $browser.a(text: aba, index: /0|1/).exists? }
+        sleep 3
         if $browser.li(text: aba, index: i).attribute_value('aria-expanded') == 'true'
             return true
         elsif $browser.li(text: aba, index: i).attribute_value('aria-expanded') == 'true'
@@ -383,14 +382,16 @@ class Utils
     end
 
     def validar_frame(texto)
-        sleep 6
+        aguardar_loading
+
+
         result = if $browser.td(title: texto).exist? || $browser.a(text: texto).exist? || $browser.div(text: texto).exist? || $browser.th(text: texto).exist? || $browser.label(text: texto).exist? || $browser.tr(text: texto).exist? || $browser.span(text: texto).exist?
                      true
                  else
                      false
                  end
 
-        sleep 3
+        aguardar_loading
         $encoded_img = $browser.driver.screenshot_as(:base64)
 
         result
