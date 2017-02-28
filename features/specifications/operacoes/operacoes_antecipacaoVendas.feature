@@ -229,7 +229,7 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGTODOS_VER
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGTODOS_VER"
 E que tenha/nao tenha acesso na tela "Antecipação programadas cadastradas"
 E selecionar o combobox "Status" e a opcao "Vigente", "0"
-Quando clicar no botao "Pesquisar"
+Quando clicar no botao "Pesquisar", "0"
 Entao localizar o frame "Últimas Transações", "1"
 
 @OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CDIGERENCIAL_VER
@@ -238,7 +238,7 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CDIGERENC
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CDIGERENCIAL_VER"
 E que tenha/nao tenha acesso na tela "Operações realizadas"
 E selecionar o combobox "Status" e a opcao "Vigente", "0"
-Quando clicar no botao "Pesquisar"
+Quando clicar no botao "Pesquisar", "0"
 Entao localizar o frame "Últimas Transações", "0"
 E clicar na acao "Visualizar", "1"
 

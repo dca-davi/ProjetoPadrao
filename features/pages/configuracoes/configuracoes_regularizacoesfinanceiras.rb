@@ -16,14 +16,18 @@ class Configuracoes_regularizaoesfinanceiras
 
     def btn_pesquisar_index1(btn)
       if $browser.button(text: btn, index: 1).exist?
-        $browser.button(text: btn, index: 1).click
-        sleep 2
-        result = true
+          $browser.button(text: btn, index: 1).click
+          sleep 2
+          result = true
       else
-      result = false
+          result = false
+      end
+          sleep 1
+          @@utils.aguardar_loading
+          $encoded_img = $browser.driver.screenshot_as(:base64)
+
+          return result
     end
-    sleep 1
-    @@utils.aguardar_loading
-    $encoded_img = $browser.driver.screenshot_as(:base64)
-  end
+
+
 end
