@@ -104,6 +104,7 @@ class Info_do_cliente
             result = false
         elsif !$browser.span(class: 'ui-panel-title', text: frame).parent.parent.button(text: botao).exist?
             result = false
+        end
         #
         # when "remuneracao", "antecipa\u00E7\u00E3o programada"
         #     if $browser.button(text: botao, index: 1).attribute_value('aria-disabled') == 'false'
