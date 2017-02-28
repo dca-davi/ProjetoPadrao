@@ -58,7 +58,7 @@ Entao(/^selecionar "([^"]*)" no combo\-box do pop\-up$/) do |valor|
     if !comboBox && @tem_direito
         raise 'Usuario nao pode clicar no botao no qual tem direito'
     elsif comboBox && !@tem_direito
-        raise 'Usuario pode clicar no botao no qual tem direito'
+        raise 'Usuario pode clicar no botao no qual nao tem direito'
     end
 end
 
@@ -69,7 +69,7 @@ Entao(/^selecionar a opcao "([^"]*)" da aba Anulacao$/) do |valor|
     if !radioButton && @tem_direito
         raise 'Usuario nao pode clicar no botao no qual tem direito'
     elsif radioButton && !@tem_direito
-        raise 'Usuario pode clicar no botao no qual tem direito'
+        raise 'Usuario pode clicar no botao no qual nao tem direito'
     end
 end
 
@@ -80,7 +80,7 @@ Quando(/^selecionar "([^"]*)" no combo\-box "([^"]*)"$/) do |valor, item|
     if !comboBox && @tem_direito
         raise 'Usuario nao pode clicar no botao no qual tem direito'
     elsif comboBox && !@tem_direito
-        raise 'Usuario pode clicar no botao no qual tem direito'
+        raise 'Usuario pode clicar no botao no qual nao tem direito'
     end
 end
 
