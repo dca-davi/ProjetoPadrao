@@ -158,7 +158,7 @@ class Utils
         if $cenario_name=="CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAO_CARTAONAOPRESENTE_EDITAR" && $browser.button(text: botao, index: 1).exist?
             $browser.execute_script('arguments[0].click()', $browser.button(text: botao, index: 1))
             result =true
-        elsif $browser.button(text: botao, index: 0).present?
+        elsif $browser.button(text: botao, index: 0).present? && $browser.button(text: botao, index: 0).enabled?
             $browser.button(text: botao, index: 0).click
             result = true
         elsif $browser.button(text: botao, index: 1).present?
@@ -172,52 +172,54 @@ class Utils
         result
     end
 
-    def acessar_aba(aba, i = 0)
-        aguardar_loading
-        case aba
-        when 'Incluir_PrazoFlexivel'
-            aba = 'Incluir'
-            i = 0
-        when 'Parametros - PRO ANTECIPACAO DE VENDAS' #
-            aba = 'Parâmetros'
-            i = 1
-        when 'Incluir regra de liberação'
-            aba = 'INCLUIR'
-            i = 1
-        when 'Incluir Cobrança'
-            aba = 'INCLUIR'
-            i = 1
-        end
+    def acessar_aba(aba, i)
+      # aguardar_loading
+      #  case aba
+      #  when 'Incluir_PrazoFlexivel'
+      #      aba = 'Incluir'
+      #      i = 0
+      #  when 'Parametros - PRO ANTECIPACAO DE VENDAS' #
+      #      aba = 'Parâmetros'
+      #      i = 1
+      #  when 'Incluir regra de liberação'
+      #      aba = 'INCLUIR'
+      #      i = 1
+      #  when 'Incluir Cobrança'
+      #      aba = 'INCLUIR'
+      #      i = 1
+      #  end
 
-        if $cenario_name=="CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAO_CARTAONAOPRESENTE_EDITAR"
-            i = 1 if aba=="Incluir"
-        end
+      #  if $cenario_name=="CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAO_CARTAONAOPRESENTE_EDITAR"
+      #      i = 1 if aba=="Incluir"
+      #  end
 
-        if !$browser.li(text: aba, index: i).exist?
-            $encoded_img = $browser.driver.screenshot_as(:base64)
-            return false
-
-        elsif $browser.li(text: aba, index: i).attribute_value('class').include? 'ui-state-disabled'
-            $encoded_img = $browser.driver.screenshot_as(:base64)
-            return false
-        else
-
-            if $browser.li(text: aba, index: i).present?
-                until $browser.li(text: aba, index: i).attribute_value("aria-expanded")=="true"
-                    $browser.execute_script('arguments[0].click()', $browser.li(text: aba, index: i))
-                end
-                aguardar_loading
-                $encoded_img = $browser.driver.screenshot_as(:base64)
-                return true
+          if !$browser.li(text: aba).exist?
+            result = false
+            elsif $browser.li(text: aba).attribute_value("class").include? 'state-disabled'
+              result = false
             else
-                until $browser.li(text: aba, index: i).attribute_value("aria-expanded")=="true"
-                    $browser.execute_script('arguments[0].click()', $browser.li(text: aba, index: i))
-                end
-                aguardar_loading
-                $encoded_img = $browser.driver.screenshot_as(:base64)
-                return true
-            end
-        end
+              $browser.li(text: aba, index: i.to_i).click
+              result = true
+          end
+
+      #elsif !$browser.li(text: aba, index: i).exist?
+      #      $encoded_img = $browser.driver.screenshot_as(:base64)
+      #      return false
+
+      #  elsif $browser.li(text: aba, index: i).attribute_value('class').include? 'ui-state-disabled'
+      #      $encoded_img = $browser.driver.screenshot_as(:base64)
+      #      return false
+      #  else
+
+      #      if $browser.li(text: aba, index: i).present?
+      #          until $browser.li(text: aba, index: i).attribute_value("aria-expanded")=="true"
+      #              $browser.execute_script('arguments[0].click()', $browser.li(text: aba, index: i))
+      #          end
+      #          aguardar_loading
+      #          $encoded_img = $browser.driver.screenshot_as(:base64)
+      #          return true
+      #      end
+      #  end
     end
 
     def validar_acesso_aba(aba, i = 0)
@@ -228,14 +230,22 @@ class Utils
             i = 0
         end
         aguardar_loading
+
+        #sleep 5
+        # Watir::Wait.until { $browser.a(text: aba, index: /0|1/).exists? }
+        #if !$browser.li(text: aba, index: i).exist?
+        #  result = false
+
         sleep 3
         if $browser.li(text: aba, index: i).attribute_value('aria-expanded') == 'true'
             return true
         elsif $browser.li(text: aba, index: i).attribute_value('aria-expanded') == 'true'
-            return true
-        else
-            return false
-        end
+              return true
+          elsif $browser.li(text: aba, index: i).attribute_value('aria-expanded') == 'true'
+              return true
+          else
+              result false
+          end
     end
 
     def validar_botao(botao, i = 0, click = true)
@@ -551,10 +561,20 @@ class Utils
                 return false
             else
                 #ação caso o campo esteja habilitado
-                $browser.text_field(id: /#{campo}$/, index: var_i).set valor
-                aguardar_loading
-                $browser.send_keys :tab
-                aguardar_loading
+                unless campo.include?('dtSetr')
+                    $browser.text_field(id: /#{campo}$/, index: var_i).set valor
+                    aguardar_loading
+                    $browser.send_keys :tab
+                    aguardar_loading      
+               else
+                     $browser.execute_script('arguments[0].value = arguments[1]', $browser.text_field(id: /#{campo}$/, index: var_i), valor)
+                     aguardar_loading
+                     sleep 1
+                     #$browser.send_keys :tab
+                     #$browser.execute_script('arguments[0].onchange', $browser.text_field(id: /#{campo}$/, index: var_i))
+                     $browser.text_field(id: /#{campo}$/, index: var_i).fire_event "onchange"
+                     aguardar_loading
+                end
 
                 if $browser.text_field(id: /#{campo}$/, index: var_i).value != ''
                     $encoded_img = $browser.driver.screenshot_as(:base64)
@@ -732,59 +752,59 @@ class Utils
         found_cycle = false
         encontrado = false
 
-    for count_column_release in 0...column_counter
-        if sheet1.cell(0, count_column_release) == nome_coluna_release
-            selected_column_release = count_column_release
-            found_release = true
+        for count_column_release in 0...column_counter
+            if sheet1.cell(0, count_column_release) == nome_coluna_release
+                selected_column_release = count_column_release
+                found_release = true
+            end
         end
-    end
 
-    for count_column_testset in 0...column_counter
-        if sheet1.cell(0, count_column_testset) == nome_coluna_testset
-            selected_column_testset = count_column_testset
-            found_testset = true
+        for count_column_testset in 0...column_counter
+            if sheet1.cell(0, count_column_testset) == nome_coluna_testset
+                selected_column_testset = count_column_testset
+                found_testset = true
+            end
         end
-    end
 
-    for count_column_cycle in 0...column_counter
-        if sheet1.cell(0, count_column_cycle) == nome_coluna_ciclo
-            selected_column_ciclo = count_column_cycle
-            found_cycle = true
+        for count_column_cycle in 0...column_counter
+            if sheet1.cell(0, count_column_cycle) == nome_coluna_ciclo
+                selected_column_ciclo = count_column_cycle
+                found_cycle = true
+            end
         end
-    end
 
-    raise "N\xC3\xA3o foi poss\xC3\xADvel encontrar a coluna Release. Por gentileza, verifique a planilha de dados." unless found_release
-    raise "N\xC3\xA3o foi poss\xC3\xADvel encontrar a coluna Testset. Por gentileza, verifique a planilha de dados." unless found_testset
-    raise "N\xC3\xA3o foi poss\xC3\xADvel encontrar a coluna Ciclo. Por gentileza, verifique a planilha de dados." unless found_cycle
+        raise "N\xC3\xA3o foi poss\xC3\xADvel encontrar a coluna Release. Por gentileza, verifique a planilha de dados." unless found_release
+        raise "N\xC3\xA3o foi poss\xC3\xADvel encontrar a coluna Testset. Por gentileza, verifique a planilha de dados." unless found_testset
+        raise "N\xC3\xA3o foi poss\xC3\xADvel encontrar a coluna Ciclo. Por gentileza, verifique a planilha de dados." unless found_cycle
 
-    for count_column in 0...column_counter
-        next unless sheet1.cell(0, count_column) == nome_coluna_ct
-        for count_row in 0...row_counter
-            if nome_testset.nil? || nome_testset == 'N'
-                if sheet1.cell(count_row, count_column) == nome_ct && sheet1.cell(count_row, selected_column_ciclo) == nome_ciclo && sheet1.cell(count_row, selected_column_release) == nome_release
-                    for count_total in 0...column_counter
-                        chave = sheet1.cell(0, count_total).to_s
-                        valor = sheet1.cell(count_row, count_total).to_s
-                        dados[chave] = valor
+        for count_column in 0...column_counter
+            next unless sheet1.cell(0, count_column) == nome_coluna_ct
+            for count_row in 0...row_counter
+                if nome_testset.nil? || nome_testset == 'N'
+                    if sheet1.cell(count_row, count_column) == nome_ct && sheet1.cell(count_row, selected_column_ciclo) == nome_ciclo && sheet1.cell(count_row, selected_column_release) == nome_release
+                        for count_total in 0...column_counter
+                            chave = sheet1.cell(0, count_total).to_s
+                            valor = sheet1.cell(count_row, count_total).to_s
+                            dados[chave] = valor
+                        end
+                        encontrado = true
                     end
-                    encontrado = true
-                end
-            else
-                if sheet1.cell(count_row, count_column) == nome_ct && sheet1.cell(count_row, selected_column_ciclo) == nome_ciclo && sheet1.cell(count_row, selected_column_release) == nome_release && sheet1.cell(count_row, selected_column_testset) == nome_testset
-                    for count_total in 0...column_counter
-                        chave = sheet1.cell(0, count_total).to_s
-                        valor = sheet1.cell(count_row, count_total).to_s
-                        dados[chave] = valor
+                else
+                    if sheet1.cell(count_row, count_column) == nome_ct && sheet1.cell(count_row, selected_column_ciclo) == nome_ciclo && sheet1.cell(count_row, selected_column_release) == nome_release && sheet1.cell(count_row, selected_column_testset) == nome_testset
+                        for count_total in 0...column_counter
+                            chave = sheet1.cell(0, count_total).to_s
+                            valor = sheet1.cell(count_row, count_total).to_s
+                            dados[chave] = valor
+                        end
+                        encontrado = true
                     end
-                    encontrado = true
                 end
             end
         end
-    end
 
-    raise "N\xC3\xA3o foi poss\xC3\xADvel encontrar a Release, Testset ou Ciclo informados. Por gentileza, verifique a planilha de dados ou os par\xC3\xA2metros da chamada." unless encontrado.equal? true
-    return dados
-  end
+        raise "N\xC3\xA3o foi poss\xC3\xADvel encontrar a Release, Testset ou Ciclo informados. Por gentileza, verifique a planilha de dados ou os par\xC3\xA2metros da chamada." unless encontrado.equal? true
+        return dados
+    end
 
     def adicionar_registro_log_execucao(caminho_arquivo, nome_teste, status, data, hora, observacao, passo, sobrescrever_registro=false)
         fecha_processos_excel
