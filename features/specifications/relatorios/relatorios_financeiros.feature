@@ -62,7 +62,7 @@ Cenario: CT.SEGINFO - [AUT] RELATORIOS_FINANCEIROS_GERENCIAMENTOCARTEIRAS_DEBITO
 Dado que tenha/nao tenha o direito "RELATORIOS_FINANCEIROS_GERENCIAMENTOCARTEIRAS_DEBITO_VER"
 E que tenha/nao tenha acesso na tela "Gerenciamento de carteiras"
 E o sistema exibira/nao exibira a tela "Gerenciamento de carteiras", "0"
-Entao clicar na aba "DÉBITOS", "0"
+Entao clicar na aba "DÉBITOS", "1"
 
 @RELATORIOS_FINANCEIROS_GERENCIAMENTOCARTEIRAS_COBRANCA_VER
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_FINANCEIROS_GERENCIAMENTOCARTEIRAS_COBRANCA_VER

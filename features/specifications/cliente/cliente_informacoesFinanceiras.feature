@@ -94,4 +94,4 @@ E que tenha/nao tenha acesso na tela "Resumo financeiro"
 E selecionar o item "vendas" de "ontem"
 Quando clicar no item em consolidado de vendas
 E clicar no item da transacao de vendas
-Entao localizar o frame "Ciclo de Vida Emissor"
+Entao localizar o frame "Ciclo de Vida Emissor", "1"

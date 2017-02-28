@@ -120,9 +120,9 @@ class Operacoes_Rejeicoes
 
     def selecione_combo_box(combo, opcao)
         case combo
-        when 'Bandeira'
-            if $browser.div(id: 'formRejectedFlag:cardAssociationCombo_label').exist?
-                $browser.div(id: 'formRejectedFlag:cardAssociationCombo_label').click
+        when 'Bandeira'         
+            if $browser.div(id: 'tabView:formRejectedFlag:cardAssociationCombo_label').exist?
+                $browser.div(id: 'tabView:formRejectedFlag:cardAssociationCombo_label').click
                 sleep 1
                 result = true
             else
@@ -197,9 +197,12 @@ class Operacoes_Rejeicoes
     end
 
     def preencher_campo_data_inicial(data)
-        if $browser.input(id: 'formRejectedFlag:initialRejectDate_input').exist?
-            $browser.input(id: 'formRejectedFlag:initialRejectDate_input').send_keys :clear
-            $browser.input(id: 'formRejectedFlag:initialRejectDate_input').send_keys(data)
+        if $browser.input(id: 'tabView:formRejectedFlag:initialRejectDate_input').exist?
+            $browser.input(id: 'tabView:formRejectedFlag:initialRejectDate_input',index: 0).click
+            $browser.send_keys(data)
+            #$browser.execute_script('arguments[0].value = arguments[1]', $browser.input(id: 'tabView:formRejectedFlag:initialRejectDate_input'), data)
+            # $browser.input(id: 'formRejectedFlag:initialRejectDate_input').send_keys
+            # $browser.input(id: 'formRejectedFlag:initialRejectDate_input').send_keys(data)
             $browser.send_keys :tab
             sleep 1
             result = true
@@ -210,9 +213,12 @@ class Operacoes_Rejeicoes
     end
 
     def preencher_campo_data_final(data)
-        if $browser.input(id: 'formRejectedFlag:finalRejectDate_input').exist?
-            $browser.input(id: 'formRejectedFlag:finalRejectDate_input').send_keys :clear
-            $browser.input(id: 'formRejectedFlag:finalRejectDate_input').send_keys(data)
+        if $browser.input(id: 'tabView:formRejectedFlag:finalRejectDate_input').exist?
+            $browser.input(id: 'tabView:formRejectedFlag:finalRejectDate_input',index: 0).click
+            $browser.send_keys(data)
+            # $browser.execute_script('arguments[0].value = arguments[1]', $browser.text_field(id: 'tabView:formRejectedFlag:finalRejectDate_input'), data)
+            # $browser.input(id: 'formRejectedFlag:finalRejectDate_input').send_keys :clear
+            # $browser.input(id: 'formRejectedFlag:finalRejectDate_input').send_keys(data)
             $browser.send_keys :tab
             sleep 1
             result = true
