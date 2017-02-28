@@ -350,6 +350,8 @@ class Utils
             acao = 'button_Ipb'
         when 'Editar endereço'
             acao = 'tab_tabGeral:frmAddress:merchantAddressID:0:btn_info_address_edit'
+        when 'Visualizar Ajustes'
+            acao = 'tab_regularization:regularization_results:\d+:detail_link'
         end
 
         aguardar_loading
@@ -456,7 +458,7 @@ class Utils
         when 'data-ate'
             campo = 'tab_deposits_debits:formReport:dtSetrUntil_input|dateOut_input|formRejectedFlag:finalRejectDate_input'
         when 'data de rejeicao - de'
-            campo = 'tabRejectionCapture:initialRejectionDate_input|tabRejectionCapture:initialRejectionDateTreatment_input' 
+            campo = 'tabRejectionCapture:initialRejectionDate_input|tabRejectionCapture:initialRejectionDateTreatment_input'
         when 'data de rejeicao - ate'
             campo = 'tabRejectionCapture:finalRejectionDateTreatment_input|tabRejectionCapture:finalRejectionDate_input'
         when 'data de rejeicao tratamento - de'
@@ -677,7 +679,7 @@ class Utils
 
     def validar_mensagem_sem_permissao
         if $browser.span(text: "Usuário sem permissão de acesso").exist?
-            true           
+            true
         else
             false
         end
