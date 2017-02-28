@@ -172,7 +172,7 @@ class Utils
         result
     end
 
-    def acessar_aba(aba, i)
+    def acessar_aba(aba, i=0)
       # aguardar_loading
       #  case aba
       #  when 'Incluir_PrazoFlexivel'
@@ -198,7 +198,7 @@ class Utils
             elsif $browser.li(text: aba).attribute_value("class").include? 'state-disabled'
               result = false
             else
-              $browser.li(text: aba, index: i.to_i).click
+              $browser.li(text: aba).click
               result = true
           end
 
@@ -565,7 +565,7 @@ class Utils
                     $browser.text_field(id: /#{campo}$/, index: var_i).set valor
                     aguardar_loading
                     $browser.send_keys :tab
-                    aguardar_loading      
+                    aguardar_loading
                else
                      $browser.execute_script('arguments[0].value = arguments[1]', $browser.text_field(id: /#{campo}$/, index: var_i), valor)
                      aguardar_loading
