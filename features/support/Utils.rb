@@ -240,12 +240,15 @@ class Utils
     end
 
     def validar_botao(botao, i = 0, click = true)
-        Watir::Wait.until { $browser.button(text: botao, index: i).exists? }
-        if $browser.button(text: botao, index: i).attribute_value('aria-disabled') == 'true'
-            result = false
+        if $browser.button(text: botao, index: i).exists?
+            if $browser.button(text: botao, index: i).attribute_value('aria-disabled') == 'true'
+                result = false
+            else
+                $browser.button(text: botao, index: i).click if click
+                result = true
+            end
         else
-            $browser.button(text: botao, index: i).click if click
-            result = true
+           result = false   
         end
         sleep 3
         $encoded_img = $browser.driver.screenshot_as(:base64)
