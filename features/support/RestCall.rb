@@ -35,7 +35,14 @@ class RestCall < ALM::REST
         return @alm_rest.obter_valor_XML('status', @checar_status)
     end
 
-    def criar_run_ALM
+    def alterar_status_teste_ALM(status_teste)
+        @alterar_status_teste = @alm_rest.alterar_status_instancia_teste(Hash[
+                                            'id' => @test_instance_id,
+                                            'status' => status_teste
+                                            ]
+                                        )
+    end
+    def criar_run_ALM(status_run)
         @criar_run = @alm_rest.criar_run(Hash[
 											'name' => @test_name,
 											'test-id' => @test_id,
@@ -43,7 +50,7 @@ class RestCall < ALM::REST
                                             'cycle-id' => @test_set_id,
 											'subtype-id' => 'hp.qc.run.' + @test_type,
 											'owner' => 'automation.spr',
-											'status' => 'Not Completed',
+											'status' => status_run,
 											'user-01' => 'Real'
 											]
 										)
