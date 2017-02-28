@@ -158,7 +158,7 @@ class Utils
         if $cenario_name=="CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAO_CARTAONAOPRESENTE_EDITAR" && $browser.button(text: botao, index: 1).exist?
             $browser.execute_script('arguments[0].click()', $browser.button(text: botao, index: 1))
             result =true
-        elsif $browser.button(text: botao, index: 0).present?
+        elsif $browser.button(text: botao, index: 0).present? && $browser.button(text: botao, index: 0).enabled?
             $browser.button(text: botao, index: 0).click
             result = true
         elsif $browser.button(text: botao, index: 1).present?
@@ -548,10 +548,20 @@ class Utils
                 return false
             else
                 #ação caso o campo esteja habilitado
-                $browser.text_field(id: /#{campo}$/, index: var_i).set valor
-                aguardar_loading
-                $browser.send_keys :tab
-                aguardar_loading
+                unless campo.include?('dtSetr')
+                    $browser.text_field(id: /#{campo}$/, index: var_i).set valor
+                    aguardar_loading
+                    $browser.send_keys :tab
+                    aguardar_loading      
+               else
+                     $browser.execute_script('arguments[0].value = arguments[1]', $browser.text_field(id: /#{campo}$/, index: var_i), valor)
+                     aguardar_loading
+                     sleep 1
+                     #$browser.send_keys :tab
+                     #$browser.execute_script('arguments[0].onchange', $browser.text_field(id: /#{campo}$/, index: var_i))
+                     $browser.text_field(id: /#{campo}$/, index: var_i).fire_event "onchange"
+                     aguardar_loading
+                end
 
                 if $browser.text_field(id: /#{campo}$/, index: var_i).value != ''
                     $encoded_img = $browser.driver.screenshot_as(:base64)
