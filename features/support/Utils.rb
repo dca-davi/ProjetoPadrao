@@ -318,7 +318,7 @@ class Utils
                     break
                 end
             end
-            
+
         when 'detalhar - reprocessamento de vendas'
             acao = 'tab_reprocessing_sales:searchReprocessingSales:reprocessingSales:0:image_w9Z'
         when 'atribuir'
@@ -456,7 +456,7 @@ class Utils
         when 'data-ate'
             campo = 'tab_deposits_debits:formReport:dtSetrUntil_input|dateOut_input|formRejectedFlag:finalRejectDate_input'
         when 'data de rejeicao - de'
-            campo = 'tabRejectionCapture:initialRejectionDateTreatment_input|tabRejectionCapture:initialRejectionDate_input'
+            campo = 'tabRejectionCapture:initialRejectionDate_input|tabRejectionCapture:initialRejectionDateTreatment_input' 
         when 'data de rejeicao - ate'
             campo = 'tabRejectionCapture:finalRejectionDateTreatment_input|tabRejectionCapture:finalRejectionDate_input'
         when 'data de rejeicao tratamento - de'
@@ -821,4 +821,11 @@ class Utils
         sleep 2
     end
 
+    def popup_contem_mensagem?(mensagem)
+      if $browser.div(class: /ui-dialog/&&/ui-overlay-visible/).span(text: /#{mensagem}/).exists?
+        return true
+      else
+        return false
+      end
+    end
 end

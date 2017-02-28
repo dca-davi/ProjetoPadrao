@@ -26,4 +26,4 @@ Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_DESCONTOS_ENCERRAR_REMOVER
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_DESCONTOS_ENCERRAR_REMOVER"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
 Quando clicar na aba "Descontos", "0"
-Entao o link "Encerrar" deve estar habilitado/desabilitado
+Entao o link "Excluir" deve estar habilitado/desabilitado

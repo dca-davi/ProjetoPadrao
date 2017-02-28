@@ -73,6 +73,7 @@ Entao(/^o campo "([^"]*)" deve\/nao deve estar habilitado$/) do |campo|
                       else
                           true
                       end
+        $encoded_img = $browser.driver.screenshot_as(:base64)
     end
 
     if !statusCampo && @tem_direito
