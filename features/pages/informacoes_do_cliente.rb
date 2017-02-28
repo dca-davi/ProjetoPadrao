@@ -365,7 +365,6 @@ class Info_do_cliente
         @@utils.aguardar_loading
         sleep 1
         valor = $browser.tbody(id: /MerchantBanks_data/).td(index: 3).text
-
         if (valor.include? 'x') || (valor.include? 'X')
             return true
         else
