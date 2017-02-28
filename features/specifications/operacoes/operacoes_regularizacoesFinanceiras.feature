@@ -150,7 +150,8 @@ E que tenha/nao tenha acesso na tela "Ajustes financeiros"
 E clicar na aba "Pequisar", "0"
 E informar "13507217" no campo "numero da solicitacao - ajustes financeiros"
 Quando clicar no botao "Pesquisar", "0"
-Entao localizar o frame "Efetivada", "1"
+E clicar na acao "Visualizar Ajustes", "0"
+Entao o sistema exibira/nao exibira a tela "Ajustes financeiros - Detalhe", "1"
 
 @OPERACOES_REGULARIZACOES_TRATAMENTODEBITOSEMRETORNO_SOLICITAR
 Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_TRATAMENTODEBITOSEMRETORNO_SOLICITAR

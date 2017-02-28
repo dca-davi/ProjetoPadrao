@@ -1,7 +1,7 @@
 class Configuracoes_prazoFlexivel
   @@utils = Utils.new
 
-    def clicar_botao_editar(botao)#
+    def clicar_botao_editar(botao)
       if $browser.button(text: botao, index: 1).exist?
         $browser.button(text: botao, index: 1).click
         sleep 2
