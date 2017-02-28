@@ -14,7 +14,7 @@ E informe o EC "1010756114"
 Cenario: CT.SEGINFO - [AUT] OPERACOES_REJEICOESBANDEIRA_VER
 Dado que tenha/nao tenha o direito "OPERACOES_REJEICOESBANDEIRA_VER"
 E que tenha/nao tenha acesso na tela "Bandeira"
-Entao o sistema exibira/nao exibira a tela "Bandeira"
+Entao o sistema exibira/nao exibira a tela "Bandeira", "1"
 
 @OPERACOES_REJEICOESCAPTURA_VER
 @CADASTRO_ANALISTA_CIELO @CADASTRO_ANALISTA_CIELO_APROVADOR @CENTRAL_HELP_DESK_ANALISTA
@@ -26,7 +26,7 @@ Entao o sistema exibira/nao exibira a tela "Bandeira"
 Cenario: CT.SEGINFO - [AUT] OPERACOES_REJEICOESCAPTURA_VER
 Dado que tenha/nao tenha o direito "OPERACOES_REJEICOESCAPTURA_VER"
 E que tenha/nao tenha acesso na tela "Captura"
-Entao o sistema exibira/nao exibira a tela "Captura"
+Entao o sistema exibira/nao exibira a tela "Captura", "1"
 
 @OPERACOES_REJEITADOS_PAGAMENTOSEDEBITOS_VER
 @CADASTRO_ANALISTA_CIELO @CADASTRO_ANALISTA_CIELO_APROVADOR @BACKOFFICE_ANALISTA_FORNECEDOR
@@ -37,13 +37,13 @@ Entao o sistema exibira/nao exibira a tela "Captura"
 Cenario: CT.SEGINFO - [AUT] OPERACOES_REJEITADOS_PAGAMENTOSEDEBITOS_VER
 Dado que tenha/nao tenha o direito "OPERACOES_REJEITADOS_PAGAMENTOSEDEBITOS_VER"
 E que tenha/nao tenha acesso na tela "Depósitos e débitos"
-Entao o sistema exibira/nao exibira a tela "Depósitos | Débitos"
+Entao o sistema exibira/nao exibira a tela "Depósitos | Débitos", "1"
 
 @OPERACOES_REJEITADOS_PAGAMENTOSEDEBITOS_EDITAR
 Cenario: CT.SEGINFO - [AUT] OPERACOES_REJEITADOS_PAGAMENTOSEDEBITOS_EDITAR
 Dado que tenha/nao tenha o direito "OPERACOES_REJEITADOS_PAGAMENTOSEDEBITOS_EDITAR"
 E que tenha/nao tenha acesso na tela "Depósitos e débitos"
-Entao o sistema exibira/nao exibira a tela "Depósitos | Débitos"
+Entao o sistema exibira/nao exibira a tela "Depósitos | Débitos", "1"
 
 @OPERACOES_REJEICOESBANDEIRA_EXPORTAR
 @CONTROLE_SISTEMAS_FINANCEIROS_CONCILIACAO @CHARGEBACK_ANALISTA_INTERCAMBIO @GESTAO_ECONOMICA_ANALISTA

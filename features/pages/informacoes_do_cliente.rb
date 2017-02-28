@@ -1,11 +1,27 @@
 class Info_do_cliente
     @@utils = Utils.new
 
+
     def clicar_botao_frame(botao, frame)
         result = true
         @@utils.aguardar_loading
 
         # case frame.downcase
+        # sleep 2
+        #Watir::Wait.until { $browser.button(text: botao).exists? }
+        # sleep 1
+        # case frame.downcase
+        #
+        # when "reserva financeira"
+        #   if !$browser.span(class: 'ui-panel-title', text: 'Reserva financeira').exist?
+        #       result = false
+        #   elsif $browser.span(class: 'ui-panel-title', text: 'reserva financeira').parent.parent.button(text: botao).attribute_value('aria-disabled') == 'false'
+        #       # $browser.button(text: botao, index: 4).click
+        #       $browser.span(class: 'ui-panel-title', text: 'reserva financeira').parent.parent.button(text: botao).click
+        #   else
+        #       result = false
+        #   end
+        #
         # when 'dados de cadastro', 'dados do tipo de pagamento', "detalhe da al\u00E7ada", "taxa efetiva m\u00E1xima", "par\u00E2metro para c\u00E1lculo do share", "\u00FAltimas transa\u00E7\u00F5es", 'resultados', 'endereço', 'planos do cliente', "dados da segmenta\u00E7\u00E3o"
         #   if $browser.button(text: botao).exists?
         #     if $browser.button(text: botao, index: 0).attribute_value('aria-disabled') == 'false'
@@ -18,6 +34,7 @@ class Info_do_cliente
         #       result = false
         #   end
 
+        #
         # when "endere\u00E7o do contrato", "atribui\u00E7\u00E3o de categoria/pre\u00E7o", "atribui\u00E7\u00E3o de categoria/pre\u00E7o", "dados da segmenta\u00E7\u00E3o", 'resultados'
         #     if !$browser.span(class: 'ui-panel-title', text: frame).exist?
         #         result = false
@@ -28,7 +45,6 @@ class Info_do_cliente
         #     else
         #         result = false
         #     end
-
         # when "remuneracao", "antecipa\u00E7\u00E3o programada", 'reserva financeira'
         #     if $browser.button(text: botao, index: 1).attribute_value('aria-disabled') == 'false'
         #         $browser.button(text: botao, index: 1).click
@@ -88,6 +104,64 @@ class Info_do_cliente
             result = false
         elsif !$browser.span(class: 'ui-panel-title', text: frame).parent.parent.button(text: botao).exist?
             result = false
+        #
+        # when "remuneracao", "antecipa\u00E7\u00E3o programada"
+        #     if $browser.button(text: botao, index: 1).attribute_value('aria-disabled') == 'false'
+        #         $browser.button(text: botao, index: 1).click
+        #         sleep 3
+        #     else
+        #         result = false
+        #     end
+        #
+        # when "situa\u00E7\u00E3o do cliente"
+        #     if $browser.button(text: botao, index: 2).attribute_value('aria-disabled') == 'false'
+        #         $browser.button(text: botao, index: 2).click
+        #         sleep 3
+        #     else
+        #         result = false
+        #     end
+        #
+        # when "valor m\u00EDnimo por opera\u00E7\u00E3o"
+        #     if $browser.button(text: botao, index: 3).attribute_value('aria-disabled') == 'false'
+        #         $browser.button(text: botao, index: 3).click
+        #         sleep 3
+        #     else
+        #         result = false
+        #     end
+        #
+        # when 'ramos de atividade restritos'
+        #     if !$browser.span(class: 'ui-panel-title', text: 'Ramos de atividade restritos').exist?
+        #         result = false
+        #     elsif $browser.span(class: 'ui-panel-title', text: 'Ramos de atividade restritos').parent.parent.button(text: botao).attribute_value('aria-disabled') == 'false'
+        #         # $browser.button(text: botao, index: 4).click
+        #         $browser.span(class: 'ui-panel-title', text: 'Ramos de atividade restritos').parent.parent.button(text: botao).click
+        #     else
+        #         result = false
+        #     end
+        #
+        # when "cart\u00E3o n\u00E3o presente"
+        #     if !$browser.span(class: 'ui-panel-title', text: 'Cartão não presente').exist?
+        #         result = false
+        #     elsif $browser.span(class: 'ui-panel-title', text: 'Cartão não presente').parent.parent.button(text: botao).attribute_value('aria-disabled') == 'false'
+        #         # $browser.button(text: botao, index: 5).click
+        #         $browser.span(class: 'ui-panel-title', text: 'Cartão não presente').parent.parent.button(text: botao).click
+        #     else
+        #         result = false
+        #     end
+        #
+        # when 'editar dados', 'fidc'
+        #     if $browser.button(text: botao, index: 6).attribute_value('aria-disabled') == 'false'
+        #         $browser.button(text: botao, index: 6).click
+        #         sleep 3
+        #     else
+        #         result = false
+        #     end
+        # else
+        #     raise('informar frame valido')
+        # end
+
+        if !$browser.span(class: 'ui-panel-title', text: frame).exist?
+            result = false
         elsif $browser.span(class: 'ui-panel-title', text: frame).parent.parent.button(text: botao).attribute_value('aria-disabled') == 'false'
             $browser.span(class: 'ui-panel-title', text: frame).parent.parent.button(text: botao).click
         else
@@ -96,6 +170,7 @@ class Info_do_cliente
 
         @@utils.aguardar_loading
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        puts "RESULT::::::::::::::::::::::::::::::::: #{result}"
         result
     end
 

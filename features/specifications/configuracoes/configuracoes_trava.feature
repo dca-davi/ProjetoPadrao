@@ -11,7 +11,7 @@ Dado que eu faca login
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_TRAVA_EXCECAO_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_TRAVA_EXCECAO_VER"
 E que tenha/nao tenha acesso na tela "Trava_Excecao"
-Entao o sistema exibira/nao exibira a tela "Exceção"
+Entao o sistema exibira/nao exibira a tela "Exceção", "1"
 
 @CONFIGURACOES_TRAVA_EXCECAO_EDITAR @R4
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_TRAVA_EXCECAO_EDITAR
@@ -24,7 +24,7 @@ Entao podera/nao podera acessar a aba "INCLUIR"
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_TRAVA_PRECIFICACAO_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_TRAVA_PRECIFICACAO_VER"
 E que tenha/nao tenha acesso na tela "Precificação_Trava"
-Entao o sistema exibira/nao exibira a tela "Precificação"
+Entao o sistema exibira/nao exibira a tela "Precificação", "1"
 
 @CONFIGURACOES_TRAVA_PRECIFICACAO_EDITAR @R4
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_TRAVA_PRECIFICACAO_EDITAR

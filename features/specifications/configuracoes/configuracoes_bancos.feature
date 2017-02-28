@@ -10,7 +10,7 @@ Dado que eu faca login
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_BANCOS_DOMICILIO_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_BANCOS_DOMICILIO_VER"
 E que tenha/nao tenha acesso na tela "Domicílios"
-Entao o sistema exibira/nao exibira a tela "Domicílios"
+Entao o sistema exibira/nao exibira a tela "Domicílios", "1"
 
 @CONFIGURACOES_BANCOS_DOMICILIO_EDITAR @R4
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_BANCOS_DOMICILIO_EDITAR

@@ -17,7 +17,7 @@ E informe o EC "2000096586"
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_GERAL_VER
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_GERAL_VER"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
-Entao o sistema exibira/nao exibira a tela "Informações do cliente"
+Entao o sistema exibira/nao exibira a tela "Informações do cliente", "1"
 
 @CLIENTES_CADASTRO_INFO_SITUACAODOCLIENTE_MOTIVO_VALORESEMABERTO_EDITAR
 @PLANEJA_BACKOFFICE_COBRAN_FATURA_ANALISTA

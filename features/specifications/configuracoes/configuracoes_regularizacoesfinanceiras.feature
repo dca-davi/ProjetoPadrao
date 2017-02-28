@@ -37,7 +37,7 @@ Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_MOTIVOS_AJUSTES_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_MOTIVOS_AJUSTES_VER"
 E que tenha/nao tenha acesso na tela "Motivo de ajuste"
 Quando clicar no botao "Pesquisar", "0"
-Entao o sistema exibira/nao exibira a tela "Motivo de Ajuste"
+Entao o sistema exibira/nao exibira a tela "Motivo de Ajuste", "1"
 
 @CONFIGURACOES_MOTIVOS_AJUSTES_EDITAR
 @CONTABILIDADE_NEGOCIO_E_TRIBUTARIO_ANALISTA

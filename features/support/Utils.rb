@@ -675,6 +675,14 @@ class Utils
         end
     end
 
+    def validar_mensagem_sem_permissao
+        if $browser.span(text: "Usuário sem permissão de acesso").exist?
+            true           
+        else
+            false
+        end
+    end
+
     def selecionar_radio_button_tabela(linha, coluna = 0)
         if $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna).exist?
             $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna).click

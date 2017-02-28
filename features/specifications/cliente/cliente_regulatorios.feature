@@ -16,7 +16,7 @@ E informe o EC "1018242187"
 Cenario: CT.SEGINFO - [AUT] CLIENTES_REGULATORIOS_DIRF_VER
 Dado que tenha/nao tenha o direito "CLIENTES_REGULATORIOS_DIRF_VER"
 E que tenha/nao tenha acesso na tela "DIRF"
-Entao o sistema exibira/nao exibira a tela "DIRF"
+Entao o sistema exibira/nao exibira a tela "DIRF", "1"
 
 @CLIENTES_REGULATORIOS_DIRF_DEMONSTRATIVO_VER
 Cenario: CT.SEGINFO - [AUT] CLIENTES_REGULATORIOS_DIRF_DEMONSTRATIVO_VER

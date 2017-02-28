@@ -14,7 +14,7 @@ E informe o EC "1018242187"
 Cenario: CT.SEGINFO - [AUT] OPERACOES_TRAVA_PRAZOVENCIDO_VER
 Dado que tenha/nao tenha o direito "OPERACOES_TRAVA_PRAZOVENCIDO_VER"
 E que tenha/nao tenha acesso na tela "Trava com prazo vencido"
-Entao o sistema exibira/nao exibira a tela "Trava com Prazo Vencido"
+Entao o sistema exibira/nao exibira a tela "Trava com Prazo Vencido", "1"
 
 @OPERACOES_TRAVA_PRAZOVENCIDO_EXPORTAR
 @BACKOFFICE_ANALISTA_FORNECEDOR @TESOURARIA_E_CONTAS_A_PAGAR_ANALISTA
@@ -31,7 +31,7 @@ Entao o botao "Exportar", "1" devera estar habilitado/desabilitado
 Cenario: CT.SEGINFO - [AUT] OPERACOES_TRAVA_REJEICAO_VER
 Dado que tenha/nao tenha o direito "OPERACOES_TRAVA_REJEICAO_VER"
 E que tenha/nao tenha acesso na tela "Rejeições"
-Entao o sistema exibira/nao exibira a tela "Rejeições"
+Entao o sistema exibira/nao exibira a tela "Rejeições", "1"
 
 @OPERACOES_TRAVA_REJEICAO_RELATORIO_EXPORTAR
 @BACKOFFICE_ANALISTA_FORNECEDOR
@@ -49,7 +49,7 @@ Entao o botao "Exportar", "1" devera estar habilitado/desabilitado
 Cenario: CT.SEGINFO - [AUT] OPERACOES_TRAVA_TRAVADESTRAVACLIENTE_VER
 Dado que tenha/nao tenha o direito "OPERACOES_TRAVA_TRAVADESTRAVACLIENTE_VER"
 E que tenha/nao tenha acesso na tela "Trava e destrava cliente"
-Entao o sistema exibira/nao exibira a tela "Trava / Destrava Cliente - Pesquisar"
+Entao o sistema exibira/nao exibira a tela "Trava / Destrava Cliente - Pesquisar", "1"
 
 @OPERACOES_TRAVA_MOVHISTORICOCIP_VER
 @CADASTRO_ANALISTA_CIELO @CADASTRO_ANALISTA_CIELO_APROVADOR @BACKOFFICE_ANALISTA_FORNECEDOR
@@ -57,7 +57,7 @@ Entao o sistema exibira/nao exibira a tela "Trava / Destrava Cliente - Pesquisar
 Cenario: CT.SEGINFO - [AUT] OPERACOES_TRAVA_MOVHISTORICOCIP_VER
 Dado que tenha/nao tenha o direito "OPERACOES_TRAVA_MOVHISTORICOCIP_VER"
 E que tenha/nao tenha acesso na tela "Movimento CIP"
-Entao o sistema exibira/nao exibira a tela "Movimento CIP (Varredura)"
+Entao o sistema exibira/nao exibira a tela "Movimento CIP (Varredura)", "1"
 
 @OPERACOES_TRAVA_TRATAMENTOMANUAL_EDITAR
 @BACKOFFICE_ANALISTA_FORNECEDOR

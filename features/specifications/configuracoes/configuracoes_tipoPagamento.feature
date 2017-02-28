@@ -15,7 +15,7 @@ Dado que eu faca login
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_PRECO_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_PRECO_VER"
 E que tenha/nao tenha acesso na tela "Preço padrão"
-Entao o sistema exibira/nao exibira a tela "Preço padrão"
+Entao o sistema exibira/nao exibira a tela "Preço padrão", "1"
 
 @CONFIGURACOES_PRECO_EDITAR
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_PRECO_EDITAR
@@ -34,7 +34,7 @@ Entao podera/nao podera acessar a aba "ATUALIZAR"
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_TIPODEPAGAMENTO_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_TIPODEPAGAMENTO_VER"
 E que tenha/nao tenha acesso na tela "Pesquisa"
-Entao o sistema exibira/nao exibira a tela "Tipo de pagamento"
+Entao o sistema exibira/nao exibira a tela "Tipo de pagamento", "1"
 
 @CONFIGURACOES_TIPODEPAGAMENTO_EDITAR
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_TIPODEPAGAMENTO_EDITAR
