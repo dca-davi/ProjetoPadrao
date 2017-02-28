@@ -86,7 +86,7 @@ class Utils
     end
 
     def tem_direito?(nome_direito)
-        book = Spreadsheet.open('features\direitoXperfil_V1.xls')
+        book = Spreadsheet.open('features\direitoXperfil_V1_atualizada.xls')
 
         sheet1 = book.worksheet 0
 
