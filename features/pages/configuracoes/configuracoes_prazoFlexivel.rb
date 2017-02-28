@@ -10,5 +10,6 @@ class Configuracoes_prazoFlexivel
         result = false
       end
       $encoded_img = $browser.driver.screenshot_as(:base64)
+      return result
     end
   end
