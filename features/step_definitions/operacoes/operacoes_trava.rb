@@ -29,7 +29,6 @@ Quando(/^clicar no botao "([^"]*)"$/) do |botao|
     elsif btnTela && !@tem_direito
       fail('Usuario pode clicar no botão que não tem direito')
     end
-
 end
 
 Quando(/^clicar no botao exportar$/) do

@@ -3,7 +3,7 @@ Quando (/^selecionar "([^"]*)" do campo "([^"]*)"$/) do |item, frame|
     @operacaoes_antecipacaoVenda = Operacoes_antecipacaoVendas.new
     btmComboCanal = @operacaoes_antecipacaoVenda.selecione_combo_operacoes(frame, item)
     case frame
-        when "demanda", "tipo da solicitacao"
+        when "demanda", "tipo da solicitacao", "Demanda-Abertura de demanda", "Tipo da solicitação-Abertura de demanda", "data autorizacao reprocessamento de vendas - de", "data autorizacao reprocessamento de vendas - ate", "Status-Reprocessamento de Venda"
             validar = false
         else 
             validar = true
