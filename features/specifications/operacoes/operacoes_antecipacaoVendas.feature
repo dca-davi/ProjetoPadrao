@@ -45,10 +45,8 @@ Entao o sistema exibira/nao exibira a tela "Operação de Antecipação", "1"
 Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAOVENDAS_OPERACAOANTECIPACAO_CLIENTEPRECO_VER
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERACAOANTECIPACAO_CLIENTEPRECO_VER"
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
-Quando selecionar a aba precificacao
-E localizar o frame "Preço Especial", "1"
-E localizar o frame "Categoria", "1"
-Então localizar o frame "Alçada", "1"
+Entao selecionar a aba precificacao
+
 
 @OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_AVANCADO_DIFUTURO_VER
 @TESOURARIA_E_CONTAS_A_PAGAR_ANALISTA @CENTRAL_DE_RELACIONAMENTO_ANALISTA @CENTRAL_ANTECIPACAO_COORDENADOR
