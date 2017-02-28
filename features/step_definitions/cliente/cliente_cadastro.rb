@@ -96,10 +96,10 @@ Entao(/^o botao "([^"]*)" do frame "([^"]*)", "([^"]*)" estara habilitado\/desab
     end
 end
 
-Quando(/^clicar na aba "([^"]*)", "([^"]*)"$/) do |aba, i|
+Quando(/^clicar na aba "([^"]*)", "([^"]*)"$/) do |aba, valida_step|
     next if @pass_test == true
     utils = Utils.new
-    statusAba = utils.acessar_aba(aba, i)
+    statusAba = utils.acessar_aba(aba)
 
     # puts "Acesso a aba: #{statusAba} + Tem direito? #{@tem_direito}"
     if !statusAba && @tem_direito
@@ -107,8 +107,10 @@ Quando(/^clicar na aba "([^"]*)", "([^"]*)"$/) do |aba, i|
     # elsif statusAba && !@tem_direito
     #     raise('Usuario pode acessar aba no qual não tem direito')
     elsif statusAba && !@tem_direito
-              raise('Usuario pode acessar aba no qual não tem direito')
-    elsif statusAba==false && @tem_direito==false
+        if valida_step == "1"
+            raise('Usuario pode acessar aba no qual não tem direito')
+        end
+    elsif !statusAba && !@tem_direito
         @pass_test = true
     end
 end

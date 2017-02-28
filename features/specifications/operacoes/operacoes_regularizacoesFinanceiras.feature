@@ -160,7 +160,7 @@ E que tenha/nao tenha acesso na tela "Débitos ao cliente sem retorno"
 E selecionar "a primeira opcao da coluna Tratamento"
 Quando clicar no botao "Confirmar", "0"
 E informar "05/10/2016" no campo "data de liquidação - tratamento"
-Entao clicar no botao "Confirmar" da tela de tratamento
+Entao clicar no botao "Confirmar", "1" da tela de tratamento
 
 @OPERACOES_REGULARIZACOES_REVERSAOCANCELAMENTO_SOLICITAR
 @BACKOFFICE_ANALISTA_FORNECEDOR @CHARGEBACK_ANALISTA_INTERCAMBIO @CENTRAL_DE_RELACIONAMENTO_ANALISTA
@@ -169,7 +169,7 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_REVERSAOCANCELAMENTO_SOLICI
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_REVERSAOCANCELAMENTO_SOLICITAR"
 E que tenha/nao tenha acesso na tela "Cancelamento e reversão de vendas"
 Quando selecionar a opcao "Cancelamento de vendas"
-E informar "705306040490633" no campo "codigo da venda"
+E informar "701206036721204" no campo "codigo da venda"
 Quando clicar no botao "Pesquisar", "0"
 E clicar na acao "Reverter", "0"
 Entao clicar no botao "Reverter", "1"
@@ -281,7 +281,7 @@ Entao clicar na aba "TRATAMENTO DE VENDA", "0"
 E informar "04/11/2016" no campo "reprocessamento de vendas - data autorizacao - de"
 E informar "04/11/2016" no campo "reprocessamento de vendas - data autorizacao - ate"
 E informar "353211" no campo "reprocessamento de vendas - nsu"
-Quando clicar no botao "Pesquisar" da tela de tratamento
+Quando clicar no botao "Pesquisar", "0" da tela de tratamento
 E clicar na acao "Reverter", "0"
 Entao o botao "Continuar", "1" devera estar habilitado/desabilitado
 
@@ -293,7 +293,7 @@ Entao clicar na aba "TRATAMENTO DE VENDA", "0"
 E informar "04/11/2016" no campo "reprocessamento de vendas - data autorizacao - de"
 E informar "04/11/2016" no campo "reprocessamento de vendas - data autorizacao - ate"
 E informar "359403" no campo "reprocessamento de vendas - nsu"
-Quando clicar no botao "Pesquisar" da tela de tratamento
+Quando clicar no botao "Pesquisar", "0" da tela de tratamento
 E clicar na acao "Reverter", "0"
 E informar "359403" no campo "reprocessamento de vendas - codigo de autorizacao"
 Entao o botao "Continuar", "1" devera estar habilitado/desabilitado

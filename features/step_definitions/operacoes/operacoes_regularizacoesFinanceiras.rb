@@ -48,13 +48,15 @@ Quando (/^selecionar "([^"]*)"$/) do |tratamento|
     end
 end
 
-Quando (/^clicar no botao "([^"]*)" da tela de tratamento$/) do |botao|
+Quando (/^clicar no botao "([^"]*)", "([^"]*)" da tela de tratamento$/) do |botao, valida_step|
     next if @pass_test == true
     @operacoes_regularizacao_financeira = Operacoes_regularizacoesFinanceiras.new
     conf = @operacoes_regularizacao_financeira.clicar_botao_confirmar_tratamento(botao)
     if !conf && @tem_direito
         raise 'Usuario nao pode clicar no botao no qual tem direito'
     elsif conf && !@tem_direito
-        raise 'Usuario pode clicar no botao no qual nao tem direito'
+        if valida_step == "1"
+            raise 'Usuario pode clicar no botao no qual nao tem direito'
+        end
     end
 end
