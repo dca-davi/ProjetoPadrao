@@ -16,9 +16,13 @@ class Configuracoes_regularizaoesfinanceiras
 
     def btn_pesquisar_index1(btn)
       if $browser.button(text: btn, index: 1).exist?
-          $browser.button(text: btn, index: 1).click
-          sleep 2
-          result = true
+          if $browser.button(text: btn, index: 1).attribute_value('aria-disabled') == "true"
+            result = false
+          else
+            $browser.button(text: btn, index: 1).click
+            sleep 2
+            result = true
+          end
       else
           result = false
       end
