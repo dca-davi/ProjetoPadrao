@@ -107,9 +107,11 @@ Quando(/^clicar na aba "([^"]*)", "([^"]*)"$/) do |aba, valida_step|
     # elsif statusAba && !@tem_direito
     #     raise('Usuario pode acessar aba no qual não tem direito')
     elsif statusAba && !@tem_direito
-          if valida_step == "1"
-              raise('Usuario pode acessar aba no qual não tem direito')
-          end
+        if valida_step == "1"
+            raise('Usuario pode acessar aba no qual não tem direito')
+        end
+    elsif !statusAba && !@tem_direito
+        @pass_test = true
     end
 end
 
