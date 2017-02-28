@@ -86,7 +86,7 @@ class Utils
     end
 
     def tem_direito?(nome_direito)
-        book = Spreadsheet.open('features\direitoXperfil_V1.xls')
+        book = Spreadsheet.open('features\direitoXperfil_V1_atualizada.xls')
 
         sheet1 = book.worksheet 0
 
@@ -318,7 +318,7 @@ class Utils
                     break
                 end
             end
-            
+
         when 'detalhar - reprocessamento de vendas'
             acao = 'tab_reprocessing_sales:searchReprocessingSales:reprocessingSales:0:image_w9Z'
         when 'atribuir'
@@ -821,4 +821,11 @@ class Utils
         sleep 2
     end
 
+    def popup_contem_mensagem?(mensagem)
+      if $browser.div(class: /ui-dialog/&&/ui-overlay-visible/).span(text: /#{mensagem}/).exists?
+        return true
+      else
+        return false
+      end
+    end
 end
