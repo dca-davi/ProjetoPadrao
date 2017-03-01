@@ -45,10 +45,8 @@ Entao o sistema exibira/nao exibira a tela "Operação de Antecipação", "1"
 Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAOVENDAS_OPERACAOANTECIPACAO_CLIENTEPRECO_VER
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERACAOANTECIPACAO_CLIENTEPRECO_VER"
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
-Quando selecionar a aba precificacao
-E localizar o frame "Preço Especial", "1"
-E localizar o frame "Categoria", "1"
-Então localizar o frame "Alçada", "1"
+Entao selecionar a aba precificacao
+
 
 @OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_AVANCADO_DIFUTURO_VER
 @TESOURARIA_E_CONTAS_A_PAGAR_ANALISTA @CENTRAL_DE_RELACIONAMENTO_ANALISTA @CENTRAL_ANTECIPACAO_COORDENADOR
@@ -78,6 +76,7 @@ Quando clicar na aba "Antecipação Avulsa", "0"
 E localizar o frame "Percentual CDI", "1"
 Entao localizar o frame "(Cielo)", "1"
 
+
 @OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_NEGOCIACAO_CDICLIENTE_VER
 @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA @PLANEJA_BACKOFFICE_COBRAN_FATURA_ANALISTA @CHARGEBACK_ANALISTA_INTERCAMBIO
 @CENTRAL_DE_RELACIONAMENTO_ANALISTA @CENTRAL_ANTECIPACAO_COORDENADOR @CENTRAL_ANTECIPACAO_ANALISTA
@@ -88,6 +87,7 @@ E que tenha/nao tenha acesso na tela "Operação de antecipação"
 Quando clicar na aba "Antecipação Avulsa", "0"
 E localizar o frame "Percentual CDI", "1"
 Entao localizar o frame "(Cliente)", "1"
+
 
 @OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_NEGOCIACAO_EDITAR
 @PLANEJA_BACKOFFICE_COBRAN_FATURA_ANALISTA @CHARGEBACK_ANALISTA_INTERCAMBIO @CENTRAL_DE_RELACIONAMENTO_ANALISTA
@@ -227,7 +227,7 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGTODOS_VER
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGTODOS_VER"
 E que tenha/nao tenha acesso na tela "Antecipação programadas cadastradas"
 E selecionar o combobox "Status" e a opcao "Vigente", "0"
-Quando clicar no botao "Pesquisar"
+Quando clicar no botao "Pesquisar", "0"
 Entao localizar o frame "Últimas Transações", "1"
 
 @OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CDIGERENCIAL_VER
@@ -236,7 +236,7 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CDIGERENC
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CDIGERENCIAL_VER"
 E que tenha/nao tenha acesso na tela "Operações realizadas"
 E selecionar o combobox "Status" e a opcao "Vigente", "0"
-Quando clicar no botao "Pesquisar"
+Quando clicar no botao "Pesquisar", "0"
 Entao localizar o frame "Últimas Transações", "0"
 E clicar na acao "Visualizar", "1"
 

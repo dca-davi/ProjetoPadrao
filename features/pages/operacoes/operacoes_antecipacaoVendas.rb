@@ -204,6 +204,7 @@ class Operacoes_antecipacaoVendas
             end
         end
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        return result
     end
 
     def clicar_botao_esp
@@ -216,19 +217,25 @@ class Operacoes_antecipacaoVendas
         end
         sleep 3
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        return result
     end
 
     def clicar_aba_precificacao
-        if $browser.a(href: '#tabOperationAnticipation:tabPricing').exist?
-            $browser.a(href: '#tabOperationAnticipation:tabPricing').click
-            sleep 1
-            result = true
-        else
+        @@utils.aguardar_loading
+        result = true
+
+        if !$browser.li(text: 'PRECIFICAÇÃO').exist?
             result = false
+            puts 'existe'
+        elsif $browser.li(text: 'PRECIFICAÇÃO').attribute_value('class').include? 'state-disabled'
+            result = false
+            puts 'disabled'
+        else
+            $browser.li(text: 'PRECIFICAÇÃO').click
         end
-        sleep 2
         @@utils.aguardar_loading
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        return result
     end
 
     def clicar_no_link(link)
@@ -245,6 +252,7 @@ class Operacoes_antecipacaoVendas
         sleep 2
         @@utils.aguardar_loading
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        return result
   end
 
     def clicar_botao_ok
@@ -258,5 +266,6 @@ class Operacoes_antecipacaoVendas
         sleep 2
         @@utils.aguardar_loading
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        return result
     end
 end
