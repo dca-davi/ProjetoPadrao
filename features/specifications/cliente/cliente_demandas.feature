@@ -44,4 +44,5 @@ E que tenha/nao tenha acesso na tela "Abertura de demanda"
 E selecionar "Solicitação para Regularização Financeira" do campo "demanda", "0"
 E selecionar "Pedido para regularizar cobrança indevida telefonia" do campo "tipo da solicitacao", "0"
 E Selecionar a opcao da sessao - Solicitante "0"
-Entao o botao "Continuar", "1" devera estar habilitado/desabilitado
+Quando clicar no botao "Continuar", "0"
+Entao a mensagem deve/nao deve ser exibida
