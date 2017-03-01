@@ -257,7 +257,7 @@ class Utils
                 result = true
             end
         else
-           result = false   
+           result = false
         end
         sleep 3
         $encoded_img = $browser.driver.screenshot_as(:base64)
@@ -472,9 +472,11 @@ class Utils
         when 'data-ate'
             campo = 'tab_deposits_debits:formReport:dtSetrUntil_input|dateOut_input|formRejectedFlag:finalRejectDate_input'
         when 'data de rejeicao - de'
-            campo = 'tabRejectionCapture:initialRejectionDate_input|tabRejectionCapture:initialRejectionDateTreatment_input'
+            campo = 'tabRejectionCapture:initialRejectionDate_input.|tabRejectionCapture:initialRejectionDateTreatment_input'
         when 'data de rejeicao - ate'
-            campo = 'tabRejectionCapture:finalRejectionDateTreatment_input|tabRejectionCapture:finalRejectionDate_input'
+            campo = 'tabRejectionCapture:finalRejectionDate_input'
+        when 'data de rejeicao - captura - ate'
+            campo = 'tabRejectionCapture:finalRejectionDateTreatment_input'
         when 'data de rejeicao tratamento - de'
             campo = 'initialRejectionDateTreatment_input'
         when 'data de rejeicao tratamento - ate'
