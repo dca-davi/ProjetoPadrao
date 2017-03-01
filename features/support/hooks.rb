@@ -35,7 +35,7 @@ Before do |scenario|
             skip_this_scenario
         end
         
-        if !$exec_status_desejado.to_s.empty?       
+        if !$exec_status_desejado.to_s.empty?
             skip_this_scenario if $rest_ALM.checar_status_ALM != $exec_status_desejado
         end
        
