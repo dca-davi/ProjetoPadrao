@@ -33,7 +33,7 @@ for count_row in 1...row_counter
     status_teste = $rest_ALM.checar_status_ALM
     case status_teste
         when 'Failed'
-            #$rest_ALM.alterar_status_teste_ALM(status_cenario)
+            $rest_ALM.alterar_status_teste_ALM(status_cenario)
             puts  "#{count} - #{nome_cenario} - Atual: #{status_teste} | Novo: #{status_cenario}"
         else
             puts "#{count} - #{nome_cenario} Atual: #{status_teste} | Não Alterável para: #{status_cenario}"            
