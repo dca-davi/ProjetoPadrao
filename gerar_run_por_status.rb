@@ -21,7 +21,7 @@ count = 1
 
 for count_row in 1...row_counter
     for count_column in 1...column_counter
-       raise "A linha #{count_row} da coluna #{count_column} está vazia, favor verificar." if sheet1.cell(count_row, count_column).empty?
+       raise "A linha #{count_row} da coluna #{count_column} está vazia, favor verificar." if sheet1.cell(count_row, count_column).to_s.empty?
     end
     release = sheet1.cell(count_row, 0).to_s
     testset = sheet1.cell(count_row, 1).to_s
