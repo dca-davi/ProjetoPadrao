@@ -5,8 +5,8 @@ Entao(/^selecionar o combobox "([^"]*)" e a opcao "([^"]*)", "([^"]*)"$/) do |co
     if !combovan && @tem_direito
         raise('Usuario nao pode clicar no combobox no qual tem direito')
     elsif combovan && !@tem_direito
-        if valida_step == "1"
-          raise('Usuario pode clicar no combobox no qual nao tem direito')
-        end
+      if valida_step == "1"
+        raise('Usuario pode clicar no combobox no qual nao tem direito')
+      end
     end
 end

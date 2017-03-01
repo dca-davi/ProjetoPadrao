@@ -25,7 +25,4 @@ Entao clicar no botao "Pesquisar", "1"
 Cenario: CT.SEGINFO - [AUT] OPERACOES_HIERARQUIA_GRUPODEPAGAMENTO_EDITAR
 Dado que tenha/nao tenha o direito "OPERACOES_HIERARQUIA_GRUPODEPAGAMENTO_EDITAR"
 E que tenha/nao tenha acesso na tela "Grupo de pagamento"
-Quando informar "1007595105" no campo "numero do cliente individual"
-E clicar no botao "Pesquisar", "0"
-E clicar no link "1007595105"
-Entao o botao "Editar Dados", "1" estara habilitado/desabilitado
+Entao clicar na aba "INCLUIR", "1"
