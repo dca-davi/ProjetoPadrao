@@ -1,11 +1,13 @@
-Quando (/^selecionar a data "([^"]*)" da pagina "([^"]*)"$/) do |data, tela|
+Quando (/^selecionar a data "([^"]*)" da pagina "([^"]*)", "([^"]*)"$/) do |data, tela, valida_step|
     next if @pass_test == true
     @relatorios_financeiro = Relatorios_financeiros.new
     btnData = @relatorios_financeiro.informar_periodo_unico(data, tela)
     if !btnData && @tem_direito
         raise('Usuario com direito nao consegue selecionar a data')
     elsif btnData && !@tem_direito
-        raise('Usuario nao tem direito para selecionar a data')
+        if valida_step == "1"
+          raise('Usuario nao tem direito para selecionar a data')
+        end
     end
 end
 
@@ -37,7 +39,5 @@ Quando (/^clicar no valor bruto$/) do
     valorbtn = @relatorios_financeiro.clicar_valor_bruto
     if !valorbtn && @tem_direito
         raise('Usuario com direito nao consegue clicar no valor')
-    elsif valorbtn && !@tem_direito
-        raise('Usuario nao tem direito para clicar no valor')
     end
 end
