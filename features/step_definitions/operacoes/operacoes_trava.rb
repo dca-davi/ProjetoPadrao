@@ -34,6 +34,8 @@ Quando(/^clicar no botao "([^"]*)", "([^"]*)"$/) do |botao, valida_step|
           if valida_step == "1"
               raise('Usuario pode clicar no botão que não tem direito')
           end
+    elsif !btnTela && !@tem_direito
+        @pass_test = true
     end
 end
 

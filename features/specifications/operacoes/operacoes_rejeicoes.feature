@@ -72,8 +72,8 @@ E selecionar a opcao "Regular"
 E selecionar a opcao "Crédito"
 E informar "237-BANCO BRADESCO S.A." no campo "Banco"
 E selecionar "VISA" no combo-box Bandeira
-E informar "01/11/2015" no campo "data-de"
-E informar "10/10/2016" no campo "data-ate"
+E informar "01/11/2016" no campo "data-de"
+E informar "10/10/2017" no campo "data-ate"
 E clicar no botao "Pesquisar", "0"
 Entao selecionar o check-box da linha "1" na coluna "8" da tabela resultados
 E clicar no botao "Continuar", "0"
