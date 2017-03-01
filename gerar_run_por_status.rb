@@ -15,14 +15,15 @@ $rest_ALM.conectar_ALM
 
 book = Spreadsheet.open('./features/Dados-CTs-Atualizar-Status.xls')
 sheet1 = book.worksheet 0
-column_counter = sheet1.column_count
+column_counter = 6 #sheet1.column_count - 1
 row_counter = sheet1.row_count
 count = 1
 
-for count_row in 1...row_counter
-    for count_column in 1...column_counter
-       raise "A linha #{count_row} da coluna #{count_column} está vazia, favor verificar." if sheet1.cell(count_row, count_column).to_s.empty?
+for count_row in 1...row_counter 
+    for count_column in 0...column_counter 
+       raise "A coluna #{count_column} da linha #{count_row} está vazia, favor verificar." if sheet1.cell(count_row, count_column).to_s.empty?
     end
+     
     release = sheet1.cell(count_row, 0).to_s
     testset = sheet1.cell(count_row, 1).to_s
     ciclo = sheet1.cell(count_row, 3).to_s
