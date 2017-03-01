@@ -15,7 +15,7 @@ Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ACUMDIARIOBANCO_
 E que tenha/nao tenha acesso na tela "Acumulado diário"
 Quando clicar na aba "Por Banco", "0"
 Quando informar "1-BANCO DO BRASIL S.A." no campo "banco - acumulo diario"
-E selecionar a data "08/09/2016" da pagina "Acumulado diario - Por banco"
+E selecionar a data "08/09/2016" da pagina "Acumulado diario - Por banco", "0"
 Entao clicar no botao "Pesquisar", "1"
 
 @OPERACOES_ANTECIPACAOVENDAS_ACUMDIARIOCANAL_VER
@@ -25,7 +25,7 @@ Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ACUMDIARIOCANAL_
 E que tenha/nao tenha acesso na tela "Acumulado diário"
 Quando clicar na aba "Por Canal", "0"
 Quando selecionar "CENTRAL" do campo "canal - acumulado diario", "0"
-E selecionar a data "08/09/2016" da pagina "Acumulado diario - Por canal"
+E selecionar a data "08/09/2016" da pagina "Acumulado diario - Por canal", "0"
 Entao clicar no botao Pesquisar
 
 
@@ -146,8 +146,8 @@ E que tenha/nao tenha acesso na tela "Operações realizadas"
 E informar "2000006420" no campo "numero do cliente - operacoes realizadas"
 E informar "9239" no campo "numero da operacao - operacoes realizadas"
 E selecionar "Efetivado" do campo "Status", "0"
-E selecionar a data "30/09/2016" da pagina "Data de pagamento de"
-Quando selecionar a data "30/09/2016" da pagina "Data de pagamento ate"
+E selecionar a data "30/09/2016" da pagina "Data de pagamento de", "0"
+Quando selecionar a data "30/09/2016" da pagina "Data de pagamento ate", "0"
 Entao clicar no botao "Pesquisar", "1"
 
 @OPERACOES_ANTECIPACAOVENDAS_OPERREALIZADAS_CANCELARCLIENTE_EDITAR
