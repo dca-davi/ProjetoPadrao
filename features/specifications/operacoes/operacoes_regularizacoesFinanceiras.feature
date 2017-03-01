@@ -295,7 +295,6 @@ E informar "04/11/2016" no campo "reprocessamento de vendas - data autorizacao -
 E informar "359403" no campo "reprocessamento de vendas - nsu"
 Quando clicar no botao "Pesquisar", "0" da tela de tratamento
 E clicar na acao "Reverter", "0"
-E informar "359403" no campo "reprocessamento de vendas - codigo de autorizacao"
 Entao o botao "Continuar", "1" devera estar habilitado/desabilitado
 
 @OPERACOES_REGULARIZACOES_MASTER_CANCELAMENTO_E_REVERSAO_EDITAR
