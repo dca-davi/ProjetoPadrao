@@ -29,9 +29,16 @@ Before do |scenario|
         $rest_ALM = RestCall.new
         $rest_ALM.conectar_ALM
         $rest_ALM.obter_dados_ALM($release, $testset, $ciclo, $cenario_name) 
-        if !$exec_status_desejado.to_s.empty?       
-            skip_this_scenario if $rest_ALM.checar_status_ALM != $exec_status_desejado or $rest_ALM.checar_status_ALM == 'Passed'
+       
+        case $rest_ALM.checar_status_ALM
+        when 'Passed', 'Blocked', 'N/A'
+            skip_this_scenario
         end
+        
+        if !$exec_status_desejado.to_s.empty?
+            skip_this_scenario if $rest_ALM.checar_status_ALM != $exec_status_desejado
+        end
+       
         $rest_ALM.criar_run_ALM('Not Completed')
     end
 
