@@ -15,13 +15,15 @@ $rest_ALM.conectar_ALM
 
 book = Spreadsheet.open('./features/Dados-CTs-Atualizar-Status.xls')
 sheet1 = book.worksheet 0
-column_counter = sheet1.column_count
+column_counter = 6 #sheet1.column_count - 1
 row_counter = sheet1.row_count
+count = 1
 
-for count_row in 1...row_counter
-    for count_column in 1...column_counter
-       raise "A linha #{count_row} da coluna #{count_column} está vazia, favor verificar." if sheet1.cell(count_row, count_column).empty?
+for count_row in 1...row_counter 
+    for count_column in 0...column_counter 
+       raise "A coluna #{count_column} da linha #{count_row} está vazia, favor verificar." if sheet1.cell(count_row, count_column).to_s.empty?
     end
+     
     release = sheet1.cell(count_row, 0).to_s
     testset = sheet1.cell(count_row, 1).to_s
     ciclo = sheet1.cell(count_row, 3).to_s
@@ -29,7 +31,16 @@ for count_row in 1...row_counter
     status_cenario = sheet1.cell(count_row, 5).to_s
 
     $rest_ALM.obter_dados_ALM(release, testset, ciclo, nome_cenario)
-    $rest_ALM.alterar_status_teste_ALM(status_cenario)
+    status_teste = $rest_ALM.checar_status_ALM
+    case status_teste
+        when 'Failed'
+            $rest_ALM.alterar_status_teste_ALM(status_cenario)
+            puts  "#{count} - #{nome_cenario} - Atual: #{status_teste} | Novo: #{status_cenario}"
+        else
+            puts "#{count} - #{nome_cenario} Atual: #{status_teste} | Não Alterável para: #{status_cenario}"            
+    end
+
+    count += 1        
 end
 
 $rest_ALM.desconectar_ALM
