@@ -56,7 +56,7 @@ Quando (/^clicar no botao "([^"]*)", "([^"]*)" da tela de tratamento$/) do |bota
         raise 'Usuario nao pode clicar no botao no qual tem direito'
     elsif conf && !@tem_direito
         if valida_step == "1"
-            raise 'Usuario pode clicar no botao no qual nao tem direito'
+          raise 'Usuario pode clicar no botao no qual nao tem direito'
         end
     end
 end

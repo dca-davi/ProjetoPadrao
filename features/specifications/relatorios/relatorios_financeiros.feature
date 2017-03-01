@@ -46,14 +46,14 @@ Entao o sistema exibira/nao exibira a tela "Divergências", "1"
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_FINANCEIROS_CONTABEIS_VER
 Dado que tenha/nao tenha o direito "RELATORIOS_FINANCEIROS_CONTABEIS_VER"
 E que tenha/nao tenha acesso na tela "Resumo contábil sintético"
-Quando selecionar a data "27/09/2016" da pagina "Resumo contábil sintético"
+Quando selecionar a data "27/09/2016" da pagina "Resumo contábil sintético", "0"
 Entao clicar no botao "Pesquisar", "1"
 
 @RELATORIOS_FINANCEIROS_PAGAMENTOSBAIXADOSSEMRETORNODOSBANCOS_EXPORTAR
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_FINANCEIROS_PAGAMENTOSBAIXADOSSEMRETORNODOSBANCOS_EXPORTAR
 Dado que tenha/nao tenha o direito "RELATORIOS_FINANCEIROS_PAGAMENTOSBAIXADOSSEMRETORNODOSBANCOS_EXPORTAR"
 E que tenha/nao tenha acesso na tela "Pagamentos baixados sem retorno"
-Quando selecionar a data "27/09/2016" da pagina "Pagamentos baixados sem retorno"
+Quando selecionar a data "27/09/2016" da pagina "Pagamentos baixados sem retorno", "0"
 E clicar no botao "Pesquisar", "0"
 Entao o botao "Exportar", "1" estara habilitado/desabilitado
 
@@ -98,6 +98,8 @@ Entao o botao "Exportar", "1" estara habilitado/desabilitado
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_RELATORIOSFINANCEIROS_RESUMOCONTABILSINTETICO_EXPORTAR
 Dado que tenha/nao tenha o direito "RELATORIOS_RELATORIOSFINANCEIROS_RESUMOCONTABILSINTETICO_EXPORTAR"
 E que tenha/nao tenha acesso na tela "Resumo contábil sintético"
+Quando selecionar a data "22/02/2017" da pagina "Resumo contábil sintético", "0"
+E clicar no botao "Pesquisar", "0"
 E clicar no valor bruto
 E o botao "Pesquisar", "0" estara habilitado/desabilitado
 Entao o botao "Exportar", "1" estara habilitado/desabilitado
