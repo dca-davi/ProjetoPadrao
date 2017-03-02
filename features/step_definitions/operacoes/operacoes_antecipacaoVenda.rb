@@ -76,7 +76,10 @@ Quando (/^selecionar a opcao "([^"]*)"$/) do |radio|
     next if @pass_test == true
     @operacoes_antecipacaoVenda = Utils.new
     btnradio = @operacoes_antecipacaoVenda.selecionar_radio_button(radio)
+    #btnradio = @operacoes_antecipacaoVenda.selecionar_radio_button(radio)
     if !btnradio && @tem_direito
         raise 'Usuario nao pode selecionar o campo no qual tem direito'
+    elsif btnradio && !@tem_direito
+        raise 'Usuario pode selecionar o campo no qual não tem direito'    
     end
 end

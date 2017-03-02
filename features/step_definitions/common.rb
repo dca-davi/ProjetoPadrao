@@ -36,3 +36,12 @@ end
 E(/^informe o nivel de hierarquia como "([^"]*)"$/) do |hierarquia|
     @utils.alterar_hierarquia(hierarquia)
 end
+
+Entao(/^a mensagem deve\/nao deve ser exibida$/) do
+   mensagem = @utils.validar_mensagem_sem_permissao
+   if !mensagem && !@tem_direito
+        raise('Usuario sem direito pode continuar')
+    elsif mensagem && @tem_direito
+            raise('Usuario com direito nao pode continuar')
+    end
+end

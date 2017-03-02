@@ -100,12 +100,11 @@ Dado que tenha/nao tenha o direito "OPERACOES_REJEICOESCAPTURA_DETALHES_REMOVER"
 E que tenha/nao tenha acesso na tela "Captura"
 E clicar na aba "TRATAMENTO", "0"
 Quando selecionar a opcao "Exclusão"
-E informar "06/09/2016" no campo "data de rejeicao - de"
-E informar "06/10/2016" no campo "data de rejeicao - ate"
+E informar "06092016" no campo "data de rejeicao - de"
+E informar "06102016" no campo "data de rejeicao - captura - ate"
 Quando clicar no botao "Pesquisar", "0" da tela captura
 E clicar na acao "Editar", "0"
-Entao clicar no botao "Excluir", "1"
-
+Entao o botao "Excluir", "1" estara habilitado/desabilitado
 
 @OPERACOES_REJEICOESCAPTURA_EXPORTAR
 @BACKOFFICE_ANALISTA_FORNECEDOR @CONTROLE_SISTEMAS_FINANCEIROS_CONCILIACAO @TESOURARIA_E_CONTAS_A_PAGAR_ANALISTA
@@ -151,10 +150,10 @@ E selecionar a opcao "Regular"
 E selecionar a opcao "Crédito"
 E selecionar a opcao "Débito"
 E informar "104-CAIXA ECONOMICA FEDERAL S.A." no campo "Banco"
-E informar "01/09/2016" no campo "data-de"
-E informar "09/09/2016" no campo "data-ate"
-E clicar no botao "Pesquisar", "0"
-Entao selecionar o check-box todos na coluna "8" da tabela resultados
+E informar "01/01/2017" no campo "data-de"
+E informar "09/02/2017" no campo "data-ate"
+Quando clicar no botao "Pesquisar", "0"
+Entao selecionar o check-box todos na coluna "9" da tabela resultados
 
 @OPERACOES_REJEICOESBANDEIRA_ELO_DINERS_DETALHES_EDITAR
 Cenario: CT.SEGINFO - [AUT] OPERACOES_REJEICOESBANDEIRA_ELO_DINERS_DETALHES_EDITAR
@@ -196,7 +195,7 @@ E que tenha/nao tenha acesso na tela "Captura"
 E clicar na aba "TRATAMENTO", "0"
 Quando selecionar a opcao "Exclusão"
 E informar "03/10/2016" no campo "data de rejeicao - de"
-E informar "07/10/2016" no campo "data de rejeicao - ate"
+E informar "07/10/2016" no campo "data de rejeicao - captura - ate"
 Quando clicar no botao "Pesquisar", "0" da tela captura
 E clicar na acao "Editar", "0"
-Entao clicar no botao "Excluir", "1"
+Entao o botao "Excluir", "1" estara habilitado/desabilitado

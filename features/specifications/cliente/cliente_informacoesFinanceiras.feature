@@ -5,7 +5,7 @@ Funcionalidade: Validar os direitos na tela Cliente > Extratos > Resumo Financei
 
 Contexto:
 Dado que eu faca login
-E informe o EC "1018242187"
+E informe o EC "1014766947"
 
 @CLIENTES_INFORMACOESFINANCEIRAS_VER
 @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA @CADASTRO_ANALISTA_CIELO @CADASTRO_ANALISTA_CIELO_APROVADOR
