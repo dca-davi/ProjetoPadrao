@@ -173,53 +173,16 @@ class Utils
     end
 
     def acessar_aba(aba, i=0)
-      # aguardar_loading
-      #  case aba
-      #  when 'Incluir_PrazoFlexivel'
-      #      aba = 'Incluir'
-      #      i = 0
-      #  when 'Parametros - PRO ANTECIPACAO DE VENDAS' #
-      #      aba = 'Parâmetros'
-      #      i = 1
-      #  when 'Incluir regra de liberação'
-      #      aba = 'INCLUIR'
-      #      i = 1
-      #  when 'Incluir Cobrança'
-      #      aba = 'INCLUIR'
-      #      i = 1
-      #  end
-
-      #  if $cenario_name=="CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAO_CARTAONAOPRESENTE_EDITAR"
-      #      i = 1 if aba=="Incluir"
-      #  end
-
-          if !$browser.li(text: aba).exist?
+        if !$browser.li(text: aba).exist?
+        result = false
+        elsif $browser.li(text: aba).attribute_value("class").include? 'state-disabled'
+            $encoded_img = $browser.driver.screenshot_as(:base64)
             result = false
-            elsif $browser.li(text: aba).attribute_value("class").include? 'state-disabled'
-              result = false
-            else
-              $browser.li(text: aba).click
-              result = true
-          end
-
-      #elsif !$browser.li(text: aba, index: i).exist?
-      #      $encoded_img = $browser.driver.screenshot_as(:base64)
-      #      return false
-
-      #  elsif $browser.li(text: aba, index: i).attribute_value('class').include? 'ui-state-disabled'
-      #      $encoded_img = $browser.driver.screenshot_as(:base64)
-      #      return false
-      #  else
-
-      #      if $browser.li(text: aba, index: i).present?
-      #          until $browser.li(text: aba, index: i).attribute_value("aria-expanded")=="true"
-      #              $browser.execute_script('arguments[0].click()', $browser.li(text: aba, index: i))
-      #          end
-      #          aguardar_loading
-      #          $encoded_img = $browser.driver.screenshot_as(:base64)
-      #          return true
-      #      end
-      #  end
+        else
+            $browser.li(text: aba).click
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+            result = true
+        end
     end
 
     def validar_acesso_aba(aba, i = 0)
@@ -230,11 +193,6 @@ class Utils
             i = 0
         end
         aguardar_loading
-
-        #sleep 5
-        # Watir::Wait.until { $browser.a(text: aba, index: /0|1/).exists? }
-        #if !$browser.li(text: aba, index: i).exist?
-        #  result = false
 
         sleep 3
         if $browser.li(text: aba, index: i).attribute_value('aria-expanded') == 'true'
@@ -366,14 +324,15 @@ class Utils
             acao = 'tab_regularization:regularization_results:\d+:detail_link'
         end
 
-        aguardar_loading
-        if $browser.a(id: /#{acao}$/).exist?
+       aguardar_loading 
+        
+        if $browser.a(id: /#{acao}$/).exist? && $browser.a(id: /#{acao}$/).enabled?
             result = click_trata_exception?($browser.a(id: /#{acao}$/))
-        elsif $browser.button(id: /#{acao}$/).exist?
+        elsif $browser.button(id: /#{acao}$/).exist? && $browser.button(id: /#{acao}$/).enabled?
             result = click_trata_exception?($browser.button(id: /#{acao}$/))
-        elsif $browser.img(id: /#{acao}$/).exist?
+        elsif $browser.img(id: /#{acao}$/).exist? && $browser.img(id: /#{acao}$/).enabled?
             result = click_trata_exception?($browser.img(id: /#{acao}$/))
-        elsif $browser.span(class: /#{acao}/, index: i).exist?
+        elsif $browser.span(class: /#{acao}/, index: i).exist? && $browser.span(id: /#{acao}$/).enabled?
             result = click_trata_exception?($browser.span(class: /#{acao}/, index: i).parent)
         else
             result = false
@@ -396,7 +355,6 @@ class Utils
 
     def validar_frame(texto)
         aguardar_loading
-
 
         result = if $browser.td(title: texto).exist? || $browser.a(text: texto).exist? || $browser.div(text: texto).exist? || $browser.th(text: texto).exist? || $browser.label(text: texto).exist? || $browser.tr(text: texto).exist? || $browser.span(text: texto).exist?
                      true
@@ -482,9 +440,9 @@ class Utils
         when 'data de rejeicao tratamento - ate'
             campo = 'finalRejectionDateTreatment_input'
         when 'data programada - de'
-            campo = 'j_idt196:dtEffectiveOf_input'
+            campo = 'dtEffectiveOf_input'
         when 'data programada - ate'
-            campo = 'j_idt196:dtEffectiveUntil_input'
+            campo = 'dtEffectiveUntil_input'
         when 'data de liquidação - tratamento'
             campo = 'formModal:dateSettlementTreatment_input'
         when 'codigo da venda'
