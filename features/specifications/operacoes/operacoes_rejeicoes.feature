@@ -77,7 +77,7 @@ E informar "10/10/2017" no campo "data-ate"
 E clicar no botao "Pesquisar", "0"
 Entao selecionar o check-box da linha "1" na coluna "8" da tabela resultados
 E clicar no botao "Continuar", "0"
-E selecionar a opcao "Baixa manual"
+E selecionar a opcao "Baixa manual", "0"
 E selecionar "Retorno para a agenda" no combo-box do pop-up
 E clicar no botao "Confirmar", "0"
 E clicar no botao "Sim", "0"
@@ -85,7 +85,7 @@ E clicar no botao "OK", "0"
 Entao clicar na aba "ANULAÇÃO", "0"
 E selecionar a opcao "Por Banco/Bandeira"
 E selecionar a opcao "Crédito" da aba Anulacao
-E selecionar a opcao "Baixa manual"
+E selecionar a opcao "Baixa manual", "0"
 E informar "237-BANCO BRADESCO S.A." no campo "Banco"
 E selecionar "VISA" no combo-box Bandeira
 E clicar no botao "Pesquisar", "0"
