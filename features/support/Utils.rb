@@ -397,7 +397,6 @@ class Utils
     def validar_frame(texto)
         aguardar_loading
 
-
         result = if $browser.td(title: texto).exist? || $browser.a(text: texto).exist? || $browser.div(text: texto).exist? || $browser.th(text: texto).exist? || $browser.label(text: texto).exist? || $browser.tr(text: texto).exist? || $browser.span(text: texto).exist?
                      true
                  else
@@ -472,7 +471,7 @@ class Utils
         when 'data-ate'
             campo = 'tab_deposits_debits:formReport:dtSetrUntil_input|dateOut_input|formRejectedFlag:finalRejectDate_input'
         when 'data de rejeicao - de'
-            campo = 'tabRejectionCapture:initialRejectionDate_input.|tabRejectionCapture:initialRejectionDateTreatment_input'
+            campo = 'tabRejectionCapture:initialRejectionDate_input|tabRejectionCapture:initialRejectionDateTreatment_input'
         when 'data de rejeicao - ate'
             campo = 'tabRejectionCapture:finalRejectionDate_input'
         when 'data de rejeicao - captura - ate'
