@@ -8,6 +8,8 @@ Entao(/^clicar na acao "([^"]*)", "([^"]*)"$/) do |acao, valida_step|
         if valida_step == "1"
             raise("usuario sem o direito consegue clicar no bot\u00E3o")
         end
+    elsif !statusBtn && !@tem_direito
+        @pass_test = true
     end
 end
 
