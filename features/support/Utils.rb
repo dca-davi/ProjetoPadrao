@@ -366,7 +366,8 @@ class Utils
             acao = 'tab_regularization:regularization_results:\d+:detail_link'
         end
 
-        aguardar_loading
+       aguardar_loading 
+        
         if $browser.a(id: /#{acao}$/).exist? && $browser.a(id: /#{acao}$/).enabled?
             result = click_trata_exception?($browser.a(id: /#{acao}$/))
         elsif $browser.button(id: /#{acao}$/).exist? && $browser.button(id: /#{acao}$/).enabled?
