@@ -188,7 +188,7 @@ Cenario: CT.SEGINFO - [AUT] CLIENTES_INFO_CADASTRO_ENDERECO_MASTER_EDITAR
 Dado que tenha/nao tenha o direito "CLIENTES_INFO_CADASTRO_ENDERECO_MASTER_EDITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
 Quando clicar na aba "ENDEREÇO", "0"
-E clicar na acao "Editar endereço", "0"
+E clicar na acao "Editar endereço", "1"
 E informar "93950000" no campo "CEP"
 E clicar no botao "Ok" do frame "Endereço"
 Entao o campo "Logradouro" deve/nao deve estar habilitado
