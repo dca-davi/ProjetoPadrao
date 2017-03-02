@@ -324,14 +324,15 @@ class Utils
             acao = 'tab_regularization:regularization_results:\d+:detail_link'
         end
 
-        aguardar_loading
-        if $browser.a(id: /#{acao}$/).exist?
+       aguardar_loading 
+        
+        if $browser.a(id: /#{acao}$/).exist? && $browser.a(id: /#{acao}$/).enabled?
             result = click_trata_exception?($browser.a(id: /#{acao}$/))
-        elsif $browser.button(id: /#{acao}$/).exist?
+        elsif $browser.button(id: /#{acao}$/).exist? && $browser.button(id: /#{acao}$/).enabled?
             result = click_trata_exception?($browser.button(id: /#{acao}$/))
-        elsif $browser.img(id: /#{acao}$/).exist?
+        elsif $browser.img(id: /#{acao}$/).exist? && $browser.img(id: /#{acao}$/).enabled?
             result = click_trata_exception?($browser.img(id: /#{acao}$/))
-        elsif $browser.span(class: /#{acao}/, index: i).exist?
+        elsif $browser.span(class: /#{acao}/, index: i).exist? && $browser.span(id: /#{acao}$/).enabled?
             result = click_trata_exception?($browser.span(class: /#{acao}/, index: i).parent)
         else
             result = false
@@ -429,7 +430,7 @@ class Utils
         when 'data-ate'
             campo = 'tab_deposits_debits:formReport:dtSetrUntil_input|dateOut_input|formRejectedFlag:finalRejectDate_input'
         when 'data de rejeicao - de'
-            campo = 'tabRejectionCapture:initialRejectionDate_input.|tabRejectionCapture:initialRejectionDateTreatment_input'
+            campo = 'tabRejectionCapture:initialRejectionDate_input|tabRejectionCapture:initialRejectionDateTreatment_input'
         when 'data de rejeicao - ate'
             campo = 'tabRejectionCapture:finalRejectionDate_input'
         when 'data de rejeicao - captura - ate'
@@ -439,9 +440,9 @@ class Utils
         when 'data de rejeicao tratamento - ate'
             campo = 'finalRejectionDateTreatment_input'
         when 'data programada - de'
-            campo = 'j_idt196:dtEffectiveOf_input'
+            campo = 'dtEffectiveOf_input'
         when 'data programada - ate'
-            campo = 'j_idt196:dtEffectiveUntil_input'
+            campo = 'dtEffectiveUntil_input'
         when 'data de liquidação - tratamento'
             campo = 'formModal:dateSettlementTreatment_input'
         when 'codigo da venda'
