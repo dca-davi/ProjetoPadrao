@@ -61,7 +61,7 @@ E que tenha/nao tenha acesso na tela "Fila de trabalho"
 E clicar na acao "Atribuir", "0"
 E clicar na acao "Editar", "0"
 Quando clicar na aba "DETALHE", "0"
-E selecionar a opcao "Sim"
+E selecionar a opcao "Sim", "0"
 Entao o botao "Confirmar", "1" estara habilitado/desabilitado
 
 @OPERACOES_DEMANDAS_FILADETRABALHO_ACOMP_EDITAR

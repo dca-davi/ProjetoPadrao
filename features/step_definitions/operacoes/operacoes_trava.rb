@@ -39,14 +39,16 @@ Quando(/^clicar no botao "([^"]*)", "([^"]*)"$/) do |botao, valida_step|
     end
 end
 
-Quando(/^clicar no botao exportar$/) do
+Quando(/^clicar no botao exportar "([^"]*)"$/) do |valida_step|
     next if @pass_test == true
     @operacoes_trava = Operacoes_Rejeicoes.new
     btnput = @operacoes_trava.clicar_botao_input
     if !btnput && @tem_direito
-      fail('Usuario nao pode clicar no botão no qual tem direito')
+        raise('Usuario nao pode clicar no botão no qual tem direito')
     elsif btnput && !@tem_direito
-      fail('Usuario pode clicar no botão que não tem direito')
+        if valida_step == "1"
+            raise('Usuario pode clicar no botão que não tem direito')
+        end
     end
 
 end
