@@ -367,13 +367,13 @@ class Utils
         end
 
         aguardar_loading
-        if $browser.a(id: /#{acao}$/).exist? && $browser.button(id: /#{acao}$/).enabled?
+        if $browser.a(id: /#{acao}$/).exist? && $browser.a(id: /#{acao}$/).enabled?
             result = click_trata_exception?($browser.a(id: /#{acao}$/))
         elsif $browser.button(id: /#{acao}$/).exist? && $browser.button(id: /#{acao}$/).enabled?
             result = click_trata_exception?($browser.button(id: /#{acao}$/))
-        elsif $browser.img(id: /#{acao}$/).exist?
+        elsif $browser.img(id: /#{acao}$/).exist? && $browser.img(id: /#{acao}$/).enabled?
             result = click_trata_exception?($browser.img(id: /#{acao}$/))
-        elsif $browser.span(class: /#{acao}/, index: i).exist?
+        elsif $browser.span(class: /#{acao}/, index: i).exist? && $browser.span(id: /#{acao}$/).enabled?
             result = click_trata_exception?($browser.span(class: /#{acao}/, index: i).parent)
         else
             result = false
