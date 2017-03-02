@@ -373,7 +373,7 @@ class Utils
             result = click_trata_exception?($browser.button(id: /#{acao}$/))
         elsif $browser.img(id: /#{acao}$/).exist? && $browser.img(id: /#{acao}$/).enabled?
             result = click_trata_exception?($browser.img(id: /#{acao}$/))
-        elsif $browser.span(class: /#{acao}/, index: i).exist? && $browser.span(id: /#{acao}$/).enabled?
+        elsif $browser.span(class: /#{acao}/, indclicar_botao_acaoex: i).exist? && $browser.span(id: /#{acao}$/).enabled?
             result = click_trata_exception?($browser.span(class: /#{acao}/, index: i).parent)
         else
             result = false
@@ -565,7 +565,7 @@ class Utils
                 return false
             else
                 #ação caso o campo esteja habilitado
-                unless campo.include?('dtSetr')
+                unless campo.include?('dtSetr') || campo.include?('dataDeTran')
                     $browser.text_field(id: /#{campo}$/, index: var_i).set valor
                     aguardar_loading
                     $browser.send_keys :tab
