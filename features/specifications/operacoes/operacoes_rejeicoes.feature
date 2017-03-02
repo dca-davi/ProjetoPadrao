@@ -68,7 +68,7 @@ Entao o botao "Exportar", "1" estara habilitado/desabilitado
 Cenario: CT.SEGINFO - [AUT] OPERACOES_REJEICOES_PAGAMENTOSDEBITOS_ANULAR_EDITAR
 Dado que tenha/nao tenha o direito "OPERACOES_REJEICOES_PAGAMENTOSDEBITOS_ANULAR_EDITAR"
 E que tenha/nao tenha acesso na tela "Depósitos e débitos"
-E selecionar a opcao "Regular"
+E selecionar a opcao "Regular", "0"
 E selecionar a opcao "Crédito"
 E informar "237-BANCO BRADESCO S.A." no campo "Banco"
 E selecionar "VISA" no combo-box Bandeira
@@ -115,7 +115,7 @@ E que tenha/nao tenha acesso na tela "Captura"
 E informar "01/02/2017" no campo "data de rejeicao - de"
 E informar "17/02/2017" no campo "data de rejeicao - ate"
 Quando clicar no botao "Pesquisar", "0"
-Entao clicar no botao exportar "1"
+Entao clicar no botao exportar
 
 @OPERACOES_REJEICOESCAPTURA_TRATAMENTO_ANULACAO_INCLUIR
 Cenario: CT.SEGINFO - [AUT] OPERACOES_REJEICOESCAPTURA_TRATAMENTO_ANULACAO_INCLUIR
@@ -146,7 +146,7 @@ Entao o botao "Pesquisar", "1" estara habilitado/desabilitado
 Cenario: CT.SEGINFO - [AUT] OPERACOES_MASTER_REJEITADOS_PAGAMENTOSEDEBITOS_EDITAR
 Dado que tenha/nao tenha o direito "OPERACOES_MASTER_REJEITADOS_PAGAMENTOSEDEBITOS_EDITAR"
 E que tenha/nao tenha acesso na tela "Depósitos e débitos"
-E selecionar a opcao "Regular"
+E selecionar a opcao "Regular", "0"
 E selecionar a opcao "Crédito"
 E selecionar a opcao "Débito"
 E informar "104-CAIXA ECONOMICA FEDERAL S.A." no campo "Banco"
