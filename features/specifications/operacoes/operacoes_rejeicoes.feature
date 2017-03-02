@@ -115,7 +115,7 @@ E que tenha/nao tenha acesso na tela "Captura"
 E informar "01/02/2017" no campo "data de rejeicao - de"
 E informar "17/02/2017" no campo "data de rejeicao - ate"
 Quando clicar no botao "Pesquisar", "0"
-Entao clicar no botao exportar
+Entao clicar no botao exportar "1"
 
 @OPERACOES_REJEICOESCAPTURA_TRATAMENTO_ANULACAO_INCLUIR
 Cenario: CT.SEGINFO - [AUT] OPERACOES_REJEICOESCAPTURA_TRATAMENTO_ANULACAO_INCLUIR
