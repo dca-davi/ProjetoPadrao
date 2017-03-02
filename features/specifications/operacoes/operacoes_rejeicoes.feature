@@ -150,10 +150,10 @@ E selecionar a opcao "Regular"
 E selecionar a opcao "Crédito"
 E selecionar a opcao "Débito"
 E informar "104-CAIXA ECONOMICA FEDERAL S.A." no campo "Banco"
-E informar "01/09/2016" no campo "data-de"
-E informar "09/09/2016" no campo "data-ate"
-E clicar no botao "Pesquisar", "0"
-Entao selecionar o check-box todos na coluna "8" da tabela resultados
+E informar "01/01/2017" no campo "data-de"
+E informar "09/02/2017" no campo "data-ate"
+Quando clicar no botao "Pesquisar", "0"
+Entao selecionar o check-box todos na coluna "9" da tabela resultados
 
 @OPERACOES_REJEICOESBANDEIRA_ELO_DINERS_DETALHES_EDITAR
 Cenario: CT.SEGINFO - [AUT] OPERACOES_REJEICOESBANDEIRA_ELO_DINERS_DETALHES_EDITAR
