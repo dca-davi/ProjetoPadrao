@@ -233,11 +233,11 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_CANCELAMENTOVENDAS_SOLICITA
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_CANCELAMENTOVENDAS_SOLICITAR"
 E que tenha/nao tenha acesso na tela "Cancelamento e reversão de vendas"
 Entao clicar na aba "Incluir cancelamento", "0"
-Entao informar "13/02/2017" no campo "data autorizacao inicio-cancelamento reversao de vendas"
-E informar "19/02/2017" no campo "data autorizacao fim-cancelamento reversao de vendas"
+Entao informar "20/02/2017" no campo "data autorizacao inicio-cancelamento reversao de vendas"
+E informar "20/02/2017" no campo "data autorizacao fim-cancelamento reversao de vendas"
 E informar "1018242187" no campo "n do cliente -cancelamento reversao de vendas"
-# E informar "381347" no campo "nsu-cancelamento reversao de vendas"
-E informar "44450498" no campo "terminal-cancelamento reversao de vendas"
+E informar "416737" no campo "nsu-cancelamento reversao de vendas"
+# E informar "44450498" no campo "terminal-cancelamento reversao de vendas"
 Entao clicar no botao "Pesquisar", "0" da aba Incluir Cancelamento
 E clicar na acao "Cancelamento", "0"
 Entao informar "10,00" no campo "valor cancelamento-cancelamento reversao de vendas"
@@ -301,7 +301,7 @@ Entao o botao "Continuar", "1" devera estar habilitado/desabilitado
 Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_MASTER_CANCELAMENTO_E_REVERSAO_EDITAR
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_MASTER_CANCELAMENTO_E_REVERSAO_EDITAR"
 E que tenha/nao tenha acesso na tela "Cancelamento e reversão de vendas"
-E informar "13523883" no campo "cancelamento e reversao de vendas - numero da solicitacao"
+E informar "13606637" no campo "cancelamento e reversao de vendas - numero da solicitacao"
 E clicar no botao "Pesquisar", "0"
 E clicar na acao "Reverter", "0"
 Entao o botao "Reverter", "1" devera estar habilitado/desabilitado
