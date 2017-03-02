@@ -51,14 +51,16 @@ Dado(/^selecionar "([^"]*)" no combo\-box Bandeira$/) do |valor|
     end
 end
 
-Entao(/^selecionar "([^"]*)" no combo\-box do pop\-up$/) do |valor|
+Entao(/^selecionar "([^"]*)", "([^"]*)" no combo\-box do pop\-up$/) do |valor, valida_step|
     next if @pass_test == true
     @operacoes_rejeicoes = Operacoes_Rejeicoes.new
     comboBox = @operacoes_rejeicoes.selecionar_combobox_depositos_debitos_pop_up(valor)
     if !comboBox && @tem_direito
         raise 'Usuario nao pode clicar no botao no qual tem direito'
     elsif comboBox && !@tem_direito
-        raise 'Usuario pode clicar no botao no qual nao tem direito'
+        if valida_step == "1"
+            raise 'Usuario pode clicar no botao no qual nao tem direito'
+        end
     end
 end
 
