@@ -72,16 +72,9 @@ Cenario: CT.SEGINFO - [AUT] CLIENTES_INFORMACOESFINANCEIRAS_DADOSDOCHIP_VER
 Dado que tenha/nao tenha o direito "CLIENTES_INFORMACOESFINANCEIRAS_DADOSDOCHIP_VER"
 E informe o EC "1014766947"
 E que tenha/nao tenha acesso na tela "Resumo financeiro"
-<<<<<<< HEAD
-E selecionar o item "vendas" de "ontem"
-E pesquisar por periodo de uma semana atras
-Quando clicar no item em consolidado de vendas
-E clicar no item da transacao de vendas
-=======
 E selecionar o item "vendas" de "ontem", "0"
 Quando clicar no item em consolidado de vendas, "0"
 E clicar no item da transacao de vendas "0"
->>>>>>> cbb8f520be70528e501acd1ae42a19f3544923bb
 Entao localizar o frame "Dados do Chip - Envio", "1"
 
 @CLIENTES_INFORMACOESFINANCEIRAS_ENVIOPARABANDEIRA_VER
