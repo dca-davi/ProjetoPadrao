@@ -54,3 +54,9 @@ E(/^clicar no item da transacao de vendas$/) do
         raise('Usuario nao tem direito clicar no item Transação de vendas')
    end
 end
+
+E(/^pesquisar por periodo de uma semana atras$/) do
+    next if @pass_test == true
+    @cliente_resumo_financeiro = Cliente_Resumo_financeiro.new 
+    @cliente_resumo_financeiro.selecionar_periodo_tela_consolidados
+end

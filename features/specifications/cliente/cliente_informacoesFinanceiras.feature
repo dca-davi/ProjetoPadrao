@@ -70,8 +70,10 @@ Então Validar o frame "Valor do intercâmbio - detalhado"
 @ANTECIPACAO_DE_VENDAS_TESOURARIA_COORDENADOR
 Cenario: CT.SEGINFO - [AUT] CLIENTES_INFORMACOESFINANCEIRAS_DADOSDOCHIP_VER
 Dado que tenha/nao tenha o direito "CLIENTES_INFORMACOESFINANCEIRAS_DADOSDOCHIP_VER"
+E informe o EC "1014766947"
 E que tenha/nao tenha acesso na tela "Resumo financeiro"
 E selecionar o item "vendas" de "ontem"
+E pesquisar por periodo de uma semana atras
 Quando clicar no item em consolidado de vendas
 E clicar no item da transacao de vendas
 Entao localizar o frame "Dados do Chip - Envio", "1"
