@@ -31,7 +31,7 @@ Before do |scenario|
         $rest_ALM.obter_dados_ALM($release, $testset, $ciclo, $cenario_name) 
        
         case $rest_ALM.checar_status_ALM
-        when 'Passed', 'Blocked', 'N/A', 'Cancelado', 'No Run', 'Not Completed'
+        when 'Passed', 'N/A', 'Cancelado', 'No Run', 'Not Completed'#, 'Blocked'
             skip_this_scenario
         end
         
