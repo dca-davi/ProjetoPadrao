@@ -74,13 +74,8 @@ for count in 1...perfis.row_count               # Percorrer todos os perfis da p
 		wb.SaveAs("#{nome_arquivo_log}")
 		wb.close
 	end
-<<<<<<< HEAD
     
-    fileG << "cd C:\\Users\\walter.castanharo\\SEgInfo\\automation-test-seginfo\n"
-=======
-
     fileG << "cd C:\\Git\\automation-test-seginfo\n"
->>>>>>> 0fc5fa0352c1d5c5153884209c29a9a2cdd0f849
     fileG << "git pull seginfo master\n"
     fileG << "cd #{dirname}\n\n"
     files.each { |x| fileG << "call \"#{x}\"\n" }
