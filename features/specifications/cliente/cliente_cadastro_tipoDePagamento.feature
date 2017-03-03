@@ -28,7 +28,7 @@ Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_TIPODEPAGAMENTOAMEX_E
 E que tenha/nao tenha acesso na tela "Informações do cliente"
 Quando clicar na aba "Tipo de pagamento", "0"
 E selecionar um item "AMEX"
-E clicar no botao "Editar" do frame "Dados do tipo de pagamento"
+E clicar no botao "Editar" do frame "Dados do tipo de pagamento", "0"
 Entao o campo Codigo Amex devera estar habilitado/desabilitado
 
 @CLIENTES_CADASTRO_INFO_TIPODEPAGAMENTO_EDITAR
@@ -40,7 +40,7 @@ Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_TIPODEPAGAMENTO_EDITA
 E que tenha/nao tenha acesso na tela "Informações do cliente"
 Quando clicar na aba "Tipo de pagamento", "0"
 E clicar na acao "Visualizar", "0"
-E clicar no botao "Editar" do frame "Dados do tipo de pagamento"
+E clicar no botao "Editar" do frame "Dados do tipo de pagamento", "0"
 Entao sera/nao sera possivel editar todos os campos do tipo de pagamento
 
 @CLIENTES_CADASTRO_INFO_FORMADECOBRANCAEPRECO_EDITAR
@@ -56,5 +56,5 @@ Entao o botao "Editar" do frame "Remuneracao", "1" estara habilitado/desabilitad
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_CODIGOAMEX_EDITAR
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_CODIGOAMEX_EDITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
-Quando clicar no botao "Editar Dados" do frame "Dados de cadastro"
+Quando clicar no botao "Editar Dados" do frame "Dados de cadastro", "0"
 Entao o campo Codigo Amex devera estar habilitado/desabilitado

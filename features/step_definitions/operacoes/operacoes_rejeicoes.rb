@@ -67,7 +67,7 @@ end
 Entao(/^selecionar a opcao "([^"]*)", "([^"]*)" da aba Anulacao$/) do |valor, valida_step|
     next if @pass_test == true
     @operacoes_rejeicoes = Utils.new
-    radioButton = @operacoes_rejeicoes.selecionar_radio_button(valor, 1)
+    radioButton = @operacoes_rejeicoes.selecionar_radio_button(valor)
     if !radioButton && @tem_direito
         raise 'Usuario nao pode clicar no botao no qual tem direito'
     elsif radioButton && !@tem_direito

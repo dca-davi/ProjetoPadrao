@@ -1,10 +1,13 @@
-E(/^clicar no botao "([^"]*)" do frame "([^"]*)"$/) do |botao, frame|
+E(/^clicar no botao "([^"]*)" do frame "([^"]*)", "([^"]*)"$/) do |botao, frame, valida_step|
     next if @pass_test == true
     @info_cli = Info_do_cliente.new
     @btn_ativo = @info_cli.clicar_botao_frame(botao, frame)
-    if !@btn_ativo && !@tem_direito
-        @pass_test = true
-        next
+    if !@btn_ativo && @tem_direito
+      raise('Usuário não pode acessar realizar a ação na qual tem direito')
+    elsif @btn_ativo && !@tem_direito
+        if valida_step == "1"
+            raise('Usuário pode acessar ação que não tem direito')
+        end
     end
 end
 
@@ -138,12 +141,16 @@ Entao(/^podera\/nao podera acessar a Tela de pesquisa$/) do
     end
 end
 
-Entao(/^o link "([^"]*)" deve estar habilitado\/desabilitado$/) do |link|
+Entao(/^o link "([^"]*)", "([^"]*)" deve estar habilitado\/desabilitado$/) do |link, valida_step|
     next if @pass_test == true
     utils = Utils.new
     statusAba = utils.acessar_aba(link)
     if !statusAba && @tem_direito
         raise('Usuario nao pode acessar aba no qual tem direito')
+      elsif statusAba && !@tem_direito
+          if valida_step == "1"
+              raise('Usuário tem acesso a aba no qual não tem direito')
+          end
     end
 end
 
