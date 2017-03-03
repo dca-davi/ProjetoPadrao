@@ -524,19 +524,10 @@ class Utils
                 return false
             else
                 #ação caso o campo esteja habilitado
-<<<<<<< HEAD
                 unless campo.include?('dtSetr') || campo.include?('dataDeTran')
                     $browser.text_field(id: /#{campo}$/, index: var_i).set valor
                     aguardar_loading
                     $browser.send_keys :tab
-=======
-                unless campo.include?('dtSetr')
-                    # $browser.text_field(id: /#{campo}$/, index: var_i).set valor
-                    # aguardar_loading
-                    # $browser.send_keys :tab
-                    $browser.execute_script('arguments[0].value = arguments[1]', $browser.text_field(id: /#{campo}$/, index: var_i), valor)
-                    $browser.text_field(id: /#{campo}$/, index: var_i).fire_event "onchange"
->>>>>>> 65f1316287ce8962b0416e74c61f5767e1cb2f75
                     aguardar_loading
                else
                      $browser.execute_script('arguments[0].value = arguments[1]', $browser.text_field(id: /#{campo}$/, index: var_i), valor)
