@@ -333,13 +333,15 @@ class Info_do_cliente
         @@utils.aguardar_loading
     end
 
-    def click_valor_movimentacao(item, dia = 'hoje')
+    def click_valor_movimentacao(item, dia)
         sleep 1
         case dia
-        when 'ontem'
+        when 'antes de ontem'
             dia = 'yesterday'
-        when 'hoje'
+        when 'ontem'
             dia = 'today'
+        when 'hoje'
+            dia = 'current'
         when 'atual'
             dia = 'current'
         else
