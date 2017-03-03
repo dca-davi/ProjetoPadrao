@@ -389,6 +389,8 @@ class Utils
             campo = ':subTopicMaintenanceId_input'
         when 'banco'
             campo = 'input_ClearingConsignmentsControlBeanbank_input|tab_bebit_balance:formInclude:input_IncludeCuttingDebitBalanceSendBeanmodelvalueDomicileBank_input|tab_deposits_debits:formReport:input_OperationsTreatRejectedManualBeanmodelvalueDomicileBank_input|frmSearchBillingPrice:autoComplete_bancko_preci_acc_input'
+        when 'banco - anulacao'
+            campo = 'tab_deposits_debits:rejectionForm:input_SearchRejectionsTreatedToAnnulmentBeanbankCodeDescriptionSelected_input'
         when 'protocolo'
             campo = 'input_ClearingSefazDemandListBeanfilterprotocolNumber'
         when 'banco - acumulo diario'
@@ -607,10 +609,14 @@ class Utils
     end
 
     def selecionar_radio_button(radio, i = 0)
-        if $browser.label(text: radio).exist?
+        if $browser.label(text: radio, index: 0).present?
             $browser.label(text: radio, index: i).click
             sleep 2
             result = true
+          elsif $browser.label(text: radio, index: 1).present?
+              $browser.label(text: radio, index: 1).click
+              sleep 2
+              result = true
         else
             result = false
         end

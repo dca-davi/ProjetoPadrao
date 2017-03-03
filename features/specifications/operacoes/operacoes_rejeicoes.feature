@@ -6,7 +6,7 @@ Funcionalidade: Validar os direitos na tela Operacoes > Rejeicoes
 
 Contexto:
 Dado que eu faca login
-E informe o EC "1010756114"
+#E informe o EC "1010756114"
 
 @OPERACOES_REJEICOESBANDEIRA_VER
 @BACKOFFICE_ANALISTA_FORNECEDOR @CONTROLE_SISTEMAS_FINANCEIROS_CONCILIACAO @CHARGEBACK_ANALISTA_INTERCAMBIO
@@ -70,21 +70,23 @@ Dado que tenha/nao tenha o direito "OPERACOES_REJEICOES_PAGAMENTOSDEBITOS_ANULAR
 E que tenha/nao tenha acesso na tela "Depósitos e débitos"
 E selecionar a opcao "Regular", "0"
 E selecionar a opcao "Crédito", "0"
-E informar "237-BANCO BRADESCO S.A." no campo "Banco"
+E informar "84-UNIPRIME NORTE DO PARANA" no campo "Banco"
 E selecionar "VISA" no combo-box Bandeira
-E informar "01/11/2016" no campo "data-de"
-E informar "10/10/2017" no campo "data-ate"
+E informar "02/05/2016" no campo "data-de"
+E informar "01/04/2017" no campo "data-ate"
 E clicar no botao "Pesquisar", "0"
-Entao selecionar o check-box da linha "1" na coluna "8" da tabela resultados
+Entao selecionar o check-box da linha "2" na coluna "8" da tabela resultados
 E clicar no botao "Continuar", "0"
 E selecionar a opcao "Baixa manual", "0"
 E selecionar "Retorno para a agenda", "0" no combo-box do pop-up
 E clicar no botao "Confirmar", "0"
+E clicar no botao "Sim", "0"
+E clicar no botao "OK", "0"
 Entao clicar na aba "ANULAÇÃO", "0"
 E selecionar a opcao "Por Banco/Bandeira", "0"
 E selecionar a opcao "Crédito", "0" da aba Anulacao
 E selecionar a opcao "Baixa manual", "0"
-E informar "237-BANCO BRADESCO S.A." no campo "Banco"
+E informar "84-UNIPRIME NORTE DO PARANA" no campo "banco - anulacao"
 E selecionar "VISA" no combo-box Bandeira
 E clicar no botao "Pesquisar", "0"
 Entao selecionar o check-box da linha "1" na coluna "8" da tabela resultados
