@@ -17,7 +17,7 @@ Before do |scenario|
         end
         raise 'Informe um status ALM [Parâmetro: EXECUTAR_STATUS] correto.' if $status_teste == false
     end
-
+  
     $tag_cenario = scenario.source_tag_names
     $cenario_name = scenario.name
 
