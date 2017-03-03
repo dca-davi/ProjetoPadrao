@@ -366,8 +366,8 @@ class Utils
             acao = 'tab_regularization:regularization_results:\d+:detail_link'
         end
 
-       aguardar_loading 
-        
+       aguardar_loading
+
         if $browser.a(id: /#{acao}$/).exist? && $browser.a(id: /#{acao}$/).enabled?
             result = click_trata_exception?($browser.a(id: /#{acao}$/))
         elsif $browser.button(id: /#{acao}$/).exist? && $browser.button(id: /#{acao}$/).enabled?
@@ -648,15 +648,16 @@ class Utils
         end
     end
 
-    def selecionar_radio_button(radio, i = 0)
-        if $browser.label(text: radio).exist?
+    def selecionar_radio_button(radio, i=1)
+        sleep 2
+        if $browser.label(text: radio, index: i).exist?
             $browser.label(text: radio, index: i).click
             sleep 2
             result = true
         else
             result = false
         end
-        sleep 2
+        sleep 3
         $encoded_img = $browser.driver.screenshot_as(:base64)
         return result
     end

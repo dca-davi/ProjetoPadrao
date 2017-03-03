@@ -1,10 +1,13 @@
-E(/^clicar no botao "([^"]*)" do frame "([^"]*)"$/) do |botao, frame|
+E(/^clicar no botao "([^"]*)" do frame "([^"]*)", "([^"]*)"$/) do |botao, frame, valida_step|
     next if @pass_test == true
     @info_cli = Info_do_cliente.new
     @btn_ativo = @info_cli.clicar_botao_frame(botao, frame)
-    if !@btn_ativo && !@tem_direito
-        @pass_test = true
-        next
+    if !@btn_ativo && @tem_direito
+      raise('Usuário não pode acessar realizar a ação na qual tem direito')
+    elsif @btn_ativo && !@tem_direito
+        if valida_step == "1"
+            raise('Usuário pode acessar ação que não tem direito')
+        end
     end
 end
 
