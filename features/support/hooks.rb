@@ -17,7 +17,7 @@ Before do |scenario|
         end
         raise 'Informe um status ALM [Parâmetro: EXECUTAR_STATUS] correto.' if $status_teste == false
     end
-
+  
     $tag_cenario = scenario.source_tag_names
     $cenario_name = scenario.name
 
@@ -31,7 +31,7 @@ Before do |scenario|
         $rest_ALM.obter_dados_ALM($release, $testset, $ciclo, $cenario_name) 
        
         case $rest_ALM.checar_status_ALM
-        when 'Passed', 'Blocked', 'N/A', 'Cancelado'
+        when 'Passed', 'Blocked', 'N/A', 'Cancelado', 'No Run', 'Not Completed'
             skip_this_scenario
         end
         

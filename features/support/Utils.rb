@@ -346,15 +346,15 @@ class Utils
             acao = 'tab_regularization:regularization_results:\d+:detail_link'
         end
 
-       aguardar_loading 
-        
+       aguardar_loading
+
         if $browser.a(id: /#{acao}$/).exist? && $browser.a(id: /#{acao}$/).enabled?
             result = click_trata_exception?($browser.a(id: /#{acao}$/))
         elsif $browser.button(id: /#{acao}$/).exist? && $browser.button(id: /#{acao}$/).enabled?
             result = click_trata_exception?($browser.button(id: /#{acao}$/))
         elsif $browser.img(id: /#{acao}$/).exist? && $browser.img(id: /#{acao}$/).enabled?
             result = click_trata_exception?($browser.img(id: /#{acao}$/))
-        elsif $browser.span(class: /#{acao}/, index: i).exist? && $browser.span(id: /#{acao}$/).enabled?
+        elsif $browser.span(class: /#{acao}/, indclicar_botao_acaoex: i).exist? && $browser.span(id: /#{acao}$/).enabled?
             result = click_trata_exception?($browser.span(class: /#{acao}/, index: i).parent)
         else
             result = false
@@ -546,12 +546,10 @@ class Utils
                 return false
             else
                 #ação caso o campo esteja habilitado
-                unless campo.include?('dtSetr')
-                    # $browser.text_field(id: /#{campo}$/, index: var_i).set valor
-                    # aguardar_loading
-                    # $browser.send_keys :tab
-                    $browser.execute_script('arguments[0].value = arguments[1]', $browser.text_field(id: /#{campo}$/, index: var_i), valor)
-                    $browser.text_field(id: /#{campo}$/, index: var_i).fire_event "onchange"
+                unless campo.include?('dtSetr') || campo.include?('dataDeTran') || campo.include?('dataAteTran')
+                    $browser.text_field(id: /#{campo}$/, index: var_i).set valor
+                    aguardar_loading
+                    $browser.send_keys :tab
                     aguardar_loading
                else
                      $browser.execute_script('arguments[0].value = arguments[1]', $browser.text_field(id: /#{campo}$/, index: var_i), valor)
@@ -650,7 +648,7 @@ class Utils
         else
             result = false
         end
-        sleep 2
+        sleep 3
         $encoded_img = $browser.driver.screenshot_as(:base64)
         return result
     end
