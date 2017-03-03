@@ -525,9 +525,11 @@ class Utils
             else
                 #ação caso o campo esteja habilitado
                 unless campo.include?('dtSetr')
-                    $browser.text_field(id: /#{campo}$/, index: var_i).set valor
-                    aguardar_loading
-                    $browser.send_keys :tab
+                    # $browser.text_field(id: /#{campo}$/, index: var_i).set valor
+                    # aguardar_loading
+                    # $browser.send_keys :tab
+                    $browser.execute_script('arguments[0].value = arguments[1]', $browser.text_field(id: /#{campo}$/, index: var_i), valor)
+                    $browser.text_field(id: /#{campo}$/, index: var_i).fire_event "onchange"
                     aguardar_loading
                else
                      $browser.execute_script('arguments[0].value = arguments[1]', $browser.text_field(id: /#{campo}$/, index: var_i), valor)
@@ -693,6 +695,20 @@ class Utils
             format_atual = '%Y-%m-%d'
         end
         Time.now.strftime(format_atual)
+    end
+
+    def formata_data_sem_horario(data, formato)
+        case formato
+        when 'dd/mm/aaaa'
+            # dia = data[0..2]
+            # mes = data[3..4]
+            # ano = data[6..9]
+            # format_atual = '%d/%m/%Y'
+            data.strftime('%d/%m/%Y')
+        when 'aaaa-mm-dd'
+            data.strftime('%Y-%m-%d')
+        end
+
     end
 
     ########################################################################################################################

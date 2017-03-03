@@ -8,7 +8,6 @@ class Pagina_inicial
         $browser.span(text: 'Pesquisar').click
 
         @@utils.aguardar_loading
-        sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
         if $browser.span(text: 'Busca sem resultados').exists?
             raise 'Infomar EC valido'
