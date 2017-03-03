@@ -5,7 +5,8 @@ Funcionalidade: Validar os direitos na tela Cliente > Extratos > Resumo Financei
 
 Contexto:
 Dado que eu faca login
-E informe o EC "1014766947"
+#E informe o EC "1014766947"
+E informe o EC "1018242187"
 
 @CLIENTES_INFORMACOESFINANCEIRAS_VER
 @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA @CADASTRO_ANALISTA_CIELO @CADASTRO_ANALISTA_CIELO_APROVADOR
@@ -49,7 +50,7 @@ Cenario: CT.SEGINFO - [AUT] CLIENTES_INFORMACOESFINANCEIRAS_INTERCAMBIO_VER
 Dado que tenha/nao tenha o direito "CLIENTES_INFORMACOESFINANCEIRAS_INTERCAMBIO_VER"
 E que tenha/nao tenha acesso na tela "Resumo financeiro"
 E selecionar o item "vendas" de "hoje", "0"
-Quando clicar no item em consolidado de vendas
+Quando clicar no item em consolidado de vendas "1"
 
 @CLIENTES_INFORMACOESFINANCEIRAS_VENDASCONSOLIDADAS_INTERCAMBIO_VER
 @BACKOFFICE_ANALISTA_FORNECEDOR @CONTROLE_SISTEMAS_FINANCEIROS_CONCILIACAO @TESOURARIA_E_CONTAS_A_PAGAR_ANALISTA
@@ -83,8 +84,8 @@ Cenario: CT.SEGINFO - [AUT] CLIENTES_INFORMACOESFINANCEIRAS_ENVIOPARABANDEIRA_VE
 Dado que tenha/nao tenha o direito "CLIENTES_INFORMACOESFINANCEIRAS_ENVIOPARABANDEIRA_VER"
 E que tenha/nao tenha acesso na tela "Resumo financeiro"
 E selecionar o item "vendas" de "ontem", "0"
-Quando clicar no item em consolidado de vendas
-E clicar no item da transacao de vendas
+Quando clicar no item em consolidado de vendas "0"
+E clicar no item da transacao de vendas "0"
 Entao localizar o frame "Dados do Chip - Envio", "1"
 
 @CLIENTES_EXTRATO_RESUMOFINANCEIRO_HISTORICOVENDAS_CICLODEVIDAEMISSOR_VER
@@ -92,6 +93,6 @@ Cenario: CT.SEGINFO - [AUT] CLIENTES_EXTRATO_RESUMOFINANCEIRO_HISTORICOVENDAS_CI
 Dado que tenha/nao tenha o direito "CLIENTES_EXTRATO_RESUMOFINANCEIRO_HISTORICOVENDAS_CICLODEVIDAEMISSOR_VER"
 E que tenha/nao tenha acesso na tela "Resumo financeiro"
 E selecionar o item "vendas" de "ontem", "0"
-Quando clicar no item em consolidado de vendas
-E clicar no item da transacao de vendas
+Quando clicar no item em consolidado de vendas "0"
+E clicar no item da transacao de vendas "0"
 Entao localizar o frame "Ciclo de Vida Emissor", "1"

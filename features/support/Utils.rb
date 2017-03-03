@@ -173,53 +173,16 @@ class Utils
     end
 
     def acessar_aba(aba, i=0)
-      # aguardar_loading
-      #  case aba
-      #  when 'Incluir_PrazoFlexivel'
-      #      aba = 'Incluir'
-      #      i = 0
-      #  when 'Parametros - PRO ANTECIPACAO DE VENDAS' #
-      #      aba = 'Parâmetros'
-      #      i = 1
-      #  when 'Incluir regra de liberação'
-      #      aba = 'INCLUIR'
-      #      i = 1
-      #  when 'Incluir Cobrança'
-      #      aba = 'INCLUIR'
-      #      i = 1
-      #  end
-
-      #  if $cenario_name=="CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAO_CARTAONAOPRESENTE_EDITAR"
-      #      i = 1 if aba=="Incluir"
-      #  end
-
-          if !$browser.li(text: aba).exist?
+        if !$browser.li(text: aba).exist?
+        result = false
+        elsif $browser.li(text: aba).attribute_value("class").include? 'state-disabled'
+            $encoded_img = $browser.driver.screenshot_as(:base64)
             result = false
-            elsif $browser.li(text: aba).attribute_value("class").include? 'state-disabled'
-              result = false
-            else
-              $browser.li(text: aba).click
-              result = true
-          end
-
-      #elsif !$browser.li(text: aba, index: i).exist?
-      #      $encoded_img = $browser.driver.screenshot_as(:base64)
-      #      return false
-
-      #  elsif $browser.li(text: aba, index: i).attribute_value('class').include? 'ui-state-disabled'
-      #      $encoded_img = $browser.driver.screenshot_as(:base64)
-      #      return false
-      #  else
-
-      #      if $browser.li(text: aba, index: i).present?
-      #          until $browser.li(text: aba, index: i).attribute_value("aria-expanded")=="true"
-      #              $browser.execute_script('arguments[0].click()', $browser.li(text: aba, index: i))
-      #          end
-      #          aguardar_loading
-      #          $encoded_img = $browser.driver.screenshot_as(:base64)
-      #          return true
-      #      end
-      #  end
+        else
+            $browser.li(text: aba).click
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+            result = true
+        end
     end
 
     def validar_acesso_aba(aba, i = 0)
@@ -230,11 +193,6 @@ class Utils
             i = 0
         end
         aguardar_loading
-
-        #sleep 5
-        # Watir::Wait.until { $browser.a(text: aba, index: /0|1/).exists? }
-        #if !$browser.li(text: aba, index: i).exist?
-        #  result = false
 
         sleep 3
         if $browser.li(text: aba, index: i).attribute_value('aria-expanded') == 'true'
@@ -565,9 +523,11 @@ class Utils
             else
                 #ação caso o campo esteja habilitado
                 unless campo.include?('dtSetr')
-                    $browser.text_field(id: /#{campo}$/, index: var_i).set valor
-                    aguardar_loading
-                    $browser.send_keys :tab
+                    # $browser.text_field(id: /#{campo}$/, index: var_i).set valor
+                    # aguardar_loading
+                    # $browser.send_keys :tab
+                    $browser.execute_script('arguments[0].value = arguments[1]', $browser.text_field(id: /#{campo}$/, index: var_i), valor)
+                    $browser.text_field(id: /#{campo}$/, index: var_i).fire_event "onchange"
                     aguardar_loading
                else
                      $browser.execute_script('arguments[0].value = arguments[1]', $browser.text_field(id: /#{campo}$/, index: var_i), valor)
@@ -659,8 +619,9 @@ class Utils
         return result
     end
 
-    def selecionar_check_box_tabela(linha, coluna = 0)
+    def selecionar_check_box_tabela(linha = 1, coluna)
         if $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna.to_i - 1).exist?
+            $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna.to_i - 1).visible?
             $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna.to_i - 1).click
             sleep 2
             result = true
@@ -730,6 +691,20 @@ class Utils
             format_atual = '%Y-%m-%d'
         end
         Time.now.strftime(format_atual)
+    end
+
+    def formata_data_sem_horario(data, formato)
+        case formato
+        when 'dd/mm/aaaa'
+            # dia = data[0..2]
+            # mes = data[3..4]
+            # ano = data[6..9]
+            # format_atual = '%d/%m/%Y'
+            data.strftime('%d/%m/%Y')
+        when 'aaaa-mm-dd'
+            data.strftime('%Y-%m-%d')
+        end
+
     end
 
     ########################################################################################################################

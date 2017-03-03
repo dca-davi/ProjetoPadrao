@@ -22,10 +22,8 @@ E(/^que tenha\/nao tenha acesso na tela "([^"]*)"$/) do |tela|
 
     if !@acessa_tela && @tem_direito
         raise('Usuario não tem acesso a tela no qual deveria ter direito')
-
     # elsif @acessa_tela && !@tem_direito
     #     raise('Usuario tem acesso a tela no qual não deveria ter direito')
-
     elsif !@acessa_tela && !@tem_direito
         @pass_test = true
         next
