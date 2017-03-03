@@ -524,7 +524,7 @@ class Utils
                 return false
             else
                 #ação caso o campo esteja habilitado
-                unless campo.include?('dtSetr') || campo.include?('dataDeTran')
+                unless campo.include?('dtSetr') || campo.include?('dataDeTran') || campo.include?('dataAteTran')
                     $browser.text_field(id: /#{campo}$/, index: var_i).set valor
                     aguardar_loading
                     $browser.send_keys :tab
