@@ -181,7 +181,7 @@ Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAO_CARTAONAOPRE
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAO_CARTAONAOPRESENTE_EDITAR"
 E que tenha/nao tenha acesso na tela "Exceção_antecipaçãoVendas"
 Quando clicar na aba "Cartão não presente", "0"
-Entao o link "Incluir" deve estar habilitado/desabilitado
+Entao o link "Incluir", "0" deve estar habilitado/desabilitado
 E clicar no link acao "INCLUIR"
 Quando clicar selecionar a opcao "Individualmente"
 E informar "1007595105" no campo "numero do cliente - excecao"

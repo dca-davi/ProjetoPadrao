@@ -141,12 +141,16 @@ Entao(/^podera\/nao podera acessar a Tela de pesquisa$/) do
     end
 end
 
-Entao(/^o link "([^"]*)" deve estar habilitado\/desabilitado$/) do |link|
+Entao(/^o link "([^"]*)", "([^"]*)" deve estar habilitado\/desabilitado$/) do |link, valida_step|
     next if @pass_test == true
     utils = Utils.new
     statusAba = utils.acessar_aba(link)
     if !statusAba && @tem_direito
         raise('Usuario nao pode acessar aba no qual tem direito')
+      elsif statusAba && !@tem_direito
+          if valida_step == "1"
+              raise('Usuário tem acesso a aba no qual não tem direito')
+          end
     end
 end
 
