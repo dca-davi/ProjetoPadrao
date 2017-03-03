@@ -8,7 +8,7 @@ Before do |scenario|
     $ALM = ENV['EVIDENCIA_ALM']
     $exec_status_desejado = ENV['EXECUTAR_STATUS']
 
-    if !$exec_status_desejado.to_s.empty? 
+    if !$exec_status_desejado.to_s.empty?
         tipo_status = ['Passed', 'Blocked', 'No Run', 'Failed', 'N/A', 'Not Completed', 'Cancelado', 'Prorrogado']
         tipo_status.each do |valor_status|
             if valor_status == $exec_status_desejado
@@ -17,7 +17,7 @@ Before do |scenario|
         end
         raise 'Informe um status ALM [Parâmetro: EXECUTAR_STATUS] correto.' if $status_teste == false
     end
-  
+
     $tag_cenario = scenario.source_tag_names
     $cenario_name = scenario.name
 
@@ -28,17 +28,17 @@ Before do |scenario|
     if $ALM != 'N'
         $rest_ALM = RestCall.new
         $rest_ALM.conectar_ALM
-        $rest_ALM.obter_dados_ALM($release, $testset, $ciclo, $cenario_name) 
-       
+        $rest_ALM.obter_dados_ALM($release, $testset, $ciclo, $cenario_name)
+
         case $rest_ALM.checar_status_ALM
-        when 'Passed', 'Blocked', 'N/A', 'Cancelado', 'No Run', 'Not Completed'
+        when 'Passed', 'N/A', 'Cancelado', 'No Run', 'Not Completed'#, 'Blocked'
             skip_this_scenario
         end
-        
+
         if !$exec_status_desejado.to_s.empty?
             skip_this_scenario if $rest_ALM.checar_status_ALM != $exec_status_desejado
         end
-       
+
         $rest_ALM.criar_run_ALM('Not Completed')
     end
 
@@ -52,7 +52,7 @@ Before do |scenario|
             browser = Watir::Browser.new :chrome
         else
             browser = Watir::Browser.new :ie
-    end   
+    end
     $browser = browser
 end
 
@@ -115,5 +115,5 @@ at_exit do
     end
   rescue => e
     #nothing to do because it will appear on report.
-  end 
+  end
 end
