@@ -388,7 +388,7 @@ class Utils
         when "subt\u00F3pico de manuten\u00E7\u00E3o"
             campo = ':subTopicMaintenanceId_input'
         when 'banco'
-            campo = 'input_ClearingConsignmentsControlBeanbank_input|tab_bebit_balance:formInclude:input_IncludeCuttingDebitBalanceSendBeanmodelvalueDomicileBank_input|tab_deposits_debits:formReport:input_OperationsTreatRejectedManualBeanmodelvalueDomicileBank_input|frmSearchBillingPrice:autoComplete_bancko_preci_acc_input'
+            campo = 'input_ClearingConsignmentsControlBeanbank_input|tab_bebit_balance:formInclude:input_IncludeCuttingDebitBalanceSendBeanmodelvalueDomicileBank_input|tab_deposits_debits:formReport:input_OperationsTreatRejectedManualBeanmodelvalueDomicileBank_input|frmSearchBillingPrice:autoComplete_bancko_preci_acc_input|input_SearchRejectionsTreatedToAnnulmentBeanbankCodeDescriptionSelected_input'
         when 'protocolo'
             campo = 'input_ClearingSefazDemandListBeanfilterprotocolNumber'
         when 'banco - acumulo diario'
@@ -525,10 +525,18 @@ class Utils
             else
                 #ação caso o campo esteja habilitado
                 unless campo.include?('dtSetr') || campo.include?('dataDeTran') || campo.include?('dataAteTran')
-                    $browser.text_field(id: /#{campo}$/, index: var_i).set valor
-                    aguardar_loading
-                    $browser.send_keys :tab
-                    aguardar_loading
+                    var_i = 0
+                    loop do   
+                        if $browser.text_field(id: /#{campo}$/, index: var_i).present?
+                            $browser.text_field(id: /#{campo}$/, index: var_i).set valor
+                            aguardar_loading
+                            $browser.send_keys :tab
+                            aguardar_loading
+                        end
+                        var_i += 1
+                        puts var_i
+                        break if var_i == 5
+                    end
                else
                      $browser.execute_script('arguments[0].value = arguments[1]', $browser.text_field(id: /#{campo}$/, index: var_i), valor)
                      aguardar_loading
@@ -610,7 +618,6 @@ class Utils
         sleep 2
         if $browser.label(text: radio, index: i).exist?
             $browser.label(text: radio, index: i).click
-            sleep 2
             result = true
         else
             result = false
