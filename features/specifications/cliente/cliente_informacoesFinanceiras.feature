@@ -5,7 +5,8 @@ Funcionalidade: Validar os direitos na tela Cliente > Extratos > Resumo Financei
 
 Contexto:
 Dado que eu faca login
-E informe o EC "1014766947"
+#E informe o EC "1014766947"
+E informe o EC "1018242187"
 
 @CLIENTES_INFORMACOESFINANCEIRAS_VER
 @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA @CADASTRO_ANALISTA_CIELO @CADASTRO_ANALISTA_CIELO_APROVADOR
@@ -70,7 +71,6 @@ Então Validar o frame "Valor do intercâmbio - detalhado"
 @ANTECIPACAO_DE_VENDAS_TESOURARIA_COORDENADOR
 Cenario: CT.SEGINFO - [AUT] CLIENTES_INFORMACOESFINANCEIRAS_DADOSDOCHIP_VER
 Dado que tenha/nao tenha o direito "CLIENTES_INFORMACOESFINANCEIRAS_DADOSDOCHIP_VER"
-E informe o EC "1014766947"
 E que tenha/nao tenha acesso na tela "Resumo financeiro"
 E selecionar o item "vendas" de "ontem", "0"
 Quando clicar no item em consolidado de vendas "0"
