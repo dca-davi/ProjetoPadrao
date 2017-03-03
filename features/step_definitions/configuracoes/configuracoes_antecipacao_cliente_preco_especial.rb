@@ -11,13 +11,15 @@ Entao(/^a aplicacao exibira\/nao exibira o painel grid da tela cacfv "([^"]*)"$/
 end
 
 # CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_INCLUIR
-Quando(/^clicar no link acao "([^"]*)"$/) do |incluir|
+Quando(/^clicar no link acao "([^"]*)", "([^"]*)"$/) do |incluir, valida_step|
     next if @pass_test == true
     cavp = Configuracoes_antecipacao_cliente_preco_especial.new
     cavpLinkIncluir = cavp.clicar_link_acao(incluir)
     if !cavpLinkIncluir && @tem_direito
         raise('Usuario nao pode acessar a opcao na qual tem direito')
     elsif cavpLinkIncluir && !@tem_direito
-        raise('usuario sem o direito consegue acessar a opcao')
+          if valida_step == "1"
+              raise('usuario sem o direito consegue acessar a opcao')
+          end        
     end
 end

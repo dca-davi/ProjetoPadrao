@@ -80,8 +80,13 @@ class Utils
             # sleep 2
             aguardar_loading
             # sleep 2
-            $encoded_img = $browser.driver.screenshot_as(:base64)
-            return true
+            if $browser.h1(text: pagina).exist?
+              $encoded_img = $browser.driver.screenshot_as(:base64)
+              return true
+            else
+              $encoded_img = $browser.driver.screenshot_as(:base64)
+              return false
+            end
         end
     end
 
@@ -332,7 +337,7 @@ class Utils
             result = click_trata_exception?($browser.button(id: /#{acao}$/))
         elsif $browser.img(id: /#{acao}$/).exist? && $browser.img(id: /#{acao}$/).enabled?
             result = click_trata_exception?($browser.img(id: /#{acao}$/))
-        elsif $browser.span(class: /#{acao}/, indclicar_botao_acaoex: i).exist? && $browser.span(id: /#{acao}$/).enabled?
+        elsif $browser.span(class: /#{acao}$/, index: i).exist? && $browser.span(class: /#{acao}$/, index: i).enabled?
             result = click_trata_exception?($browser.span(class: /#{acao}/, index: i).parent)
         else
             result = false

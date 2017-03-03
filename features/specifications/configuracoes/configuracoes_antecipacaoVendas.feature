@@ -182,8 +182,8 @@ Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAO_CART
 E que tenha/nao tenha acesso na tela "Exceção_antecipaçãoVendas"
 Quando clicar na aba "Cartão não presente", "0"
 Entao o link "Incluir", "0" deve estar habilitado/desabilitado
-E clicar no link acao "INCLUIR"
-Quando clicar selecionar a opcao "Individualmente"
+E clicar no link acao "INCLUIR", "0"
+Quando clicar selecionar a opcao "Individualmente", "0"
 E informar "1007595105" no campo "numero do cliente - excecao"
 Quando clicar no botao "OK", "0"
 Entao clicar no botao "Confirmar", "1"
