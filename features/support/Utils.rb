@@ -415,13 +415,9 @@ class Utils
         when "subt\u00F3pico de manuten\u00E7\u00E3o"
             campo = ':subTopicMaintenanceId_input'
         when 'banco'
-<<<<<<< HEAD
             campo = 'input_ClearingConsignmentsControlBeanbank_input|tab_bebit_balance:formInclude:input_IncludeCuttingDebitBalanceSendBeanmodelvalueDomicileBank_input|tab_deposits_debits:formReport:input_OperationsTreatRejectedManualBeanmodelvalueDomicileBank_input|frmSearchBillingPrice:autoComplete_bancko_preci_acc_input|input_SearchRejectionsTreatedToAnnulmentBeanbankCodeDescriptionSelected_input'
-=======
-            campo = 'input_ClearingConsignmentsControlBeanbank_input|tab_bebit_balance:formInclude:input_IncludeCuttingDebitBalanceSendBeanmodelvalueDomicileBank_input|tab_deposits_debits:formReport:input_OperationsTreatRejectedManualBeanmodelvalueDomicileBank_input|frmSearchBillingPrice:autoComplete_bancko_preci_acc_input'
         when 'banco - anulacao'
             campo = 'tab_deposits_debits:rejectionForm:input_SearchRejectionsTreatedToAnnulmentBeanbankCodeDescriptionSelected_input'
->>>>>>> a9451e701a8c591ae48537a85dadd09f079ac223
         when 'protocolo'
             campo = 'input_ClearingSefazDemandListBeanfilterprotocolNumber'
         when 'banco - acumulo diario'
@@ -645,12 +641,6 @@ class Utils
         end
     end
 
-<<<<<<< HEAD
-    def selecionar_radio_button(radio, i=1)
-        sleep 2
-        if $browser.label(text: radio, index: i).exist?
-            $browser.label(text: radio, index: i).click
-=======
     def selecionar_radio_button(radio, i = 0)
         if $browser.label(text: radio, index: 0).present?
             $browser.label(text: radio, index: 0).click
@@ -666,7 +656,6 @@ class Utils
 
         elsif $browser.label(text: radio, index: 3).present?
             $browser.label(text: radio, index: 3).click
->>>>>>> a9451e701a8c591ae48537a85dadd09f079ac223
             result = true
 
         else

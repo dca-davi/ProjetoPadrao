@@ -68,7 +68,6 @@ Entao o botao "Exportar", "1" estara habilitado/desabilitado
 Cenario: CT.SEGINFO - [AUT] OPERACOES_REJEICOES_PAGAMENTOSDEBITOS_ANULAR_EDITAR
 Dado que tenha/nao tenha o direito "OPERACOES_REJEICOES_PAGAMENTOSDEBITOS_ANULAR_EDITAR"
 E que tenha/nao tenha acesso na tela "Depósitos e débitos"
-<<<<<<< HEAD
 E selecionar a opcao "Regular", "0"
 E selecionar a opcao "Crédito", "0"
 E informar "237-BANCO BRADESCO S.A." no campo "Banco"
@@ -80,12 +79,8 @@ Entao selecionar o check-box da linha "1" na coluna "8" da tabela resultados
 E clicar no botao "Continuar", "0"
 E selecionar a opcao "Baixa manual", "0"
 E selecionar "Retorno para a agenda", "0" no combo-box do pop-up
-
 E clicar no botao "Confirmar", "0"
 Entao clicar na aba "ANULAÇÃO", "0"
-=======
-E clicar na aba "ANULAÇÃO", "0"
->>>>>>> 54c1973ec55c40ca1efeb3b651b055fba6b03036
 E selecionar a opcao "Por Banco/Bandeira", "0"
 E selecionar a opcao "Crédito", "0" da aba Anulacao
 E selecionar a opcao "Baixa manual", "0"

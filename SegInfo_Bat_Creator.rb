@@ -74,11 +74,7 @@ for count in 1...perfis.row_count               # Percorrer todos os perfis da p
 		wb.SaveAs("#{nome_arquivo_log}")
 		wb.close
 	end
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> c376d03e7abf3007dc24cb4a3f36a9c6180fd14f
     fileG << "cd C:\\Git\\automation-test-seginfo\n"
     fileG << "git pull seginfo master\n"
     fileG << "cd #{dirname}\n\n"
