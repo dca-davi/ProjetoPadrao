@@ -48,8 +48,8 @@ Entao o botao "Exportar", "1" devera estar habilitado/desabilitado
 Cenario: CT.SEGINFO - [AUT] CLIENTES_INFORMACOESFINANCEIRAS_INTERCAMBIO_VER
 Dado que tenha/nao tenha o direito "CLIENTES_INFORMACOESFINANCEIRAS_INTERCAMBIO_VER"
 E que tenha/nao tenha acesso na tela "Resumo financeiro"
-E selecionar o item "vendas" de "hoje"
-Quando clicar no item em consolidado de vendas
+E selecionar o item "vendas" de "hoje", "0"
+Quando clicar no item em consolidado de vendas "1"
 
 @CLIENTES_INFORMACOESFINANCEIRAS_VENDASCONSOLIDADAS_INTERCAMBIO_VER
 @BACKOFFICE_ANALISTA_FORNECEDOR @CONTROLE_SISTEMAS_FINANCEIROS_CONCILIACAO @TESOURARIA_E_CONTAS_A_PAGAR_ANALISTA
@@ -57,8 +57,8 @@ Quando clicar no item em consolidado de vendas
 Cenario: CT.SEGINFO - [AUT] CLIENTES_INFORMACOESFINANCEIRAS_VENDASCONSOLIDADAS_INTERCAMBIO_VER
 Dado que tenha/nao tenha o direito "CLIENTES_INFORMACOESFINANCEIRAS_VENDASCONSOLIDADAS_INTERCAMBIO_VER"
 E que tenha/nao tenha acesso na tela "Resumo financeiro"
-E selecionar o item "vendas" de "ontem"
-Quando clicar no item em consolidado de vendas
+E selecionar o item "vendas" de "ontem", "0"
+Quando clicar no item em consolidado de vendas, "0"
 E Expandir o campo da transação de venda
 Então Validar o frame "Valor do intercâmbio - detalhado"
 
@@ -70,10 +70,11 @@ Então Validar o frame "Valor do intercâmbio - detalhado"
 @ANTECIPACAO_DE_VENDAS_TESOURARIA_COORDENADOR
 Cenario: CT.SEGINFO - [AUT] CLIENTES_INFORMACOESFINANCEIRAS_DADOSDOCHIP_VER
 Dado que tenha/nao tenha o direito "CLIENTES_INFORMACOESFINANCEIRAS_DADOSDOCHIP_VER"
+E informe o EC "1014766947"
 E que tenha/nao tenha acesso na tela "Resumo financeiro"
-E selecionar o item "vendas" de "ontem"
-Quando clicar no item em consolidado de vendas
-E clicar no item da transacao de vendas
+E selecionar o item "vendas" de "ontem", "0"
+Quando clicar no item em consolidado de vendas "0"
+E clicar no item da transacao de vendas "0"
 Entao localizar o frame "Dados do Chip - Envio", "1"
 
 @CLIENTES_INFORMACOESFINANCEIRAS_ENVIOPARABANDEIRA_VER
@@ -82,16 +83,16 @@ Entao localizar o frame "Dados do Chip - Envio", "1"
 Cenario: CT.SEGINFO - [AUT] CLIENTES_INFORMACOESFINANCEIRAS_ENVIOPARABANDEIRA_VER
 Dado que tenha/nao tenha o direito "CLIENTES_INFORMACOESFINANCEIRAS_ENVIOPARABANDEIRA_VER"
 E que tenha/nao tenha acesso na tela "Resumo financeiro"
-E selecionar o item "vendas" de "ontem"
-Quando clicar no item em consolidado de vendas
-E clicar no item da transacao de vendas
+E selecionar o item "vendas" de "ontem", "0"
+Quando clicar no item em consolidado de vendas "0"
+E clicar no item da transacao de vendas "0"
 Entao localizar o frame "Dados do Chip - Envio", "1"
 
 @CLIENTES_EXTRATO_RESUMOFINANCEIRO_HISTORICOVENDAS_CICLODEVIDAEMISSOR_VER
 Cenario: CT.SEGINFO - [AUT] CLIENTES_EXTRATO_RESUMOFINANCEIRO_HISTORICOVENDAS_CICLODEVIDAEMISSOR_VER
 Dado que tenha/nao tenha o direito "CLIENTES_EXTRATO_RESUMOFINANCEIRO_HISTORICOVENDAS_CICLODEVIDAEMISSOR_VER"
 E que tenha/nao tenha acesso na tela "Resumo financeiro"
-E selecionar o item "vendas" de "ontem"
-Quando clicar no item em consolidado de vendas
-E clicar no item da transacao de vendas
+E selecionar o item "vendas" de "ontem", "0"
+Quando clicar no item em consolidado de vendas "0"
+E clicar no item da transacao de vendas "0"
 Entao localizar o frame "Ciclo de Vida Emissor", "1"

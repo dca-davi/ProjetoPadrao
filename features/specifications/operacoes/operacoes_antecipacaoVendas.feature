@@ -114,7 +114,7 @@ E localizar o frame "Período de antecipação", "1"
 E localizar o frame "Taxa efetiva", "1"
 E localizar o frame "Custo de captação", "1"
 E localizar o frame "Prazo médio", "1"
-E localizar o frame "DI futuro", "1"
+# E localizar o frame "DI futuro", "1"
 E localizar o frame "Prazo médio", "1"
 E localizar o frame "Custo de captação", "1"
 Entao localizar o frame "Receita líquida", "1"
@@ -257,8 +257,8 @@ Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGC
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
 E clicar na aba "Antecipação Programada", "0"
 E clicar na aba "Incluir", "0"
-Quando selecionar a opcao "Critérios de antecipação"
-E selecionar a opcao "1 | 1480 | 37510 - 1"
+Quando selecionar a opcao "Critérios de antecipação", "0"
+E selecionar a opcao "1 | 1480 | 37510 - 1", "0"
 Então o botao "Salvar", "1" estara habilitado/desabilitado
 
 @OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_NUMEROPARC_CRIAR
@@ -268,7 +268,7 @@ Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGC
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
 E clicar na aba "Antecipação Programada", "0"
 E clicar na aba "Incluir", "0"
-Quando selecionar a opcao "Critérios de antecipação"
+Quando selecionar a opcao "Critérios de antecipação", "0"
 E informar "1" no campo "numero de parcelas - criterios de antecipacao - de"
 E informar "3" no campo "numero de parcelas - criterios de antecipacao - ate"
 Então o botao "Salvar", "1" estara habilitado/desabilitado
@@ -280,7 +280,7 @@ Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGC
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
 E clicar na aba "Antecipação Programada", "0"
 E clicar na aba "Incluir", "0"
-Quando selecionar a opcao "Semanal"
+Quando selecionar a opcao "Semanal", "0"
 E selecionar "Terça-feira" do campo "Dia - antecipacao programada", "0"
 Então o botao "Salvar", "1" estara habilitado/desabilitado
 
@@ -291,9 +291,9 @@ Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGC
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
 E clicar na aba "Antecipação Programada", "0"
 E clicar na aba "Incluir", "0"
-Quando selecionar a opcao "Critérios de antecipação"
-E selecionar a opcao "Crédito Parcelado loja"
-E selecionar a opcao "Crédito À vista"
+Quando selecionar a opcao "Critérios de antecipação", "0"
+E selecionar a opcao "Crédito Parcelado loja", "0"
+E selecionar a opcao "Crédito À vista", "0"
 Então o botao "Salvar", "1" estara habilitado/desabilitado
 
 @OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_CRIAR
@@ -313,8 +313,8 @@ Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGC
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
 E clicar na aba "Antecipação Programada", "0"
 E clicar na aba "Incluir", "0"
-Quando selecionar a opcao "Critérios de antecipação"
-E selecionar a opcao "CREDSYSTEM"
+Quando selecionar a opcao "Critérios de antecipação", "0"
+E selecionar a opcao "CREDSYSTEM", "0"
 Entao o botao "Salvar", "1" estara habilitado/desabilitado
 
 @OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGCLIENTE_MENSAL_CRIAR
@@ -324,7 +324,7 @@ Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGC
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
 E clicar na aba "Antecipação Programada", "0"
 E clicar na aba "Incluir", "0"
-Quando selecionar a opcao "Personalizada"
+Quando selecionar a opcao "Personalizada", "0"
 Entao o botao "Salvar", "1" estara habilitado/desabilitado
 
 @OPERACOES_ANTECIPACAOVENDAS_PERIODOANTECIPADO_VER
@@ -350,9 +350,9 @@ Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_ANTECIPACAOPROGC
 E que tenha/nao tenha acesso na tela "Operação de antecipação"
 Quando clicar na aba "Antecipação Programada", "0"
 E clicar na aba "Incluir", "0"
-E selecionar a opcao "Diário"
-E selecionar a opcao "Valor total"
-Quando selecionar a opcao "Preço negociado"
+E selecionar a opcao "Diário", "0"
+E selecionar a opcao "Valor total", "0"
+Quando selecionar a opcao "Preço negociado", "0"
 E clicar no botao "Salvar", "1"
 
 @OPERACOES_ANTECIPACAOVENDAS_OPERANTECIP_AVULSA_AVANCADO_VER

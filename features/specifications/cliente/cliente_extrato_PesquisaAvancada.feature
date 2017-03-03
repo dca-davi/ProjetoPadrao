@@ -11,8 +11,8 @@ E informe o EC "1018242187"
 Cenario: CT.SEGINFO - [AUT] CLIENTES_NUMERODOCARTAOABERTO_VER
 Dado que tenha/nao tenha o direito "CLIENTES_NUMERODOCARTAOABERTO_VER"
 E que tenha/nao tenha acesso na tela "Pesquisa Avançada"
-Entao informar "05/09/2016" no campo "data_inicio_pesq_avan_extrato"
-E informar "04/10/2016" no campo "data_fim_pesq_avan_extrato"
+Entao informar "01/02/2016" no campo "data_inicio_pesq_avan_extrato"
+E informar "17/02/2016" no campo "data_fim_pesq_avan_extrato"
 E informar "8804" no campo "4_dig_cartao_pesq_avan_extrato"
 Entao clicar no botao "Pesquisar", "1"
 
