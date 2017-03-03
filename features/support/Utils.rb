@@ -179,7 +179,15 @@ class Utils
             $encoded_img = $browser.driver.screenshot_as(:base64)
             result = false
         else
-            $browser.li(text: aba).click
+            i = 0
+            loop do
+                if $browser.li(text: aba, index: i).present?
+                    $browser.li(text: aba, index: i).click
+                    break
+                end
+                break if i==5
+                i =  i + 1
+            end
             $encoded_img = $browser.driver.screenshot_as(:base64)
             result = true
         end
@@ -310,7 +318,21 @@ class Utils
         when 'Visualizar Contrato'
             acao = 'tab_tabGeral:dtbServiceContract:0:btn_view_service_contract'
         when 'Remover Desconto vigente/programado'
-            acao = 'icoDelete'
+
+            if !$browser.span(class: 'ui-panel-title', text: 'Desconto vigente/programado').exist?
+                raise "Tela Informações do Cliente - Frame 'Desconto vigente/programado' não encontrado"
+            elsif !$browser.span(class: 'ui-panel-title', text: 'Desconto vigente/programado').parent.parent.table.exist?
+                raise "Tela Informações do Cliente - Tabela 'Desconto vigente/programado' não encontrada"
+            else
+                $browser.span(class: 'ui-panel-title', text: 'Desconto vigente/programado').parent.parent.table.rows.each do |linha|
+                    raise "Tela Informações do Cliente - Tabela 'Desconto vigente/programado' sem registros" unless linha[2].exists?
+                    acao = linha.span(class: 'ui-button-icon-left ui-icon ui-c icoDelete')
+                    break
+                end
+                # acao = 'icoDelete'
+            end
+
+
             i = 1
         when 'Salvar'
             acao = 'tabOperationAnticipation:tabScheduledAnticipation:btn_save'
@@ -608,13 +630,21 @@ class Utils
 
     def selecionar_radio_button(radio, i = 0)
         if $browser.label(text: radio, index: 0).present?
-            $browser.label(text: radio, index: i).click
-            sleep 2
+            $browser.label(text: radio, index: 0).click
             result = true
-          elsif $browser.label(text: radio, index: 1).present?
-              $browser.label(text: radio, index: 1).click
-              sleep 2
-              result = true
+
+        elsif $browser.label(text: radio, index: 1).present?
+            $browser.label(text: radio, index: 1).click
+            result = true
+
+        elsif $browser.label(text: radio, index: 2).present?
+            $browser.label(text: radio, index: 2).click
+            result = true
+
+        elsif $browser.label(text: radio, index: 3).present?
+            $browser.label(text: radio, index: 3).click
+            result = true
+
         else
             result = false
         end
@@ -626,7 +656,11 @@ class Utils
     def selecionar_check_box_tabela(linha = 1, coluna)
         if $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna.to_i - 1).exist?
             $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna.to_i - 1).visible?
-            $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna.to_i - 1).click
+            begin
+                $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna.to_i - 1).click
+            rescue
+                raise "Tabela resultado de pesquisa não encontrada"
+            end
             sleep 2
             result = true
         else
