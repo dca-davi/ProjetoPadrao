@@ -148,8 +148,8 @@ E selecionar a opcao "Regular", "0"
 E selecionar a opcao "Crédito", "0"
 E selecionar a opcao "Débito", "0"
 E informar "104-CAIXA ECONOMICA FEDERAL S.A." no campo "Banco"
-E informar "01/09/2016" no campo "data-de"
-E informar "09/09/2016" no campo "data-ate"
+E informar "01/12/2016" no campo "data-de"
+E informar "30/01/2017" no campo "data-ate"
 E clicar no botao "Pesquisar", "0"
 Entao selecionar o check-box todos na coluna "8" da tabela resultados
 

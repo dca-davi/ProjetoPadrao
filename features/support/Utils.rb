@@ -332,7 +332,7 @@ class Utils
             result = click_trata_exception?($browser.button(id: /#{acao}$/))
         elsif $browser.img(id: /#{acao}$/).exist? && $browser.img(id: /#{acao}$/).enabled?
             result = click_trata_exception?($browser.img(id: /#{acao}$/))
-        elsif $browser.span(class: /#{acao}/, index: i).exist? && $browser.span(id: /#{acao}$/).enabled?
+        elsif $browser.span(class: /#{acao}/, indclicar_botao_acaoex: i).exist? && $browser.span(id: /#{acao}$/).enabled?
             result = click_trata_exception?($browser.span(class: /#{acao}/, index: i).parent)
         else
             result = false
@@ -524,12 +524,10 @@ class Utils
                 return false
             else
                 #ação caso o campo esteja habilitado
-                unless campo.include?('dtSetr')
-                    # $browser.text_field(id: /#{campo}$/, index: var_i).set valor
-                    # aguardar_loading
-                    # $browser.send_keys :tab
-                    $browser.execute_script('arguments[0].value = arguments[1]', $browser.text_field(id: /#{campo}$/, index: var_i), valor)
-                    $browser.text_field(id: /#{campo}$/, index: var_i).fire_event "onchange"
+                unless campo.include?('dtSetr') || campo.include?('dataDeTran') || campo.include?('dataAteTran')
+                    $browser.text_field(id: /#{campo}$/, index: var_i).set valor
+                    aguardar_loading
+                    $browser.send_keys :tab
                     aguardar_loading
                else
                      $browser.execute_script('arguments[0].value = arguments[1]', $browser.text_field(id: /#{campo}$/, index: var_i), valor)
@@ -621,8 +619,9 @@ class Utils
         return result
     end
 
-    def selecionar_check_box_tabela(linha, coluna = 0)
+    def selecionar_check_box_tabela(linha = 1, coluna)
         if $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna.to_i - 1).exist?
+            $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna.to_i - 1).visible?
             $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna.to_i - 1).click
             sleep 2
             result = true

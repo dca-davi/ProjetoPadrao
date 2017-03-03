@@ -59,7 +59,7 @@ Cenario: CT.SEGINFO - [AUT] CLIENTES_INFORMACOESFINANCEIRAS_VENDASCONSOLIDADAS_I
 Dado que tenha/nao tenha o direito "CLIENTES_INFORMACOESFINANCEIRAS_VENDASCONSOLIDADAS_INTERCAMBIO_VER"
 E que tenha/nao tenha acesso na tela "Resumo financeiro"
 E selecionar o item "vendas" de "ontem", "0"
-Quando clicar no item em consolidado de vendas, "0"
+Quando clicar no item em consolidado de vendas "0"
 E Expandir o campo da transação de venda
 Então Validar o frame "Valor do intercâmbio - detalhado"
 
