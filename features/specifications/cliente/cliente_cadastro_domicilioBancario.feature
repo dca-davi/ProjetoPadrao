@@ -27,7 +27,7 @@ Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_DOMICILIOBANCARIO_SOLICITAR
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_DOMICILIOBANCARIO_SOLICITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
 Quando clicar na aba "Domicílio Bancário", "0"
-Entao o link "INCLUIR" deve estar habilitado/desabilitado
+Entao o link "INCLUIR", "1" deve estar habilitado/desabilitado
 
 @CLIENTES_CADASTRO_INFO_DOMICILIOBANCARIO_APROVADOR_EDITAR
 @CADASTRO_ANALISTA_CIELO_APROVADOR
@@ -35,7 +35,7 @@ Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_DOMICILIOBANCARIO_APROVADOR_E
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_DOMICILIOBANCARIO_APROVADOR_EDITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
 Quando clicar na aba "Domicílio Bancário", "0"
-Entao o link "CONFIGURAR" deve estar habilitado/desabilitado
+Entao o link "CONFIGURAR", "1" deve estar habilitado/desabilitado
 
 @CLIENTES_DOMICILIOBANCARIO_CONTACORRENTE_VER
 @CADASTRO_ANALISTA_CIELO @CADASTRO_ANALISTA_CIELO_APROVADOR @PLANEJA_BACKOFFICE_COBRAN_FATURA_ANALISTA
