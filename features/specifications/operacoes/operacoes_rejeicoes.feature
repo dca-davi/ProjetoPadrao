@@ -69,7 +69,7 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_REJEICOES_PAGAMENTOSDEBITOS_ANULAR_EDITAR
 Dado que tenha/nao tenha o direito "OPERACOES_REJEICOES_PAGAMENTOSDEBITOS_ANULAR_EDITAR"
 E que tenha/nao tenha acesso na tela "Depósitos e débitos"
 E selecionar a opcao "Regular", "0"
-E selecionar a opcao "Crédito"
+E selecionar a opcao "Crédito", "0"
 E informar "237-BANCO BRADESCO S.A." no campo "Banco"
 E selecionar "VISA" no combo-box Bandeira
 E informar "01/11/2016" no campo "data-de"
@@ -77,15 +77,15 @@ E informar "10/10/2017" no campo "data-ate"
 E clicar no botao "Pesquisar", "0"
 Entao selecionar o check-box da linha "1" na coluna "8" da tabela resultados
 E clicar no botao "Continuar", "0"
-E selecionar a opcao "Baixa manual"
-E selecionar "Retorno para a agenda" no combo-box do pop-up
+E selecionar a opcao "Baixa manual", "0"
+E selecionar "Retorno para a agenda", "0" no combo-box do pop-up
 E clicar no botao "Confirmar", "0"
 E clicar no botao "Sim", "0"
 E clicar no botao "OK", "0"
 Entao clicar na aba "ANULAÇÃO", "0"
-E selecionar a opcao "Por Banco/Bandeira"
+E selecionar a opcao "Por Banco/Bandeira", "0"
 E selecionar a opcao "Crédito" da aba Anulacao
-E selecionar a opcao "Baixa manual"
+E selecionar a opcao "Baixa manual", "0"
 E informar "237-BANCO BRADESCO S.A." no campo "Banco"
 E selecionar "VISA" no combo-box Bandeira
 E clicar no botao "Pesquisar", "0"
@@ -115,7 +115,7 @@ E que tenha/nao tenha acesso na tela "Captura"
 E informar "01/02/2017" no campo "data de rejeicao - de"
 E informar "17/02/2017" no campo "data de rejeicao - ate"
 Quando clicar no botao "Pesquisar", "0"
-Entao clicar no botao exportar
+Entao clicar no botao "Exportar", "1"
 
 @OPERACOES_REJEICOESCAPTURA_TRATAMENTO_ANULACAO_INCLUIR
 Cenario: CT.SEGINFO - [AUT] OPERACOES_REJEICOESCAPTURA_TRATAMENTO_ANULACAO_INCLUIR
@@ -147,13 +147,13 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_MASTER_REJEITADOS_PAGAMENTOSEDEBITOS_EDITA
 Dado que tenha/nao tenha o direito "OPERACOES_MASTER_REJEITADOS_PAGAMENTOSEDEBITOS_EDITAR"
 E que tenha/nao tenha acesso na tela "Depósitos e débitos"
 E selecionar a opcao "Regular", "0"
-E selecionar a opcao "Crédito"
-E selecionar a opcao "Débito"
+E selecionar a opcao "Crédito", "0"
+E selecionar a opcao "Débito", "0"
 E informar "104-CAIXA ECONOMICA FEDERAL S.A." no campo "Banco"
 E informar "01/09/2016" no campo "data-de"
-E informar "09/09/2016" no campo "data-ate"
+E informar "09/02/2017" no campo "data-ate"
 E clicar no botao "Pesquisar", "0"
-Entao selecionar o check-box todos na coluna "8" da tabela resultados
+Entao selecionar o check-box da linha "1" na coluna "7" da tabela resultados
 
 @OPERACOES_REJEICOESBANDEIRA_ELO_DINERS_DETALHES_EDITAR
 Cenario: CT.SEGINFO - [AUT] OPERACOES_REJEICOESBANDEIRA_ELO_DINERS_DETALHES_EDITAR
