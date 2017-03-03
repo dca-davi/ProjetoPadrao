@@ -37,7 +37,7 @@ for count in 1...perfis.row_count               # Percorrer todos os perfis da p
         # Escrever no arquivo do test case
         file << "@echo off\n"
         file << "chcp 65001\n"
-        file << "cd C:\\Users\\walter.castanharo\\SEgInfo\\automation-test-seginfo\n"		            
+        file << "cd C:\\Users\\walter.castanharo\\SEgInfo\\automation-test-seginfo\n"
         file << "echo Executando Perfil #{perfil} - Direito #{direito}\n"
 		file << "cucumber --tag @#{direito} Perfil=#{perfil} --format html --out=\"#{report_name}\" TEST_ENV=#{ambiente} RELEASE_ALM=\"[HML] Homologação Ciclo 1\" CICLO_ALM=\"[Automação] Prevenção e Segurança\" TESTSET_ALM=\"#{testset}\" EVIDENCIA_ALM=S CAMINHO_LOG_EXECUCAO=\"#{nome_arquivo_log}\" SOBRESCREVE_REGISTRO_LOG=S EXECUTAR_STATUS=\"Failed\n"
         file << "cd #{dirname}\n"
@@ -74,7 +74,11 @@ for count in 1...perfis.row_count               # Percorrer todos os perfis da p
 		wb.SaveAs("#{nome_arquivo_log}")
 		wb.close
 	end
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> c376d03e7abf3007dc24cb4a3f36a9c6180fd14f
     fileG << "cd C:\\Git\\automation-test-seginfo\n"
     fileG << "git pull seginfo master\n"
     fileG << "cd #{dirname}\n\n"

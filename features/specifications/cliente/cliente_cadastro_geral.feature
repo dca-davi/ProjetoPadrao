@@ -24,7 +24,7 @@ Entao o sistema exibira/nao exibira a tela "Informações do cliente", "1"
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_SITUACAODOCLIENTE_MOTIVO_VALORESEMABERTO_EDITAR
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_SITUACAODOCLIENTE_MOTIVO_VALORESEMABERTO_EDITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
-E clicar no botao "Editar Dados" do frame "Situação do Cliente"
+E clicar no botao "Editar Dados" do frame "Situação do Cliente", "0"
 Quando o campo Status do cadastro estiver como "Fechado"
 Entao o campo contem/nao contem a opcao "Valores em aberto"
 
@@ -32,7 +32,7 @@ Entao o campo contem/nao contem a opcao "Valores em aberto"
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_SITUACAODOCLIENTE_MOTIVO_CHARGEBACK_EDITAR
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_SITUACAODOCLIENTE_MOTIVO_CHARGEBACK_EDITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
-E clicar no botao "Editar Dados" do frame "Situação do Cliente"
+E clicar no botao "Editar Dados" do frame "Situação do Cliente", "0"
 Quando o campo Status do cadastro estiver como "Fechado"
 Entao o campo contem/nao contem a opcao "Monitoria chargeback"
 
@@ -42,7 +42,7 @@ Entao o campo contem/nao contem a opcao "Monitoria chargeback"
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_SITUACAODOCLIENTE_MOTIVO_DOMICILIOINVALIDO_EDITAR
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_SITUACAODOCLIENTE_MOTIVO_DOMICILIOINVALIDO_EDITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
-E clicar no botao "Editar Dados" do frame "Situação do Cliente"
+E clicar no botao "Editar Dados" do frame "Situação do Cliente", "0"
 Quando o campo Status do cadastro estiver como "Fechado"
 Entao o campo contem/nao contem a opcao "Domicílio inválido"
 
@@ -50,7 +50,7 @@ Entao o campo contem/nao contem a opcao "Domicílio inválido"
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_SITUACAODOCLIENTE_MOTIVO_CODIGOF_EDITAR
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_SITUACAODOCLIENTE_MOTIVO_CODIGOF_EDITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
-E clicar no botao "Editar Dados" do frame "Situação do Cliente"
+E clicar no botao "Editar Dados" do frame "Situação do Cliente", "0"
 Quando o campo Status do cadastro estiver como "Fechado"
 Entao o campo contem/nao contem a opcao "Código F"
 
@@ -60,7 +60,7 @@ Entao o campo contem/nao contem a opcao "Código F"
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_SITUACAODOCLIENTE_MOTIVO_DECISAOCOMERCIAL_EDITAR
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_SITUACAODOCLIENTE_MOTIVO_DECISAOCOMERCIAL_EDITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
-E clicar no botao "Editar Dados" do frame "Situação do Cliente"
+E clicar no botao "Editar Dados" do frame "Situação do Cliente", "0"
 Quando o campo Status do cadastro estiver como "Fechado"
 Entao o campo contem/nao contem a opcao "Decisão comercial"
 
@@ -70,7 +70,7 @@ Entao o campo contem/nao contem a opcao "Decisão comercial"
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_SITUACAODOCLIENTE_MOTIVO_DECISAOJURIDICA_EDITAR
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_SITUACAODOCLIENTE_MOTIVO_DECISAOJURIDICA_EDITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
-E clicar no botao "Editar Dados" do frame "Situação do Cliente"
+E clicar no botao "Editar Dados" do frame "Situação do Cliente", "0"
 Quando o campo Status do cadastro estiver como "Fechado"
 Entao o campo contem/nao contem a opcao "Decisão jurídica"
 
@@ -80,7 +80,7 @@ Entao o campo contem/nao contem a opcao "Decisão jurídica"
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_SITUACAODOCLIENTE_MOTIVO_SOLICITACAODOCLIENTE_EDITAR
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_SITUACAODOCLIENTE_MOTIVO_SOLICITACAODOCLIENTE_EDITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
-E clicar no botao "Editar Dados" do frame "Situação do Cliente"
+E clicar no botao "Editar Dados" do frame "Situação do Cliente", "0"
 Quando o campo Status do cadastro estiver como "Fechado"
 Entao o campo contem/nao contem a opcao "Solicitação do cliente"
 
@@ -90,14 +90,14 @@ Entao o campo contem/nao contem a opcao "Solicitação do cliente"
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_SITUACAODOCLIENTE_ABRIRFECHAR_EDITAR
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_SITUACAODOCLIENTE_ABRIRFECHAR_EDITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
-Quando clicar no botao "Editar Dados" do frame "Situação do Cliente"
+Quando clicar no botao "Editar Dados" do frame "Situação do Cliente", "0"
 Entao o campo Status do cadastro deve/nao deve estar habilitado
 
 @CLIENTES_CADASTRO_INFO_SITUACAODOCLIENTE_BLOQUEIO_EDITAR
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_SITUACAODOCLIENTE_BLOQUEIO_EDITAR
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_SITUACAODOCLIENTE_BLOQUEIO_EDITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
-Quando clicar no botao "Editar Dados" do frame "Situação do Cliente"
+Quando clicar no botao "Editar Dados" do frame "Situação do Cliente", "0"
 Entao o campo Bloqueio deve/nao deve estar habilitado
 
 @CLIENTES_CADASTRO_INFO_GERAL_DADOSDOPROPRIETARIO_EDITAR
@@ -118,7 +118,7 @@ Entao o botao "Editar Dados" do frame "Dados de cadastro", "1" estara habilitado
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_GERAL_DADOSDOCLIENTE_RAZAOSOCIAL_EDITAR
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_GERAL_DADOSDOCLIENTE_RAZAOSOCIAL_EDITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
-Quando clicar no botao "Editar Dados" do frame "Dados de cadastro"
+Quando clicar no botao "Editar Dados" do frame "Dados de cadastro", "0"
 Entao o campo "Razão Social" deve/nao deve estar habilitado
 
 @CLIENTES_CADASTRO_INFO_SITE_EDITAR
@@ -128,7 +128,7 @@ Entao o campo "Razão Social" deve/nao deve estar habilitado
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_INFO_SITE_EDITAR
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_SITE_EDITAR"
 E que tenha/nao tenha acesso na tela "Informações do cliente"
-Quando clicar no botao "Editar Dados" do frame "Dados de cadastro"
+Quando clicar no botao "Editar Dados" do frame "Dados de cadastro", "0"
 Entao o campo "Site" deve/nao deve estar habilitado
 
 @CLIENTES_CADASTRO_INFO_GERAL_DADOSDECONTATOS_EDITAR
@@ -180,7 +180,7 @@ Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_GERAL_DADOSDECADASTRO
 E que tenha/nao tenha acesso na tela "Informações do cliente"
 Quando clicar na aba "GERAL", "0"
 E clicar na aba "Dados do cliente", "0"
-Quando clicar no botao "Editar Dados" do frame "dados de cadastro"
+Quando clicar no botao "Editar Dados" do frame "dados de cadastro", "0"
 Então o botao "Salvar", "1" estara habilitado/desabilitado
 
 @CLIENTES_INFO_CADASTRO_ENDERECO_MASTER_EDITAR
@@ -190,7 +190,7 @@ E que tenha/nao tenha acesso na tela "Informações do cliente"
 Quando clicar na aba "ENDEREÇO", "0"
 E clicar na acao "Editar endereço", "1"
 E informar "93950000" no campo "CEP"
-E clicar no botao "Ok" do frame "Endereço"
+E clicar no botao "Ok" do frame "Endereço", "0"
 Entao o campo "Logradouro" deve/nao deve estar habilitado
 
 
