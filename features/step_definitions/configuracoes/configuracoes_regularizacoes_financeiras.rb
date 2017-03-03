@@ -18,7 +18,7 @@ Entao(/^localizar o frame "([^"]*)", "([^"]*)"$/) do |texto, valida_step|
     @regularizacao_financeira_utils = Utils.new
     nomeFrame = @regularizacao_financeira_utils.validar_frame(texto)
     if !nomeFrame && @tem_direito
-            raise("usuario com direito não consegue visualizar o frame")
+            raise("usuario com direito nao consegue visualizar o frame")
     elsif nomeFrame && !@tem_direito
         if valida_step == "1"
             raise('usuario sem o direito consegue visualizar o frame')
