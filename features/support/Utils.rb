@@ -331,8 +331,8 @@ class Utils
                 end
                 # acao = 'icoDelete'
             end
-            
-            
+
+
             i = 1
         when 'Salvar'
             acao = 'tabOperationAnticipation:tabScheduledAnticipation:btn_save'
@@ -346,13 +346,12 @@ class Utils
             acao = 'tab_regularization:regularization_results:\d+:detail_link'
         end
 
-       aguardar_loading
-
-        if $browser.a(id: /#{acao}$/).exist? && $browser.a(id: /#{acao}$/).enabled?
+        aguardar_loading
+        if $browser.a(id: /#{acao}$/).exist?
             result = click_trata_exception?($browser.a(id: /#{acao}$/))
-        elsif $browser.button(id: /#{acao}$/).exist? && $browser.button(id: /#{acao}$/).enabled?
+        elsif $browser.button(id: /#{acao}$/).exist?
             result = click_trata_exception?($browser.button(id: /#{acao}$/))
-        elsif $browser.img(id: /#{acao}$/).exist? && $browser.img(id: /#{acao}$/).enabled?
+        elsif $browser.img(id: /#{acao}$/).exist?
             result = click_trata_exception?($browser.img(id: /#{acao}$/))
         elsif $browser.span(class: /#{acao}/, indclicar_botao_acaoex: i).exist? && $browser.span(id: /#{acao}$/).enabled?
             result = click_trata_exception?($browser.span(class: /#{acao}/, index: i).parent)
@@ -377,6 +376,7 @@ class Utils
 
     def validar_frame(texto)
         aguardar_loading
+
 
         result = if $browser.td(title: texto).exist? || $browser.a(text: texto).exist? || $browser.div(text: texto).exist? || $browser.th(text: texto).exist? || $browser.label(text: texto).exist? || $browser.tr(text: texto).exist? || $browser.span(text: texto).exist?
                      true
@@ -410,7 +410,13 @@ class Utils
         when "subt\u00F3pico de manuten\u00E7\u00E3o"
             campo = ':subTopicMaintenanceId_input'
         when 'banco'
+<<<<<<< HEAD
+            campo = 'input_ClearingConsignmentsControlBeanbank_input|tab_bebit_balance:formInclude:input_IncludeCuttingDebitBalanceSendBeanmodelvalueDomicileBank_input|tab_deposits_debits:formReport:input_OperationsTreatRejectedManualBeanmodelvalueDomicileBank_input|frmSearchBillingPrice:autoComplete_bancko_preci_acc_input|input_SearchRejectionsTreatedToAnnulmentBeanbankCodeDescriptionSelected_input'
+=======
             campo = 'input_ClearingConsignmentsControlBeanbank_input|tab_bebit_balance:formInclude:input_IncludeCuttingDebitBalanceSendBeanmodelvalueDomicileBank_input|tab_deposits_debits:formReport:input_OperationsTreatRejectedManualBeanmodelvalueDomicileBank_input|frmSearchBillingPrice:autoComplete_bancko_preci_acc_input'
+        when 'banco - anulacao'
+            campo = 'tab_deposits_debits:rejectionForm:input_SearchRejectionsTreatedToAnnulmentBeanbankCodeDescriptionSelected_input'
+>>>>>>> a9451e701a8c591ae48537a85dadd09f079ac223
         when 'protocolo'
             campo = 'input_ClearingSefazDemandListBeanfilterprotocolNumber'
         when 'banco - acumulo diario'
@@ -454,17 +460,15 @@ class Utils
         when 'data de rejeicao - de'
             campo = 'tabRejectionCapture:initialRejectionDate_input|tabRejectionCapture:initialRejectionDateTreatment_input'
         when 'data de rejeicao - ate'
-            campo = 'tabRejectionCapture:finalRejectionDate_input'
-        when 'data de rejeicao - captura - ate'
-            campo = 'tabRejectionCapture:finalRejectionDateTreatment_input'
+            campo = 'tabRejectionCapture:finalRejectionDateTreatment_input|tabRejectionCapture:finalRejectionDate_input'
         when 'data de rejeicao tratamento - de'
             campo = 'initialRejectionDateTreatment_input'
         when 'data de rejeicao tratamento - ate'
             campo = 'finalRejectionDateTreatment_input'
         when 'data programada - de'
-            campo = 'dtEffectiveOf_input'
+            campo = 'j_idt196:dtEffectiveOf_input'
         when 'data programada - ate'
-            campo = 'dtEffectiveUntil_input'
+            campo = 'j_idt196:dtEffectiveUntil_input'
         when 'data de liquidação - tratamento'
             campo = 'formModal:dateSettlementTreatment_input'
         when 'codigo da venda'
@@ -547,10 +551,18 @@ class Utils
             else
                 #ação caso o campo esteja habilitado
                 unless campo.include?('dtSetr') || campo.include?('dataDeTran') || campo.include?('dataAteTran')
-                    $browser.text_field(id: /#{campo}$/, index: var_i).set valor
-                    aguardar_loading
-                    $browser.send_keys :tab
-                    aguardar_loading
+                    var_i = 0
+                    loop do   
+                        if $browser.text_field(id: /#{campo}$/, index: var_i).present?
+                            $browser.text_field(id: /#{campo}$/, index: var_i).set valor
+                            aguardar_loading
+                            $browser.send_keys :tab
+                            aguardar_loading
+                        end
+                        var_i += 1
+                        puts var_i
+                        break if var_i == 5
+                    end
                else
                      $browser.execute_script('arguments[0].value = arguments[1]', $browser.text_field(id: /#{campo}$/, index: var_i), valor)
                      aguardar_loading
@@ -628,6 +640,12 @@ class Utils
         end
     end
 
+<<<<<<< HEAD
+    def selecionar_radio_button(radio, i=1)
+        sleep 2
+        if $browser.label(text: radio, index: i).exist?
+            $browser.label(text: radio, index: i).click
+=======
     def selecionar_radio_button(radio, i = 0)
         if $browser.label(text: radio, index: 0).present?
             $browser.label(text: radio, index: 0).click
@@ -643,6 +661,7 @@ class Utils
 
         elsif $browser.label(text: radio, index: 3).present?
             $browser.label(text: radio, index: 3).click
+>>>>>>> a9451e701a8c591ae48537a85dadd09f079ac223
             result = true
 
         else
@@ -658,7 +677,7 @@ class Utils
             $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna.to_i - 1).visible?
             begin
                 $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna.to_i - 1).click
-            rescue 
+            rescue
                 raise "Tabela resultado de pesquisa não encontrada"
             end
             sleep 2
@@ -691,12 +710,9 @@ class Utils
             $encoded_img = $browser.driver.screenshot_as(:base64)
             result = true
         elsif $browser.button(value: /#{botao}/).exist?
-          if $browser.button(value: /#{botao}/).attribute_value('aria-disabled') == 'true'
-              false
-          else
-              true
-          end
             $encoded_img = $browser.driver.screenshot_as(:base64)
+            result = true
+
         else
             $encoded_img = $browser.driver.screenshot_as(:base64)
             result = false
