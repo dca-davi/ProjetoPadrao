@@ -628,8 +628,9 @@ class Utils
         return result
     end
 
-    def selecionar_check_box_tabela(linha, coluna = 0)
+    def selecionar_check_box_tabela(linha = 1, coluna)
         if $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna.to_i - 1).exist?
+            $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna.to_i - 1).visible?
             $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna.to_i - 1).click
             sleep 2
             result = true
