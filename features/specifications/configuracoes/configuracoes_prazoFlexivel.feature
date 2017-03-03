@@ -22,14 +22,14 @@ Entao clicar na aba "Segmentação do Prazo Flexível", "0"
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_PRAZOFLEXIVEL_GERAL_SHARE_EDITAR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_PRAZOFLEXIVEL_GERAL_SHARE_EDITAR"
 E que tenha/nao tenha acesso na tela "Geral_prazoFlexivel"
-E clicar no botao "Editar dados" do frame "parâmetro para cálculo do share"
+E clicar no botao "Editar dados" do frame "parâmetro para cálculo do share", "0"
 Entao o sistema exibira/nao exibira a tela "Geral", "1"
 
 @CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_CATEGORIAS_EDITAR
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_CATEGORIAS_EDITAR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_CATEGORIAS_EDITAR"
 E que tenha/nao tenha acesso na tela "Precificação_prazoFlexivel"
-E clicar no botao "Editar" do frame "Resultados"
+E clicar no botao "Editar" do frame "Resultados", "0"
 Entao o sistema exibira/nao exibira a tela "Precificação", "1"
 
 @CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_SEGMENTACAOPRAZO_EDITAR
@@ -37,28 +37,28 @@ Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_SEGMENTACAO
 Dado que tenha/nao tenha o direito "CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_SEGMENTACAOPRAZO_EDITAR"
 E que tenha/nao tenha acesso na tela "Precificação_prazoFlexivel"
 E clicar na aba "Segmentação do Prazo Flexível", "0"
-Entao clicar no botao "Editar" do frame "Dados da segmentação"
+Entao clicar no botao "Editar" do frame "Dados da segmentação", "1"
 
 @CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_CATEGORIAS_VER
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_CATEGORIAS_VER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_CATEGORIAS_VER"
 E que tenha/nao tenha acesso na tela "Precificação_prazoFlexivel"
 E o sistema exibira/nao exibira a tela "Precificação", "0"
-Entao clicar no botao "Editar" do frame "Resultados"
+Entao clicar no botao "Editar" do frame "Resultados", "1"
 
 @CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_CATEGORIAS_REMOVER
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_CATEGORIAS_REMOVER
 Dado que tenha/nao tenha o direito "CONFIGURACOES_PRAZOFLEXIVEL_PRECIFICACAO_CATEGORIAS_REMOVER"
 E que tenha/nao tenha acesso na tela "Precificação_prazoFlexivel"
 E o sistema exibira/nao exibira a tela "Precificação", "0"
-Entao clicar no botao "Cancelar tabela" do frame "Resultados"
+Entao clicar no botao "Cancelar tabela" do frame "Resultados", "1"
 
 @CONFIGURACOES_PRAZOFLEXIVEL_GERAL_ATRIBUICAOCATEGORIAPRECO_EDITAR
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_PRAZOFLEXIVEL_GERAL_ATRIBUICAOCATEGORIAPRECO_EDITAR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_PRAZOFLEXIVEL_GERAL_ATRIBUICAOCATEGORIAPRECO_EDITAR"
 E que tenha/nao tenha acesso na tela "Geral_prazoFlexivel"
 E o sistema exibira/nao exibira a tela "Geral", "0"
-Entao clicar no botao "Editar dados" do frame "Atribuição de categoria/preço"
+Entao clicar no botao "Editar dados" do frame "Atribuição de categoria/preço", "1"
 
 @CONFIGURACOES_PRAZOFLEXIVEL_GERAL_ATRIBUICAOCATEGORIAPRECO_VER
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_PRAZOFLEXIVEL_GERAL_ATRIBUICAOCATEGORIAPRECO_VER
