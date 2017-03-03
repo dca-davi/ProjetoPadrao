@@ -318,7 +318,7 @@ Entao localizar o frame "Parâmetros", "1"
 Cenario: CT.SEGINFO - [AUT] SETUP_ARV_CUSTOS_PROARV_PARAMETROS_EDITAR
 Dado que tenha/nao tenha o direito "SETUP_ARV_CUSTOS_PROARV_PARAMETROS_EDITAR"
 E que tenha/nao tenha acesso na tela "Pró-antecipação de vendas"
-Quando clicar na aba "Parametros - PRO ANTECIPACAO DE VENDAS", "0"
+Quando clicar na aba "Parâmetros", "0"
 E clicar na acao "Editar - PRO ANTECIPACAO DE VENDAS", "0"
 Entao o botao "Confirmar", "1" estara habilitado/desabilitado
 
