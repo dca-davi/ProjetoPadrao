@@ -5,7 +5,8 @@ Funcionalidade: Validar os direitos na tela Cliente > Extratos > Resumo Financei
 
 Contexto:
 Dado que eu faca login
-E informe o EC "1014766947"
+#E informe o EC "1014766947"
+E informe o EC "1018242187"
 
 @CLIENTES_INFORMACOESFINANCEIRAS_VER
 @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA @CADASTRO_ANALISTA_CIELO @CADASTRO_ANALISTA_CIELO_APROVADOR
@@ -73,7 +74,7 @@ Dado que tenha/nao tenha o direito "CLIENTES_INFORMACOESFINANCEIRAS_DADOSDOCHIP_
 E que tenha/nao tenha acesso na tela "Resumo financeiro"
 E selecionar o item "vendas" de "ontem", "0"
 Quando clicar no item em consolidado de vendas "0"
-E clicar no item da transacao de vendas
+E clicar no item da transacao de vendas "0"
 Entao localizar o frame "Dados do Chip - Envio", "1"
 
 @CLIENTES_INFORMACOESFINANCEIRAS_ENVIOPARABANDEIRA_VER
@@ -84,7 +85,7 @@ Dado que tenha/nao tenha o direito "CLIENTES_INFORMACOESFINANCEIRAS_ENVIOPARABAN
 E que tenha/nao tenha acesso na tela "Resumo financeiro"
 E selecionar o item "vendas" de "ontem", "0"
 Quando clicar no item em consolidado de vendas "0"
-E clicar no item da transacao de vendas
+E clicar no item da transacao de vendas "0"
 Entao localizar o frame "Dados do Chip - Envio", "1"
 
 @CLIENTES_EXTRATO_RESUMOFINANCEIRO_HISTORICOVENDAS_CICLODEVIDAEMISSOR_VER
@@ -93,5 +94,5 @@ Dado que tenha/nao tenha o direito "CLIENTES_EXTRATO_RESUMOFINANCEIRO_HISTORICOV
 E que tenha/nao tenha acesso na tela "Resumo financeiro"
 E selecionar o item "vendas" de "ontem", "0"
 Quando clicar no item em consolidado de vendas "0"
-E clicar no item da transacao de vendas
+E clicar no item da transacao de vendas "0"
 Entao localizar o frame "Ciclo de Vida Emissor", "1"

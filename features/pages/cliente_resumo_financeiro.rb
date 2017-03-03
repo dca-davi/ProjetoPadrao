@@ -15,6 +15,21 @@ class Cliente_Resumo_financeiro
         $encoded_img = $browser.driver.screenshot_as(:base64)
     end
 
+    def selecionar_periodo_tela_consolidados
+        semana_passada = Date.today - 7
+        semana_passada = @@utils.formata_data_sem_horario(semana_passada, 'dd/mm/aaaa')
+        hoje = @@utils.formata_data_atual('dd/mm/aaaa')
+
+        @@utils.aguardar_loading
+        if $browser.text_field(name: /dtVendasIni_input/).exist?
+            $browser.execute_script('arguments[0].value = arguments[1]', $browser.text_field(name: /dtVendasIni_input/), semana_passada)    
+        end
+
+        $encoded_img = $browser.driver.screenshot_as(:base64)
+        $browser.button(text: 'Pesquisar').click
+        @@utils.aguardar_loading
+    end
+
     def clicar_detalhado_vendas
         @@utils.aguardar_loading
         if $browser.tr(data_ri: '0').td(index: 1).exist?

@@ -333,31 +333,33 @@ class Info_do_cliente
         @@utils.aguardar_loading
     end
 
-    def click_valor_movimentacao(item, dia = 'hoje')
+    def click_valor_movimentacao(item, dia)
         sleep 1
         case dia
-        when 'ontem'
+        when 'antes de ontem'
             dia = 'yesterday'
-        when 'hoje'
+        when 'ontem'
             dia = 'today'
+        when 'hoje'
+            dia = 'current'
         when 'atual'
             dia = 'current'
         else
             raise("parametro dia inv\u00E1lido")
         end
+        
+        @@utils.aguardar_loading
+        $browser.execute_script('arguments[0].click()', $browser.a(text: 'Resumo financeiro', index: 0))
+        @@utils.aguardar_loading
 
-        sleep 3
+        @@utils.aguardar_loading
         case item
         when 'vendas'
-            $browser.a(id: /form:tabVisao:link_cash_in_#{dia}/).wait_until_present
             $browser.a(id: /form:tabVisao:link_cash_in_#{dia}/).click
         when 'ajustes financeiros'
-            $browser.a(id: /form:tabVisao:link_cash_in_#{dia}/).wait_until_present
             $browser.a(id: /form:tabVisao:link_cash_in_#{dia}/).click
         end
-        sleep 2
         @@utils.aguardar_loading
-        sleep 1
         $encoded_img = $browser.driver.screenshot_as(:base64)
     end
 
