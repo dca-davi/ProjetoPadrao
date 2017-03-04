@@ -462,10 +462,14 @@ class Utils
             campo = 'tabRejectionCapture:initialRejectionDate_input|tabRejectionCapture:initialRejectionDateTreatment_input'
         when 'data de rejeicao - ate'
             campo = 'tabRejectionCapture:finalRejectionDateTreatment_input|tabRejectionCapture:finalRejectionDate_input'
+        when 'data de rejeicao anulacao - ate'
+            campo = 'tabRejectionCapture:finalRejectionDateTreatment_input|tabRejectionCapture:finalRejectionDate_input'            
+            var_i = 1
         when 'data de rejeicao tratamento - de'
             campo = 'initialRejectionDateTreatment_input'
         when 'data de rejeicao tratamento - ate'
-            campo = 'finalRejectionDateTreatment_input'
+            campo = 'finalRejectionDateTreatment_input|finalRejectionDate_input'            
+            var_i = 1
         when 'data programada - de'
             campo = 'j_idt196:dtEffectiveOf_input'
         when 'data programada - ate'
