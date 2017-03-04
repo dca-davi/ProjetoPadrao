@@ -98,8 +98,8 @@ Dado que tenha/nao tenha o direito "OPERACOES_REJEICOESCAPTURA_DETALHES_REMOVER"
 E que tenha/nao tenha acesso na tela "Captura"
 E clicar na aba "TRATAMENTO", "0"
 Quando selecionar a opcao "Exclusão", "0"
-E informar "06092016" no campo "data de rejeicao - de"
-E informar "06102016" no campo "data de rejeicao - captura - ate"
+E informar "06092016" no campo "data de rejeicao tratamento - de"
+E informar "06102016" no campo "data de rejeicao tratamento - ate"
 Quando clicar no botao "Pesquisar", "0" da tela captura
 E clicar na acao "Editar", "0"
 Entao o botao "Excluir", "1" estara habilitado/desabilitado
