@@ -331,6 +331,7 @@ class Info_do_cliente
         $browser.a(id: /link_cash_in_today/, index: 0).wait_until_present
         $browser.a(id: /link_cash_in_today/, index: 0).click
         @@utils.aguardar_loading
+        @@utils.aguardar_loading
     end
 
     def click_valor_movimentacao(item, dia)
@@ -361,7 +362,7 @@ class Info_do_cliente
         else
             raise("parametro dia inv\u00E1lido")
         end
-        
+
         @@utils.aguardar_loading
         $browser.execute_script('arguments[0].click()', $browser.a(text: 'Resumo financeiro', index: 0))
         @@utils.aguardar_loading

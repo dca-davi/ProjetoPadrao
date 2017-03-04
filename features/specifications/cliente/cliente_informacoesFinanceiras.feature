@@ -49,8 +49,8 @@ Entao o botao "Exportar", "1" devera estar habilitado/desabilitado
 Cenario: CT.SEGINFO - [AUT] CLIENTES_INFORMACOESFINANCEIRAS_INTERCAMBIO_VER
     Dado que tenha/nao tenha o direito "CLIENTES_INFORMACOESFINANCEIRAS_INTERCAMBIO_VER"
 E que tenha/nao tenha acesso na tela "Resumo financeiro"
-E selecionar o item "vendas" de "hoje", "0"
-#E selecionar o item "vendas" de "calendario 15 Fevereiro 2017", "0"
+#E selecionar o item "vendas" de "hoje", "0"
+E selecionar o item "vendas" de "calendario 15 Fevereiro 2017", "0"
 Quando clicar no item em consolidado de vendas "1"
 
 @CLIENTES_INFORMACOESFINANCEIRAS_VENDASCONSOLIDADAS_INTERCAMBIO_VER
@@ -59,8 +59,8 @@ Quando clicar no item em consolidado de vendas "1"
 Cenario: CT.SEGINFO - [AUT] CLIENTES_INFORMACOESFINANCEIRAS_VENDASCONSOLIDADAS_INTERCAMBIO_VER
 Dado que tenha/nao tenha o direito "CLIENTES_INFORMACOESFINANCEIRAS_VENDASCONSOLIDADAS_INTERCAMBIO_VER"
 E que tenha/nao tenha acesso na tela "Resumo financeiro"
-E selecionar o item "vendas" de "ontem", "0"
-#E selecionar o item "vendas" de "calendario 15 Fevereiro 2017", "0"
+#E selecionar o item "vendas" de "ontem", "0"
+E selecionar o item "vendas" de "calendario 15 Fevereiro 2017", "0"
 Quando clicar no item em consolidado de vendas "0"
 E Expandir o campo da transação de venda
 Então Validar o frame "Valor do intercâmbio - detalhado"
@@ -74,8 +74,8 @@ Então Validar o frame "Valor do intercâmbio - detalhado"
 Cenario: CT.SEGINFO - [AUT] CLIENTES_INFORMACOESFINANCEIRAS_DADOSDOCHIP_VER
 Dado que tenha/nao tenha o direito "CLIENTES_INFORMACOESFINANCEIRAS_DADOSDOCHIP_VER"
 E que tenha/nao tenha acesso na tela "Resumo financeiro"
-E selecionar o item "vendas" de "ontem", "0"
-#E selecionar o item "vendas" de "calendario 15 Fevereiro 2017", "0"
+#E selecionar o item "vendas" de "ontem", "0"
+E selecionar o item "vendas" de "calendario 15 Fevereiro 2017", "0"
 Quando clicar no item em consolidado de vendas "0"
 E clicar no item da transacao de vendas "0"
 Entao localizar o frame "Dados do Chip - Envio", "1"
