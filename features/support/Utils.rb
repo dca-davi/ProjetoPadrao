@@ -435,7 +435,7 @@ class Utils
         when 'previsto - editar'
             campo = 'tabCosts:input_ArvCostCaptationBeancostCaptationSelectedpcCdiForecast'
         when 'numero do cliente - excecao'
-            campo = 'tabViewExceptionId:tabViewAbsentCard_id:txtSearchClientId'
+            campo = 'tabViewExceptionId:tabViewAbsentCard_id:txtSearchClientId|tabViewExceptionId:tabViewAbsentCard_id:j_idt417:fieldClient_id'
         when 'preco - antecipacao avulsa'
             campo = 'tabOperationAnticipation:inputValNegociateId'
         when 'numero do cliente - operacoes realizadas'
