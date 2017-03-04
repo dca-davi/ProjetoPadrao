@@ -471,9 +471,9 @@ class Utils
             campo = 'finalRejectionDateTreatment_input|finalRejectionDate_input'            
             var_i = 1
         when 'data programada - de'
-            campo = 'j_idt196:dtEffectiveOf_input'
+            campo = 'dtEffectiveOf_input'
         when 'data programada - ate'
-            campo = 'j_idt196:dtEffectiveUntil_input'
+            campo = 'dtEffectiveUntil_input'
         when 'data de liquidação - tratamento'
             campo = 'formModal:dateSettlementTreatment_input'
         when 'codigo da venda'
@@ -548,7 +548,7 @@ class Utils
         # $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
         #Watir::Wait.until { $browser.text_field(id: /#{campo}$/, index: 0).exist? }
 
-        sleep 2
+        aguardar_loading
         aguardar_loading
         if $browser.text_field(id: /#{campo}$/, index: var_i).exist? # Valida se o campo existe
             if $browser.text_field(id: /#{campo}$/, index: var_i).disabled? # valida se o campo está habilitado
@@ -556,12 +556,28 @@ class Utils
             else
                 #ação caso o campo esteja habilitado
                 unless campo.include?('dtSetr') || campo.include?('dataDeTran') || campo.include?('dataAteTran')
-                            $browser.text_field(id: /#{campo}$/, index: var_i).set valor
+                            begin
+                                $browser.text_field(id: /#{campo}$/, index: var_i).set valor
+                            rescue
+                                begin
+                                    var_i = var_i + 1
+                                    $browser.text_field(id: /#{campo}$/, index: var_i).set valor
+                                rescue
+                                    var_i = var_i + 2
+                                    $browser.text_field(id: /#{campo}$/, index: var_i).set valor
+                                end
+                            end
                             aguardar_loading
                             $browser.send_keys :tab
                             aguardar_loading
-               else
-                     $browser.execute_script('arguments[0].value = arguments[1]', $browser.text_field(id: /#{campo}$/, index: var_i), valor)
+               else 
+                   if $browser.text_field(id: /#{campo}$/, index: var_i).present?
+                        $browser.execute_script('arguments[0].value = arguments[1]', $browser.text_field(id: /#{campo}$/, index: var_i), valor)
+                    elsif$browser.text_field(id: /#{campo}$/, index: var_i+1).present?
+                        $browser.execute_script('arguments[0].value = arguments[1]', $browser.text_field(id: /#{campo}$/, index: var_i+1), valor)
+                    elsif$browser.text_field(id: /#{campo}$/, index: var_i+2).present?
+                        $browser.execute_script('arguments[0].value = arguments[1]', $browser.text_field(id: /#{campo}$/, index: var_i+2), valor)
+                   end
                      aguardar_loading
                      sleep 1
                      #$browser.send_keys :tab
