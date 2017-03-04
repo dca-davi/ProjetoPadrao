@@ -553,7 +553,7 @@ class Utils
                 #ação caso o campo esteja habilitado
                 unless campo.include?('dtSetr') || campo.include?('dataDeTran') || campo.include?('dataAteTran')
                     var_i = 0
-                    loop do   
+                    loop do
                         if $browser.text_field(id: /#{campo}$/, index: var_i).present?
                             $browser.text_field(id: /#{campo}$/, index: var_i).set valor
                             aguardar_loading
