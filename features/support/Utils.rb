@@ -435,7 +435,7 @@ class Utils
         when 'previsto - editar'
             campo = 'tabCosts:input_ArvCostCaptationBeancostCaptationSelectedpcCdiForecast'
         when 'numero do cliente - excecao'
-            campo = 'tabViewExceptionId:tabViewAbsentCard_id:txtSearchClientId|tabViewExceptionId:tabViewAbsentCard_id:j_idt417:fieldClient_id'
+            campo = 'tabViewExceptionId:tabViewAbsentCard_id:txtSearchClientId|tabViewExceptionId:tabViewAbsentCard_id'
         when 'preco - antecipacao avulsa'
             campo = 'tabOperationAnticipation:inputValNegociateId'
         when 'numero do cliente - operacoes realizadas'
@@ -463,12 +463,12 @@ class Utils
         when 'data de rejeicao - ate'
             campo = 'tabRejectionCapture:finalRejectionDateTreatment_input|tabRejectionCapture:finalRejectionDate_input'
         when 'data de rejeicao anulacao - ate'
-            campo = 'tabRejectionCapture:finalRejectionDateTreatment_input|tabRejectionCapture:finalRejectionDate_input'            
+            campo = 'tabRejectionCapture:finalRejectionDateTreatment_input|tabRejectionCapture:finalRejectionDate_input'
             var_i = 1
         when 'data de rejeicao tratamento - de'
             campo = 'initialRejectionDateTreatment_input'
         when 'data de rejeicao tratamento - ate'
-            campo = 'finalRejectionDateTreatment_input|finalRejectionDate_input'            
+            campo = 'finalRejectionDateTreatment_input|finalRejectionDate_input'
             var_i = 1
         when 'data programada - de'
             campo = 'dtEffectiveOf_input'
@@ -570,7 +570,7 @@ class Utils
                             aguardar_loading
                             $browser.send_keys :tab
                             aguardar_loading
-               else 
+               else
                    if $browser.text_field(id: /#{campo}$/, index: var_i).present?
                         $browser.execute_script('arguments[0].value = arguments[1]', $browser.text_field(id: /#{campo}$/, index: var_i), valor)
                     elsif$browser.text_field(id: /#{campo}$/, index: var_i+1).present?
