@@ -210,10 +210,6 @@ class Utils
         sleep 3
         if $browser.li(text: aba, index: i).attribute_value('aria-expanded') == 'true'
             return true
-        elsif $browser.li(text: aba, index: i).attribute_value('aria-expanded') == 'true'
-              return true
-          elsif $browser.li(text: aba, index: i).attribute_value('aria-expanded') == 'true'
-              return true
           else
               result false
           end

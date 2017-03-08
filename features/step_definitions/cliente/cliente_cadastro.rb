@@ -160,6 +160,8 @@ Entao(/^podera\/nao podera acessar a aba "([^"]*)"$/) do |aba|
     statusAba = utils.validar_acesso_aba(aba)
     if !statusAba && @tem_direito
         raise("Usuário não pode acessar a aba #{aba} na qual tem direito")
+    elsif statusAba && !@tem_direito
+        raise("Usuário pode acessar a aba na qual não tem direito")
     end
 end
 

@@ -264,14 +264,10 @@ Entao clicar no botao "Continuar", "1"
 @CANAL_BACKOFFICE_VER
 Cenario: CT.SEGINFO - [AUT] CANAL_BACKOFFICE_VER
 Dado que tenha/nao tenha o direito "CANAL_BACKOFFICE_VER"
-E que tenha/nao tenha acesso na tela "Consulta de transações"
-Entao o botao "Pesquisar", "1" estara habilitado/desabilitado
 
 @CANAL_CENTRAL_VER
 Cenario: CT.SEGINFO - [AUT] CANAL_CENTRAL_VER
 Dado que tenha/nao tenha o direito "CANAL_CENTRAL_VER"
-E que tenha/nao tenha acesso na tela "Consulta de transações"
-Entao o botao "Pesquisar", "1" estara habilitado/desabilitado
 
 @OPERACOES_REGULARIZACOES_MASTER_REPROCESSAMENTO_EDITAR
 Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_MASTER_REPROCESSAMENTO_EDITAR

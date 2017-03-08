@@ -6,15 +6,14 @@ Funcionalidade: Validar os direitos na tela Operacoes > Regularizações finance
 Contexto:
 Dado que eu faca login
 E informe o nivel de hierarquia como "Grupo de pagamento"
-E informe o EC "1018242187"
+E informe o EC "1012103177"
 
 @CLIENTES_CADASTRO_GRUPODEPAGAMENTO_DADOSCONTATO_VER
 @CADASTRO_ANALISTA_CIELO @CADASTRO_ANALISTA_CIELO_APROVADOR @CENTRAL_DE_RELACIONAMENTO_ANALISTA
 @CRM_COORDENADOR
 Cenario: CT.SEGINFO - [AUT] CLIENTES_CADASTRO_GRUPODEPAGAMENTO_DADOSCONTATO_VER
 Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_GRUPODEPAGAMENTO_DADOSCONTATO_VER"
-Quando clicar na aba "Dados de Contato", "0"
-Entao podera/nao podera acessar a aba "Dados de Contato"
+Quando clicar na aba "Dados de Contato", "1"
 
 @CLIENTES_CADASTRO_GRUPODEPAGAMENTO_DADOSCONTATO_EDITAR
 @CADASTRO_ANALISTA_CIELO @CADASTRO_ANALISTA_CIELO_APROVADOR @CENTRAL_DE_RELACIONAMENTO_ANALISTA
