@@ -64,14 +64,14 @@ Entao o sistema exibira/nao exibira a tela "Precificação", "1"
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOESGERAIS_TAXAEFETIVAMAXIMA_EDITAR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOESGERAIS_TAXAEFETIVAMAXIMA_EDITAR"
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
-Entao clicar no botao "Editar dados" do frame "taxa efetiva máxima"
+Entao clicar no botao "Editar dados" do frame "taxa efetiva máxima", "1"
 
 @CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOES_RESERVAFINANCEIRA_EDITAR
 @ANTECIPACAO_DE_VENDAS_TESOURARIA_ANALISTA @ANTECIPACAO_DE_VENDAS_TESOURARIA_COORDENADOR
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOES_RESERVAFINANCEIRA_EDITAR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOES_RESERVAFINANCEIRA_EDITAR"
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
-Entao clicar no botao "Editar dados" do frame "Reserva financeira"
+Entao clicar no botao "Editar dados" do frame "Reserva financeira", "1"
 
 @CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_PRECOESPECIAL_EDITAR
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_PRECOESPECIAL_EDITAR
@@ -92,7 +92,7 @@ Entao podera/nao podera acessar a aba "Preço Especial"
 Cenario: CT.SEGINFO - [AUT] SETUP_ARVCONFIGURACOES_GERAIS_ATRIBUICAOCATEGORIAPRECO_EDITAR
 Dado que tenha/nao tenha o direito "SETUP_ARVCONFIGURACOES_GERAIS_ATRIBUICAOCATEGORIAPRECO_EDITAR"
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
-Entao clicar no botao "Editar dados" do frame "Atribuição de categoria/preço"
+Entao clicar no botao "Editar dados" do frame "Atribuição de categoria/preço", "1"
 
 @SETUP_ARV_CUSTOS_CUSTO_OPERACIONAL_VER
 @GESTAO_ECONOMICA_ANALISTA @ANTECIPACAO_DE_VENDAS_TESOURARIA_ANALISTA
@@ -132,7 +132,7 @@ Entao localizar o frame "Atribuição de categoria/preço", "1"
 Cenario: CT.SEGINFO - [AUT] SETUP_ARVCONFIGURACOES_GERAIS_RAMOSDEATIVIDADERESTRITOS_EDITAR
 Dado que tenha/nao tenha o direito "SETUP_ARVCONFIGURACOES_GERAIS_RAMOSDEATIVIDADERESTRITOS_EDITAR"
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
-Entao clicar no botao "Editar dados" do frame "Ramos de atividade restritos"
+Entao clicar no botao "Editar dados" do frame "Ramos de atividade restritos", "1"
 
 @SETUP_ARVCONFIGURACOES_GERAIS_RAMOSDEATIVIDADERESTRITOS_VER
 @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA @BACKOFFICE_ANALISTA_FORNECEDOR
@@ -181,9 +181,9 @@ Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAO_CARTAONAOPRE
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAO_CARTAONAOPRESENTE_EDITAR"
 E que tenha/nao tenha acesso na tela "Exceção_antecipaçãoVendas"
 Quando clicar na aba "Cartão não presente", "0"
-Entao o link "Incluir" deve estar habilitado/desabilitado
-E clicar no link acao "INCLUIR"
-Quando clicar selecionar a opcao "Individualmente"
+Entao o link "Incluir", "0" deve estar habilitado/desabilitado
+E clicar no link acao "INCLUIR", "0"
+Quando clicar selecionar a opcao "Individualmente", "0"
 E informar "1007595105" no campo "numero do cliente - excecao"
 Quando clicar no botao "OK", "0"
 Entao clicar no botao "Confirmar", "1"
@@ -215,7 +215,7 @@ Entao localizar o frame "Cartão não presente", "1"
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_CONFGERAIS_CARTAONAOPRESENTE_EDITAR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_CONFGERAIS_CARTAONAOPRESENTE_EDITAR"
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
-Entao clicar no botao "Editar dados" do frame "Cartão não presente"
+Entao clicar no botao "Editar dados" do frame "Cartão não presente", "1"
 
 @CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAORESERVAFINANCEIRA_VER
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_EXCECAORESERVAFINANCEIRA_VER
@@ -247,7 +247,7 @@ Entao localizar o frame "Antecipação programada", "1"
 Cenario: CT.SEGINFO - [AUT] SETUP_ARVCONFIGURACOES_GERAIS_VALORMINIMOPOROPERACAOEMCADACANAL_EDITAR
 Dado que tenha/nao tenha o direito "SETUP_ARVCONFIGURACOES_GERAIS_VALORMINIMOPOROPERACAOEMCADACANAL_EDITAR"
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
-E clicar no botao "Editar dados" do frame "Valor mínimo por operação"
+E clicar no botao "Editar dados" do frame "Valor mínimo por operação", "0"
 Entao o botao "Salvar", "1" estara habilitado/desabilitado
 
 @SETUP_ARVCONFIGURACOES_GERAIS_VALORMINIMOPOROPERACAOEMCADACANAL_VER
@@ -256,7 +256,7 @@ Entao o botao "Salvar", "1" estara habilitado/desabilitado
 Cenario: CT.SEGINFO - [AUT] SETUP_ARVCONFIGURACOES_GERAIS_VALORMINIMOPOROPERACAOEMCADACANAL_VER
 Dado que tenha/nao tenha o direito "SETUP_ARVCONFIGURACOES_GERAIS_VALORMINIMOPOROPERACAOEMCADACANAL_VER"
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
-Entao clicar no botao "Editar dados" do frame "Valor mínimo por operação"
+Entao clicar no botao "Editar dados" do frame "Valor mínimo por operação", "1"
 
 @SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER
 @GESTAO_ECONOMICA_ANALISTA @ANTECIPACAO_DE_VENDAS_TESOURARIA_ANALISTA
@@ -346,5 +346,5 @@ Entao localizar o frame "Taxa efetiva máxima", "1"
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_CONFGERAIS_FIDC_EDITAR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_CONFGERAIS_FIDC_EDITAR"
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
-E clicar no botao "Editar dados" do frame "FIDC"
+E clicar no botao "Editar dados" do frame "FIDC", "0"
 Entao o botao "Salvar", "1" estara habilitado/desabilitado

@@ -29,7 +29,7 @@ Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_INCL
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_INCLUIR"
 E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
 Quando clicar na aba "Preço Especial", "0"
-E clicar no link acao "Incluir"
+E clicar no link acao "Incluir", "0"
 Entao  localizar o frame "Selecionar o cliente", "1"
 
 @CONFIGURACOES_ANTECIPACAO_CLIENTE_PRECOESPECIAL_EDITAR

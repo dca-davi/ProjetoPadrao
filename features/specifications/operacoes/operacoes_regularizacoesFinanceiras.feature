@@ -106,7 +106,7 @@ Entao clicar no botao "Pesquisar", "1"
 Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_REPROCESSAMENTO_SOLICITACAO_DETALHE_VER
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_REPROCESSAMENTO_SOLICITACAO_DETALHE_VER"
 E que tenha/nao tenha acesso na tela "Reprocessamento de vendas"
-Quando informar "2913" no campo "numero da solicitacao - reprocessamento de vendas"
+Quando informar "3909" no campo "numero da solicitacao - reprocessamento de vendas"
 E clicar no botao "Pesquisar", "0"
 Então clicar na acao "detalhar - reprocessamento de vendas", "1"
 
@@ -264,14 +264,10 @@ Entao clicar no botao "Continuar", "1"
 @CANAL_BACKOFFICE_VER
 Cenario: CT.SEGINFO - [AUT] CANAL_BACKOFFICE_VER
 Dado que tenha/nao tenha o direito "CANAL_BACKOFFICE_VER"
-E que tenha/nao tenha acesso na tela "Consulta de transações"
-Entao o botao "Pesquisar", "1" estara habilitado/desabilitado
 
 @CANAL_CENTRAL_VER
 Cenario: CT.SEGINFO - [AUT] CANAL_CENTRAL_VER
 Dado que tenha/nao tenha o direito "CANAL_CENTRAL_VER"
-E que tenha/nao tenha acesso na tela "Consulta de transações"
-Entao o botao "Pesquisar", "1" estara habilitado/desabilitado
 
 @OPERACOES_REGULARIZACOES_MASTER_REPROCESSAMENTO_EDITAR
 Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_MASTER_REPROCESSAMENTO_EDITAR

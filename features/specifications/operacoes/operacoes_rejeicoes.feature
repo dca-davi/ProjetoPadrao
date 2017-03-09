@@ -6,7 +6,7 @@ Funcionalidade: Validar os direitos na tela Operacoes > Rejeicoes
 
 Contexto:
 Dado que eu faca login
-E informe o EC "1010756114"
+#E informe o EC "1010756114"
 
 @OPERACOES_REJEICOESBANDEIRA_VER
 @BACKOFFICE_ANALISTA_FORNECEDOR @CONTROLE_SISTEMAS_FINANCEIROS_CONCILIACAO @CHARGEBACK_ANALISTA_INTERCAMBIO
@@ -84,7 +84,7 @@ Entao clicar na aba "ANULAÇÃO", "0"
 E selecionar a opcao "Por Banco/Bandeira", "0"
 E selecionar a opcao "Crédito", "0" da aba Anulacao
 E selecionar a opcao "Baixa manual", "0"
-E informar "237-BANCO BRADESCO S.A." no campo "Banco"
+E informar "84-UNIPRIME NORTE DO PARANA" no campo "banco - anulacao"
 E selecionar "VISA" no combo-box Bandeira
 E clicar no botao "Pesquisar", "0"
 Entao selecionar o check-box da linha "1" na coluna "8" da tabela resultados
@@ -98,8 +98,8 @@ Dado que tenha/nao tenha o direito "OPERACOES_REJEICOESCAPTURA_DETALHES_REMOVER"
 E que tenha/nao tenha acesso na tela "Captura"
 E clicar na aba "TRATAMENTO", "0"
 Quando selecionar a opcao "Exclusão", "0"
-E informar "06092016" no campo "data de rejeicao - de"
-E informar "06102016" no campo "data de rejeicao - captura - ate"
+E informar "02022017" no campo "data de rejeicao tratamento - de"
+E informar "27012017" no campo "data de rejeicao tratamento - ate"
 Quando clicar no botao "Pesquisar", "0" da tela captura
 E clicar na acao "Editar", "0"
 Entao o botao "Excluir", "1" estara habilitado/desabilitado
@@ -148,10 +148,10 @@ E selecionar a opcao "Regular", "0"
 E selecionar a opcao "Crédito", "0"
 E selecionar a opcao "Débito", "0"
 E informar "104-CAIXA ECONOMICA FEDERAL S.A." no campo "Banco"
-E informar "01/09/2016" no campo "data-de"
-E informar "09/09/2016" no campo "data-ate"
+E informar "01/12/2016" no campo "data-de"
+E informar "30/01/2017" no campo "data-ate"
 E clicar no botao "Pesquisar", "0"
-Entao selecionar o check-box todos na coluna "8" da tabela resultados
+Entao selecionar o check-box da linha "1" na coluna "7" da tabela resultados
 
 @OPERACOES_REJEICOESBANDEIRA_ELO_DINERS_DETALHES_EDITAR
 Cenario: CT.SEGINFO - [AUT] OPERACOES_REJEICOESBANDEIRA_ELO_DINERS_DETALHES_EDITAR
@@ -193,7 +193,7 @@ E que tenha/nao tenha acesso na tela "Captura"
 E clicar na aba "TRATAMENTO", "0"
 Quando selecionar a opcao "Exclusão", "0"
 E informar "03/10/2016" no campo "data de rejeicao - de"
-E informar "07/10/2016" no campo "data de rejeicao - captura - ate"
+E informar "07/10/2016" no campo "data de rejeicao - captura aba tratamento - ate"
 Quando clicar no botao "Pesquisar", "0" da tela captura
 E clicar na acao "Editar", "0"
 Entao o botao "Excluir", "1" estara habilitado/desabilitado

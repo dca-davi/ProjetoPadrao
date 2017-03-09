@@ -80,8 +80,13 @@ class Utils
             # sleep 2
             aguardar_loading
             # sleep 2
-            $encoded_img = $browser.driver.screenshot_as(:base64)
-            return true
+            # if $browser.h1(text: pagina).exist?
+            #   $encoded_img = $browser.driver.screenshot_as(:base64)
+            #   return true
+            # else
+            #   $encoded_img = $browser.driver.screenshot_as(:base64)
+            #   return false
+            # end
         end
     end
 
@@ -179,7 +184,15 @@ class Utils
             $encoded_img = $browser.driver.screenshot_as(:base64)
             result = false
         else
-            $browser.li(text: aba).click
+            i = 0
+            loop do
+                if $browser.li(text: aba, index: i).present?
+                    $browser.li(text: aba, index: i).click
+                    break
+                end
+                break if i==5
+                i =  i + 1
+            end
             $encoded_img = $browser.driver.screenshot_as(:base64)
             result = true
         end
@@ -197,10 +210,6 @@ class Utils
         sleep 3
         if $browser.li(text: aba, index: i).attribute_value('aria-expanded') == 'true'
             return true
-        elsif $browser.li(text: aba, index: i).attribute_value('aria-expanded') == 'true'
-              return true
-          elsif $browser.li(text: aba, index: i).attribute_value('aria-expanded') == 'true'
-              return true
           else
               result false
           end
@@ -310,7 +319,21 @@ class Utils
         when 'Visualizar Contrato'
             acao = 'tab_tabGeral:dtbServiceContract:0:btn_view_service_contract'
         when 'Remover Desconto vigente/programado'
-            acao = 'icoDelete'
+
+            if !$browser.span(class: 'ui-panel-title', text: 'Desconto vigente/programado').exist?
+                raise "Tela Informações do Cliente - Frame 'Desconto vigente/programado' não encontrado"
+            elsif !$browser.span(class: 'ui-panel-title', text: 'Desconto vigente/programado').parent.parent.table.exist?
+                raise "Tela Informações do Cliente - Tabela 'Desconto vigente/programado' não encontrada"
+            else
+                $browser.span(class: 'ui-panel-title', text: 'Desconto vigente/programado').parent.parent.table.rows.each do |linha|
+                    raise "Tela Informações do Cliente - Tabela 'Desconto vigente/programado' sem registros" unless linha[2].exists?
+                    acao = linha.span(class: 'ui-button-icon-left ui-icon ui-c icoDelete')
+                    break
+                end
+                # acao = 'icoDelete'
+            end
+
+
             i = 1
         when 'Salvar'
             acao = 'tabOperationAnticipation:tabScheduledAnticipation:btn_save'
@@ -324,15 +347,14 @@ class Utils
             acao = 'tab_regularization:regularization_results:\d+:detail_link'
         end
 
-       aguardar_loading 
-        
-        if $browser.a(id: /#{acao}$/).exist? && $browser.a(id: /#{acao}$/).enabled?
+        aguardar_loading
+        if $browser.a(id: /#{acao}$/).exist?
             result = click_trata_exception?($browser.a(id: /#{acao}$/))
-        elsif $browser.button(id: /#{acao}$/).exist? && $browser.button(id: /#{acao}$/).enabled?
+        elsif $browser.button(id: /#{acao}$/).exist?
             result = click_trata_exception?($browser.button(id: /#{acao}$/))
-        elsif $browser.img(id: /#{acao}$/).exist? && $browser.img(id: /#{acao}$/).enabled?
+        elsif $browser.img(id: /#{acao}$/).exist?
             result = click_trata_exception?($browser.img(id: /#{acao}$/))
-        elsif $browser.span(class: /#{acao}/, index: i).exist? && $browser.span(id: /#{acao}$/).enabled?
+        elsif $browser.span(class: /#{acao}$/, index: i).exist? && $browser.span(class: /#{acao}$/, index: i).enabled?
             result = click_trata_exception?($browser.span(class: /#{acao}/, index: i).parent)
         else
             result = false
@@ -355,6 +377,7 @@ class Utils
 
     def validar_frame(texto)
         aguardar_loading
+
 
         result = if $browser.td(title: texto).exist? || $browser.a(text: texto).exist? || $browser.div(text: texto).exist? || $browser.th(text: texto).exist? || $browser.label(text: texto).exist? || $browser.tr(text: texto).exist? || $browser.span(text: texto).exist?
                      true
@@ -388,7 +411,9 @@ class Utils
         when "subt\u00F3pico de manuten\u00E7\u00E3o"
             campo = ':subTopicMaintenanceId_input'
         when 'banco'
-            campo = 'input_ClearingConsignmentsControlBeanbank_input|tab_bebit_balance:formInclude:input_IncludeCuttingDebitBalanceSendBeanmodelvalueDomicileBank_input|tab_deposits_debits:formReport:input_OperationsTreatRejectedManualBeanmodelvalueDomicileBank_input|frmSearchBillingPrice:autoComplete_bancko_preci_acc_input'
+            campo = 'input_ClearingConsignmentsControlBeanbank_input|tab_bebit_balance:formInclude:input_IncludeCuttingDebitBalanceSendBeanmodelvalueDomicileBank_input|tab_deposits_debits:formReport:input_OperationsTreatRejectedManualBeanmodelvalueDomicileBank_input|frmSearchBillingPrice:autoComplete_bancko_preci_acc_input|input_SearchRejectionsTreatedToAnnulmentBeanbankCodeDescriptionSelected_input'
+        when 'banco - anulacao'
+            campo = 'tab_deposits_debits:rejectionForm:input_SearchRejectionsTreatedToAnnulmentBeanbankCodeDescriptionSelected_input'
         when 'protocolo'
             campo = 'input_ClearingSefazDemandListBeanfilterprotocolNumber'
         when 'banco - acumulo diario'
@@ -406,7 +431,7 @@ class Utils
         when 'previsto - editar'
             campo = 'tabCosts:input_ArvCostCaptationBeancostCaptationSelectedpcCdiForecast'
         when 'numero do cliente - excecao'
-            campo = 'tabViewExceptionId:tabViewAbsentCard_id:txtSearchClientId'
+            campo = 'tabViewExceptionId:tabViewAbsentCard_id:txtSearchClientId|tabViewExceptionId:tabViewAbsentCard_id'
         when 'preco - antecipacao avulsa'
             campo = 'tabOperationAnticipation:inputValNegociateId'
         when 'numero do cliente - operacoes realizadas'
@@ -432,13 +457,15 @@ class Utils
         when 'data de rejeicao - de'
             campo = 'tabRejectionCapture:initialRejectionDate_input|tabRejectionCapture:initialRejectionDateTreatment_input'
         when 'data de rejeicao - ate'
-            campo = 'tabRejectionCapture:finalRejectionDate_input'
-        when 'data de rejeicao - captura - ate'
-            campo = 'tabRejectionCapture:finalRejectionDateTreatment_input'
+            campo = 'tabRejectionCapture:finalRejectionDateTreatment_input|tabRejectionCapture:finalRejectionDate_input'
+        when 'data de rejeicao anulacao - ate'
+            campo = 'tabRejectionCapture:finalRejectionDateTreatment_input|tabRejectionCapture:finalRejectionDate_input'
+            var_i = 1
         when 'data de rejeicao tratamento - de'
             campo = 'initialRejectionDateTreatment_input'
         when 'data de rejeicao tratamento - ate'
-            campo = 'finalRejectionDateTreatment_input'
+            campo = 'finalRejectionDateTreatment_input|finalRejectionDate_input'
+            var_i = 1
         when 'data programada - de'
             campo = 'dtEffectiveOf_input'
         when 'data programada - ate'
@@ -510,6 +537,8 @@ class Utils
             campo = 'tab_tabGeral:frmAddress:inputSearchCep'
         when 'quantidade de parcelas - tipo de pagamento'
             campo = 'tab_tabGeral:tabProduct:paymentPanel:qtdInstallments'
+        when 'data de rejeicao - captura aba tratamento - ate'
+            campo = 'tabRejectionCapture:finalRejectionDateTreatment_input'            
         else
             raise 'Campo não encontrado'
         end
@@ -517,22 +546,36 @@ class Utils
         # $browser.text_field(id: /#{campo}$/, index: 0).when_present.set valor
         #Watir::Wait.until { $browser.text_field(id: /#{campo}$/, index: 0).exist? }
 
-        sleep 2
+        aguardar_loading
         aguardar_loading
         if $browser.text_field(id: /#{campo}$/, index: var_i).exist? # Valida se o campo existe
             if $browser.text_field(id: /#{campo}$/, index: var_i).disabled? # valida se o campo está habilitado
                 return false
             else
                 #ação caso o campo esteja habilitado
-                unless campo.include?('dtSetr')
-                    # $browser.text_field(id: /#{campo}$/, index: var_i).set valor
-                    # aguardar_loading
-                    # $browser.send_keys :tab
-                    $browser.execute_script('arguments[0].value = arguments[1]', $browser.text_field(id: /#{campo}$/, index: var_i), valor)
-                    $browser.text_field(id: /#{campo}$/, index: var_i).fire_event "onchange"
-                    aguardar_loading
+                unless campo.include?('dtSetr') || campo.include?('dataDeTran') || campo.include?('dataAteTran')
+                            begin
+                                $browser.text_field(id: /#{campo}$/, index: var_i).set valor
+                            rescue
+                                begin
+                                    var_i = var_i + 1
+                                    $browser.text_field(id: /#{campo}$/, index: var_i).set valor
+                                rescue
+                                    var_i = var_i + 2
+                                    $browser.text_field(id: /#{campo}$/, index: var_i).set valor
+                                end
+                            end
+                            aguardar_loading
+                            $browser.send_keys :tab
+                            aguardar_loading
                else
-                     $browser.execute_script('arguments[0].value = arguments[1]', $browser.text_field(id: /#{campo}$/, index: var_i), valor)
+                   if $browser.text_field(id: /#{campo}$/, index: var_i).present?
+                        $browser.execute_script('arguments[0].value = arguments[1]', $browser.text_field(id: /#{campo}$/, index: var_i), valor)
+                    elsif$browser.text_field(id: /#{campo}$/, index: var_i+1).present?
+                        $browser.execute_script('arguments[0].value = arguments[1]', $browser.text_field(id: /#{campo}$/, index: var_i+1), valor)
+                    elsif$browser.text_field(id: /#{campo}$/, index: var_i+2).present?
+                        $browser.execute_script('arguments[0].value = arguments[1]', $browser.text_field(id: /#{campo}$/, index: var_i+2), valor)
+                   end
                      aguardar_loading
                      sleep 1
                      #$browser.send_keys :tab
@@ -609,21 +652,38 @@ class Utils
     end
 
     def selecionar_radio_button(radio, i = 0)
-        if $browser.label(text: radio).exist?
-            $browser.label(text: radio, index: i).click
-            sleep 2
+        if $browser.label(text: radio, index: 0).present?
+            $browser.label(text: radio, index: 0).click
             result = true
+
+        elsif $browser.label(text: radio, index: 1).present?
+            $browser.label(text: radio, index: 1).click
+            result = true
+
+        elsif $browser.label(text: radio, index: 2).present?
+            $browser.label(text: radio, index: 2).click
+            result = true
+
+        elsif $browser.label(text: radio, index: 3).present?
+            $browser.label(text: radio, index: 3).click
+            result = true
+
         else
             result = false
         end
-        sleep 2
+        sleep 3
         $encoded_img = $browser.driver.screenshot_as(:base64)
         return result
     end
 
-    def selecionar_check_box_tabela(linha, coluna = 0)
+    def selecionar_check_box_tabela(linha = 1, coluna)
         if $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna.to_i - 1).exist?
-            $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna.to_i - 1).click
+            $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna.to_i - 1).visible?
+            begin
+                $browser.tr(data_ri: (linha.to_i - 1).to_s).td(index: coluna.to_i - 1).click
+            rescue
+                raise "Tabela resultado de pesquisa não encontrada"
+            end
             sleep 2
             result = true
         else
@@ -654,12 +714,9 @@ class Utils
             $encoded_img = $browser.driver.screenshot_as(:base64)
             result = true
         elsif $browser.button(value: /#{botao}/).exist?
-          if $browser.button(value: /#{botao}/).attribute_value('aria-disabled') == 'true'
-              false
-          else
-              true
-          end
             $encoded_img = $browser.driver.screenshot_as(:base64)
+            result = true
+
         else
             $encoded_img = $browser.driver.screenshot_as(:base64)
             result = false

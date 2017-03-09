@@ -22,14 +22,16 @@ Quando (/^clicar no botao: "([^"]*)", "([^"]*)"$/) do |confirmar, valida_step|
     end
 end
 
-Quando (/^clicar selecionar a opcao "([^"]*)"$/) do |frame|
+Quando (/^clicar selecionar a opcao "([^"]*)", "([^"]*)"$/) do |frame, valida_step|
     next if @pass_test == true
     @configuracoes_antecipacaoVendas = Configuracoes_antecipacaoVendas.new
     btnRadio = @configuracoes_antecipacaoVendas.selecionar_radiobutton(frame)
     if !btnRadio && @tem_direito
         raise('Usuario com direito nao consegue selecionar o radio button')
     elsif btnRadio && !@tem_direito
-        raise('Usuario nao tem direito para selecionar o radio button')
+          if valida_step == "1"
+              raise('Usuario nao tem direito para selecionar o radio button')
+          end
     end
 end
 

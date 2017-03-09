@@ -331,6 +331,7 @@ class Info_do_cliente
         $browser.a(id: /link_cash_in_today/, index: 0).wait_until_present
         $browser.a(id: /link_cash_in_today/, index: 0).click
         @@utils.aguardar_loading
+        @@utils.aguardar_loading
     end
 
     def click_valor_movimentacao(item, dia)
@@ -344,10 +345,24 @@ class Info_do_cliente
             dia = 'current'
         when 'atual'
             dia = 'current'
+        # when /calendario/
+        #     dia_selecionado = dia.split[0]
+        #     mes_selecionado = dia.split[1]
+        #     ano_selecionado = dia.split[2]
+
+        #     $browser.button(class: 'ui-datepicker-trigger ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only').click
+        #     while $browser.span(class: 'ui-datepicker-month') != mes_selecionando and $browser.span(class: 'ui-datepicker-year') != ano_selecionado do
+        #         $browser.a(title: 'Anterior').span(class: 'ui-icon ui-icon-circle-triangle-w').click
+        #     end
+        #     $browser.table(class: 'ui-datepicker-calendar').tbody.trs.each do |calendario_linha|
+        #         calendario_linha.tds.each do |calendario_coluna|
+        #             calendario.coluna.click if calendario_coluna.value == dia_selecionado
+        #         end
+        #     end
         else
             raise("parametro dia inv\u00E1lido")
         end
-        
+
         @@utils.aguardar_loading
         $browser.execute_script('arguments[0].click()', $browser.a(text: 'Resumo financeiro', index: 0))
         @@utils.aguardar_loading
