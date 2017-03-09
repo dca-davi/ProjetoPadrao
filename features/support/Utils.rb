@@ -80,13 +80,13 @@ class Utils
             # sleep 2
             aguardar_loading
             # sleep 2
-            if $browser.h1(text: pagina).exist?
-              $encoded_img = $browser.driver.screenshot_as(:base64)
-              return true
-            else
-              $encoded_img = $browser.driver.screenshot_as(:base64)
-              return false
-            end
+            # if $browser.h1(text: pagina).exist?
+            #   $encoded_img = $browser.driver.screenshot_as(:base64)
+            #   return true
+            # else
+            #   $encoded_img = $browser.driver.screenshot_as(:base64)
+            #   return false
+            # end
         end
     end
 
