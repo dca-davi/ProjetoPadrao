@@ -537,6 +537,8 @@ class Utils
             campo = 'tab_tabGeral:frmAddress:inputSearchCep'
         when 'quantidade de parcelas - tipo de pagamento'
             campo = 'tab_tabGeral:tabProduct:paymentPanel:qtdInstallments'
+        when 'data de rejeicao - captura aba tratamento - ate'
+            campo = 'tabRejectionCapture:finalRejectionDateTreatment_input'            
         else
             raise 'Campo não encontrado'
         end
