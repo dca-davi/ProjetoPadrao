@@ -18,9 +18,9 @@ Entao(/^o botao "([^"]*)", "([^"]*)" devera estar habilitado\/desabilitado$/) do
     if !button_ativo && @tem_direito
         raise('Usuario nao pode clicar no botao no qual tem direito')
     elsif button_ativo && !@tem_direito
-          if valida_step == "1"
-              raise('Usuario pode clicar no botao que nao tem direito')
-          end
+        if valida_step == "1"
+            raise('Usuario pode clicar no botao que nao tem direito')
+        end
     end
 end
 
