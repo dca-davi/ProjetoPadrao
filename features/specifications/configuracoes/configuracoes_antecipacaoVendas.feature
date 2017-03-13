@@ -307,7 +307,7 @@ Entao podera/nao podera acessar a aba "Incluir_PrazoFlexivel"
 Cenario: CT.SEGINFO - [AUT] SETUP_ARV_CUSTOS_PROARV_PARAMETROS_VER
 Dado que tenha/nao tenha o direito "SETUP_ARV_CUSTOS_PROARV_PARAMETROS_VER"
 E que tenha/nao tenha acesso na tela "Pró-antecipação de vendas"
-Quando clicar na aba "Parametros - PRO ANTECIPACAO DE VENDAS", "0"
+Quando clicar na aba "Parâmetros", "0"
 Entao localizar o frame "Parâmetros", "1"
 
 @SETUP_ARV_CUSTOS_PROARV_PARAMETROS_EDITAR
