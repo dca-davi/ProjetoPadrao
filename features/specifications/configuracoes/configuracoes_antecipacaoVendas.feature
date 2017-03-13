@@ -224,11 +224,8 @@ Entao o sistema exibira/nao exibira a tela "Exceção", "1"
 @CENTRAL_DE_RELACIONAMENTO_ANALISTA @CRM_COORDENADOR
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECIPACAOPROGRAMADA_EDITAR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECIPACAOPROGRAMADA_EDITAR"
-E que tenha/nao tenha acesso na tela "controleDeAcaoDeChargeback"
-E selecionar a opcao "Débito/Crédito" no campo "Tipo Ação" da tela Controle de acao de chargeback
-E informar o periodo de "11/09/2016" ate "14/09/2016"
-Quando clicar no botao "Pesquisar", "0"
-Entao o botao "Exportar", "1" devera estar habilitado/desabilitado
+E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
+Entao clicar no botao "Editar dados" do frame "Antecipação programada", "1"
 
 @CONFIGURACOES_ANTECIPACAOVENDAS_GERAL_ANTECIPACAOPROGRAMADA_VER
 @RELACIONAMENTO_SUPORTE_COMERCIAL_ANALISTA @BACKOFFICE_ANALISTA_FORNECEDOR
