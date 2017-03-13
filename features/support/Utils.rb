@@ -79,6 +79,8 @@ class Utils
             # $browser.execute_script('arguments[0].click()', $browser.a(text: pagina, index: i))
             # sleep 2
             aguardar_loading
+            $encoded_img = $browser.driver.screenshot_as(:base64)
+            return true
             # sleep 2
             # if $browser.h1(text: pagina).exist?
             #   $encoded_img = $browser.driver.screenshot_as(:base64)
@@ -188,6 +190,7 @@ class Utils
             loop do
                 if $browser.li(text: aba, index: i).present?
                     $browser.li(text: aba, index: i).click
+                    aguardar_loading
                     break
                 end
                 break if i==5
@@ -538,7 +541,7 @@ class Utils
         when 'quantidade de parcelas - tipo de pagamento'
             campo = 'tab_tabGeral:tabProduct:paymentPanel:qtdInstallments'
         when 'data de rejeicao - captura aba tratamento - ate'
-            campo = 'tabRejectionCapture:finalRejectionDateTreatment_input'            
+            campo = 'tabRejectionCapture:finalRejectionDateTreatment_input'
         else
             raise 'Campo não encontrado'
         end
@@ -710,16 +713,15 @@ class Utils
     def validar_btn_exportar(botao) # pode validar todos os botes e nao somente o exportar
         #Watir::Wait.until { $browser.button(text: botao).exists? }
         sleep 2
-        if $browser.button(text: botao, aria_disabled: 'false').exist?
+        if $browser.button(text: botao).exists?
+          if $browser.button(text: botao, index: 0).attribute_value('aria-disabled') == "false"
             $encoded_img = $browser.driver.screenshot_as(:base64)
             result = true
-        elsif $browser.button(value: /#{botao}/).exist?
-            $encoded_img = $browser.driver.screenshot_as(:base64)
-            result = true
-
-        else
+          else
             $encoded_img = $browser.driver.screenshot_as(:base64)
             result = false
+          end
+
         end
     end
 
