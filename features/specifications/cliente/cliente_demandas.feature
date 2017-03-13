@@ -35,7 +35,7 @@ E selecionar "Equipamento" do campo "demanda", "0"
 E selecionar "Instalação de Cielo Mobile" do campo "tipo da solicitacao", "0"
 E Selecionar a opcao da sessao - Solicitante "0"
 Quando clicar no botao "Continuar", "0"
-Entao o botao "Continuar", "1" devera estar habilitado/desabilitado
+Entao a mensagem deve/nao deve ser exibida
 
 @CLIENTES_DEMANDAS_ABERTURA_REGULARIZACOES_FINANCEIRAS_SOLICITAR
 Cenario: CT.SEGINFO - [AUT] CLIENTES_DEMANDAS_ABERTURA_REGULARIZACOES_FINANCEIRAS_SOLICITAR
