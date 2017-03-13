@@ -82,6 +82,7 @@ class Configuracoes_antecipacaoVendas
        end
        sleep 3
        $encoded_img = $browser.driver.screenshot_as(:base64)
+       return result
      end
 
      def incluir_cartao_nao_presente
