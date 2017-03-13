@@ -180,7 +180,7 @@ Dado que tenha/nao tenha o direito "CLIENTES_CADASTRO_INFO_GERAL_DADOSDECADASTRO
 E que tenha/nao tenha acesso na tela "Informações do cliente"
 Quando clicar na aba "GERAL", "0"
 E clicar na aba "Dados do cliente", "0"
-Quando clicar no botao "Editar Dados" do frame "dados de cadastro", "0"
+Quando clicar no botao "Editar Dados" do frame "Dados de cadastro", "0"
 Então o botao "Salvar", "1" estara habilitado/desabilitado
 
 @CLIENTES_INFO_CADASTRO_ENDERECO_MASTER_EDITAR
