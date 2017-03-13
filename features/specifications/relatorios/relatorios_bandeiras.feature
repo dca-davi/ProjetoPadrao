@@ -34,7 +34,8 @@ E que tenha/nao tenha acesso na tela "Controle de ação de chargeback"
 E selecionar a opcao "Débito/Crédito" no campo "Tipo Ação" da tela Controle de acao de chargeback
 E informar o periodo de "11/09/2016" ate "14/09/2016"
 Quando clicar no botao "Pesquisar", "0"
-Entao o botao "Exportar", "1" devera estar habilitado/desabilitado
+Entao o botao "Exportar", "0" devera estar habilitado/desabilitado
+E deve ser/não deve ser exibido o poppup com a mensagem "Solicitação de exportação agendada com sucesso", "1"
 
 @RELATORIOS_BANDEIRAS_CONTROLEREAPRESENTACOES_EXPORTAR
 Cenario: CT.SEGINFO - [AUT] RELATORIOS_BANDEIRAS_CONTROLEREAPRESENTACOES_EXPORTAR

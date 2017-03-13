@@ -39,6 +39,18 @@ Entao(/^a mensagem deve\/nao deve ser exibida$/) do
    if !mensagem && !@tem_direito
         raise('Usuario sem direito pode continuar')
     elsif mensagem && @tem_direito
-            raise('Usuario com direito nao pode continuar')
+        raise('Usuario com direito nao pode continuar')
     end
+end
+
+Entao(/^deve ser\/não deve ser exibido o poppup com a mensagem "([^"]*)", "([^"]*)"$/) do |msg, valida_step|
+    mensagem = @utils.popup_contem_mensagem?(msg)
+    if !mensagem && @tem_direito
+      raise('Usuario com direito não visualizou a mensagem')
+    elsif mensagem && !@tem_direito
+        if valida_step == "1"
+            raise('Usuario sem direito consegue visualizar a mensagem')
+        end
+    end
+
 end
