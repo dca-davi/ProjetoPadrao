@@ -5,7 +5,7 @@ def validar_frame_resumo_financeiro(texto)
     sleep 2
     case texto
     when "Valor do intercâmbio - detalhado"
-    result = if $browser.th(id: 'extrato__vendas_detalhado:idTbDetalhadoVendas:0:j_idt388:j_idt389').exist?
+    result = if $browser.th(id: /extrato__vendas_detalhado:idTbDetalhadoVendas:/).exist?
                  true
              else
                  false

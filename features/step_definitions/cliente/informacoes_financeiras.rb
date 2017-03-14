@@ -63,6 +63,17 @@ end
 
 E(/^pesquisar por periodo de uma semana atras$/) do
     next if @pass_test == true
-    @cliente_resumo_financeiro = Cliente_Resumo_financeiro.new 
+    @cliente_resumo_financeiro = Cliente_Resumo_financeiro.new
     @cliente_resumo_financeiro.selecionar_periodo_tela_consolidados
+end
+
+Entao(/^ver o campo Valor do intercâmbio$/) do
+    next if @pass_test == true
+    @cliente_resumo_financeiro = Cliente_Resumo_financeiro.new
+    verintercambio = @cliente_resumo_financeiro.ver_valor_intercambio
+    if !verintercambio && @tem_direito
+        raise('Usuario com direito nao consegue ver valor do intercambio')
+    elsif verintercambio && !@tem_direito
+        raise('Usuario sem direito consegue ver valor do intercambio')
+   end
 end
