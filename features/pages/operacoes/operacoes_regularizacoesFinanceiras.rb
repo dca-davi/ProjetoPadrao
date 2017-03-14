@@ -12,6 +12,7 @@ class Operacoes_regularizacoesFinanceiras
         @@utils.aguardar_loading
         sleep 1
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        return result
     end
 
     def botao_pesquisar_incluir_cancelamento(botao)
@@ -26,6 +27,7 @@ class Operacoes_regularizacoesFinanceiras
         @@utils.aguardar_loading
         sleep 1
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        return result
     end
 
     def check_box(tratamento)
@@ -41,6 +43,7 @@ class Operacoes_regularizacoesFinanceiras
       end
         sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        return result
   end
 
     def clicar_botao_confirmar_tratamento(botao)
@@ -53,5 +56,6 @@ class Operacoes_regularizacoesFinanceiras
         end
         sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        return result
     end
 end

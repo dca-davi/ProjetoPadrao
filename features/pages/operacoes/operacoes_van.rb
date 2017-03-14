@@ -69,6 +69,7 @@ class Operacoes_Van
           end
             sleep 5
             $encoded_img = $browser.driver.screenshot_as(:base64)
+            return result
     end
-  
+
 end

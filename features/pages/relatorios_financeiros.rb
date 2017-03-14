@@ -9,11 +9,11 @@ class Relatorios_financeiros
       2.times {$browser.text_field(:id => /reportSummry:datePaymment/).set data}
       sleep 2
       $browser.send_keys :tab
+      $encoded_img = $browser.driver.screenshot_as(:base64)
       result = true
-      $encoded_img = $browser.driver.screenshot_as(:base64)
     else
-      result = false
       $encoded_img = $browser.driver.screenshot_as(:base64)
+      result = false
     end
 
   when 'Data de pagamento de'
@@ -21,11 +21,11 @@ class Relatorios_financeiros
     2.times {$browser.text_field(:id => /startDateRequestId_input/).set data}
     sleep 2
     $browser.send_keys :tab
+    $encoded_img = $browser.driver.screenshot_as(:base64)
     result = true
-    $encoded_img = $browser.driver.screenshot_as(:base64)
   else
-    result = false
     $encoded_img = $browser.driver.screenshot_as(:base64)
+    result = false
   end
 
 when 'Data de pagamento ate'
@@ -33,11 +33,11 @@ if $browser.text_field(:id => /endDateRequestId_input/).exist?
   2.times {$browser.text_field(:id => /endDateRequestId_input/).set data}
   sleep 2
   $browser.send_keys :tab
+  $encoded_img = $browser.driver.screenshot_as(:base64)
   result = true
-  $encoded_img = $browser.driver.screenshot_as(:base64)
 else
-  result = false
   $encoded_img = $browser.driver.screenshot_as(:base64)
+  result = false
 end
 
     when 'Pagamentos baixados sem retorno'
@@ -45,11 +45,11 @@ end
       2.times {$browser.text_field(:id => /dateFilter_input/).set data}
       sleep 2
       $browser.send_keys :tab
+      $encoded_img = $browser.driver.screenshot_as(:base64)
       result = true
-      $encoded_img = $browser.driver.screenshot_as(:base64)
     else
-      result = false
       $encoded_img = $browser.driver.screenshot_as(:base64)
+      result = false
     end
   #Usado para a tela de Operações - antecipacao de vendas >>
   when 'Acumulado diario - Por banco'
@@ -57,13 +57,14 @@ end
     2.times {$browser.text_field(:id => /tabAccumulatedDaily:paymentDayId_input/).set data}
     sleep 2
     $browser.send_keys :tab
-    result = true
     $encoded_img = $browser.driver.screenshot_as(:base64)
+    result = true
   else
     result = false
   end
   sleep 2
       $encoded_img = $browser.driver.screenshot_as(:base64)
+      return result
 
 
   when 'Acumulado diario - Por canal'
@@ -77,6 +78,7 @@ end
   end
   sleep 2
   $encoded_img = $browser.driver.screenshot_as(:base64)
+  return result
     end
   end
 
@@ -93,6 +95,7 @@ end
   end
   sleep 2
   $encoded_img = $browser.driver.screenshot_as(:base64)
+  return result
 end
 
 def validar_botao_exportar(botao)
@@ -120,7 +123,8 @@ def clicar_valor_bruto
   end
   sleep 3
   $encoded_img = $browser.driver.screenshot_as(:base64)
-end#
+  return result
+end
 
 
 
