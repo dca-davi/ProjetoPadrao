@@ -50,8 +50,8 @@ Chargeback_Analista_Intercambio:
   user: star-hml-chargeback
   pass: C!elo2017
 Chargeback_Analista_Monitoria:
-  user: star-hml-monitoria
-  pass: C!elo2016
+  user: eyvem7 #star-hml-monitoria
+  pass: C!elo_123 #C!elo2016
 Juridico_Contencioso_Analista:
   user: STAR_A_JUD_AN
   pass: C!elo2016

@@ -15,6 +15,7 @@ class Configuracoes_antecipacaoVendas
     end
     sleep 3
     $encoded_img = $browser.driver.screenshot_as(:base64)
+    return result
   end
 
   def clicar_confirmar_custoDeCaptacao(confirmar)
@@ -58,6 +59,7 @@ class Configuracoes_antecipacaoVendas
     end
     sleep 4
     $encoded_img = $browser.driver.screenshot_as(:base64)
+    return result
   end
 
   def selecionar_radiobutton(frame)
@@ -94,6 +96,7 @@ class Configuracoes_antecipacaoVendas
          result = false
        end
        $encoded_img = $browser.driver.screenshot_as(:base64)
+       return result
      end
 
      def botao_incluir_cartao_nao_presente(botao)
@@ -108,6 +111,7 @@ class Configuracoes_antecipacaoVendas
        @@utils.aguardar_loading
        sleep 1
        $encoded_img = $browser.driver.screenshot_as(:base64)
+       return result
      end
 
      def adicionar_novos_clientes
@@ -120,5 +124,6 @@ class Configuracoes_antecipacaoVendas
        end
        sleep 2
        $encoded_img = $browser.driver.screenshot_as(:base64)
+       return result
      end
 end

@@ -13,6 +13,7 @@ class Cliente_Resumo_financeiro
         @@utils.aguardar_loading
         sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        return result
     end
 
     def selecionar_periodo_tela_consolidados
@@ -55,6 +56,7 @@ class Cliente_Resumo_financeiro
         @@utils.aguardar_loading
         sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        return result
     end
 
     def expandir_primeiro_item
