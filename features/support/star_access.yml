@@ -48,10 +48,10 @@ Tesouraria_e_Contas_a_Pagar_Analista:
   pass: C!elo2016
 Chargeback_Analista_Intercambio:
   user: star-hml-chargeback
-  pass: C!elo2017
+  pass: C!elo2016
 Chargeback_Analista_Monitoria:
-  user: eyvem7 #star-hml-monitoria
-  pass: C!elo_123 #C!elo2016
+  user: star-hml-monitoria
+  pass: C!elo2016
 Juridico_Contencioso_Analista:
   user: STAR_A_JUD_AN
   pass: C!elo2016
