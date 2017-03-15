@@ -92,6 +92,7 @@ class Operacoes_Rejeicoes
             end
         sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        return result
       end
 
     def clicar_botao_pequisar_captura_tratamento(botao)
@@ -105,6 +106,7 @@ class Operacoes_Rejeicoes
         sleep 1
         @@utils.aguardar_loading
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        return result
     end
 
     def clicar_botao_input
@@ -116,11 +118,12 @@ class Operacoes_Rejeicoes
             end
         sleep 5
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        return result
     end
 
     def selecione_combo_box(combo, opcao)
         case combo
-        when 'Bandeira'         
+        when 'Bandeira'
             if $browser.div(id: 'tabView:formRejectedFlag:cardAssociationCombo_label').exist?
                 $browser.div(id: 'tabView:formRejectedFlag:cardAssociationCombo_label').click
                 sleep 1
@@ -144,6 +147,7 @@ class Operacoes_Rejeicoes
             end
             sleep 2
             $encoded_img = $browser.driver.screenshot_as(:base64)
+            return result
 
         when 'Mastercard'
             if $browser.li(text: 'Mastercard').exist?
@@ -156,6 +160,7 @@ class Operacoes_Rejeicoes
             end
             sleep 2
             $encoded_img = $browser.driver.screenshot_as(:base64)
+            return result
 
         when 'Visa'
             if $browser.li(text: 'Visa').exist?
@@ -169,6 +174,7 @@ class Operacoes_Rejeicoes
 
             sleep 2
             $encoded_img = $browser.driver.screenshot_as(:base64)
+            return result
         end
     end
 
@@ -182,6 +188,7 @@ class Operacoes_Rejeicoes
             result = false
         end
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        return result
     end
 
     def selecionar_combobox_depositos_debitos_pop_up(valor)
@@ -194,6 +201,7 @@ class Operacoes_Rejeicoes
             result = false
         end
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        return result
     end
 
     def preencher_campo_data_inicial(data)
@@ -210,6 +218,7 @@ class Operacoes_Rejeicoes
             result = false
         end
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        return result
     end
 
     def preencher_campo_data_final(data)
@@ -226,5 +235,6 @@ class Operacoes_Rejeicoes
             result = false
         end
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        return result
     end
 end

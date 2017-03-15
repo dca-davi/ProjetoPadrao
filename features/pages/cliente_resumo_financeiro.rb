@@ -13,6 +13,7 @@ class Cliente_Resumo_financeiro
         @@utils.aguardar_loading
         sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        return result
     end
 
     def selecionar_periodo_tela_consolidados
@@ -22,13 +23,26 @@ class Cliente_Resumo_financeiro
 
         @@utils.aguardar_loading
         if $browser.text_field(name: /dtVendasIni_input/).exist?
-            $browser.execute_script('arguments[0].value = arguments[1]', $browser.text_field(name: /dtVendasIni_input/), semana_passada)    
+            $browser.execute_script('arguments[0].value = arguments[1]', $browser.text_field(name: /dtVendasIni_input/), semana_passada)
         end
 
         $encoded_img = $browser.driver.screenshot_as(:base64)
         $browser.button(text: 'Pesquisar').click
         @@utils.aguardar_loading
     end
+
+    def ver_valor_intercambio
+        @@utils.aguardar_loading
+        if $browser.table(id: 'panelTotalConsolidado').tbody.span(text: 'Valor do intercâmbio').present?
+            result = true
+        else
+            result = false
+        end
+        sleep 2
+        $encoded_img = $browser.driver.screenshot_as(:base64)
+        return result
+    end
+
 
     def clicar_detalhado_vendas
         @@utils.aguardar_loading
@@ -42,6 +56,7 @@ class Cliente_Resumo_financeiro
         @@utils.aguardar_loading
         sleep 2
         $encoded_img = $browser.driver.screenshot_as(:base64)
+        return result
     end
 
     def expandir_primeiro_item

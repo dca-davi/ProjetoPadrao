@@ -49,9 +49,9 @@ Entao o botao "Exportar", "1" devera estar habilitado/desabilitado
 Cenario: CT.SEGINFO - [AUT] CLIENTES_INFORMACOESFINANCEIRAS_INTERCAMBIO_VER
     Dado que tenha/nao tenha o direito "CLIENTES_INFORMACOESFINANCEIRAS_INTERCAMBIO_VER"
 E que tenha/nao tenha acesso na tela "Resumo financeiro"
-E selecionar o item "vendas" de "hoje", "0"
+E selecionar o item "vendas" de "ontem", "0"
 #E selecionar o item "vendas" de "calendario 15 Fevereiro 2017", "0"
-Quando clicar no item em consolidado de vendas "1"
+Entao ver o campo Valor do intercâmbio
 
 @CLIENTES_INFORMACOESFINANCEIRAS_VENDASCONSOLIDADAS_INTERCAMBIO_VER
 @BACKOFFICE_ANALISTA_FORNECEDOR @CONTROLE_SISTEMAS_FINANCEIROS_CONCILIACAO @TESOURARIA_E_CONTAS_A_PAGAR_ANALISTA
