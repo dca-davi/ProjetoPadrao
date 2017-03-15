@@ -250,7 +250,8 @@ Entao o botao "Salvar", "1" estara habilitado/desabilitado
 Cenario: CT.SEGINFO - [AUT] SETUP_ARVCONFIGURACOES_GERAIS_VALORMINIMOPOROPERACAOEMCADACANAL_VER
 Dado que tenha/nao tenha o direito "SETUP_ARVCONFIGURACOES_GERAIS_VALORMINIMOPOROPERACAOEMCADACANAL_VER"
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
-Entao clicar no botao "Editar dados" do frame "Valor mínimo por operação", "1"
+Entao localizar o frame "Valor mínimo por operação", "1"
+#Entao clicar no botao "Editar dados" do frame "Valor mínimo por operação", "1"
 
 @SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER
 @GESTAO_ECONOMICA_ANALISTA @ANTECIPACAO_DE_VENDAS_TESOURARIA_ANALISTA
