@@ -284,7 +284,7 @@ class Utils
             acao = ''
             if $browser.div(id: /workQueueList/).table.exist?
                 $browser.div(id: /workQueueList/).table.tbody.rows.each do | linha |
-                    puts linha[0].text
+                    #puts linha[0].text
                     raise "Tela Fila de Trabalho - Erro: Não existem demandas a serem exibidas" if linha[0].text == "Não existem demandas a serem atendidas."
                     acao = 'link_OXZ'
                     break
@@ -294,7 +294,7 @@ class Utils
         when 'Liberar' # Liberar - Tela Fila de Trabalho
             if $browser.div(id: /workQueueList/).table.exist?
                 $browser.div(id: /workQueueList/).table.tbody.rows.each do | linha |
-                    puts linha[0].text
+                    #puts linha[0].text
                     raise "Tela Fila de Trabalho - Erro: Não existem demandas a serem exibidas" if linha[0].text == "Não existem demandas a serem atendidas."
                     acao = 'link_VY9'
                     break
