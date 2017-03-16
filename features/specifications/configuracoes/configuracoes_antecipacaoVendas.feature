@@ -64,7 +64,7 @@ Entao o sistema exibira/nao exibira a tela "Precificação", "1"
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOESGERAIS_TAXAEFETIVAMAXIMA_EDITAR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOESGERAIS_TAXAEFETIVAMAXIMA_EDITAR"
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
-Entao clicar no botao "Editar dados" do frame "taxa efetiva máxima", "1"
+Entao clicar no botao "Editar dados" do frame "Taxa efetiva máxima", "1"
 
 @CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOES_RESERVAFINANCEIRA_EDITAR
 @ANTECIPACAO_DE_VENDAS_TESOURARIA_ANALISTA @ANTECIPACAO_DE_VENDAS_TESOURARIA_COORDENADOR
@@ -251,7 +251,6 @@ Cenario: CT.SEGINFO - [AUT] SETUP_ARVCONFIGURACOES_GERAIS_VALORMINIMOPOROPERACAO
 Dado que tenha/nao tenha o direito "SETUP_ARVCONFIGURACOES_GERAIS_VALORMINIMOPOROPERACAOEMCADACANAL_VER"
 E que tenha/nao tenha acesso na tela "Geral_antecipaçãoVendas"
 Entao localizar o frame "Valor mínimo por operação", "1"
-#Entao clicar no botao "Editar dados" do frame "Valor mínimo por operação", "1"
 
 @SETUP_ARV_CUSTOS_PROARV_TARIFA_LIQUIDACAO_VER
 @GESTAO_ECONOMICA_ANALISTA @ANTECIPACAO_DE_VENDAS_TESOURARIA_ANALISTA
