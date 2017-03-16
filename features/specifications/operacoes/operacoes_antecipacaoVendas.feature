@@ -332,7 +332,7 @@ Entao o botao "Salvar", "1" estara habilitado/desabilitado
 Cenario: CT.SEGINFO - [AUT] OPERACOES_ANTECIPACAOVENDAS_PERIODOANTECIPADO_VER
 Dado que tenha/nao tenha o direito "OPERACOES_ANTECIPACAOVENDAS_PERIODOANTECIPADO_VER"
 E que tenha/nao tenha acesso na tela "Operações realizadas"
-Entao o botao "Pesquisar", "1" estara habilitado/desabilitado
+Entao o botao "Pesquisar", "0" estara habilitado/desabilitado
 E clicar na acao "Visualizar", "0"
 Entao localizar o frame "Período de antecipação", "1"
 

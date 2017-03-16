@@ -148,7 +148,7 @@ Cenario: CT.SEGINFO - [AUT] OPERACOES_REGULARIZACOES_AJUSTE_DETALHE_VER
 Dado que tenha/nao tenha o direito "OPERACOES_REGULARIZACOES_AJUSTE_DETALHE_VER"
 E que tenha/nao tenha acesso na tela "Ajustes financeiros"
 E clicar na aba "Pesquisar", "0"
-E informar "13556860" no campo "numero da solicitacao - ajustes financeiros"
+E informar "13650808" no campo "numero da solicitacao - ajustes financeiros"
 Quando clicar no botao "Pesquisar", "0"
 E clicar na acao "Visualizar Ajustes", "0"
 Entao o sistema exibira/nao exibira a tela "Ajustes financeiros - Detalhe", "1"

@@ -189,7 +189,7 @@ Quando clicar selecionar a opcao "Individualmente", "1"
 Cenario: CT.SEGINFO - [AUT] CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_CONSULTAGERAL_EDITAR
 Dado que tenha/nao tenha o direito "CONFIGURACOES_ANTECIPACAOVENDAS_PRECIFICACAO_CONSULTAGERAL_EDITAR"
 E que tenha/nao tenha acesso na tela "Precificação_antecipaçãoVendas"
-E que tenha/nao tenha acesso na tela "Consulta geral"
+#E que tenha/nao tenha acesso na tela "Consulta geral"
 Entao o botao "Editar", "1" devera estar habilitado/desabilitado
 
 @CONFIGURACOES_ANTECIPACAOVENDAS_CONFIGURACOES_GERAIS_VER
